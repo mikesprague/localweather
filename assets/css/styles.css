@@ -6,6 +6,7 @@ body {
   font-size: 16px;
   line-height: 1.5em;
   font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   color: rgb(255, 255, 255);
 }
 
@@ -33,7 +34,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  display: none;
+  /* display: none; */
   height: 5em;
   margin: auto;
 }
@@ -45,6 +46,10 @@ body {
 
 .current-conditions {
   padding: 0;
+}
+
+.hidden {
+  display: none !important;
 }
 
 p {
@@ -150,7 +155,7 @@ h2 > small {
 }
 
 hr {
-  display: none;
+  /* display: none; */
   margin: 0.4em auto;
 }
 

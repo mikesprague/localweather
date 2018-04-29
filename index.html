@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free Code Camp Intermediate Front End Development Projects: Show the Local Weather">
-  <meta name="author" content="Mike Sprague">
-  <title>Show the Local Weather | Free Code Camp Intermediate Front End Development Projects | Mike Sprague</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="Local Weather">
+  <meta name="author" content="Michael Sprague">
+  <title>Local Weather | Michael Sprague</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" rel="stylesheet" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons-wind.min.css" rel="stylesheet" type="text/css">
   <link href="assets/css/styles.css" rel="stylesheet">
@@ -59,6 +59,8 @@
         <div class="col-xs-2 text-center forecast-2"><p></p></div>
         <div class="col-xs-2 text-center forecast-3"><p></p></div>
         <div class="col-xs-2 text-center forecast-4"><p></p></div>
+        <!-- <div class="col-xs-2 text-center forecast-5"><p></p></div>
+        <div class="col-xs-2 text-center forecast-6"><p></p></div> -->
         <div class="col-xs-1"></div>
       </div>
       <hr>
@@ -71,67 +73,7 @@
 
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.3.0/jquery-migrate.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
   <script src="assets/js/app.js"></script>
-
-  <script id="template-location" type="text/html">
-    <h1 class="location">{{city}}, {{region}} <small>{{country}}</small></h1>
-  </script>
-
-  <script id="template-primary-data" type="text/html">
-    <div class="col-sm-4 col-xs-3 current-icon"><p><i class="wi wi-yahoo-{{current_code}}"></i></p></div>
-    <div class="col-sm-4 col-xs-5 text-center current-conditions"><h2>Currently<br><small>{{current_conditions}}</small></h2></div>
-    <div class="col-sm-4 col-xs-4 current-temp" data-toggle="tooltip" title="Click to toggle Fahrenheit/Celsius">
-      <p class="primary-unit">{{current_temp}}<i class="wi wi-degrees"></i>{{current_temp_unit}}</p>
-      <p class="alt-unit">{{current_temp_alt}}<i class="wi wi-degrees"></i>{{current_temp_unit_alt}}</p>
-    </div>
-  </script>
-
-  <script id="template-weather-data-row-1" type="text/html">
-    <div class="col-xs-4 text-center" data-toggle="tooltip" title="Wind Speed">
-      <p>{{wind_speed}} {{wind_unit}} <i class="wi wi-wind wi-towards-{{wind_direction}}"></i></p>
-    </div>
-    <div class="col-xs-4 text-center" data-toggle="tooltip" title="Humidity">
-      <p><i class="wi wi-humidity"></i> {{humidity}}%</p>
-    </div>
-    <div class="col-xs-4 text-center" data-toggle="tooltip" title="Today's Sunrise">
-      <p><i class="wi wi-sunrise"></i> {{sunrise_time}}</p>
-    </div>
-  </script>
-
-  <script id="template-weather-data-row-2" type="text/html">
-    <div class="col-xs-4 text-center" data-toggle="tooltip" title="Barometric Pressue">
-      <p><i class="wi wi-barometer"></i> {{barometric_pressure}} {{barometric_pressure_unit}} <i class='{{pressure_direction_icon_class}}'></i></p>
-    </div>
-    <div class="col-xs-4 text-center" data-toggle="tooltip" title="Visibility">
-      <p><i class="fa fa-eye"></i> {{visibility}} {{visibility_unit}}</p>
-    </div>
-    <div class="col-xs-4 text-center" data-toggle="tooltip" title="Today's Sunset">
-      <p><i class="wi wi-sunset"></i> {{sunset_time}}</p>
-    </div>
-  </script>
-
-  <script id="template-forecast" type="text/html">
-    <p data-toggle="tooltip" title="{{forecast_string}}">
-      <strong>{{day_name}}</strong>
-      <br>
-      <i class="wi wi-yahoo-{{weather_code}}"></i>
-      <br>
-      <span class="primary-unit">{{temp_low}}<i class="wi wi-degrees"></i>/{{temp_high}}<i class="wi wi-degrees"></i></span>
-      <span class="alt-unit">{{temp_low_alt}}<i class="wi wi-degrees"></i>/{{temp_high_alt}}<i class="wi wi-degrees"></i></span>
-    </p>
-  </script>
-
-  <script id="template-last-updated" type="text/html">
-    <p class="last-upstaed">
-      Forecast data last updated: {{last_updated}}.
-       <a class="link-toggle-units" href="#">Toggle F<i class="wi wi-degrees"></i>/C<i class="wi wi-degrees"></i></a>
-    </p>
-  </script>
 
   <script id="template-error-message" type="text/html">
     <div class="alert alert-danger alert-dismissible error-message" role="alert">
