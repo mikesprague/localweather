@@ -1,0 +1,500 @@
+{
+  "results": [{
+      "address_components": [{
+          "long_name": "324",
+          "short_name": "324",
+          "types": ["street_number"]
+        },
+        {
+          "long_name": "East Falls Street",
+          "short_name": "E Falls St",
+          "types": ["route"]
+        },
+        {
+          "long_name": "Ithaca",
+          "short_name": "Ithaca",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Tompkins County",
+          "short_name": "Tompkins County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "14850",
+          "short_name": "14850",
+          "types": ["postal_code"]
+        },
+        {
+          "long_name": "3706",
+          "short_name": "3706",
+          "types": ["postal_code_suffix"]
+        }
+      ],
+      "formatted_address": "324 E Falls St, Ithaca, NY 14850, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 42.4530813,
+            "lng": -76.4949671
+          },
+          "southwest": {
+            "lat": 42.45296039999999,
+            "lng": -76.49504739999999
+          }
+        },
+        "location": {
+          "lat": 42.4530172,
+          "lng": -76.4950075
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 42.4543698302915,
+            "lng": -76.49365826970849
+          },
+          "southwest": {
+            "lat": 42.4516718697085,
+            "lng": -76.4963562302915
+          }
+        }
+      },
+      "place_id": "ChIJu6BeoymC0IkRm5Cgk-Fa4sU",
+      "types": ["premise"]
+    },
+    {
+      "address_components": [{
+          "long_name": "306",
+          "short_name": "306",
+          "types": ["street_number"]
+        },
+        {
+          "long_name": "Lake Street",
+          "short_name": "Lake St",
+          "types": ["route"]
+        },
+        {
+          "long_name": "Ithaca",
+          "short_name": "Ithaca",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Tompkins County",
+          "short_name": "Tompkins County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "14850",
+          "short_name": "14850",
+          "types": ["postal_code"]
+        },
+        {
+          "long_name": "3803",
+          "short_name": "3803",
+          "types": ["postal_code_suffix"]
+        }
+      ],
+      "formatted_address": "306 Lake St, Ithaca, NY 14850, USA",
+      "geometry": {
+        "location": {
+          "lat": 42.4526122,
+          "lng": -76.4949096
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 42.4539611802915,
+            "lng": -76.49356061970849
+          },
+          "southwest": {
+            "lat": 42.4512632197085,
+            "lng": -76.4962585802915
+          }
+        }
+      },
+      "place_id": "ChIJkcVcuSmC0IkRWZwsqtMRHys",
+      "types": ["street_address"]
+    },
+    {
+      "address_components": [{
+          "long_name": "Falls @ Lake",
+          "short_name": "Falls @ Lake",
+          "types": [
+            "bus_station",
+            "establishment",
+            "point_of_interest",
+            "transit_station"
+          ]
+        },
+        {
+          "long_name": "Ithaca",
+          "short_name": "Ithaca",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Tompkins County",
+          "short_name": "Tompkins County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "14850",
+          "short_name": "14850",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "Falls @ Lake, Ithaca, NY 14850, USA",
+      "geometry": {
+        "location": {
+          "lat": 42.452934,
+          "lng": -76.494896
+        },
+        "location_type": "GEOMETRIC_CENTER",
+        "viewport": {
+          "northeast": {
+            "lat": 42.4542829802915,
+            "lng": -76.49354701970849
+          },
+          "southwest": {
+            "lat": 42.4515850197085,
+            "lng": -76.49624498029151
+          }
+        }
+      },
+      "place_id": "ChIJ32sYpSmC0IkRzKkWkUajzts",
+      "types": [
+        "bus_station",
+        "establishment",
+        "point_of_interest",
+        "transit_station"
+      ]
+    },
+    {
+      "address_components": [{
+          "long_name": "Ithaca",
+          "short_name": "Ithaca",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Ithaca",
+          "short_name": "Ithaca",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Tompkins County",
+          "short_name": "Tompkins County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Ithaca, NY, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 42.4670791,
+            "lng": -76.469803
+          },
+          "southwest": {
+            "lat": 42.41832700000001,
+            "lng": -76.5269469
+          }
+        },
+        "location": {
+          "lat": 42.4439614,
+          "lng": -76.5018807
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 42.4670791,
+            "lng": -76.469803
+          },
+          "southwest": {
+            "lat": 42.41832700000001,
+            "lng": -76.5269469
+          }
+        }
+      },
+      "place_id": "ChIJ94iv4IKB0IkRdM5upWgn5Qo",
+      "types": ["locality", "political"]
+    },
+    {
+      "address_components": [{
+          "long_name": "14850",
+          "short_name": "14850",
+          "types": ["postal_code"]
+        },
+        {
+          "long_name": "Ithaca",
+          "short_name": "Ithaca",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Tompkins County",
+          "short_name": "Tompkins County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Ithaca, NY 14850, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 42.545595,
+            "lng": -76.3421429
+          },
+          "southwest": {
+            "lat": 42.2810549,
+            "lng": -76.6895298
+          }
+        },
+        "location": {
+          "lat": 42.435511,
+          "lng": -76.5257007
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 42.545595,
+            "lng": -76.3421429
+          },
+          "southwest": {
+            "lat": 42.2810549,
+            "lng": -76.6895298
+          }
+        }
+      },
+      "place_id": "ChIJ8QPrieWA0IkRhMlVx--AuPo",
+      "types": ["postal_code"]
+    },
+    {
+      "address_components": [{
+          "long_name": "Ithaca, NY",
+          "short_name": "Ithaca, NY",
+          "types": ["political"]
+        },
+        {
+          "long_name": "Tompkins County",
+          "short_name": "Tompkins County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Ithaca, NY, NY, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 42.627162,
+            "lng": -76.2378159
+          },
+          "southwest": {
+            "lat": 42.26297599999999,
+            "lng": -76.69664999999999
+          }
+        },
+        "location": {
+          "lat": 42.4575747,
+          "lng": -76.5488232
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 42.627162,
+            "lng": -76.2378159
+          },
+          "southwest": {
+            "lat": 42.26297599999999,
+            "lng": -76.69664999999999
+          }
+        }
+      },
+      "place_id": "ChIJb2oGnh6C0IkRCPMHrlfcBAA",
+      "types": ["political"]
+    },
+    {
+      "address_components": [{
+          "long_name": "Tompkins County",
+          "short_name": "Tompkins County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Tompkins County, NY, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 42.6274188,
+            "lng": -76.237695
+          },
+          "southwest": {
+            "lat": 42.2629759,
+            "lng": -76.6966571
+          }
+        },
+        "location": {
+          "lat": 42.4575747,
+          "lng": -76.5488232
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 42.6274188,
+            "lng": -76.237695
+          },
+          "southwest": {
+            "lat": 42.2629759,
+            "lng": -76.6966571
+          }
+        }
+      },
+      "place_id": "ChIJPdZvpB-C0IkRoFN9R7uJuuw",
+      "types": ["administrative_area_level_2", "political"]
+    },
+    {
+      "address_components": [{
+          "long_name": "New York",
+          "short_name": "NY",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "New York, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 45.015865,
+            "lng": -71.777491
+          },
+          "southwest": {
+            "lat": 40.4773991,
+            "lng": -79.7625901
+          }
+        },
+        "location": {
+          "lat": 43.2994285,
+          "lng": -74.21793260000001
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 45.015865,
+            "lng": -71.777491
+          },
+          "southwest": {
+            "lat": 40.4773991,
+            "lng": -79.7625901
+          }
+        }
+      },
+      "place_id": "ChIJqaUj8fBLzEwRZ5UY3sHGz90",
+      "types": ["administrative_area_level_1", "political"]
+    },
+    {
+      "address_components": [{
+        "long_name": "United States",
+        "short_name": "US",
+        "types": ["country", "political"]
+      }],
+      "formatted_address": "United States",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 71.5388001,
+            "lng": -66.885417
+          },
+          "southwest": {
+            "lat": 18.7763,
+            "lng": 170.5957
+          }
+        },
+        "location": {
+          "lat": 37.09024,
+          "lng": -95.712891
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 49.38,
+            "lng": -66.94
+          },
+          "southwest": {
+            "lat": 25.82,
+            "lng": -124.39
+          }
+        }
+      },
+      "place_id": "ChIJCzYy5IS16lQRQrfeQ5K5Oxw",
+      "types": ["country", "political"]
+    }
+  ],
+  "status": "OK"
+}
