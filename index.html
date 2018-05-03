@@ -9,7 +9,6 @@
   <title>Local Weather | Michael Sprague</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" rel="stylesheet" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons-wind.min.css" rel="stylesheet" type="text/css">
   <link href="assets/css/styles.css" rel="stylesheet">
@@ -17,6 +16,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <script defer src="https://pro.fontawesome.com/releases/v5.0.11/js/all.js" integrity="sha384-rAGYBPVpurUH2YLc/Skiv4TE1iQ/wAocPQdQT73UR0LEZ3Os2E3wGBn9fRISQJIK"
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
     <div class="weather-data">
 
       <div class="text-center loading-spinner">
-        <i class="fa fa-spinner fa-5x fa-pulse"></i>
+        <i class="far fa-spinner fa-5x fa-pulse"></i>
       </div>
 
       <div class="row">
@@ -35,13 +36,13 @@
       <hr>
       <div class="row search-controls">
         <div class="col-xs-2">
-          <button type="button" class="btn btn-default btn-geolocation" data-placement="right auto" data-toggle="tooltip" title="Use current location"><i class="fa fa-globe"></i></button>
+          <button type="button" class="btn btn-default btn-geolocation" data-placement="right auto" data-toggle="tooltip" title="Use current location"><i class="far fa-globe"></i></button>
         </div>
         <div class="col-xs-10">
           <div class="input-group">
             <input type="text" class="form-control postal-code" placeholder="Postal Code">
             <span class="input-group-btn" data-placement="left auto" data-toggle="tooltip" title="Use postal code">
-              <button class="btn btn-default btn-postal-code" type="button"><i class="fa fa-location-arrow"></i></button>
+              <button class="btn btn-default btn-postal-code" type="button"><i class="far fa-location-arrow"></i></button>
             </span>
           </div>
         </div>
@@ -80,7 +81,7 @@
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <span class="sr-only">Error:</span>
       <p>
-        <span class="fa fa-exclamation-circle" aria-hidden="true"></span> {{error_message}}
+        <span class="far fa-exclamation-circle" aria-hidden="true"></span> {{error_message}}
       </p>
     </div>
   </script>
