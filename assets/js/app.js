@@ -364,15 +364,7 @@
     const url = `https://mikesprague-api.glitch.me/weather/?lat=${lat}&lng=${lng}`;
     app.showLoading();
     app.getLocationNameFromLatLng(`${lat},${lng}`);
-    fetch(url, {
-        method: 'GET',
-        cache: 'reload',
-        headers: new Headers({
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-        })
-      })
+    fetch(url)
       .then(response => {
         console.log(response);
         if (response.ok) {
