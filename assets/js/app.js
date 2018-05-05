@@ -137,7 +137,7 @@
   };
 
   app.showError = (msg) => {
-    console.log('ERROR: \n' + msg);
+    console.error('ERROR: \n' + msg);
     // const errorMessageEl = document.querySelector('#template-error-message');
     // const errorMessageTemplate = errorMessageEl.innerHTML;
 
@@ -198,7 +198,7 @@
   app.getLocation = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
-        console.log(position.coords.latitude + "," + position.coords.longitude);
+        // console.log(position.coords.latitude + "," + position.coords.longitude);
         app.getLocationNameFromLatLng(`${position.coords.latitude},${position.coords.longitude}`);
         app.getWeather(position.coords.latitude + "," + position.coords.longitude);
       });
@@ -323,6 +323,7 @@
         }
       })
       .then(json => {
+        // console.log(json);
         const returnName = json.results[0].formatted_address;
         app.locationName = returnName;
         return returnName;
@@ -366,7 +367,7 @@
     app.getLocationNameFromLatLng(`${lat}`, `${lng}`);
     fetch(url)
       .then(response => {
-        console.log(response);
+        // console.log(response);
         if (response.ok) {
           return response.json();
         } else {
