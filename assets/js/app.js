@@ -199,8 +199,7 @@
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
         // console.log(position.coords.latitude + "," + position.coords.longitude);
-        app.getLocationNameFromLatLng(`${position.coords.latitude},${position.coords.longitude}`);
-        app.getWeather(position.coords.latitude + "," + position.coords.longitude);
+        app.getWeather(position.coords.latitude, position.coords.longitude);
       });
     } else {
       app.showError('Your browser does not support this feature. Try using your postal code.');
