@@ -323,9 +323,9 @@
         }
       })
       .then(json => {
-        app.locationName = json.results[0].formatted_address;
-        // console.log(app.locationName);
-        return json.results[0].formatted_address;
+        const returnName = json.results[0].formatted_address;
+        app.locationName = returnName;
+        return returnName;
       })
       .catch(error => {
         console.error(`Error in getLocationNameFromLatLng:\n ${error.message}`);
@@ -363,7 +363,7 @@
   app.getWeather = (lat, lng) => {
     const url = `https://mikesprague-api.glitch.me/weather/?lat=${lat}&lng=${lng}`;
     app.showLoading();
-    app.getLocationNameFromLatLng(`${lat},${lng}`);
+    app.getLocationNameFromLatLng(`${lat}`, `${lng}`);
     fetch(url)
       .then(response => {
         console.log(response);
