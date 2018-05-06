@@ -14,28 +14,6 @@ body {
   color: rgb(255, 255, 255);
 }
 
-@media only screen and (max-width: 440px) {
-  body {
-    font-size: 1rem;
-  }
-  h2 {
-    margin-top: 0;
-    margin-left: 0.75em;
-  }
-}
-
-@media (min-width: 900px) {
-  body {
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  body {
-    font-size: 2rem;
-  }
-}
-
 .loading-spinner {
   position: absolute;
   top: 0;
@@ -111,7 +89,7 @@ h2 {
 }
 
 .current-icon p,
-.current-temp  p,
+.current-temp p,
 .current-pressure p,
 .current-wind p,
 .current-sunrise-sunset p,
@@ -123,14 +101,14 @@ h2 {
   white-space: nowrap;
 }
 
-.current-temp  p {
-  font-size: 5em;
-  cursor: pointer !important;
+.current-temp p {
+  font-size: 4.25em;
+  line-height: 100%;
 }
 
 .current-icon i {
-  font-size: 3em;
-  margin-top: 0.2em;
+  font-size: 2.7em;
+  margin-top: 0.3em;
 }
 
 .last-updated p {
@@ -159,7 +137,6 @@ h2 {
 }
 
 hr {
-  /* display: none; */
   margin: 0.4em auto;
 }
 
@@ -218,11 +195,39 @@ a.link-toggle-units:active {
   }
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 440px) {
+  body {
+    font-size: 1rem;
+  }
+  h2 {
+    margin-top: 0;
+    margin-left: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
   .github-corner:hover .octo-arm {
     animation: none;
   }
   .github-corner .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
+  }
+  .powered-by-dark-sky p {
+    font-size: 0.9em;
+  }
+  .last-updated p {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 2rem;
   }
 }
