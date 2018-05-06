@@ -235,16 +235,14 @@
     },
 
     populateLastUpdated: (data) => {
+      const lastUpdatedString = `
+        Weather data cached at: ${app.formatUnixTimeAsLocalString(data.currently.time)}
+        <br>
+        Next data refresh after: ${app.formatUnixTimeAsLocalString(data.currently.time + app.cacheTimeSpan)} 
+      `;
       const lastUpdatedTemplate = `
-      <p class="last-updated has-tooltip" title="
-        Weather data cached: ${moment.unix(data.currently.time).format("ddd, MMM Do h:mm A")}
-        (${app.formatUnixTimeForLastUpdate(data.currently.time)})
-        <br> 
-        Next cache refresh: ${moment.unix(data.currently.time + app.cacheTimeSpan).format("ddd, MMM Do h:mm A")}
-        (${app.formatUnixTimeForNextUpdate(data.currently.time)})
-      "> 
-        <i class="far fa-clock"></i> 
-        Updated ${app.formatUnixTimeForLastUpdate(data.currently.time)}
+      <p class="last-updated has-tooltip" title="${lastUpdatedString}"> 
+        <i class="far fa-clock"></i> Weather data updated ${app.formatUnixTimeForLastUpdated(data.currently.time)}
       </p>
     `;
       const lastUpdatedEl = document.querySelector('.last-updated');
@@ -252,38 +250,86 @@
     },
 
     formatUnixTime: (unixtime) => {
-      const date = moment.unix(unixtime).format('dddd, MMMM Do, YYYY h:mm a');
-      return date;
+      const date = new Date(unixtime * 1000);
+      return date.toLocaleString();
     },
 
-    formatUnixTimeForLastUpdate: (unixtime) => {
-      const now = moment();
-      const lastUpdated = moment.unix(unixtime);
-      return lastUpdated.from(now);
+    formatUnixTimeAsLocalString: (unixtime) => {
+      const date = new Date(unixtime * 1000);
+      // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
+      app.formatUnixTimeForLastUpdated(unixtime);
+      return date.toLocaleString().replace(', ', ' '); // '5/6/2018 3:41:21 PM'
     },
 
-    formatUnixTimeForNextUpdate: (unixtime) => {
-      const now = moment();
-      const nextUpdate = moment.unix(unixtime + app.cacheTimeSpan);
-      return now.to(nextUpdate);
+    formatUnixTimeAsLocalTimeString: (unixtime) => {
+      const date = new Date(unixtime * 1000);
+      return date.toLocaleTimeString();
+    },
+
+    formatUnixTimeAsLocalDateString: (unixtime) => {
+      const date = new Date(unixtime * 1000);
+      return date.toLocaleDateString();
+    },
+
+    formatUnixTimeForLastUpdated: (unixtime) => {
+      const now = Math.round((new Date()).getTime() / 1000);
+      const diff = Math.round((now - unixtime) / 60);
+      let returnString = `${diff.toString()} minutes ago`;
+      if (diff === 0) {
+        returnString = 'less than a minute ago';
+      } else if (diff === 1) {
+        returnString = '1 minute ago';
+      }
+      return returnString;
     },
 
     formatUnixTimeForSun: (unixtime) => {
+      const hours = app.getHoursFromUnixTime(unixtime);
+      const minutes = app.getMinutesFromUnixTime(unixtime);
+      return `${hours}:${minutes}`;
+    },
+
+    getShortDateFromUnixTime: (unixtime) => {
+      const date = new Date(unixtime * 1000);
+      // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
+      return date.toLocaleString().split(',')[0];
+    },
+
+    getTimeFromUnixTime: (unixtime) => {
+      const date = new Date(unixtime * 1000);
+      // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
+      return date.toLocaleString().split(',')[1].trim();
+    },
+
+    getHoursFromUnixTime: (unixtime) => {
       const date = new Date(unixtime * 1000);
       let hours = date.getHours();
-      if (hours > 12) {
-        hours = hours - 12;
-      }
+      hours = hours > 12 ? hours - 12 : hours;
+      return hours;
+    },
+
+    getMinutesFromUnixTime: (unixtime) => {
+      const date = new Date(unixtime * 1000);
       let minutes = date.getMinutes();
-      if (minutes < 10) {
-        minutes = `0${minutes}`;
-      }
-      return `${hours}:${minutes}`;
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      return minutes;
+    },
+
+    getMonthFromUnixTime: (unixtime) => {
+      const date = new Date(unixtime * 1000);
+      // example date.toDateSTring() 'Sun May 06 2018'
+      return date.toDateString().split(' ')[1]; // returns 'May'
     },
 
     getDayFromUnixTime: (unixtime) => {
       const date = new Date(unixtime * 1000);
-      return date.toDateString().split(' ')[0];
+      // example date.toDateSTring() 'Sun May 06 2018'
+      return date.toDateString().split(' ')[0]; // returns 'Sun'
+    },
+
+    getYearFromUnixTime: (unixtime) => {
+      const date = new Date(unixtime * 1000);
+      return date.getFullYear();
     },
 
     getLocationNameFromLatLng: (lat, lng) => {
