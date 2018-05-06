@@ -236,8 +236,15 @@
 
     populateLastUpdated: (data) => {
       const lastUpdatedTemplate = `
-      <p class="last-upstaed">
-        Forecast data last updated: ${app.formatUnixTime(data.currently.time)}.
+      <p class="last-updated has-tooltip" title="
+        Weather data cached: ${moment.unix(data.currently.time).format("ddd, MMM Do h:mm A")}
+        (${app.formatUnixTimeForLastUpdate(data.currently.time)})
+        <br> 
+        Next cache refresh: ${moment.unix(data.currently.time + app.cacheTimeSpan).format("ddd, MMM Do h:mm A")}
+        (${app.formatUnixTimeForNextUpdate(data.currently.time)})
+      "> 
+        <i class="far fa-clock"></i> 
+        Updated ${app.formatUnixTimeForLastUpdate(data.currently.time)}
       </p>
     `;
       const lastUpdatedEl = document.querySelector('.last-updated');
@@ -245,13 +252,20 @@
     },
 
     formatUnixTime: (unixtime) => {
-      const date = new Date(unixtime * 1000);
-      return date.toString();
+      const date = moment.unix(unixtime).format('dddd, MMMM Do, YYYY h:mm a');
+      return date;
     },
 
     formatUnixTimeForLastUpdate: (unixtime) => {
-      const date = new Date(unixtime * 1000);
-      let hours = date.getHours();
+      const now = moment();
+      const lastUpdated = moment.unix(unixtime);
+      return lastUpdated.from(now);
+    },
+
+    formatUnixTimeForNextUpdate: (unixtime) => {
+      const now = moment();
+      const nextUpdate = moment.unix(unixtime + app.cacheTimeSpan);
+      return now.to(nextUpdate);
     },
 
     formatUnixTimeForSun: (unixtime) => {
