@@ -23,8 +23,8 @@ Updating an old app I wrote to be more current
 - [ ] use caching to help with api limits
   - [x] add localStorage caching (maybe indexdb later)
   - [x] set 10 minute limit before updating cache
-  - [ ] add note about cached data and time last updated
+  - [x] add note about cached data and time last updated
     - console.logging currently
-    - [ ] add function for nice time format
+    - [x] add function for nice time format (used moment.js)
   - [ ] (?) add link to reset/clear cache
 - [ ] use async/await where it makes sense
