@@ -181,7 +181,7 @@
         <p><i class="wi wi-wind wi-towards-${data.currently.windBearing}"></i> ${Math.round(data.currently.windSpeed)} mph</p>
       </div>
       <div class="col-xs-4 text-center has-tooltip" title="Humidity">
-        <p><i class="wi wi-humidity"></i> ${data.currently.humidity * 100}%</p>
+        <p><i class="wi wi-humidity"></i> ${Math.round(data.currently.humidity * 100)}%</p>
       </div>
       <div class="col-xs-4 text-center has-tooltip" title="Today's Sunrise">
         <p><i class="wi wi-sunrise"></i> ${app.formatUnixTimeForSun(data.daily.data[0].sunriseTime)} am</p>
