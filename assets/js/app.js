@@ -300,10 +300,10 @@
 
     useCache: (cacheTime) => {
       const now = Math.floor(new Date().getTime() / 1000);
-      console.log(`cache last updated: ${app.formatUnixTime(cacheTime)}`);
       const nextUpdateTime = cacheTime + app.cacheTimeSpan;
-      console.log(`next cache refresh: ${app.formatUnixTime(nextUpdateTime)}`);
-      if ((now - cacheTime) < (app.cacheTimeSpan)) {
+      if (nextUpdateTime > now) {
+        console.log(`cache last updated: ${app.formatUnixTime(cacheTime)}`);
+        console.log(`next cache refresh: ${app.formatUnixTime(nextUpdateTime)}`);
         return true;
       } else {
         app.initCache();
