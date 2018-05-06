@@ -291,7 +291,7 @@
       if (app.loadFromCache) {
         const cachedLocationData = app.getData(app.locationDataKey);
         app.locationName = cachedLocationData.results[0].formatted_address;
-        console.log("loaded cached location data");
+        // console.log("loaded cached location data");
       } else {
         fetch(url)
           .then(response => {
@@ -316,9 +316,9 @@
       const now = Math.floor(new Date().getTime() / 1000);
       const nextUpdateTime = cacheTime + app.cacheTimeSpan;
       if (nextUpdateTime > now) {
-        console.log('using cached data');
-        console.log(`cache last updated: ${app.formatUnixTime(cacheTime)}`);
-        console.log(`next cache refresh: ${app.formatUnixTime(nextUpdateTime)}`);
+        // console.log('using cached data');
+        // console.log(`cache last updated: ${app.formatUnixTime(cacheTime)}`);
+        // console.log(`next cache refresh: ${app.formatUnixTime(nextUpdateTime)}`);
         return true;
       } else {
         app.initCache();
@@ -330,7 +330,7 @@
       app.resetData();
       app.setCacheTime();
       const cacheTime = app.getCacheTime();
-      console.log(`initialized cache at: ${app.formatUnixTime(cacheTime)}`);
+      // console.log(`initialized cache at: ${app.formatUnixTime(cacheTime)}`);
     },
 
     setCacheTime: () => {
@@ -383,7 +383,7 @@
       if (app.loadFromCache) {
         const cachedWeatherData = app.getData(app.weatherDataKey);
         app.renderAppWithData(cachedWeatherData);
-        console.log("loaded cached weather data");
+        // console.log("loaded cached weather data");
       } else {
         fetch(url)
           .then(response => {
