@@ -163,7 +163,7 @@
 
     populatePrimaryData: (data) => {
       const primaryDataTemplate = `
-        <div class="col-sm-4 col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon}"></i></p></div>
+        <div class="col-sm-4 col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon} has-tooltip" title="${data.currently.summary}"></i></p></div>
         <div class="col-sm-4 col-xs-5 text-center current-conditions">
             <h2>${data.currently.summary}</h2>
         </div>
