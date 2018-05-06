@@ -139,6 +139,12 @@ h2 {
   font-size: 0.9em;
 }
 
+.powered-by-dark-sky p {
+  margin-top: -0.25em;
+  text-align: center;
+  font-size: 0.75em;
+}
+
 .forecast {
   margin-top: 0.6em;
 }
@@ -178,6 +184,19 @@ a.link-toggle-units:active {
   text-decoration: none;
   border-top: 1px dashed rgb(204, 204, 204);
   border-bottom: 1px dashed rgb(204, 204, 204);
+}
+
+.powered-by-dark-sky a,
+.powered-by-dark-sky a:visited {
+  color: rgb(204, 204, 204);
+  text-decoration: none;
+}
+
+.powered-by-dark-sky a:hover,
+.powered-by-dark-sky a:active {
+  text-decoration: none;
+  border-top: 1px dotted rgb(204, 204, 204);
+  border-bottom: 1px dotted rgb(204, 204, 204);
 }
 
 .github-corner:hover .octo-arm {
