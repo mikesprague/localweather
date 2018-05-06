@@ -306,9 +306,15 @@
       if ((now - cacheTime) < (app.cacheTimeSpan)) {
         return true;
       } else {
-        app.resetData();
+        app.initCache();
         return false;
       }
+    },
+
+    initCache: () => {
+      app.resetData();
+      const cacheTime = app.setCacheTime();
+      console.log(`initialized cache at: ${app.formatUnixTime(cacheTime)}`);
     },
 
     setCacheTime: () => {
@@ -387,9 +393,7 @@
         (app.getData(app.weatherDataKey) === null) ||
         (app.getData(app.locationDataKey) === null)
       ) {
-        app.resetData();
-        const cacheTime = app.setCacheTime();
-        console.log(`created cache at: ${app.formatUnixTime(cacheTime)}`);
+        app.initCache();
       } else {
         app.loadFromCache = app.useCache(app.getData(app.cacheTimeKey));
         // console.log(app.loadFromCache);
