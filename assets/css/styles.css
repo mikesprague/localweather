@@ -2,6 +2,10 @@
   text-rendering: optimizeLegibility;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   font-size: 1.25rem;
   line-height: 1.5em;
