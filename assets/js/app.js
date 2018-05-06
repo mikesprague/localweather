@@ -167,8 +167,8 @@
         <div class="col-sm-4 col-xs-5 text-center current-conditions">
             <h2>${data.currently.summary}</h2>
         </div>
-        <div class="col-sm-4 col-xs-3 current-temp has-tooltip" title="Click to toggle Fahrenheit/Celsius">
-          <p class="primary-unit">${Math.floor(data.currently.temperature)}<i class="wi wi-degrees"></i></p>
+        <div class="col-sm-4 col-xs-4 current-temp has-tooltip text-right" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
+          <p class="primary-unit text-right">${Math.floor(data.currently.temperature)}&deg;</p>
         </div>
       `;
       const priamryDataEl = document.querySelector('.primary-conditions-data');
@@ -229,7 +229,7 @@
           <br>
           <i class="wi wi-forecast-io-${data.daily.data[i].icon}"></i>
           <br>
-          <span class="primary-unit">${Math.floor(data.daily.data[i].temperatureHigh)}<i class="wi wi-degrees"></i>/${Math.floor(data.daily.data[i].temperatureLow)}<i class="wi wi-degrees"></i></span>
+          ${Math.floor(data.daily.data[i].temperatureHigh)}&deg;/${Math.floor(data.daily.data[i].temperatureLow)}&deg;
         </p>
       `;
         let forecastEl = document.querySelector(`.forecast-${i}`);
