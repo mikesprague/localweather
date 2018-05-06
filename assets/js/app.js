@@ -143,7 +143,6 @@
     getLocation: () => {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
-          // console.log(position.coords.latitude + "," + position.coords.longitude);
           app.getLocationNameFromLatLng(position.coords.latitude, position.coords.longitude);
           app.getWeather(position.coords.latitude, position.coords.longitude);
         });
@@ -352,7 +351,6 @@
             }
           })
           .then(json => {
-            // console.log(json);
             app.setData(app.locationDataKey, json);
             app.locationName = json.results[0].formatted_address;
           })
@@ -366,9 +364,6 @@
       const now = Math.floor(new Date().getTime() / 1000);
       const nextUpdateTime = cacheTime + app.cacheTimeSpan;
       if (nextUpdateTime > now) {
-        // console.log('using cached data');
-        // console.log(`cache last updated: ${app.formatUnixTime(cacheTime)}`);
-        // console.log(`next cache refresh: ${app.formatUnixTime(nextUpdateTime)}`);
         return true;
       } else {
         app.initCache();
@@ -379,18 +374,12 @@
     initCache: () => {
       app.resetData();
       app.setCacheTime();
-      const cacheTime = app.getCacheTime();
-      // console.log(`initialized cache at: ${app.formatUnixTime(cacheTime)}`);
     },
 
     setCacheTime: () => {
       const cacheTime = Math.floor(new Date().getTime() / 1000);
       app.setData(app.cacheTimeKey, cacheTime);
       return cacheTime;
-    },
-
-    getCacheTime: () => {
-      return app.getData(app.cacheTimeKey);
     },
 
     setData: (key, data) => {
