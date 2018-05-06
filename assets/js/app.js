@@ -100,12 +100,16 @@
 
     hideUi: () => {
       const hrAll = document.querySelectorAll('hr');
+      const poweredBy = document.querySelector('.powered-by-dark-sky');
       app.hideEl(hrAll);
+      app.hideEl(poweredBy);
     },
 
     showUi: () => {
       const hrAll = document.querySelectorAll('hr');
+      const poweredBy = document.querySelector('.powered-by-dark-sky');
       app.showEl(hrAll);
+      app.showEl(poweredBy);
     },
 
     initTooltips: () => {
