@@ -165,7 +165,7 @@
             <h2>${data.currently.summary}</h2>
         </div>
         <div class="col-sm-4 col-xs-3 current-temp has-tooltip" title="Click to toggle Fahrenheit/Celsius">
-          <p class="primary-unit">${Math.floor(data.currently.temperature)}<i class="wi wi-degrees"></i>F</p>
+          <p class="primary-unit">${Math.floor(data.currently.temperature)}<i class="wi wi-degrees"></i></p>
         </div>
       `;
       const priamryDataEl = document.querySelector('.primary-conditions-data');
