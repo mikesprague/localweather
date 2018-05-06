@@ -27,3 +27,4 @@ Updating an old app I wrote to be more current
     - console.logging currently
     - [ ] add function for nice time format
   - [ ] (?) add link to reset/clear cache
+- [ ] use async/await where it makes sense
