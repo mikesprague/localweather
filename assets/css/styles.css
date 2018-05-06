@@ -14,9 +14,13 @@ body {
   color: rgb(255, 255, 255);
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
   body {
     font-size: 1rem;
+  }
+  h2 {
+    margin-top: 0;
+    margin-left: 0.75em;
   }
 }
 
@@ -39,7 +43,7 @@ body {
   bottom: 0;
   left: 0;
   height: 5em;
-  margin: auto;
+  margin: 25% auto;
 }
 
 .weather-data {
@@ -80,36 +84,27 @@ p {
 }
 
 h1 small,
-h2 small {
+h2 {
   color: rgb(205, 205, 205);
 }
 
 h1 {
   text-align: center;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
   text-transform: capitalize;
-  font-size: 2.25em;
+  font-size: 2em;
   font-weight: bold;
 }
 
 h1 > small {
   white-space: nowrap;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.5em;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 h2 {
-  margin-left: 1.25em;
-  font-size: 1.4em;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-h2 > small {
-  font-size: 1.2em;
+  font-size: 2em;
   text-transform: capitalize;
   letter-spacing: 0.1em;
   text-align: center;
