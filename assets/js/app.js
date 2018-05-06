@@ -109,7 +109,12 @@
     },
 
     initTooltips: () => {
-      // $("[data-toggle=\"tooltip\"]").tooltip();
+      tippy('.has-tooltip', {
+        arrow: true,
+        size: 'large',
+        livePlacement: true,
+        performance: true,
+      });
     },
 
     showError: (msg) => {
@@ -155,27 +160,27 @@
 
     populatePrimaryData: (data) => {
       const primaryDataTemplate = `
-      <div class="col-sm-4 col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon}"></i></p></div>
-      <div class="col-sm-4 col-xs-5 text-center current-conditions">
-        <h2>Currently<br><small>${data.currently.summary}</small></h2>
-      </div>
-      <div class="col-sm-4 col-xs-4 current-temp" data-toggle="tooltip" title="Click to toggle Fahrenheit/Celsius">
-        <p class="primary-unit">${Math.floor(data.currently.temperature)}<i class="wi wi-degrees"></i>F</p>
-      </div>
-    `;
+        <div class="col-sm-4 col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon}"></i></p></div>
+        <div class="col-sm-4 col-xs-5 text-center current-conditions">
+            <h2>${data.currently.summary}</h2>
+        </div>
+        <div class="col-sm-4 col-xs-3 current-temp has-tooltip" title="Click to toggle Fahrenheit/Celsius">
+          <p class="primary-unit">${Math.floor(data.currently.temperature)}<i class="wi wi-degrees"></i>F</p>
+        </div>
+      `;
       const priamryDataEl = document.querySelector('.primary-conditions-data');
       priamryDataEl.innerHTML = primaryDataTemplate;
     },
 
     populateWeatherDataRowOne: (data) => {
       const weatherDataRowOneTemplate = `
-      <div class="col-xs-4 text-center" data-toggle="tooltip" title="Wind Speed">
-        <p>${Math.round(data.currently.windSpeed)} mph <i class="wi wi-wind wi-towards-${data.currently.windBearing}"></i></p>
+      <div class="col-xs-4 text-center has-tooltip" title="Wind Speed">
+        <p><i class="wi wi-wind wi-towards-${data.currently.windBearing}"></i> ${Math.round(data.currently.windSpeed)} mph</p>
       </div>
-      <div class="col-xs-4 text-center" data-toggle="tooltip" title="Humidity">
+      <div class="col-xs-4 text-center has-tooltip" title="Humidity">
         <p><i class="wi wi-humidity"></i> ${data.currently.humidity * 100}%</p>
       </div>
-      <div class="col-xs-4 text-center" data-toggle="tooltip" title="Today's Sunrise">
+      <div class="col-xs-4 text-center has-tooltip" title="Today's Sunrise">
         <p><i class="wi wi-sunrise"></i> ${app.formatUnixTimeForSun(data.daily.data[0].sunriseTime)} am</p>
       </div>
     `;
@@ -185,13 +190,13 @@
 
     populateWeatherDataRowTwo: (data) => {
       const weatherDataRowTwoTemplate = `
-      <div class="col-xs-4 text-center" data-toggle="tooltip" title="Barometric Pressue">
+      <div class="col-xs-4 text-center has-tooltip" title="Barometric Pressue">
         <p><i class="wi wi-barometer"></i> ${data.currently.pressure}in</i></p>
       </div>
-      <div class="col-xs-4 text-center" data-toggle="tooltip" title="Visibility">
+      <div class="col-xs-4 text-center has-tooltip" title="Visibility">
         <p><i class="fa fa-eye"></i> ${data.currently.visibility} mi</p>
       </div>
-      <div class="col-xs-4 text-center" data-toggle="tooltip" title="Today's Sunset">
+      <div class="col-xs-4 text-center has-tooltip" title="Today's Sunset">
         <p><i class="wi wi-sunset"></i> ${app.formatUnixTimeForSun(data.daily.data[0].sunsetTime)} pm</p>
       </div>
     `;
@@ -216,12 +221,12 @@
     populateForecastData: (data, numDays = 5) => {
       for (let i = 0; i < numDays; i++) {
         let forecastTemplate = `
-        <p data-toggle="tooltip" title="${data.daily.data[i].summary}">
+        <p class="has-tooltip" title="${data.daily.data[i].summary}">
           <strong>${app.getDayFromUnixTime(data.daily.data[i].time)}</strong>
           <br>
           <i class="wi wi-forecast-io-${data.daily.data[i].icon}"></i>
           <br>
-          <span class="primary-unit">${Math.floor(data.daily.data[i].temperatureHigh)}/${Math.floor(data.daily.data[i].temperatureLow)}<i class="wi wi-degrees"></i><i class="wi wi-degrees"></i></span>
+          <span class="primary-unit">${Math.floor(data.daily.data[i].temperatureHigh)}<i class="wi wi-degrees"></i>/${Math.floor(data.daily.data[i].temperatureLow)}<i class="wi wi-degrees"></i></span>
         </p>
       `;
         let forecastEl = document.querySelector(`.forecast-${i}`);
@@ -342,9 +347,9 @@
       app.populateWeatherDataRowTwo(data);
       app.populateForecastData(data);
       app.populateLastUpdated(data);
-      // app.initTooltips();
       app.populateLocation(app.locationName);
       app.hideLoading();
+      app.initTooltips();
     },
 
     getWeather: (lat, lng) => {
@@ -392,8 +397,6 @@
       app.showLoading();
       app.setBodyBgClass();
       app.getLocation();
-      // app.initTooltips();
-      // app.hideLoading();
     }
   };
 
