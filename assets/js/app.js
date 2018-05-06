@@ -328,7 +328,8 @@
 
     initCache: () => {
       app.resetData();
-      const cacheTime = app.setCacheTime();
+      app.setCacheTime();
+      const cacheTime = app.getCacheTime();
       console.log(`initialized cache at: ${app.formatUnixTime(cacheTime)}`);
     },
 
@@ -336,6 +337,10 @@
       const cacheTime = Math.floor(new Date().getTime() / 1000);
       app.setData(app.cacheTimeKey, cacheTime);
       return cacheTime;
+    },
+
+    getCacheTime: () => {
+      return app.getData(app.cacheTimeKey);
     },
 
     setData: (key, data) => {
