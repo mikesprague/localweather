@@ -74,7 +74,7 @@ h1 {
   font-weight: bold;
 }
 
-h1 > small {
+h1>small {
   white-space: nowrap;
   letter-spacing: 0.5em;
   text-transform: uppercase;
@@ -117,7 +117,7 @@ h2 {
   font-size: 0.9em;
 }
 
-.powered-by-dark-sky p {
+.powered-by-dark-sky ul {
   margin-top: -0.25em;
   text-align: center;
   font-size: 0.75em;
@@ -167,13 +167,6 @@ a.link-toggle-units:active {
 .powered-by-dark-sky a:visited {
   color: rgb(204, 204, 204);
   text-decoration: none;
-}
-
-.powered-by-dark-sky a:hover,
-.powered-by-dark-sky a:active {
-  text-decoration: none;
-  border-top: 1px dotted rgb(204, 204, 204);
-  border-bottom: 1px dotted rgb(204, 204, 204);
 }
 
 .github-corner:hover .octo-arm {
