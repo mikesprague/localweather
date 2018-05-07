@@ -121,21 +121,6 @@
       });
     },
 
-    getLocation: async () => {
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          app.getLocationNameFromLatLng(
-            position.coords.latitude,
-            position.coords.longitude
-          ).then((result) => {
-            app.getWeather(position.coords.latitude, position.coords.longitude);
-          });
-        });
-      } else {
-        app.showError('Your browser does not support this feature. Try using your postal code.');
-      }
-    },
-
     populateLocation: (data) => {
       const locationArray = data.split(',');
       const city = locationArray[0].trim();
@@ -226,11 +211,14 @@
       const lastUpdatedString = `
         Weather data cached at: ${app.formatUnixTimeAsLocalString(data.currently.time)}
         <br>
-        Next data refresh after: ${app.formatUnixTimeAsLocalString(data.currently.time + app.cacheTimeSpan)} 
+        Weather data is cached for 10 minutes.
+        <br>
+        Next data refresh available after: 
+        ${app.formatUnixTimeAsLocalString(data.currently.time + app.cacheTimeSpan)} 
       `;
       const lastUpdatedTemplate = `
       <p class="last-updated has-tooltip" title="${lastUpdatedString}"> 
-        <i class="far fa-clock"></i> Weather data updated ${app.formatUnixTimeForLastUpdated(data.currently.time)}
+        Weather data last updated ${app.getTimeFromUnixTime(data.currently.time)}
       </p>
     `;
       const lastUpdatedEl = document.querySelector('.last-updated');
@@ -252,13 +240,13 @@
     getShortDateFromUnixTime: (unixtime) => {
       const date = new Date(unixtime * 1000);
       // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
-      return date.toLocaleString().split(',')[0];
+      return date.toLocaleString().split(',')[0]; // returns '5/6/2018'
     },
 
     getTimeFromUnixTime: (unixtime) => {
       const date = new Date(unixtime * 1000);
       // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
-      return date.toLocaleString().split(',')[1].trim();
+      return date.toLocaleString().split(',')[1].trim(); // returns '3:41:21 PM'
     },
 
     getHoursFromUnixTime: (unixtime) => {
@@ -292,31 +280,6 @@
       return date.getFullYear();
     },
 
-    getLocationNameFromLatLng: async (lat, lng) => {
-      const url = `https://mikesprague-api.glitch.me/location-name/?lat=${lat}&lng=${lng}`;
-      if (app.loadFromCache) {
-        const cachedLocationData = app.getData(app.locationDataKey);
-        app.locationName = cachedLocationData.results[0].formatted_address;
-        // console.log("loaded cached location data");
-      } else {
-        fetch(url)
-          .then(response => {
-            if (response.ok) {
-              return response.json();
-            } else {
-              app.throwFetchError(response);
-            }
-          })
-          .then(json => {
-            app.setData(app.locationDataKey, json);
-            app.locationName = json.results[0].formatted_address;
-          })
-          .catch(error => {
-            console.error(`Error in getLocationNameFromLatLng:\n ${error.message}`);
-          });
-      }
-    },
-
     useCache: (cacheTime) => {
       const now = Math.floor(new Date().getTime() / 1000);
       const nextUpdateTime = cacheTime + app.cacheTimeSpan;
@@ -327,9 +290,25 @@
       }
     },
 
+    areCachesEmpty: () => {
+      return (
+        (app.getData(app.cacheTimeKey) === null) ||
+        (app.getData(app.weatherDataKey) === null) ||
+        (app.getData(app.locationDataKey) === null)
+      );
+    },
+
     initCache: () => {
-      app.resetData();
-      app.setCacheTime();
+      if (app.areCachesEmpty()) {
+        app.resetData();
+        app.setCacheTime();
+      } else {
+        app.loadFromCache = app.useCache(app.getData(app.cacheTimeKey));
+      }
+      if (!app.loadFromCache) {
+        app.resetData();
+        app.setCacheTime();
+      }
     },
 
     setCacheTime: () => {
@@ -369,17 +348,45 @@
       app.populateForecastData(data);
       app.populateLastUpdated(data);
       app.populateLocation(app.locationName);
-      app.hideLoading();
       app.initTooltips();
+      app.hideLoading();
+      return true;
+    },
+
+    getLocationNameFromLatLng: async (lat, lng) => {
+      const url = `https://mikesprague-api.glitch.me/location-name/?lat=${lat}&lng=${lng}`;
+      if (app.loadFromCache) {
+        const cachedLocationData = app.getData(app.locationDataKey);
+        app.locationName = cachedLocationData.results[0].formatted_address;
+        return cachedLocationData.results[0].formatted_address;
+      } else {
+        const locationData = fetch(url)
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              app.throwFetchError(response);
+            }
+          })
+          .then(json => {
+            app.setData(app.locationDataKey, json);
+            app.locationName = json.results[0].formatted_address;
+            return json.results[0].formatted_address;
+          })
+          .catch(error => {
+            console.error(`Error in getLocationNameFromLatLng:\n ${error.message}`);
+          });
+        return locationData;
+      }
     },
 
     getWeather: async (lat, lng) => {
       const url = `https://mikesprague-api.glitch.me/weather/?lat=${lat}&lng=${lng}`;
       if (app.loadFromCache) {
         const cachedWeatherData = app.getData(app.weatherDataKey);
-        app.renderAppWithData(cachedWeatherData);
+        return cachedWeatherData;
       } else {
-        fetch(url)
+        const weatherData = fetch(url)
           .then(response => {
             if (response.ok) {
               return response.json();
@@ -389,28 +396,48 @@
           })
           .then(json => {
             app.setData(app.weatherDataKey, json);
-            app.renderAppWithData(json);
+            return json;
           })
           .catch(error => {
             console.error(`Error in getWeather:\n ${error.message}`);
             app.hideLoading();
           });
+        return weatherData;
+      }
+    },
+
+    getLocationAndPopulateAppData: async () => {
+      app.showLoading();
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(position => {
+          app.getLocationNameFromLatLng(
+            position.coords.latitude,
+            position.coords.longitude
+          ).then(name => {
+            app.locationName = name;
+            app.getWeather(
+              position.coords.latitude,
+              position.coords.longitude
+            ).then(json => {
+              app.renderAppWithData(json);
+            }).then(loaded => {
+              if (loaded) {
+                app.hideLoading();
+              }
+            });
+          }).catch(error => {
+            cosole.error(`ERROR: ${error}`);
+          });
+        });
+      } else {
+        console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
       }
     },
 
     init: () => {
-      if (
-        (app.getData(app.cacheTimeKey) === null) ||
-        (app.getData(app.weatherDataKey) === null) ||
-        (app.getData(app.locationDataKey) === null)
-      ) {
-        app.initCache();
-      } else {
-        app.loadFromCache = app.useCache(app.getData(app.cacheTimeKey));
-      }
-      app.showLoading();
       app.setBodyBgClass();
-      app.getLocation();
+      app.initCache();
+      app.getLocationAndPopulateAppData();
     }
   };
 
