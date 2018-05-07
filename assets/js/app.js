@@ -121,25 +121,6 @@
       });
     },
 
-    showError: (msg) => {
-      console.error('ERROR: \n' + msg);
-      // const errorMessageEl = document.querySelector('#template-error-message');
-      // const errorMessageTemplate = errorMessageEl.innerHTML;
-
-      // const errorMessageView = {
-      //   error_message: msg
-      // };
-      // const errorMessageString = Mustache.render(errorMessageTemplate, errorMessageView);
-
-      // if (!$(".error-message").is(":visible")) {
-      //   $("hr:first").after(errorMessageString);
-      // }
-    },
-
-    removeError: () => {
-      // app.errorMessageEl.remove();
-    },
-
     getLocation: async () => {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -256,38 +237,10 @@
       lastUpdatedEl.innerHTML = lastUpdatedTemplate;
     },
 
-    formatUnixTime: (unixtime) => {
-      const date = new Date(unixtime * 1000);
-      return date.toLocaleString();
-    },
-
     formatUnixTimeAsLocalString: (unixtime) => {
       const date = new Date(unixtime * 1000);
       // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
-      app.formatUnixTimeForLastUpdated(unixtime);
       return date.toLocaleString().replace(', ', ' '); // '5/6/2018 3:41:21 PM'
-    },
-
-    formatUnixTimeAsLocalTimeString: (unixtime) => {
-      const date = new Date(unixtime * 1000);
-      return date.toLocaleTimeString();
-    },
-
-    formatUnixTimeAsLocalDateString: (unixtime) => {
-      const date = new Date(unixtime * 1000);
-      return date.toLocaleDateString();
-    },
-
-    formatUnixTimeForLastUpdated: (unixtime) => {
-      const now = Math.round((new Date()).getTime() / 1000);
-      const diff = Math.round((now - unixtime) / 60);
-      let returnString = `${diff.toString()} minutes ago`;
-      if (diff === 0) {
-        returnString = 'less than a minute ago';
-      } else if (diff === 1) {
-        returnString = '1 minute ago';
-      }
-      return returnString;
     },
 
     formatUnixTimeForSun: (unixtime) => {
@@ -370,7 +323,6 @@
       if (nextUpdateTime > now) {
         return true;
       } else {
-        app.initCache();
         return false;
       }
     },
@@ -426,11 +378,9 @@
       if (app.loadFromCache) {
         const cachedWeatherData = app.getData(app.weatherDataKey);
         app.renderAppWithData(cachedWeatherData);
-        // console.log("loaded cached weather data");
       } else {
         fetch(url)
           .then(response => {
-            // console.log(response);
             if (response.ok) {
               return response.json();
             } else {
@@ -439,12 +389,10 @@
           })
           .then(json => {
             app.setData(app.weatherDataKey, json);
-            // console.log(json);
             app.renderAppWithData(json);
           })
           .catch(error => {
             console.error(`Error in getWeather:\n ${error.message}`);
-            // app.showError("There was a problem retrieving your weather conditions. Please try again.");
             app.hideLoading();
           });
       }
@@ -459,7 +407,6 @@
         app.initCache();
       } else {
         app.loadFromCache = app.useCache(app.getData(app.cacheTimeKey));
-        // console.log(app.loadFromCache);
       }
       app.showLoading();
       app.setBodyBgClass();
