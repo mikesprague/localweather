@@ -140,11 +140,15 @@
       // app.errorMessageEl.remove();
     },
 
-    getLocation: () => {
+    getLocation: async () => {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
-          app.getLocationNameFromLatLng(position.coords.latitude, position.coords.longitude);
-          app.getWeather(position.coords.latitude, position.coords.longitude);
+          app.getLocationNameFromLatLng(
+            position.coords.latitude,
+            position.coords.longitude
+          ).then((result) => {
+            app.getWeather(position.coords.latitude, position.coords.longitude);
+          });
         });
       } else {
         app.showError('Your browser does not support this feature. Try using your postal code.');
@@ -335,7 +339,7 @@
       return date.getFullYear();
     },
 
-    getLocationNameFromLatLng: (lat, lng) => {
+    getLocationNameFromLatLng: async (lat, lng) => {
       const url = `https://mikesprague-api.glitch.me/location-name/?lat=${lat}&lng=${lng}`;
       if (app.loadFromCache) {
         const cachedLocationData = app.getData(app.locationDataKey);
@@ -417,7 +421,7 @@
       app.initTooltips();
     },
 
-    getWeather: (lat, lng) => {
+    getWeather: async (lat, lng) => {
       const url = `https://mikesprague-api.glitch.me/weather/?lat=${lat}&lng=${lng}`;
       if (app.loadFromCache) {
         const cachedWeatherData = app.getData(app.weatherDataKey);
