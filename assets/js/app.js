@@ -133,11 +133,11 @@
 
     populatePrimaryData: (data) => {
       const primaryDataTemplate = `
-        <div class="col-sm-4 col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon} has-tooltip" title="${data.currently.summary}"></i></p></div>
-        <div class="col-sm-4 col-xs-5 text-center current-conditions">
+        <div class="col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon} has-tooltip" title="${data.currently.summary}"></i></p></div>
+        <div class="col-xs-5 text-center current-conditions">
             <h2>${data.currently.summary}</h2>
         </div>
-        <div class="col-sm-4 col-xs-4 current-temp has-tooltip text-right" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
+        <div class="col-xs-4 current-temp has-tooltip text-right" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
           <p class="primary-unit text-right">${Math.floor(data.currently.temperature)}&deg;</p>
         </div>
       `;
