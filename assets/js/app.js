@@ -10,7 +10,7 @@
     locationName: 'loading...',
     weatherDataKey: 'weatherData',
 
-    getBodyBgClass: () => {
+    getBodyBgClass() {
       const hourNum = new Date().getHours();
       let bodyClass = 'night';
 
@@ -25,12 +25,12 @@
       return bodyClass;
     },
 
-    setBodyBgClass: () => {
+    setBodyBgClass() {
       const bodyEl = document.querySelector('body');
       bodyEl.classList.add(app.getBodyBgClass());
     },
 
-    showEl: (el) => {
+    showEl(el) {
       if (el !== 'undefined') {
         switch (typeof el) {
           case 'NodeList':
@@ -58,7 +58,7 @@
       }
     },
 
-    hideEl: (el) => {
+    hideEl(el) {
       if (el !== 'undefined') {
         switch (typeof el) {
           case 'NodeList':
@@ -86,33 +86,33 @@
       }
     },
 
-    showLoading: () => {
+    showLoading() {
       const loadingSpinner = document.querySelector(app.loadingSpinnerSelector);
       app.showEl(loadingSpinner);
       app.hideUi();
     },
 
-    hideLoading: () => {
+    hideLoading() {
       const loadingSpinner = document.querySelector(app.loadingSpinnerSelector);
       app.hideEl(loadingSpinner);
       app.showUi();
     },
 
-    hideUi: () => {
+    hideUi() {
       const hrAll = document.querySelectorAll('hr');
       const poweredBy = document.querySelector('.powered-by-dark-sky');
       app.hideEl(hrAll);
       app.hideEl(poweredBy);
     },
 
-    showUi: () => {
+    showUi() {
       const hrAll = document.querySelectorAll('hr');
       const poweredBy = document.querySelector('.powered-by-dark-sky');
       app.showEl(hrAll);
       app.showEl(poweredBy);
     },
 
-    initTooltips: () => {
+    initTooltips() {
       tippy('.has-tooltip', {
         arrow: true,
         size: 'large',
@@ -121,7 +121,7 @@
       });
     },
 
-    populateLocation: (data) => {
+    populateLocation(data) {
       const locationArray = data.split(',');
       const city = locationArray[0].trim();
       const region = locationArray[1].trim();
@@ -131,7 +131,7 @@
       locationEl.innerHTML = locationTemplate;
     },
 
-    populatePrimaryData: (data) => {
+    populatePrimaryData(data) {
       const primaryDataTemplate = `
         <div class="col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon} has-tooltip" title="${data.currently.summary}"></i></p></div>
         <div class="col-xs-5 text-center current-conditions">
@@ -145,7 +145,7 @@
       priamryDataEl.innerHTML = primaryDataTemplate;
     },
 
-    populateWeatherDataRowOne: (data) => {
+    populateWeatherDataRowOne(data) {
       const weatherDataRowOneTemplate = `
       <div class="col-xs-4 text-center has-tooltip" title="Wind Speed">
         <p><i class="wi wi-wind wi-towards-${data.currently.windBearing}"></i> ${Math.round(data.currently.windSpeed)} mph</p>
@@ -161,7 +161,7 @@
       weatherDataRowOneEl.innerHTML = weatherDataRowOneTemplate;
     },
 
-    populateWeatherDataRowTwo: (data) => {
+    populateWeatherDataRowTwo(data) {
       const weatherDataRowTwoTemplate = `
       <div class="col-xs-4 text-center has-tooltip" title="Barometric Pressue">
         <p><i class="wi wi-barometer"></i> ${data.currently.pressure}in</i></p>
@@ -177,7 +177,7 @@
       weatherDataRowTwoEl.innerHTML = weatherDataRowTwoTemplate;
     },
 
-    populateErrorMessage: (msg) => {
+    populateErrorMessage(msg) {
       const errorMessageTemplate = `
       <div class="alert alert-danger alert-dismissible error-message" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -191,7 +191,7 @@
       errorMessageEl.innerHTML = errorMessageTemplate;
     },
 
-    populateForecastData: (data, numDays = 5) => {
+    populateForecastData(data, numDays = 5) {
       for (let i = 0; i < numDays; i++) {
         let forecastTemplate = `
         <p class="has-tooltip" title="${data.daily.data[i].summary}">
@@ -207,7 +207,7 @@
       }
     },
 
-    populateLastUpdated: (data) => {
+    populateLastUpdated(data) {
       const lastUpdatedString = `
         Weather data cached at: ${app.formatUnixTimeAsLocalString(data.currently.time)}
         <br>
@@ -225,62 +225,62 @@
       lastUpdatedEl.innerHTML = lastUpdatedTemplate;
     },
 
-    formatUnixTimeAsLocalString: (unixtime) => {
+    formatUnixTimeAsLocalString(unixtime) {
       const date = new Date(unixtime * 1000);
       // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
       return date.toLocaleString().replace(', ', ' '); // '5/6/2018 3:41:21 PM'
     },
 
-    formatUnixTimeForSun: (unixtime) => {
+    formatUnixTimeForSun(unixtime) {
       const hours = app.getHoursFromUnixTime(unixtime);
       const minutes = app.getMinutesFromUnixTime(unixtime);
       return `${hours}:${minutes}`;
     },
 
-    getShortDateFromUnixTime: (unixtime) => {
+    getShortDateFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
       return date.toLocaleString().split(',')[0]; // returns '5/6/2018'
     },
 
-    getTimeFromUnixTime: (unixtime) => {
+    getTimeFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
       return date.toLocaleString().split(',')[1].trim(); // returns '3:41:21 PM'
     },
 
-    getHoursFromUnixTime: (unixtime) => {
+    getHoursFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       let hours = date.getHours();
       hours = hours > 12 ? hours - 12 : hours;
       return hours;
     },
 
-    getMinutesFromUnixTime: (unixtime) => {
+    getMinutesFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       let minutes = date.getMinutes();
       minutes = minutes < 10 ? `0${minutes}` : minutes;
       return minutes;
     },
 
-    getMonthFromUnixTime: (unixtime) => {
+    getMonthFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       // example date.toDateSTring() 'Sun May 06 2018'
       return date.toDateString().split(' ')[1]; // returns 'May'
     },
 
-    getDayFromUnixTime: (unixtime) => {
+    getDayFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       // example date.toDateSTring() 'Sun May 06 2018'
       return date.toDateString().split(' ')[0]; // returns 'Sun'
     },
 
-    getYearFromUnixTime: (unixtime) => {
+    getYearFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       return date.getFullYear();
     },
 
-    useCache: (cacheTime) => {
+    useCache(cacheTime) {
       const now = Math.floor(new Date().getTime() / 1000);
       const nextUpdateTime = cacheTime + app.cacheTimeSpan;
       if (nextUpdateTime > now) {
@@ -290,7 +290,7 @@
       }
     },
 
-    areCachesEmpty: () => {
+    areCachesEmpty() {
       return (
         (app.getData(app.cacheTimeKey) === null) ||
         (app.getData(app.weatherDataKey) === null) ||
@@ -298,7 +298,7 @@
       );
     },
 
-    initCache: () => {
+    initCache() {
       if (app.areCachesEmpty()) {
         app.resetData();
         app.setCacheTime();
@@ -311,37 +311,37 @@
       }
     },
 
-    setCacheTime: () => {
+    setCacheTime() {
       const cacheTime = Math.floor(new Date().getTime() / 1000);
       app.setData(app.cacheTimeKey, cacheTime);
       return cacheTime;
     },
 
-    setData: (key, data) => {
+    setData(key, data) {
       const dataToSet = JSON.stringify(data);
       localStorage.setItem(key, dataToSet);
     },
 
-    getData: (key) => {
+    getData(key) {
       const dataToGet = localStorage.getItem(key);
       return JSON.parse(dataToGet);
     },
 
-    clearData: (key) => {
+    clearData(key) {
       localStorage.removeItem(key);
     },
 
-    resetData: () => {
+    resetData() {
       localStorage.clear();
     },
 
-    throwFetchError: (response) => {
+    throwFetchError(response) {
       let errorMessage = `${response.status} ({response.statusText)`;
       let error = new Error(errorMessage);
       throw (error);
     },
 
-    renderAppWithData: (data) => {
+    renderAppWithData(data) {
       app.populatePrimaryData(data);
       app.populateWeatherDataRowOne(data);
       app.populateWeatherDataRowTwo(data);
@@ -353,7 +353,7 @@
       return true;
     },
 
-    getLocationNameFromLatLng: async (lat, lng) => {
+    async getLocationNameFromLatLng(lat, lng) {
       const url = `https://mikesprague-api.glitch.me/location-name/?lat=${lat}&lng=${lng}`;
       if (app.loadFromCache) {
         const cachedLocationData = app.getData(app.locationDataKey);
@@ -380,7 +380,7 @@
       }
     },
 
-    getWeather: async (lat, lng) => {
+    async getWeather(lat, lng) {
       const url = `https://mikesprague-api.glitch.me/weather/?lat=${lat}&lng=${lng}`;
       if (app.loadFromCache) {
         const cachedWeatherData = app.getData(app.weatherDataKey);
@@ -406,7 +406,7 @@
       }
     },
 
-    getLocationAndPopulateAppData: async () => {
+    async getLocationAndPopulateAppData() {
       app.showLoading();
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -434,7 +434,7 @@
       }
     },
 
-    init: () => {
+    init() {
       app.setBodyBgClass();
       app.initCache();
       app.getLocationAndPopulateAppData();
