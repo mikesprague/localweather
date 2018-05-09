@@ -20,11 +20,16 @@ Updating an old app I wrote to be more current
 - [x] update icons (latest fontawesome is svg)
   - note: weather icons still webfont
 - [x] buy domain
-- [ ] use caching to help with api limits
+  - localweather.io
+  - [x] set up CloudFlare DNS
+  - [x] enable DNSSEC
+  - [x] point DNS at GitHub to serve content
+  - [ ] set up SSL via GitHub (let's encrypt)
+- [x] use caching to help with api limits
   - [x] add localStorage caching (maybe indexdb later)
   - [x] set 10 minute limit before updating cache
   - [x] add note about cached data and time last updated
     - console.logging currently
     - [x] add function for nice time format (used moment.js)
-  - [ ] (?) add link to reset/clear cache
-- [ ] use async/await where it makes sense
+    - (?) add link to reset/clear cache
+- [x] use async/await where it makes sense
