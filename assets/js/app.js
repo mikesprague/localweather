@@ -143,10 +143,8 @@
                 position.coords.longitude
               ).then(json => {
                 ui.renderAppWithData(json);
-              }).then(loaded => {
-                if (loaded) {
+              }).then(() => {
                   ui.hideLoading();
-                }
               });
             }).catch(error => {
               cosole.error(`ERROR: ${error}`);
