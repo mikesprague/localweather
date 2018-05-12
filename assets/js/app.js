@@ -68,7 +68,7 @@
     },
   };
 
-  const ajax = {
+  const http = {
     async getLocationNameFromLatLng(lat, lng) {
       const url = `https://mikesprague-api.glitch.me/location-name/?lat=${lat}&lng=${lng}`;
       if (defaults.loadFromCache) {
@@ -81,7 +81,7 @@
             if (response.ok) {
               return response.json();
             } else {
-              ajax.throwFetchError(response);
+              http.throwFetchError(response);
             }
           })
           .then(json => {
@@ -126,12 +126,12 @@
       ui.showLoading();
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(position => {
-          ajax.getLocationNameFromLatLng(
+          http.getLocationNameFromLatLng(
             position.coords.latitude,
             position.coords.longitude
           ).then(name => {
             defaults.locationName = name;
-            ajax.getWeather(
+            http.getWeather(
               position.coords.latitude,
               position.coords.longitude
             ).then(json => {
@@ -444,7 +444,7 @@
     init() {
       ui.setBodyBgClass();
       cache.initCache();
-      ajax.getLocationAndPopulateAppData();
+      http.getLocationAndPopulateAppData();
     }
   };
 
