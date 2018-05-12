@@ -124,29 +124,37 @@
 
     async getLocationAndPopulateAppData() {
       ui.showLoading();
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(position => {
-          http.getLocationNameFromLatLng(
-            position.coords.latitude,
-            position.coords.longitude
-          ).then(name => {
-            defaults.locationName = name;
-            http.getWeather(
+      if (defaults.loadFromCache) {
+        const cachedLocationData = cache.getData(defaults.locationDataKey);
+        defaults.locationName = cachedLocationData.results[0].formatted_address;
+        const cachedWeatherData = cache.getData(defaults.weatherDataKey);
+        ui.renderAppWithData(cachedWeatherData);
+        ui.hideLoading();
+      } else {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(position => {
+            http.getLocationNameFromLatLng(
               position.coords.latitude,
               position.coords.longitude
-            ).then(json => {
-              ui.renderAppWithData(json);
-            }).then(loaded => {
-              if (loaded) {
-                ui.hideLoading();
-              }
+            ).then(name => {
+              defaults.locationName = name;
+              http.getWeather(
+                position.coords.latitude,
+                position.coords.longitude
+              ).then(json => {
+                ui.renderAppWithData(json);
+              }).then(loaded => {
+                if (loaded) {
+                  ui.hideLoading();
+                }
+              });
+            }).catch(error => {
+              cosole.error(`ERROR: ${error}`);
             });
-          }).catch(error => {
-            cosole.error(`ERROR: ${error}`);
           });
-        });
-      } else {
-        console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
+        } else {
+          console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
+        }
       }
     },
   };
@@ -377,8 +385,6 @@
       templates.populateForecastData(data);
       templates.populateLastUpdated(data);
       templates.populateLocation(defaults.locationName);
-      ui.initTooltips();
-      ui.hideLoading();
       return true;
     },
   };
@@ -445,6 +451,7 @@
       ui.setBodyBgClass();
       cache.initCache();
       http.getLocationAndPopulateAppData();
+      ui.initTooltips();
     }
   };
 
