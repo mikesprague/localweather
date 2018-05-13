@@ -8,6 +8,7 @@
     loadingSpinnerSelector: '.loading-spinner',
     locationDataKey: 'locationData',
     locationName: 'loading...',
+    timerHandle: 0,
     weatherDataKey: 'weatherData',
   };
 
@@ -155,6 +156,24 @@
         }
       }
     },
+
+    checkIfDataUpdateNeeded() {
+      if (!cache.useCache(cache.getData(defaults.cacheTimeKey))) {
+        defaults.useCache = false;
+        app.init();
+      }
+    },
+
+    initDataUpdateCheck() {
+      if (defaults.timerHandle) {
+        clearInterval(defaults.timerHandle);
+      } else {
+        clearInterval();
+      }
+      defaults.timerHandle = setInterval(function () {
+        data.checkIfDataUpdateNeeded();
+      }, 60000);
+    }
   };
 
   const templates = {
@@ -450,6 +469,7 @@
       cache.initCache();
       data.getLocationAndPopulateAppData();
       ui.initTooltips();
+      data.initDataUpdateCheck();
     }
   };
 
