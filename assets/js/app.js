@@ -415,14 +415,15 @@
     },
 
     renderAppWithData(data) {
-      ui.setFavicon(data);
-      ui.setTitle(data);
       templates.populatePrimaryData(data);
       templates.populateWeatherDataRowOne(data);
       templates.populateWeatherDataRowTwo(data);
       templates.populateForecastData(data);
       templates.populateLastUpdated(data);
       templates.populateLocation(defaults.locationName);
+      ui.setFavicon(data);
+      ui.setTitle(data);
+      ui.initTooltips();
       return true;
     },
   };
@@ -486,11 +487,11 @@
 
   const app = {
     init() {
-      ui.setBodyBgClass();
       cache.initCache();
       data.getLocationAndPopulateAppData();
-      ui.initTooltips();
       data.initDataUpdateCheck();
+      ui.setBodyBgClass();
+      ui.initTooltips();
     }
   };
 
