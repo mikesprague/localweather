@@ -9,6 +9,7 @@
     locationDataKey: 'locationData',
     locationName: 'loading...',
     timerHandle: 0,
+    title: 'Local Weather | Powered by Dark Sky',
     weatherDataKey: 'weatherData',
   };
 
@@ -303,6 +304,20 @@
       bodyEl.classList.add(ui.getBodyBgClass());
     },
 
+    setFavicon(data) {
+      const currentIcon = data.currently.icon;
+      let iconTags = document.getElementsByClassName('favicon');
+      const iconPath = `assets/images/favicons/${currentIcon}.png`;
+      Array.from(iconTags).forEach(function (iconTag) {
+        iconTag.setAttribute('href', iconPath);
+      });
+    },
+
+    setTitle(data) {
+      const newTitle = `${Math.floor(data.currently.temperature)}° ${data.currently.summary} | ${defaults.title}`;
+      window.document.title = newTitle;
+    },
+
     showEl(el) {
       if (el !== 'undefined') {
         switch (typeof el) {
@@ -400,6 +415,8 @@
     },
 
     renderAppWithData(data) {
+      ui.setFavicon(data);
+      ui.setTitle(data);
       templates.populatePrimaryData(data);
       templates.populateWeatherDataRowOne(data);
       templates.populateWeatherDataRowTwo(data);
