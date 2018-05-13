@@ -125,13 +125,21 @@ h2 {
   font-size: 0.5em;
 }
 
-.forecast {
+.forecast,
+.hourly {
   margin-top: 0.6em;
 }
 
 .forecast p {
   white-space: nowrap;
-  font-size: 1em;
+  font-size: 0.9em;
+  line-height: 1.3em;
+}
+
+.hourly p {
+  white-space: nowrap;
+  font-size: 0.75em;
+  line-height: 1.25em;
 }
 
 .template-error-message {

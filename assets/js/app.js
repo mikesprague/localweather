@@ -45,6 +45,14 @@
       return hours;
     },
 
+    getHourAndPeriodFromUnixTime(unixtime) {
+      const date = new Date(unixtime * 1000);
+      let hours = date.getHours();
+      const period = hours >= 12 ? "PM" : "AM";
+      hours = hours > 12 ? hours -= 12 : hours;
+      return `${hours}${period}`;
+    },
+
     getMinutesFromUnixTime(unixtime) {
       const date = new Date(unixtime * 1000);
       let minutes = date.getMinutes();
@@ -264,6 +272,21 @@
       }
     },
 
+    populateHourlyData(data, numHours = 11) {
+      for (let i = 1; i < numHours; i++) {
+        let hourlyTemplate = `
+              <p class="has-tooltip" title="${data.hourly.data[i].summary}">
+                <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[i].time)}</strong>
+                <br>
+                <i class="wi wi-forecast-io-${data.hourly.data[i].icon}"></i>
+                ${Math.floor(data.hourly.data[i].apparentTemperature)}&deg;
+              </p>
+            `;
+        let hourlyEl = document.querySelector(`.hourly-${i}`);
+        hourlyEl.innerHTML = hourlyTemplate;
+      }
+    },
+
     populateLastUpdated(data) {
       const lastUpdatedString = `
             Weather data cached at: ${datetime.formatUnixTimeAsLocalString(data.currently.time)}
@@ -403,6 +426,7 @@
       ui.showEl(rows);
       ui.showEl(hrAll);
       ui.showEl(poweredBy);
+      ui.initTooltips();
     },
 
     initTooltips() {
@@ -419,6 +443,7 @@
       templates.populateWeatherDataRowOne(data);
       templates.populateWeatherDataRowTwo(data);
       templates.populateForecastData(data);
+      templates.populateHourlyData(data);
       templates.populateLastUpdated(data);
       templates.populateLocation(defaults.locationName);
       ui.setFavicon(data);
