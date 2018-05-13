@@ -374,14 +374,18 @@
 
     hideUi() {
       const hrAll = document.querySelectorAll('hr');
+      const rows = document.querySelectorAll('.weather-data .row');
       const poweredBy = document.querySelector('.powered-by-dark-sky');
+      ui.hideEl(rows);
       ui.hideEl(hrAll);
       ui.hideEl(poweredBy);
     },
 
     showUi() {
       const hrAll = document.querySelectorAll('hr');
+      const rows = document.querySelectorAll('.weather-data .row');
       const poweredBy = document.querySelector('.powered-by-dark-sky');
+      ui.showEl(rows);
       ui.showEl(hrAll);
       ui.showEl(poweredBy);
     },
