@@ -16,20 +16,15 @@
   <meta name="keywords" content="weather, local, dark sky, local weather">
   <meta name="author" content="Michael Sprague">
   <title>Local Weather | Powered by Dark Sky</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-oi8o31xSQq8S0RpBcb4FaLB8LJi9AT8oIdmS1QldR8Ui7KUQjNAnDlJjp55Ba8FG" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" integrity="sha256-KcCcakqMaamBrTFaxb9tkrP2iq1X8vUnsm86W8pRcgI=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons-wind.min.css" integrity="sha256-huyMLXBzKbUp+a2DHlEUmuJSmc2SQZiu/jbpELjYGSE=" crossorigin="anonymous" />
   <link href="assets/css/styles.css" rel="stylesheet">
   <link rel="icon" class="favicon" href="assets/images/favicons/cloud-refresh.png">
   <link rel="apple-touch-icon" class="favicon" href="assets/images/favicons/cloud-refresh.png">
   <link rel="mask-icon" class="favicon" href="assets/images/favicons/cloud-refresh.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <script defer src="https://pro.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-d84LGg2pm9KhR4mCAs3N29GQ4OYNy+K+FBHX8WhimHpPm86c839++MDABegrZ3gn" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -42,55 +37,55 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-12 location"></div>
+        <div class="col-12 location"></div>
       </div>
-      <hr class="hidden">
+      <hr class="hide-me">
       
-      <div class="row primary-conditions-data"></div>
-      <div class="row weather-data-row-1"></div>
-      <div class="row weather-data-row-2"></div>
-      <hr class="hidden">
+      <div class="row align-items-start primary-conditions-data"></div>
+      <div class="row align-items-start weather-data-row-1"></div>
+      <div class="row align-items-start weather-data-row-2"></div>
+      <hr class="hide-me">
       
-      <div class="row hourly">
-        <div class="col-xs-1"></div>
-        <div class="col-sm-1 col-xs-2 text-center hourly-1"><p></p></div>
-        <div class="col-sm-1 col-xs-2 text-center hourly-2"><p></p></div>
-        <div class="col-sm-1 col-xs-2 text-center hourly-3"><p></p></div>
-        <div class="col-sm-1 col-xs-2 text-center hourly-4"><p></p></div>
-        <div class="col-sm-1 col-xs-2 text-center hourly-5"><p></p></div>
-        <div class="hidden-xs col-sm-1 text-center hourly-6"><p></p></div>
-        <div class="hidden-xs col-sm-1 text-center hourly-7"><p></p></div>
-        <div class="hidden-xs col-sm-1 text-center hourly-8"><p></p></div>
-        <div class="hidden-xs col-sm-1 text-center hourly-9"><p></p></div>
-        <div class="hidden-xs col-sm-1 text-center hourly-10"><p></p></div>
-        <div class="col-xs-1"></div>
+      <div class="row align-items-start hourly">
+        <div class="col-1"></div>
+        <div class="col-sm-1 col-2 text-center hourly-1"><p></p></div>
+        <div class="col-sm-1 col-2 text-center hourly-2"><p></p></div>
+        <div class="col-sm-1 col-2 text-center hourly-3"><p></p></div>
+        <div class="col-sm-1 col-2 text-center hourly-4"><p></p></div>
+        <div class="col-sm-1 col-2 text-center hourly-5"><p></p></div>
+        <div class="d-none d-sm-block col-sm-1 text-center hourly-6"><p></p></div>
+        <div class="d-none d-sm-block col-sm-1 text-center hourly-7"><p></p></div>
+        <div class="d-none d-sm-block col-sm-1 text-center hourly-8"><p></p></div>
+        <div class="d-none d-sm-block col-sm-1 text-center hourly-9"><p></p></div>
+        <div class="d-none d-sm-block col-sm-1 text-center hourly-10"><p></p></div>
+        <div class="col-1"></div>
       </div>
-      <hr class="hidden">
+      <hr class="hide-me">
 
-      <div class="row forecast">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-2 text-center forecast-0"><p></p></div>
-        <div class="col-xs-2 text-center forecast-1"><p></p></div>
-        <div class="col-xs-2 text-center forecast-2"><p></p></div>
-        <div class="col-xs-2 text-center forecast-3"><p></p></div>
-        <div class="col-xs-2 text-center forecast-4"><p></p></div>
-        <div class="col-xs-1"></div>
+      <div class="row align-items-start forecast">
+        <div class="col text-center forecast-0"><p></p></div>
+        <div class="col text-center forecast-1"><p></p></div>
+        <div class="col text-center forecast-2"><p></p></div>
+        <div class="col text-center forecast-3"><p></p></div>
+        <div class="col text-center forecast-4"><p></p></div>
+        <div class="d-none d-sm-block col text-center forecast-5"><p></p></div>
+        <div class="d-none d-sm-block col text-center forecast-6"><p></p></div>
       </div>
-      <hr class="hidden">
+      <hr class="hide-me">
 
       <div class="row">
-        <div class="col-xs-12 last-updated"></div>
+        <div class="col-12 last-updated"></div>
       </div>
 
       <div class="row">
-        <div class="col-xs-12 powered-by-dark-sky hidden">
+        <div class="col-12 powered-by-dark-sky hide-me">
           <ul class="list-inline">
-            <li>
+            <li class="list-inline-item">
               <span title="Coded by Michael Sprague">
                 <i class="far fa-code"></i> by Michael Sprague
               </span>
             </li>
-            <li>
+            <li class="list-inline-item">
               <a href="https://darksky.net/poweredby/" target="_blank" title="Powered by Dark Sky">
                 <i class="fas fa-tint"></i> Powered by Dark Sky
               </a>
