@@ -1,6 +1,13 @@
 # Local Weather App
 
-Updating an old app I wrote to be more current
+Updating an old app I wrote to be somewhat more current/modernized
+
+## Current Features and Requirements
+
+- App uses browser for geolocation
+- Powered by Dark Sky API
+- Uses own API (barebones node/express app) to alleviates CORS issues
+- Uses localStorage for caching (limits Dark Sky requests to every 10 minutes)
 
 ## Modernize Weather App To Do (WIP)
 
@@ -13,8 +20,9 @@ Updating an old app I wrote to be more current
   - [x] functions to get weather
   - [x] lat/long to friendly location name (Google Maps API)
   - [x] weather icon names
+- [ ] Add ip geolocation when browser fails or is denied
 - [x] mustache -> js template literals
-- [ ] bootstrap -> css grid or flexbox
+- [ ] bootstrap -> bulma (maybe css grid later)
 - [ ] css -> scss
   - [ ] npm scripts for scss
 - [x] update icons (latest fontawesome is svg)
