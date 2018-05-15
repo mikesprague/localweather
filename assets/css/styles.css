@@ -29,7 +29,7 @@ body {
   padding: 0;
 }
 
-.hidden {
+.hide-me {
   display: none !important;
 }
 

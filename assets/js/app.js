@@ -3,7 +3,7 @@
     cacheTimeKey: 'cacheTime',
     cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
     errorMessageSelector: '.error-message',
-    hideClassName: 'hidden',
+    hideClassName: 'hide-me',
     loadFromCache: false,
     loadingSpinnerSelector: '.loading-spinner',
     locationDataKey: 'locationData',
