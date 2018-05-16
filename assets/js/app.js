@@ -50,6 +50,7 @@
       let hours = date.getHours();
       const period = hours >= 12 ? "PM" : "AM";
       hours = hours > 12 ? hours -= 12 : hours;
+      hours = hours === 0 ? hours = 12 : hours;
       return `${hours}${period}`;
     },
 
