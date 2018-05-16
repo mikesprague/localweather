@@ -198,12 +198,18 @@
 
     populatePrimaryData(data) {
       const primaryDataTemplate = `
-            <div class="col-xs-3 current-icon"><p><i class="wi wi-forecast-io-${data.currently.icon} has-tooltip" title="${data.currently.summary}"></i></p></div>
-            <div class="col-xs-5 text-center current-conditions">
+            <div class="col-3 current-icon">
+              <p class="has-tooltip text-center" title="${data.currently.summary}">
+                <i class="wi wi-forecast-io-${data.currently.icon}"></i>
+              </p>
+            </div>
+            <div class="col-5 text-center current-conditions">
                 <h2>${data.currently.summary}</h2>
             </div>
-            <div class="col-xs-4 current-temp has-tooltip text-right" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
-              <p class="primary-unit text-right">${Math.floor(data.currently.temperature)}&deg;</p>
+            <div class="col-4 current-temp text-right">
+              <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
+                ${Math.floor(data.currently.temperature)}&deg;
+              </p>
             </div>
           `;
       const priamryDataEl = document.querySelector('.primary-conditions-data');
@@ -212,13 +218,13 @@
 
     populateWeatherDataRowOne(data) {
       const weatherDataRowOneTemplate = `
-            <div class="col-xs-4 text-center has-tooltip" title="Wind Speed">
+            <div class="col text-center has-tooltip" title="Wind Speed">
               <p><i class="wi wi-wind wi-towards-${data.currently.windBearing}"></i> ${Math.round(data.currently.windSpeed)} mph</p>
             </div>
-            <div class="col-xs-4 text-center has-tooltip" title="Humidity">
+            <div class="col text-center has-tooltip" title="Humidity">
               <p><i class="wi wi-humidity"></i> ${Math.round(data.currently.humidity * 100)}%</p>
             </div>
-            <div class="col-xs-4 text-center has-tooltip" title="Today's Sunrise">
+            <div class="col text-center has-tooltip" title="Today's Sunrise">
               <p><i class="wi wi-sunrise"></i> ${datetime.formatUnixTimeForSun(data.daily.data[0].sunriseTime)} am</p>
             </div>
           `;
@@ -228,13 +234,13 @@
 
     populateWeatherDataRowTwo(data) {
       const weatherDataRowTwoTemplate = `
-            <div class="col-xs-4 text-center has-tooltip" title="Barometric Pressue">
+            <div class="col text-center has-tooltip" title="Barometric Pressue">
               <p><i class="wi wi-barometer"></i> ${data.currently.pressure}in</i></p>
             </div>
-            <div class="col-xs-4 text-center has-tooltip" title="Visibility">
+            <div class="col text-center has-tooltip" title="Visibility">
               <p><i class="fa fa-eye"></i> ${data.currently.visibility} mi</p>
             </div>
-            <div class="col-xs-4 text-center has-tooltip" title="Today's Sunset">
+            <div class="col text-center has-tooltip" title="Today's Sunset">
               <p><i class="wi wi-sunset"></i> ${datetime.formatUnixTimeForSun(data.daily.data[0].sunsetTime)} pm</p>
             </div>
           `;
