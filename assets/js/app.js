@@ -256,7 +256,7 @@
       errorMessageEl.innerHTML = errorMessageTemplate;
     },
 
-    populateForecastData(data, numDays = 5) {
+    populateForecastData(data, numDays = 7) {
       for (let i = 0; i < numDays; i++) {
         let forecastTemplate = `
               <p class="has-tooltip" title="${data.daily.data[i].summary}">
