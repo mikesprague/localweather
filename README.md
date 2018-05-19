@@ -22,7 +22,7 @@ Updating an old app I wrote to be somewhat more current/modernized
   - [x] weather icon names
 - [ ] Add ip geolocation when browser fails or is denied
 - [x] mustache -> js template literals
-- [ ] bootstrap -> bulma (maybe css grid later)
+- [ ] bootstrap -> upgrade (maybe css grid later)
 - [ ] css -> scss
   - [ ] npm scripts for scss
 - [x] update icons (latest fontawesome is svg)
