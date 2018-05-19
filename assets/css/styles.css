@@ -45,7 +45,7 @@ p {
 }
 
 h1 small,
-h2 {
+h2 small {
   color: rgb(205, 205, 205);
 }
 
@@ -57,7 +57,7 @@ h1 {
   font-weight: bold;
 }
 
-h1>small {
+h1 small {
   white-space: nowrap;
   letter-spacing: 0.5em;
   text-transform: uppercase;
@@ -65,10 +65,14 @@ h1>small {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.75em;
   text-transform: capitalize;
   letter-spacing: 0.1em;
   text-align: center;
+}
+
+h2 small {
+  font-size: 0.5em;
 }
 
 .current-icon p,
