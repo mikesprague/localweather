@@ -209,7 +209,7 @@
             </div>
             <div class="col-3 current-temp text-center">
               <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
-                ${Math.floor(data.currently.temperature)}&deg;
+                ${Math.floor(data.currently.temperature)}<i class="wi wi-degrees"></i>
               </p>
             </div>
           `;
