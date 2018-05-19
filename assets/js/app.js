@@ -204,10 +204,10 @@
                 <i class="wi wi-forecast-io-${data.currently.icon}"></i>
               </p>
             </div>
-            <div class="col-5 text-center current-conditions">
+            <div class="col-6 text-center current-conditions">
                 <h2>${data.currently.summary}</h2>
             </div>
-            <div class="col-4 current-temp text-right">
+            <div class="col-3 current-temp text-center">
               <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
                 ${Math.floor(data.currently.temperature)}&deg;
               </p>

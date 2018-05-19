@@ -84,11 +84,6 @@ h2 {
   white-space: nowrap;
 }
 
-.current-conditions h2, 
-.current-icon i {
-  margin-left: 20%;
-}
-
 .current-temp p {
   font-size: 4em;
   line-height: 100%;
