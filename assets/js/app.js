@@ -201,11 +201,14 @@
       const primaryDataTemplate = `
             <div class="col-3 current-icon">
               <p class="has-tooltip text-center" title="${data.currently.summary}">
-                <i class="wi wi-forecast-io-${data.currently.icon}"></i>
+                <i class="wi wi-forecast-io-${data.currently.icon} m-0"></i>
               </p>
             </div>
             <div class="col-6 text-center current-conditions">
-                <h2>${data.currently.summary}</h2>
+                <h2>
+                  ${data.currently.summary}
+                  <small class="d-none">${data.daily.data[0].summary}</small>
+                </h2>
             </div>
             <div class="col-3 current-temp text-center">
               <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
