@@ -28,9 +28,6 @@
 </head>
 <body>
 
-  <div class="container">
-
-    <div class="weather-data">
   <div class="container loading-spinner">
     <div class="row align-items-center">
       <div class="col text-center">
@@ -38,67 +35,67 @@
       </div>
     </div>
   </div>
+  
+  <div class="container weather-data">
+    <div class="row">
+      <div class="col-12 location"></div>
+    </div>
+    <hr class="hide-me">
+    
+    <div class="row align-items-center primary-conditions-data"></div>
+    <div class="row align-items-start weather-data-row-1"></div>
+    <div class="row align-items-start weather-data-row-2"></div>
+    <hr class="hide-me">
+    
+    <div class="row align-items-start hourly">
+      <div class="col-1 d-lg-none"></div>
+      <div class="col-sm-1 col-2 text-center hourly-1"></div>
+      <div class="col-sm-1 col-2 text-center hourly-2"></div>
+      <div class="col-sm-1 col-2 text-center hourly-3"></div>
+      <div class="col-sm-1 col-2 text-center hourly-4"></div>
+      <div class="col-sm-1 col-2 text-center hourly-5"></div>
+      <div class="d-none d-sm-block col-sm-1 text-center hourly-6"></div>
+      <div class="d-none d-sm-block col-sm-1 text-center hourly-7"></div>
+      <div class="d-none d-sm-block col-sm-1 text-center hourly-8"></div>
+      <div class="d-none d-sm-block col-sm-1 text-center hourly-9"></div>
+      <div class="d-none d-sm-block col-sm-1 text-center hourly-10"></div>
+      <div class="d-none d-sm-block col-sm-1 text-center hourly-11"></div>
+      <div class="d-none d-sm-block col-sm-1 text-center hourly-12"></div>
+      <div class="col-1 d-lg-none"></div>
+    </div>
+    <hr class="hide-me">
 
-      <div class="row">
-        <div class="col-12 location"></div>
-      </div>
-      <hr class="hide-me">
-      
-      <div class="row align-items-start primary-conditions-data"></div>
-      <div class="row align-items-start weather-data-row-1"></div>
-      <div class="row align-items-start weather-data-row-2"></div>
-      <hr class="hide-me">
-      
-      <div class="row align-items-start hourly">
-        <div class="col-1"></div>
-        <div class="col-sm-1 col-2 text-center hourly-1"><p></p></div>
-        <div class="col-sm-1 col-2 text-center hourly-2"><p></p></div>
-        <div class="col-sm-1 col-2 text-center hourly-3"><p></p></div>
-        <div class="col-sm-1 col-2 text-center hourly-4"><p></p></div>
-        <div class="col-sm-1 col-2 text-center hourly-5"><p></p></div>
-        <div class="d-none d-sm-block col-sm-1 text-center hourly-6"><p></p></div>
-        <div class="d-none d-sm-block col-sm-1 text-center hourly-7"><p></p></div>
-        <div class="d-none d-sm-block col-sm-1 text-center hourly-8"><p></p></div>
-        <div class="d-none d-sm-block col-sm-1 text-center hourly-9"><p></p></div>
-        <div class="d-none d-sm-block col-sm-1 text-center hourly-10"><p></p></div>
-        <div class="col-1"></div>
-      </div>
-      <hr class="hide-me">
+    <div class="row align-items-start forecast">
+      <div class="col text-center forecast-0"></div>
+      <div class="col text-center forecast-1"></div>
+      <div class="col text-center forecast-2"></div>
+      <div class="col text-center forecast-3"></div>
+      <div class="col text-center forecast-4"></div>
+      <div class="d-none d-sm-block col text-center forecast-5"></div>
+      <div class="d-none d-sm-block col text-center forecast-6"></div>
+    </div>
+    <hr class="hide-me">
 
-      <div class="row align-items-start forecast">
-        <div class="col text-center forecast-0"><p></p></div>
-        <div class="col text-center forecast-1"><p></p></div>
-        <div class="col text-center forecast-2"><p></p></div>
-        <div class="col text-center forecast-3"><p></p></div>
-        <div class="col text-center forecast-4"><p></p></div>
-        <div class="d-none d-sm-block col text-center forecast-5"><p></p></div>
-        <div class="d-none d-sm-block col text-center forecast-6"><p></p></div>
-      </div>
-      <hr class="hide-me">
-
-      <div class="row">
-        <div class="col-12 last-updated"></div>
-      </div>
-
-      <div class="row">
-        <div class="col-12 powered-by-dark-sky hide-me">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <span title="Coded by Michael Sprague">
-                <i class="far fa-code"></i> by Michael Sprague
-              </span>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://darksky.net/poweredby/" target="_blank" title="Powered by Dark Sky">
-                <i class="fas fa-tint"></i> Powered by Dark Sky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
+    <div class="row">
+      <div class="col-12 last-updated"></div>
     </div>
 
+    <div class="row">
+      <div class="col-12 powered-by-dark-sky hide-me">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <span title="Coded by Michael Sprague">
+              <i class="far fa-code"></i> by Michael Sprague
+            </span>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://darksky.net/poweredby/" target="_blank" title="Powered by Dark Sky">
+              <i class="fas fa-tint"></i> Powered by Dark Sky
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/2.5.2/tippy.all.min.js" integrity="sha256-EFZoge4iactaO4A0YELFBg3SaveV/nICew6pctkWDpU=" crossorigin="anonymous"></script>
