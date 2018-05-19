@@ -279,17 +279,18 @@
       }
     },
 
-    populateHourlyData(data, numHours = 11) {
-      for (let i = 1; i < numHours; i++) {
+    populateHourlyData(data, numHours = 12) {
+      for (let i = 0; i < numHours; i++) {
+        let next = i + 1;
         let hourlyTemplate = `
-              <p class="has-tooltip" title="${data.hourly.data[i].summary}">
-                <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[i].time)}</strong>
+              <p class="has-tooltip" title="${data.hourly.data[next].summary}">
+                <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
                 <br>
-                <i class="wi wi-forecast-io-${data.hourly.data[i].icon}"></i>
-                ${Math.floor(data.hourly.data[i].apparentTemperature)}&deg;
+                <i class="wi wi-forecast-io-${data.hourly.data[next].icon}"></i>
+                ${Math.floor(data.hourly.data[next].apparentTemperature)}&deg;
               </p>
             `;
-        let hourlyEl = document.querySelector(`.hourly-${i}`);
+        let hourlyEl = document.querySelector(`.hourly-${next}`);
         hourlyEl.innerHTML = hourlyTemplate;
       }
     },
