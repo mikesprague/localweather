@@ -201,7 +201,7 @@
       const primaryDataTemplate = `
             <div class="col-3 current-icon">
               <p class="has-tooltip text-center" title="${data.currently.summary}">
-                <i class="wi wi-forecast-io-${data.currently.icon} m-0"></i>
+                <i class="wi wi-forecast-io-${data.currently.icon}"></i>
               </p>
             </div>
             <div class="col-6 text-center current-conditions">
@@ -286,7 +286,7 @@
       for (let i = 0; i < numHours; i++) {
         let next = i + 1;
         let hourlyTemplate = `
-              <p class="has-tooltip" title="${data.hourly.data[next].summary}">
+              <p class="has-tooltip" title="${data.hourly.data[next].summary}<br>${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}">
                 <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
                 <br>
                 <i class="wi wi-forecast-io-${data.hourly.data[next].icon}"></i>
