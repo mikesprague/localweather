@@ -3,14 +3,8 @@ html, body {
   color: rgb(255, 255, 255);
 }
 
-.loading-spinner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 5em;
-  margin: 25% auto;
+.loading-spinner > div {
+  height: 100vh;
 }
 
 .weather-data {
