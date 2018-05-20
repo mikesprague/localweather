@@ -2,7 +2,6 @@
 
 html,
 body {
-  color: $color-text-default;
   font-family: "Open Sans Condensed", "Open Sans", sans-serif;
 }
 
@@ -55,18 +54,34 @@ h2 {
 
 .morning {
   background-color: $color-morning;
+  color: $color-text-default;
 }
 
 .day {
   background-color: $color-day;
+  color: $color-text-default;
+}
+
+.day-cloudy,
+.morning-cloudy {
+  background-color: $color-cloudy-day;
+  color: $color-text-default;
 }
 
 .evening {
   background-color: $color-evening;
+  color: $color-text-night;
 }
 
 .night {
   background-color: $color-night;
+  color: $color-text-night;
+}
+
+.night-cloudy,
+.evening-cloudy {
+  background-color: $color-cloudy-night;
+  color: $color-text-night;
 }
 
 .current-icon,
