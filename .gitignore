@@ -3,3 +3,15 @@
 .vscode-insiders/
 .history/
 *.code-workspace
+
+# Sass files/folders
+.sass-cache/
+*.css.map
+
+# Node/npm/yarn
+node_modules/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
