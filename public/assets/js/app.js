@@ -285,14 +285,17 @@
     populateHourlyData(data, numHours = 12) {
       for (let i = 0; i < numHours; i++) {
         let next = i + 1;
+        let precipitationText = Math.floor(data.hourly.data[next].precipProbability * 100) ?
+          `${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}` :
+          "No precipitation";
         let hourlyTemplate = `
-              <p class="has-tooltip" title="${data.hourly.data[next].summary}<br>${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}">
-                <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
-                <br>
-                <i class="wi wi-forecast-io-${data.hourly.data[next].icon}"></i>
-                ${Math.floor(data.hourly.data[next].apparentTemperature)}&deg;
-              </p>
-            `;
+          <p class="has-tooltip" title="${data.hourly.data[next].summary}<br>${precipitationText}">
+            <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
+            <br>
+            <i class="wi wi-forecast-io-${data.hourly.data[next].icon}"></i>
+            ${Math.floor(data.hourly.data[next].apparentTemperature)}&deg;
+          </p>
+        `;
         let hourlyEl = document.querySelector(`.hourly-${next}`);
         hourlyEl.innerHTML = hourlyTemplate;
       }
