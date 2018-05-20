@@ -1,0 +1,32 @@
+{
+  "name": "local-weather",
+  "version": "0.7.1",
+  "description": "Minimalist local weather app powered by Dark Sky",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "node-sass --watch src/scss -o build/css",
+    "sass:compile": "node-sass src/scss -o build/css",
+    "sass:lint": "sass-lint --verbose --no-exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikesprague/local-weather.git"
+  },
+  "author": {
+    "name": "Michael Sprague",
+    "email": "mikesprague@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikesprague/local-weather/issues"
+  },
+  "homepage": "https://localweather.io",
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "devDependencies": {
+    "sass-lint": "^1.12.1"
+  }
+}
