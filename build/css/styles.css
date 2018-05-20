@@ -64,14 +64,13 @@ h2 {
   background-color: #646464;
   color: #f0ede5; }
 
+.weather-data-row-1 .col p,
+.weather-data-row-2 .col p {
+  line-height: 1em;
+  margin-bottom: .75em; }
+
 .current-icon p,
-.current-temp p,
-.current-pressure p,
-.current-wind p,
-.current-sunrise-sunset p,
-.current-humidity p,
-.current-visibility p,
-.current-feels-like p {
+.current-temp p {
   cursor: default;
   text-align: center;
   white-space: nowrap; }
