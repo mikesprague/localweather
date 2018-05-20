@@ -1,4 +1,5 @@
-$color-text-default: #f0ede5; // #fff
+$color-text-default: #fff;
+$color-text-night: #f0ede5;
 $color-text-secondary: ​#b4b7ba;
 
 $color-morning: #c35114;
@@ -7,8 +8,10 @@ $color-evening: #462f4b;
 $color-night: #133150;
 $color-sunny: #ecdb54;
 
-$color-cloudy-day: #999;
-$color-cloudy-night: #666;
+$color-cloudy-day: #979797;
+$color-cloudy-night: #646464;
+$color-cloudy-morning: $color-cloudy-day;
+$color-cloudy-evening: $color-cloudy-night;
 
 $color-gray-light: #ccc;
 $color-gray-medium: ​#a0a0a0;
