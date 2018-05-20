@@ -204,7 +204,7 @@
                 <i class="wi wi-forecast-io-${data.currently.icon}"></i>
               </p>
             </div>
-            <div class="col-6 text-center current-conditions">
+            <div class="col-6 text-center current-conditions p-0">
                 <h2>
                   ${data.currently.summary}
                   <small class="d-none">${data.daily.data[0].summary}</small>
