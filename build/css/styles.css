@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html,
 body {
-  color: #fff;
+  color: #f0ede5;
   font-family: "Open Sans Condensed", "Open Sans", sans-serif; }
 
 p {
@@ -14,7 +14,7 @@ h1 {
   text-align: center;
   text-transform: capitalize; }
   h1 small {
-    color: ​ #cdcdcd;
+    color: ​ #b4b7ba;
     font-weight: bold;
     letter-spacing: .5em;
     text-transform: uppercase;
@@ -26,7 +26,7 @@ h2 {
   text-align: center;
   text-transform: capitalize; }
   h2 small {
-    color: ​ #cdcdcd;
+    color: ​ #b4b7ba;
     font-size: 0.5em; }
 
 .loading-spinner > div {
@@ -43,13 +43,13 @@ h2 {
   background-color: #c35114; }
 
 .day {
-  background-color: #ffdb00; }
+  background-color: #6f9fd8; }
 
 .evening {
   background-color: #462f4b; }
 
 .night {
-  background-color: #133150; }
+  background-color: #2e4a62; }
 
 .current-icon p,
 .current-temp p,
