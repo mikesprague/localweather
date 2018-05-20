@@ -1,0 +1,170 @@
+@charset "UTF-8";
+html,
+body {
+  color: #fff;
+  font-family: "Open Sans Condensed", "Open Sans", sans-serif; }
+
+p {
+  font-size: 1.25em; }
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: .25em;
+  text-align: center;
+  text-transform: capitalize; }
+  h1 small {
+    color: ​ #cdcdcd;
+    font-weight: bold;
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    white-space: nowrap; }
+
+h2 {
+  font-size: 1.75em;
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: capitalize; }
+  h2 small {
+    color: ​ #cdcdcd;
+    font-size: 0.5em; }
+
+.loading-spinner > div {
+  height: 100vh; }
+
+.weather-data {
+  margin-top: 1.25em;
+  min-height: 12.5em; }
+
+.hide-me {
+  display: none !important; }
+
+.morning {
+  background-color: #c35114; }
+
+.day {
+  background-color: #1889c1; }
+
+.evening {
+  background-color: #462f4b; }
+
+.night {
+  background-color: #133150; }
+
+.current-icon p,
+.current-temp p,
+.current-pressure p,
+.current-wind p,
+.current-sunrise-sunset p,
+.current-humidity p,
+.current-visibility p,
+.current-feels-like p {
+  cursor: default;
+  text-align: center;
+  white-space: nowrap; }
+
+.current-temp p {
+  font-size: 4em;
+  line-height: 100%;
+  margin-left: 20%; }
+
+.current-icon i {
+  font-size: 2.75em;
+  margin-top: .2em; }
+
+.last-updated p {
+  font-size: .9em;
+  margin-top: 0;
+  text-align: center; }
+
+.powered-by-dark-sky ul {
+  font-size: .5em;
+  margin-top: -.25em;
+  text-align: center; }
+
+.forecast,
+.hourly {
+  margin-top: .6em; }
+
+.forecast p {
+  font-size: .9em;
+  line-height: 1.3em;
+  white-space: nowrap; }
+
+.hourly p {
+  font-size: .75em;
+  line-height: 1.25em;
+  white-space: nowrap; }
+
+.template-error-message {
+  display: block; }
+
+hr {
+  margin: .4em auto; }
+
+.main-container {
+  margin-bottom: -3.75em; }
+  .main-container::after {
+    content: "";
+    display: block; }
+
+a.link-toggle-units,
+a.link-toggle-units:visited {
+  color: ​ #a0a0a0;
+  text-decoration: none; }
+
+a.link-toggle-units:hover,
+a.link-toggle-units:active {
+  color: #ccc;
+  text-decoration: none;
+  border-top: 1px dashed #ccc;
+  border-bottom: 1px dashed #ccc; }
+
+.powered-by-dark-sky a {
+  color: #ccc;
+  text-decoration: none; }
+  .powered-by-dark-sky a:visited {
+    color: #ccc;
+    text-decoration: none; }
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out; }
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0); }
+  20%,
+  60% {
+    transform: rotate(-25deg); }
+  40%,
+  80% {
+    transform: rotate(10deg); } }
+
+@media only screen and (max-width: 340px) {
+  p {
+    font-size: 1em; } }
+
+@media only screen and (max-width: 440px) {
+  body {
+    font-size: 1rem; }
+  h2 {
+    margin: 0 auto auto .75em; } }
+
+@media only screen and (max-width: 500px) {
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out; }
+  .github-corner:hover .octo-arm {
+    animation: none; }
+  .powered-by-dark-sky ul {
+    font-size: .75em; }
+  .last-updated p {
+    font-size: 1em; } }
+
+@media only screen and (min-width: 900px) {
+  body {
+    font-size: 1.5rem; } }
+
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 2rem; } }
