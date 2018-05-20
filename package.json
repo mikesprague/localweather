@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.7.1",
+  "version": "0.7.4",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "index.js",
@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass:watch": "node-sass --watch src/scss -o build/css",
     "sass:compile": "node-sass src/scss -o build/css",
+    "sass:build": "node-sass src/scss -o build/css && cp build/css/styles.css public/assets/css/styles.css",
     "sass:lint": "sass-lint --verbose --no-exit"
   },
   "repository": {
