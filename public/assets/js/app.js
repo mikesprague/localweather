@@ -318,10 +318,10 @@
   };
 
   const ui = {
-    getBodyBgClass() {
-      const hourNum = new Date().getHours();
+    getBodyBgClass(data) {
       let bodyClass = 'night';
 
+      const hourNum = new Date().getHours();
       if (hourNum >= 5 && hourNum <= 7) {
         bodyClass = 'morning';
       } else if (hourNum > 7 && hourNum <= 17) {
@@ -330,12 +330,17 @@
         bodyClass = 'evening';
       }
 
+      if (data) {
+        const cloudCover = Math.floor(data.currently.cloudCover * 100);
+        bodyClass = cloudCover > 50 ? `${bodyClass}-cloudy` : bodyClass;
+      }
+
       return bodyClass;
     },
 
-    setBodyBgClass() {
+    setBodyBgClass(className) {
       const bodyEl = document.querySelector('body');
-      bodyEl.classList.add(ui.getBodyBgClass());
+      bodyEl.classList.add(className);
     },
 
     setFavicon(data) {
@@ -450,6 +455,7 @@
     },
 
     renderAppWithData(data) {
+      ui.setBodyBgClass(ui.getBodyBgClass(data));
       templates.populatePrimaryData(data);
       templates.populateWeatherDataRowOne(data);
       templates.populateWeatherDataRowTwo(data);
@@ -526,7 +532,7 @@
       cache.initCache();
       data.getLocationAndPopulateAppData();
       data.initDataUpdateCheck();
-      ui.setBodyBgClass();
+      ui.setBodyBgClass(ui.getBodyBgClass());
       ui.initTooltips();
     }
   };
