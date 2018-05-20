@@ -1,7 +1,6 @@
 @charset "UTF-8";
 html,
 body {
-  color: #f0ede5;
   font-family: "Open Sans Condensed", "Open Sans", sans-serif; }
 
 p {
@@ -27,7 +26,7 @@ h2 {
   text-transform: capitalize; }
   h2 small {
     color: ​ #b4b7ba;
-    font-size: 0.5em; }
+    font-size: .5em; }
 
 .loading-spinner > div {
   height: 100vh; }
@@ -40,16 +39,30 @@ h2 {
   display: none !important; }
 
 .morning {
-  background-color: #c35114; }
+  background-color: #c35114;
+  color: #fff; }
 
 .day {
-  background-color: #1889c1; }
+  background-color: #1889c1;
+  color: #fff; }
+
+.day-cloudy,
+.morning-cloudy {
+  background-color: #979797;
+  color: #fff; }
 
 .evening {
-  background-color: #462f4b; }
+  background-color: #462f4b;
+  color: #f0ede5; }
 
 .night {
-  background-color: #133150; }
+  background-color: #133150;
+  color: #f0ede5; }
+
+.night-cloudy,
+.evening-cloudy {
+  background-color: #646464;
+  color: #f0ede5; }
 
 .current-icon p,
 .current-temp p,
@@ -108,17 +121,15 @@ hr {
     content: "";
     display: block; }
 
-a.link-toggle-units,
-a.link-toggle-units:visited {
+.link-toggle-units, .link-toggle-units:visited {
   color: ​ #a0a0a0;
   text-decoration: none; }
 
-a.link-toggle-units:hover,
-a.link-toggle-units:active {
-  color: #ccc;
-  text-decoration: none;
+.link-toggle-units:hover, .link-toggle-units:active {
+  border-bottom: 1px dashed #ccc;
   border-top: 1px dashed #ccc;
-  border-bottom: 1px dashed #ccc; }
+  color: #ccc;
+  text-decoration: none; }
 
 .powered-by-dark-sky a {
   color: #ccc;
