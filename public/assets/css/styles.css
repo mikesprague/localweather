@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html,
 body {
-  color: #fff;
+  color: #f0ede5;
   font-family: "Open Sans Condensed", "Open Sans", sans-serif; }
 
 p {
@@ -14,7 +14,7 @@ h1 {
   text-align: center;
   text-transform: capitalize; }
   h1 small {
-    color: ​ #cdcdcd;
+    color: ​ #b4b7ba;
     font-weight: bold;
     letter-spacing: .5em;
     text-transform: uppercase;
@@ -26,7 +26,7 @@ h2 {
   text-align: center;
   text-transform: capitalize; }
   h2 small {
-    color: ​ #cdcdcd;
+    color: ​ #b4b7ba;
     font-size: 0.5em; }
 
 .loading-spinner > div {
