@@ -1,4 +1,4 @@
-## Modernize Weather App To Do (WIP)
+# Modernize Weather App To Do (WIP)
 
 - [x] jQuery -> vanilla JS/ES6
   - [x] $ selectors
@@ -11,22 +11,24 @@
   - [x] weather icon names
 - [ ] Add ip geolocation when browser fails or is denied
 - [x] mustache -> js template literals
-- [ ] bootstrap -> bulma (maybe css grid later)
-- [ ] css -> scss
-  - [ ] npm scripts for scss
+- [x] bootstrap 3.3.7 -> bootstrap 4.1.1
+  - (?)bootstrap -> bulma, flexbox, or css-grid
+- [x] css -> scss
+  - [x] npm scripts for scss
 - [x] update icons (latest fontawesome is svg)
   - note: weather icons still webfont
 - [x] buy domain
   - localweather.io
   - [x] set up CloudFlare DNS
   - [x] enable DNSSEC
-  - [x] point DNS at GitHub to serve content
-  - [ ] set up SSL via GitHub (let's encrypt)
+  - [x] set up Netlify
+  - [x] point CloudFlare DNS at Netlify to serve content
+  - [x] set up SSL
+  - [x] set up/enable deploy to Netlify on GitHub push
 - [x] use caching to help with api limits
   - [x] add localStorage caching (maybe indexdb later)
   - [x] set 10 minute limit before updating cache
   - [x] add note about cached data and time last updated
     - console.logging currently
-    - [x] add function for nice time format (used moment.js)
-    - (?) add link to reset/clear cache
+    - [x] add function for nice time format
 - [x] use async/await where it makes sense
