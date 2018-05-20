@@ -84,14 +84,18 @@ h2 {
   color: $color-text-night;
 }
 
+.weather-data-row-1,
+.weather-data-row-2 {
+  .col {
+    p {
+      line-height: 1em;
+      margin-bottom: .75em;
+    }
+  }
+}
+
 .current-icon,
-.current-temp,
-.current-pressure,
-.current-wind,
-.current-sunrise-sunset,
-.current-humidity,
-.current-visibility,
-.current-feels-like {
+.current-temp {
   & p {
     cursor: default;
     text-align: center;
