@@ -1,0 +1,17 @@
+# docs: https://github.com/sasstools/sass-lint
+# rules: https://github.com/sasstools/sass-lint/tree/master/docs/rules
+
+files:
+  include: 'src/scss/**/*.scss'
+rules:
+  border-zero:
+    - 1
+    - convention: 'none'
+  class-name-format:
+    - convention: 'hyphenatedlowercase'
+  force-element-nesting: 0
+  no-ids: 0
+  no-important: 0
+  quotes:
+    - 1
+    - style: 'double'
