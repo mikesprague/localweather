@@ -199,23 +199,23 @@
 
     populatePrimaryData(data) {
       const primaryDataTemplate = `
-            <div class="col-3 current-icon">
-              <p class="has-tooltip text-center" title="${data.currently.summary}">
-                <i class="wi wi-forecast-io-${data.currently.icon}"></i>
-              </p>
-            </div>
-            <div class="col-6 text-center current-conditions p-0">
-                <h2>
-                  ${data.currently.summary}
-                  <small class="d-none">${data.daily.data[0].summary}</small>
-                </h2>
-            </div>
-            <div class="col-3 current-temp text-center">
-              <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
-                ${Math.round(data.currently.temperature)}<i class="wi wi-degrees"></i>
-              </p>
-            </div>
-          `;
+        <div class="col-3 current-icon">
+          <p class="has-tooltip text-center" title="${data.currently.summary}">
+            <i class="wi wi-forecast-io-${data.currently.icon}"></i>
+          </p>
+        </div>
+        <div class="col-6 text-center current-conditions p-0">
+            <h2>
+              ${data.currently.summary}
+              <small class="d-none">${data.daily.data[0].summary}</small>
+            </h2>
+        </div>
+        <div class="col-3 current-temp text-center">
+          <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
+            ${Math.round(data.currently.temperature)}<i class="wi wi-degrees"></i>
+          </p>
+        </div>
+      `;
       const priamryDataEl = document.querySelector('.primary-conditions-data');
       priamryDataEl.innerHTML = primaryDataTemplate;
     },
@@ -226,13 +226,13 @@
           <p><i class="wi wi-wind towards-${data.currently.windBearing}-deg"></i><br>${Math.round(data.currently.windSpeed)}mph</p>
         </div>
         <div class="col text-center has-tooltip" title="Chance of Precipitation">
-          <p><i class="wi wi-umbrella"></i><br>${Math.floor(data.currently.precipProbability * 100)}%</p>
+          <p><i class="fas fa-umbrella"></i><br>${Math.floor(data.currently.precipProbability * 100)}%</p>
         </div>
         <div class="col text-center has-tooltip" title="UV Index">
-          <p><i class="wi wi-day-sunny"></i><br>${Math.round(data.currently.uvIndex)}</p>
+          <p><i class="fas fa-sun"></i><br>${Math.round(data.currently.uvIndex)}</p>
         </div>
         <div class="col text-center has-tooltip" title="Visibility">
-          <p><i class="fa fa-eye"></i><br>${data.currently.visibility}mi</p>
+          <p><i class="fas fa-eye"></i><br>${data.currently.visibility}mi</p>
         </div>
         <div class="col text-center has-tooltip" title="Today's Sunrise">
           <p><i class="wi wi-sunrise"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am</p>
@@ -266,14 +266,14 @@
 
     populateErrorMessage(msg) {
       const errorMessageTemplate = `
-            <div class="alert alert-danger alert-dismissible error-message" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <span class="sr-only">Error:</span>
-              <p>
-                <span class="far fa-exclamation-circle" aria-hidden="true"></span> ${msg}
-              </p>
-            </div>
-          `;
+        <div class="alert alert-danger alert-dismissible error-message" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span class="sr-only">Error:</span>
+          <p>
+            <span class="far fa-exclamation-circle" aria-hidden="true"></span> ${msg}
+          </p>
+        </div>
+      `;
       const errorMessageEl = document.querySelector('.error-message');
       errorMessageEl.innerHTML = errorMessageTemplate;
     },
@@ -281,14 +281,14 @@
     populateForecastData(data, numDays = 7) {
       for (let i = 0; i < numDays; i++) {
         let forecastTemplate = `
-              <p class="has-tooltip" title="${data.daily.data[i].summary}">
-                <strong>${datetime.getDayFromUnixTime(data.daily.data[i].time)}</strong>
-                <br>
-                <i class="wi wi-forecast-io-${data.daily.data[i].icon}"></i>
-                <br>
-                ${Math.round(data.daily.data[i].temperatureHigh)}&deg;/${Math.round(data.daily.data[i].temperatureLow)}&deg;
-              </p>
-            `;
+          <p class="has-tooltip" title="${data.daily.data[i].summary}">
+            <strong>${datetime.getDayFromUnixTime(data.daily.data[i].time)}</strong>
+            <br>
+            <i class="wi wi-forecast-io-${data.daily.data[i].icon}"></i>
+            <br>
+            ${Math.round(data.daily.data[i].temperatureHigh)}&deg;/${Math.round(data.daily.data[i].temperatureLow)}&deg;
+          </p>
+        `;
         let forecastEl = document.querySelector(`.forecast-${i}`);
         forecastEl.innerHTML = forecastTemplate;
       }
@@ -315,18 +315,18 @@
 
     populateLastUpdated(data) {
       const lastUpdatedString = `
-            Weather data cached at: ${datetime.formatUnixTimeAsLocalString(data.currently.time)}
-            <br>
-            Weather data is cached for 10 minutes.
-            <br>
-            Next data refresh available after: 
-            ${datetime.formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)} 
-          `;
+        Weather data cached at: ${datetime.formatUnixTimeAsLocalString(data.currently.time)}
+        <br>
+        Weather data is cached for 10 minutes.
+        <br>
+        Next data refresh available after:
+        ${datetime.formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
+      `;
       const lastUpdatedTemplate = `
-            <p class="last-updated has-tooltip" title="${lastUpdatedString}"> 
-              Weather data last updated ${datetime.getTimeFromUnixTime(data.currently.time)}
-            </p>
-          `;
+        <p class="last-updated has-tooltip" title="${lastUpdatedString}">
+          Weather data last updated ${datetime.getTimeFromUnixTime(data.currently.time)}
+        </p>
+      `;
       const lastUpdatedEl = document.querySelector('.last-updated');
       lastUpdatedEl.innerHTML = lastUpdatedTemplate;
     },
@@ -377,14 +377,12 @@
         switch (typeof el) {
           case 'NodeList':
             Array.from(el).forEach(function (item) {
-              // console.log('item: \n' + item);
               item.classList.remove(defaults.hideClassName);
             });
             break;
           case 'object':
             if (el.length) {
               Array.from(el).forEach(function (item) {
-                // console.log('item: \n' + item);
                 item.classList.remove(defaults.hideClassName);
               });
             } else {
@@ -402,18 +400,15 @@
 
     hideEl(el) {
       if (el !== 'undefined') {
-
         switch (typeof el) {
           case 'NodeList':
             Array.from(el).forEach(function (item) {
-              // console.log('item: \n' + item);
               item.classList.add(defaults.hideClassName);
             });
             break;
           case 'object':
             if (el.length) {
               Array.from(el).forEach(function (item) {
-                // console.log('item: \n' + item);
                 item.classList.add(defaults.hideClassName);
               });
             } else {
