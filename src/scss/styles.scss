@@ -34,7 +34,7 @@ h2 {
 
   small {
     color: $color-text-secondary;
-    font-size: 0.5em;
+    font-size: .5em;
   }
 }
 
@@ -149,18 +149,20 @@ hr {
   }
 }
 
-a.link-toggle-units,
-a.link-toggle-units:visited {
-  color: $color-gray-medium;
-  text-decoration: none;
-}
+.link-toggle-units {
+  &,
+  &:visited {
+    color: $color-gray-medium;
+    text-decoration: none;
+  }
 
-a.link-toggle-units:hover,
-a.link-toggle-units:active {
-  color: $color-gray-light;
-  text-decoration: none;
-  border-top: 1px dashed $color-gray-light;
-  border-bottom: 1px dashed $color-gray-light;
+  &:hover,
+  &:active {
+    border-bottom: 1px dashed $color-gray-light;
+    border-top: 1px dashed $color-gray-light;
+    color: $color-gray-light;
+    text-decoration: none;
+  }
 }
 
 .powered-by-dark-sky {
@@ -186,10 +188,12 @@ a.link-toggle-units:active {
   100% {
     transform: rotate(0);
   }
+
   20%,
   60% {
     transform: rotate(-25deg);
   }
+
   40%,
   80% {
     transform: rotate(10deg);
