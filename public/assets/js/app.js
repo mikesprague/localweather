@@ -211,8 +211,8 @@
                 </h2>
             </div>
             <div class="col-3 current-temp text-center">
-              <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.floor(data.currently.apparentTemperature)}&deg;">
-                ${Math.floor(data.currently.temperature)}<i class="wi wi-degrees"></i>
+              <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
+                ${Math.round(data.currently.temperature)}<i class="wi wi-degrees"></i>
               </p>
             </div>
           `;
@@ -274,7 +274,7 @@
                 <br>
                 <i class="wi wi-forecast-io-${data.daily.data[i].icon}"></i>
                 <br>
-                ${Math.floor(data.daily.data[i].temperatureHigh)}&deg;/${Math.floor(data.daily.data[i].temperatureLow)}&deg;
+                ${Math.round(data.daily.data[i].temperatureHigh)}&deg;/${Math.round(data.daily.data[i].temperatureLow)}&deg;
               </p>
             `;
         let forecastEl = document.querySelector(`.forecast-${i}`);
@@ -293,7 +293,7 @@
             <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
             <br>
             <i class="wi wi-forecast-io-${data.hourly.data[next].icon}"></i>
-            ${Math.floor(data.hourly.data[next].apparentTemperature)}&deg;
+            ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;
           </p>
         `;
         let hourlyEl = document.querySelector(`.hourly-${next}`);
@@ -356,7 +356,7 @@
     },
 
     setTitle(data) {
-      const newTitle = `${Math.floor(data.currently.temperature)}° ${data.currently.summary} | ${defaults.title}`;
+      const newTitle = `${Math.round(data.currently.temperature)}° ${data.currently.summary} | ${defaults.title}`;
       window.document.title = newTitle;
     },
 
