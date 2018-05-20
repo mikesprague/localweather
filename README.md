@@ -1,10 +1,16 @@
-# Local Weather App
+# Local Weather App - :construction: WIP
 
-Updating an old app I wrote to be somewhat more current/modernized
+Minimalist local weather app powered by Dark Sky
 
-## Current Features and Requirements
+## Current Features
 
-- App uses browser for geolocation
-- Powered by Dark Sky API
-- Uses own API (barebones node/express app) to alleviates CORS issues
-- Uses localStorage for caching (limits Dark Sky requests to every 10 minutes)
+- App uses browser to determine location
+  - Falls back to IP address location
+- Google GeoLocation API used to translate lat/lon to friendly name
+- Weather data retrieved from Dark Sky API
+- API calls consolidated via own API that also alleviates CORS issues
+  - Barebones node/express app currently hosted on Glitch
+- localStorage used for caching requests for 10 minutes
+  - Makes subsequent reloads almost instant
+  - Limits requests to Dark Sky API
+- Background color, favicon, and title are dynamic
