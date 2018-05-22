@@ -53,16 +53,16 @@ h2 {
 
 .evening {
   background-color: #462f4b;
-  color: #f0ede5; }
+  color: #dedede; }
 
 .night {
   background-color: #133150;
-  color: #f0ede5; }
+  color: #dedede; }
 
 .night-cloudy,
 .evening-cloudy {
   background-color: #646464;
-  color: #f0ede5; }
+  color: #dedede; }
 
 .weather-data-row-1 .col p,
 .weather-data-row-2 .col p {
