@@ -188,11 +188,9 @@
 
   const templates = {
     populateLocation(data) {
-      const locationArray = data.split(',');
-      const city = locationArray[0].trim();
-      const region = locationArray[1].trim();
-      const country = locationArray[2].trim();
-      const locationTemplate = `<h1 class="location">${city}, ${region} <small>${country}</small></h1>`;
+      const city = data.split(',')[0].trim();;
+      const locationTemplate = `<h1 class="location has-tooltip" title="${data}">${city}</h1>`;
+
       const locationEl = document.querySelector('.location');
       locationEl.innerHTML = locationTemplate;
     },
