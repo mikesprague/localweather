@@ -9,7 +9,7 @@
     locationDataKey: 'locationData',
     locationName: 'loading...',
     timerHandle: 0,
-    title: 'Local Weather | Powered by Dark Sky',
+    title: 'localweather.io (powered by Dark Sky)',
     weatherDataKey: 'weatherData',
   };
 
