@@ -296,6 +296,14 @@
       }
     },
 
+    populateForecastSummary(data) {
+      let summaryTemplate = `
+        <p class="has-tooltip" title="${data.daily.summary}">${data.daily.summary}</p>
+      `;
+      let summaryEl = document.querySelector('.forecast-summary');
+      summaryEl.innerHTML = summaryTemplate;
+    },
+
     populateHourlyData(data, numHours = 12) {
       for (let i = 0; i < numHours; i++) {
         let next = i + 1;
@@ -376,11 +384,11 @@
 
       const hourNum = new Date().getHours();
       if (hourNum >= 5 && hourNum <= 7) {
-        bodyClass = 'morning';
+        bodyClass = 'sunrise';
       } else if (hourNum > 7 && hourNum <= 17) {
         bodyClass = 'day';
       } else if (hourNum > 17 && hourNum <= 20) {
-        bodyClass = 'evening';
+        bodyClass = 'sunset';
       }
 
       if (data) {
@@ -507,6 +515,7 @@
       templates.populatePrimaryData(data);
       templates.populateWeatherDataRowOne(data);
       templates.populateWeatherDataRowTwo(data);
+      // templates.populateForecastSummary(data);
       templates.populateForecastData(data);
       templates.populateHourlyData(data);
       templates.populateLastUpdated(data);
