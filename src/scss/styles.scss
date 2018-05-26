@@ -2,7 +2,7 @@
 
 html,
 body {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 200;
 }
 
@@ -11,15 +11,15 @@ p {
 }
 
 h1 {
-  font-size: 2.5em;
-  font-weight: 500;
+  font-size: 2.25em;
+  font-weight: bold;
   letter-spacing: .4em;
   text-align: center;
   text-transform: capitalize;
 
   small {
     color: $color-text-secondary;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: .5em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -27,8 +27,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2em;
-  font-weight: 400;
+  font-size: 1.75em;
   letter-spacing: .1em;
   text-align: center;
   text-transform: capitalize;
@@ -39,8 +38,8 @@ h2 {
   }
 }
 
-strong {
-  font-weight: 400;
+.loading-text {
+  margin-top: 1em;
 }
 
 .loading-spinner {
@@ -152,7 +151,7 @@ strong {
 }
 
 .hourly p {
-  font-size: .85em;
+  font-size: .75em;
   line-height: 1.25em;
   white-space: nowrap;
 }
