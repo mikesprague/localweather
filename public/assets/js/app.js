@@ -4,6 +4,8 @@
     cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
     errorMessageSelector: '.error-message',
     hideClassName: 'hide-me',
+    lat: 0,
+    lng: 0,
     loadFromCache: false,
     loadingSpinnerSelector: '.loading-spinner',
     locationDataKey: 'locationData',
@@ -144,14 +146,16 @@
       } else {
         if ("geolocation" in navigator) {
           navigator.geolocation.getCurrentPosition(position => {
+            defaults.lat = position.coords.latitude;
+            defaults.lng = position.coords.longitude;
             data.getLocationNameFromLatLng(
-              position.coords.latitude,
-              position.coords.longitude
+              defaults.lat,
+              defaults.lng
             ).then(name => {
               defaults.locationName = name;
               data.getWeather(
-                position.coords.latitude,
-                position.coords.longitude
+                defaults.lat,
+                defaults.lng
               ).then(json => {
                 ui.renderAppWithData(json);
               }).then(() => {
