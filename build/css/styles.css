@@ -43,7 +43,7 @@ strong {
 .hide-me {
   display: none !important; }
 
-.morning {
+.sunrise {
   background-color: #c35114;
   color: #fff; }
 
@@ -52,11 +52,11 @@ strong {
   color: #fff; }
 
 .day-cloudy,
-.morning-cloudy {
+.sunrise-cloudy {
   background-color: #979797;
   color: #fff; }
 
-.evening {
+.sunset {
   background-color: #462f4b;
   color: #dedede; }
 
@@ -65,7 +65,7 @@ strong {
   color: #dedede; }
 
 .night-cloudy,
-.evening-cloudy {
+.sunset-cloudy {
   background-color: #646464;
   color: #dedede; }
 

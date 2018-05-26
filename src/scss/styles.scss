@@ -58,8 +58,8 @@ strong {
   display: none !important;
 }
 
-.morning {
-  background-color: $color-morning;
+.sunrise {
+  background-color: $color-sunrise;
   color: $color-text-default;
 }
 
@@ -69,13 +69,13 @@ strong {
 }
 
 .day-cloudy,
-.morning-cloudy {
+.sunrise-cloudy {
   background-color: $color-cloudy-day;
   color: $color-text-default;
 }
 
-.evening {
-  background-color: $color-evening;
+.sunset {
+  background-color: $color-sunset;
   color: $color-text-night;
 }
 
@@ -85,7 +85,7 @@ strong {
 }
 
 .night-cloudy,
-.evening-cloudy {
+.sunset-cloudy {
   background-color: $color-cloudy-night;
   color: $color-text-night;
 }
