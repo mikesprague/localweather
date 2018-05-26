@@ -335,6 +335,42 @@
   };
 
   const ui = {
+    getMoonUi(data) {
+      const intAge = Math.round(Math.fround(data.daily.data[0].moonPhase * 29).toFixed(1));
+      const iconPrefix = "wi-moon-alt";
+      let iconSuffix = "";
+      let phaseText = "";
+      if (intAge > 0 && intAge < 7) {
+        iconSuffix = `waxing-crescent-${intAge}`;
+        phaseText = "Waxing Crescent";
+      } else if (intAge === 7) {
+        iconSuffix = "first-quarter";
+        phaseText = "First Quarter";
+      } else if (intAge > 7 && intAge < 14) {
+        iconSuffix = `waxing-gibbous-${intAge - 7}`;
+        phaseText = "Waxing Gibbous";
+      } else if (intAge === 14) {
+        iconSuffix = "full";
+        phaseText = "Full Moon";
+      } else if (intAge > 14 && intAge < 21) {
+        iconSuffix = `waning-gibbous-${intAge - 14}`;
+        phaseText = "Waning Gibbous";
+      } else if (intAge === 21) {
+        iconSuffix === "third-quarter";
+        phaseText = "Third Quarter";
+      } else if (intAge > 21 && intAge < 28) {
+        iconSuffix = `waning-crescent-${intAge - 21}`;
+        phaseText = "Waning Crescent";
+      } else if (intAge >= 28 || intAge === 0) {
+        iconSuffix = "new";
+        phaseText = "New Moon";
+      }
+      return {
+        "icon": `${iconPrefix}-${iconSuffix}`,
+        "phase": phaseText,
+      };
+    },
+
     getBodyBgClass(data) {
       let bodyClass = 'night';
 
