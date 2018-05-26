@@ -1,32 +1,37 @@
 @charset "UTF-8";
 html,
 body {
-  font-family: "Open Sans Condensed", "Open Sans", sans-serif; }
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-weight: 200; }
 
 p {
   font-size: 1.25em; }
 
 h1 {
-  font-size: 2.25em;
-  font-weight: bold;
+  font-size: 2.5em;
+  font-weight: 500;
   letter-spacing: .4em;
   text-align: center;
   text-transform: capitalize; }
   h1 small {
     color: ​ #b4b7ba;
-    font-weight: bold;
+    font-weight: 400;
     letter-spacing: .5em;
     text-transform: uppercase;
     white-space: nowrap; }
 
 h2 {
-  font-size: 1.75em;
+  font-weight: 400;
+  font-size: 2em;
   letter-spacing: .1em;
   text-align: center;
   text-transform: capitalize; }
   h2 small {
     color: ​ #b4b7ba;
     font-size: .5em; }
+
+strong {
+  font-weight: 400; }
 
 .loading-spinner > div {
   height: 100vh; }
