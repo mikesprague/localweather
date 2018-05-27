@@ -395,19 +395,24 @@
     getBodyBgClass(data) {
       let bodyClass = 'night';
 
-      const hourNum = new Date().getHours();
-      if (hourNum >= 5 && hourNum <= 7) {
-        bodyClass = 'sunrise';
-      } else if (hourNum > 7 && hourNum <= 17) {
+    getBodyBgClass(data) {
+      const now = Math.round(new Date().getTime() / 1000);
+      const sunrise = data.daily.data[0].sunriseTime;
+      const sunset = data.daily.data[0].sunsetTime;
+      const timeBuffer = 45 * 60; // 45 minutes
+      const cloudCover = Math.round(data.currently.cloudCover * 100);
+      let bodyClass;
+
+      if (now > sunset + timeBuffer) {
+        bodyClass = 'night';
+      } else if (now >= sunrise + timeBuffer && now <= sunset - timeBuffer) {
         bodyClass = 'day';
-      } else if (hourNum > 17 && hourNum <= 20) {
+      } else if (now > sunrise - timeBuffer && now < sunrise + timeBuffer) {
+        bodyClass = 'sunrise';
+      } else if (now >= sunset - timeBuffer && now <= sunset + timeBuffer) {
         bodyClass = 'sunset';
       }
-
-      if (data) {
-        const cloudCover = Math.round(data.currently.cloudCover * 100);
-        bodyClass = cloudCover > 50 ? `${bodyClass}-cloudy` : bodyClass;
-      }
+      bodyClass = cloudCover > 50 ? `${bodyClass}-cloudy` : bodyClass;
 
       return bodyClass;
     },
