@@ -60,16 +60,16 @@ h2 {
 
 .sunset {
   background-color: #462f4b;
-  color: #dedede; }
+  color: #cdcdcd; }
 
 .night {
   background-color: #133150;
-  color: #dedede; }
+  color: #cdcdcd; }
 
 .night-cloudy,
 .sunset-cloudy {
   background-color: #646464;
-  color: #dedede; }
+  color: #cdcdcd; }
 
 .weather-data-row-1 .col p,
 .weather-data-row-2 .col p {
