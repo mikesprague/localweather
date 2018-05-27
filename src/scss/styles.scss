@@ -71,8 +71,14 @@ h2 {
   color: $color-text-default;
 }
 
-.day-cloudy,
+.day-cloudy {
+  // background: radial-gradient($color-day, $color-cloudy-day);
+  background-color: $color-cloudy-day;
+  color: $color-text-default;
+}
+
 .sunrise-cloudy {
+  // background: radial-gradient($color-night, $color-cloudy-night);
   background-color: $color-cloudy-day;
   color: $color-text-default;
 }
@@ -87,8 +93,14 @@ h2 {
   color: $color-text-night;
 }
 
-.night-cloudy,
+.night-cloudy {
+  // background: radial-gradient($color-night, $color-cloudy-night);
+  background-color: $color-cloudy-night;
+  color: $color-text-night;
+}
+
 .sunset-cloudy {
+  // background: radial-gradient($color-sunset, $color-cloudy-night);
   background-color: $color-cloudy-night;
   color: $color-text-night;
 }
