@@ -53,7 +53,10 @@ h2 {
   background-color: #1889c1;
   color: #fff; }
 
-.day-cloudy,
+.day-cloudy {
+  background-color: #979797;
+  color: #fff; }
+
 .sunrise-cloudy {
   background-color: #979797;
   color: #fff; }
@@ -66,7 +69,10 @@ h2 {
   background-color: #133150;
   color: #cdcdcd; }
 
-.night-cloudy,
+.night-cloudy {
+  background-color: #646464;
+  color: #cdcdcd; }
+
 .sunset-cloudy {
   background-color: #646464;
   color: #cdcdcd; }
