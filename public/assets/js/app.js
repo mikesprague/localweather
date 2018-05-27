@@ -236,48 +236,48 @@
       priamryDataEl.innerHTML = primaryDataTemplate;
     },
 
-    populateWeatherDataRowOne(data) {
-      const weatherDataRowOneTemplate = `
-        <div class="col text-center has-tooltip" title="Wind Speed">
-          <p><i class="wi wi-wind towards-${data.currently.windBearing}-deg"></i><br>${Math.round(data.currently.windSpeed)}mph</p>
+    populateWeatherData(data) {
+      const moonUi = ui.getMoonUi(data);
+      const weatherDataTemplate = `
+        <div class="col col-md-2 text-center has-tooltip" title="Wind Speed">
+          <p><i class="wi wi-wind from-${data.currently.windBearing}-deg"></i><br>${Math.round(data.currently.windSpeed)}mph</p>
         </div>
-        <div class="col text-center has-tooltip" title="Chance of Precipitation">
-          <p><i class="fas fa-umbrella"></i><br>${Math.floor(data.currently.precipProbability * 100)}%</p>
+        <div class="col col-md-2 text-center has-tooltip" title="Chance of Precipitation">
+          <p><i class="fas fa-umbrella"></i><br>${Math.round(data.currently.precipProbability * 100)}%</p>
         </div>
-        <div class="col text-center has-tooltip" title="UV Index">
+        <div class="col col-md-2 text-center has-tooltip" title="UV Index">
           <p><i class="fas fa-sun"></i><br>${Math.round(data.currently.uvIndex)}</p>
         </div>
-        <div class="col text-center has-tooltip" title="Visibility">
+        <div class="col col-md-2 text-center has-tooltip" title="Visibility">
           <p><i class="fas fa-eye"></i><br>${data.currently.visibility}mi</p>
         </div>
-        <div class="col text-center has-tooltip" title="Today's Sunrise">
+        <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Cloud Cover">
+          <p><i class="fas fa-cloud"></i><br>${Math.round(data.currently.cloudCover * 100)}%</p>
+        </div>
+        <div class="col col-md-2 text-center has-tooltip" title="Today's Sunrise">
           <p><i class="wi wi-sunrise"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am</p>
         </div>
-      `;
-      const weatherDataRowOneEl = document.querySelector('.weather-data-row-1');
-      weatherDataRowOneEl.innerHTML = weatherDataRowOneTemplate;
-    },
-
-    populateWeatherDataRowTwo(data) {
-      const weatherDataRowTwoTemplate = `
-        <div class="col text-center has-tooltip" title="Humidity">
-          <p><i class="wi wi-humidity"></i><br>${Math.round(data.currently.humidity * 100)}%</p>
-        </div>
-        <div class="col text-center has-tooltip" title="Barometric Pressue">
+        <div class="col col-md-2 text-center has-tooltip" title="Barometric Pressue">
           <p><i class="wi wi-barometer"></i><br>${Math.round(data.currently.pressure)}mb</i></p>
         </div>
-        <div class="col text-center has-tooltip" title="Dew Point">
+        <div class="col col-md-2 text-center has-tooltip" title="Humidity">
+          <p><i class="wi wi-humidity"></i><br>${Math.round(data.currently.humidity * 100)}%</p>
+        </div>
+        <div class="col col-md-2 text-center has-tooltip" title="Dew Point">
           <p><i class="wi wi-raindrop"></i><br>${Math.round(data.currently.dewPoint)}<i class="wi wi-degrees"></i></p>
         </div>
-        <div class="col text-center has-tooltip" title="Feels Like">
+        <div class="col col-md-2 text-center has-tooltip" title="Feels Like">
           <p><i class="wi wi-thermometer"></i><br>${Math.round(data.currently.apparentTemperature)}<i class="wi wi-degrees"></i></p>
         </div>
-        <div class="col text-center has-tooltip" title="Today's Sunset">
+        <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Today's Moon Phase">
+          <p><i class="wi ${moonUi.icon}"></i><br>${moonUi.phase}</p>
+        </div>
+        <div class="col col-md-2 text-center has-tooltip" title="Today's Sunset">
           <p><i class="wi wi-sunset"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm</p>
         </div>
       `;
-      const weatherDataRowTwoEl = document.querySelector('.weather-data-row-2');
-      weatherDataRowTwoEl.innerHTML = weatherDataRowTwoTemplate;
+      const weatherDataEl = document.querySelector('.current-weather-data');
+      weatherDataEl.innerHTML = weatherDataTemplate;
     },
 
     populateErrorMessage(msg) {
@@ -520,8 +520,7 @@
     renderAppWithData(data) {
       ui.setBodyBgClass(ui.getBodyBgClass(data));
       templates.populatePrimaryData(data);
-      templates.populateWeatherDataRowOne(data);
-      templates.populateWeatherDataRowTwo(data);
+      templates.populateWeatherData(data);
       templates.populateForecastData(data);
       templates.populateHourlyData(data);
       templates.populateLastUpdated(data);
