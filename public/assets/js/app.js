@@ -193,41 +193,47 @@
   const templates = {
     populateLocation(data) {
       const city = defaults.locationName.split(',')[0].trim();;
-      const currentConditionsTooltip = `
-        <div class='text-left'>
-          <strong>RIGHT NOW:</strong> ${data.currently.summary}
-          <hr>
-        </div>
-        <div class='text-left'>
-          <strong>TODAY:</strong> ${data.hourly.summary}
-          <hr>
-        </div>
-        <div class='text-left'>
-          <strong>THIS WEEK:</strong> ${data.daily.summary}
-          <hr>
-        </div>
+      const locationTemplate = `
+        <h1 class="location has-tooltip" title="
+          <i class='fas fa-globe'></i> <strong>${defaults.locationName}</strong>
+          <br>
+          <i class='fas fa-map-marker-alt'></i> ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
+        ">${city}</h1>
       `;
-      const locationTemplate = `<h1 class="location has-tooltip" title="${currentConditionsTooltip}">${city}</h1>`;
-
       const locationEl = document.querySelector('.location');
       locationEl.innerHTML = locationTemplate;
     },
 
     populatePrimaryData(data) {
+      const currentConditionsTooltip = `
+        <div class='text-left'>
+          <strong>RIGHT NOW</strong>
+          <br>
+          <i class='wi wi-forecast-io-${data.currently.icon}'></i>
+          ${Math.round(data.currently.temperature)}<i class='wi wi-degrees'></i>
+          ${data.currently.summary}
+          <hr>
+          <strong>NEXT 24 HOURS</strong>
+          <br>
+          <i class='wi wi-forecast-io-${data.hourly.icon}'></i> ${data.hourly.summary}
+          <hr>
+          <strong>NEXT 7 DAYS</strong>
+          <br>
+          <i class='wi wi-forecast-io-${data.daily.icon}'></i> ${data.daily.summary}
+          <hr>
+        </div>
+      `;
       const primaryDataTemplate = `
         <div class="col-3 current-icon">
-          <p class="has-tooltip text-center" title="${data.currently.summary}">
+          <p class="text-center">
             <i class="wi wi-forecast-io-${data.currently.icon}"></i>
           </p>
         </div>
-        <div class="col-6 text-center current-conditions p-0">
-            <h2>
-              ${data.currently.summary}
-              <!-- <small class="d-none">${data.hourly.summary}</small> -->
-            </h2>
+        <div class="col-6 text-center current-conditions p-0 has-tooltip" title="${currentConditionsTooltip}">
+            <h2>${data.currently.summary}</h2>
         </div>
         <div class="col-3 current-temp text-center">
-          <p class="primary-unit text-center has-tooltip" title="Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
+          <p class="primary-unit text-center">
             ${Math.round(data.currently.temperature)}<i class="wi wi-degrees"></i>
           </p>
         </div>
