@@ -605,7 +605,6 @@
       cache.initCache();
       data.getLocationAndPopulateAppData();
       data.initDataUpdateCheck();
-      ui.setBodyBgClass(ui.getBodyBgClass());
       ui.initTooltips();
     }
   };

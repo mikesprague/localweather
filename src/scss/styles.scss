@@ -71,7 +71,8 @@ h2 {
   color: $color-text-default;
 }
 
-.day-cloudy {
+.day-cloudy,
+.loading {
   // background: radial-gradient($color-day, $color-cloudy-day);
   background-color: $color-cloudy-day;
   color: $color-text-default;

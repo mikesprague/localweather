@@ -53,7 +53,8 @@ h2 {
   background-color: #1889c1;
   color: #fff; }
 
-.day-cloudy {
+.day-cloudy,
+.loading {
   background-color: #979797;
   color: #fff; }
 
