@@ -10,6 +10,10 @@ p {
   font-size: 1.15em;
 }
 
+strong {
+  font-weight: 700;
+}
+
 h1 {
   font-size: 2.25em;
   font-weight: bold;
@@ -19,7 +23,7 @@ h1 {
 
   small {
     color: $color-text-secondary;
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: .5em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -139,21 +143,29 @@ h2 {
 
 .forecast,
 .hourly {
-  margin-top: .6em;
+  margin-top: .5em;
+
+  .summary {
+    font-size: .85em;
+  }
+
+  p {
+    white-space: nowrap;
+  }
 }
 
 .forecast {
   p {
     font-size: .9em;
     line-height: 1.3em;
-    white-space: nowrap;
   }
 }
 
-.hourly p {
-  font-size: .75em;
-  line-height: 1.25em;
-  white-space: nowrap;
+.hourly {
+  p {
+    font-size: .75em;
+    line-height: 1.25em;
+  }
 }
 
 .template-error-message {
