@@ -392,8 +392,24 @@
       };
     },
 
-    getBodyBgClass(data) {
-      let bodyClass = 'night';
+    getTempTrend(data) {
+      const now = Math.round(new Date().getTime() / 1000);
+      console.log(now);
+      console.log(data.daily.data[0].apparentTemperatureHighTime)
+      let iconClass = 'fal fa-long-arrow-alt-down';
+      let iconTransform = 'rotate--30';
+      let tempTrendText = 'falling';
+      if (now < data.daily.data[0].apparentTemperatureHighTime) {
+        iconClass = 'fal fa-long-arrow-alt-up';
+        iconTransform = 'rotate-45';
+        let tempTrendText = 'rising';
+      }
+      return {
+        icon: `<i class="${iconClass}" data-fa-transform="${iconTransform}"></i>`,
+        iconClass: iconClass,
+        text: tempTrendText,
+      };
+    },
 
     getBodyBgClass(data) {
       const now = Math.round(new Date().getTime() / 1000);
