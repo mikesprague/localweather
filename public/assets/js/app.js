@@ -399,7 +399,7 @@
       }
 
       if (data) {
-        const cloudCover = Math.floor(data.currently.cloudCover * 100);
+        const cloudCover = Math.round(data.currently.cloudCover * 100);
         bodyClass = cloudCover > 50 ? `${bodyClass}-cloudy` : bodyClass;
       }
 
@@ -534,7 +534,7 @@
 
   const cache = {
     useCache(cacheTime) {
-      const now = Math.floor(new Date().getTime() / 1000);
+      const now = Math.round(new Date().getTime() / 1000);
       const nextUpdateTime = cacheTime + defaults.cacheTimeSpan;
       if (nextUpdateTime > now) {
         return true;
@@ -565,7 +565,7 @@
     },
 
     setCacheTime() {
-      const cacheTime = Math.floor(new Date().getTime() / 1000);
+      const cacheTime = Math.round(new Date().getTime() / 1000);
       cache.setData(defaults.cacheTimeKey, cacheTime);
       return cacheTime;
     },
