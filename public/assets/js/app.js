@@ -192,8 +192,22 @@
 
   const templates = {
     populateLocation(data) {
-      const city = data.split(',')[0].trim();;
-      const locationTemplate = `<h1 class="location has-tooltip" title="${data}">${city}</h1>`;
+      const city = defaults.locationName.split(',')[0].trim();;
+      const currentConditionsTooltip = `
+        <div class='text-left'>
+          <strong>RIGHT NOW:</strong> ${data.currently.summary}
+          <hr>
+        </div>
+        <div class='text-left'>
+          <strong>TODAY:</strong> ${data.hourly.summary}
+          <hr>
+        </div>
+        <div class='text-left'>
+          <strong>THIS WEEK:</strong> ${data.daily.summary}
+          <hr>
+        </div>
+      `;
+      const locationTemplate = `<h1 class="location has-tooltip" title="${currentConditionsTooltip}">${city}</h1>`;
 
       const locationEl = document.querySelector('.location');
       locationEl.innerHTML = locationTemplate;
@@ -209,7 +223,7 @@
         <div class="col-6 text-center current-conditions p-0">
             <h2>
               ${data.currently.summary}
-              <small class="d-none">${data.daily.data[0].summary}</small>
+              <!-- <small class="d-none">${data.hourly.summary}</small> -->
             </h2>
         </div>
         <div class="col-3 current-temp text-center">
@@ -282,26 +296,19 @@
 
     populateForecastData(data, numDays = 7) {
       for (let i = 0; i < numDays; i++) {
+        let next = i + 1;
         let forecastTemplate = `
-          <p class="has-tooltip" title="${data.daily.data[i].summary}">
-            <strong>${datetime.getDayFromUnixTime(data.daily.data[i].time)}</strong>
+          <p class="has-tooltip" title="${data.daily.data[next].summary}">
+            <strong>${datetime.getDayFromUnixTime(data.daily.data[next].time)}</strong>
             <br>
-            <i class="wi wi-forecast-io-${data.daily.data[i].icon}"></i>
+            <i class="wi wi-forecast-io-${data.daily.data[next].icon}"></i>
             <br>
-            ${Math.round(data.daily.data[i].temperatureHigh)}&deg;/${Math.round(data.daily.data[i].temperatureLow)}&deg;
+            ${Math.round(data.daily.data[next].temperatureHigh)}&deg;/${Math.round(data.daily.data[next].temperatureLow)}&deg;
           </p>
         `;
-        let forecastEl = document.querySelector(`.forecast-${i}`);
+        let forecastEl = document.querySelector(`.forecast-${next}`);
         forecastEl.innerHTML = forecastTemplate;
       }
-    },
-
-    populateForecastSummary(data) {
-      let summaryTemplate = `
-        <p class="has-tooltip" title="${data.daily.summary}">${data.daily.summary}</p>
-      `;
-      let summaryEl = document.querySelector('.forecast-summary');
-      summaryEl.innerHTML = summaryTemplate;
     },
 
     populateHourlyData(data, numHours = 12) {
@@ -515,11 +522,10 @@
       templates.populatePrimaryData(data);
       templates.populateWeatherDataRowOne(data);
       templates.populateWeatherDataRowTwo(data);
-      // templates.populateForecastSummary(data);
       templates.populateForecastData(data);
       templates.populateHourlyData(data);
       templates.populateLastUpdated(data);
-      templates.populateLocation(defaults.locationName);
+      templates.populateLocation(data);
       ui.setFavicon(data);
       ui.setTitle(data);
       ui.initTooltips();
