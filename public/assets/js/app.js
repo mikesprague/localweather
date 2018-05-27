@@ -263,6 +263,7 @@
         <div class="col col-md-2 text-center has-tooltip" title="Today's Sunrise">
           <p><i class="wi wi-sunrise"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am</p>
         </div>
+        <div class="w-100"></div>
         <div class="col col-md-2 text-center has-tooltip" title="Barometric Pressue">
           <p><i class="wi wi-barometer"></i><br>${Math.round(data.currently.pressure)}mb</i></p>
         </div>
