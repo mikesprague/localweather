@@ -263,11 +263,11 @@
         <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Cloud Cover">
           <p><i class="fas fa-fw fa-cloud"></i><br>${Math.round(data.currently.cloudCover * 100)}%</p>
         </div>
-        <div class="col col-md-2 text-center has-tooltip" title="Today's Sunrise">
+        <div class="col col-md-2 text-center has-tooltip" title="Sunrise">
           <p><i class="wi wi-sunrise"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am</p>
         </div>
         <div class="w-100"></div>
-        <div class="col col-md-2 text-center has-tooltip" title="Barometric Pressue">
+        <div class="col col-md-2 text-center has-tooltip" title="Pressue">
           <p><i class="wi wi-fw wi-barometer"></i><br>${Math.round(data.currently.pressure)}mb</i></p>
         </div>
         <div class="col col-md-2 text-center has-tooltip" title="Humidity">
@@ -279,10 +279,10 @@
         <div class="col col-md-2 text-center has-tooltip" title="Feels Like">
           <p><i class="wi wi-fw wi-thermometer"></i><br>${Math.round(data.currently.apparentTemperature)}<i class="wi wi-degrees"></i></p>
         </div>
-        <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Today's Moon Phase">
+        <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Moon">
           <p><i class="wi wi-fw ${moonUi.icon}"></i><br>${moonUi.phase}</p>
         </div>
-        <div class="col col-md-2 text-center has-tooltip" title="Today's Sunset">
+        <div class="col col-md-2 text-center has-tooltip" title="Sunset">
           <p><i class="wi wi-fw wi-sunset"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm</p>
         </div>
       `;
