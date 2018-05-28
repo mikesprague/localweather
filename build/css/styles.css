@@ -77,7 +77,8 @@ h2 {
 
 .current-weather-data .col p {
   line-height: 1em;
-  margin-bottom: .75em; }
+  margin-bottom: .75em;
+  white-space: nowrap; }
 
 .current-conditions {
   cursor: default; }
