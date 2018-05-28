@@ -46,6 +46,18 @@ h2 {
   background-color: #c35114;
   color: #fff; }
 
+.day,
+.day-cloudy,
+.sunrise,
+.sunrise-cloudy,
+.night,
+.night-cloudy,
+.sunset,
+.sunset-cloudy {
+  -ms-transition: background-color 1000ms linear;
+  -webkit-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear; }
+
 .day {
   background-color: #1889c1;
   color: #fff; }
