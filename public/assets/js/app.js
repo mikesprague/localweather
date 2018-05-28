@@ -364,35 +364,33 @@
 
   const ui = {
     getMoonUi(data) {
-      const averageLunarCycle = 29.530587981;
-      const currentYear = new Date().getFullYear();
-      const currentLunarCycle = averageLunarCycle + (0.000000002162 * currentYear);
-      const intAge = Math.round(data.daily.data[0].moonPhase * currentLunarCycle);
+      const averageLunarCycle = 29.53058867;
+      const moonAge = Math.round(data.daily.data[0].moonPhase * averageLunarCycle);
       const iconPrefix = "wi-moon-alt";
       let iconSuffix = "";
       let phaseText = "";
-      if (intAge > 0 && intAge < 8) {
-        iconSuffix = `waxing-crescent-${intAge}`;
+      if (moonAge > 0 && moonAge < 8) {
+        iconSuffix = `waxing-crescent-${moonAge}`;
         phaseText = "Waxing Crescent";
-      } else if (intAge === 8) {
+      } else if (moonAge === 8) {
         iconSuffix = "first-quarter";
         phaseText = "First Quarter";
-      } else if (intAge > 8 && intAge < 15) {
-        iconSuffix = `waxing-gibbous-${intAge - 8}`;
+      } else if (moonAge > 8 && moonAge < 15) {
+        iconSuffix = `waxing-gibbous-${moonAge - 8}`;
         phaseText = "Waxing Gibbous";
-      } else if (intAge === 15) {
+      } else if (moonAge === 15) {
         iconSuffix = "full";
         phaseText = "Full Moon";
-      } else if (intAge > 15 && intAge < 22) {
-        iconSuffix = `waning-gibbous-${intAge - 15}`;
+      } else if (moonAge > 15 && moonAge < 22) {
+        iconSuffix = `waning-gibbous-${moonAge - 15}`;
         phaseText = "Waning Gibbous";
-      } else if (intAge === 22) {
+      } else if (moonAge === 22) {
         iconSuffix === "third-quarter";
         phaseText = "Third Quarter";
-      } else if (intAge > 22 && intAge < 29) {
-        iconSuffix = `waning-crescent-${intAge - 22}`;
+      } else if (moonAge > 22 && moonAge < 29) {
+        iconSuffix = `waning-crescent-${moonAge - 22}`;
         phaseText = "Waning Crescent";
-      } else if (intAge === 29 || intAge === 0) {
+      } else if (moonAge === 29 || moonAge === 0) {
         iconSuffix = "new";
         phaseText = "New Moon";
       }
