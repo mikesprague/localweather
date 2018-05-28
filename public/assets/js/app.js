@@ -364,32 +364,35 @@
 
   const ui = {
     getMoonUi(data) {
-      const intAge = Math.round(Math.fround(data.daily.data[0].moonPhase * 29).toFixed(1));
+      const averageLunarCycle = 29.530587981;
+      const currentYear = new Date().getFullYear();
+      const currentLunarCycle = averageLunarCycle + (0.000000002162 * currentYear);
+      const intAge = Math.round(data.daily.data[0].moonPhase * currentLunarCycle);
       const iconPrefix = "wi-moon-alt";
       let iconSuffix = "";
       let phaseText = "";
-      if (intAge > 0 && intAge < 7) {
+      if (intAge > 0 && intAge < 8) {
         iconSuffix = `waxing-crescent-${intAge}`;
         phaseText = "Waxing Crescent";
-      } else if (intAge === 7) {
+      } else if (intAge === 8) {
         iconSuffix = "first-quarter";
         phaseText = "First Quarter";
-      } else if (intAge > 7 && intAge < 14) {
-        iconSuffix = `waxing-gibbous-${intAge - 7}`;
+      } else if (intAge > 8 && intAge < 15) {
+        iconSuffix = `waxing-gibbous-${intAge - 8}`;
         phaseText = "Waxing Gibbous";
-      } else if (intAge === 14) {
+      } else if (intAge === 15) {
         iconSuffix = "full";
         phaseText = "Full Moon";
-      } else if (intAge > 14 && intAge < 21) {
-        iconSuffix = `waning-gibbous-${intAge - 14}`;
+      } else if (intAge > 15 && intAge < 22) {
+        iconSuffix = `waning-gibbous-${intAge - 15}`;
         phaseText = "Waning Gibbous";
-      } else if (intAge === 21) {
+      } else if (intAge === 22) {
         iconSuffix === "third-quarter";
         phaseText = "Third Quarter";
-      } else if (intAge > 21 && intAge < 28) {
-        iconSuffix = `waning-crescent-${intAge - 21}`;
+      } else if (intAge > 22 && intAge < 29) {
+        iconSuffix = `waning-crescent-${intAge - 22}`;
         phaseText = "Waning Crescent";
-      } else if (intAge >= 28 || intAge === 0) {
+      } else if (intAge === 29 || intAge === 0) {
         iconSuffix = "new";
         phaseText = "New Moon";
       }
