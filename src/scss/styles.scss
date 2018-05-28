@@ -3,7 +3,10 @@
 html,
 body {
   font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 200;
+}
+
+body {
+  background-color: $color-cloudy-day;
 }
 
 p {

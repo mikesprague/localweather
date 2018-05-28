@@ -1,8 +1,10 @@
 @charset "UTF-8";
 html,
 body {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 200; }
+  font-family: "Open Sans Condensed", sans-serif; }
+
+body {
+  background-color: #979797; }
 
 p {
   font-size: 1.15em; }
