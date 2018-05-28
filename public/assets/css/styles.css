@@ -35,9 +35,6 @@ h2 {
 .loading-text {
   margin-top: 1em; }
 
-.loading-spinner > div {
-  height: 100vh; }
-
 .weather-data {
   margin-top: 1.25em;
   min-height: 12.5em; }
