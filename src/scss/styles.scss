@@ -66,6 +66,19 @@ h2 {
   color: $color-text-default;
 }
 
+.day,
+.day-cloudy,
+.sunrise,
+.sunrise-cloudy,
+.night,
+.night-cloudy,
+.sunset,
+.sunset-cloudy {
+  -ms-transition: background-color 1000ms linear;
+  -webkit-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
 .day {
   background-color: $color-day;
   color: $color-text-default;
