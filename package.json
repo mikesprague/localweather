@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass:watch": "node-sass --watch src/scss -o build/css",
     "sass:compile": "node-sass src/scss -o build/css",
-    "sass:build": "node-sass src/scss -o build/css && rm public/assets/css/styles.css && cp build/css/styles.css public/assets/css/styles.css",
+    "sass:build": "node-sass src/scss -o build/css --output-style compressed && rm public/assets/css/styles.css && cp build/css/styles.css public/assets/css/styles.css",
     "sass:lint": "sass-lint --verbose --no-exit",
     "dev:api": "node develop/server.js"
   },
