@@ -1,4 +1,4 @@
-const version = '0.11.2';
+const version = '0.11.3';
 const cacheName = `localweather-io-${version}`;
 self.addEventListener('install', e => {
   const timeStamp = Date.now();
@@ -20,7 +20,13 @@ self.addEventListener('install', e => {
         './assets/js/fontawesome-all.min.js',
         './assets/js/tippy.all.min.js',
         './assets/js/app.js',
-        './assets/images/favicons/cloud-refresh.png',
+        './assets/images/favicons/weather-icon-32.png',
+        './assets/images/favicons/weather-icon-48.png',
+        './assets/images/favicons/weather-icon-64.png',
+        './assets/images/favicons/weather-icon-72.png',
+        './assets/images/favicons/weather-icon-96.png',
+        './assets/images/favicons/weather-icon-128.png',
+        './assets/images/favicons/weather-icon-512.png',
       ]);
     })
   );
