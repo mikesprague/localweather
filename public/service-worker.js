@@ -5,28 +5,23 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
-          'https://pro.fontawesome.com/releases/v5.0.13/js/all.js',
-          'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700',
-          '/',
-          '/index.html',
-          '/assets/css/styles.css',
-          '/assets/js/app.js',
-          '/assets/images/favicons/cloud-refresh.png',
-          '/assets/images/favicons/clear-day.png',
-          '/assets/images/favicons/clear-night.png',
-          '/assets/images/favicons/cloudy.png',
-          '/assets/images/favicons/fog.png',
-          '/assets/images/favicons/hail.png',
-          '/assets/images/favicons/partly-cloudy-day.png',
-          '/assets/images/favicons/partly-cloudy-night.png',
-          '/assets/images/favicons/rain.png',
-          '/assets/images/favicons/sleet.png',
-          '/assets/images/favicons/snow.png',
-          '/assets/images/favicons/thunderstorm.png',
-          '/assets/images/favicons/tornado.png',
-          '/assets/images/favicons/wind.png',
-        ])
-        .then(() => self.skipWaiting());
+        'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700',
+        './',
+        './index.html',
+        './assets/css/bootstrap.min.css',
+        './assets/css/weather-icons.min.css',
+        './assets/css/weather-icons-wind.min.css',
+        './assets/font/weathericons-regular-webfont.woff2',
+        './assets/font/weathericons-regular-webfont.woff',
+        './assets/font/weathericons-regular-webfont.ttf',
+        './assets/font/weathericons-regular-webfont.svg',
+        './assets/font/weathericons-regular-webfont.eot',
+        './assets/css/styles.css',
+        './assets/js/fontawesome-all.min.js',
+        './assets/js/tippy.all.min.js',
+        './assets/js/app.js',
+        './assets/images/favicons/cloud-refresh.png',
+      ]);
     })
   );
 });
@@ -35,14 +30,25 @@ self.addEventListener('activate', event => {
   event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function (event) {
   event.respondWith(
-    caches.open(cacheName)
-    .then(cache => cache.match(event.request, {
-      ignoreSearch: true
-    }))
-    .then(response => {
-      return response || fetch(event.request);
+    caches.match(event.request)
+    .then(function (response) {
+      // Cache hit - return response
+      if (response) {
+        console.log('using cache:', response.url, response.body);
+        return response;
+      }
+      console.log('NOT using cache:', event.request.url);
+      return fetch(event.request);
+      // return response || fetch(event.request);
+    }).catch(function () {
+      // If both fail, show a generic fallback:
+      return caches.match('./offline.html');
+      // However, in reality you'd have many different
+      // fallbacks, depending on URL & headers.
+      // Eg, a fallback silhouette image for avatars.
     })
+
   );
 });
