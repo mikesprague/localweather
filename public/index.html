@@ -16,16 +16,19 @@
   <meta name="keywords" content="weather, local, dark sky, local weather">
   <meta name="description" content="Minimalist local weather app powered by Dark Sky">
   <meta name="author" content="Michael Sprague">
-  <meta name="theme-color" content="#979797">
+  <meta name="theme-color" content="#1889c1">
   <title>localweather.io (powered by Dark Sky)</title>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+      .then(function (reg) {
+        // console.log('Service worker registered');
+      }).catch(function (err) {
+        console.log('Service worker error', err)
+      });
+    }
+  </script>
   <link rel="manifest" href="manifest.json">
-  <link rel="preload" as="style" href="assets/css/bootstrap.min.css">
-  <link rel="preload" as="style" href="assets/css/weather-icons.min.css">
-  <link rel="preload" as="style" href="assets/css/weather-icons-wind.min.css">
-  <link rel="preload" as="style" href="assets/css/styles.css">
-  <link rel="subresource" as="font" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700">
-  <link rel="subresource" as="script"  href="https://pro.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-d84LGg2pm9KhR4mCAs3N29GQ4OYNy+K+FBHX8WhimHpPm86c839++MDABegrZ3gn" crossorigin="anonymous">
-  <link rel="preload" as="script" href="assets/js/tippy.all.min.js">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/weather-icons.min.css">
@@ -34,7 +37,7 @@
   <link rel="icon" class="favicon" href="assets/images/favicons/cloud-refresh.png">
   <link rel="apple-touch-icon" class="favicon" href="assets/images/favicons/cloud-refresh.png">
   <link rel="mask-icon" class="favicon" href="assets/images/favicons/cloud-refresh.png">
-  <script defer src="https://pro.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-d84LGg2pm9KhR4mCAs3N29GQ4OYNy+K+FBHX8WhimHpPm86c839++MDABegrZ3gn" crossorigin="anonymous"></script>
+  <script src="assets/js/fontawesome-all.min.js"></script>
 </head>
 <body>
 
@@ -106,16 +109,6 @@
     </div>
   </div>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(function (reg) {
-          // console.log('Service worker registered');
-        }).catch(function (err) {
-          console.log('Service worker error', err)
-        });
-    }
-  </script>
   <script src="assets/js/tippy.all.min.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
