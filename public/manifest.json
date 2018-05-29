@@ -1,6 +1,6 @@
 {
   "name": "LocalWeather.io | Minimal Weather App | Powered by Dark Sky",
-  "short_name": "LocalWeather",
+  "short_name": "Weather",
   "icons": [{
       "src": "/assets/images/favicons/cloud-refresh.png",
       "type": "image/png",
