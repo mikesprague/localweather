@@ -40,32 +40,7 @@ self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request)
     .then(function (response) {
-      // Cache hit - return response
-      if (response) {
-        // console.log('using cache:', response.url, response.body);
-        return response;
-      }
-      // console.log('NOT using cache:', event.request.url);
-      let fetchRequest = event.request.clone();
-      // console.log('NOT using cache:', event.request.url);
-      return fetch(fetchRequest).then(
-        function (response) {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-          let responseToCache = response.clone();
-          caches.open(cacheName).then(function (cache) {
-            cache.put(event.request, responseToCache);
-            // console.log('Now cached:', event.request.url);
-          });
-          return response;
-        }
-      );
-    }).catch(function () {
-      // TODO: add generic offline page
-      // return caches.match('./offline.html');
-      console.warn("You appear to be offline");
+      return response || fetch(event.request);
     })
-
   );
 });
