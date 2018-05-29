@@ -41,7 +41,7 @@ self.addEventListener('fetch', function (event) {
       }
       // console.log('NOT using cache:', event.request.url);
       let fetchRequest = event.request.clone();
-      console.log('NOT using cache:', event.request.url);
+      // console.log('NOT using cache:', event.request.url);
       return fetch(fetchRequest).then(
         function (response) {
           if (!response || response.status !== 200 || response.type !== 'basic') {
