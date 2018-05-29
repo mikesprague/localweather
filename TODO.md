@@ -32,3 +32,15 @@
     - console.logging currently
     - [x] add function for nice time format
 - [x] use async/await where it makes sense
+- [ ] pwa work
+  - [x] add manifest
+  - [x] add service worker
+    - [x] add caching
+  - [ ] create offline page
+- [ ] break js into modules
+  - note: use current namespacing for bundles
+  - [ ] use build system for js
+  - [ ] minify js
+- [ ] more detailed popups
+  - [ ] hourly
+  - [ ] daily
