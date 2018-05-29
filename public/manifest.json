@@ -2,32 +2,32 @@
   "name": "LocalWeather.io | Minimal Weather App | Powered by Dark Sky",
   "short_name": "Weather",
   "icons": [{
-      "src": "/assets/images/favicons/cloud-refresh.png",
+      "src": "assets/images/favicons/cloud-refresh.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "/assets/images/favicons/cloud-refresh.png",
+      "src": "assets/images/favicons/cloud-refresh.png",
       "type": "image/png",
       "sizes": "72x72"
     },
     {
-      "src": "/assets/images/favicons/cloud-refresh.png",
+      "src": "assets/images/favicons/cloud-refresh.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "/assets/images/favicons/cloud-refresh.png",
+      "src": "assets/images/favicons/cloud-refresh.png",
       "type": "image/png",
       "sizes": "144x144"
     },
     {
-      "src": "/assets/images/favicons/cloud-refresh.png",
+      "src": "assets/images/favicons/cloud-refresh.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/images/favicons/cloud-refresh.png",
+      "src": "assets/images/favicons/cloud-refresh.png",
       "type": "image/png",
       "sizes": "512x512"
     }
