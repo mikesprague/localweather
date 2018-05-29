@@ -19,6 +19,17 @@
   <meta name="theme-color" content="#979797">
   <title>localweather.io (powered by Dark Sky)</title>
   <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      console.log("Will the service worker register?");
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function (reg) {
+          console.log("Yes, it did.");
+        }).catch(function (err) {
+          console.log("No it didn't. This happened: ", err)
+        });
+    }
+  </script>
   <link rel="preload" as="style" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css"  integrity="sha256-KcCcakqMaamBrTFaxb9tkrP2iq1X8vUnsm86W8pRcgI=" crossorigin="anonymous">
   <link rel="preload" as="font" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700">
