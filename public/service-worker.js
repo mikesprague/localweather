@@ -39,15 +39,27 @@ self.addEventListener('fetch', function (event) {
         console.log('using cache:', response.url, response.body);
         return response;
       }
-      console.log('NOT using cache:', event.request.url);
-      return fetch(event.request);
+      // console.log('NOT using cache:', event.request.url);
+      // return fetch(event.request);
       // return response || fetch(event.request);
+      let fetchRequest = event.request.clone();
+      console.log('NOT using cache:', event.request.url);
+      return fetch(fetchRequest).then(
+        function (response) {
+          if (!response || response.status !== 200 || response.type !== 'basic') {
+            return response;
+          }
+          let responseToCache = response.clone();
+          caches.open(cacheName).then(function (cache) {
+            cache.put(event.request, responseToCache);
+            // console.log('Just cached:', event.request.url);
+          });
+          return response;
+        }
+      );
     }).catch(function () {
       // If both fail, show a generic fallback:
       return caches.match('./offline.html');
-      // However, in reality you'd have many different
-      // fallbacks, depending on URL & headers.
-      // Eg, a fallback silhouette image for avatars.
     })
 
   );
