@@ -1,4 +1,4 @@
-const version = '0.10.0';
+const version = '0.10.1';
 const cacheName = `localweather-io-${version}`;
 self.addEventListener('install', e => {
   const timeStamp = Date.now();
