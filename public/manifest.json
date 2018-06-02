@@ -1,7 +1,9 @@
 {
   "name": "LocalWeather.io | Powered by Dark Sky",
   "short_name": "LocalWeather.io",
-  "icons": [{
+  "description": "Minimal weather app powered by Dark Sky",
+  "icons": [
+    {
       "src": "./assets/images/favicons/weather-icon-32.png",
       "type": "image/png",
       "sizes": "32x32"
@@ -37,8 +39,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/?homescreen=1",
+  "homepage_url": "https://localweather.io",
   "scope": "/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#1889c1",
   "theme_color": "#1889c1"
