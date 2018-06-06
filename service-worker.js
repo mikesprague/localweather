@@ -1,7 +1,7 @@
-const version = 'v0.11.7';
+const version = 'v0.11.7-local-20180605-1';
 const cacheName = `localWeather-io-${version}`;
 const urlsToCache = [
-  '/',
+  './',
   '/index.html',
   '/offline.html',
   '/assets/css/styles.css',
@@ -44,14 +44,12 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
-    .then(response => {
-      // Cache hit - return response
+    caches.match(event.request).then(response => {
+      console.log('event.request', event.request);
       if (response) {
-        // console.log('From cache:', response.url, response.body);
+        // console.log('FROM cache:', response.url, response.body);
         return response;
       }
-      // return response || fetch(event.request);
       // console.log('NOT using cache:', event.request.url);
       let fetchRequest = event.request.clone();
       return fetch(fetchRequest).then(response => {
@@ -66,9 +64,6 @@ self.addEventListener('fetch', event => {
         });
         return response;
       });
-    }).catch(error => {
-      console.info("You appear to be offline", error);
-      // return caches.match('/offline.html');
     })
   );
 });
