@@ -1,4 +1,6 @@
 (function () {
+  'use strict';
+
   const defaults = {
     cacheTimeKey: 'cacheTime',
     cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
@@ -436,7 +438,7 @@
       } else if (now >= sunset - timeBuffer && now <= sunset + timeBuffer) {
         bodyClass = 'sunset';
       }
-      bodyClass = cloudCover > 50 ? `${bodyClass}-cloudy` : bodyClass;
+      bodyClass = cloudCover >= 60 ? `${bodyClass}-cloudy` : bodyClass;
 
       return bodyClass;
     },
@@ -638,4 +640,8 @@
       app.init();
     }
   };
+  // window.onerror = function (msg, url, lineNo, columnNo, error) {
+  //   // ... handle error ...
+  //   return false;
+  // };
 })();
