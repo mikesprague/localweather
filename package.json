@@ -9,7 +9,7 @@
     "sass:watch": "node-sass --watch src/scss -o dist/css",
     "sass:compile": "node-sass src/scss -o dist/css",
     "sass:lint": "sass-lint --verbose --no-exit",
-    "build": "node-sass src/scss -o dist/css --output-style compressed && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css public/assets/css && cp -f node_modules/tippy.js/dist/tippy.all.min.js public/assets/js"
+    "build": "node-sass src/scss -o dist/css --output-style compressed && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css assets/css && cp -f node_modules/tippy.js/dist/tippy.all.min.js assets/js"
   },
   "repository": {
     "url": "https://github.com/mikesprague/local-weather"
