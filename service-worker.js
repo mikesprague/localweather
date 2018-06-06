@@ -1,11 +1,11 @@
 const version = 'v0.11.7-local-20180605-1';
 const cacheName = `localWeather-io-${version}`;
 const urlsToCache = [
-  './',
+  '/',
   '/index.html',
   '/offline.html',
-  '/assets/css/styles.css',
-  '/assets/js/app.js',
+  '/dist/css/styles.css',
+  '/dist/js/app.js',
   '/assets/css/bootstrap.min.css',
   '/assets/css/weather-icons.min.css',
   '/assets/css/weather-icons-wind.min.css',
