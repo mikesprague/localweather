@@ -5,11 +5,13 @@ $color-text-secondary: ​#b4b7ba;
 $color-sunrise: #c35114;
 $color-day: #1889c1;
 $color-sunset: #462f4b;
-$color-night: #133150;
-$color-sunny: #ecdb54;
+$color-night: #4b5272; // #133150
+$color-sunny: #f5b243; // #ecdb54
+$color-rain: #4e7bcb;
 
-$color-cloudy-day: #979797;
-$color-cloudy-night: #646464;
+$color-cloudy-day: #8a929e; // #979797;
+$color-cloudy-night: #636363; // #646464
+
 $color-cloudy-sunrise: $color-cloudy-day;
 $color-cloudy-sunset: $color-cloudy-night;
 
