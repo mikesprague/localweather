@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>localweather.io (powered by Dark Sky)</title>
+  <title>LocalWeather.io (powered by Dark Sky)</title>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
@@ -33,11 +33,10 @@
   <meta name="application-version" content="v0.11.7">
   <link rel="canonical" href="https://localweather.io/"/>
   <link rel="manifest" href="/manifest.json">
+  <link href="/dist/css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css">
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/weather-icons.min.css">
   <link rel="stylesheet" href="/assets/css/weather-icons-wind.min.css">
-  <link href="/dist/css/styles.css" rel="stylesheet">
   <link rel="icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
   <link rel="apple-touch-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
   <link rel="mask-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
@@ -113,7 +112,6 @@
     </div>
   </div>
 
-  <script src="/assets/js/tippy.all.min.js"></script>
-  <script src="/dist/js/app.js"></script>
+  <script src="/dist/js/bundle.js"></script>
 </body>
 </html>
