@@ -43,6 +43,6 @@
   "scope": "/",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1889c1",
-  "theme_color": "#1889c1"
+  "background_color": "#133150",
+  "theme_color": "#133150"
 }
