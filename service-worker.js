@@ -1,16 +1,14 @@
-const version = 'v0.11.7-local-20180605-1';
+const version = 'v0.12.0';
 const cacheName = `localWeather-io-${version}`;
 const urlsToCache = [
   '/',
   '/index.html',
   '/offline.html',
   '/dist/css/styles.css',
-  '/dist/js/app.js',
-  '/assets/css/bootstrap.min.css',
+  '/dist/js/bundle.js',
   '/assets/css/weather-icons.min.css',
   '/assets/css/weather-icons-wind.min.css',
   '/assets/js/fontawesome-all.min.js',
-  '/assets/js/tippy.all.min.js',
   '/assets/images/favicons/weather-icon-32.png',
   '/assets/images/favicons/weather-icon-48.png',
   '/assets/images/favicons/weather-icon-64.png',
@@ -45,7 +43,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      console.log('event.request', event.request);
+      // console.log('event.request', event.request);
       if (response) {
         // console.log('FROM cache:', response.url, response.body);
         return response;
