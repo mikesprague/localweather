@@ -54,12 +54,6 @@ h2 {
   margin-top: 1em;
 }
 
-// .loading-spinner {
-//   &>div {
-//     height: 100vh;
-//   }
-// }
-
 .weather-data {
   margin-top: 1.25em;
   min-height: 12.5em;
@@ -87,13 +81,17 @@ h2 {
   transition: background-color 1000ms linear;
 }
 
+.loading {
+  background-color: $color-loading;
+  color: $color-text-default;
+}
+
 .day {
   background-color: $color-sunny;
   color: $color-text-default;
 }
 
-.day-cloudy,
-.loading {
+.day-cloudy {
   // background: radial-gradient($color-day, $color-cloudy-day);
   background-color: $color-cloudy-day;
   color: $color-text-default;

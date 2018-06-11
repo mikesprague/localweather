@@ -64,7 +64,7 @@ export function getBodyBgClass(data) {
   const now = Math.round(new Date().getTime() / 1000);
   const sunrise = data.daily.data[0].sunriseTime;
   const sunset = data.daily.data[0].sunsetTime;
-  const timeBuffer = 45 * 60; // 45 minutes
+  const timeBuffer = 30 * 60; // 30 minutes
   const cloudCover = Math.round(data.currently.cloudCover * 100);
   let bodyClass;
 
