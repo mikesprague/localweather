@@ -87,6 +87,11 @@ export function setBodyBgClass(className) {
   bodyEl.classList.add(className);
 }
 
+export function removeBodyBgClass(className) {
+  const bodyEl = document.querySelector('body');
+  bodyEl.classList.remove(className);
+}
+
 export function setFavicon(data) {
   const currentIcon = data.currently.icon;
   let iconTags = document.getElementsByClassName('favicon');
@@ -155,12 +160,14 @@ export function hideEl(el) {
 
 export function showLoading() {
   const loadingSpinner = document.querySelector(defaults.loadingSpinnerSelector);
+  setBodyBgClass('loading');
   showEl(loadingSpinner);
   hideUi();
 }
 
 export function hideLoading() {
   const loadingSpinner = document.querySelector(defaults.loadingSpinnerSelector);
+  removeBodyBgClass('loading');
   hideEl(loadingSpinner);
   showUi();
 }
