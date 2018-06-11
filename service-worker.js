@@ -1,4 +1,4 @@
-const version = '0.12.2';
+const version = '0.12.3';
 const cacheName = `localWeather-io-${version}`;
 const urlsToCache = [
   '/',
@@ -8,7 +8,6 @@ const urlsToCache = [
   '/dist/js/bundle.js',
   '/assets/css/weather-icons.min.css',
   '/assets/css/weather-icons-wind.min.css',
-  '/assets/js/fontawesome-all.min.js',
   '/assets/images/favicons/weather-icon-32.png',
   '/assets/images/favicons/weather-icon-48.png',
   '/assets/images/favicons/weather-icon-64.png',
@@ -21,6 +20,7 @@ const urlsToCache = [
   '/assets/font/weathericons-regular-webfont.ttf',
   '/assets/font/weathericons-regular-webfont.svg',
   '/assets/font/weathericons-regular-webfont.eot',
+  '/assets/js/fontawesome-all.min.js',
   'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700',
   'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMR7eS2Ao.woff2',
   'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NHdQDnbTkabZAIOl9il_O6KJj73e7Fd_-7suD8Rb2V-ggZSw.woff2',
