@@ -12,9 +12,9 @@ export function init() {
         scope: '/',
       });
       // registration was successful
-      console.log(`[SW] Registration successful with scope: ${registration.scope} `);
+      console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       registration.onupdatefound = () => {
-        console.log('[SW] Update found, refresh browser to load it');
+        console.info('[SW] New Version Found - Refresh Browser to Load');
       };
     });
   }
