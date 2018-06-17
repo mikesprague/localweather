@@ -7,7 +7,7 @@ import * as templates from './templates';
 export function getMoonUi(data) {
   const averageLunarCycle = 29.53058867;
   const moonAge = Math.round(data.daily.data[0].moonPhase * averageLunarCycle);
-  const iconPrefix = "wi-moon-alt";
+  const iconPrefix = "wi-moon";
   let iconSuffix = "";
   let phaseText = "";
   if (moonAge > 0 && moonAge < 8) {
