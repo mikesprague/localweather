@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run webpack",
+    "start": "yarn webpack",
     "webpack": "webpack -d --progress --colors --watch",
     "sass:watch": "node-sass --watch src/scss -o dist/css --output-style compressed",
     "sass:compile": "node-sass src/scss -o dist/css --output-style compressed",
