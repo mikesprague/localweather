@@ -91,7 +91,7 @@ export function populateWeatherData(data) {
           <p><i class="wi wi-fw wi-thermometer"></i><br>${Math.round(data.currently.apparentTemperature)}<i class="wi wi-degrees"></i></p>
         </div>
         <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Moon">
-          <p><i class="wi wi-fw ${moonUi.icon}"></i><br>${moonUi.phase}</p>
+          <p class="moon-phase"><i class="wi wi-fw ${moonUi.icon}"></i><br>${moonUi.phase}</p>
         </div>
         <div class="col col-md-2 text-center has-tooltip" title="Sunset">
           <p><i class="wi wi-fw wi-sunset"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm</p>
