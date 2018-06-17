@@ -3,16 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>LocalWeather.io (powered by Dark Sky)</title>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-      .then(function (reg) {
-        // console.log('Service worker registered');
-      }).catch(function (err) {
-        console.log('Service worker error', err)
-      });
-    }
-  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-33"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
