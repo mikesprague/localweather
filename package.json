@@ -24,7 +24,9 @@
     "url": "https://github.com/mikesprague/local-weather/issues"
   },
   "homepage": "https://localweather.io",
-  "dependencies": {},
+  "dependencies": {
+    "waait": "^1.0.2"
+  },
   "devDependencies": {
     "bootstrap": "^4.1.1",
     "css-loader": "^0.28.11",
