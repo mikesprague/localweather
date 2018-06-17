@@ -27,39 +27,61 @@ const urlsToCache = [
   'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMR7eS2Ao.woff2'
 ];
 
-self.addEventListener('install', event => {
-  const timeStamp = Date.now();
+self.addEventListener('activate', event => {
+  console.log('[SW]', 'Activate');
+  // delete the old caches
   event.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache.addAll(urlsToCache);
-    })
+    caches.keys().then(cacheNames =>
+      Promise.all(
+        cacheNames
+        // filter for caches that aren't the current one
+        .filter(cacheName => cacheName !== CACHE_NAME)
+        // map over them and delete them
+        .map(cacheName => caches.delete(cacheName))
+      )
+    )
   );
 });
 
-self.addEventListener('activate', event => {
-  event.waitUntil(self.clients.claim());
+self.addEventListener('install', event => {
+  console.log('[SW] Install');
+  self.skipWaiting();
+  // perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache =>
+      cache.addAll(urlsToCache).then(() => {
+        console.log('[SW] Install Complete');
+      })
+    )
+  );
 });
 
+// intercept network requests
 self.addEventListener('fetch', event => {
+  console.log('[SW]', 'Fetch');
   event.respondWith(
     caches.match(event.request).then(response => {
-      // console.log('event.request', event.request);
+      // cache hit - return response
       if (response) {
-        // console.log('FROM cache:', response.url, response.body);
+        console.info(`[SW] Serving ${event.request.url} from SW Cache`);
         return response;
       }
-      // console.log('NOT using cache:', event.request.url);
-      let fetchRequest = event.request.clone();
+      // clone the request because it's a one time use stream
+      const fetchRequest = event.request.clone();
+      console.log(`[SW] Not cached, fetching ${event.request.url}`);
       return fetch(fetchRequest).then(response => {
-        // console.log(response)
+        // check if we received a valid response
         if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
         }
-        let responseToCache = response.clone();
-        caches.open(cacheName).then(cache => {
-          cache.put(event.request, responseToCache);
-          // console.log('JUST cached:', event.request.url);
-        });
+        // clone the response because it's a one time use stream
+        const responseToCache = response.clone();
+        event.waitUntil(
+          caches.open(CACHE_NAME).then(cache => {
+            console.log(`[SW] Adding ${event.request.url} to SW Cache`);
+            cache.put(event.request, responseToCache);
+          })
+        );
         return response;
       });
     })
