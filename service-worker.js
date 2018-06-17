@@ -27,8 +27,21 @@ const urlsToCache = [
   'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMR7eS2Ao.woff2'
 ];
 
+self.addEventListener('install', event => {
+  console.log('[SW] Install Started');
+  self.skipWaiting();
+  // perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache =>
+      cache.addAll(urlsToCache).then(() => {
+        console.log(`[SW] Install Complete ${CACHE_NAME}`);
+      })
+    )
+  );
+});
+
 self.addEventListener('activate', event => {
-  console.log('[SW]', 'Activate');
+  console.log('[SW] Activate Started');
   // delete the old caches
   event.waitUntil(
     caches.keys().then(cacheNames =>
@@ -37,20 +50,11 @@ self.addEventListener('activate', event => {
         // filter for caches that aren't the current one
         .filter(cacheName => cacheName !== CACHE_NAME)
         // map over them and delete them
-        .map(cacheName => caches.delete(cacheName))
-      )
-    )
-  );
-});
-
-self.addEventListener('install', event => {
-  console.log('[SW] Install');
-  self.skipWaiting();
-  // perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache =>
-      cache.addAll(urlsToCache).then(() => {
-        console.log('[SW] Install Complete');
+        .map(cacheName => caches.delete(cacheName).then(() => {
+          console.log(`[SW] Deleted Cache ${cacheName}`);
+        }))
+      ).then(() => {
+        console.log('[SW] Activated');
       })
     )
   );
@@ -58,17 +62,17 @@ self.addEventListener('install', event => {
 
 // intercept network requests
 self.addEventListener('fetch', event => {
-  console.log('[SW]', 'Fetch');
+  console.log('[SW] Fetch Started');
   event.respondWith(
     caches.match(event.request).then(response => {
       // cache hit - return response
       if (response) {
-        console.info(`[SW] Serving ${event.request.url} from SW Cache`);
+        console.info(`[SW] Served from Cache ${event.request.url}`);
         return response;
       }
       // clone the request because it's a one time use stream
       const fetchRequest = event.request.clone();
-      console.log(`[SW] Not cached, fetching ${event.request.url}`);
+      console.log(`[SW] Fetched ${event.request.url}`);
       return fetch(fetchRequest).then(response => {
         // check if we received a valid response
         if (!response || response.status !== 200 || response.type !== 'basic') {
@@ -78,11 +82,14 @@ self.addEventListener('fetch', event => {
         const responseToCache = response.clone();
         event.waitUntil(
           caches.open(CACHE_NAME).then(cache => {
-            console.log(`[SW] Adding ${event.request.url} to SW Cache`);
+            console.log(`[SW] Added to Cache ${event.request.url}`);
             cache.put(event.request, responseToCache);
           })
         );
         return response;
+      }).catch(error => {
+        // console.error('[SW] Error', error);
+        return caches.match('/offline.html');
       });
     })
   );
