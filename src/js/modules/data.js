@@ -97,7 +97,7 @@ export async function getLocationAndPopulateAppData() {
 
 export function checkIfDataUpdateNeeded() {
   if (!cache.useCache(cache.getData(defaults.cacheTimeKey))) {
-    defaults.useCache = false;
+    defaults.loadFromCache = false;
     app.init();
   }
 }
