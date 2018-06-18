@@ -20,6 +20,20 @@ export function init() {
     });
   }
 
+  window.addEventListener('online', function (e) {
+    defaults.isOnline = true;
+  }, false);
+
+  window.addEventListener('offline', function (e) {
+    defaults.isOnline = false;
+  }, false);
+
+  window.onerror = function (msg, url, lineNo, columnNo, error) {
+    // handle error
+    console.error("INTERCEPTED", msg, url, lineNo, columnNo, error);
+    return false;
+  };
+
   cache.initCache();
   data.getLocationAndPopulateAppData();
   data.initDataUpdateCheck();
