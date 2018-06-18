@@ -30,6 +30,7 @@ const urlsToCache = [
 self.addEventListener('install', event => {
   console.log('[SW] Install Started');
   self.skipWaiting();
+  clients.claim();
   // perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache =>
