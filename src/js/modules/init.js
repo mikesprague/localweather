@@ -1,5 +1,6 @@
 'use strict';
 
+import * as defaults from './defaults';
 import * as cache from './cache';
 import * as data from './data';
 import * as ui from './ui';
