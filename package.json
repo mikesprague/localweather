@@ -7,7 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "yarn webpack",
-    "webpack": "webpack -d --progress --colors --watch",
+    "webpack": "webpack --progress --colors",
+    "watch": "yarn webpack --watch",
+    "build": "yarn webpack -d",
+    "dev": "webpack-dev-server --open",
     "sass:watch": "node-sass --watch src/scss -o dist/css --output-style compressed",
     "sass:compile": "node-sass src/scss -o dist/css --output-style compressed",
     "sass:lint": "sass-lint --verbose --no-exit"
