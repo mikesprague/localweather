@@ -8,6 +8,10 @@ module.exports = {
   output: {
     filename: './dist/js/bundle.js'
   },
+  devServer: {
+    compress: true,
+    port: 5500
+  },
   module: {
     loaders: [{
       test: /\.js$/,
