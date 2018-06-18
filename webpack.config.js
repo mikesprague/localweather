@@ -10,7 +10,11 @@ module.exports = {
   },
   devServer: {
     compress: true,
-    port: 5500
+    port: 5500,
+    overlay: {
+      warnings: true,
+      errors: true
+    }
   },
   module: {
     loaders: [{
