@@ -6,12 +6,16 @@
 
 html,
 body {
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
   font-family: "Open Sans Condensed", sans-serif;
+  text-rendering: optimizeLegibility !important;
 }
 
 body {
   background-color: $color-loading;
   color: $color-text-default;
+  font-size: 1.25rem;
 }
 
 p {
@@ -39,8 +43,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 1.65em;
   letter-spacing: .1em;
+  line-height: 1em;
   text-align: center;
   text-transform: capitalize;
 
