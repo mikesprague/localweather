@@ -10,7 +10,7 @@
     "webpack": "webpack --progress --colors",
     "webpack:watch": "yarn webpack --watch",
     "webpack:build": "yarn webpack -d",
-    "webpack:serve": "webpack-dev-server --open",
+    "webpack:serve": "webpack-dev-server --open --watch --progress --colors",
     "sass:watch": "node-sass --watch src/scss -o dist/css --output-style compressed",
     "sass:compile": "node-sass src/scss -o dist/css --output-style compressed",
     "sass:lint": "sass-lint --verbose --no-exit"
