@@ -13,7 +13,7 @@ export function init() {
         scope: '/',
       });
       // registration was successful
-      console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
+      // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       // check for updatees
       registration.onupdatefound = () => {
         console.info('[SW] New Version Found - Refresh Browser to Load');
@@ -29,11 +29,11 @@ export function init() {
     defaults.isOnline = false;
   }, false);
 
-  window.onerror = function (msg, url, lineNo, columnNo, error) {
-    // handle error
-    console.error("ERROR", msg, url, lineNo, columnNo, error);
-    return false;
-  };
+  // window.onerror = function (msg, url, lineNo, columnNo, error) {
+  //   // handle error
+  //   console.error("ERROR", msg, url, lineNo, columnNo, error);
+  //   return false;
+  // };
 
   cache.initCache();
   data.getLocationAndPopulateAppData();
