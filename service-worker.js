@@ -28,21 +28,21 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
-  console.log('[SW] Install Started');
+  // console.log('[SW] Install Started');
   self.skipWaiting();
-  clients.claim();
+  // clients.claim();
   // perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache =>
       cache.addAll(urlsToCache).then(() => {
-        console.log(`[SW] Install Complete ${CACHE_NAME}`);
+        console.info(`[SW] Installed New Version ${CACHE_NAME}`);
       })
     )
   );
 });
 
 self.addEventListener('activate', event => {
-  console.log('[SW] Activate Started');
+  // console.log('[SW] Activate Started');
   // delete the old caches
   event.waitUntil(
     caches.keys().then(cacheNames =>
@@ -52,10 +52,10 @@ self.addEventListener('activate', event => {
         .filter(cacheName => cacheName !== CACHE_NAME)
         // map over them and delete them
         .map(cacheName => caches.delete(cacheName).then(() => {
-          console.log(`[SW] Deleted Cache ${cacheName}`);
+          console.info(`[SW] Deleted Old Version ${cacheName}`);
         }))
       ).then(() => {
-        console.log('[SW] Activated');
+        // console.log('[SW] Activated');
       })
     )
   );
@@ -63,17 +63,17 @@ self.addEventListener('activate', event => {
 
 // intercept network requests
 self.addEventListener('fetch', event => {
-  console.log('[SW] Fetch Started');
+  // console.log('[SW] Fetch Started');
   event.respondWith(
     caches.match(event.request).then(response => {
       // cache hit - return response
       if (response) {
-        console.info(`[SW] Served from Cache ${event.request.url}`);
+        // console.info(`[SW] Served from Cache ${event.request.url}`);
         return response;
       }
       // clone the request because it's a one time use stream
       const fetchRequest = event.request.clone();
-      console.log(`[SW] Fetched ${event.request.url}`);
+      // console.log(`[SW] Fetched ${event.request.url}`);
       return fetch(fetchRequest).then(response => {
         // check if we received a valid response
         if (!response || response.status !== 200 || response.type !== 'basic') {
@@ -83,14 +83,11 @@ self.addEventListener('fetch', event => {
         const responseToCache = response.clone();
         event.waitUntil(
           caches.open(CACHE_NAME).then(cache => {
-            console.log(`[SW] Added to Cache ${event.request.url}`);
+            // console.log(`[SW] Added to Cache ${event.request.url}`);
             cache.put(event.request, responseToCache);
           })
         );
         return response;
-      }).catch(error => {
-        // console.error('[SW] Error', error);
-        return caches.match('/offline.html');
       });
     })
   );
