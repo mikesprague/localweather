@@ -80,6 +80,8 @@ h2 {
 .sunrise-cloudy,
 .night,
 .night-cloudy,
+.rain,
+.snow,
 .sunset,
 .sunset-cloudy {
   -ms-transition: background-color 1000ms linear;
@@ -97,16 +99,31 @@ h2 {
   color: $color-text-default;
 }
 
-.day-cloudy {
+.day-cloudy,
+.sunrise-cloudy {
   // background: radial-gradient($color-day, $color-cloudy-day);
   background-color: $color-cloudy-day;
   color: $color-text-default;
 }
 
-.sunrise-cloudy {
-  // background: radial-gradient($color-night, $color-cloudy-night);
-  background-color: $color-cloudy-day;
+.day-rain {
+  background-color: $color-rain-day;
   color: $color-text-default;
+}
+
+.night-rain {
+  background-color: $color-rain-night;
+  color: $color-text-default;
+}
+
+.day-snow {
+  background-color: $color-snow-day;
+  color: $color-gray-dark;
+}
+
+.night-snow {
+  background-color: $color-snow-night;
+  color: $color-gray-xdark;
 }
 
 .sunset {
@@ -119,14 +136,9 @@ h2 {
   color: $color-text-night;
 }
 
-.night-cloudy {
-  // background: radial-gradient($color-night, $color-cloudy-night);
-  background-color: $color-cloudy-night;
-  color: $color-text-night;
-}
-
+.night-cloudy,
 .sunset-cloudy {
-  // background: radial-gradient($color-sunset, $color-cloudy-night);
+  // background: radial-gradient($color-night, $color-cloudy-night);
   background-color: $color-cloudy-night;
   color: $color-text-night;
 }
