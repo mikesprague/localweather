@@ -4,7 +4,6 @@ import * as defaults from './defaults';
 import * as ui from './ui';
 import * as cache from './cache';
 import * as app from './init';
-// import wait from 'waait';
 
 export async function getLocationNameFromLatLng(lat, lng) {
   const url = `https://mikesprague-api.glitch.me/location-name/?lat=${lat}&lng=${lng}`;
