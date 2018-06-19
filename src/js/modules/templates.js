@@ -1,3 +1,5 @@
+'use strict';
+
 import * as defaults from './defaults';
 import * as ui from './ui';
 import * as datetime from './datetime';
@@ -156,18 +158,18 @@ export function populateHourlyData(data, numHours = 12) {
 
 export function populateLastUpdated(data) {
   const lastUpdatedString = `
-        Weather data cached at: ${datetime.formatUnixTimeAsLocalString(data.currently.time)}
-        <br>
-        Weather data is cached for 10 minutes.
-        <br>
-        Next data refresh available after:
-        ${datetime.formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
-      `;
+    Weather data cached at: ${datetime.formatUnixTimeAsLocalString(data.currently.time)}
+    <br>
+    Weather data is cached for 10 minutes.
+    <br>
+    Next data refresh available after:
+    ${datetime.formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
+  `;
   const lastUpdatedTemplate = `
-        <p class="last-updated has-tooltip" title="${lastUpdatedString}">
-          Weather data last updated ${datetime.getTimeFromUnixTime(data.currently.time)}
-        </p>
-      `;
+    <p class="last-updated has-tooltip" title="${lastUpdatedString}">
+      Weather data last updated ${datetime.getTimeFromUnixTime(data.currently.time)}
+    </p>
+  `;
   const lastUpdatedEl = document.querySelector('.last-updated');
   lastUpdatedEl.innerHTML = lastUpdatedTemplate;
 }
