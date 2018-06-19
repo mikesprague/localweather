@@ -94,6 +94,10 @@ export async function getLocationAndPopulateAppData() {
   }
 }
 
+export function isOnline() {
+  return navigator.onLine;
+}
+
 export function checkIfDataUpdateNeeded() {
   if (!cache.useCache(cache.getData(defaults.cacheTimeKey))) {
     defaults.loadFromCache = false;
