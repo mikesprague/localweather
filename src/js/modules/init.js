@@ -2,8 +2,8 @@
 
 import * as defaults from './defaults';
 import * as cache from './cache';
-import * as data from './data';
 import * as ui from './ui';
+import * as data from './data';
 
 export function init() {
   // register service worker
