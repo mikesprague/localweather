@@ -1,6 +1,7 @@
 'use strict';
 
 import tippy from 'tippy.js';
+import swal from 'sweetalert2';
 import * as defaults from './defaults';
 import * as templates from './templates';
 
@@ -196,6 +197,22 @@ export function showUi() {
   showEl(hrAll);
   showEl(poweredBy);
   initTooltips();
+}
+
+export function reloadWindow() {
+  window.location.reload(true);
+}
+
+export function showInstallAlert() {
+  swal({
+    title: `${defaults.appName}`,
+    text: `Updated to Latest Version (${defaults.versionString})`,
+    confirmButtonText: 'Reload to Use',
+    type: 'success',
+    onClose: () => {
+      reloadWindow();
+    }
+  });
 }
 
 export function registerAlertClickHandler() {
