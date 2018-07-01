@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LocalWeather.io (powered by Dark Sky)</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-33"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-461185-33');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="subject" content="Minimalist local weather app powered by Dark Sky">
+  <meta name="keywords" content="weather, local, dark sky, localweather.io, local weather">
+  <meta name="description" content="Minimalist local weather app powered by Dark Sky">
+  <meta name="author" content="Michael Sprague">
+  <meta name="theme-color" content="#133150">
+  <meta name="apple-mobile-web-app-title" content="LocalWeather.io">
+  <meta name="application-name" content="LocalWeather.io">
+  <link rel="canonical" href="https://localweather.io/"/>
+  <link rel="manifest" href="/manifest.json">
+  <link href="/css/styles.css" rel="stylesheet">
+  <script defer src="/assets/js/fontawesome/all.js"></script>
+  <script src="/js/bundle.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css">
+  <link rel="stylesheet" href="/assets/css/weather-icons.min.css">
+  <link rel="stylesheet" href="/assets/css/weather-icons-wind.min.css">
+  <link rel="icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
+  <link rel="apple-touch-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
+  <link rel="mask-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
+</head>
+<body>
+
+  <div class="container loading-spinner">
+    <div class="row align-items-start mt-5">
+      <div class="col text-center mt-5">
+        <i class="fas fa-fw fa-spinner fa-5x fa-pulse"></i>
+        <p class="loading-text">... beep ... boop ... beep ... boop ...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container weather-data">
+    <div class="row">
+      <div class="col-12 alert-container"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 location"></div>
+    </div>
+    <hr class="hide-me">
+
+    <div class="row align-items-center primary-conditions-data"></div>
+    <div class="row align-items-start current-weather-data"></div>
+    <hr class="hide-me">
+
+    <div class="row align-items-start hourly">
+      <div class="col col-lg-1 text-center hourly-1"></div>
+      <div class="col col-lg-1 text-center hourly-2"></div>
+      <div class="col col-lg-1 text-center hourly-3"></div>
+      <div class="col col-lg-1 text-center hourly-4"></div>
+      <div class="col col-lg-1 text-center hourly-5"></div>
+      <div class="col col-lg-1 d-none d-md-block text-center hourly-6"></div>
+      <div class="col col-lg-1 d-none d-md-block text-center hourly-7"></div>
+      <div class="col col-lg-1 d-none d-lg-block text-center hourly-8"></div>
+      <div class="col col-lg-1 d-none d-lg-block text-center hourly-9"></div>
+      <div class="col col-lg-1 d-none d-lg-block text-center hourly-10"></div>
+      <div class="col col-lg-1 d-none d-lg-block text-center hourly-11"></div>
+      <div class="col col-lg-1 d-none d-lg-block text-center hourly-12"></div>
+    </div>
+    <hr class="hide-me">
+
+    <div class="row align-items-start forecast">
+      <div class="col text-center forecast-1"></div>
+      <div class="col text-center forecast-2"></div>
+      <div class="col text-center forecast-3"></div>
+      <div class="col text-center forecast-4"></div>
+      <div class="col d-none d-md-block text-center forecast-5"></div>
+      <div class="col d-none d-lg-block text-center forecast-6"></div>
+      <div class="col d-none d-lg-block text-center forecast-7"></div>
+    </div>
+    <hr class="hide-me">
+
+    <div class="row">
+      <div class="col-12 last-updated"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 powered-by-dark-sky hide-me"></div>
+    </div>
+  </div>
+
+</body>
+</html>
