@@ -71,12 +71,10 @@ export function getBodyBgClass(data) {
   const isCloudy = cloudCover > 50;
   const isRaining = (currentIcon === 'rain' || currentIcon === 'thunderstorm');
   const isSnowing = (currentIcon === 'snow' || currentIcon === 'sleet');
-  let bodyClassPrefix = '';
+  let bodyClassPrefix = 'night';
   let bodyClassSuffix = '';
 
-  if (now > sunset + timeBuffer) {
-    bodyClassPrefix = 'night';
-  } else if (now >= sunrise + timeBuffer && now <= sunset - timeBuffer) {
+  if (now >= sunrise + timeBuffer && now < sunset - timeBuffer) {
     bodyClassPrefix = 'day';
   } else if (now > sunrise - timeBuffer && now < sunrise + timeBuffer) {
     bodyClassPrefix = 'sunrise';
