@@ -1,6 +1,6 @@
 const VERSION = '0.13.5';
 const CACHE_NAME = `localWeather-io-${VERSION}`;
-const urlsToCache = [
+const cacheAlways = [
   '/',
   '/index.html',
   '/offline.html',
@@ -9,6 +9,14 @@ const urlsToCache = [
   '/dist/js/bundle.js',
   '/assets/css/weather-icons.min.css',
   '/assets/css/weather-icons-wind.min.css',
+  '/assets/font/weathericons-regular-webfont.woff2',
+  '/assets/font/weathericons-regular-webfont.woff',
+  '/assets/font/weathericons-regular-webfont.ttf',
+  '/assets/font/weathericons-regular-webfont.svg',
+  '/assets/font/weathericons-regular-webfont.eot',
+  '/assets/js/fontawesome/all.js',
+];
+const cacheWhenPossible = [
   '/assets/images/favicons/weather-icon-32.png',
   '/assets/images/favicons/weather-icon-48.png',
   '/assets/images/favicons/weather-icon-64.png',
@@ -16,51 +24,54 @@ const urlsToCache = [
   '/assets/images/favicons/weather-icon-96.png',
   '/assets/images/favicons/weather-icon-128.png',
   '/assets/images/favicons/weather-icon-512.png',
-  '/assets/font/weathericons-regular-webfont.woff2',
-  '/assets/font/weathericons-regular-webfont.woff',
-  '/assets/font/weathericons-regular-webfont.ttf',
-  '/assets/font/weathericons-regular-webfont.svg',
-  '/assets/font/weathericons-regular-webfont.eot',
-  '/assets/js/fontawesome/all.js',
   'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700',
   'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMR7eS2Ao.woff2',
   'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NHdQDnbTkabZAIOl9il_O6KJj73e7Fd_-7suD8Rb2V-ggZSw.woff2',
-  'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMR7eS2Ao.woff2'
+  'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMR7eS2Ao.woff2',
 ];
 
-self.addEventListener('install', event => {
-  // console.log('[SW] Install Started');
+addEventListener('install', installEvent => {
+  // console.info(`[SW] Begin Installing New Version ${CACHE_NAME}`);
   self.skipWaiting();
-  // clients.claim();
   // perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache =>
-      cache.addAll(urlsToCache).then(() => {
-        console.info(`[SW] Installed New Version ${CACHE_NAME}`);
-      })
-    )
-  );
-});
+  installEvent.waitUntil(
+    caches.open(CACHE_NAME)
+    .then(staticCache => {
+      // Nice to have cached
+      staticCache.addAll(cacheWhenPossible).then(() => {
+        // console.info('[SW] Cached the "nice to haves"');
+      }); // end addAll/then
+      // Must have cached
+      return staticCache.addAll(cacheAlways).then(() => {
+        // console.info('[SW] Cached the "must haves"');
+        console.info(`[SW] Finished Installing New Version ${CACHE_NAME}`);
+      }); // end return addAll/then
+    }) // end open then
+  ); // end waitUntil
+}); // end addEventListener
 
-self.addEventListener('activate', event => {
+addEventListener('activate', activateEvent => {
   // console.log('[SW] Activate Started');
-  // delete the old caches
-  event.waitUntil(
-    caches.keys().then(cacheNames =>
-      Promise.all(
+  activateEvent.waitUntil(
+    caches.keys()
+    .then(cacheNames => {
+      return Promise.all(
         cacheNames
-        // filter for caches that aren't the current one
-        .filter(cacheName => cacheName !== CACHE_NAME)
-        // map over them and delete them
-        .map(cacheName => caches.delete(cacheName).then(() => {
-          console.info(`[SW] Deleted Old Version ${cacheName}`);
-        }))
-      ).then(() => {
-        // console.log('[SW] Activated');
-      })
-    )
-  );
-});
+        .filter(cacheName => {
+          return cacheName !== CACHE_NAME;
+        })
+        .map(cacheName => {
+          // console.info(`[SW] Deleted Old Version ${cacheName}`);
+          return caches.delete(cacheName);
+        }) // end map
+      ); // end return Promise.all
+    }) // end keys then
+    .then(() => {
+      console.log('[SW] Activated');
+      return clients.claim();
+    }) // end then
+  ); // end waitUntil
+}); // end addEventListener
 
 // intercept network requests
 self.addEventListener('fetch', event => {
