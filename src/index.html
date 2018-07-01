@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>LocalWeather.io (powered by Dark Sky)</title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-33"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,19 +13,18 @@
     gtag('config', 'UA-461185-33');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="subject" content="Minimalist local weather app powered by Dark Sky">
-  <meta name="keywords" content="weather, local, dark sky, localweather.io, local weather">
-  <meta name="description" content="Minimalist local weather app powered by Dark Sky">
-  <meta name="author" content="Michael Sprague">
-  <meta name="theme-color" content="#133150">
-  <meta name="apple-mobile-web-app-title" content="LocalWeather.io">
-  <meta name="application-name" content="LocalWeather.io">
-  <meta name="application-version" content="v0.13.4">
-  <script src="/dist/js/bundle.js"></script>
-  <link rel="canonical" href="https://localweather.io/"/>
+  <meta name="subject" content="<%= htmlWebpackPlugin.options.description %>">
+  <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
+  <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+  <meta name="author" content="<%= htmlWebpackPlugin.options.author %>">
+  <meta name="theme-color" content="<%= htmlWebpackPlugin.options.themeColor %>">
+  <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.appName %>">
+  <meta name="application-name" content="<%= htmlWebpackPlugin.options.appName %>">
+  <link rel="canonical" href="<%= htmlWebpackPlugin.options.canonical %>"/>
   <link rel="manifest" href="/manifest.json">
-  <link href="/dist/css/styles.css" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
   <script defer src="/assets/js/fontawesome/all.js"></script>
+  <script src="/js/bundle.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css">
   <link rel="stylesheet" href="/assets/css/weather-icons.min.css">
   <link rel="stylesheet" href="/assets/css/weather-icons-wind.min.css">
@@ -38,13 +37,17 @@
   <div class="container loading-spinner">
     <div class="row align-items-start mt-5">
       <div class="col text-center mt-5">
-        <i class="far fa-fw fa-spinner fa-5x fa-pulse"></i>
-        <p class="loading-text">... beep boop beep boop ...</p>
+        <i class="fas fa-fw fa-spinner fa-5x fa-pulse"></i>
+        <p class="loading-text"><%= htmlWebpackPlugin.options.loadingText %></p>
       </div>
     </div>
   </div>
 
   <div class="container weather-data">
+    <div class="row">
+      <div class="col-12 alert-container"></div>
+    </div>
+
     <div class="row">
       <div class="col-12 location"></div>
     </div>
@@ -86,25 +89,7 @@
     </div>
 
     <div class="row">
-      <div class="col-12 powered-by-dark-sky hide-me">
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="https://localweather.io" title="LocalWeather.io v0.13.5">
-              LocalWeather.io v0.13.5
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" title="Coded by Michael Sprague">
-              <i class="far fa-code"></i> by Michael Sprague
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" title="Powered by Dark Sky">
-              <i class="fas fa-tint"></i> Powered by Dark Sky
-            </a>
-          </li>
-        </ul>
-      </div>
+      <div class="col-12 powered-by-dark-sky hide-me"></div>
     </div>
   </div>
 
