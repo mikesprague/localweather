@@ -204,7 +204,7 @@ export function reloadWindow() {
 export function showInstallAlert() {
   swal({
     title: `${defaults.appName}`,
-    text: `Updated to Latest Version (${defaults.versionString})`,
+    text: 'Updated to Latest Version',
     confirmButtonText: 'Reload to Use',
     type: 'success',
     onClose: () => {
