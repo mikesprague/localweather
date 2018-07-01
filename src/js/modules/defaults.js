@@ -16,7 +16,7 @@ module.exports = {
   lng: 0,
   loadFromCache: false,
   loadingSpinnerSelector: '.loading-spinner',
-  loadingText: '... beep ... boop ... beep ... boop ...',
+  loadingText: '... loading weather data for your location ...',
   locationDataKey: 'locationData',
   locationName: '',
   themeColor: '#133150',
