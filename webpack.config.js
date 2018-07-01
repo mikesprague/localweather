@@ -92,7 +92,7 @@ module.exports = {
     }]),
     new CopyWebpackPlugin([{
       from: './assets/**/*',
-      to: './assets/',
+      to: './',
     }]),
   ]
 };
