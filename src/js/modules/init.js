@@ -16,7 +16,8 @@ export function init() {
       // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       // check for updatees
       registration.onupdatefound = () => {
-        console.info('[SW] New Version Found - Refresh Browser to Load');
+        ui.showInstallAlert();
+        console.info(`[SW] New Version Found - Refresh Browser to Load`);
       };
     });
   }
