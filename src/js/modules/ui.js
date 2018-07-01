@@ -248,6 +248,7 @@ export function renderAppWithData(data) {
   templates.populateHourlyData(data);
   templates.populateLastUpdated(data);
   templates.populateLocation(data);
+  templates.populateFooter();
   setFavicon(data);
   setTitle(data);
   initTooltips();

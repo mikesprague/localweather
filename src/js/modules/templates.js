@@ -175,3 +175,27 @@ export function populateLastUpdated(data) {
   const lastUpdatedEl = document.querySelector('.last-updated');
   lastUpdatedEl.innerHTML = lastUpdatedTemplate;
 }
+
+export function populateFooter() {
+  const footerTemplate = `
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a href="https://localweather.io" title="LocalWeather.io ${defaults.versionString}">
+          LocalWeather.io ${defaults.versionString}
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" title="Powered by Dark Sky">
+          <i class="fas fa-tint"></i> Powered by Dark Sky
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" title="Coded by Michael Sprague">
+          <i class="far fa-code"></i> by Michael Sprague
+        </a>
+      </li>
+    </ul>
+  `;
+  const footerEl = document.querySelector('.powered-by-dark-sky');
+  footerEl.innerHTML = footerTemplate;
+}
