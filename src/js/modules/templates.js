@@ -103,20 +103,6 @@ export function populateWeatherData(data) {
   weatherDataEl.innerHTML = weatherDataTemplate;
 }
 
-export function populateErrorMessage(msg) {
-  const errorMessageTemplate = `
-        <div class="alert alert-danger alert-dismissible error-message" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <span class="sr-only">Error:</span>
-          <p>
-            <span class="far fa-fw fa-exclamation-circle" aria-hidden="true"></span> ${msg}
-          </p>
-        </div>
-      `;
-  const errorMessageEl = document.querySelector('.error-message');
-  errorMessageEl.innerHTML = errorMessageTemplate;
-}
-
 export function populateForecastData(data, numDays = 7) {
   for (let i = 0; i < numDays; i++) {
     let next = i + 1;
@@ -154,6 +140,22 @@ export function populateHourlyData(data, numHours = 12) {
     let hourlyEl = document.querySelector(`.hourly-${next}`);
     hourlyEl.innerHTML = hourlyTemplate;
   }
+}
+
+export function populateAlertMessage(msg, type, icon) {
+  const alertMessageTemplate = `
+    <div class="alert alert-${type} alert-dismissible fade-in alert-message" role="alert">
+      <button type="button" class="close alert-close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p>
+        <span class="${icon}" aria-hidden="true"></span> ${msg}
+      </p>
+    </div>
+  `;
+  const alertContainer = document.querySelector('.alert-container');
+  alertContainer.innerHTML = alertMessageTemplate;
+  ui.registerAlertClickHandler();
 }
 
 export function populateLastUpdated(data) {

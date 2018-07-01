@@ -161,6 +161,14 @@ h2 {
   cursor: default;
 }
 
+.alert-message {
+  p {
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-bottom: 0;
+  }
+}
+
 .current-icon,
 .current-temp {
   & p {

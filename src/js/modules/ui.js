@@ -198,6 +198,39 @@ export function showUi() {
   initTooltips();
 }
 
+export function registerAlertClickHandler() {
+  document.querySelector('.alert-message > .alert-close').addEventListener('click', function (event) {
+    document.querySelector('.alert-message > .alert-close').removeEventListener('click', event);
+    this.parentNode.remove();
+  });
+}
+
+export function showAlert(
+  msg,
+  type = 'danger', // type: primary | secondary | info | success | warning | danger | light | dark
+  icon = 'fas fa-fw fa-exclamation-triangle' // icon: any valid font awesome string
+) {
+  templates.populateAlertMessage(msg, type, icon);
+}
+
+export function initWeatherAlerts(data) {
+  const weatherAlerts = data.alerts;
+  for (let i = 0; i < weatherAlerts.length; i++) {
+    let description = weatherAlerts[i].description.split("*")[0];
+    let linkHtml = `
+      <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
+        Open full ${weatherAlerts[i].severity} <i class="far fa-fw fa-external-link"></i>
+      </a>
+    `;
+    showAlert(`
+      <span class="has-tooltip" title="${weatherAlerts[i].description}">
+        <strong>${weatherAlerts[i].title}</strong> ${description}
+      </span>
+      <br><small>${linkHtml}</small>
+    `);
+  }
+}
+
 export function initTooltips() {
   tippy('.has-tooltip', {
     arrow: true,
@@ -218,5 +251,6 @@ export function renderAppWithData(data) {
   setFavicon(data);
   setTitle(data);
   initTooltips();
+  initWeatherAlerts(data);
   return true;
 }
