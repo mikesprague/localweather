@@ -230,19 +230,21 @@ export function showAlert(
 
 export function initWeatherAlerts(data) {
   const weatherAlerts = data.alerts;
-  for (let i = 0; i < weatherAlerts.length; i++) {
-    let description = weatherAlerts[i].description.split("*")[0];
-    let linkHtml = `
-      <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
-        Open full ${weatherAlerts[i].severity} <i class="far fa-fw fa-external-link"></i>
-      </a>
-    `;
-    showAlert(`
-      <span class="has-tooltip" title="${weatherAlerts[i].description}">
-        <strong>${weatherAlerts[i].title}</strong> ${description}
-      </span>
-      <br><small>${linkHtml}</small>
-    `);
+  if (weatherAlerts) {
+    for (let i = 0; i < weatherAlerts.length; i++) {
+      let description = weatherAlerts[i].description.split("*")[0];
+      let linkHtml = `
+        <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
+          Open full ${weatherAlerts[i].severity} <i class="far fa-fw fa-external-link"></i>
+        </a>
+      `;
+      showAlert(`
+        <span class="has-tooltip" title="${weatherAlerts[i].description}">
+          <strong>${weatherAlerts[i].title}</strong> ${description}
+        </span>
+        <br><small>${linkHtml}</small>
+      `);
+    }
   }
 }
 
