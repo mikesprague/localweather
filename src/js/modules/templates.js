@@ -121,6 +121,22 @@ export function populateForecastData(data, numDays = 7) {
 }
 
 export function populateHourlyData(data, numHours = 12) {
+  let hourlyWrappers = `
+    <div class="col col-lg-1 text-center hourly-1"></div>
+    <div class="col col-lg-1 text-center hourly-2"></div>
+    <div class="col col-lg-1 text-center hourly-3"></div>
+    <div class="col col-lg-1 text-center hourly-4"></div>
+    <div class="col col-lg-1 text-center hourly-5"></div>
+    <div class="col col-lg-1 d-none d-md-block text-center hourly-6"></div>
+    <div class="col col-lg-1 d-none d-md-block text-center hourly-7"></div>
+    <div class="col col-lg-1 d-none d-lg-block text-center hourly-8"></div>
+    <div class="col col-lg-1 d-none d-lg-block text-center hourly-9"></div>
+    <div class="col col-lg-1 d-none d-lg-block text-center hourly-10"></div>
+    <div class="col col-lg-1 d-none d-lg-block text-center hourly-11"></div>
+    <div class="col col-lg-1 d-none d-lg-block text-center hourly-12"></div>
+  `;
+  let hourlyWrappersEl = document.querySelector('.hourly');
+  hourlyWrappersEl.innerHTML = hourlyWrappers;
   for (let i = 0; i < numHours; i++) {
     let next = i + 1;
     let hourlyPopup = `

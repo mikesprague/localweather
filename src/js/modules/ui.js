@@ -235,7 +235,7 @@ export function initWeatherAlerts(data) {
       let description = weatherAlerts[i].description.split("*")[0];
       let linkHtml = `
         <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
-          Open full ${weatherAlerts[i].severity} <i class="far fa-fw fa-external-link"></i>
+          Open full ${weatherAlerts[i].severity} <i class="fal fa-fw fa-external-link"></i>
         </a>
       `;
       showAlert(`
