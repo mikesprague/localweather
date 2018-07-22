@@ -29,7 +29,7 @@
   "homepage": "https://localweather.io",
   "dependencies": {},
   "devDependencies": {
-    "@fortawesome/fontawesome-pro": "^5.1.0-4",
+    "@fortawesome/fontawesome-pro": "^5.1.1",
     "bootstrap": "^4.1.2",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
