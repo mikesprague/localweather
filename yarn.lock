@@ -985,9 +985,9 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bootstrap@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.1.tgz#3aec85000fa619085da8d2e4983dfd67cf2114cb"
+bootstrap@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.2.tgz#aee2a93472e61c471fc79fb475531dcbc87de326"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -6357,9 +6357,9 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-sweetalert2@^7.24.4:
-  version "7.24.4"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.24.4.tgz#537494d8151567e511f933368737c56130420ce4"
+sweetalert2@^7.25.6:
+  version "7.25.6"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.25.6.tgz#462a5ab72c2eb3f4cd4ffb648b02fc91c4ad4c65"
 
 symbol-observable@1.0.1:
   version "1.0.1"
@@ -6444,9 +6444,9 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tippy.js@^2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-2.5.3.tgz#a75b0b6d18633cea8ec79658a85d07599c77c9a4"
+tippy.js@^2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-2.5.4.tgz#69155d673761275dbf874c93175df443a006de46"
   dependencies:
     popper.js "^1.14.3"
 
