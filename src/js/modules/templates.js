@@ -104,6 +104,17 @@ export function populateWeatherData(data) {
 }
 
 export function populateForecastData(data, numDays = 7) {
+  const forecastWrappers = `
+    <div class="col text-center forecast-1"></div>
+    <div class="col text-center forecast-2"></div>
+    <div class="col text-center forecast-3"></div>
+    <div class="col text-center forecast-4"></div>
+    <div class="col d-none d-md-block text-center forecast-5"></div>
+    <div class="col d-none d-lg-block text-center forecast-6"></div>
+    <div class="col d-none d-lg-block text-center forecast-7"></div>
+  `;
+  const forecastWrappersEl = document.querySelector('.forecast-data');
+  forecastWrappersEl.innerHTML = forecastWrappers;
   for (let i = 0; i < numDays; i++) {
     let next = i + 1;
     let forecastTemplate = `
@@ -121,7 +132,7 @@ export function populateForecastData(data, numDays = 7) {
 }
 
 export function populateHourlyData(data, numHours = 12) {
-  let hourlyWrappers = `
+  const hourlyWrappers = `
     <div class="col col-lg-1 text-center hourly-1"></div>
     <div class="col col-lg-1 text-center hourly-2"></div>
     <div class="col col-lg-1 text-center hourly-3"></div>
@@ -135,7 +146,7 @@ export function populateHourlyData(data, numHours = 12) {
     <div class="col col-lg-1 d-none d-lg-block text-center hourly-11"></div>
     <div class="col col-lg-1 d-none d-lg-block text-center hourly-12"></div>
   `;
-  let hourlyWrappersEl = document.querySelector('.hourly');
+  const hourlyWrappersEl = document.querySelector('.hourly-data');
   hourlyWrappersEl.innerHTML = hourlyWrappers;
   for (let i = 0; i < numHours; i++) {
     let next = i + 1;
