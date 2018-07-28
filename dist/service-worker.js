@@ -1,4 +1,4 @@
-const VERSION = '0.14.9';
+const VERSION = '0.15.0';
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
   './',
@@ -14,7 +14,6 @@ const cacheAlways = [
   './assets/font/weathericons-regular-webfont.ttf',
   './assets/font/weathericons-regular-webfont.svg',
   './assets/font/weathericons-regular-webfont.eot',
-  './assets/js/fontawesome/all.js',
 ];
 const cacheWhenPossible = [
   './assets/images/favicons/weather-icon-32.png',
