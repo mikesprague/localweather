@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@fortawesome/fontawesome-pro@^5.1.1":
-  version "5.1.1"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/fontawesome-pro-5.1.1.tgz#01a6e65e2c92db4ad0157ae5e57605d63aaff604"
+"@fortawesome/fontawesome-pro@^5.2.0":
+  version "5.2.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/fontawesome-pro-5.2.0.tgz#e202f9ac8ee8543670233c218dfc6e058a7a89c5"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
