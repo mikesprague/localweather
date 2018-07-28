@@ -5,7 +5,7 @@ import * as ui from './ui';
 import * as datetime from './datetime';
 
 export function populateLocation(data) {
-  const city = defaults.locationName.split(',')[0].trim();;
+  const city = defaults.locationName.split(',')[0].trim();
   const locationTemplate = `
     <h1 class="location has-tooltip" title="
       <i class='fas fa-fw fa-globe'></i> <strong>${defaults.locationName}</strong>

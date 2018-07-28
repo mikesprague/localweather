@@ -10,7 +10,7 @@ module.exports = {
   env: 'prod',
   errorMessageSelector: '.error-message',
   hideClassName: 'hide-me',
-  isOnline: false,
+  isOnline: true,
   keywords: 'weather, local, dark sky, localweather.io, local weather',
   lat: 0,
   lng: 0,
