@@ -3,15 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-33"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-461185-33');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="subject" content="<%= htmlWebpackPlugin.options.description %>">
   <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
@@ -71,5 +62,14 @@
     </div>
   </div>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-33"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-461185-33');
+  </script>
 </body>
 </html>
