@@ -14,7 +14,6 @@ const cacheAlways = [
   './assets/font/weathericons-regular-webfont.ttf',
   './assets/font/weathericons-regular-webfont.svg',
   './assets/font/weathericons-regular-webfont.eot',
-  './assets/js/fontawesome/all.js',
 ];
 const cacheWhenPossible = [
   './assets/images/favicons/weather-icon-32.png',

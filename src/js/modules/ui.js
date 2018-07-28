@@ -2,6 +2,24 @@
 
 import tippy from 'tippy.js';
 import swal from 'sweetalert2';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import {
+  faSpinner,
+  faGlobe,
+  faMapMarkerAlt,
+  faExclamationTriangle,
+  faTint,
+  faUmbrella,
+  faSun,
+  faEye,
+  faCloud
+} from '@fortawesome/pro-solid-svg-icons';
+import {
+  faLongArrowAltDown,
+  faLongArrowAltUp,
+  faExternalLink
+} from '@fortawesome/pro-light-svg-icons';
+import { faCode } from '@fortawesome/pro-regular-svg-icons';
 import * as defaults from './defaults';
 import * as templates from './templates';
 
@@ -257,7 +275,27 @@ export function initTooltips() {
   });
 }
 
+export function initFontAwesomeIcons() {
+  library.add(
+    faSpinner,
+    faGlobe,
+    faMapMarkerAlt,
+    faUmbrella,
+    faSun,
+    faEye,
+    faCloud,
+    faExclamationTriangle,
+    faTint,
+    faLongArrowAltDown,
+    faLongArrowAltUp,
+    faExternalLink,
+    faCode
+  );
+  dom.watch();
+}
+
 export function renderAppWithData(data) {
+  initFontAwesomeIcons();
   setBodyBgClass(getBodyBgClass(data));
   templates.populatePrimaryData(data);
   templates.populateWeatherData(data);
