@@ -6,6 +6,7 @@ module.exports = {
   cacheTimeKey: 'cacheTime',
   cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
   canonical: 'https://localweather.io/',
+  coordsDataKey: 'coordsData',
   description: 'Minimalist local weather app powered by Dark Sky',
   env: 'prod',
   errorMessageSelector: '.error-message',
