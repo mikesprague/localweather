@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.17.3",
+  "version": "0.17.4",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "index.js",
@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run webpack:serve",
     "webpack": "webpack --progress --colors",
-    "webpack:dev": "npm run webpack -- --mode development --watch",
-    "webpack:build": "npm run webpack -- --mode production",
+    "webpack:dev": "webpack --progress --colors --mode development --watch",
+    "webpack:build": "webpack --mode production --progress --colors",
     "webpack:serve": "webpack-serve ./webpack.config.js --port 5500 --open",
     "sass:watch": "node-sass --watch src/scss -o dist/css --output-style compressed",
     "sass:compile": "node-sass src/scss -o dist/css --output-style compressed",

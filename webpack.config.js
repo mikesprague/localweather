@@ -24,7 +24,7 @@ module.exports = {
       errors: true
     }
   },
-  // mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {

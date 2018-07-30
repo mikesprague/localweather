@@ -8,7 +8,6 @@ module.exports = {
   canonical: 'https://localweather.io/',
   coordsDataKey: 'coordsData',
   description: 'Minimalist local weather app powered by Dark Sky',
-  env: 'prod',
   errorMessageSelector: '.error-message',
   hideClassName: 'hide-me',
   isOnline: function () {
@@ -27,6 +26,6 @@ module.exports = {
   themeColor: '#133150',
   timerHandle: 0,
   title: 'LocalWeather.io (powered by Dark Sky)',
-  versionString: 'v0.17.3',
+  versionString: 'v0.17.4',
   weatherDataKey: 'weatherData',
 };
