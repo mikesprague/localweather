@@ -16,6 +16,15 @@ module.exports = {
     filename: './js/bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devServer: {
+    compress: true,
+    port: 5500,
+    overlay: {
+      warnings: true,
+      errors: true
+    }
+  },
+  mode: process.env.WEBPACK_SERVE ? 'production' : 'development',
   module: {
     rules: [
       {
@@ -46,7 +55,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin('dist', {}),
+    // new CleanWebpackPlugin('dist/*.*', {}),
     new MiniCssExtractPlugin({
       filename: './css/styles.css',
     }),
