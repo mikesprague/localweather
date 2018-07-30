@@ -16,18 +16,18 @@ export function init() {
       // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       // check for updatees
       registration.onupdatefound = () => {
-        ui.showInstallAlert();
         console.info(`[SW] New Version Found - Refresh Browser to Load`);
+        ui.showInstallAlert();
       };
     });
   }
 
-  window.addEventListener('online', function (e) {
-    defaults.isOnline = true;
+  window.addEventListener('offline', () => {
+    location.replace('/offline.html')
   }, false);
 
-  window.addEventListener('offline', function (e) {
-    defaults.isOnline = false;
+  window.addEventListener('online', () => {
+    location.replace('/')
   }, false);
 
   // window.onerror = function (msg, url, lineNo, columnNo, error) {
@@ -36,8 +36,13 @@ export function init() {
   //   return false;
   // };
 
-  cache.initCache();
-  data.getLocationAndPopulateAppData();
-  data.initDataUpdateCheck();
-  ui.initTooltips();
+  if (defaults.isOnline()) {
+    cache.initCache();
+    data.getLocationAndPopulateAppData();
+    data.initDataUpdateCheck();
+    ui.initTooltips();
+  } else {
+    ui.initFontAwesomeIcons();
+    ui.initTooltips();
+  }
 }

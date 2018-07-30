@@ -31,8 +31,6 @@ export async function getLocationNameFromLatLng(lat, lng) {
         });
       return locationData;
     }
-  } else {
-    location.replace('/offline.html');
   }
 }
 
@@ -61,8 +59,6 @@ export async function getWeather(lat, lng) {
         });
       return weatherData;
     }
-  } else {
-    location.replace('/offline.html');
   }
 }
 
@@ -101,13 +97,7 @@ export async function getLocationAndPopulateAppData() {
         console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
       }
     }
-  } else {
-    location.replace('/offline.html');
   }
-}
-
-export function isOnline() {
-  return navigator.onLine;
 }
 
 export function checkIfDataUpdateNeeded() {
