@@ -12,15 +12,17 @@ import {
   faUmbrella,
   faSun,
   faEye,
-  faCloud
-} from '@fortawesome/pro-solid-svg-icons';
-import {
+  faCloud,
+  faBan,
+  faCode,
+  faSignal,
   faLongArrowAltDown,
   faLongArrowAltUp,
-  faExternalLink,
+  faExternalLinkAlt
+} from '@fortawesome/free-solid-svg-icons';
+import {
   faSadTear
-} from '@fortawesome/pro-light-svg-icons';
-import { faCode } from '@fortawesome/pro-regular-svg-icons';
+} from '@fortawesome/free-regular-svg-icons';
 import * as defaults from './defaults';
 import * as templates from './templates';
 
@@ -65,11 +67,11 @@ export function getTempTrend(data) {
   const now = Math.round(new Date().getTime() / 1000);
   console.log(now);
   console.log(data.daily.data[0].apparentTemperatureHighTime)
-  let iconClass = 'fal fa-fw fa-long-arrow-alt-down';
+  let iconClass = 'fas fa-fw fa-long-arrow-alt-down';
   let iconTransform = 'rotate--30';
   let tempTrendText = 'falling';
   if (now < data.daily.data[0].apparentTemperatureHighTime) {
-    iconClass = 'fal fa-fw fa-long-arrow-alt-up';
+    iconClass = 'fas fa-fw fa-long-arrow-alt-up';
     iconTransform = 'rotate-45';
     let tempTrendText = 'rising';
   }
@@ -254,7 +256,7 @@ export function initWeatherAlerts(data) {
       let description = weatherAlerts[i].description.split("*")[0];
       let linkHtml = `
         <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
-          Open full ${weatherAlerts[i].severity} <i class="fal fa-fw fa-external-link"></i>
+          Open full ${weatherAlerts[i].severity} <i class="fas fa-fw fa-external-link"></i>
         </a>
       `;
       showAlert(`
@@ -289,9 +291,11 @@ export function initFontAwesomeIcons() {
     faTint,
     faLongArrowAltDown,
     faLongArrowAltUp,
-    faExternalLink,
+    faExternalLinkAlt,
     faCode,
-    faSadTear
+    faSadTear,
+    faBan,
+    faSignal
   );
   dom.watch();
 }

@@ -218,7 +218,7 @@ export function populateFooter() {
       </li>
       <li class="list-inline-item">
         <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" title="Coded by Michael Sprague">
-          <i class="far fa-code"></i> by Michael Sprague
+          <i class="fas fa-code"></i> by Michael Sprague
         </a>
       </li>
     </ul>
