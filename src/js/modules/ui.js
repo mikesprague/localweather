@@ -190,6 +190,7 @@ export function showLoading() {
   setBodyBgClass('loading');
   showEl(loadingSpinner);
   hideUi();
+  initFontAwesomeIcons();
 }
 
 export function hideLoading() {
@@ -197,6 +198,7 @@ export function hideLoading() {
   removeBodyBgClass('loading');
   hideEl(loadingSpinner);
   showUi();
+  initFontAwesomeIcons();
 }
 
 export function hideUi() {
