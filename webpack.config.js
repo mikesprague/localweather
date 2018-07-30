@@ -1,5 +1,4 @@
 const path = require('path');
-const glob = require('glob');
 const variables = require('./src/js/modules/defaults');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -7,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -26,7 +24,7 @@ module.exports = {
       errors: true
     }
   },
-  mode: process.env.WEBPACK_SERVE ? 'production' : 'development',
+  // mode: 'development',
   module: {
     rules: [
       {
@@ -57,12 +55,9 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin('dist/*.*', {}),
+    new CleanWebpackPlugin('dist', {}),
     new MiniCssExtractPlugin({
       filename: './css/styles.css',
-    }),
-    new PurgecssPlugin({
-      paths: glob.sync('./src/**/*',  { nodir: true })
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -81,6 +76,16 @@ module.exports = {
       inject: false,
       template: './src/offline.html',
       filename: './offline.html',
+      appName: variables.appName,
+      author: variables.author,
+      canonical: variables.canonical,
+      description: variables.description,
+      keywords: variables.keywords,
+      offlineHeading: variables.offlineHeading,
+      offlineText: variables.offlineText,
+      themeColor: variables.themeColor,
+      title: variables.title,
+      versionString: variables.versionString,
     }),
     new CopyWebpackPlugin([{
       from: './src/service-worker.js',

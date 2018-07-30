@@ -11,7 +11,9 @@ module.exports = {
   env: 'prod',
   errorMessageSelector: '.error-message',
   hideClassName: 'hide-me',
-  isOnline: true,
+  isOnline: function () {
+    return navigator.onLine;
+  },
   keywords: 'weather, local, dark sky, localweather.io, local weather',
   lat: 0,
   lng: 0,
@@ -20,9 +22,11 @@ module.exports = {
   loadingText: '... loading weather data for your location ...',
   locationDataKey: 'locationData',
   locationName: '',
+  offlineHeading: 'You appear to be offline',
+  offlineText: 'This page will automatically update with current weather data when you have a stable connection again',
   themeColor: '#133150',
   timerHandle: 0,
   title: 'LocalWeather.io (powered by Dark Sky)',
-  versionString: 'v0.16.0',
+  versionString: 'v0.16.1',
   weatherDataKey: 'weatherData',
 };

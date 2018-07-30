@@ -1401,8 +1401,8 @@ cssnano-util-same-parent@^4.0.0:
   resolved "https://registry.yarnpkg.com/cssnano-util-same-parent/-/cssnano-util-same-parent-4.0.0.tgz#d2a3de1039aa98bc4ec25001fa050330c2a16dac"
 
 cssnano@^4.0.2:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.0.4.tgz#8a397b5e307e06fd7e361bf11344b1cff8749a86"
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.0.5.tgz#8789b5fdbe7be05d8a0f7e45c4c789ebe712f5aa"
   dependencies:
     cosmiconfig "^5.0.0"
     cssnano-preset-default "^4.0.0"
@@ -1637,10 +1637,11 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     stream-shift "^1.0.0"
 
 ecc-jsbn@~0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz#3a83a904e54353287874c564b7549386849a98c9"
   dependencies:
     jsbn "~0.1.0"
+    safer-buffer "^2.1.0"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -4946,7 +4947,7 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2:
+"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2, safer-buffer@^2.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
@@ -5592,8 +5593,8 @@ uglify-es@^3.3.4:
     source-map "~0.6.1"
 
 uglify-js@3.4.x:
-  version "3.4.5"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.5.tgz#650889c0766cf0f6fd5346cea09cd212f544be69"
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.6.tgz#bc546d53f3e02b05d97d0ca5a7abfe0fb0384ddb"
   dependencies:
     commander "~2.16.0"
     source-map "~0.6.1"
