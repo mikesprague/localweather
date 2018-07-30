@@ -8,9 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run webpack:serve",
     "webpack": "webpack --progress --colors",
-    "webpack:dev": "webpack --progress --colors --mode development --watch",
-    "webpack:build": "webpack --mode production --progress --colors",
-    "webpack:serve": "webpack-serve ./webpack.config.js --port 5500 --open",
+    "webpack:dev": "webpack --config ./webpack.config.dev.js --progress --colors --watch",
+    "webpack:build": "webpack --config ./webpack.config.js --progress --colors",
+    "webpack:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
     "sass:watch": "node-sass --watch src/scss -o dist/css --output-style compressed",
     "sass:compile": "node-sass src/scss -o dist/css --output-style compressed",
     "sass:lint": "sass-lint --verbose --no-exit"
