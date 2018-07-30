@@ -27,7 +27,13 @@
   <div class="container">
     <div class="row align-items-start mt-5">
       <div class="col text-center mt-5">
-        <h2><i class="fal fa-fw fa-sad-tear"></i> <%= htmlWebpackPlugin.options.offlineHeading %></h2>
+        <h1 class="text-center">
+          <span class="fa-stack fa-fw">
+            <i class="fas fa-fw fa-signal fa-stack-1x"></i>
+            <i class="fas fa-fw fa-ban fa-stack-2x text-danger""></i>
+          </span>
+        </h1>
+        <h2><%= htmlWebpackPlugin.options.offlineHeading %></h2>
         <h3><%= htmlWebpackPlugin.options.offlineText %></h3>
       </div>
     </div>
