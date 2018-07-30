@@ -6,10 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "yarn webpack:serve",
+    "start": "npm run webpack:serve",
     "webpack": "webpack --progress --colors",
-    "webpack:dev": "yarn webpack --mode development --watch",
-    "webpack:build": "yarn webpack --mode production",
+    "webpack:dev": "npm run webpack -- --mode development --watch",
+    "webpack:build": "npm run webpack -- --mode production",
     "webpack:serve": "webpack-serve ./webpack.config.js --port 5500 --open",
     "sass:watch": "node-sass --watch src/scss -o dist/css --output-style compressed",
     "sass:compile": "node-sass src/scss -o dist/css --output-style compressed",
@@ -27,7 +27,8 @@
     "url": "https://github.com/mikesprague/local-weather/issues"
   },
   "homepage": "https://localweather.io",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "@fortawesome/free-regular-svg-icons": "^5.2.0",
@@ -47,9 +48,7 @@
     "tippy.js": "^2.5.4",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.16.3",
-    "webpack-cli": "^3.1.0"
-  },
-  "devDependencies": {
+    "webpack-cli": "^3.1.0",
     "webpack-serve": "^2.0.2"
   }
 }
