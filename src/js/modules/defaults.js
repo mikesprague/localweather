@@ -27,6 +27,6 @@ module.exports = {
   themeColor: '#133150',
   timerHandle: 0,
   title: 'LocalWeather.io (powered by Dark Sky)',
-  versionString: 'v0.17.2',
+  versionString: 'v0.17.3',
   weatherDataKey: 'weatherData',
 };
