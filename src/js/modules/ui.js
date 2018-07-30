@@ -17,7 +17,8 @@ import {
 import {
   faLongArrowAltDown,
   faLongArrowAltUp,
-  faExternalLink
+  faExternalLink,
+  faSadTear
 } from '@fortawesome/pro-light-svg-icons';
 import { faCode } from '@fortawesome/pro-regular-svg-icons';
 import * as defaults from './defaults';
@@ -289,7 +290,8 @@ export function initFontAwesomeIcons() {
     faLongArrowAltDown,
     faLongArrowAltUp,
     faExternalLink,
-    faCode
+    faCode,
+    faSadTear
   );
   dom.watch();
 }
