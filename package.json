@@ -11,8 +11,8 @@
     "webpack:dev": "webpack --config ./webpack.config.dev.js --progress --colors --watch",
     "webpack:build": "webpack --config ./webpack.config.js --progress --colors",
     "webpack:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
-    "sass:watch": "node-sass --watch src/scss -o dist/css --output-style compressed",
-    "sass:compile": "node-sass src/scss -o dist/css --output-style compressed",
+    "sass:watch": "node-sass --watch src/scss -o public/css --output-style compressed",
+    "sass:compile": "node-sass src/scss -o public/css --output-style compressed",
     "sass:lint": "sass-lint --verbose --no-exit"
   },
   "repository": {
@@ -28,13 +28,14 @@
   },
   "homepage": "https://localweather.io",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/fontawesome-free": "^5.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "@fortawesome/free-regular-svg-icons": "^5.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "bootstrap": "^4.1.3",
     "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",

@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -14,7 +15,7 @@ module.exports = {
   ],
   output: {
     filename: './js/bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'public')
   },
   mode: 'production',
   module: {
@@ -47,7 +48,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin('dist', {}),
+    new CleanWebpackPlugin('public', {}),
     new MiniCssExtractPlugin({
       filename: './css/styles.css',
     }),
@@ -94,5 +95,12 @@ module.exports = {
       to: './',
       force: true,
     }]),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ]
 };
