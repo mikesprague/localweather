@@ -1,4 +1,5 @@
 const path = require('path');
+const glob = require('glob');
 const variables = require('./src/js/modules/defaults');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -6,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -58,6 +60,9 @@ module.exports = {
     // new CleanWebpackPlugin('dist/*.*', {}),
     new MiniCssExtractPlugin({
       filename: './css/styles.css',
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync('./src/**/*',  { nodir: true })
     }),
     new HtmlWebpackPlugin({
       inject: false,
