@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "index.js",
@@ -43,7 +43,6 @@
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
-    "purgecss-webpack-plugin": "^1.2.0",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
