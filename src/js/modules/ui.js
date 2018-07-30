@@ -2,7 +2,7 @@
 
 import tippy from 'tippy.js';
 import swal from 'sweetalert2';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { library, dom } from '@fortawesome/fontawesome-free';
 import {
   faSpinner,
   faGlobe,
