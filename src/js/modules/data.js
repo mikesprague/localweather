@@ -6,7 +6,7 @@ import * as cache from './cache';
 import * as app from './init';
 
 export async function getLocationNameFromLatLng(lat, lng) {
-  const url = `https://mikesprague-api.glitch.me/location-name/?lat=${lat}&lng=${lng}`;
+  const url = `https://api.localweather.io/location-name/?lat=${lat}&lng=${lng}`;
   if (defaults.isOnline) {
     if (defaults.loadFromCache) {
       const cachedLocationData = cache.getData(defaults.locationDataKey);
@@ -36,7 +36,7 @@ export async function getLocationNameFromLatLng(lat, lng) {
 
 export async function getWeather(lat, lng) {
   if (defaults.isOnline) {
-    const url = `https://mikesprague-api.glitch.me/weather/?lat=${lat}&lng=${lng}`;
+    const url = `https://api.localweather.io/weather/?lat=${lat}&lng=${lng}`;
     if (defaults.loadFromCache) {
       const cachedWeatherData = cache.getData(defaults.weatherDataKey);
       return cachedWeatherData;
