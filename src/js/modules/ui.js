@@ -2,7 +2,10 @@
 
 import tippy from 'tippy.js';
 import swal from 'sweetalert2';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import {
+  library,
+  dom
+} from '@fortawesome/fontawesome-svg-core';
 import {
   faSpinner,
   faGlobe,
@@ -20,42 +23,39 @@ import {
   faLongArrowAltUp,
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faSadTear
-} from '@fortawesome/free-regular-svg-icons';
 import * as defaults from './defaults';
 import * as templates from './templates';
 
 export function getMoonUi(data) {
   const averageLunarCycle = 29.53058867;
   const moonAge = Math.round(data.daily.data[0].moonPhase * averageLunarCycle);
-  const iconPrefix = "wi-moon";
-  let iconSuffix = "";
-  let phaseText = "";
+  const iconPrefix = 'wi-moon';
+  let iconSuffix = '';
+  let phaseText = '';
   if (moonAge > 0 && moonAge < 8) {
     iconSuffix = `waxing-crescent-${moonAge}`;
-    phaseText = "Waxing Crescent";
+    phaseText = 'Waxing Crescent';
   } else if (moonAge === 8) {
-    iconSuffix = "first-quarter";
-    phaseText = "First Quarter";
+    iconSuffix = 'first-quarter';
+    phaseText = 'First Quarter';
   } else if (moonAge > 8 && moonAge < 15) {
     iconSuffix = `waxing-gibbous-${moonAge - 8}`;
-    phaseText = "Waxing Gibbous";
+    phaseText = 'Waxing Gibbous';
   } else if (moonAge === 15) {
-    iconSuffix = "full";
-    phaseText = "Full Moon";
+    iconSuffix = 'full';
+    phaseText = 'Full Moon';
   } else if (moonAge > 15 && moonAge < 22) {
     iconSuffix = `waning-gibbous-${moonAge - 15}`;
-    phaseText = "Waning Gibbous";
+    phaseText = 'Waning Gibbous';
   } else if (moonAge === 22) {
-    iconSuffix = "third-quarter";
-    phaseText = "Third Quarter";
+    iconSuffix = 'third-quarter';
+    phaseText = 'Third Quarter';
   } else if (moonAge > 22 && moonAge < 29) {
     iconSuffix = `waning-crescent-${moonAge - 22}`;
-    phaseText = "Waning Crescent";
+    phaseText = 'Waning Crescent';
   } else if (moonAge === 29 || moonAge === 0) {
-    iconSuffix = "new";
-    phaseText = "New Moon";
+    iconSuffix = 'new';
+    phaseText = 'New Moon';
   }
   return {
     "icon": `${iconPrefix}-${iconSuffix}`,
@@ -295,7 +295,6 @@ export function initFontAwesomeIcons() {
     faLongArrowAltUp,
     faExternalLinkAlt,
     faCode,
-    faSadTear,
     faBan,
     faSignal
   );
