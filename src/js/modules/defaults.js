@@ -22,7 +22,7 @@ export offlineText = 'This page will automatically update with current weather d
 export themeColor = '#133150';
 export timerHandle = 0;
 export title = 'LocalWeather.io (powered by Dark Sky)';
-export versionString = 'v0.19.2';
+export versionString = 'v0.19.3';
 export weatherDataKey = 'weatherData';
 export apiUrl = function () {
   return window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://api.localweather.io';
