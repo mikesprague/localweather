@@ -91,7 +91,7 @@ module.exports = {
       force: true,
     }]),
     new CopyWebpackPlugin([{
-      from: './now-dev.json',
+      from: './src/now-dev.json',
       to: './now.json',
       force: true,
     }]),

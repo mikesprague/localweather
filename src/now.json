@@ -1,5 +1,5 @@
 {
-  "name": "localweather-io-zeit-deploy",
+  "name": "localweather-io",
   "type": "static",
   "engines": {
     "node": "^10.8.0"
