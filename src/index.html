@@ -3,11 +3,12 @@
 <head>
   <script>
     var _rollbarConfig = {
-      accessToken: "665cf0c0b61c4433a80ead11f45c4c1a",
+      accessToken: '665cf0c0b61c4433a80ead11f45c4c1a',
+      verbose: <%= htmlWebpackPlugin.options.rollbarVerbose %>,
       captureUncaught: true,
       captureUnhandledRejections: true,
       payload: {
-          environment: "production"
+          environment: '<%= htmlWebpackPlugin.options.environment %>'
       }
     };
     // Rollbar Snippet
