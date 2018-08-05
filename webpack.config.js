@@ -1,3 +1,4 @@
+const canonical = 'https://localweather.io';
 const path = require('path');
 const variables = require('./src/js/modules/defaults');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -67,7 +68,7 @@ module.exports = {
       rollbarVerbose: 'false',
       appName: variables.appName,
       author: variables.author,
-      canonical: variables.canonical,
+      canonical: canonical,
       description: variables.description,
       keywords: variables.keywords,
       loadingText: variables.loadingText,
@@ -81,7 +82,7 @@ module.exports = {
       filename: './offline.html',
       appName: variables.appName,
       author: variables.author,
-      canonical: variables.canonical,
+      canonical: canonical,
       description: variables.description,
       keywords: variables.keywords,
       offlineHeading: variables.offlineHeading,
