@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.19.7",
+  "version": "0.19.8",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "index.js",
@@ -15,7 +15,7 @@
     "dev:build": "yarn dev:clean && yarn dev:webpack",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:deploy": "yarn dev:push && yarn dev:clean",
-    "dev:push": "cd build; now --build; cd ../",
+    "dev:push": "cd build && now --public && cd ../",
     "dev:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
     "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors"
   },
