@@ -48,6 +48,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
+      environment: 'development',
+      rollbarVerbose: 'true',
       appName: variables.appName,
       author: variables.author,
       canonical: variables.canonical,
