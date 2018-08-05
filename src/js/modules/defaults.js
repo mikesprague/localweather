@@ -10,9 +10,6 @@ module.exports = {
   description: 'Minimalist local weather app powered by Dark Sky',
   errorMessageSelector: '.error-message',
   hideClassName: 'hide-me',
-  isOnline: function () {
-    return navigator.onLine;
-  },
   keywords: 'weather, local, dark sky, localweather.io, local weather',
   lat: 0,
   lng: 0,
@@ -28,4 +25,10 @@ module.exports = {
   title: 'LocalWeather.io (powered by Dark Sky)',
   versionString: 'v0.18.0',
   weatherDataKey: 'weatherData',
+  apiUrl: function () {
+    return window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://api.localweather.io';
+  },
+  isOnline: function () {
+    return navigator.onLine;
+  },
 };
