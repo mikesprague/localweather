@@ -5,20 +5,19 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "yarn clean:public && yarn webpack",
-    "deploy": "yarn dev:deploy",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn clean && yarn webpack",
+    "clean": "rm -rf ./public > /dev/null 2>&1",
+    "deploy": "yarn push && yarn clean",
+    "push": "cd public && now --public && cd ../",
     "start": "yarn dev:serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config ./webpack.config.js --progress --colors",
-    "clean:public": "rm -rf ./public > /dev/null 2>&1",
-    "dev:build": "yarn clean:public && yarn dev:webpack",
-    "dev:now": "cd public; now --public; cd ../",
-    "dev:deploy": "yarn dev:now && yarn clean:public",
+    "dev:build": "yarn dev:clean && yarn dev:webpack",
+    "dev:clean": "rm -rf ./build > /dev/null 2>&1",
+    "dev:deploy": "yarn dev:push && yarn dev:clean",
+    "dev:push": "cd build; now --build; cd ../",
     "dev:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
-    "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors",
-    "sass:compile": "node-sass src/scss -o public/css --output-style compressed",
-    "sass:lint": "sass-lint --verbose --no-exit",
-    "sass:watch": "node-sass --watch src/scss -o public/css --output-style compressed"
+    "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors"
   },
   "repository": {
     "url": "https://github.com/mikesprague/local-weather"
