@@ -4,7 +4,7 @@ exports.appName = 'LocalWeather.io';
 exports.author = 'Michael Sprague';
 exports.cacheTimeKey = 'cacheTime';
 exports.cacheTimeSpan = 600; // 10 minutes (number of minutes * 60 seconds)
-exports.canonical = 'https = /localweather.io/';
+exports.canonical = 'https://localweather.io/';
 exports.coordsDataKey = 'coordsData';
 exports.description = 'Minimalist local weather app powered by Dark Sky';
 exports.errorMessageSelector = '.error-message';
@@ -22,7 +22,7 @@ exports.offlineText = 'This page will automatically update with current weather 
 exports.themeColor = '#133150';
 exports.timerHandle = 0;
 exports.title = 'LocalWeather.io (powered by Dark Sky)';
-exports.versionString = 'v0.19.6';
+exports.versionString = 'v0.19.7';
 exports.weatherDataKey = 'weatherData';
 exports.apiUrl = function () {
   return window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://api.localweather.io';

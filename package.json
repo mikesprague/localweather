@@ -1,12 +1,12 @@
 {
   "name": "local-weather",
-  "version": "0.19.6",
+  "version": "0.19.7",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "yarn webpack",
-    "deploy": "now --public",
+    "build": "yarn clean:public && yarn webpack",
+    "deploy": "yarn dev:deploy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "yarn dev:serve",
     "webpack": "webpack --config ./webpack.config.js --progress --colors",
