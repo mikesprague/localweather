@@ -1,19 +1,21 @@
 {
   "name": "local-weather",
-  "version": "0.19.4",
+  "version": "0.19.5",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config ./webpack.config.js --progress --colors",
+    "deploy": "now --public",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "yarn webpack:serve",
+    "start": "yarn dev:serve",
     "webpack": "webpack --progress --colors",
-    "webpack:build": "webpack --config ./webpack.config.js --progress --colors",
-    "webpack:dev": "webpack --config ./webpack.config.dev.js --progress --colors",
-    "webpack:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
-    "sass:watch": "node-sass --watch src/scss -o public/css --output-style compressed",
+    "dev:build": "rm -rf public > /dev/null 2>&1 && webpack --config ./webpack.config.dev.js --progress --colors",
+    "dev:deploy": "cd public; now --public; cd ../",
+    "dev:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
     "sass:compile": "node-sass src/scss -o public/css --output-style compressed",
-    "sass:lint": "sass-lint --verbose --no-exit"
+    "sass:lint": "sass-lint --verbose --no-exit",
+    "sass:watch": "node-sass --watch src/scss -o public/css --output-style compressed"
   },
   "repository": {
     "url": "https://github.com/mikesprague/local-weather"
