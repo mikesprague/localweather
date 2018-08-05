@@ -8,14 +8,10 @@ docker-compose*
 README.md
 TODO.md
 LICENSE
-.vscode
 *.code-workspace
-develop
-_redirects
+.vscode
 .editorConfig
 .npmrc
-.nvmrc
 .prettierrc
 .eslintrc
-webpack.config.dev.js
-package-lock.json
+develop

@@ -3,7 +3,6 @@ const variables = require('./src/js/modules/defaults');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -24,14 +23,17 @@ module.exports = {
   },
   mode: 'development',
   module: {
-    rules: [
-      {
-          test: /\.s?[ac]ss$/,
-          use: [
-              MiniCssExtractPlugin.loader,
-              { loader: 'css-loader' },
-              { loader: 'sass-loader' }
-          ],
+    rules: [{
+        test: /\.s?[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ],
       },
       {
         test: /\.js$/,
@@ -86,12 +88,10 @@ module.exports = {
       to: './',
       force: true,
     }]),
-    new CompressionPlugin({
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8
-    })
+    new CopyWebpackPlugin([{
+      from: './now-dev.json',
+      to: './now.json',
+      force: true,
+    }]),
   ]
 };
