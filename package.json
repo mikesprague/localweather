@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "yarn webpack:serve",
+    "start": "yarn webpack:serve",
     "webpack": "webpack --progress --colors",
     "webpack:build": "webpack --config ./webpack.config.js --progress --colors",
+    "webpack:dev": "webpack --config ./webpack.config.dev.js --progress --colors",
     "webpack:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
     "sass:watch": "node-sass --watch src/scss -o public/css --output-style compressed",
     "sass:compile": "node-sass src/scss -o public/css --output-style compressed",
