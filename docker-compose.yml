@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  local-weather:
+    image: local-weather
+    build: .
+    ports:
+      - 5500:5500
