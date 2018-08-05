@@ -14,7 +14,7 @@ module.exports = {
   ],
   output: {
     filename: './js/bundle.js',
-    path: '/public'
+    path: path.resolve('public')
   },
   mode: 'production',
   module: {
@@ -103,6 +103,11 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: './assets/**/*',
       to: './',
+      force: true,
+    }]),
+    new CopyWebpackPlugin([{
+      from: './src/now.json',
+      to: './now.json',
       force: true,
     }]),
     new CompressionPlugin({
