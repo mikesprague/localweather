@@ -1,7 +1,7 @@
 FROM node:10
 
 LABEL name="localweather-io-zeit-deploy"
-LABEL version="0.19.5"
+LABEL version="0.19.6"
 
 WORKDIR /usr/src/app
 
