@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
@@ -15,18 +14,28 @@ module.exports = {
   ],
   output: {
     filename: './js/bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: '/public'
   },
   mode: 'production',
   module: {
-    rules: [
-      {
-          test: /\.s?[ac]ss$/,
-          use: [
-              MiniCssExtractPlugin.loader,
-              { loader: 'css-loader', options: { url: false, sourceMap: true } },
-              { loader: 'sass-loader', options: { sourceMap: true } }
-          ],
+    rules: [{
+        test: /\.s?[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ],
       },
       {
         test: /\.js$/,
@@ -48,7 +57,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin('public', {}),
     new MiniCssExtractPlugin({
       filename: './css/styles.css',
     }),
