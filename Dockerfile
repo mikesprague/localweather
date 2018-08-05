@@ -1,7 +1,7 @@
 FROM node:10
 
 LABEL name="localweather-io-zeit-deploy"
-LABEL version="0.19.4"
+LABEL version="0.19.5"
 
 WORKDIR /usr/src/app
 
@@ -9,4 +9,6 @@ COPY ./ /usr/src/app
 
 RUN npm i -g yarn
 RUN yarn
-RUN yarn webpack:build
+RUN yarn build
+RUN echo "Build complete."
+RUN exit
