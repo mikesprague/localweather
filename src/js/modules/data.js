@@ -18,7 +18,8 @@ export async function getLocationNameFromLatLng(lat, lng) {
           if (response.ok) {
             return response.json();
           } else {
-            console.error(response);
+            Rollbar.error(response);
+            // console.error(response);
           }
         })
         .then(json => {
@@ -27,7 +28,8 @@ export async function getLocationNameFromLatLng(lat, lng) {
           return json.results[0].formatted_address;
         })
         .catch(error => {
-          console.error(`Error in getLocationNameFromLatLng:\n ${error.message}`);
+          Rollbar.error('Error in getLocationNameFromLatLng', error);
+          // console.error(`Error in getLocationNameFromLatLng:\n ${error.message}`);
         });
       return locationData;
     }
@@ -46,7 +48,8 @@ export async function getWeather(lat, lng) {
           if (response.ok) {
             return response.json();
           } else {
-            console.error(response);
+            Rollbar.error(response);
+            // console.error(response);
           }
         })
         .then(json => {
@@ -54,8 +57,9 @@ export async function getWeather(lat, lng) {
           return json;
         })
         .catch(error => {
-          console.error(`Error in getWeather:\n ${error.message}`);
+          Rollbar.error('Error in getWeather', error);
           ui.hideLoading();
+          // console.error(`Error in getWeather:\n ${error.message}`);
         });
       return weatherData;
     }
@@ -66,10 +70,15 @@ export async function getLocationAndPopulateAppData() {
   if (defaults.isOnline) {
     ui.showLoading();
     if (defaults.loadFromCache) {
-      const cachedLocationData = cache.getData(defaults.locationDataKey);
-      defaults.locationName = cachedLocationData.results[0].formatted_address;
-      const cachedWeatherData = cache.getData(defaults.weatherDataKey);
-      ui.renderAppWithData(cachedWeatherData);
+      try {
+        const cachedLocationData = cache.getData(defaults.locationDataKey);
+        defaults.locationName = cachedLocationData.results[0].formatted_address;
+        const cachedWeatherData = cache.getData(defaults.weatherDataKey);
+        ui.renderAppWithData(cachedWeatherData);
+      } catch (error) {
+        Rollbar.critical('getLocationAndPopulateAppData: problem loading cached data', error);
+        ui.hideLoading();
+      }
       ui.hideLoading();
     } else {
       if ("geolocation" in navigator) {
@@ -90,11 +99,15 @@ export async function getLocationAndPopulateAppData() {
               ui.hideLoading();
             });
           }).catch(error => {
-            cosole.error(`ERROR: ${error}`);
+            Rollbar.error(error);
+            // cosole.error(`ERROR: ${error}`);
           });
         });
+        ui.hideLoading();
       } else {
-        console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
+        Rollbar.critical('getLocationAndPopulateAppData: "geolocation" not found in navigator');
+        // console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
+        // TODO: Show friendly message to user
       }
     }
   }
