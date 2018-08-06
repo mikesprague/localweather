@@ -24,6 +24,8 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import * as defaults from './defaults';
+import * as cache from './cache';
+import * as data from './data';
 import * as templates from './templates';
 
 export function getMoonUi(data) {
@@ -234,6 +236,56 @@ export function showInstallAlert() {
       reloadWindow();
     }
   });
+}
+
+export function showGeolocationAlert() {
+  const cachedWeatherData = cache.getData(defaults.weatherDataKey);
+  if (cachedWeatherData === null || typeof cachedWeatherData !== 'object') {
+    swal({
+      title: `${defaults.appName}`,
+      html: `
+      <p class='text-left'>
+        This application requires the use of location information
+        provided by your device to get accurate weather data.
+      </p>
+      <p class='text-left'>
+        If this is your first visit you will be asked to approve
+        sharing your location before you can continue
+      </p>
+    `,
+      confirmButtonText: `<i class='wi wi-fw wi-cloud-refresh'></i> Show me the Weather`,
+      type: 'info',
+      onClose: () => {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+          // let watchPositionHandle = navigator.geolocation.watchPosition(geoSuccess, geoError);
+        } else {
+          Rollbar.critical('showGeolocationAlert: "geolocation" not found in navigator');
+          // console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
+          // TODO: Show friendly message to user
+        }
+      }
+    });
+  } else {
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+  }
+}
+
+export function geoSuccess(position) {
+  const coords = position.coords;
+  data.getLocationAndPopulateAppData(coords.latitude, coords.longitude);
+}
+
+export function geoError(error) {
+  switch (error.code) {
+    case error.TIMEOUT:
+      // The user didn't accept the callout
+      showGeolocationAlert();
+      break;
+    default:
+      Rollbar.error('geoLocation error', error);
+      break;
+  }
 }
 
 export function registerAlertClickHandler() {
