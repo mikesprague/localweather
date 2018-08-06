@@ -1,34 +1,36 @@
 'use strict';
 
-exports.appName = 'LocalWeather.io';
-exports.author = 'Michael Sprague';
-exports.cacheTimeKey = 'cacheTime';
-exports.cacheTimeSpan = 600; // 10 minutes (number of minutes * 60 seconds)
-exports.coordsDataKey = 'coordsData';
-exports.description = 'Minimalist local weather app powered by Dark Sky';
-exports.errorMessageSelector = '.error-message';
-exports.hideClassName = 'hide-me';
-exports.keywords = 'weather, local, dark sky, localweather.io, local weather';
-exports.lat = 0;
-exports.lng = 0;
-exports.loadFromCache = false;
-exports.loadingSpinnerSelector = '.loading-spinner';
-exports.loadingText = '... loading weather data for your location ...';
-exports.locationDataKey = 'locationData';
-exports.locationName = '';
-exports.offlineHeading = 'You appear to be offline';
-exports.offlineText = 'This page will automatically update with current weather data when you have a stable connection again';
-exports.themeColor = '#133150';
-exports.timerHandle = 0;
-exports.title = 'LocalWeather.io (powered by Dark Sky)';
-exports.versionString = 'v0.20.0';
-exports.weatherDataKey = 'weatherData';
-exports.apiUrl = function () {
-  return window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://api.localweather.io';
-};
-exports.canonical = function () {
-  return `https://${window.location.hostname}/`;
-};
-exports.isOnline = function () {
-  return navigator.onLine;
-};
+module.exports = {
+  appName: 'LocalWeather.io',
+  author: 'Michael Sprague',
+  cacheTimeKey: 'cacheTime',
+  cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
+  coordsDataKey: 'coordsData',
+  description: 'Minimalist local weather app powered by Dark Sky',
+  errorMessageSelector: '.error-message',
+  hideClassName: 'hide-me',
+  keywords: 'weather, local, dark sky, localweather.io, local weather',
+  lat: 0,
+  lng: 0,
+  loadFromCache: false,
+  loadingSpinnerSelector: '.loading-spinner',
+  loadingText: '... loading weather data for your location ...',
+  locationDataKey: 'locationData',
+  locationName: '',
+  offlineHeading: 'You appear to be offline',
+  offlineText: 'This page will automatically update with current weather data when you have a stable connection again',
+  themeColor: '#133150',
+  timerHandle: 0,
+  title: 'LocalWeather.io (powered by Dark Sky)',
+  versionString: 'v0.21.0',
+  weatherDataKey: 'weatherData',
+  apiUrl: function () {
+    return window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://api.localweather.io';
+  },
+  canonical: function () {
+    return `https://${window.location.hostname}/`;
+  },
+  isOnline: function () {
+    return navigator.onLine;
+  }
+}

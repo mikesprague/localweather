@@ -16,8 +16,9 @@ export function init() {
       // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       // check for updatees
       registration.onupdatefound = () => {
-        ui.showInstallAlert();
+        // ui.showInstallAlert();
         console.info(`[SW] Latest Version Installed - Reload to Activate`);
+        // ui.reloadWindow();
       };
     });
   }
@@ -38,7 +39,7 @@ export function init() {
 
   if (defaults.isOnline()) {
     cache.initCache();
-    data.getLocationAndPopulateAppData();
+    ui.showGeolocationAlert();
     data.initDataUpdateCheck();
     ui.initTooltips();
   } else {
