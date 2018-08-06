@@ -19,21 +19,43 @@ export function populateLocation(data) {
 
 export function populatePrimaryData(data) {
   const currentConditionsTooltip = `
-    <div class='text-left'>
-      <strong>RIGHT NOW</strong>
-      <br>
-      <i class='wi wi-fw wi-forecast-io-${data.currently.icon}'></i>
-      ${Math.round(data.currently.temperature)}<i class='wi wi-degrees'></i>
-      ${data.currently.summary}
+    <div class='primarySummaryWrapper'>
+      <div class='row'>
+        <div class='col'>
+          <strong>RIGHT NOW</strong>
+          <i class='wi wi-fw wi-forecast-io-${data.currently.icon}'></i>
+          <br>
+          ${Math.round(data.currently.temperature)}<i class='wi wi-degrees'></i>
+          ${data.currently.summary}
+        </div>
+        <div class='col'>
+          <strong>NEXT HOUR</strong>
+          <i class='wi wi-fw wi-forecast-io-${data.hourly.data[1].icon}'></i>
+          <br>
+          ${Math.round(data.hourly.data[1].temperature)}<i class='wi wi-degrees'></i>
+          ${data.hourly.data[1].summary}
+        </div>
+      </div>
       <hr>
-      <strong>NEXT 24 HOURS</strong>
-      <br>
-      <i class='wi wi-fw wi-forecast-io-${data.hourly.icon}'></i> ${data.hourly.summary}
+      <div class='row'>
+        <div class='col'>
+          <strong>TODAY</strong>
+          <i class='wi wi-fw wi-forecast-io-${data.daily.data[0].icon}'></i>
+          <br>
+          ${Math.round(data.daily.data[0].temperatureHigh)}<i class='wi wi-degrees'></i>/
+          ${Math.round(data.daily.data[0].temperatureLow)}<i class='wi wi-degrees'></i>
+          ${data.daily.data[0].summary}
+        </div>
+      </div>
       <hr>
-      <strong>NEXT 7 DAYS</strong>
-      <br>
-      <i class='wi wi-fw wi-forecast-io-${data.daily.icon}'></i> ${data.daily.summary}
-      <hr>
+      <div class='row'>
+        <div class='col'>
+          <strong>NEXT 7 DAYS</strong>
+          <i class='wi wi-fw wi-forecast-io-${data.daily.icon}'></i>
+          <br>
+          ${data.daily.summary}
+        </div>
+      </div>
     </div>
   `;
   const primaryDataTemplate = `
@@ -161,7 +183,7 @@ export function populateHourlyData(data, numHours = 12) {
         <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
         <br>
         <i class="wi wi-fw wi-forecast-io-${data.hourly.data[next].icon}"></i>
-        ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;
+        ${Math.round(data.hourly.data[next].temperature)}&deg;
       </p>
     `;
     let hourlyEl = document.querySelector(`.hourly-${next}`);
