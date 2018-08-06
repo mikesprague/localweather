@@ -21,7 +21,7 @@ exports.offlineText = 'This page will automatically update with current weather 
 exports.themeColor = '#133150';
 exports.timerHandle = 0;
 exports.title = 'LocalWeather.io (powered by Dark Sky)';
-exports.versionString = 'v0.19.8';
+exports.versionString = 'v0.20.0';
 exports.weatherDataKey = 'weatherData';
 exports.apiUrl = function () {
   return window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://api.localweather.io';
