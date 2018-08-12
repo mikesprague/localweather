@@ -22,19 +22,16 @@ export async function getLocationNameFromLatLng(lat, lng) {
           return response.json();
         } else {
           Rollbar.error(response);
-          // console.error(response);
         }
       })
       .then(json => {
         setData(defaults.locationDataKey, json);
-        // console.log(json);
         const locationName = parseLocationNameFromFormattedAddress(json.formatted_address);
         defaults.locationName = json.formatted_address;
         return locationName;
       })
       .catch(error => {
-        Rollbar.error('Error in getLocationNameFromLatLng', error);
-        // console.error(`Error in getLocationNameFromLatLng:\n ${error.message}`);
+        Rollbar.error(error);
       });
     return locationData;
   }
@@ -61,7 +58,6 @@ export async function getWeather(lat, lng) {
           return response.json();
         } else {
           Rollbar.error(response);
-          // console.error(response);
         }
       })
       .then(json => {
@@ -69,9 +65,8 @@ export async function getWeather(lat, lng) {
         return json;
       })
       .catch(error => {
-        Rollbar.error('Error in getWeather', error);
+        Rollbar.error(error);
         hideLoading();
-        // console.error(`Error in getWeather:\n ${error.message}`);
       });
     return weatherData;
   }
