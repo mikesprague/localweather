@@ -1,16 +1,16 @@
 'use strict';
 
 import * as defaults from './defaults';
-import * as ui from './ui';
-import * as cache from './cache';
-import * as app from './init';
+import { hideLoading, showLoading, renderAppWithData } from './ui';
+import { useCache, getData, setData } from './cache';
+import { init } from './init';
 
 export async function getLocationNameFromLatLng(lat, lng) {
   const url = `${defaults.apiUrl()}/location-name/?lat=${lat}&lng=${lng}`;
   if (defaults.loadFromCache) {
-    const cachedLocationData = cache.getData(defaults.locationDataKey);
     defaults.locationName = cachedLocationData.results[0].formatted_address;
     return cachedLocationData.results[0].formatted_address;
+    const cachedLocationData = getData(defaults.locationDataKey);
   } else {
     const locationData = fetch(url)
       .then(response => {
@@ -22,9 +22,9 @@ export async function getLocationNameFromLatLng(lat, lng) {
         }
       })
       .then(json => {
-        cache.setData(defaults.locationDataKey, json);
         defaults.locationName = json.results[0].formatted_address;
         return json.results[0].formatted_address;
+        setData(defaults.locationDataKey, json);
       })
       .catch(error => {
         Rollbar.error('Error in getLocationNameFromLatLng', error);
@@ -37,7 +37,7 @@ export async function getLocationNameFromLatLng(lat, lng) {
 export async function getWeather(lat, lng) {
   const url = `${defaults.apiUrl()}/weather/?lat=${lat}&lng=${lng}`;
   if (defaults.loadFromCache) {
-    const cachedWeatherData = cache.getData(defaults.weatherDataKey);
+    const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   } else {
     const weatherData = fetch(url)
@@ -50,12 +50,12 @@ export async function getWeather(lat, lng) {
         }
       })
       .then(json => {
-        cache.setData(defaults.weatherDataKey, json);
+        setData(defaults.weatherDataKey, json);
         return json;
       })
       .catch(error => {
         Rollbar.error('Error in getWeather', error);
-        ui.hideLoading();
+        hideLoading();
         // console.error(`Error in getWeather:\n ${error.message}`);
       });
     return weatherData;
@@ -63,43 +63,43 @@ export async function getWeather(lat, lng) {
 }
 
 export async function getLocationAndPopulateAppData(lat, lng) {
-  ui.showLoading();
+  showLoading();
   if (defaults.loadFromCache) {
     try {
-      const cachedLocationData = cache.getData(defaults.locationDataKey);
       defaults.locationName = cachedLocationData.results[0].formatted_address;
-      const cachedWeatherData = cache.getData(defaults.weatherDataKey);
-      ui.renderAppWithData(cachedWeatherData);
+      const cachedLocationData = getData(defaults.locationDataKey);
+      const cachedWeatherData = getData(defaults.weatherDataKey);
+      renderAppWithData(cachedWeatherData);
     } catch (error) {
       Rollbar.critical('getLocationAndPopulateAppData: problem loading cached data', error);
-      ui.hideLoading();
+      hideLoading();
     }
-    ui.hideLoading();
+    hideLoading();
   } else {
     try {
       getLocationNameFromLatLng(lat, lng).then(name => {
         defaults.locationName = name;
         getWeather(lat, lng).then(json => {
-          ui.renderAppWithData(json);
+          renderAppWithData(json);
         }).catch(error => {
           Rollbar.error('getWeather', error);
         });
-        ui.hideLoading();
+        hideLoading();
       }).catch(error => {
         Rollbar.error('getLocationNameFromLatLng', error);
       });
     } catch (error) {
       Rollbar.critical('getLocationAndPopulateAppData: problem getting new data', error);
-      ui.hideLoading();
+      hideLoading();
     }
-    ui.hideLoading();
+    hideLoading();
   }
 }
 
 export function checkIfDataUpdateNeeded() {
-  if (!cache.useCache(cache.getData(defaults.cacheTimeKey))) {
+  if (!useCache(getData(defaults.cacheTimeKey))) {
     defaults.loadFromCache = false;
-    app.init();
+    init();
   }
 }
 
