@@ -2,7 +2,7 @@
 
 import * as defaults from './defaults';
 import { initCache } from './cache';
-import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAlert } from './ui';
+import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAlert, showLoading } from './ui';
 import { initDataUpdateCheck } from './data';
 
 export function init() {
@@ -39,6 +39,7 @@ export function init() {
   if (defaults.isOnline()) {
     initCache();
     showGeolocationAlert();
+    showLoading();
     initDataUpdateCheck();
     initTooltips();
   } else {

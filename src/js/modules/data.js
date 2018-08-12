@@ -5,12 +5,18 @@ import { hideLoading, showLoading, renderAppWithData } from './ui';
 import { useCache, getData, setData } from './cache';
 import { init } from './init';
 
+export function loadFromCache() {
+  return useCache(getData(defaults.cacheTimeKey));
+}
+
 export async function getLocationNameFromLatLng(lat, lng) {
   const url = `${defaults.apiUrl()}/location-name/?lat=${lat}&lng=${lng}`;
-  if (defaults.loadFromCache) {
+  if (loadFromCache()) {
     const cachedLocationData = getData(defaults.locationDataKey);
+    const cachedLocationName = getData(defaults.locationNameDataKey);
     try {
-      return parseLocationNameFromFormattedAddress(defaults.locationName);
+      defaults.locationName = cachedLocationName;
+      return cachedLocationName;
     } catch(error) {
       Rollbar.error(error);
       return defaults.locationName;
@@ -26,8 +32,9 @@ export async function getLocationNameFromLatLng(lat, lng) {
       })
       .then(json => {
         setData(defaults.locationDataKey, json);
-        const locationName = parseLocationNameFromFormattedAddress(json.formatted_address);
-        defaults.locationName = json.formatted_address;
+        const locationName = parseLocationNameFromFormattedAddress(json.results[0].formatted_address);
+        setData(defaults.locationNameDataKey, locationName);
+        defaults.locationName = locationName;
         return locationName;
       })
       .catch(error => {
@@ -39,6 +46,9 @@ export async function getLocationNameFromLatLng(lat, lng) {
 
 export function parseLocationNameFromFormattedAddress(address) {
   try {
+    if (!address) {
+      throw('Address is required');
+    }
     const cityPosition = address.split(',').length > 2 ? address.split(',').length - 3 : 0;
     return address.split(',')[cityPosition].trim();
   } catch (error) {
@@ -48,7 +58,7 @@ export function parseLocationNameFromFormattedAddress(address) {
 
 export async function getWeather(lat, lng) {
   const url = `${defaults.apiUrl()}/weather/?lat=${lat}&lng=${lng}`;
-  if (defaults.loadFromCache) {
+  if (loadFromCache()) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   } else {
@@ -74,7 +84,7 @@ export async function getWeather(lat, lng) {
 
 export async function getLocationAndPopulateAppData(lat, lng) {
   showLoading();
-  if (defaults.loadFromCache) {
+  if (loadFromCache()) {
     try {
       const cachedLocationData = getData(defaults.locationDataKey);
       defaults.locationName = cachedLocationData.formatted_address;
@@ -86,6 +96,7 @@ export async function getLocationAndPopulateAppData(lat, lng) {
     }
     hideLoading();
   } else {
+    showLoading();
     try {
       getLocationNameFromLatLng(lat, lng).then(name => {
         // console.log(name);
@@ -107,8 +118,7 @@ export async function getLocationAndPopulateAppData(lat, lng) {
 }
 
 export function checkIfDataUpdateNeeded() {
-  if (!useCache(getData(defaults.cacheTimeKey))) {
-    defaults.loadFromCache = false;
+  if (!loadFromCache()) {
     init();
   }
 }
