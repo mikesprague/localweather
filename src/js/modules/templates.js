@@ -2,16 +2,16 @@
 
 import * as defaults from './defaults';
 import * as ui from './ui';
+import { parseLocationNameFromFormattedAddress } from './data';
 import * as datetime from './datetime';
 
 export function populateLocation(data) {
-  const city = defaults.locationName.split(',')[0].trim();
   const locationTemplate = `
     <h1 class="location has-tooltip" title="
       <i class='fas fa-fw fa-globe'></i> <strong>${defaults.locationName}</strong>
       <br>
       <i class='fas fa-fw fa-map-marker-alt'></i> ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
-    ">${city}</h1>
+    ">${parseLocationNameFromFormattedAddress(defaults.locationName)}</h1>
   `;
   const locationEl = document.querySelector('.location');
   locationEl.innerHTML = locationTemplate;
