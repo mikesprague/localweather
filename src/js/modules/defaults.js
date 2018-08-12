@@ -16,13 +16,14 @@ module.exports = {
   loadingSpinnerSelector: '.loading-spinner',
   loadingText: '... loading weather data for your location ...',
   locationDataKey: 'locationData',
+  locationNameDataKey: 'locationName',
   locationName: '',
   offlineHeading: 'You appear to be offline',
   offlineText: 'This page will automatically update with current weather data when you have a stable connection again',
   themeColor: '#133150',
   timerHandle: 0,
   title: 'LocalWeather.io (powered by Dark Sky)',
-  versionString: 'v0.21.3',
+  versionString: 'v0.21.4',
   weatherDataKey: 'weatherData',
   apiUrl: function () {
     return window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://api.localweather.io';

@@ -24,7 +24,7 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import * as defaults from './defaults';
-import { getData } from './cache';
+import { getData, useCache } from './cache';
 import { getLocationAndPopulateAppData } from './data';
 import {
   populateAlertMessage,
@@ -248,8 +248,7 @@ export function showInstallAlert() {
 }
 
 export function showGeolocationAlert() {
-  const cachedWeatherData = getData(defaults.weatherDataKey);
-  if (cachedWeatherData === null || typeof cachedWeatherData !== 'object') {
+  if (!useCache(getData(defaults.cacheTimeKey))) {
     swal({
       title: `${defaults.appName}`,
       html: `
@@ -266,6 +265,7 @@ export function showGeolocationAlert() {
       type: 'info',
       onClose: () => {
         if ("geolocation" in navigator) {
+          showLoading();
           navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
           // let watchPositionHandle = navigator.geolocation.watchPosition(geoSuccess, geoError);
         } else {
