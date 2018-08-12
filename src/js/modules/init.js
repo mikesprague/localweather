@@ -1,9 +1,9 @@
 'use strict';
 
 import * as defaults from './defaults';
-import * as cache from './cache';
-import * as ui from './ui';
-import * as data from './data';
+import { initCache } from './cache';
+import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAlert } from './ui';
+import { initDataUpdateCheck } from './data';
 
 export function init() {
   // register service worker
@@ -16,9 +16,8 @@ export function init() {
       // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       // check for updatees
       registration.onupdatefound = () => {
-        // ui.showInstallAlert();
+        // showInstallAlert();
         console.info(`[SW] Latest Version Installed - Reload to Activate`);
-        // ui.reloadWindow();
       };
     });
   }
@@ -38,12 +37,12 @@ export function init() {
   // };
 
   if (defaults.isOnline()) {
-    cache.initCache();
-    ui.showGeolocationAlert();
-    data.initDataUpdateCheck();
-    ui.initTooltips();
+    initCache();
+    showGeolocationAlert();
+    initDataUpdateCheck();
+    initTooltips();
   } else {
-    ui.initFontAwesomeIcons();
-    ui.initTooltips();
+    initFontAwesomeIcons();
+    initTooltips();
   }
 }

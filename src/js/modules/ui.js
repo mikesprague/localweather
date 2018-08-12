@@ -24,9 +24,18 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import * as defaults from './defaults';
-import * as cache from './cache';
-import * as data from './data';
-import * as templates from './templates';
+import { getData } from './cache';
+import { getLocationAndPopulateAppData } from './data';
+import {
+  populateAlertMessage,
+  populateFooter,
+  populateForecastData,
+  populateHourlyData,
+  populateLastUpdated,
+  populateLocation,
+  populatePrimaryData,
+  populateWeatherData
+} from './templates';
 
 export function getMoonUi(data) {
   const averageLunarCycle = 29.53058867;
@@ -239,7 +248,7 @@ export function showInstallAlert() {
 }
 
 export function showGeolocationAlert() {
-  const cachedWeatherData = cache.getData(defaults.weatherDataKey);
+  const cachedWeatherData = getData(defaults.weatherDataKey);
   if (cachedWeatherData === null || typeof cachedWeatherData !== 'object') {
     swal({
       title: `${defaults.appName}`,
@@ -273,7 +282,7 @@ export function showGeolocationAlert() {
 
 export function geoSuccess(position) {
   const coords = position.coords;
-  data.getLocationAndPopulateAppData(coords.latitude, coords.longitude);
+  getLocationAndPopulateAppData(coords.latitude, coords.longitude);
 }
 
 export function geoError(error) {
@@ -300,7 +309,7 @@ export function showAlert(
   type = 'danger', // type: primary | secondary | info | success | warning | danger | light | dark
   icon = 'fas fa-fw fa-exclamation-triangle' // icon: any valid font awesome string
 ) {
-  templates.populateAlertMessage(msg, type, icon);
+  populateAlertMessage(msg, type, icon);
 }
 
 export function initWeatherAlerts(data) {
@@ -356,13 +365,13 @@ export function initFontAwesomeIcons() {
 export function renderAppWithData(data) {
   initFontAwesomeIcons();
   setBodyBgClass(getBodyBgClass(data));
-  templates.populatePrimaryData(data);
-  templates.populateWeatherData(data);
-  templates.populateForecastData(data);
-  templates.populateHourlyData(data);
-  templates.populateLastUpdated(data);
-  templates.populateLocation(data);
-  templates.populateFooter();
+  populatePrimaryData(data);
+  populateWeatherData(data);
+  populateForecastData(data);
+  populateHourlyData(data);
+  populateLastUpdated(data);
+  populateLocation(data);
+  populateFooter();
   setFavicon(data);
   setTitle(data);
   initTooltips();

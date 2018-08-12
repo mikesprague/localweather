@@ -1,9 +1,15 @@
 'use strict';
 
 import * as defaults from './defaults';
-import * as ui from './ui';
+import { getMoonUi, registerAlertClickHandler } from './ui';
 import { parseLocationNameFromFormattedAddress } from './data';
-import * as datetime from './datetime';
+import {
+  formatUnixTimeAsLocalString,
+  formatUnixTimeForSun,
+  getDayFromUnixTime,
+  getHourAndPeriodFromUnixTime,
+  getTimeFromUnixTime
+} from './datetime';
 
 export function populateLocation(data) {
   const locationTemplate = `
@@ -78,7 +84,7 @@ export function populatePrimaryData(data) {
 }
 
 export function populateWeatherData(data) {
-  const moonUi = ui.getMoonUi(data);
+  const moonUi = getMoonUi(data);
   const weatherDataTemplate = `
     <div class="col col-md-2 text-center has-tooltip" title="Wind">
       <p>
@@ -99,7 +105,7 @@ export function populateWeatherData(data) {
       <p><i class="fas fa-fw fa-cloud"></i><br>${Math.round(data.currently.cloudCover * 100)}%</p>
     </div>
     <div class="col col-md-2 text-center has-tooltip" title="Sunrise">
-      <p><i class="wi wi-sunrise"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am</p>
+      <p><i class="wi wi-sunrise"></i><br>${formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am</p>
     </div>
     <div class="w-100"></div>
     <div class="col col-md-2 text-center has-tooltip" title="Pressue">
@@ -118,7 +124,7 @@ export function populateWeatherData(data) {
       <p class="moon-phase"><i class="wi wi-fw ${moonUi.icon}"></i><br>${moonUi.phase}</p>
     </div>
     <div class="col col-md-2 text-center has-tooltip" title="Sunset">
-      <p><i class="wi wi-fw wi-sunset"></i><br>${datetime.formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm</p>
+      <p><i class="wi wi-fw wi-sunset"></i><br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm</p>
     </div>
   `;
   const weatherDataEl = document.querySelector('.current-weather-data');
@@ -141,7 +147,7 @@ export function populateForecastData(data, numDays = 7) {
     let next = i + 1;
     let forecastTemplate = `
       <p class="has-tooltip" title="${data.daily.data[next].summary}">
-        <strong>${datetime.getDayFromUnixTime(data.daily.data[next].time)}</strong>
+        <strong>${getDayFromUnixTime(data.daily.data[next].time)}</strong>
         <br>
         <i class="wi wi-fw wi-forecast-io-${data.daily.data[next].icon}"></i>
         <br>
@@ -180,7 +186,7 @@ export function populateHourlyData(data, numHours = 12) {
       "No precipitation";
     let hourlyTemplate = `
       <p class="has-tooltip" title="${data.hourly.data[next].summary}<br>${precipitationText}">
-        <strong>${datetime.getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
+        <strong>${getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
         <br>
         <i class="wi wi-fw wi-forecast-io-${data.hourly.data[next].icon}"></i>
         ${Math.round(data.hourly.data[next].temperature)}&deg;
@@ -204,21 +210,21 @@ export function populateAlertMessage(msg, type, icon) {
   `;
   const alertContainer = document.querySelector('.alert-container');
   alertContainer.innerHTML = alertMessageTemplate;
-  ui.registerAlertClickHandler();
+  registerAlertClickHandler();
 }
 
 export function populateLastUpdated(data) {
   const lastUpdatedString = `
-    Weather data cached at: ${datetime.formatUnixTimeAsLocalString(data.currently.time)}
+    Weather data cached at: ${formatUnixTimeAsLocalString(data.currently.time)}
     <br>
     Weather data is cached for 10 minutes.
     <br>
     Next data refresh available after:
-    ${datetime.formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
+    ${formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
   `;
   const lastUpdatedTemplate = `
     <p class="last-updated has-tooltip" title="${lastUpdatedString}">
-      Weather data last updated ${datetime.getTimeFromUnixTime(data.currently.time)}
+      Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
     </p>
   `;
   const lastUpdatedEl = document.querySelector('.last-updated');
