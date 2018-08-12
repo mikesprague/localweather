@@ -34,6 +34,15 @@ export async function getLocationNameFromLatLng(lat, lng) {
   }
 }
 
+export function parseLocationNameFromFormattedAddress(address) {
+  try {
+    const cityPosition = address.split(',').length > 2 ? address.split(',').length - 3 : 0;
+    return address.split(',')[cityPosition].trim();
+  } catch (error) {
+    Rollbar.error(error);
+  }
+}
+
 export async function getWeather(lat, lng) {
   const url = `${defaults.apiUrl()}/weather/?lat=${lat}&lng=${lng}`;
   if (defaults.loadFromCache) {
