@@ -16,7 +16,7 @@ export async function getLocationNameFromLatLng(lat, lng) {
     const cachedLocationName = getData(defaults.locationNameDataKey);
     try {
       defaults.locationName = cachedLocationName;
-      return cachedLocationName;
+      return parseLocationNameFromFormattedAddress(cachedLocationName);
     } catch(error) {
       Rollbar.error(error);
       return defaults.locationName;
@@ -32,9 +32,10 @@ export async function getLocationNameFromLatLng(lat, lng) {
       })
       .then(json => {
         setData(defaults.locationDataKey, json);
+        console.log('json-location', json.results[0].formatted_address);
         const locationName = parseLocationNameFromFormattedAddress(json.results[0].formatted_address);
-        setData(defaults.locationNameDataKey, locationName);
-        defaults.locationName = locationName;
+        setData(defaults.locationNameDataKey, json.results[0].formatted_address);
+        defaults.locationName = json.results[0].formatted_address;
         return locationName;
       })
       .catch(error => {
