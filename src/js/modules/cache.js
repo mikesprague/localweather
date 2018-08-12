@@ -5,7 +5,7 @@ import * as defaults from './defaults';
 export function useCache(cacheTime) {
   const now = Math.round(new Date().getTime() / 1000);
   const nextUpdateTime = cacheTime + defaults.cacheTimeSpan;
-  if (nextUpdateTime > now) {
+  if (nextUpdateTime > now && !areCachesEmpty()) {
     return true;
   } else {
     return false;
@@ -16,7 +16,8 @@ export function areCachesEmpty() {
   return (
     (getData(defaults.cacheTimeKey) === null) ||
     (getData(defaults.weatherDataKey) === null) ||
-    (getData(defaults.locationDataKey) === null)
+    (getData(defaults.locationDataKey) === null) ||
+    (getData(defaults.locationNameDataKey) === null)
   );
 }
 

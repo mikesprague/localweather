@@ -16,6 +16,7 @@ module.exports = {
   loadingSpinnerSelector: '.loading-spinner',
   loadingText: '... loading weather data for your location ...',
   locationDataKey: 'locationData',
+  locationNameDataKey: 'locationName',
   locationName: '',
   offlineHeading: 'You appear to be offline',
   offlineText: 'This page will automatically update with current weather data when you have a stable connection again',
