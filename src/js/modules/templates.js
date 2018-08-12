@@ -2,6 +2,7 @@
 
 import * as defaults from './defaults';
 import { getMoonUi, registerAlertClickHandler } from './ui';
+import { parseLocationNameFromFormattedAddress } from './data';
 import { getData } from './cache';
 import {
   formatUnixTimeAsLocalString,
@@ -15,10 +16,10 @@ export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
   const locationTemplate = `
     <h1 class="location has-tooltip" title="
-      <i class='fas fa-fw fa-globe'></i> <strong>${defaults.locationName}</strong>
+      <i class='fas fa-fw fa-globe'></i> <strong>${locationName}</strong>
       <br>
       <i class='fas fa-fw fa-map-marker-alt'></i> ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
-    ">${locationName}</h1>
+    ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
   `;
   const locationEl = document.querySelector('.location');
   locationEl.innerHTML = locationTemplate;
