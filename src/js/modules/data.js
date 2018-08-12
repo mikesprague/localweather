@@ -8,23 +8,29 @@ import { init } from './init';
 export async function getLocationNameFromLatLng(lat, lng) {
   const url = `${defaults.apiUrl()}/location-name/?lat=${lat}&lng=${lng}`;
   if (defaults.loadFromCache) {
-    defaults.locationName = cachedLocationData.results[0].formatted_address;
-    return cachedLocationData.results[0].formatted_address;
     const cachedLocationData = getData(defaults.locationDataKey);
+    try {
+      return parseLocationNameFromFormattedAddress(defaults.locationName);
+    } catch(error) {
+      Rollbar.error(error);
+      return defaults.locationName;
+    }
   } else {
     const locationData = fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
         } else {
-          Rollbar.error(response.text());
+          Rollbar.error(response);
           // console.error(response);
         }
       })
       .then(json => {
-        defaults.locationName = json.results[0].formatted_address;
-        return json.results[0].formatted_address;
         setData(defaults.locationDataKey, json);
+        // console.log(json);
+        const locationName = parseLocationNameFromFormattedAddress(json.formatted_address);
+        defaults.locationName = json.formatted_address;
+        return locationName;
       })
       .catch(error => {
         Rollbar.error('Error in getLocationNameFromLatLng', error);
@@ -75,8 +81,8 @@ export async function getLocationAndPopulateAppData(lat, lng) {
   showLoading();
   if (defaults.loadFromCache) {
     try {
-      defaults.locationName = cachedLocationData.results[0].formatted_address;
       const cachedLocationData = getData(defaults.locationDataKey);
+      defaults.locationName = cachedLocationData.formatted_address;
       const cachedWeatherData = getData(defaults.weatherDataKey);
       renderAppWithData(cachedWeatherData);
     } catch (error) {
@@ -87,7 +93,7 @@ export async function getLocationAndPopulateAppData(lat, lng) {
   } else {
     try {
       getLocationNameFromLatLng(lat, lng).then(name => {
-        defaults.locationName = name;
+        // console.log(name);
         getWeather(lat, lng).then(json => {
           renderAppWithData(json);
         }).catch(error => {
