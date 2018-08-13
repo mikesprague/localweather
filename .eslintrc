@@ -1,11 +1,28 @@
 {
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": "error"
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
   },
   "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
     "ecmaFeatures": {
+      "impliedStrict": true,
       "modules": true
     }
+  },
+  "rules": {
+    "curly": "error",
+    "object-curly-newline": "error",
+    "semi": "error",
+    "prefer-arrow-callback": "warn",
+    "arrow-spacing": "error",
+    "eqeqeq": "error",
+    "quotes": ["error", "double", {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ]
   }
 }

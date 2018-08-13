@@ -1,6 +1,7 @@
-import * as defaults from './defaults';
+"use strict";
 
-'use strict';
+import * as defaults from "./defaults";
+
 
 export function useCache(cacheTime) {
   const now = Math.round(new Date().getTime() / 1000);

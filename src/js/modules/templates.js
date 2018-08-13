@@ -1,16 +1,12 @@
-'use strict';
+"use strict";
 
-import * as defaults from './defaults';
-import { getMoonUi, registerAlertClickHandler } from './ui';
-import { parseLocationNameFromFormattedAddress } from './data';
-import { getData } from './cache';
+import * as defaults from "./defaults";
+import { getMoonUi, registerAlertClickHandler } from "./ui";
+import { parseLocationNameFromFormattedAddress } from "./data";
+import { getData } from "./cache";
 import {
-  formatUnixTimeAsLocalString,
-  formatUnixTimeForSun,
-  getDayFromUnixTime,
-  getHourAndPeriodFromUnixTime,
-  getTimeFromUnixTime
-} from './datetime';
+  formatUnixTimeAsLocalString, formatUnixTimeForSun, getDayFromUnixTime, getHourAndPeriodFromUnixTime, getTimeFromUnixTime
+} from "./datetime";
 
 export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
@@ -21,7 +17,7 @@ export function populateLocation(data) {
       <i class='fas fa-fw fa-map-marker-alt'></i> ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
     ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
   `;
-  const locationEl = document.querySelector('.location');
+  const locationEl = document.querySelector(".location");
   locationEl.innerHTML = locationTemplate;
 }
 
@@ -81,7 +77,7 @@ export function populatePrimaryData(data) {
       </p>
     </div>
   `;
-  const priamryDataEl = document.querySelector('.primary-conditions-data');
+  const priamryDataEl = document.querySelector(".primary-conditions-data");
   priamryDataEl.innerHTML = primaryDataTemplate;
 }
 
@@ -129,7 +125,7 @@ export function populateWeatherData(data) {
       <p><i class="wi wi-fw wi-sunset"></i><br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm</p>
     </div>
   `;
-  const weatherDataEl = document.querySelector('.current-weather-data');
+  const weatherDataEl = document.querySelector(".current-weather-data");
   weatherDataEl.innerHTML = weatherDataTemplate;
 }
 
@@ -143,7 +139,7 @@ export function populateForecastData(data, numDays = 7) {
     <div class="col d-none d-lg-block text-center forecast-6"></div>
     <div class="col d-none d-lg-block text-center forecast-7"></div>
   `;
-  const forecastWrappersEl = document.querySelector('.forecast-data');
+  const forecastWrappersEl = document.querySelector(".forecast-data");
   forecastWrappersEl.innerHTML = forecastWrappers;
   for (let i = 0; i < numDays; i++) {
     let next = i + 1;
@@ -176,7 +172,7 @@ export function populateHourlyData(data, numHours = 12) {
     <div class="col col-lg-1 d-none d-lg-block text-center hourly-11"></div>
     <div class="col col-lg-1 d-none d-lg-block text-center hourly-12"></div>
   `;
-  const hourlyWrappersEl = document.querySelector('.hourly-data');
+  const hourlyWrappersEl = document.querySelector(".hourly-data");
   hourlyWrappersEl.innerHTML = hourlyWrappers;
   for (let i = 0; i < numHours; i++) {
     let next = i + 1;
@@ -210,7 +206,7 @@ export function populateAlertMessage(msg, type, icon) {
       </p>
     </div>
   `;
-  const alertContainer = document.querySelector('.alert-container');
+  const alertContainer = document.querySelector(".alert-container");
   alertContainer.innerHTML = alertMessageTemplate;
   registerAlertClickHandler();
 }
@@ -229,7 +225,7 @@ export function populateLastUpdated(data) {
       Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
     </p>
   `;
-  const lastUpdatedEl = document.querySelector('.last-updated');
+  const lastUpdatedEl = document.querySelector(".last-updated");
   lastUpdatedEl.innerHTML = lastUpdatedTemplate;
 }
 
@@ -253,6 +249,6 @@ export function populateFooter() {
       </li>
     </ul>
   `;
-  const footerEl = document.querySelector('.powered-by-dark-sky');
+  const footerEl = document.querySelector(".powered-by-dark-sky");
   footerEl.innerHTML = footerTemplate;
 }
