@@ -23,7 +23,7 @@ module.exports = {
   themeColor: "#133150",
   timerHandle: 0,
   title: "LocalWeather.io (powered by Dark Sky)",
-  versionString: "v0.21.6",
+  versionString: "v0.21.7",
   weatherDataKey: "weatherData",
   apiUrl: function () {
     return window.location.hostname === "localhost" ? "http://localhost:3000" : "https://api.localweather.io";
