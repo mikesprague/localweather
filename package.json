@@ -12,12 +12,13 @@
     "start": "yarn dev:serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config ./webpack.config.js --progress --colors",
-    "dev:api": "docker run --env-file=../api-localweather-io/.env --rm -p 3000:3000 -it api-localweather-io:latest",
+    "dev:api": "docker run --env-file=../api-localweather-io/.env --rm -p 3000:3000 api-localweather-io:latest",
     "dev:build": "yarn dev:clean && yarn dev:webpack",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:deploy": "yarn dev:push && yarn dev:clean",
     "dev:push": "cd build && now --public && cd ../",
-    "dev:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
+    "dev:serve": "concurrently --kill-others --raw 'webpack-serve ./webpack.config.dev.js --port 5500 --open' 'yarn dev:api'",
+    "dev:watch": "yarn dev:clean && yarn dev:webpack --watch",
     "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors"
   },
   "repository": {
@@ -58,6 +59,7 @@
     "webpack-cli": "^3.1.0"
   },
   "devDependencies": {
+    "concurrently": "^3.6.1",
     "webpack-serve": "^2.0.2"
   }
 }
