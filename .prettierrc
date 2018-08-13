@@ -1,7 +1,8 @@
 {
-  "singleQuote": true,
+  "singleQuote": false,
   "trailingComma": "all",
-  "arrowParens": "avoid",
+  "arrowParens": "always",
+  "semi": true,
   "tabWidth": 2,
   "plugins": [
     "all"

@@ -1,35 +1,35 @@
-const VERSION = '0.21.6';
+const VERSION = "0.21.7";
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/manifest.json',
-  '/css/styles.css',
-  '/js/bundle.js',
-  '/assets/css/weather-icons.min.css',
-  '/assets/css/weather-icons-wind.min.css',
-  '/assets/font/weathericons-regular-webfont.woff2',
-  '/assets/font/weathericons-regular-webfont.woff',
-  '/assets/font/weathericons-regular-webfont.ttf',
-  '/assets/font/weathericons-regular-webfont.svg',
-  '/assets/font/weathericons-regular-webfont.eot',
+  "/",
+  "/index.html",
+  "/offline.html",
+  "/manifest.json",
+  "/css/styles.css",
+  "/js/bundle.js",
+  "/assets/css/weather-icons.min.css",
+  "/assets/css/weather-icons-wind.min.css",
+  "/assets/font/weathericons-regular-webfont.woff2",
+  "/assets/font/weathericons-regular-webfont.woff",
+  "/assets/font/weathericons-regular-webfont.ttf",
+  "/assets/font/weathericons-regular-webfont.svg",
+  "/assets/font/weathericons-regular-webfont.eot",
 ];
 const cacheWhenPossible = [
-  '/assets/images/favicons/weather-icon-32.png',
-  '/assets/images/favicons/weather-icon-48.png',
-  '/assets/images/favicons/weather-icon-64.png',
-  '/assets/images/favicons/weather-icon-72.png',
-  '/assets/images/favicons/weather-icon-96.png',
-  '/assets/images/favicons/weather-icon-128.png',
-  '/assets/images/favicons/weather-icon-512.png',
-  'https://fonts.googleapis.com/css/family=Open+Sans+Condensed:300,300italic,700',
-  'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMR7eS2Ao.woff2',
-  'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NHdQDnbTkabZAIOl9il_O6KJj73e7Fd_-7suD8Rb2V-ggZSw.woff2',
-  'https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMR7eS2Ao.woff2',
+  "/assets/images/favicons/weather-icon-32.png",
+  "/assets/images/favicons/weather-icon-48.png",
+  "/assets/images/favicons/weather-icon-64.png",
+  "/assets/images/favicons/weather-icon-72.png",
+  "/assets/images/favicons/weather-icon-96.png",
+  "/assets/images/favicons/weather-icon-128.png",
+  "/assets/images/favicons/weather-icon-512.png",
+  "https://fonts.googleapis.com/css/family=Open+Sans+Condensed:300,300italic,700",
+  "https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMR7eS2Ao.woff2",
+  "https://fonts.gstatic.com/s/opensanscondensed/v12/z7NHdQDnbTkabZAIOl9il_O6KJj73e7Fd_-7suD8Rb2V-ggZSw.woff2",
+  "https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMR7eS2Ao.woff2",
 ];
 
-addEventListener('install', installEvent => {
+addEventListener("install", installEvent => {
   // console.info(`[SW] Begin Installing New Version ${CACHE_NAME}`);
   self.skipWaiting();
   // perform install steps
@@ -49,7 +49,7 @@ addEventListener('install', installEvent => {
   ); // end waitUntil
 }); // end addEventListener
 
-addEventListener('activate', activateEvent => {
+addEventListener("activate", activateEvent => {
   // console.log('[SW] Activate Started');
   activateEvent.waitUntil(
     caches.keys()
@@ -66,14 +66,14 @@ addEventListener('activate', activateEvent => {
       ); // end return Promise.all
     }) // end keys then
     .then(() => {
-      console.log('[SW] Activated');
+      console.log("[SW] Activated");
       return clients.claim();
     }) // end then
   ); // end waitUntil
 }); // end addEventListener
 
 // intercept network requests
-self.addEventListener('fetch', event => {
+self.addEventListener("fetch", event => {
   // console.log('[SW] Fetch Started');
   event.respondWith(
     caches.match(event.request).then(response => {
@@ -87,7 +87,7 @@ self.addEventListener('fetch', event => {
       // console.log(`[SW] Fetched ${event.request.url}`);
       return fetch(fetchRequest).then(response => {
         // check if we received a valid response
-        if (!response || response.status !== 200 || response.type !== 'basic') {
+        if (!response || response.status !== 200 || response.type !== "basic") {
           return response;
         }
         // clone the response because it's a one time use stream
