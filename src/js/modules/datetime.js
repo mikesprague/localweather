@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
 export function formatUnixTimeAsLocalString(unixtime) {
   const date = new Date(unixtime * 1000);
   // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
-  return date.toLocaleString().replace(', ', ' '); // '5/6/2018 3:41:21 PM'
+  return date.toLocaleString().replace(", ", " "); // '5/6/2018 3:41:21 PM'
 }
 
 export function formatUnixTimeForSun(unixtime) {
@@ -15,13 +15,13 @@ export function formatUnixTimeForSun(unixtime) {
 export function getShortDateFromUnixTime(unixtime) {
   const date = new Date(unixtime * 1000);
   // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
-  return date.toLocaleString().split(',')[0]; // returns '5/6/2018'
+  return date.toLocaleString().split(",")[0]; // returns '5/6/2018'
 }
 
 export function getTimeFromUnixTime(unixtime) {
   const date = new Date(unixtime * 1000);
   // example date.toLocaleString() '5/6/2018, 3:41:21 PM'
-  return date.toLocaleString().split(',')[1].trim(); // returns '3:41:21 PM'
+  return date.toLocaleString().split(",")[1].trim(); // returns '3:41:21 PM'
 }
 
 export function getHoursFromUnixTime(unixtime) {
@@ -50,13 +50,13 @@ export function getMinutesFromUnixTime(unixtime) {
 export function getMonthFromUnixTime(unixtime) {
   const date = new Date(unixtime * 1000);
   // example date.toDateSTring() 'Sun May 06 2018'
-  return date.toDateString().split(' ')[1]; // returns 'May'
+  return date.toDateString().split(" ")[1]; // returns 'May'
 }
 
 export function getDayFromUnixTime(unixtime) {
   const date = new Date(unixtime * 1000);
   // example date.toDateSTring() 'Sun May 06 2018'
-  return date.toDateString().split(' ')[0]; // returns 'Sun'
+  return date.toDateString().split(" ")[0]; // returns 'Sun'
 }
 
 export function getYearFromUnixTime(unixtime) {
