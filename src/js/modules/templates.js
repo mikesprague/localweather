@@ -11,10 +11,12 @@ import {
 export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
   const locationTemplate = `
-    <h1 class="location has-tooltip" title="
-      <i class='fas fa-fw fa-globe'></i> <strong>${locationName}</strong>
+    <h1 class="title is-1 has-text-centered has-tooltip" title="
+      <i class='fas fa-fw fa-globe'></i>
+      <strong>${locationName}</strong>
       <br>
-      <i class='fas fa-fw fa-map-marker-alt'></i> ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
+      <i class='fas fa-fw fa-map-marker-alt'></i>
+      ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
     ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
   `;
   const locationEl = document.querySelector(".location");
@@ -24,36 +26,34 @@ export function populateLocation(data) {
 export function populatePrimaryData(data) {
   const currentConditionsTooltip = `
     <div class='primarySummaryWrapper'>
-      <div class='row'>
-        <div class='col'>
+      <div class='columns is-mobile'>
+        <div class='column'>
           <strong>RIGHT NOW</strong>
           <i class='wi wi-fw wi-forecast-io-${data.currently.icon}'></i>
           <br>
-          ${Math.round(data.currently.temperature)}<i class='wi wi-degrees'></i>
+          ${Math.round(data.currently.temperature)}&deg;
           ${data.currently.summary}
         </div>
-        <div class='col'>
+        <div class='column'>
           <strong>NEXT HOUR</strong>
           <i class='wi wi-fw wi-forecast-io-${data.hourly.data[1].icon}'></i>
           <br>
-          ${Math.round(data.hourly.data[1].temperature)}<i class='wi wi-degrees'></i>
+          ${Math.round(data.hourly.data[1].temperature)}&deg;
           ${data.hourly.data[1].summary}
         </div>
       </div>
-      <hr>
-      <div class='row'>
-        <div class='col'>
+      <div class='columns is-mobile'>
+        <div class='column'>
           <strong>TODAY</strong>
           <i class='wi wi-fw wi-forecast-io-${data.daily.data[0].icon}'></i>
           <br>
-          ${Math.round(data.daily.data[0].temperatureHigh)}<i class='wi wi-degrees'></i>/
-          ${Math.round(data.daily.data[0].temperatureLow)}<i class='wi wi-degrees'></i>
+          ${Math.round(data.daily.data[0].temperatureHigh)}&deg;/
+          ${Math.round(data.daily.data[0].temperatureLow)}&deg;
           ${data.daily.data[0].summary}
         </div>
       </div>
-      <hr>
-      <div class='row'>
-        <div class='col'>
+      <div class='columns is-mobile'>
+        <div class='column'>
           <strong>NEXT 7 DAYS</strong>
           <i class='wi wi-fw wi-forecast-io-${data.daily.icon}'></i>
           <br>
@@ -62,19 +62,20 @@ export function populatePrimaryData(data) {
       </div>
     </div>
   `;
+  const locationName = getData(defaults.locationNameDataKey);
   const primaryDataTemplate = `
-    <div class="col-3 current-icon">
-      <p class="text-center">
-        <i class="wi wi-fw wi-forecast-io-${data.currently.icon}"></i>
-      </p>
+    <div class="column is-one-quarter has-text-right current-icon">
+      <i class="wi wi-fw wi-forecast-io-${data.currently.icon}"></i>
     </div>
-    <div class="col-6 text-center current-conditions p-0 has-tooltip" title="${currentConditionsTooltip}">
-      <h2>${data.currently.summary}</h2>
+    <div class="column is-half current-conditions">
+      <div class="content has-text-center">
+        <h2 class="subtitle is-1 has-text-center has-tooltip" title="${currentConditionsTooltip}">
+          ${data.currently.summary}
+        </h2>
+      </div>
     </div>
-    <div class="col-3 current-temp text-center">
-      <p class="primary-unit text-center">
-        ${Math.round(data.currently.temperature)}<i class="wi wi-degrees"></i>
-      </p>
+    <div class="column is-one-quarter has-text-left current-temp">
+      <span>${Math.round(data.currently.temperature)}&deg;</span>
     </div>
   `;
   const priamryDataEl = document.querySelector(".primary-conditions-data");
@@ -84,45 +85,92 @@ export function populatePrimaryData(data) {
 export function populateWeatherData(data) {
   const moonUi = getMoonUi(data);
   const weatherDataTemplate = `
-    <div class="col col-md-2 text-center has-tooltip" title="Wind">
-      <p>
-        <i class="wi wi-fw wi-strong-wind"></i><br>
-        <i class="wi wi-fw wi-wind from-${data.currently.windBearing}-deg"></i>${Math.round(data.currently.windSpeed)}mph
-      </p>
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Wind">
+        <p>
+          <i class="wi wi-fw wi-strong-wind"></i>
+          <br>
+          <i class="wi wi-fw wi-wind from-${data.currently.windBearing}-deg"></i>${Math.round(data.currently.windSpeed)}mph
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Precipitation">
+        <p>
+          <i class="fas fa-fw fa-umbrella"></i>
+          <br>
+          ${Math.round(data.currently.precipProbability * 100)}%
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="UV">
+        <p>
+          <i class="fas fa-fw fa-sun"></i>
+          <br>
+          ${Math.round(data.currently.uvIndex)}
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Visibility">
+        <p>
+          <i class="fas fa-fw fa-eye"></i>
+          <br>
+          ${data.currently.visibility}mi
+        </p>
+      </div>
+      <div class="column is-hidden-mobile has-text-centered has-tooltip" title="Cloud Cover">
+        <p>
+          <i class="fas fa-fw fa-cloud"></i>
+          <br>
+          ${Math.round(data.currently.cloudCover * 100)}%
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Sunrise">
+        <p>
+          <i class="wi wi-sunrise"></i>
+          <br>
+          ${formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am
+        </p>
+      </div>
     </div>
-    <div class="col col-md-2 text-center has-tooltip" title="Precipitation">
-      <p><i class="fas fa-fw fa-umbrella"></i><br>${Math.round(data.currently.precipProbability * 100)}%</p>
-    </div>
-    <div class="col col-md-2 text-center has-tooltip" title="UV">
-      <p><i class="fas fa-fw fa-sun"></i><br>${Math.round(data.currently.uvIndex)}</p>
-    </div>
-    <div class="col col-md-2 text-center has-tooltip" title="Visibility">
-      <p><i class="fas fa-fw fa-eye"></i><br>${data.currently.visibility}mi</p>
-    </div>
-    <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Cloud Cover">
-      <p><i class="fas fa-fw fa-cloud"></i><br>${Math.round(data.currently.cloudCover * 100)}%</p>
-    </div>
-    <div class="col col-md-2 text-center has-tooltip" title="Sunrise">
-      <p><i class="wi wi-sunrise"></i><br>${formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am</p>
-    </div>
-    <div class="w-100"></div>
-    <div class="col col-md-2 text-center has-tooltip" title="Pressue">
-      <p><i class="wi wi-fw wi-barometer"></i><br>${Math.round(data.currently.pressure)}mb</i></p>
-    </div>
-    <div class="col col-md-2 text-center has-tooltip" title="Humidity">
-      <p><i class="wi wi-fw wi-humidity"></i><br>${Math.round(data.currently.humidity * 100)}%</p>
-    </div>
-    <div class="col col-md-2 text-center has-tooltip" title="Dew Point">
-      <p><i class="wi wi-fw wi-raindrop"></i><br>${Math.round(data.currently.dewPoint)}<i class="wi wi-degrees"></i></p>
-    </div>
-    <div class="col col-md-2 text-center has-tooltip" title="Feels Like">
-      <p><i class="wi wi-fw wi-thermometer"></i><br>${Math.round(data.currently.apparentTemperature)}<i class="wi wi-degrees"></i></p>
-    </div>
-    <div class="col col-md-2 d-none d-md-block text-center has-tooltip" title="Moon">
-      <p class="moon-phase"><i class="wi wi-fw ${moonUi.icon}"></i><br>${moonUi.phase}</p>
-    </div>
-    <div class="col col-md-2 text-center has-tooltip" title="Sunset">
-      <p><i class="wi wi-fw wi-sunset"></i><br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm</p>
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Pressure">
+        <p>
+          <i class="wi wi-fw wi-barometer"></i>
+          <br>
+          ${Math.round(data.currently.pressure)}mb</i>
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Humidity">
+        <p>
+          <i class="wi wi-fw wi-humidity"></i>
+          <br>
+          ${Math.round(data.currently.humidity * 100)}%
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Dew Point">
+        <p>
+          <i class="wi wi-fw wi-raindrop"></i>
+          <br>
+          ${Math.round(data.currently.dewPoint)}&deg;</i>
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Feels Like">
+        <p>
+          <i class="wi wi-fw wi-thermometer"></i>
+          <br>
+          ${Math.round(data.currently.apparentTemperature)}&deg;</i>
+        </p>
+      </div>
+      <div class="column is-hidden-mobile has-text-centered has-tooltip" title="Moon">
+        <p class="moon-phase">
+          <i class="wi wi-fw ${moonUi.icon}"></i>
+          <br>
+          ${moonUi.phase}
+        </p>
+      </div>
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Sunset">
+        <p>
+          <i class="wi wi-fw wi-sunset"></i>
+          <br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm
+        </p>
+      </div>
     </div>
   `;
   const weatherDataEl = document.querySelector(".current-weather-data");
@@ -131,13 +179,13 @@ export function populateWeatherData(data) {
 
 export function populateForecastData(data, numDays = 7) {
   const forecastWrappers = `
-    <div class="col text-center forecast-1"></div>
-    <div class="col text-center forecast-2"></div>
-    <div class="col text-center forecast-3"></div>
-    <div class="col text-center forecast-4"></div>
-    <div class="col d-none d-md-block text-center forecast-5"></div>
-    <div class="col d-none d-lg-block text-center forecast-6"></div>
-    <div class="col d-none d-lg-block text-center forecast-7"></div>
+    <div class="column is-mobile has-text-centered forecast-1 is-one-quarter-mobile"></div>
+    <div class="column is-mobile has-text-centered forecast-2 is-one-quarter-mobile"></div>
+    <div class="column is-mobile has-text-centered forecast-3 is-one-quarter-mobile"></div>
+    <div class="column is-mobile has-text-centered forecast-4 is-one-quarter-mobile"></div>
+    <div class="column is-mobile has-text-centered forecast-5 is-hidden-mobile"></div>
+    <div class="column is-mobile has-text-centered forecast-6 is-hidden-touch"></div>
+    <div class="column is-mobile has-text-centered forecast-7 is-hidden-touch"></div>
   `;
   const forecastWrappersEl = document.querySelector(".forecast-data");
   forecastWrappersEl.innerHTML = forecastWrappers;
@@ -159,18 +207,18 @@ export function populateForecastData(data, numDays = 7) {
 
 export function populateHourlyData(data, numHours = 12) {
   const hourlyWrappers = `
-    <div class="col col-lg-1 text-center hourly-1"></div>
-    <div class="col col-lg-1 text-center hourly-2"></div>
-    <div class="col col-lg-1 text-center hourly-3"></div>
-    <div class="col col-lg-1 text-center hourly-4"></div>
-    <div class="col col-lg-1 text-center hourly-5"></div>
-    <div class="col col-lg-1 d-none d-md-block text-center hourly-6"></div>
-    <div class="col col-lg-1 d-none d-md-block text-center hourly-7"></div>
-    <div class="col col-lg-1 d-none d-lg-block text-center hourly-8"></div>
-    <div class="col col-lg-1 d-none d-lg-block text-center hourly-9"></div>
-    <div class="col col-lg-1 d-none d-lg-block text-center hourly-10"></div>
-    <div class="col col-lg-1 d-none d-lg-block text-center hourly-11"></div>
-    <div class="col col-lg-1 d-none d-lg-block text-center hourly-12"></div>
+    <div class="column has-text-centered hourly-1"></div>
+    <div class="column has-text-centered hourly-2"></div>
+    <div class="column has-text-centered hourly-3"></div>
+    <div class="column has-text-centered hourly-4"></div>
+    <div class="column has-text-centered hourly-5"></div>
+    <div class="column has-text-centered hourly-6 is-hidden-mobile"></div>
+    <div class="column has-text-centered hourly-7 is-hidden-mobile"></div>
+    <div class="column has-text-centered hourly-8 is-hidden-touch"></div>
+    <div class="column has-text-centered hourly-9 is-hidden-touch"></div>
+    <div class="column has-text-centered hourly-10 is-hidden-touch"></div>
+    <div class="column has-text-centered hourly-11 is-hidden-touch"></div>
+    <div class="column has-text-centered hourly-12 is-hidden-touch"></div>
   `;
   const hourlyWrappersEl = document.querySelector(".hourly-data");
   hourlyWrappersEl.innerHTML = hourlyWrappers;
@@ -186,8 +234,7 @@ export function populateHourlyData(data, numHours = 12) {
       <p class="has-tooltip" title="${data.hourly.data[next].summary}<br>${precipitationText}">
         <strong>${getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
         <br>
-        <i class="wi wi-fw wi-forecast-io-${data.hourly.data[next].icon}"></i>
-        ${Math.round(data.hourly.data[next].temperature)}&deg;
+        <i class="wi wi-fw wi-forecast-io-${data.hourly.data[next].icon}"></i> ${Math.round(data.hourly.data[next].temperature)}&deg;
       </p>
     `;
     let hourlyEl = document.querySelector(`.hourly-${next}`);
@@ -195,19 +242,21 @@ export function populateHourlyData(data, numHours = 12) {
   }
 }
 
-export function populateAlertMessage(msg, type, icon) {
+export function populateAlertMessage(title, msg, type, icon) {
   const alertMessageTemplate = `
-    <div class="alert alert-${type} alert-dismissible fade-in alert-message" role="alert">
-      <button type="button" class="close alert-close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <p>
-        <span class="${icon}" aria-hidden="true"></span> ${msg}
-      </p>
-    </div>
+    <article class="message is-${type}">
+      <div class="message-header">
+        <p><i class="${icon}"></i> ${title}</p>
+        <span class="icon"><i class="fas fa-fw fa-plus-square"></i></span>
+      </div>
+      <div class="message-body">
+        <p>${msg}</p>
+      </div>
+    </article>
   `;
   const alertContainer = document.querySelector(".alert-container");
   alertContainer.innerHTML = alertMessageTemplate;
+  document.querySelector("article .message-body").classList.add(defaults.hideClassName);
   registerAlertClickHandler();
 }
 
@@ -225,29 +274,33 @@ export function populateLastUpdated(data) {
       Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
     </p>
   `;
-  const lastUpdatedEl = document.querySelector(".last-updated");
+  const lastUpdatedEl = document.querySelector(".last-updated-time");
   lastUpdatedEl.innerHTML = lastUpdatedTemplate;
 }
 
 export function populateFooter() {
   const footerTemplate = `
-    <ul class="list-inline">
-      <li class="list-inline-item">
+    <div class="column">
+      <div class="content has-text-right">
         <a href="https://localweather.io" title="LocalWeather.io ${defaults.versionString}">
           LocalWeather.io ${defaults.versionString}
         </a>
-      </li>
-      <li class="list-inline-item">
+      </div>
+    </div>
+    <div class="column">
+      <div class="content has-text-centered">
         <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" title="Powered by Dark Sky">
           <i class="fas fa-tint"></i> Powered by Dark Sky
         </a>
-      </li>
-      <li class="list-inline-item">
+      </div>
+    </div>
+    <div class="column">
+      <div class="content has-text-left">
         <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" title="Coded by Michael Sprague">
           <i class="fas fa-code"></i> by Michael Sprague
         </a>
-      </li>
-    </ul>
+      </div>
+    </div>
   `;
   const footerEl = document.querySelector(".powered-by-dark-sky");
   footerEl.innerHTML = footerTemplate;

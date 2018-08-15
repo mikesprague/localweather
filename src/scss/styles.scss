@@ -1,21 +1,31 @@
-@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bulma/bulma";
 /*!
  * LocalWeather.io Styles
  */
 @import "variables";
 
-html,
-body {
+* {
   -moz-osx-font-smoothing: grayscale !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
-  font-family: "Open Sans Condensed", sans-serif;
   text-rendering: optimizeLegibility !important;
+}
+
+html,
+body {
+  background-color: $color-loading;
+  margin: 0;
 }
 
 body {
   background-color: $color-loading;
   color: $color-text-default;
+  font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.25rem;
+}
+
+.section {
+  min-height: 100vh;
+  padding: .75rem !important;
 }
 
 p {
@@ -23,12 +33,13 @@ p {
 }
 
 strong {
+  color: inherit !important;
   font-weight: 700;
 }
 
-h1 {
-  font-size: 2.25em;
-  font-weight: bold;
+.title.is-1 {
+  color: $color-text-default;
+  font-size: 3em;
   letter-spacing: .4em;
   text-align: center;
   text-transform: capitalize;
@@ -42,26 +53,22 @@ h1 {
   }
 }
 
-h2 {
-  font-size: 1.65em;
+.subtitle.is-1 {
+  color: $color-text-default;
+  font-size: 2.75em;
+  font-weight: normal;
   letter-spacing: .1em;
-  line-height: 1em;
   text-align: center;
   text-transform: capitalize;
 
   small {
     color: $color-text-secondary;
-    font-size: .5em;
+    // font-size: .5em;
   }
 }
 
 .loading-text {
-  margin-top: 1em;
-}
-
-.weather-data {
-  margin-top: 1.25em;
-  min-height: 12.5em;
+  margin-top: 3em;
 }
 
 .hide-me {
@@ -144,7 +151,7 @@ h2 {
 }
 
 .current-weather-data {
-  .col {
+  .column {
     p {
       line-height: 1em;
       margin-bottom: .75em;
@@ -161,17 +168,9 @@ h2 {
   cursor: default;
 }
 
-.alert-message {
-  p {
-    font-size: 1em;
-    line-height: 1.2em;
-    margin-bottom: 0;
-  }
-}
-
 .current-icon,
 .current-temp {
-  & p {
+  p {
     cursor: default;
     text-align: center;
     white-space: nowrap;
@@ -179,167 +178,122 @@ h2 {
 }
 
 .current-temp {
-  p {
+  span {
     font-size: 4em;
-    line-height: 100%;
-    margin-left: 20%;
   }
 }
 
 .current-icon {
   i {
-    font-size: 2.75em;
-    margin-top: .2em;
+    font-size: 4em;
   }
 }
 
-.last-updated {
+.last-updated-time {
   p {
     font-size: .9em;
-    margin-top: 0;
-    text-align: center;
-  }
-}
-
-.powered-by-dark-sky ul {
-  font-size: .5em;
-  margin-top: -.25em;
-  text-align: center;
-}
-
-.forecast,
-.hourly {
-  margin-top: .5em;
-
-  .summary {
-    font-size: .85em;
-  }
-
-  p {
-    white-space: nowrap;
-  }
-}
-
-.forecast {
-  p {
-    font-size: .9em;
-    line-height: 1.3em;
-  }
-}
-
-.hourly {
-  p {
-    font-size: .75em;
-    line-height: 1.25em;
-  }
-}
-
-.template-error-message {
-  display: block;
-}
-
-hr {
-  margin: .4em auto;
-}
-
-.main-container {
-  margin-bottom: -3.75em;
-
-  &::after {
-    content: "";
-    display: block;
-  }
-}
-
-.link-toggle-units {
-  &,
-  &:visited {
-    color: $color-gray-medium;
-    text-decoration: none;
-  }
-
-  &:hover,
-  &:active {
-    border-bottom: 1px dashed $color-gray-light;
-    border-top: 1px dashed $color-gray-light;
-    color: $color-gray-light;
-    text-decoration: none;
+    margin-top: -.5em;
   }
 }
 
 .powered-by-dark-sky {
+  font-size: .65em;
+  margin-top: .25em;
+
   a {
     color: $color-gray-light;
     text-decoration: none;
 
     &:visited {
+      // color: $color-gray-light;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      border-bottom: 1px dashed $color-gray-light;
+      border-top: 1px dashed $color-gray-light;
       color: $color-gray-light;
       text-decoration: none;
     }
   }
 }
 
-.github-corner {
-  &:hover .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
+hr {
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  margin: .4em auto;
 }
 
-@keyframes octocat-wave {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
+// .link-toggle-units {
+//   &,
+//   &:visited {
+//     color: $color-gray-medium;
+//     text-decoration: none;
+//   }
 
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
-}
-
-@media only screen and (max-width: 340px) {
-  p {
-    font-size: 1em;
-  }
-}
+//   &:hover,
+//   &:active {
+//     border-bottom: 1px dashed $color-gray-light;
+//     border-top: 1px dashed $color-gray-light;
+//     color: $color-gray-light;
+//     text-decoration: none;
+//   }
+// }
 
 @media only screen and (max-width: 440px) {
   body {
-    font-size: 1rem;
-  }
-
-  h2 {
-    margin: 0 auto auto .75em;
+    font-size: 1.25rem;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .github-corner {
-    .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
-    }
+  body {
+    font-size: 1.35rem;
+  }
 
-    &:hover .octo-arm {
-      animation: none;
+  .current-weather-data {
+    p {
+      font-size: .95em;
+      line-height: 1.25em;
     }
   }
 
-  .powered-by-dark-sky {
-    & ul {
-      font-size: .75em;
-    }
-  }
-
-  .last-updated {
-    & p {
+  .hourly-data,
+  .forecast-data {
+    p {
       font-size: 1em;
     }
   }
+
+  .last-updated-time
+   {
+    p {
+      font-size: .8em;
+    }
+  }
+
+  .title.is-1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle.is-1 {
+    font-size: 1.65rem;
+  }
+
+  .current-temp {
+    span {
+      font-size: 2.5em;
+    }
+  }
+
+  .current-icon {
+    i {
+      font-size: 2.5em;
+    }
+  }
+
 }
 
 @media only screen and (min-width: 900px) {

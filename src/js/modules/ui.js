@@ -5,10 +5,11 @@ import swal from "sweetalert2";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
   faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, faTint, faUmbrella, faSun, faEye,
-  faCloud, faBan, faCode, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt
+  faCloud, faBan, faCode, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
+  faPlusSquare, faMinusSquare
 } from "@fortawesome/free-solid-svg-icons";
 import * as defaults from "./defaults";
-import { getData, useCache } from "./cache";
+import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
 import {
   populateAlertMessage, populateFooter, populateForecastData, populateHourlyData,
@@ -100,12 +101,16 @@ export function getBodyBgClass(data) {
 
 export function setBodyBgClass(className) {
   const bodyEl = document.querySelector("body");
+  const htmlEl = document.querySelector("html");
   bodyEl.classList.add(className);
+  htmlEl.classList.add(className);
 }
 
 export function removeBodyBgClass(className) {
   const bodyEl = document.querySelector("body");
+  const htmlEl = document.querySelector("html");
   bodyEl.classList.remove(className);
+  htmlEl.classList.remove(className);
 }
 
 export function setFavicon(data) {
@@ -191,21 +196,17 @@ export function hideLoading() {
 }
 
 export function hideUi() {
-  const rows = document.querySelectorAll(".weather-data .row");
-  const hrAll = document.getElementsByTagName("hr");
-  const poweredBy = document.querySelector(".powered-by-dark-sky");
-  hideEl(rows);
+  const rows = document.querySelector(".weather-data");
+  const hrAll = document.querySelectorAll("hr");
   hideEl(hrAll);
-  hideEl(poweredBy);
+  hideEl(rows);
 }
 
 export function showUi() {
-  const rows = document.querySelectorAll(".weather-data .row");
-  const hrAll = document.getElementsByTagName("hr");
-  const poweredBy = document.querySelector(".powered-by-dark-sky");
+  const rows = document.querySelector(".weather-data");
+  const hrAll = document.querySelectorAll("hr");
   showEl(rows);
   showEl(hrAll);
-  showEl(poweredBy);
   initTooltips();
 }
 
@@ -226,6 +227,12 @@ export function showInstallAlert() {
 }
 
 export function showGeolocationAlert() {
+  const geoOptions = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+
   if (!useCache(getData(defaults.cacheTimeKey))) {
     swal({
       title: `${defaults.appName}`,
@@ -244,7 +251,7 @@ export function showGeolocationAlert() {
       onClose: () => {
         if ("geolocation" in navigator) {
           showLoading();
-          navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+          navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
           // let watchPositionHandle = navigator.geolocation.watchPosition(geoSuccess, geoError);
         } else {
           Rollbar.critical("showGeolocationAlert: 'geolocation' not found in navigator");
@@ -254,7 +261,7 @@ export function showGeolocationAlert() {
       }
     });
   } else {
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
   }
 }
 
@@ -276,36 +283,36 @@ export function geoError(error) {
 }
 
 export function registerAlertClickHandler() {
-  document.querySelector(".alert-message > .alert-close").addEventListener("click", function (event) {
-    document.querySelector(".alert-message > .alert-close").removeEventListener("click", event);
-    this.parentNode.remove();
+  // document.querySelector(".message-header > .delete").addEventListener("click", (event) => {
+  document.querySelector(".message-header").addEventListener("click", (event) => {
+    // document.querySelector(".message-header > .delete").removeEventListener("click", event);
+    // this.parentNode.parentNode.remove();
+    document.querySelector("article .message-body").classList.toggle(defaults.hideClassName);
+    document.querySelector("article .message-header .icon svg").classList.toggle("fa-plus-square");
+    document.querySelector("article .message-header .icon svg").classList.toggle("fa-minus-square");
+
   });
 }
 
 export function showAlert(
+  title,
   msg,
   type = "danger", // type: primary | secondary | info | success | warning | danger | light | dark
   icon = "fas fa-fw fa-exclamation-triangle" // icon: any valid font awesome string
 ) {
-  populateAlertMessage(msg, type, icon);
+  populateAlertMessage(title, msg, type, icon);
 }
 
 export function initWeatherAlerts(data) {
   const weatherAlerts = data.alerts;
   if (weatherAlerts) {
     for (let i = 0; i < weatherAlerts.length; i++) {
-      let description = weatherAlerts[i].description.split("*")[0];
-      let linkHtml = `
-        <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
-          Open full ${weatherAlerts[i].severity} <i class="fas fa-fw fa-external-link"></i>
-        </a>
-      `;
-      showAlert(`
-        <span class="has-tooltip" title="${weatherAlerts[i].description}">
-          <strong>${weatherAlerts[i].title}</strong> ${description}
-        </span>
-        <br><small>${linkHtml}</small>
-      `);
+      // let linkHtml = `
+      //   <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
+      //     Open full ${weatherAlerts[i].severity} <i class="fas fa-fw fa-external-link"></i>
+      //   </a>
+      // `;
+      showAlert(`${weatherAlerts[i].title}`, `${weatherAlerts[i].description}`);
     }
   }
 }
@@ -335,7 +342,9 @@ export function initFontAwesomeIcons() {
     faExternalLinkAlt,
     faCode,
     faBan,
-    faSignal
+    faSignal,
+    faPlusSquare,
+    faMinusSquare
   );
   dom.watch();
 }
@@ -354,5 +363,6 @@ export function renderAppWithData(data) {
   setTitle(data);
   initTooltips();
   initWeatherAlerts(data);
+  hideLoading();
   return true;
 }
