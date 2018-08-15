@@ -1,7 +1,7 @@
 "use strict";
 
 import * as defaults from "./defaults";
-import { hideLoading, showLoading, renderAppWithData } from "./ui";
+import { hideLoading, renderAppWithData, showLoading } from "./ui";
 import { useCache, getData, setData } from "./cache";
 import { init } from "./init";
 
@@ -50,7 +50,7 @@ export function parseLocationNameFromFormattedAddress(address) {
     const cityPosition = address.split(",").length > 2 ? address.split(",").length - 3 : 0;
     return address.split(",")[cityPosition].trim();
   } catch (error) {
-    Rollbar.error("parseLocationNameFromFormattedAddress", error);
+    Rollbar.error(error);
   }
 }
 
@@ -89,29 +89,25 @@ export async function getLocationAndPopulateAppData(lat, lng) {
       const cachedWeatherData = getData(defaults.weatherDataKey);
       renderAppWithData(cachedWeatherData);
     } catch (error) {
-      Rollbar.critical("getLocationAndPopulateAppData: problem loading cached data", error);
+      Rollbar.critical(error);
       hideLoading();
     }
-    hideLoading();
   } else {
-    showLoading();
     try {
       getLocationNameFromLatLng(lat, lng).then(name => {
         // console.log(name);
         getWeather(lat, lng).then(json => {
           renderAppWithData(json);
         }).catch(error => {
-          Rollbar.error("getWeather", error);
+          Rollbar.error(error);
         });
-        hideLoading();
       }).catch(error => {
-        Rollbar.error("getLocationNameFromLatLng", error);
+        Rollbar.error(error);
       });
     } catch (error) {
-      Rollbar.critical("getLocationAndPopulateAppData: problem getting new data", error);
+      Rollbar.critical(error);
       hideLoading();
     }
-    hideLoading();
   }
 }
 
