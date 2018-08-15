@@ -8,7 +8,7 @@ import {
   faCloud, faBan, faCode, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt
 } from "@fortawesome/free-solid-svg-icons";
 import * as defaults from "./defaults";
-import { getData, useCache } from "./cache";
+import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
 import {
   populateAlertMessage, populateFooter, populateForecastData, populateHourlyData,
@@ -191,21 +191,17 @@ export function hideLoading() {
 }
 
 export function hideUi() {
-  const rows = document.querySelectorAll(".weather-data .row");
-  const hrAll = document.getElementsByTagName("hr");
-  const poweredBy = document.querySelector(".powered-by-dark-sky");
-  hideEl(rows);
+  const rows = document.querySelector(".weather-data");
+  const hrAll = document.querySelectorAll("hr");
   hideEl(hrAll);
-  hideEl(poweredBy);
+  hideEl(rows);
 }
 
 export function showUi() {
-  const rows = document.querySelectorAll(".weather-data .row");
-  const hrAll = document.getElementsByTagName("hr");
-  const poweredBy = document.querySelector(".powered-by-dark-sky");
+  const rows = document.querySelector(".weather-data");
+  const hrAll = document.querySelectorAll("hr");
   showEl(rows);
   showEl(hrAll);
-  showEl(poweredBy);
   initTooltips();
 }
 
@@ -226,6 +222,12 @@ export function showInstallAlert() {
 }
 
 export function showGeolocationAlert() {
+  const geoOptions = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+
   if (!useCache(getData(defaults.cacheTimeKey))) {
     swal({
       title: `${defaults.appName}`,
@@ -244,7 +246,7 @@ export function showGeolocationAlert() {
       onClose: () => {
         if ("geolocation" in navigator) {
           showLoading();
-          navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+          navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
           // let watchPositionHandle = navigator.geolocation.watchPosition(geoSuccess, geoError);
         } else {
           Rollbar.critical("showGeolocationAlert: 'geolocation' not found in navigator");
@@ -254,7 +256,7 @@ export function showGeolocationAlert() {
       }
     });
   } else {
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
   }
 }
 
@@ -354,5 +356,6 @@ export function renderAppWithData(data) {
   setTitle(data);
   initTooltips();
   initWeatherAlerts(data);
+  hideLoading();
   return true;
 }
