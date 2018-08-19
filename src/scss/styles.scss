@@ -38,7 +38,7 @@ strong {
 }
 
 .title.is-1 {
-  color: $color-text-default;
+  color: inherit;
   font-size: 3em;
   letter-spacing: .4em;
   text-align: center;
@@ -54,7 +54,7 @@ strong {
 }
 
 .subtitle.is-1 {
-  color: $color-text-default;
+  color: inherit;
   font-size: 2.75em;
   font-weight: normal;
   letter-spacing: .1em;
