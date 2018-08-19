@@ -1,27 +1,23 @@
 $color-text-default: #fff;
-$color-text-night: #dedede;
+$color-text-night: darken($color-text-default, 20%); //#dedede
 $color-text-secondary: ​#b4b7ba;
 
-$color-gray-light: #efefef;
-$color-gray-medium: #999;
+$color-gray-lightest: #efefef;
+$color-gray-light: #cdcdcd;
+$color-gray: #999;
 $color-gray-dark: #343434;
-$color-gray-xdark: #222;
+$color-gray-darkest: #222;
 
 $color-loading: #133150;
-$color-day: #1889c1;
-$color-night: #4b5272;
-$color-sunny: #f5b243;
-$color-sunrise: #c35114;
-$color-sunset: #462f4b;
 
-$color-rain-day: #4e7bcb;
-$color-rain-night: #1249a5;
+$color-clear: #f5b243;
+$color-clear-night: #4b5272;
 
-$color-snow-day: $color-gray-light;
-$color-snow-night: $color-gray-medium;
+$color-rainy: #1249a5;
+$color-rainy-night: darken($color-rainy, 15%);
 
-$color-cloudy-day: #8a929e;
-$color-cloudy-night: #636363;
+$color-snowy: darken($color-text-default, 10%);
+$color-snowy-night: darken($color-text-default, 40%);
 
-$color-cloudy-sunrise: $color-cloudy-day;
-$color-cloudy-sunset: $color-cloudy-night;
+$color-cloudy: #8a929e;
+$color-cloudy-night: darken($color-cloudy, 30%);

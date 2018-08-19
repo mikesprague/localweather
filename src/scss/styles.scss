@@ -38,7 +38,7 @@ strong {
 }
 
 .title.is-1 {
-  color: $color-text-default;
+  color: inherit;
   font-size: 3em;
   letter-spacing: .4em;
   text-align: center;
@@ -54,7 +54,7 @@ strong {
 }
 
 .subtitle.is-1 {
-  color: $color-text-default;
+  color: inherit;
   font-size: 2.75em;
   font-weight: normal;
   letter-spacing: .1em;
@@ -79,22 +79,15 @@ strong {
   display: none !important;
 }
 
-.sunrise {
-  background-color: $color-sunrise;
-  color: $color-text-default;
-}
-
 .loading,
-.day,
-.day-cloudy,
-.sunrise,
-.sunrise-cloudy,
-.night,
-.night-cloudy,
-.rain,
-.snow,
-.sunset,
-.sunset-cloudy {
+.clear,
+.cloudy,
+.rainy,
+.snowy
+.clear-night,
+.cloudy-night,
+.rainy-night,
+.snowy-night {
   -ms-transition: background-color 1000ms linear;
   -webkit-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
@@ -105,59 +98,56 @@ strong {
   color: $color-text-default;
 }
 
-.day {
-  background-color: $color-sunny;
+.clear,
+.cloudy,
+.rainy {
   color: $color-text-default;
 }
 
-.day-cloudy,
-.sunrise-cloudy {
-  // background: radial-gradient($color-day, $color-cloudy-day);
-  background-color: $color-cloudy-day;
-  color: $color-text-default;
+.clear-night,
+.cloudy-night,
+.rainy-night {
+  color: $color-text-night;
 }
 
-.day-rain {
-  background-color: $color-rain-day;
-  color: $color-text-default;
+.clear {
+  background-color: $color-clear;
 }
 
-.night-rain {
-  background-color: $color-rain-night;
-  color: $color-text-default;
+.clear-night {
+  background-color: $color-clear-night;
 }
 
-.day-snow {
-  background-color: $color-snow-day;
+.cloudy {
+  background-color: $color-cloudy;
+}
+
+.cloudy-night {
+  background-color: $color-cloudy-night;
+}
+
+.rainy {
+  background-color: $color-rainy;
+}
+
+.rainy-night {
+  background-color: $color-rainy-night;
+}
+
+.snowy {
+  background-color: $color-snowy;
   color: $color-gray-dark;
 }
 
-.night-snow {
-  background-color: $color-snow-night;
-  color: $color-gray-xdark;
-}
-
-.sunset {
-  background-color: $color-sunset;
-  color: $color-text-night;
-}
-
-.night {
-  background-color: $color-night;
-  color: $color-text-night;
-}
-
-.night-cloudy,
-.sunset-cloudy {
-  // background: radial-gradient($color-night, $color-cloudy-night);
-  background-color: $color-cloudy-night;
-  color: $color-text-night;
+.snowy-night {
+  background-color: $color-snowy-night;
+  color: $color-gray-darkest;
 }
 
 .current-weather-data {
   .column {
     p {
-      line-height: 1;
+      line-height: 1.2;
       margin-bottom: .75em;
       white-space: nowrap;
     }
@@ -209,19 +199,19 @@ strong {
   margin-top: .25em;
 
   a {
-    color: $color-gray-light;
+    color: $color-gray-lightest;
     text-decoration: none;
 
     &:visited {
-      // color: $color-gray-light;
+      // color: $color-gray-lightest;
       text-decoration: none;
     }
 
     &:hover,
     &:active {
-      border-bottom: 1px dashed $color-gray-light;
-      border-top: 1px dashed $color-gray-light;
-      color: $color-gray-light;
+      border-bottom: 1px dashed $color-gray-lightest;
+      border-top: 1px dashed $color-gray-lightest;
+      color: $color-gray-lightest;
       text-decoration: none;
     }
   }
@@ -237,15 +227,15 @@ hr {
 // .link-toggle-units {
 //   &,
 //   &:visited {
-//     color: $color-gray-medium;
+//     color: $color-gray;
 //     text-decoration: none;
 //   }
 
 //   &:hover,
 //   &:active {
-//     border-bottom: 1px dashed $color-gray-light;
-//     border-top: 1px dashed $color-gray-light;
-//     color: $color-gray-light;
+//     border-bottom: 1px dashed $color-gray-lightest;
+//     border-top: 1px dashed $color-gray-lightest;
+//     color: $color-gray-lightest;
 //     text-decoration: none;
 //   }
 // }
@@ -275,8 +265,7 @@ hr {
     }
   }
 
-  .last-updated-time
-   {
+  .last-updated-time {
     p {
       font-size: .8em;
     }
