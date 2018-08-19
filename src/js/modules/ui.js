@@ -76,25 +76,16 @@ export function getBodyBgClass(data) {
   const now = Math.round(new Date().getTime() / 1000);
   const sunrise = data.daily.data[0].sunriseTime;
   const sunset = data.daily.data[0].sunsetTime;
-  const timeBuffer = 30 * 60; // 30 minutes
   const cloudCover = Math.round(data.currently.cloudCover * 100);
   const currentIcon = data.currently.icon;
-  const isCloudy = cloudCover > 50;
+  const isCloudy = cloudCover > 60;
   const isRaining = (currentIcon === "rain" || currentIcon === "thunderstorm");
   const isSnowing = (currentIcon === "snow" || currentIcon === "sleet");
-  let bodyClassPrefix = "night";
-  let bodyClassSuffix = "";
-
-  if (now >= sunrise + timeBuffer && now < sunset - timeBuffer) {
-    bodyClassPrefix = "day";
-  } else if (now > sunrise - timeBuffer && now < sunrise + timeBuffer) {
-    bodyClassPrefix = "sunrise";
-  } else if (now >= sunset - timeBuffer && now <= sunset + timeBuffer) {
-    bodyClassPrefix = "sunset";
-  }
-  bodyClassSuffix = isCloudy ? "-cloudy" : bodyClassSuffix;
-  bodyClassSuffix = isRaining ? "-rain" : bodyClassSuffix;
-  bodyClassSuffix = isSnowing ? "-snow" : bodyClassSuffix;
+  const bodyClassSuffix = (now >= sunset && now <= sunrise) ? "-night" : "";
+  let bodyClassPrefix = "clear";
+  bodyClassPrefix = isCloudy ? "cloudy" : bodyClassPrefix;
+  bodyClassPrefix = isRaining ? "rainy" : bodyClassPrefix;
+  bodyClassPrefix = isSnowing ? "snowy" : bodyClassPrefix;
 
   return `${bodyClassPrefix}${bodyClassSuffix}`;
 }
