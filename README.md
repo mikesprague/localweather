@@ -1,10 +1,9 @@
 # LocalWeather.io
-
-## Minimalist local weather app powered by Dark Sky
+Minimalist local weather app powered by Dark Sky
 
 ![LocalWeather.io screenshots coming soon](link_to_screenshot_here)
 
-### Features
+## Features
 
 - Progressive Web App
   - ServiceWorker used for caching assets
@@ -15,7 +14,7 @@
   - App and all assets serverd over HTTPS
   - Can add app to homescreen on mobile devices that support PWAs
   - Last [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit received 100 for PWA ([results](https://googlechrome.github.io/lighthouse/viewer/?gist=489395d8244be998899fea23639fc6ba))
-    [![Google Lighthouse Scores](https://cl.ly/0r273a0l2A0e/Image%202018-08-19%20at%203.47.28%20PM.png|width=300)](https://googlechrome.github.io/lighthouse/viewer/?gist=489395d8244be998899fea23639fc6ba)
+    [![Google Lighthouse Scores](lighthouse-scores-20180819.png)](https://googlechrome.github.io/lighthouse/viewer/?gist=489395d8244be998899fea23639fc6ba)
 - Geolocation from browser used for location (latitude/longitude)
   - Uses the [ask permission responsibly](https://developers.google.com/web/fundamentals/native-hardware/user-location/#ask_permission_responsibly) philosophy
     - Let's users know their location info will be used
@@ -42,9 +41,9 @@
     - Tap/touch to display on mobile devices and tablets
 - App automatically checks for updates (if left open)
   - Runs a task every minute, if past the 10 minute cache timeout then data is refreshed
-- Uses [Rollbar]() for error reporting and release tracking
+- Uses [Rollbar](https://rollbar.com/) for error reporting and release tracking
 
-#### Made with
+### Made with
 
 - Yarn/npm
 - Webpack
