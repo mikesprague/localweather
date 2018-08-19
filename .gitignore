@@ -20,3 +20,4 @@ yarn-error.log*
 develop/
 build/
 public/
+rollbar-announce-*.sh
