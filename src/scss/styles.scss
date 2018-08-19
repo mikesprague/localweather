@@ -67,6 +67,10 @@ strong {
   }
 }
 
+.primary-conditions-data {
+  align-items: start;
+}
+
 .loading-text {
   margin-top: 3em;
 }
@@ -153,7 +157,7 @@ strong {
 .current-weather-data {
   .column {
     p {
-      line-height: 1em;
+      line-height: 1;
       margin-bottom: .75em;
       white-space: nowrap;
     }
@@ -178,14 +182,18 @@ strong {
 }
 
 .current-temp {
+  padding-top: unset;
+
   span {
     font-size: 4em;
+    line-height: 1;
   }
 }
 
 .current-icon {
   i {
     font-size: 4em;
+    line-height: 1;
   }
 }
 
@@ -256,7 +264,7 @@ hr {
   .current-weather-data {
     p {
       font-size: .95em;
-      line-height: 1.25em;
+      line-height: 1.25;
     }
   }
 
@@ -285,12 +293,14 @@ hr {
   .current-temp {
     span {
       font-size: 2.5em;
+      line-height: 1;
     }
   }
 
   .current-icon {
     i {
       font-size: 2.5em;
+      line-height: 1;
     }
   }
 
