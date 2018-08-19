@@ -7,7 +7,7 @@
   "scripts": {
     "build": "yarn clean && yarn webpack",
     "clean": "rm -rf ./public > /dev/null 2>&1",
-    "deploy": "yarn push && yarn clean",
+    "deploy": "yarn push && yarn clean && ./rollbar-announce-deploy.sh",
     "push": "cd public && now --public && cd ../",
     "start": "yarn dev:serve",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,7 +15,7 @@
     "dev:api": "docker run --env-file=../api-localweather-io/.env --rm -p 3000:3000 api-localweather-io:latest",
     "dev:build": "yarn dev:clean && yarn dev:webpack",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
-    "dev:deploy": "yarn dev:push && yarn dev:clean",
+    "dev:deploy": "yarn dev:push && yarn dev:clean && ./rollbar-announce-dev-deploy.sh",
     "dev:push": "cd build && now --public && cd ../",
     "dev:serve": "concurrently --kill-others --raw 'webpack-serve ./webpack.config.dev.js --port 5500 --open' 'yarn dev:api'",
     "dev:watch": "yarn dev:clean && yarn dev:webpack --watch",
