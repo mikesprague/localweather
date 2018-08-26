@@ -8,12 +8,16 @@ module.exports = {
   coordsDataKey: "coordsData",
   description: "Minimalist local weather app powered by Dark Sky",
   errorMessageSelector: ".error-message",
-  hideClassName: "hide-me",
+  geolocationOptions: {
+    enableHighAccuracy: true,
+    maximumAge: 30000 // 30 seconds (number of seconds * 1000 milliseconds)
+  },
+  hideClassName: "hidden",
   keywords: "weather, local, dark sky, localweather.io, local weather",
   lat: 0,
   lng: 0,
   loadFromCache: false,
-  loadingSpinnerSelector: ".loading-spinner",
+  loadingSpinnerSelector: ".loading-message",
   loadingText: "... loading weather data for your location ...",
   locationDataKey: "locationData",
   locationNameDataKey: "locationName",
@@ -23,7 +27,7 @@ module.exports = {
   themeColor: "#133150",
   timerHandle: 0,
   title: "LocalWeather.io (powered by Dark Sky)",
-  versionString: "v0.23.3",
+  versionString: "v0.24.0",
   weatherDataKey: "weatherData",
   apiUrl: function () {
     return window.location.hostname === "localhost" ? "http://localhost:3000" : "https://api.localweather.io";

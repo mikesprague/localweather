@@ -1,4 +1,4 @@
-const VERSION = "0.23.3";
+const VERSION = "0.24.0";
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
   "/",
@@ -50,7 +50,7 @@ addEventListener("install", installEvent => {
 }); // end addEventListener
 
 addEventListener("activate", activateEvent => {
-  // console.log('[SW] Activate Started');
+  // console.info('[SW] Activate Started');
   activateEvent.waitUntil(
     caches.keys()
     .then(cacheNames => {
@@ -60,13 +60,13 @@ addEventListener("activate", activateEvent => {
           return cacheName !== CACHE_NAME;
         })
         .map(cacheName => {
-          // console.info(`[SW] Deleted Old Version ${cacheName}`);
+          console.info(`[SW] Deleted Old Version ${cacheName}`);
           return caches.delete(cacheName);
         }) // end map
       ); // end return Promise.all
     }) // end keys then
     .then(() => {
-      console.log("[SW] Activated");
+      console.info("[SW] Activated");
       return clients.claim();
     }) // end then
   ); // end waitUntil
@@ -74,7 +74,7 @@ addEventListener("activate", activateEvent => {
 
 // intercept network requests
 self.addEventListener("fetch", event => {
-  // console.log('[SW] Fetch Started');
+  // console.info('[SW] Fetch Started');
   event.respondWith(
     caches.match(event.request).then(response => {
       // cache hit - return response
@@ -84,7 +84,7 @@ self.addEventListener("fetch", event => {
       }
       // clone the request because it's a one time use stream
       const fetchRequest = event.request.clone();
-      // console.log(`[SW] Fetched ${event.request.url}`);
+      // console.info(`[SW] Fetched ${event.request.url}`);
       return fetch(fetchRequest).then(response => {
         // check if we received a valid response
         if (!response || response.status !== 200 || response.type !== "basic") {
@@ -94,7 +94,7 @@ self.addEventListener("fetch", event => {
         const responseToCache = response.clone();
         event.waitUntil(
           caches.open(CACHE_NAME).then(cache => {
-            // console.log(`[SW] Added to Cache ${event.request.url}`);
+            // console.info(`[SW] Added to Cache ${event.request.url}`);
             cache.put(event.request, responseToCache);
           })
         );
