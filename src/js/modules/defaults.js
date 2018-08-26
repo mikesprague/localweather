@@ -9,6 +9,9 @@ module.exports = {
   description: "Minimalist local weather app powered by Dark Sky",
   errorMessageSelector: ".error-message",
   geolocationOptions: {
+    enableHighAccuracy: true,
+    maximumAge: 30000 // 30 seconds (number of seconds * 1000 milliseconds)
+  },
   hideClassName: "hidden",
   keywords: "weather, local, dark sky, localweather.io, local weather",
   lat: 0,

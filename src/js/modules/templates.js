@@ -8,6 +8,36 @@ import {
   formatUnixTimeAsLocalString, formatUnixTimeForSun, getDayFromUnixTime, getHourAndPeriodFromUnixTime, getTimeFromUnixTime
 } from "./datetime";
 
+export function populateMessage(messageText) {
+  const messageTemplate = `
+    <div class="columns is-mobile">
+      <div class="column">
+        <div class="content has-text-centered">
+          <i class="fas fa-fw fa-spinner fa-5x fa-pulse"></i>
+          <p class="message-text">${messageText}</p>
+        </div>
+      </div>
+    </div>
+  `;
+  const messageEl = document.querySelector(".loading-message");
+  messageEl.innerHTML = messageTemplate;
+}
+
+export function populateErrorMessage(messageText) {
+  const messageTemplate = `
+    <div class="columns is-mobile">
+      <div class="column">
+        <div class="content has-text-centered">
+          <i class="has-text-danger fas fa-fw fa-exclamation-triangle fa-5x"></i>
+          <p class="message-text">${messageText}</p>
+        </div>
+      </div>
+    </div>
+  `;
+  const messageEl = document.querySelector(".loading-message");
+  messageEl.innerHTML = messageTemplate;
+}
+
 export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
   const locationTemplate = `
