@@ -218,12 +218,13 @@ export function showInstallAlert() {
   });
 }
 
-export function showErrorAlert(errorMessage) {
+export function showErrorAlert(errorMessage, buttonText = "Reload to Try Again") {
   hideLoading();
   swal({
     title: `${defaults.appName}`,
-    text: `${errorMessage}`,
-    confirmButtonText: "Reload to Try Again",
+    html: `${errorMessage}`,
+    confirmButtonText: `${buttonText}`,
+    confirmButtonColor: `${defaults.themeColor}`,
     type: "error",
     onClose: () => {
       reloadWindow();
@@ -236,14 +237,18 @@ export function showGeolocationAlert() {
     swal({
       title: `${defaults.appName}`,
       html: `
-      <p class='has-text-left'>
-        This application requires the use of location information
-        provided by your device to get accurate weather data.
-        <br><br>
-        If this is your first visit you will be asked to approve
-        sharing your location before you can continue
-      </p>
-    `,
+        <p class="message-alert-text-heading has-text-info">
+          <i class="fas fa-fw fa-info-circle"></i> Location Servives Required
+        </p>
+        <p class="message-alert-text-first">
+          This application requires the use of location information
+          provided by your device to get accurate weather data.
+        </p>
+        <p class="message-alert-text">
+          If this is your first visit you will be asked to approve
+          sharing your location with 'localweather.io' before it loads.
+        </p>
+      `,
       confirmButtonText: `<i class='wi wi-fw wi-cloud-refresh'></i> Show me the Weather`,
       type: "info",
       onClose: () => {
@@ -251,6 +256,7 @@ export function showGeolocationAlert() {
         if ("geolocation" in navigator) {
           try {
             showLoading("... acquiring location ...");
+            document.cookie = "approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
             navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
           } catch (error) {
             Rollbar.critical(error);
@@ -270,31 +276,58 @@ export function showGeolocationAlert() {
 
 export function geoSuccess(position) {
   const coords = position.coords;
-  document.cookie = "approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
   getLocationAndPopulateAppData(coords.latitude, coords.longitude);
   setData(defaults.coordsDataKey, position);
 }
 
 export function geoError(error) {
+  let errorMessage = "";
   switch(error.code) {
     case error.PERMISSION_DENIED:
-      console.log("PERMISSION_DENIED: User denied the request for Geolocation.");
-      showErrorAlert("PERMISSION_DENIED: User denied the request for Geolocation.");
-      // return "It's not going to work unless you turn location services on, Eric";
+      // "It's not going to work unless you turn location services on, Eric";
+      errorMessage = `
+        <p class="message-alert-text-heading has-text-danger">
+          <i class="fas fa-fw fa-exclamation-triangle"></i> User denied the request for Geolocation
+        </p>
+        <p class="message-alert-text-first">
+          Please enable location services, clear any location tracking blocks for the domain
+          'localweather.io' in your browser, and try again.
+        </p>
+      `;
+      console.error(errorMessage);
       break;
     case error.POSITION_UNAVAILABLE:
-      console.log("POSITION_UNAVAILABLE: Location information is unavailable.");
-      showErrorAlert("POSITION_UNAVAILABLE: Location information is unavailable.");
+      errorMessage = `
+        <p class="message-alert-text-heading has-text-danger">
+          <i class="fas fa-fw fa-exclamation-triangle"></i> POSITION UNAVAILABLE
+        </p>
+        <p class="message-alert-text-first">
+          Location information is unavailable.
+        </p>
+      `;
       break;
     case error.TIMEOUT:
-      console.log("TIMEOUT: The request to get user location timed out.");
-      showErrorAlert("TIMEOUT: The request to get user location timed out.");
+      errorMessage = `
+        <p class="message-alert-text-heading has-text-danger">
+          <i class="fas fa-fw fa-exclamation-triangle"></i> TIMEOUT
+        </p>
+        <p class="message-alert-text-first">
+          The request to get user location timed out.
+        </p>
+      `;
       break;
     case error.UNKNOWN_ERROR:
-      console.log("UNKNOWN_ERROR: An unknown error occurred.");
-      showErrorAlert("UNKNOWN_ERROR: An unknown error occurred.");
+      errorMessage = `
+        <p class="message-alert-text-heading has-text-danger">
+          <i class="fas fa-fw fa-exclamation-triangle"></i> UNKNOWN ERROR
+        </p>
+        <p class="message-alert-text-first">
+          An unknown error occurred.
+        </p>
+      `;
       break;
   }
+  showErrorAlert(errorMessage);
 }
 
 export function registerAlertClickHandler() {

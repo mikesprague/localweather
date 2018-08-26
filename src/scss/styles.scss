@@ -67,6 +67,23 @@ strong {
   }
 }
 
+.message-alert-text,
+.message-alert-text-first,
+.message-alert-text-heading {
+  font-size: 1.1em;
+  margin-bottom: .6em;
+  margin-top: .6em;
+}
+
+.message-alert-text-first {
+  border-top: 1px dashed $color-gray;
+}
+
+.message-alert-text-heading {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 .primary-conditions-data {
   align-items: start;
 }
