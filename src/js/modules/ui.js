@@ -335,7 +335,9 @@ export function initFontAwesomeIcons() {
     faBan,
     faSignal,
     faPlusSquare,
-    faMinusSquare
+    faMinusSquare,
+    faGlobeAfrica,
+    faSyncAlt
   );
   dom.watch();
 }

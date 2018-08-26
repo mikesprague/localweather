@@ -75,18 +75,18 @@ strong {
   margin-top: 3em;
 }
 
-.hide-me {
+.hidden {
   display: none !important;
 }
 
-.loading,
 .clear,
-.cloudy,
-.rainy,
-.snowy
 .clear-night,
+.cloudy,
 .cloudy-night,
+.loading,
+.rainy,
 .rainy-night,
+.snowy,
 .snowy-night {
   -ms-transition: background-color 1000ms linear;
   -webkit-transition: background-color 1000ms linear;
@@ -158,6 +158,11 @@ strong {
   }
 }
 
+.hourly-data,
+.forecast-data {
+  margin-top: .5em;
+}
+
 .current-conditions {
   cursor: default;
 }
@@ -188,9 +193,10 @@ strong {
 }
 
 .last-updated-time {
+  margin-top: .5em;
+
   p {
     font-size: .9em;
-    margin-top: -.5em;
   }
 }
 
