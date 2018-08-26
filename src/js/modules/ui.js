@@ -6,14 +6,14 @@ import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
   faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, faTint, faUmbrella, faSun, faEye,
   faCloud, faBan, faCode, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
-  faPlusSquare, faMinusSquare
+  faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt
 } from "@fortawesome/free-solid-svg-icons";
 import * as defaults from "./defaults";
 import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
 import {
-  populateAlertMessage, populateFooter, populateForecastData, populateHourlyData,
-  populateLastUpdated, populateLocation, populatePrimaryData, populateWeatherData
+  populateMessage,populateErrorMessage, populateAlertMessage, populateFooter, populateForecastData,
+  populateHourlyData, populateLastUpdated, populateLocation, populatePrimaryData, populateWeatherData
 } from "./templates";
 
 export function getMoonUi(data) {
@@ -78,7 +78,7 @@ export function getBodyBgClass(data) {
   const sunset = data.daily.data[0].sunsetTime;
   const cloudCover = Math.round(data.currently.cloudCover * 100);
   const currentIcon = data.currently.icon;
-  const isCloudy = cloudCover > 60;
+  const isCloudy = cloudCover > 50;
   const isRaining = (currentIcon === "rain" || currentIcon === "thunderstorm");
   const isSnowing = (currentIcon === "snow" || currentIcon === "sleet");
   const bodyClassSuffix = (now >= sunset && now <= sunrise) ? "-night" : "";
@@ -170,9 +170,10 @@ export function hideEl(el) {
   }
 }
 
-export function showLoading() {
+export function showLoading(loadingMsg = defaults.loadingText) {
   const loadingSpinner = document.querySelector(defaults.loadingSpinnerSelector);
   setBodyBgClass("loading");
+  populateMessage(loadingMsg);
   showEl(loadingSpinner);
   hideUi();
   initFontAwesomeIcons();
@@ -217,22 +218,28 @@ export function showInstallAlert() {
   });
 }
 
-export function showGeolocationAlert() {
-  const geoOptions = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  };
+export function showErrorAlert(errorMessage) {
+  hideLoading();
+  swal({
+    title: `${defaults.appName}`,
+    text: `${errorMessage}`,
+    confirmButtonText: "Reload to Try Again",
+    type: "error",
+    onClose: () => {
+      reloadWindow();
+    }
+  });
+}
 
-  if (!useCache(getData(defaults.cacheTimeKey))) {
+export function showGeolocationAlert() {
+  if (document.cookie.replace(/(?:(?:^|.*;\s*)approvedLocationSharing\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true") {
     swal({
       title: `${defaults.appName}`,
       html: `
-      <p class='text-left'>
+      <p class='has-text-left'>
         This application requires the use of location information
         provided by your device to get accurate weather data.
-      </p>
-      <p class='text-left'>
+        <br><br>
         If this is your first visit you will be asked to approve
         sharing your location before you can continue
       </p>
@@ -240,35 +247,52 @@ export function showGeolocationAlert() {
       confirmButtonText: `<i class='wi wi-fw wi-cloud-refresh'></i> Show me the Weather`,
       type: "info",
       onClose: () => {
+        showLoading("... waiting for permission ...");
         if ("geolocation" in navigator) {
-          showLoading();
-          navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
-          // let watchPositionHandle = navigator.geolocation.watchPosition(geoSuccess, geoError);
+          try {
+            showLoading("... acquiring location ...");
+            navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
+          } catch (error) {
+            Rollbar.critical(error);
+            // console.log(error);
+            // TODO: Show friendly message to user
+          }
         } else {
-          Rollbar.critical("showGeolocationAlert: 'geolocation' not found in navigator");
-          // console.error('ERROR: Your browser must support geolocation and you must approve sharing your location with the site for the app to work')
-          // TODO: Show friendly message to user
+          showErrorAlert("GEOLOCATION_UNAVAILABLE: Geolocation is not available with your current browser.");
         }
       }
     });
   } else {
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+    showLoading("... acquiring location ...");
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
   }
 }
 
 export function geoSuccess(position) {
   const coords = position.coords;
+  document.cookie = "approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
   getLocationAndPopulateAppData(coords.latitude, coords.longitude);
+  setData(defaults.coordsDataKey, position);
 }
 
 export function geoError(error) {
-  switch (error.code) {
-    case error.TIMEOUT:
-      // The user didn't accept the callout
-      showGeolocationAlert();
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      console.log("PERMISSION_DENIED: User denied the request for Geolocation.");
+      showErrorAlert("PERMISSION_DENIED: User denied the request for Geolocation.");
+      // return "It's not going to work unless you turn location services on, Eric";
       break;
-    default:
-      Rollbar.error("geoLocation error", error);
+    case error.POSITION_UNAVAILABLE:
+      console.log("POSITION_UNAVAILABLE: Location information is unavailable.");
+      showErrorAlert("POSITION_UNAVAILABLE: Location information is unavailable.");
+      break;
+    case error.TIMEOUT:
+      console.log("TIMEOUT: The request to get user location timed out.");
+      showErrorAlert("TIMEOUT: The request to get user location timed out.");
+      break;
+    case error.UNKNOWN_ERROR:
+      console.log("UNKNOWN_ERROR: An unknown error occurred.");
+      showErrorAlert("UNKNOWN_ERROR: An unknown error occurred.");
       break;
   }
 }
