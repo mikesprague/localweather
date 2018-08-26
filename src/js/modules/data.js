@@ -81,7 +81,7 @@ export async function getWeather(lat, lng) {
 }
 
 export async function getLocationAndPopulateAppData(lat, lng) {
-  showLoading();
+  showLoading("... loading weather data ...");
   if (loadFromCache()) {
     try {
       const cachedLocationData = getData(defaults.locationDataKey);

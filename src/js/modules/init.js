@@ -37,7 +37,6 @@ export function init() {
   if (defaults.isOnline()) {
     initCache();
     showGeolocationAlert();
-    showLoading();
     initDataUpdateCheck();
     initTooltips();
   } else {

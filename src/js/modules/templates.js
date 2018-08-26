@@ -8,16 +8,48 @@ import {
   formatUnixTimeAsLocalString, formatUnixTimeForSun, getDayFromUnixTime, getHourAndPeriodFromUnixTime, getTimeFromUnixTime
 } from "./datetime";
 
+export function populateMessage(messageText) {
+  const messageTemplate = `
+    <div class="columns is-mobile">
+      <div class="column">
+        <div class="content has-text-centered">
+          <i class="fas fa-fw fa-spinner fa-5x fa-pulse"></i>
+          <p class="message-text">${messageText}</p>
+        </div>
+      </div>
+    </div>
+  `;
+  const messageEl = document.querySelector(".loading-message");
+  messageEl.innerHTML = messageTemplate;
+}
+
+export function populateErrorMessage(messageText) {
+  const messageTemplate = `
+    <div class="columns is-mobile">
+      <div class="column">
+        <div class="content has-text-centered">
+          <i class="has-text-danger fas fa-fw fa-exclamation-triangle fa-5x"></i>
+          <p class="message-text">${messageText}</p>
+        </div>
+      </div>
+    </div>
+  `;
+  const messageEl = document.querySelector(".loading-message");
+  messageEl.innerHTML = messageTemplate;
+}
+
 export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
   const locationTemplate = `
-    <h1 class="title is-1 has-text-centered has-tooltip" title="
-      <i class='fas fa-fw fa-globe'></i>
-      <strong>${locationName}</strong>
-      <br>
-      <i class='fas fa-fw fa-map-marker-alt'></i>
-      ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
-    ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
+    <div class="column">
+      <h1 class="title is-1 has-text-centered has-tooltip" title="
+        <i class='fas fa-fw fa-globe'></i>
+        <strong>${locationName}</strong>
+        <br>
+        <i class='fas fa-fw fa-map-marker-alt'></i>
+        ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
+      ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
+    </div>
   `;
   const locationEl = document.querySelector(".location");
   locationEl.innerHTML = locationTemplate;
@@ -270,9 +302,11 @@ export function populateLastUpdated(data) {
     ${formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
   `;
   const lastUpdatedTemplate = `
-    <p class="last-updated has-tooltip" title="${lastUpdatedString}">
-      Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
-    </p>
+    <div class="column has-text-centered">
+      <p class="last-updated has-tooltip" title="${lastUpdatedString}">
+        Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
+      </p>
+    </div>
   `;
   const lastUpdatedEl = document.querySelector(".last-updated-time");
   lastUpdatedEl.innerHTML = lastUpdatedTemplate;
