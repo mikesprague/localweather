@@ -238,15 +238,16 @@ export function showGeolocationAlert() {
       title: `${defaults.appName}`,
       html: `
         <p class="message-alert-text-heading has-text-info">
-          <i class="fas fa-fw fa-info-circle"></i> Location Servives Required
+          <i class="fas fa-fw fa-info-circle"></i> Location Services Required
         </p>
         <p class="message-alert-text-first">
-          This application requires the use of location information
-          provided by your device to get accurate weather data.
+          This application requires the use of location information,
+          provided by your device and browser, to get accurate weather data.
         </p>
         <p class="message-alert-text">
-          If this is your first visit you will be asked to approve
-          sharing your location with 'localweather.io' before it loads.
+          If this is your first visit you will be prompted to share your
+          location with 'localweather.io' - you must approve that request
+          for this app to work.
         </p>
       `,
       confirmButtonText: `<i class='wi wi-fw wi-cloud-refresh'></i> Show me the Weather`,
