@@ -74,14 +74,14 @@ export function getTempTrend(data) {
 
 export function getBodyBgClass(data) {
   const now = Math.round(new Date().getTime() / 1000);
-  const sunrise = data.daily.data[1].sunriseTime;
+  const sunrise = data.daily.data[0].sunriseTime;
   const sunset = data.daily.data[0].sunsetTime;
   const cloudCover = Math.round(data.currently.cloudCover * 100);
   const currentIcon = data.currently.icon;
   const isCloudy = cloudCover > 50;
   const isRaining = (currentIcon === "rain" || currentIcon === "thunderstorm");
   const isSnowing = (currentIcon === "snow" || currentIcon === "sleet");
-  const bodyClassSuffix = (now >= sunset && now <= sunrise) ? "-night" : "";
+  const bodyClassSuffix = (now < sunrise || now >= sunset) ? "-night" : "";
   let bodyClassPrefix = "clear";
   bodyClassPrefix = isCloudy ? "cloudy" : bodyClassPrefix;
   bodyClassPrefix = isRaining ? "rainy" : bodyClassPrefix;
