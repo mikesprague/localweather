@@ -4,8 +4,6 @@ import * as defaults from "./defaults";
 import { initCache } from "./cache";
 import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAlert, showLoading } from "./ui";
 import { initDataUpdateCheck } from "./data";
-import { bugsnag } from 'bugsnag-js';
-const bugsnagClient = bugsnag("c9beb7c090034128a89c8e58f261e972", { appVersion: defaults.versionString });
 
 export function init() {
   // register service worker
@@ -34,12 +32,12 @@ export function init() {
     bugsnagClient.leaveBreadcrumb("Browser online");
   }, false);
 
-  window.onerror = function (msg, url, lineNo, columnNo, error) {
-    // handle error
-    // console.error("ERROR", msg, url, lineNo, columnNo, error);
-    bugsnagClient.notify(error);
-    return false;
-  };
+  // window.onerror = function (msg, url, lineNo, columnNo, error) {
+  //   // handle error
+  //   // console.error("ERROR", msg, url, lineNo, columnNo, error);
+  //   bugsnagClient.notify(error);
+  //   return false;
+  // };
 
   if (defaults.isOnline()) {
     initCache();

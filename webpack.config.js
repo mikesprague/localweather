@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
-const BugsnagBuildReporterPlugin = require("webpack-bugsnag-plugins");
 
 module.exports = {
   entry: [
@@ -103,9 +102,5 @@ module.exports = {
       threshold: 10240,
       minRatio: 0.8
     }),
-    new BugsnagBuildReporterPlugin({
-      apiKey: "c9beb7c090034128a89c8e58f261e972",
-      appVersion: variables.versionString
-    }, { /* opts */ })
   ]
 };
