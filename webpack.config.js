@@ -1,38 +1,38 @@
-const canonical = 'https://localweather.io';
-const path = require('path');
-const variables = require('./src/js/modules/defaults');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const canonical = "https://localweather.io";
+const path = require("path");
+const variables = require("./src/js/modules/defaults");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CompressionPlugin = require('compression-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 const BugsnagBuildReporterPlugin = require("webpack-bugsnag-plugins");
 
 module.exports = {
   entry: [
-    './src/js/app.js',
-    './src/scss/styles.scss',
+    "./src/js/app.js",
+    "./src/scss/styles.scss",
   ],
   output: {
-    filename: './js/bundle.js',
-    path: path.resolve('public')
+    filename: "./js/bundle.js",
+    path: path.resolve("public")
   },
-  mode: 'production',
+  mode: "production",
   module: {
     rules: [{
         test: /\.s?[ac]ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               url: false,
               sourceMap: true
             }
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sourceMap: true
             }
@@ -60,13 +60,12 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './css/styles.css',
+      filename: "./css/styles.css",
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/index.html',
-      environment: 'production',
-      rollbarVerbose: 'false',
+      template: "./src/index.html",
+      environment: "production",
       appName: variables.appName,
       author: variables.author,
       canonical: canonical,
@@ -78,23 +77,23 @@ module.exports = {
       versionString: variables.versionString,
     }),
     new CopyWebpackPlugin([{
-      from: './src/service-worker.js',
-      to: './service-worker.js',
+      from: "./src/service-worker.js",
+      to: "./service-worker.js",
       force: true,
     }]),
     new CopyWebpackPlugin([{
-      from: './src/manifest.json',
-      to: './manifest.json',
+      from: "./src/manifest.json",
+      to: "./manifest.json",
       force: true,
     }]),
     new CopyWebpackPlugin([{
-      from: './assets/**/*',
-      to: './',
+      from: "./assets/**/*",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
-      from: './src/now.json',
-      to: './now.json',
+      from: "./src/now.json",
+      to: "./now.json",
       force: true,
     }]),
     new CompressionPlugin({
