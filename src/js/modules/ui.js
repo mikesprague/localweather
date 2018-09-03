@@ -260,7 +260,6 @@ export function showGeolocationAlert() {
             document.cookie = "approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
             navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
           } catch (error) {
-            // Rollbar.critical(error);
             bugsnagClient.notify(error);
             // console.log(error);
             // TODO: Show friendly message to user
