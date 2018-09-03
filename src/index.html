@@ -4,6 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <script src="https://d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script>
+  <script>
+    window.bugsnagClient = bugsnag({
+      apiKey: "c9beb7c090034128a89c8e58f261e972",
+      appVersion: <%= htmlWebpackPlugin.options.versionString %>,
+      releaseStage: "<%= htmlWebpackPlugin.options.environment %>",
+      notifyReleaseStages: [ "development", "production" ]
+    });
+  </script>
   <meta name="subject" content="<%= htmlWebpackPlugin.options.description %>">
   <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
   <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
@@ -26,7 +35,7 @@
   <script src="/js/bundle.js"></script>
   <link rel="stylesheet" href="/assets/css/weather-icons.min.css">
   <link rel="stylesheet" href="/assets/css/weather-icons-wind.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css">
   <link rel="icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
   <link rel="apple-touch-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
   <link rel="mask-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
