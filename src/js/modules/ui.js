@@ -363,6 +363,7 @@ export function initWeatherAlerts(data) {
       // `;
       showAlert(`${weatherAlerts[i].title}`, `${weatherAlerts[i].description}`);
     }
+    showEl(".alert-container");
   }
 }
 
