@@ -42,18 +42,24 @@
 </head>
 <body>
 
-  <section class="section app-shell">
-    <div class="container is-fullwidth loading-message hidden"></div>
-    <div class="container weather-data">
+  <section class="section hero is-fullheight app-shell has-navbar-fixed-top">
+    <div class="hero-head">
       <div class="columns is-mobile">
-        <div class="column alert-container"></div>
+        <div class="column alert-container hidden"></div>
       </div>
-      <div class="columns is-mobile location"></div>
-      <div class="columns is-mobile primary-conditions-data"></div>
-      <div class="current-weather-data"></div>
-      <div class="columns is-mobile hourly-data"></div>
-      <div class="columns is-mobile forecast-data"></div>
-      <div class="columns is-mobile last-updated-time"></div>
+    </div>
+    <div class="hero-body">
+      <div class="container is-fullwidth loading-message hidden"></div>
+      <div class="container weather-data">
+        <div class="columns is-mobile location"></div>
+        <div class="columns is-mobile primary-conditions-data"></div>
+        <div class="current-weather-data"></div>
+        <div class="columns is-mobile hourly-data"></div>
+        <div class="columns is-mobile forecast-data"></div>
+        <div class="columns is-mobile last-updated-time"></div>
+      </div>
+    </div>
+    <div class="hero-foot">
       <div class="columns is-mobile powered-by-dark-sky"></div>
     </div>
   </section>
