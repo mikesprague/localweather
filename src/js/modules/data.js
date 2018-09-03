@@ -18,7 +18,7 @@ export async function getLocationNameFromLatLng(lat, lng) {
       defaults.locationName = cachedLocationName;
       return parseLocationNameFromFormattedAddress(cachedLocationName);
     } catch(error) {
-      Rollbar.error(error);
+      bugsnagClient.notify(error);
       return defaults.locationName;
     }
   } else {
@@ -27,7 +27,7 @@ export async function getLocationNameFromLatLng(lat, lng) {
         if (response.ok) {
           return response.json();
         } else {
-          Rollbar.error(response);
+          bugsnagClient.notify(new Error(response));
         }
       })
       .then(json => {
@@ -39,7 +39,7 @@ export async function getLocationNameFromLatLng(lat, lng) {
         return shortLocationName;
       })
       .catch(error => {
-        Rollbar.error(error);
+        bugsnagClient.notify(error);
       });
     return locationData;
   }
@@ -50,7 +50,7 @@ export function parseLocationNameFromFormattedAddress(address) {
     const cityPosition = address.split(",").length > 2 ? address.split(",").length - 3 : 0;
     return address.split(",")[cityPosition].trim();
   } catch (error) {
-    Rollbar.error(error);
+    bugsnagClient.notify(error);
   }
 }
 
@@ -65,7 +65,7 @@ export async function getWeather(lat, lng) {
         if (response.ok) {
           return response.json();
         } else {
-          Rollbar.error(response);
+          bugsnagClient.notify(new Error(response));
         }
       })
       .then(json => {
@@ -73,7 +73,7 @@ export async function getWeather(lat, lng) {
         return json;
       })
       .catch(error => {
-        Rollbar.error(error);
+        bugsnagClient.notify(error);
         hideLoading();
       });
     return weatherData;
@@ -89,7 +89,7 @@ export async function getLocationAndPopulateAppData(lat, lng) {
       const cachedWeatherData = getData(defaults.weatherDataKey);
       renderAppWithData(cachedWeatherData);
     } catch (error) {
-      Rollbar.critical(error);
+      bugsnagClient.notify(error);
       hideLoading();
     }
   } else {
@@ -99,13 +99,13 @@ export async function getLocationAndPopulateAppData(lat, lng) {
         getWeather(lat, lng).then(json => {
           renderAppWithData(json);
         }).catch(error => {
-          Rollbar.error(error);
+          bugsnagClient.notify(error);
         });
       }).catch(error => {
-        Rollbar.error(error);
+        bugsnagClient.notify(error);
       });
     } catch (error) {
-      Rollbar.critical(error);
+      bugsnagClient.notify(error);
       hideLoading();
     }
   }
