@@ -16,21 +16,26 @@ export function init() {
       registration.onupdatefound = () => {
         // showInstallAlert();
         console.info(`[SW] Latest Version Installed - Reload to Activate`);
+        bugsnagClient.leaveBreadcrumb("[SW] Latest Version Installed - Reload to Activate");
       };
     });
   }
 
+  const bugsnagClient = bugsnag("c9beb7c090034128a89c8e58f261e972", { appVersion: defaults.versionString });
+
   window.addEventListener("offline", () => {
-    location.replace("/offline.html");
+    // TODO: add offline handler
+    bugsnagClient.leaveBreadcrumb("Browser offline");
   }, false);
 
   window.addEventListener("online", () => {
-    location.replace("/");
+    bugsnagClient.leaveBreadcrumb("Browser online");
   }, false);
 
   // window.onerror = function (msg, url, lineNo, columnNo, error) {
   //   // handle error
-  //   console.error("ERROR", msg, url, lineNo, columnNo, error);
+  //   // console.error("ERROR", msg, url, lineNo, columnNo, error);
+  //   bugsnagClient.notify(error);
   //   return false;
   // };
 

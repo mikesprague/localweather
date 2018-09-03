@@ -41,7 +41,7 @@ Minimalist local weather app powered by Dark Sky
     - Tap/touch to display on mobile devices and tablets
 - App automatically checks for updates (if left open)
   - Runs a task every minute, if past the 10 minute cache timeout then data is refreshed
-- Uses [Rollbar](https://rollbar.com/) for error reporting and release tracking
+- Uses [Bugsnag](https://bugsnag.com/) for error reporting and release tracking
 
 ### Made with
 
@@ -55,4 +55,4 @@ Minimalist local weather app powered by Dark Sky
 - SweetAlert2
 - Cloudflare
 - ZEIT (Now)
-- Rollbar
+- Bugsnag
