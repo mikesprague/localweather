@@ -48,9 +48,10 @@ module.exports = {
     minimizer: [
       new UglifyJsPlugin({
         cache: false,
-        parallel: true,
-        sourceMap: false,
+        parallel: false,
+        sourceMap: true,
         uglifyOptions: {
+          ecma: 8,
           compress: false
         },
       }),
@@ -96,7 +97,7 @@ module.exports = {
       force: true,
     }]),
     new CompressionPlugin({
-      asset: "[path].gz[query]",
+      filename: "[path].gz[query]",
       algorithm: "gzip",
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
