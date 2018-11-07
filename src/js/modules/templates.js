@@ -42,7 +42,7 @@ export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
   const locationTemplate = `
     <div class="column">
-      <h1 class="title is-1 has-text-centered has-tooltip" title="
+      <h1 class="title is-1 has-text-centered has-tooltip" data-tippy="
         <i class='fas fa-fw fa-globe'></i>
         <strong>${locationName}</strong>
         <br>
@@ -101,7 +101,7 @@ export function populatePrimaryData(data) {
     </div>
     <div class="column is-half current-conditions">
       <div class="content has-text-center">
-        <h2 class="subtitle is-1 has-text-center has-tooltip" title="${currentConditionsTooltip}">
+        <h2 class="subtitle is-1 has-text-center has-tooltip" data-tippy="${currentConditionsTooltip}">
           ${data.currently.summary}
         </h2>
       </div>
@@ -118,42 +118,42 @@ export function populateWeatherData(data) {
   const moonUi = getMoonUi(data);
   const weatherDataTemplate = `
     <div class="columns is-mobile is-vcentered">
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Wind">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Wind">
         <p>
           <i class="wi wi-fw wi-strong-wind"></i>
           <br>
           <i class="wi wi-fw wi-wind from-${data.currently.windBearing}-deg"></i>${Math.round(data.currently.windSpeed)}mph
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Precipitation">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Precipitation">
         <p>
           <i class="fas fa-fw fa-umbrella"></i>
           <br>
           ${Math.round(data.currently.precipProbability * 100)}%
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="UV">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="UV">
         <p>
           <i class="fas fa-fw fa-sun"></i>
           <br>
           ${Math.round(data.currently.uvIndex)}
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Visibility">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Visibility">
         <p>
           <i class="fas fa-fw fa-eye"></i>
           <br>
           ${data.currently.visibility}mi
         </p>
       </div>
-      <div class="column is-hidden-mobile has-text-centered has-tooltip" title="Cloud Cover">
+      <div class="column is-hidden-mobile has-text-centered has-tooltip" data-tippy="Cloud Cover">
         <p>
           <i class="fas fa-fw fa-cloud"></i>
           <br>
           ${Math.round(data.currently.cloudCover * 100)}%
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Sunrise">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Sunrise">
         <p>
           <i class="wi wi-sunrise"></i>
           <br>
@@ -162,42 +162,42 @@ export function populateWeatherData(data) {
       </div>
     </div>
     <div class="columns is-mobile is-vcentered">
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Pressure">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Pressure">
         <p>
           <i class="wi wi-fw wi-barometer"></i>
           <br>
           ${Math.round(data.currently.pressure)}mb</i>
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Humidity">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Humidity">
         <p>
           <i class="wi wi-fw wi-humidity"></i>
           <br>
           ${Math.round(data.currently.humidity * 100)}%
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Dew Point">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Dew Point">
         <p>
           <i class="wi wi-fw wi-raindrop"></i>
           <br>
           ${Math.round(data.currently.dewPoint)}&deg;</i>
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Feels Like">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Feels Like">
         <p>
           <i class="wi wi-fw wi-thermometer"></i>
           <br>
           ${Math.round(data.currently.apparentTemperature)}&deg;</i>
         </p>
       </div>
-      <div class="column is-hidden-mobile has-text-centered has-tooltip" title="Moon">
+      <div class="column is-hidden-mobile has-text-centered has-tooltip" data-tippy="Moon">
         <p class="moon-phase">
           <i class="wi wi-fw ${moonUi.icon}"></i>
           <br>
           ${moonUi.phase}
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" title="Sunset">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy="Sunset">
         <p>
           <i class="wi wi-fw wi-sunset"></i>
           <br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm
@@ -224,7 +224,7 @@ export function populateForecastData(data, numDays = 7) {
   for (let i = 0; i < numDays; i++) {
     let next = i + 1;
     let forecastTemplate = `
-      <p class="has-tooltip" title="${data.daily.data[next].summary}">
+      <p class="has-tooltip" data-tippy="${data.daily.data[next].summary}">
         <strong>${getDayFromUnixTime(data.daily.data[next].time)}</strong>
         <br>
         <i class="wi wi-fw wi-forecast-io-${data.daily.data[next].icon}"></i>
@@ -263,7 +263,7 @@ export function populateHourlyData(data, numHours = 12) {
       `${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}` :
       "No precipitation";
     let hourlyTemplate = `
-      <p class="has-tooltip" title="${data.hourly.data[next].summary}<br>${precipitationText}">
+      <p class="has-tooltip" data-tippy="${data.hourly.data[next].summary}<br>${precipitationText}">
         <strong>${getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
         <br>
         <i class="wi wi-fw wi-forecast-io-${data.hourly.data[next].icon}"></i> ${Math.round(data.hourly.data[next].temperature)}&deg;
@@ -303,7 +303,7 @@ export function populateLastUpdated(data) {
   `;
   const lastUpdatedTemplate = `
     <div class="column has-text-centered">
-      <p class="last-updated has-tooltip" title="${lastUpdatedString}">
+      <p class="last-updated has-tooltip" data-tippy="${lastUpdatedString}">
         Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
       </p>
     </div>
@@ -316,21 +316,21 @@ export function populateFooter() {
   const footerTemplate = `
     <div class="column">
       <div class="content has-text-right">
-        <a href="https://localweather.io" title="LocalWeather.io ${defaults.versionString}">
+        <a href="https://localweather.io" data-tippy="LocalWeather.io ${defaults.versionString}">
           LocalWeather.io ${defaults.versionString}
         </a>
       </div>
     </div>
     <div class="column">
       <div class="content has-text-centered">
-        <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" title="Powered by Dark Sky">
+        <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" data-tippy="Powered by Dark Sky">
           <i class="fas fa-tint"></i> Powered by Dark Sky
         </a>
       </div>
     </div>
     <div class="column">
       <div class="content has-text-left">
-        <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" title="Coded by Michael Sprague">
+        <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" data-tippy="Coded by Michael Sprague">
           <i class="fas fa-code"></i> by Michael Sprague
         </a>
       </div>
