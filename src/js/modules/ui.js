@@ -369,10 +369,11 @@ export function initWeatherAlerts(data) {
 
 export function initTooltips() {
   tippy(".has-tooltip", {
+    allowHTML: true,
     arrow: true,
-    size: "large",
     livePlacement: true,
-    performance: true,
+    size: "large",
+    touch: true,
   });
 }
 
