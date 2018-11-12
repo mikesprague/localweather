@@ -120,7 +120,7 @@ export function populateWeatherData(data) {
     <div class="columns is-mobile is-vcentered">
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Wind">
         <p>
-          <i class="wi wi-fw wi-strong-wind"></i>
+          <i class="fas fa-fw fa-wind"></i>
           <br>
           <i class="wi wi-fw wi-wind from-${data.currently.windBearing}-deg"></i>${Math.round(data.currently.windSpeed)}mph
         </p>
@@ -155,7 +155,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
         <p>
-          <i class="wi wi-sunrise"></i>
+          <i class="fas fa-fw fa-sunrise"></i>
           <br>
           ${formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am
         </p>
@@ -171,14 +171,14 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Humidity">
         <p>
-          <i class="wi wi-fw wi-humidity"></i>
+          <i class="fas fa-fw fa-humidity"></i>
           <br>
           ${Math.round(data.currently.humidity * 100)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Dew Point">
         <p>
-          <i class="wi wi-fw wi-raindrop"></i>
+          <i class="fas fa-fw fa-dewpoint"></i>
           <br>
           ${Math.round(data.currently.dewPoint)}&deg;</i>
         </p>
@@ -199,7 +199,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
-          <i class="wi wi-fw wi-sunset"></i>
+          <i class="fas fa-fw fa-sunset"></i>
           <br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm
         </p>
       </div>
