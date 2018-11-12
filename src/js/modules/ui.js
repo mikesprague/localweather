@@ -4,10 +4,11 @@ import tippy from "tippy.js";
 import swal from "sweetalert2";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
-  faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, faTint, faUmbrella, faSun, faEye,
-  faCloud, faBan, faCode, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
-  faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt
-} from "@fortawesome/free-solid-svg-icons";
+  faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, faTint, 
+  faBan, faCode, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
+  faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,
+  faDewpoint, faHumidity, faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud
+} from "@fortawesome/pro-solid-svg-icons";
 import * as defaults from "./defaults";
 import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
@@ -397,7 +398,12 @@ export function initFontAwesomeIcons() {
     faPlusSquare,
     faMinusSquare,
     faGlobeAfrica,
-    faSyncAlt
+    faSyncAlt,
+    faDewpoint, 
+    faHumidity, 
+    faWind, 
+    faSunrise, 
+    faSunset
   );
   dom.watch();
 }
