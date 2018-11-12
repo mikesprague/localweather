@@ -12,6 +12,10 @@
   text-rendering: optimizeLegibility !important;
 }
 
+*:focus {
+  outline: none;
+}
+
 html,
 body {
   background-color: $color-loading;
