@@ -8,7 +8,7 @@
     "build": "yarn clean && yarn webpack",
     "clean": "rm -rf ./public > /dev/null 2>&1",
     "deploy": "yarn push && yarn clean",
-    "push": "cd public && now --public && cd ../",
+    "push": "netlify deploy --prod --dir public --site 91ecd22f-e283-48e1-ab1a-925a57b8dc42",
     "start": "yarn dev:serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config ./webpack.config.js --progress --colors",
@@ -16,7 +16,7 @@
     "dev:build": "yarn dev:clean && yarn dev:webpack",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:deploy": "yarn dev:push && yarn dev:clean",
-    "dev:push": "cd build && now --public && cd ../",
+    "dev:push": "netlify deploy --prod --dir build --site 263c7c4b-2903-48a2-9fd7-25aefbf0f757",
     "dev:serve": "concurrently --kill-others --raw 'webpack-serve ./webpack.config.dev.js --port 5500 --open' 'yarn dev:api'",
     "dev:watch": "yarn dev:clean && yarn dev:webpack --watch",
     "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors"
