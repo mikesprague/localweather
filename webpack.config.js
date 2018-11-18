@@ -91,11 +91,6 @@ module.exports = {
       to: "./",
       force: true,
     }]),
-    new CopyWebpackPlugin([{
-      from: "./src/now.json",
-      to: "./now.json",
-      force: true,
-    }]),
     new CompressionPlugin({
       filename: "[path].gz[query]",
       algorithm: "gzip",
