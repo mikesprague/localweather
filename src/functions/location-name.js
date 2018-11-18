@@ -2,6 +2,9 @@
 
 const request = require("request");
 const rp = require("request-promise");
+const bugsnag = require("bugsnag");
+
+bugsnag.register(`${process.env.BUGSNAG_KEY}`);
 
 exports.handler = function(event, context, callback) {
   const lat = event.queryStringParameters.lat;
@@ -34,7 +37,7 @@ exports.handler = function(event, context, callback) {
     });
   })
   .catch(err => {
-    callback(new Error(err), {
+    callback(bugsnag.notify(new Error(err)), {
       statusCode: 500,
       body: JSON.stringify(err),
     });
