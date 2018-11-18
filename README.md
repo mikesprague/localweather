@@ -1,4 +1,5 @@
 # LocalWeather.io
+
 Minimalist local weather app powered by Dark Sky
 
 ![LocalWeather.io screenshots coming soon](link_to_screenshot_here)
@@ -45,14 +46,15 @@ Minimalist local weather app powered by Dark Sky
 
 ### Made with
 
-- Yarn/npm
-- Webpack
-- Prettier/Eslint
-- Sass
-- Bulma
-- Font Aweseome
-- Tippy.js
-- SweetAlert2
-- Cloudflare
-- ZEIT (Now)
-- Bugsnag
+- [npm](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/)
+- [Webpack](https://webpack.js.org/)
+- [Prettier](https://prettier.io/)
+- [Eslint](https://eslint.org/)
+- [Sass](https://sass-lang.com/)
+- [Bulma](https://bulma.io/)
+- [Font Aweseome Pro](https://fontawesome.com/pro/)
+- [Tippy.js](https://atomiks.github.io/tippyjs/)
+- [SweetAlert2](https://sweetalert2.github.io/)
+- [Bugsnag](https://www.bugsnag.com/)
+- [Netlify](https://www.netlify.com/)
