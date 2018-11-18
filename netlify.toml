@@ -1,5 +1,5 @@
 [build]
-  functions = "src/functions"
+  functions = "lambda"
 
 [context.production]
   command = "yarn build"
