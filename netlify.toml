@@ -5,12 +5,8 @@
   command = "yarn build"
   publish = "public"
 
-[context.deploy-preview]
-  command = "yarn dev:build"
-  publish = "build"
-
 [context.develop]
-  command = "yarn dev:clean && yarn dev:build"
+  command = "yarn dev:build"
   publish = "build"
 
 [[redirects]]
