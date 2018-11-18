@@ -1,4 +1,5 @@
 # LocalWeather.io
+
 Minimalist local weather app powered by Dark Sky
 
 ![LocalWeather.io screenshots coming soon](link_to_screenshot_here)
