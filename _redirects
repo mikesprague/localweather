@@ -1,0 +1,3 @@
+# Redirect default Netlify subdomain to primary domain
+https://localweather-io.netlify.com/* https://localweather.io/:splat 301!
+https://dev-localweather-io.netlify.com/* https://dev.localweather.io/:splat 301!
