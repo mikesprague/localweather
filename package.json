@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.33.2",
+  "version": "0.33.3",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "index.js",
@@ -38,6 +38,7 @@
     "@fortawesome/pro-light-svg-icons": "^5.5.0",
     "@fortawesome/pro-regular-svg-icons": "^5.5.0",
     "@fortawesome/pro-solid-svg-icons": "^5.5.0",
+    "bugsnag": "^2.4.3",
     "bulma": "^0.7.2",
     "compression-webpack-plugin": "^2.0.0",
     "concurrently": "^4.0.1",
