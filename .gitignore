@@ -1,11 +1,11 @@
 # VS Code generated files/folders
-.vscode/
-.vscode-insiders/
-.history/
+.vscode
+.vscode-insiders
+.history
 *.code-workspace
 
 # Sass files/folders
-.sass-cache/
+.sass-cache
 *.css.map
 
 # Node/npm/yarn
@@ -15,7 +15,9 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.env
 
-develop/
-build/
-public/
+build
+develop
+public
+lambda
