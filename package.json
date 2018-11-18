@@ -12,14 +12,15 @@
     "start": "yarn dev:serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config ./webpack.config.js --progress --colors",
-    "dev:api": "docker run --env-file=../api-localweather-io/.env --rm -p 3000:3000 api-localweather-io:latest",
     "dev:build": "yarn dev:clean && yarn dev:webpack",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:deploy": "yarn dev:push && yarn dev:clean",
     "dev:push": "netlify deploy --prod --dir build --site 263c7c4b-2903-48a2-9fd7-25aefbf0f757",
-    "dev:serve": "concurrently --kill-others --raw 'webpack-serve ./webpack.config.dev.js --port 5500 --open' 'yarn dev:api'",
+    "dev:serve": "concurrently --kill-others --raw 'webpack-serve ./webpack.config.dev.js --port 5500 --open' 'yarn lambda:serve'",
     "dev:watch": "yarn dev:clean && yarn dev:webpack --watch",
-    "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors"
+    "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors",
+    "lambda:build": "netlify-lambda build ./functions",
+    "lambda:serve": "netlify-lambda serve ./functions -c ./lambda.config.dev.js"
   },
   "repository": {
     "url": "https://github.com/mikesprague/local-weather"
