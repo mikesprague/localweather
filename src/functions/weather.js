@@ -19,7 +19,7 @@ exports.handler = function(event, context, callback) {
       body: "Missing 'lng' parameter",
     });
   }
-  const apiUrlToCall = `https://api.darksky.net/forecast/${process.env.DARK_SKY_KEY}/${lat},${lng}/?exclude=[minutely]`;
+  const apiUrlToCall = `https://api.darksky.net/forecast/${process.env.DARK_SKY_KEY}/${lat},${lng}/?&units=auto`;
   const rpOptions = {
     uri: apiUrlToCall,
     headers: {
@@ -31,13 +31,13 @@ exports.handler = function(event, context, callback) {
   .then(body => {
     callback(null, {
       statusCode: 200,
-      body: JSON.stringify(body),
+      body: body,
     });
   })
   .catch(err => {
     callback(bugsnag.notify(new Error(err)), {
       statusCode: 500,
-      body: JSON.stringify(err),
+      body: err,
     });
   });
 };
