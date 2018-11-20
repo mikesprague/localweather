@@ -31,13 +31,13 @@ exports.handler = function(event, context, callback) {
   .then(body => {
     callback(null, {
       statusCode: 200,
-      body: body,
+      body: JSON.stringify(body),
     });
   })
   .catch(err => {
-    callback(bugsnag.notify(new Error(err)), {
+    callback(bugsnag.notify(err), {
       statusCode: 500,
-      body: err,
+      body: JSON.stringify(err),
     });
   });
 };
