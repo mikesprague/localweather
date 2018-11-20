@@ -30,7 +30,7 @@ module.exports = {
   versionString: "v0.34.0",
   weatherDataKey: "weatherData",
   apiUrl: function () {
-    return window.location.hostname === "localhost" ? "http://localhost:9000" : "https://localweather.io/.netlify/functions";
+    return window.location.hostname === "localhost" ? "http://localhost:9000" : `https://${window.location.hostname}/.netlify/functions`;
   },
   canonical: function () {
     return `https://${window.location.hostname}/`;
