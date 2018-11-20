@@ -16,8 +16,8 @@
     "dev:serve": "concurrently --kill-others --raw 'yarn lambda:serve' 'yarn webpack:serve'",
     "dev:watch": "yarn dev:clean && yarn dev:webpack --watch",
     "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors",
-    "lambda:build": "netlify-lambda build src/functions",
-    "lambda:serve": "netlify-lambda serve src/functions -c lambda.config.dev.js"
+    "lambda:build": "netlify-lambda build functions",
+    "lambda:serve": "netlify-lambda serve functions -c lambda.config.dev.js"
   },
   "repository": {
     "url": "https://github.com/mikesprague/local-weather"
