@@ -1,4 +1,4 @@
-const VERSION = "0.33.3";
+const VERSION = "v0.34.0-dev0.0";
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
   "/",
@@ -100,7 +100,7 @@ self.addEventListener("fetch", event => {
         );
         return response;
       }).catch(error => {
-        console.log(error);
+        // console.log(error);
       });
     })
   );
