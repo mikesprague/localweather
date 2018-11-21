@@ -10,7 +10,7 @@
     "start": "yarn dev:serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config ./webpack.config.js --progress --colors",
-    "webpack:serve": "webpack-serve ./webpack.config.dev.js --port 5500",
+    "webpack:serve": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
     "dev:build": "yarn dev:clean && yarn dev:webpack && yarn lambda:build",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:serve": "concurrently --kill-others --raw 'yarn webpack:serve' 'yarn lambda:serve'",
