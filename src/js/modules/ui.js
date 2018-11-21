@@ -277,6 +277,7 @@ export function showGeolocationAlert() {
 }
 
 export function geoSuccess(position) {
+  const coords = position.coords;
   getLocationAndPopulateAppData(coords.latitude, coords.longitude);
 }
 
