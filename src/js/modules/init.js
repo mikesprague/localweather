@@ -24,11 +24,13 @@ export function init() {
 
   window.addEventListener("offline", () => {
     // TODO: add offline handler
-    window.bugsnagClient.leaveBreadcrumb("Browser offline");
+    // window.bugsnagClient.leaveBreadcrumb("Browser offline");
+    console.log("Browser offline");
   }, false);
 
   window.addEventListener("online", () => {
-    window.bugsnagClient.leaveBreadcrumb("Browser online");
+    // window.bugsnagClient.leaveBreadcrumb("Browser online");
+    console.log("Browser online");
   }, false);
 
   // window.onerror = function (msg, url, lineNo, columnNo, error) {
