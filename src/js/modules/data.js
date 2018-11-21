@@ -60,8 +60,9 @@ export async function getWeather(lat, lng) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   } else {
-    const weatherData = fetch(url)
-      .then(response => {
+    const weatherData = fetch(url, {
+        mode: "no-cors"
+      }).then(response => {
         if (response.ok) {
           return response.json();
         } else {
