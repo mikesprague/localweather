@@ -5,7 +5,6 @@ module.exports = {
   author: "Michael Sprague",
   cacheTimeKey: "cacheTime",
   cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
-  coordsDataKey: "coordsData",
   description: "Minimalist local weather app powered by Dark Sky",
   errorMessageSelector: ".error-message",
   geolocationOptions: {
@@ -14,8 +13,6 @@ module.exports = {
   },
   hideClassName: "hidden",
   keywords: "weather, local, dark sky, localweather.io, local weather",
-  lat: 0,
-  lng: 0,
   loadFromCache: false,
   loadingSpinnerSelector: ".loading-message",
   loadingText: "... loading weather data for your location ...",
