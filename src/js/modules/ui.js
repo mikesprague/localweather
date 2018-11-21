@@ -279,7 +279,7 @@ export function showGeolocationAlert() {
 export function geoSuccess(position) {
   const coords = position.coords;
   getLocationAndPopulateAppData(coords.latitude, coords.longitude);
-  setData(defaults.coordsDataKey, position);
+  setData(defaults.coordsDataKey, position.coords);
 }
 
 export function geoError(error) {
