@@ -254,11 +254,11 @@ export function showGeolocationAlert() {
       confirmButtonText: `<i class='wi wi-fw wi-cloud-refresh'></i> Show me the Weather`,
       type: "info",
       onClose: () => {
-        showLoading("... waiting for permission ...");
         if ("geolocation" in navigator) {
           try {
-            showLoading("... acquiring location ...");
+            showLoading("... waiting for permission ...");
             document.cookie = "approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            showLoading("... acquiring location ...");
             navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
           } catch (error) {
             bugsnagClient.notify(error);
@@ -277,9 +277,7 @@ export function showGeolocationAlert() {
 }
 
 export function geoSuccess(position) {
-  const coords = position.coords;
   getLocationAndPopulateAppData(coords.latitude, coords.longitude);
-  setData(defaults.coordsDataKey, position.coords);
 }
 
 export function geoError(error) {
