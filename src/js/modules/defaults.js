@@ -5,7 +5,6 @@ module.exports = {
   author: "Michael Sprague",
   cacheTimeKey: "cacheTime",
   cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
-  coordsDataKey: "coordsData",
   description: "Minimalist local weather app powered by Dark Sky",
   errorMessageSelector: ".error-message",
   geolocationOptions: {
@@ -14,8 +13,6 @@ module.exports = {
   },
   hideClassName: "hidden",
   keywords: "weather, local, dark sky, localweather.io, local weather",
-  lat: 0,
-  lng: 0,
   loadFromCache: false,
   loadingSpinnerSelector: ".loading-message",
   loadingText: "... loading weather data for your location ...",
@@ -27,10 +24,10 @@ module.exports = {
   themeColor: "#133150",
   timerHandle: 0,
   title: "LocalWeather.io (powered by Dark Sky)",
-  versionString: "v0.33.3",
+  versionString: "v0.34.0",
   weatherDataKey: "weatherData",
   apiUrl: function () {
-    return window.location.hostname === "localhost" ? "http://localhost:9000" : "https://localweather.io/.netlify/functions";
+    return window.location.hostname === "localhost" ? "http://localhost:9000" : `https://${window.location.hostname}/.netlify/functions`;
   },
   canonical: function () {
     return `https://${window.location.hostname}/`;
