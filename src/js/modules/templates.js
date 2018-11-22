@@ -77,7 +77,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>TODAY</strong>
-          <i class='${getWeahterIcon(data.daily.data[0].icon)}'></i>
+          <i class='${getWeatherIcon(data.daily.data[0].icon)}'></i>
           <br>
           ${Math.round(data.daily.data[0].temperatureHigh)}&deg;/
           ${Math.round(data.daily.data[0].temperatureLow)}&deg;
@@ -87,7 +87,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>NEXT 7 DAYS</strong>
-          <i class='${getWeahterIcon(data.daily.icon)}'></i>
+          <i class='${getWeatherIcon(data.daily.icon)}'></i>
           <br>
           ${data.daily.summary}
         </div>
