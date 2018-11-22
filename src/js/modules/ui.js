@@ -6,11 +6,13 @@ import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
   faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, 
   faBan, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
-  faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,
+  faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,faTachometer,
   faDewpoint, faHumidity, faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud
 } from "@fortawesome/pro-solid-svg-icons";
 import {
-  faTint, faCode, faThermometerHalf
+  faTint, faCode, faThermometerHalf,
+  faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow, faCloudSleet, faWind as faWIndLight, 
+  faFog, faClouds, faCloudsSun, faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado
 } from "@fortawesome/pro-light-svg-icons";
 import * as defaults from "./defaults";
 import { getData, setData, useCache } from "./cache";
@@ -415,31 +417,46 @@ export function initTooltips() {
 
 export function initFontAwesomeIcons() {
   library.add(
-    faSpinner,
-    faGlobe,
-    faMapMarkerAlt,
-    faUmbrella,
-    faSun,
-    faEye,
+    faBan,
     faCloud,
+    faCloudHail,
+    faCloudRain,
+    faClouds,
+    faCloudsMoon,
+    faCloudSleet,
+    faCloudSnow,
+    faCloudsSun,
+    faCode,
+    faDewpoint, 
     faExclamationTriangle,
-    faTint,
+    faExternalLinkAlt,
+    faEye,
+    faFog,
+    faGlobe,
+    faGlobeAfrica,
+    faHumidity, 
+    faHurricane,
     faLongArrowAltDown,
     faLongArrowAltUp,
-    faExternalLinkAlt,
-    faCode,
-    faBan,
-    faSignal,
-    faPlusSquare,
+    faMapMarkerAlt,
     faMinusSquare,
-    faGlobeAfrica,
-    faSyncAlt,
-    faDewpoint, 
-    faHumidity, 
-    faWind, 
+    faMoonStars,
+    faPlusSquare,
+    faSignal,
+    faSpinner,
+    faSun,
+    faSunLight,
     faSunrise, 
     faSunset,
-    faThermometerHalf
+    faSyncAlt,
+    faTachometer,
+    faThermometerHalf,
+    faThunderstorm,
+    faTint,
+    faTornado,
+    faUmbrella,
+    faWind,
+    faWIndLight
   );
   dom.watch();
 }
