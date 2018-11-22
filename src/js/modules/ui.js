@@ -15,6 +15,7 @@ import {
   faFog, faClouds, faCloudsSun, faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado
 } from "@fortawesome/pro-light-svg-icons";
 import * as defaults from "./defaults";
+import { formatUnixTimeAsLocalString } from "./datetime";
 import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
 import {
@@ -358,26 +359,48 @@ export function showAlert(
   populateAlertMessage(title, msg, type, icon);
 }
 
+export function parseWeatherAlertDescription(weatherAlert) {
+  const alertParts = weatherAlert.split("... ");
+  const headingText = alertParts.shift().replace(/\.\.\./g, " ").trim();
+  const descriptionText = alertParts.join(" ").trim();
+  return {
+    heading: headingText,
+    bodyText: descriptionText
+  };
+}
+
 export function showWeatherAlert(data) {
+  const { title, time, expires, description, uri, severity } = data[0];
+  const { heading, bodyText } = parseWeatherAlertDescription(description);
+
   swal({
-    title: `${data[0].title}`,
+    title: `${title}`,
     html: `
-      <div class="has-text-left">
-        <p>
-          ${data[0].description}
-          <br><br>
-          <a href="${data[0].uri}" rel="noopener" target="_blank">View full ${data[0].severity} here</a>
+        <p class="message-alert-text-first">
+          <em style="text-transform: capitalize;">${getHeadingText(description)}</em>
+          <br>
+          Issued: ${formatUnixTimeAsLocalString(time)}
+          <br>
+          Expires: ${formatUnixTimeAsLocalString(expires)}
         </p>
-      </div>
+        <p class="message-alert-text">
+          ${getDescriptionText(description)}
+        </p>
     `,
-    type: "warning"
+    showCancelButton: true,
+    cancelButtonText: "Close",
+    confirmButtonText: `View full ${severity}`,
+    confirmButtonColor: `${defaults.themeColor}`,
+    onClose: () => {
+      window.open(uri);
+    }
   });
 }
 
 export function initWeatherAlerts(data) {
   const weatherAlerts = data.alerts;
   if (weatherAlerts) {
-    populateWeatherAlert("Special Weather Statement");
+    populateWeatherAlert(weatherAlerts[0].title);
     showEl(".weather-alert");
     document.querySelector(".link-weather-alert").addEventListener("click", clickEvent => {
       clickEvent.preventDefault();
