@@ -76,6 +76,18 @@ strong {
   }
 }
 
+.subtitle.is-2 {
+  color: $color-text-danger;
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-top: -1.15em;
+  text-align: center;
+
+  a {
+    color: $color-text-danger;
+  }
+}
+
 .message-alert-text,
 .message-alert-text-first,
 .message-alert-text-heading {
@@ -212,10 +224,8 @@ strong {
 }
 
 .current-icon {
-  i {
-    font-size: 4em;
-    line-height: 1;
-  }
+  font-size: 4em;
+  line-height: 1;
 }
 
 .last-updated-time {
@@ -311,6 +321,10 @@ hr {
     font-size: 1.65rem;
   }
 
+  .subtitle.is-2 {
+    font-size: 1.25rem;
+  }
+
   .current-temp {
     span {
       font-size: 2.5em;
@@ -319,10 +333,8 @@ hr {
   }
 
   .current-icon {
-    i {
-      font-size: 2.5em;
-      line-height: 1;
-    }
+    font-size: 2.5em;
+    line-height: 1;
   }
 
 }
