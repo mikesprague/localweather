@@ -71,7 +71,7 @@ module.exports = {
       force: true,
     }]),
     new CopyWebpackPlugin([{
-      from: "./src/_redirects.dev",
+      from: "./src/_redirects",
       to: "./_redirects",
       force: true,
     }]),
