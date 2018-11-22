@@ -276,7 +276,9 @@ export function populateHourlyData(data, numHours = 12) {
       <p class="has-tooltip" data-tippy-content="${data.hourly.data[next].summary}<br>${precipitationText}">
         <strong>${getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
         <br>
-        <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i> ${Math.round(data.hourly.data[next].temperature)}&deg;
+        <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
+        <br>
+        ${Math.round(data.hourly.data[next].temperature)}&deg;
       </p>
     `;
     let hourlyEl = document.querySelector(`.hourly-${next}`);
