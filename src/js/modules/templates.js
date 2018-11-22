@@ -60,28 +60,23 @@ export function populatePrimaryData(data) {
     <div class='primarySummaryWrapper'>
       <div class='columns is-mobile'>
         <div class='column'>
-          <strong>RIGHT NOW</strong>
-          <i class='${getWeatherIcon(data.currently.icon)}'></i>
-          <br>
-          ${Math.round(data.currently.temperature)}&deg;
-          ${data.currently.summary}
-        </div>
-        <div class='column'>
           <strong>NEXT HOUR</strong>
-          <i class='${getWeatherIcon(data.hourly.data[1].icon)}'></i>
-          <br>
+          <i class='${getWeatherIcon(data.minutely.icon)}'></i>
           ${Math.round(data.hourly.data[1].temperature)}&deg;
-          ${data.hourly.data[1].summary}
+          <br>
+          ${data.minutely.summary}
         </div>
       </div>
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>TODAY</strong>
           <i class='${getWeatherIcon(data.daily.data[0].icon)}'></i>
-          <br>
           ${Math.round(data.daily.data[0].temperatureHigh)}&deg;/
           ${Math.round(data.daily.data[0].temperatureLow)}&deg;
+          <br>
           ${data.daily.data[0].summary}
+          <br>
+          ${data.hourly.summary}
         </div>
       </div>
       <div class='columns is-mobile'>
@@ -136,7 +131,8 @@ export function populateWeatherData(data) {
         <p>
           <i class="fas fa-fw fa-wind"></i>
           <br>
-          <i class="wi wi-fw wi-wind from-${data.currently.windBearing}-deg"></i>${Math.round(data.currently.windSpeed)}mph
+          <i class="fas fa-fw fa-chevron-circle-up" data-fa-transform="rotate-${data.currently.windBearing}"></i>
+          ${Math.round(data.currently.windSpeed)}mph
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Precipitation">
@@ -176,7 +172,7 @@ export function populateWeatherData(data) {
       </div>
     </div>
     <div class="columns is-mobile is-vcentered">
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Pressure">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Barometric Pressure">
         <p>
           <i class="fas fa-fw fa-tachometer"></i>
           <br>
