@@ -75,8 +75,6 @@ export function populatePrimaryData(data) {
           ${Math.round(data.daily.data[0].temperatureLow)}&deg;
           <br>
           ${data.daily.data[0].summary}
-          <br>
-          ${data.hourly.summary}
         </div>
       </div>
       <div class='columns is-mobile'>
