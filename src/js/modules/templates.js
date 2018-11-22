@@ -171,7 +171,7 @@ export function populateWeatherData(data) {
       </div>
     </div>
     <div class="columns is-mobile is-vcentered">
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Pressure">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Barometric Pressure">
         <p>
           <i class="fas fa-fw fa-tachometer"></i>
           <br>
