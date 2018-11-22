@@ -74,7 +74,10 @@ addEventListener("activate", activateEvent => {
 // intercept network requests
 self.addEventListener("fetch", event => {
   // console.info('[SW] Fetch Started');
-  if (event.request.url !== "https://www.googletagmanager.com/gtag/js?id=UA-461185-33") {
+  if (
+    (event.request.url !== "https://www.googletagmanager.com/gtag/js?id=UA-461185-33") &&
+    (!event.request.url.includes("/.netlify/functions/"))
+   ) {
     event.respondWith(
       caches.match(event.request).then(response => {
         // cache hit - return response
