@@ -74,33 +74,35 @@ addEventListener("activate", activateEvent => {
 // intercept network requests
 self.addEventListener("fetch", event => {
   // console.info('[SW] Fetch Started');
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      // cache hit - return response
-      if (response) {
-        // console.info(`[SW] Served from Cache ${event.request.url}`);
-        return response;
-      }
-      // clone the request because it's a one time use stream
-      const fetchRequest = event.request.clone();
-      // console.info(`[SW] Fetched ${event.request.url}`);
-      return fetch(fetchRequest).then(response => {
-        // check if we received a valid response
-        if (!response || response.status !== 200 || response.type !== "basic") {
+  if (event.request.url !== "https://www.googletagmanager.com/gtag/js?id=UA-461185-33") {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        // cache hit - return response
+        if (response) {
+          // console.info(`[SW] Served from Cache ${event.request.url}`);
           return response;
         }
-        // clone the response because it's a one time use stream
-        const responseToCache = response.clone();
-        event.waitUntil(
-          caches.open(CACHE_NAME).then(cache => {
-            // console.info(`[SW] Added to Cache ${event.request.url}`);
-            cache.put(event.request, responseToCache);
-          })
-        );
-        return response;
-      }).catch(error => {
-        console.log(error, event.request.url);
-      });
-    })
-  );
+        // clone the request because it's a one time use stream
+        const fetchRequest = event.request.clone();
+        // console.info(`[SW] Fetched ${event.request.url}`);
+        return fetch(fetchRequest).then(response => {
+          // check if we received a valid response
+          if (!response || response.status !== 200 || response.type !== "basic") {
+            return response;
+          }
+          // clone the response because it's a one time use stream
+          const responseToCache = response.clone();
+          event.waitUntil(
+            caches.open(CACHE_NAME).then(cache => {
+              // console.info(`[SW] Added to Cache ${event.request.url}`);
+              cache.put(event.request, responseToCache);
+            })
+          );
+          return response;
+        }).catch(error => {
+          console.log(error, event.request.url);
+        });
+      })
+    );
+  }
 });

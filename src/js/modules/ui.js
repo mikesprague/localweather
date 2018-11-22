@@ -4,17 +4,21 @@ import tippy from "tippy.js";
 import swal from "sweetalert2";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
-  faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, faTint, 
-  faBan, faCode, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
+  faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, 
+  faBan, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
   faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,
   faDewpoint, faHumidity, faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud
 } from "@fortawesome/pro-solid-svg-icons";
+import {
+  faTint, faCode, faThermometerHalf
+} from "@fortawesome/pro-light-svg-icons";
 import * as defaults from "./defaults";
 import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
 import {
-  populateMessage,populateErrorMessage, populateAlertMessage, populateFooter, populateForecastData,
-  populateHourlyData, populateLastUpdated, populateLocation, populatePrimaryData, populateWeatherData
+  populateMessage,populateErrorMessage, populateAlertMessage, populateFooter, 
+  populateForecastData, populateHourlyData, populateLastUpdated, populateLocation, 
+  populatePrimaryData, populateWeatherData, populateWeatherAlert
 } from "./templates";
 
 export function getMoonUi(data) {
@@ -352,19 +356,51 @@ export function showAlert(
   populateAlertMessage(title, msg, type, icon);
 }
 
+export function showWeatherAlert(data) {
+  swal({
+    title: `${data[0].title}`,
+    html: `
+      <div class="has-text-left">
+        <p>
+          ${data[0].description}
+          <br><br>
+          <a href="${data[0].uri}" rel="noopener" target="_blank">View full ${data[0].severity} here</a>
+        </p>
+      </div>
+    `,
+    type: "warning"
+  });
+}
+
 export function initWeatherAlerts(data) {
   const weatherAlerts = data.alerts;
   if (weatherAlerts) {
-    for (let i = 0; i < weatherAlerts.length; i++) {
-      // let linkHtml = `
-      //   <a href="${weatherAlerts[i].uri}" rel="noopener" target="_blank">
-      //     Open full ${weatherAlerts[i].severity} <i class="fas fa-fw fa-external-link"></i>
-      //   </a>
-      // `;
-      showAlert(`${weatherAlerts[i].title}`, `${weatherAlerts[i].description}`);
-    }
-    showEl(".alert-container");
+    populateWeatherAlert("Special Weather Statement");
+    showEl(".weather-alert");
+    document.querySelector(".link-weather-alert").addEventListener("click", clickEvent => {
+      clickEvent.preventDefault();
+      showWeatherAlert(weatherAlerts);
+    });
   }
+}
+
+export function getWeatherIcon(icon) {
+  const iconMap = [];
+  iconMap["clear-day"] = "fal fa-fw fa-sun";
+  iconMap["clear-night"] = "fal fa-fw fa-moon-stars";
+  iconMap["rain"] = "fal fa-fw fa-cloud-rain";
+  iconMap["snow"] = "fal fa-fw fa-cloud-snow";
+  iconMap["sleet"] = "fal fa-fw fa-sleet";
+  iconMap["wind"] = "fal fa-fw fa-wind";
+  iconMap["fog"] = "fal fa-fw fa-fog";
+  iconMap["cloudy"] = "fal fa-fw fa-clouds";
+  iconMap["partly-cloudy-day"] = "fal fa-fw fa-clouds-sun";
+  iconMap["partly-cloudy-night"] = "fal fa-fw fa-clouds-moon";
+  iconMap["hail"] = "fal fa-fw fa-cloud-hail";
+  iconMap["hurricane"] = "fal fa-fw fa-hurricane";
+  iconMap["thunderstorm"] = "fal fa-fw fa-thunderstorm";
+  iconMap["tornado"] = "fal fa-fw fa-tornado";
+  return iconMap[`${icon}`];
 }
 
 export function initTooltips() {
@@ -402,7 +438,8 @@ export function initFontAwesomeIcons() {
     faHumidity, 
     faWind, 
     faSunrise, 
-    faSunset
+    faSunset,
+    faThermometerHalf
   );
   dom.watch();
 }

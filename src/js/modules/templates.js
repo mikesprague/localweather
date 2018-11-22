@@ -1,7 +1,7 @@
 "use strict";
 
 import * as defaults from "./defaults";
-import { getMoonUi, registerAlertClickHandler } from "./ui";
+import { getWeatherIcon, getMoonUi, registerAlertClickHandler } from "./ui";
 import { parseLocationNameFromFormattedAddress } from "./data";
 import { getData } from "./cache";
 import {
@@ -61,14 +61,14 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>RIGHT NOW</strong>
-          <i class='wi wi-fw wi-forecast-io-${data.currently.icon}'></i>
+          <i class='${getWeatherIcon(data.currently.icon)}'></i>
           <br>
           ${Math.round(data.currently.temperature)}&deg;
           ${data.currently.summary}
         </div>
         <div class='column'>
           <strong>NEXT HOUR</strong>
-          <i class='wi wi-fw wi-forecast-io-${data.hourly.data[1].icon}'></i>
+          <i class='${getWeatherIcon(data.hourly.data[1].icon)}'></i>
           <br>
           ${Math.round(data.hourly.data[1].temperature)}&deg;
           ${data.hourly.data[1].summary}
@@ -77,7 +77,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>TODAY</strong>
-          <i class='wi wi-fw wi-forecast-io-${data.daily.data[0].icon}'></i>
+          <i class='${getWeahterIcon(data.daily.data[0].icon)}'></i>
           <br>
           ${Math.round(data.daily.data[0].temperatureHigh)}&deg;/
           ${Math.round(data.daily.data[0].temperatureLow)}&deg;
@@ -87,7 +87,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>NEXT 7 DAYS</strong>
-          <i class='wi wi-fw wi-forecast-io-${data.daily.icon}'></i>
+          <i class='${getWeahterIcon(data.daily.icon)}'></i>
           <br>
           ${data.daily.summary}
         </div>
@@ -97,11 +97,11 @@ export function populatePrimaryData(data) {
   const locationName = getData(defaults.locationNameDataKey);
   const primaryDataTemplate = `
     <div class="column is-one-quarter has-text-right current-icon">
-      <i class="wi wi-fw wi-forecast-io-${data.currently.icon}"></i>
+      <i class="${getWeatherIcon(data.currently.icon)}"></i>
     </div>
     <div class="column is-half current-conditions">
-      <div class="content has-text-center">
-        <h2 class="subtitle is-1 has-text-center has-tooltip" data-tippy-content="${currentConditionsTooltip}">
+      <div class="content has-text-centered">
+        <h2 class="subtitle is-1 has-text-centered has-tooltip" data-tippy-content="${currentConditionsTooltip}">
           ${data.currently.summary}
         </h2>
       </div>
@@ -112,6 +112,20 @@ export function populatePrimaryData(data) {
   `;
   const priamryDataEl = document.querySelector(".primary-conditions-data");
   priamryDataEl.innerHTML = primaryDataTemplate;
+}
+
+export function populateWeatherAlert(title) {
+  const weatherAlertTemplate = `
+    <div class="column has-text-centered">
+      <h3 class="subtitle is-2 has-text-centered">
+        <a href="#" class="text-color-danger link-weather-alert">
+          <i class="fas fa-fw fa-exclamation-triangle"></i> ${title}
+        </a>
+      </h3>
+    </div>
+  `;
+  const weatherAlertEl = document.querySelector(".weather-alert");
+  weatherAlertEl.innerHTML = weatherAlertTemplate;
 }
 
 export function populateWeatherData(data) {
@@ -164,7 +178,7 @@ export function populateWeatherData(data) {
     <div class="columns is-mobile is-vcentered">
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Pressure">
         <p>
-          <i class="wi wi-fw wi-barometer"></i>
+          <i class="fas fa-fw fa-tachometer"></i>
           <br>
           ${Math.round(data.currently.pressure)}mb</i>
         </p>
@@ -185,7 +199,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Feels Like">
         <p>
-          <i class="wi wi-fw wi-thermometer"></i>
+          <i class="fal fa-fw fa-thermometer-half"></i>
           <br>
           ${Math.round(data.currently.apparentTemperature)}&deg;</i>
         </p>
@@ -227,7 +241,7 @@ export function populateForecastData(data, numDays = 7) {
       <p class="has-tooltip" data-tippy-content="${data.daily.data[next].summary}">
         <strong>${getDayFromUnixTime(data.daily.data[next].time)}</strong>
         <br>
-        <i class="wi wi-fw wi-forecast-io-${data.daily.data[next].icon}"></i>
+        <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
         <br>
         ${Math.round(data.daily.data[next].temperatureHigh)}&deg;/${Math.round(data.daily.data[next].temperatureLow)}&deg;
       </p>
@@ -266,7 +280,7 @@ export function populateHourlyData(data, numHours = 12) {
       <p class="has-tooltip" data-tippy-content="${data.hourly.data[next].summary}<br>${precipitationText}">
         <strong>${getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
         <br>
-        <i class="wi wi-fw wi-forecast-io-${data.hourly.data[next].icon}"></i> ${Math.round(data.hourly.data[next].temperature)}&deg;
+        <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i> ${Math.round(data.hourly.data[next].temperature)}&deg;
       </p>
     `;
     let hourlyEl = document.querySelector(`.hourly-${next}`);
@@ -324,14 +338,14 @@ export function populateFooter() {
     <div class="column">
       <div class="content has-text-centered">
         <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" data-tippy-content="Powered by Dark Sky">
-          <i class="fas fa-tint"></i> Powered by Dark Sky
+          <i class="fal fa-tint"></i> Powered by Dark Sky
         </a>
       </div>
     </div>
     <div class="column">
       <div class="content has-text-left">
         <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" data-tippy-content="Coded by Michael Sprague">
-          <i class="fas fa-code"></i> by Michael Sprague
+          <i class="fal fa-code"></i> by Michael Sprague
         </a>
       </div>
     </div>
