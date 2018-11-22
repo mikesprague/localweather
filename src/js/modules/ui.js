@@ -4,9 +4,9 @@ import tippy from "tippy.js";
 import swal from "sweetalert2";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
-  faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, 
-  faBan, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
-  faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,faTachometer,
+  faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, faArrowAltCircleDown, faArrowAltCircleUp,
+  faBan, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt, faCircle,
+  faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,faTachometer, faAngleUp, faChevronCircleUp,
   faDewpoint, faHumidity, faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud
 } from "@fortawesome/pro-solid-svg-icons";
 import {
@@ -417,7 +417,12 @@ export function initTooltips() {
 
 export function initFontAwesomeIcons() {
   library.add(
+    faAngleUp,
+    faArrowAltCircleDown,
+    faArrowAltCircleUp,
     faBan,
+    faChevronCircleUp,
+    faCircle,
     faCloud,
     faCloudHail,
     faCloudRain,
