@@ -7,7 +7,6 @@ const cacheAlways = [
   "/css/styles.css",
   "/js/bundle.js",
   "/assets/css/weather-icons.min.css",
-  "/assets/css/weather-icons-wind.min.css",
 ];
 const cacheWhenPossible = [
   "/assets/font/weathericons-regular-webfont.woff2",
