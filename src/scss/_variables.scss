@@ -2,6 +2,8 @@ $color-text-default: #fff;
 $color-text-night: darken($color-text-default, 20%); //#dedede
 $color-text-secondary: ​#b4b7ba;
 
+$color-text-danger: #540000;
+
 $color-gray-lightest: #efefef;
 $color-gray-light: #cdcdcd;
 $color-gray: #999;
@@ -17,7 +19,7 @@ $color-rainy: #1249a5;
 $color-rainy-night: darken($color-rainy, 15%);
 
 $color-snowy: darken($color-text-default, 10%);
-$color-snowy-night: darken($color-text-default, 40%);
+$color-snowy-night: darken($color-text-default, 33%);
 
 $color-cloudy: #8a929e;
 $color-cloudy-night: darken($color-cloudy, 30%);
