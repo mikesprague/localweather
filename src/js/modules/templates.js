@@ -131,7 +131,8 @@ export function populateWeatherData(data) {
         <p>
           <i class="fas fa-fw fa-wind"></i>
           <br>
-          <i class="wi wi-fw wi-wind from-${data.currently.windBearing}-deg"></i>${Math.round(data.currently.windSpeed)}mph
+          <i class="fas fa-fw fa-chevron-circle-up" data-fa-transform="rotate-${data.currently.windBearing}"></i>
+          ${Math.round(data.currently.windSpeed)}mph
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Precipitation">
