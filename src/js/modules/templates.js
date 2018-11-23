@@ -145,11 +145,11 @@ export function populateWeatherData(data) {
           ${Math.round(data.currently.uvIndex)}
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Visibility">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Cloud Cover">
         <p>
-          <i class="fas fa-fw fa-eye"></i>
+          <i class="fas fa-fw fa-cloud"></i>
           <br>
-          ${data.currently.visibility}mi
+          ${Math.round(data.currently.cloudCover * 100)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
@@ -182,11 +182,11 @@ export function populateWeatherData(data) {
           ${Math.round(data.currently.dewPoint)}&deg;</i>
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Cloud Cover">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Visibility">
         <p>
-          <i class="fas fa-fw fa-cloud"></i>
+          <i class="fas fa-fw fa-eye"></i>
           <br>
-          ${Math.round(data.currently.cloudCover * 100)}%
+          ${data.currently.visibility}mi
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
