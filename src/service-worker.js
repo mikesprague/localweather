@@ -6,14 +6,8 @@ const cacheAlways = [
   "/manifest.json",
   "/css/styles.css",
   "/js/bundle.js",
-  "/assets/css/weather-icons.min.css",
 ];
 const cacheWhenPossible = [
-  "/assets/font/weathericons-regular-webfont.woff2",
-  "/assets/font/weathericons-regular-webfont.woff",
-  "/assets/font/weathericons-regular-webfont.ttf",
-  "/assets/font/weathericons-regular-webfont.svg",
-  "/assets/font/weathericons-regular-webfont.eot",
   "/assets/images/favicons/weather-icon-32.png",
   "/assets/images/favicons/weather-icon-48.png",
   "/assets/images/favicons/weather-icon-64.png",
