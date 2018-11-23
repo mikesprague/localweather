@@ -60,6 +60,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>NEXT HOUR</strong>
+          <br>
           <i class='${getWeatherIcon(data.minutely.icon)}'></i>
           ${Math.round(data.hourly.data[1].temperature)}&deg;
           <br>
@@ -69,6 +70,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>TODAY</strong>
+          <br>
           <i class='${getWeatherIcon(data.daily.data[0].icon)}'></i>
           ${Math.round(data.daily.data[0].temperatureHigh)}&deg;/
           ${Math.round(data.daily.data[0].temperatureLow)}&deg;
@@ -79,6 +81,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>NEXT 7 DAYS</strong>
+          <br>
           <i class='${getWeatherIcon(data.daily.icon)}'></i>
           <br>
           ${data.daily.summary}
@@ -91,15 +94,13 @@ export function populatePrimaryData(data) {
     <div class="column is-one-quarter has-text-right current-icon">
       <i class="${getWeatherIcon(data.currently.icon)}"></i>
     </div>
-    <div class="column is-half current-conditions">
-      <div class="content has-text-centered">
-        <h2 class="subtitle is-1 has-text-centered has-tooltip" data-tippy-content="${currentConditionsTooltip}">
-          ${data.currently.summary}
-        </h2>
-      </div>
+    <div class="column is-half has-text-centered current-conditions">
+      <h2 class="subtitle is-1 has-text-centered has-tooltip" data-tippy-content="${currentConditionsTooltip}">
+        ${data.currently.summary}
+      </h2>
     </div>
     <div class="column is-one-quarter has-text-left current-temp">
-      <span>${Math.round(data.currently.temperature)}&deg;</span>
+      ${Math.round(data.currently.temperature)}&deg;
     </div>
   `;
   const priamryDataEl = document.querySelector(".primary-conditions-data");
@@ -192,7 +193,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Feels Like">
         <p>
-          <i class="fal fa-fw fa-thermometer-half"></i>
+          <i class="fas fa-fw fa-thermometer-half"></i>
           <br>
           ${Math.round(data.currently.apparentTemperature)}&deg;</i>
         </p>

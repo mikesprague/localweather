@@ -7,10 +7,10 @@ import {
   faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle, faArrowAltCircleDown, faArrowAltCircleUp,
   faBan, faSignal, faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt, faCircle,
   faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,faTachometer, faAngleUp, faChevronCircleUp,
-  faDewpoint, faHumidity, faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud
+  faDewpoint, faHumidity, faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud, faThermometerHalf
 } from "@fortawesome/pro-solid-svg-icons";
 import {
-  faTint, faCode, faThermometerHalf,
+  faTint, faCode,
   faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow, faCloudSleet, faWind as faWIndLight, 
   faFog, faClouds, faCloudsSun, faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado
 } from "@fortawesome/pro-light-svg-icons";
