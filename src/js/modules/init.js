@@ -5,7 +5,6 @@ import { initCache } from "./cache";
 import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAlert, showLoading } from "./ui";
 import { initDataUpdateCheck } from "./data";
 
-
 export function init() {
   // const bugsnagClient = bugsnag("c9beb7c090034128a89c8e58f261e972", { appVersion: defaults.versionString });
   // register service worker
