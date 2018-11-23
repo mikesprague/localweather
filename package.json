@@ -3,7 +3,7 @@
   "version": "0.37.2",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
-  "main": "index.js",
+  "main": "./public/index.html",
   "scripts": {
     "build": "yarn clean && yarn webpack && yarn lambda:build",
     "clean": "rm -rf ./public > /dev/null 2>&1",
@@ -16,8 +16,8 @@
     "dev:serve": "concurrently --kill-others --raw 'yarn webpack:serve' 'yarn lambda:serve'",
     "dev:watch": "yarn dev:clean && yarn dev:webpack --watch",
     "dev:webpack": "webpack --config ./webpack.config.dev.js --progress --colors",
-    "lambda:build": "netlify-lambda build src/functions",
-    "lambda:serve": "netlify-lambda serve src/functions -c lambda.config.dev.js"
+    "lambda:build": "netlify-lambda build ./src/functions",
+    "lambda:serve": "netlify-lambda serve ./src/functions -c ./lambda.config.dev.js"
   },
   "repository": {
     "url": "https://github.com/mikesprague/local-weather"
