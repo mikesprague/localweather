@@ -432,9 +432,11 @@ export function initTooltips() {
   tippy(".has-tooltip", {
     allowHTML: true,
     arrow: true,
+    interactive: true,
     livePlacement: true,
     size: "large",
     touch: true,
+    trigger: "click", // mouseenter
   });
 }
 
