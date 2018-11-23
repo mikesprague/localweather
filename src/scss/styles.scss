@@ -215,12 +215,8 @@ strong {
 }
 
 .current-temp {
-  padding-top: unset;
-
-  span {
-    font-size: 4em;
-    line-height: 1;
-  }
+  font-size: 4em;
+  line-height: 1;
 }
 
 .current-icon {
@@ -326,10 +322,8 @@ hr {
   }
 
   .current-temp {
-    span {
-      font-size: 2.5em;
-      line-height: 1;
-    }
+    font-size: 2.5em;
+    line-height: 1;
   }
 
   .current-icon {
@@ -349,4 +343,8 @@ hr {
   body {
     font-size: 2rem;
   }
+}
+
+.has-tooltip {
+  cursor: pointer;
 }

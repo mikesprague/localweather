@@ -4,9 +4,8 @@ import * as defaults from "./defaults";
 import { getWeatherIcon, getMoonUi, registerAlertClickHandler } from "./ui";
 import { parseLocationNameFromFormattedAddress } from "./data";
 import { getData } from "./cache";
-import {
-  formatUnixTimeAsLocalString, formatUnixTimeForSun, getDayFromUnixTime, getHourAndPeriodFromUnixTime, getTimeFromUnixTime
-} from "./datetime";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 export function populateMessage(messageText) {
   const messageTemplate = `
@@ -61,6 +60,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>NEXT HOUR</strong>
+          <br>
           <i class='${getWeatherIcon(data.minutely.icon)}'></i>
           ${Math.round(data.hourly.data[1].temperature)}&deg;
           <br>
@@ -70,6 +70,7 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>TODAY</strong>
+          <br>
           <i class='${getWeatherIcon(data.daily.data[0].icon)}'></i>
           ${Math.round(data.daily.data[0].temperatureHigh)}&deg;/
           ${Math.round(data.daily.data[0].temperatureLow)}&deg;
@@ -80,7 +81,6 @@ export function populatePrimaryData(data) {
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>NEXT 7 DAYS</strong>
-          <i class='${getWeatherIcon(data.daily.icon)}'></i>
           <br>
           ${data.daily.summary}
         </div>
@@ -92,15 +92,13 @@ export function populatePrimaryData(data) {
     <div class="column is-one-quarter has-text-right current-icon">
       <i class="${getWeatherIcon(data.currently.icon)}"></i>
     </div>
-    <div class="column is-half current-conditions">
-      <div class="content has-text-centered">
-        <h2 class="subtitle is-1 has-text-centered has-tooltip" data-tippy-content="${currentConditionsTooltip}">
-          ${data.currently.summary}
-        </h2>
-      </div>
+    <div class="column is-half has-text-centered current-conditions">
+      <h2 class="subtitle is-1 has-text-centered has-tooltip" data-tippy-content="${currentConditionsTooltip}">
+        ${data.currently.summary}
+      </h2>
     </div>
     <div class="column is-one-quarter has-text-left current-temp">
-      <span>${Math.round(data.currently.temperature)}&deg;</span>
+      ${Math.round(data.currently.temperature)}&deg;
     </div>
   `;
   const priamryDataEl = document.querySelector(".primary-conditions-data");
@@ -165,7 +163,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fas fa-fw fa-sunrise"></i>
           <br>
-          ${formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am
+          ${dayjs.unix(data.daily.data[0].sunriseTime).format("h:mma")}
         </p>
       </div>
     </div>
@@ -193,7 +191,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Feels Like">
         <p>
-          <i class="fal fa-fw fa-thermometer-half"></i>
+          <i class="fas fa-fw fa-thermometer-half"></i>
           <br>
           ${Math.round(data.currently.apparentTemperature)}&deg;</i>
         </p>
@@ -208,7 +206,7 @@ export function populateWeatherData(data) {
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
           <i class="fas fa-fw fa-sunset"></i>
-          <br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm
+          <br>${dayjs.unix(data.daily.data[0].sunsetTime).format("h:mma")}
         </p>
       </div>
     </div>
@@ -233,7 +231,7 @@ export function populateForecastData(data, numDays = 7) {
     let next = i + 1;
     let forecastTemplate = `
       <p class="has-tooltip" data-tippy-content="${data.daily.data[next].summary}">
-        <strong>${getDayFromUnixTime(data.daily.data[next].time)}</strong>
+        <strong>${dayjs.unix(data.daily.data[next].time).format("ddd")}</strong>
         <br>
         <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
         <br>
@@ -272,7 +270,7 @@ export function populateHourlyData(data, numHours = 12) {
       "No precipitation";
     let hourlyTemplate = `
       <p class="has-tooltip" data-tippy-content="${data.hourly.data[next].summary}<br>${precipitationText}">
-        <strong>${getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
+        <strong>${dayjs.unix(data.hourly.data[next].time).format("ha")}</strong>
         <br>
         <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
         <br>
@@ -303,18 +301,19 @@ export function populateAlertMessage(title, msg, type, icon) {
 }
 
 export function populateLastUpdated(data) {
+  dayjs.extend(relativeTime);
+  const lastUpdateTime = dayjs.unix(data.currently.time);
+  const nextUpdateTime = dayjs.unix(data.currently.time + defaults.cacheTimeSpan);
+
   const lastUpdatedString = `
-    Weather data cached at: ${formatUnixTimeAsLocalString(data.currently.time)}
+    Weather data last refreshed at ${lastUpdateTime.format("hh:mm:ss A")}
     <br>
-    Weather data is cached for 10 minutes.
-    <br>
-    Next data refresh available after:
-    ${formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
+    Data is cached for 10 minutes, next update ${dayjs().to(nextUpdateTime)}
   `;
   const lastUpdatedTemplate = `
     <div class="column has-text-centered">
       <p class="last-updated has-tooltip" data-tippy-content="${lastUpdatedString}">
-        Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
+        Weather data last updated ${dayjs().from(lastUpdateTime, true)} ago
       </p>
     </div>
   `;
