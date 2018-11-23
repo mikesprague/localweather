@@ -152,13 +152,6 @@ export function populateWeatherData(data) {
           ${data.currently.visibility}mi
         </p>
       </div>
-      <div class="column is-hidden-mobile has-text-centered has-tooltip" data-tippy-content="Cloud Cover">
-        <p>
-          <i class="fas fa-fw fa-cloud"></i>
-          <br>
-          ${Math.round(data.currently.cloudCover * 100)}%
-        </p>
-      </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
         <p>
           <i class="fas fa-fw fa-sunrise"></i>
@@ -189,18 +182,11 @@ export function populateWeatherData(data) {
           ${Math.round(data.currently.dewPoint)}&deg;</i>
         </p>
       </div>
-      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Feels Like">
+      <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Cloud Cover">
         <p>
-          <i class="fas fa-fw fa-thermometer-half"></i>
+          <i class="fas fa-fw fa-cloud"></i>
           <br>
-          ${Math.round(data.currently.apparentTemperature)}&deg;</i>
-        </p>
-      </div>
-      <div class="column is-hidden-mobile has-text-centered has-tooltip" data-tippy-content="Moon">
-        <p class="moon-phase">
-          <i class="wi wi-fw ${moonUi.icon}"></i>
-          <br>
-          ${moonUi.phase}
+          ${Math.round(data.currently.cloudCover * 100)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
@@ -214,6 +200,26 @@ export function populateWeatherData(data) {
   const weatherDataEl = document.querySelector(".current-weather-data");
   weatherDataEl.innerHTML = weatherDataTemplate;
 }
+
+// <div class="column is-hidden-mobile has-text-centered has-tooltip" data-tippy-content="Moon">
+//   <p class="moon-phase">
+//    <i class="wi wi-fw ${moonUi.icon}"></i>
+//    <br>
+//    ${moonUi.phase}
+//  </p>
+// </div>
+// <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Feels Like">
+//   <p>
+//     <i class="fas fa-fw fa-thermometer-half"></i>
+//     <br>
+//     ${Math.round(data.currently.apparentTemperature)}&deg;</i>
+//   </p>
+// </div>
+
+
+
+
+
 
 export function populateForecastData(data, numDays = 7) {
   const forecastWrappers = `
