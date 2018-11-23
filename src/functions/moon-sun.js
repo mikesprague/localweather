@@ -26,13 +26,16 @@ exports.handler = function(event, context, callback) {
       body: "Missing 'lng' parameter",
     });
   }
-  const apiUrlToCall = `http://api.usno.navy.mil/rstt/oneday?date=today&id=LWio&tz=${tz}&coords=${lat},${lng}`;
+  const apiUrlToCall = `https://api.usno.navy.mil/rstt/oneday?date=today&id=LWio&tz=${tz}&coords=${lat},${lng}`;
   const rpOptions = {
     uri: apiUrlToCall,
     headers: {
         "User-Agent": "Request-Promise"
     },
-    json: true
+    insecure: true,
+    json: true,
+    rejectUnauthorized: false,
+    strictSSL: false
   };
   rp(rpOptions)
   .then(body => {
