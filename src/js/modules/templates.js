@@ -4,9 +4,8 @@ import * as defaults from "./defaults";
 import { getWeatherIcon, getMoonUi, registerAlertClickHandler } from "./ui";
 import { parseLocationNameFromFormattedAddress } from "./data";
 import { getData } from "./cache";
-import {
-  formatUnixTimeAsLocalString, formatUnixTimeForSun, getDayFromUnixTime, getHourAndPeriodFromUnixTime, getTimeFromUnixTime
-} from "./datetime";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 export function populateMessage(messageText) {
   const messageTemplate = `
@@ -165,7 +164,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fas fa-fw fa-sunrise"></i>
           <br>
-          ${formatUnixTimeForSun(data.daily.data[0].sunriseTime)}am
+          ${dayjs.unix(data.daily.data[0].sunriseTime).format("h:mma")}
         </p>
       </div>
     </div>
@@ -208,7 +207,7 @@ export function populateWeatherData(data) {
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
           <i class="fas fa-fw fa-sunset"></i>
-          <br>${formatUnixTimeForSun(data.daily.data[0].sunsetTime)}pm
+          <br>${dayjs.unix(data.daily.data[0].sunsetTime).format("h:mma")}
         </p>
       </div>
     </div>
@@ -233,7 +232,7 @@ export function populateForecastData(data, numDays = 7) {
     let next = i + 1;
     let forecastTemplate = `
       <p class="has-tooltip" data-tippy-content="${data.daily.data[next].summary}">
-        <strong>${getDayFromUnixTime(data.daily.data[next].time)}</strong>
+        <strong>${dayjs.unix(data.daily.data[next].time).format("ddd")}</strong>
         <br>
         <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
         <br>
@@ -272,7 +271,7 @@ export function populateHourlyData(data, numHours = 12) {
       "No precipitation";
     let hourlyTemplate = `
       <p class="has-tooltip" data-tippy-content="${data.hourly.data[next].summary}<br>${precipitationText}">
-        <strong>${getHourAndPeriodFromUnixTime(data.hourly.data[next].time)}</strong>
+        <strong>${dayjs.unix(data.hourly.data[next].time).format("ha")}</strong>
         <br>
         <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
         <br>
@@ -303,18 +302,19 @@ export function populateAlertMessage(title, msg, type, icon) {
 }
 
 export function populateLastUpdated(data) {
+  dayjs.extend(relativeTime);
+  const lastUpdateTime = dayjs.unix(data.currently.time);
+  const nextUpdateTime = dayjs.unix(data.currently.time + defaults.cacheTimeSpan);
+
   const lastUpdatedString = `
-    Weather data cached at: ${formatUnixTimeAsLocalString(data.currently.time)}
+    Weather data last refreshed at ${lastUpdateTime.format("hh:mm:ss A")}
     <br>
-    Weather data is cached for 10 minutes.
-    <br>
-    Next data refresh available after:
-    ${formatUnixTimeAsLocalString(data.currently.time + defaults.cacheTimeSpan)}
+    Data is cached for 10 minutes, next update ${dayjs().to(nextUpdateTime)}
   `;
   const lastUpdatedTemplate = `
     <div class="column has-text-centered">
       <p class="last-updated has-tooltip" data-tippy-content="${lastUpdatedString}">
-        Weather data last updated ${getTimeFromUnixTime(data.currently.time)}
+        Weather data last updated ${dayjs().from(lastUpdateTime, true)} ago
       </p>
     </div>
   `;

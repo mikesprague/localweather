@@ -14,8 +14,8 @@ import {
   faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow, faCloudSleet, faWind as faWIndLight, 
   faFog, faClouds, faCloudsSun, faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado
 } from "@fortawesome/pro-light-svg-icons";
+import dayjs from "dayjs";
 import * as defaults from "./defaults";
-import { formatUnixTimeAsLocalString } from "./datetime";
 import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
 import {
@@ -379,9 +379,9 @@ export function showWeatherAlert(data) {
         <p class="message-alert-text-first">
           <em style="text-transform: capitalize;">${getHeadingText(description)}</em>
           <br>
-          Issued: ${formatUnixTimeAsLocalString(time)}
+          Issued: ${dayjs.unix(time).toString()}
           <br>
-          Expires: ${formatUnixTimeAsLocalString(expires)}
+          Expires: ${dayjs.unix(expires).toString()}
         </p>
         <p class="message-alert-text">
           ${getDescriptionText(description)}
