@@ -82,8 +82,6 @@ export function populatePrimaryData(data) {
         <div class='column'>
           <strong>NEXT 7 DAYS</strong>
           <br>
-          <i class='${getWeatherIcon(data.daily.icon)}'></i>
-          <br>
           ${data.daily.summary}
         </div>
       </div>
