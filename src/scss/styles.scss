@@ -9,6 +9,7 @@
 * {
   -moz-osx-font-smoothing: grayscale !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
+  font-display: auto;
   text-rendering: optimizeLegibility !important;
 }
 
@@ -50,7 +51,8 @@ strong {
 .title.is-1 {
   color: inherit;
   font-size: 3em;
-  letter-spacing: .4em;
+  letter-spacing: 2.5vw;
+  margin-bottom: 1vh;
   text-align: center;
   text-transform: capitalize;
 
