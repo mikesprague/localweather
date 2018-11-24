@@ -24,6 +24,11 @@ import {
   populatePrimaryData, populateWeatherData, populateWeatherAlert
 } from "./templates";
 
+export function getUnitLabel(unitType, units) {
+  // ex: getUnityLabel("visibility", "si"); -> returns: ["km", "kilometers"]
+  return defaults.unitLabels[unitType][units];
+}
+
 export function getMoonUi(data) {
   const averageLunarCycle = 29.53058867;
   const moonAge = Math.round(data.daily.data[0].moonPhase * averageLunarCycle);

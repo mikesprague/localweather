@@ -34,5 +34,55 @@ module.exports = {
   },
   isOnline: function () {
     return navigator.onLine;
+  },
+  unitLabels: {
+    "nearestStormDistance": {
+      "us": ["mi", "miles"],
+      "si": ["km", "kilometers"],
+      "uk2": ["mi", "miles"],
+      "ca": ["km", "kilometers"],
+    },
+    "precipIntensity": {
+      "us": ["in/h", "inches per hour"],
+      "si": ["mm/h", "millimeters per hour"],
+      "uk2": ["mm/h", "millimeters per hour"],
+      "ca": ["mm/h", "millimeters per hour"],
+    },
+    "precipIntensityMax": {
+      "us": ["in/h", "inches per hour"],
+      "si": ["mm/h", "millimeters per hour"],
+      "uk2": ["mm/h", "millimeters per hour"],
+      "ca": ["mm/h", "millimeters per hour"],
+    },
+    "precipAccumulation": {
+      "us": ["in", "inches"],
+      "si": ["cm", "centimeters"],
+      "uk2": ["cm", "centimeters"],
+      "ca": ["cm", "centimeters"],
+    },
+    "windSpeed": {
+      "us": ["mph", "miles per hour"],
+      "si": ["mps", "meters per second"],
+      "uk2": ["mph", "miles per hour"],
+      "ca": ["kph", "kilometers per hour"],
+    },
+    "windGust": {
+      "us": ["mph", "miles per hour"],
+      "si": ["mps", "meters per second"],
+      "uk2": ["mph", "miles per hour"],
+      "ca": ["kph", "kilometers per hour"],
+    },
+    "pressure": {
+      "us": ["mb", "millibats"],
+      "si": ["hPa", "hectopascals"],
+      "uk2": ["hPa", "hectopascals"],
+      "ca": ["hPa", "hectopascals"],
+    },
+    "visibility": {
+      "us": ["mi", "miles"],
+      "si": ["km", "kilometers"],
+      "uk2": ["mi", "miles"],
+      "ca": ["km", "kilometers"],
+    },
   }
 };
