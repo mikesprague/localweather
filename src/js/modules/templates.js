@@ -1,7 +1,7 @@
 "use strict";
 
 import * as defaults from "./defaults";
-import { getWeatherIcon, getMoonUi, registerAlertClickHandler } from "./ui";
+import { getWeatherIcon, getUnitLabel, getMoonUi, registerAlertClickHandler } from "./ui";
 import { parseLocationNameFromFormattedAddress } from "./data";
 import { getData } from "./cache";
 import dayjs from "dayjs";
@@ -128,7 +128,7 @@ export function populateWeatherData(data) {
           <i class="fas fa-fw fa-wind"></i>
           <br>
           <i class="fas fa-fw fa-chevron-circle-up" data-fa-transform="rotate-${data.currently.windBearing}"></i>
-          ${Math.round(data.currently.windSpeed)}mph
+          ${Math.round(data.currently.windSpeed)}${getUnitLabel("windSpeed", data.flags.units)[0]}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Precipitation">
@@ -149,7 +149,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fas fa-fw fa-eye"></i>
           <br>
-          ${data.currently.visibility}mi
+          ${data.currently.visibility}${getUnitLabel("visibility", data.flags.units)[0]}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
@@ -165,7 +165,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fas fa-fw fa-tachometer"></i>
           <br>
-          ${Math.round(data.currently.pressure)}mb</i>
+          ${Math.round(data.currently.pressure)}${getUnitLabel("pressure", data.flags.units)[0]}</i>
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Humidity">

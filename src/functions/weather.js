@@ -7,6 +7,8 @@ const bugsnag = require("bugsnag");
 exports.handler = function(event, context, callback) {
   const lat = event.queryStringParameters.lat;
   const lng = event.queryStringParameters.lng;
+  const units = event.queryStringParameters.units || "auto";
+  
   const callbackHeaders = {
     "Access-Control-Allow-Origin" : "*",
     "Access-Control-Allow-Headers": "Content-Type"
@@ -25,7 +27,7 @@ exports.handler = function(event, context, callback) {
       body: "Missing 'lng' parameter",
     });
   }
-  const apiUrlToCall = `https://api.darksky.net/forecast/${process.env.DARK_SKY_KEY}/${lat},${lng}/?units=auto`;
+  const apiUrlToCall = `https://api.darksky.net/forecast/${process.env.DARK_SKY_KEY}/${lat},${lng}/?units=${units}`;
   const rpOptions = {
     uri: apiUrlToCall,
     headers: {
