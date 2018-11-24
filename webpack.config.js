@@ -78,17 +78,17 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       from: "./src/service-worker.js",
-      to: "./service-worker.js",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
       from: "./src/manifest.json",
-      to: "./manifest.json",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
       from: "./src/_redirects",
-      to: "./_redirects",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
