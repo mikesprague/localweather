@@ -1,6 +1,6 @@
 const canonical = "https://localweather.io";
-const path = require("path");
 const variables = require("./src/js/modules/defaults");
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -15,6 +15,7 @@ module.exports = {
   ],
   output: {
     filename: "./js/bundle.js",
+    chunkFilename: "./js/[name].bundle.js",
     path: path.resolve("public")
   },
   mode: "production",
@@ -26,14 +27,15 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              url: false,
-              sourceMap: true
+              sourceMap: true,
+              minify: true,
             }
           },
           {
             loader: "sass-loader",
             options: {
-              sourceMap: true
+              sourceMap: true,
+              minify: true,
             }
           }
         ],
@@ -45,6 +47,9 @@ module.exports = {
     ]
   },
   optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
     minimizer: [
       new UglifyJsPlugin({
         cache: false,
@@ -55,12 +60,15 @@ module.exports = {
           compress: false
         },
       }),
-      new OptimizeCSSAssetsPlugin({}),
+      new OptimizeCSSAssetsPlugin({
+        sourceMap: true,
+      }),
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "./css/styles.css",
+      chunkFilename: "./css/[id].css",
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -78,17 +86,17 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       from: "./src/service-worker.js",
-      to: "./service-worker.js",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
       from: "./src/manifest.json",
-      to: "./manifest.json",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
       from: "./src/_redirects",
-      to: "./_redirects",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{

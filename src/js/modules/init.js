@@ -6,16 +6,14 @@ import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAl
 import { initDataUpdateCheck } from "./data";
 
 export function init() {
-  // const bugsnagClient = bugsnag("c9beb7c090034128a89c8e58f261e972", { appVersion: defaults.versionString });
-  // register service worker
   if ("serviceWorker" in navigator) {
+    // register service worker
     window.addEventListener("load", async () => {
       const registration = await navigator.serviceWorker.register("/service-worker.js", { scope: "/" });
       // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       // check for updatees
       registration.onupdatefound = () => {
         console.info(`[SW] Latest Version Installed - Reload to Activate`);
-        window.bugsnagClient.leaveBreadcrumb("[SW] Latest Version Installed - Reload to Activate");
       };
     });
   }
@@ -23,21 +21,17 @@ export function init() {
 
   window.addEventListener("offline", () => {
     // TODO: add offline handler
-    // window.bugsnagClient.leaveBreadcrumb("Browser offline");
     console.log("Browser offline");
   }, false);
 
   window.addEventListener("online", () => {
-    // window.bugsnagClient.leaveBreadcrumb("Browser online");
     console.log("Browser online");
   }, false);
 
-  // window.onerror = function (msg, url, lineNo, columnNo, error) {
-  //   // handle error
-  //   // console.error("ERROR", msg, url, lineNo, columnNo, error);
-  //   bugsnagClient.notify(error);
-  //   return false;
-  // };
+  window.onerror = function (msg, url, lineNo, columnNo, error) {
+    console.error("ERROR", msg, url, lineNo, columnNo, error);
+    // return false;
+  };
 
   if (defaults.isOnline()) {
     initCache();
