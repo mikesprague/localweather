@@ -12,6 +12,7 @@ module.exports = {
   ],
   output: {
     filename: "./js/bundle.js",
+    chunkFilename: "./js/[name].bundle.js",
     path: path.resolve(__dirname, "build")
   },
   devServer: {
@@ -42,6 +43,11 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "./css/styles.css",
@@ -62,17 +68,17 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       from: "./src/service-worker.js",
-      to: "./service-worker.js",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
       from: "./src/manifest.json",
-      to: "./manifest.json",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{
       from: "./src/_redirects",
-      to: "./_redirects",
+      to: "./",
       force: true,
     }]),
     new CopyWebpackPlugin([{

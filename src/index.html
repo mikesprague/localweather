@@ -4,15 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <script src="https://d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script>
-  <script>
-    window.bugsnagClient = bugsnag({
-      apiKey: "c9beb7c090034128a89c8e58f261e972",
-      appVersion: "<%= htmlWebpackPlugin.options.versionString %>",
-      releaseStage: "<%= htmlWebpackPlugin.options.environment %>",
-      notifyReleaseStages: [ "development", "production" ]
-    });
-  </script>
   <meta name="subject" content="<%= htmlWebpackPlugin.options.description %>">
   <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
   <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
@@ -21,26 +12,23 @@
   <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.appName %>">
   <meta name="application-name" content="<%= htmlWebpackPlugin.options.appName %>">
   <link rel="canonical" href="<%= htmlWebpackPlugin.options.canonical %>"/>
-  <link rel="manifest" href="/manifest.json">
-  <link href="/css/styles.css" rel="stylesheet">
-  <script src="/js/bundle.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" type="text/css">
-  <link rel="icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
-  <link rel="apple-touch-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
-  <link rel="mask-icon" class="favicon" href="/assets/images/favicons/weather-icon-64.png">
+  <link rel="preload" href="./js/vendors~main.bundle.js" as="script">
+  <link rel="manifest" href="./manifest.json">
+  <link href="./css/styles.css" media="screen" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" media="screen" type="text/css">
+  <link rel="icon" class="favicon" href="./assets/images/favicons/weather-icon-64.png">
+  <link rel="apple-touch-icon" class="favicon" href="./assets/images/favicons/weather-icon-64.png">
+  <link rel="mask-icon" class="favicon" href="./assets/images/favicons/weather-icon-64.png">
 </head>
 <body>
 
   <section class="section hero is-fullheight app-shell has-navbar-fixed-top">
     <div class="hero-head">
-      <div class="columns is-mobile">
-        <div class="column hidden"></div>
-      </div>
+      <div class="columns is-mobile location"></div>
     </div>
     <div class="hero-body">
       <div class="container is-fullwidth loading-message hidden"></div>
       <div class="container weather-data">
-        <div class="columns is-mobile location"></div>
         <div class="columns is-mobile is-vcentered primary-conditions-data"></div>
         <div class="columns is-mobile weather-alert hidden"></div>
         <div class="current-weather-data"></div>
@@ -54,6 +42,17 @@
     </div>
   </section>
 
+  <script src="https://d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script>
+  <script>
+    window.bugsnagClient = bugsnag({
+      apiKey: "c9beb7c090034128a89c8e58f261e972",
+      appVersion: "<%= htmlWebpackPlugin.options.versionString %>",
+      releaseStage: "<%= htmlWebpackPlugin.options.environment %>",
+      notifyReleaseStages: [ "development", "production" ]
+    });
+  </script>
+  <script src="./js/vendors~main.bundle.js"></script>
+  <script src="./js/bundle.js"></script>
   <script defer async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-33"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
