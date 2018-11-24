@@ -6,6 +6,7 @@ const cacheAlways = [
   "./manifest.json",
   "./css/styles.css",
   "./js/bundle.js",
+  "./js/vendors~main.bundle.js"
 ];
 const cacheWhenPossible = [
   "./assets/images/favicons/weather-icon-32.png",
