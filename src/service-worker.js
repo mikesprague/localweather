@@ -1,20 +1,20 @@
 const VERSION = "0.39.1";
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/css/styles.css",
-  "/js/bundle.js",
+  ".",
+  "./index.html",
+  "./manifest.json",
+  "./css/styles.css",
+  "./js/bundle.js",
 ];
 const cacheWhenPossible = [
-  "/assets/images/favicons/weather-icon-32.png",
-  "/assets/images/favicons/weather-icon-48.png",
-  "/assets/images/favicons/weather-icon-64.png",
-  "/assets/images/favicons/weather-icon-72.png",
-  "/assets/images/favicons/weather-icon-96.png",
-  "/assets/images/favicons/weather-icon-128.png",
-  "/assets/images/favicons/weather-icon-512.png",
+  "./assets/images/favicons/weather-icon-32.png",
+  "./assets/images/favicons/weather-icon-48.png",
+  "./assets/images/favicons/weather-icon-64.png",
+  "./assets/images/favicons/weather-icon-72.png",
+  "./assets/images/favicons/weather-icon-96.png",
+  "./assets/images/favicons/weather-icon-128.png",
+  "./assets/images/favicons/weather-icon-512.png",
   "https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMR7eS2Ao.woff2",
   "https://fonts.gstatic.com/s/opensanscondensed/v12/z7NHdQDnbTkabZAIOl9il_O6KJj73e7Fd_-7suD8Rb2V-ggZSw.woff2",
   "https://fonts.gstatic.com/s/opensanscondensed/v12/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMR7eS2Ao.woff2",
