@@ -35,7 +35,6 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.1.6",
-    "@fortawesome/fontawesome-pro": "^5.5.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-brands-svg-icons": "^5.5.0",
     "@fortawesome/pro-light-svg-icons": "^5.5.0",
