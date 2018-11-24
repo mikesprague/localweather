@@ -6,15 +6,14 @@ import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAl
 import { initDataUpdateCheck } from "./data";
 
 export function init() {
-  // register service worker
   if ("serviceWorker" in navigator) {
+    // register service worker
     window.addEventListener("load", async () => {
       const registration = await navigator.serviceWorker.register("/service-worker.js", { scope: "/" });
       // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
       // check for updatees
       registration.onupdatefound = () => {
         console.info(`[SW] Latest Version Installed - Reload to Activate`);
-        window.bugsnagClient.leaveBreadcrumb("[SW] Latest Version Installed - Reload to Activate");
       };
     });
   }
@@ -30,10 +29,8 @@ export function init() {
   }, false);
 
   window.onerror = function (msg, url, lineNo, columnNo, error) {
-    // handle error
     console.error("ERROR", msg, url, lineNo, columnNo, error);
-    // bugsnagClient.notify(error);
-    return false;
+    // return false;
   };
 
   if (defaults.isOnline()) {
