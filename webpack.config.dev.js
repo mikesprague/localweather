@@ -12,6 +12,7 @@ module.exports = {
   ],
   output: {
     filename: "./js/bundle.js",
+    chunkFilename: "./js/[name].bundle.js",
     path: path.resolve(__dirname, "build")
   },
   devServer: {
@@ -41,6 +42,11 @@ module.exports = {
         exclude: /node_modules/,
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
