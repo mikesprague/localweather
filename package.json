@@ -27,7 +27,7 @@
     "name": "Michael Sprague",
     "email": "mikesprague@gmail.com"
   },
-  "license": "GNU GPLv3",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mikesprague/local-weather/issues"
   },
