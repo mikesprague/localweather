@@ -1,7 +1,7 @@
 "use strict";
 
 import * as defaults from "./defaults";
-import { getWeatherIcon, getUnitLabel, getMoonUi, registerAlertClickHandler } from "./ui";
+import { getWeatherIcon, getUnitLabel, getMoonUi } from "./ui";
 import { parseLocationNameFromFormattedAddress } from "./data";
 import { getData } from "./cache";
 import dayjs from "dayjs";
@@ -216,11 +216,6 @@ export function populateWeatherData(data) {
 //   </p>
 // </div>
 
-
-
-
-
-
 export function populateForecastData(data, numDays = 7) {
   const forecastWrappers = `
     <div class="column is-mobile has-text-centered forecast-1 is-one-quarter-mobile"></div>
@@ -286,24 +281,6 @@ export function populateHourlyData(data, numHours = 12) {
     let hourlyEl = document.querySelector(`.hourly-${next}`);
     hourlyEl.innerHTML = hourlyTemplate;
   }
-}
-
-export function populateAlertMessage(title, msg, type, icon) {
-  const alertMessageTemplate = `
-    <article class="message is-${type}">
-      <div class="message-header">
-        <p><i class="${icon}"></i> ${title}</p>
-        <span class="icon"><i class="fas fa-fw fa-plus-square"></i></span>
-      </div>
-      <div class="message-body">
-        <p>${msg}</p>
-      </div>
-    </article>
-  `;
-  const alertContainer = document.querySelector(".alert-container");
-  alertContainer.innerHTML = alertMessageTemplate;
-  document.querySelector("article .message-body").classList.add(defaults.hideClassName);
-  registerAlertClickHandler();
 }
 
 export function populateLastUpdated(data) {
