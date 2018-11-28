@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/pro-solid-svg-icons";
 import {
   faTint, faCode,
-  faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow, faCloudSleet, faWind as faWIndLight, 
+  faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow, faCloudSleet, faWind as faWIndLight,
   faFog, faClouds, faCloudsSun, faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado
 } from "@fortawesome/pro-light-svg-icons";
 import dayjs from "dayjs";
@@ -19,8 +19,8 @@ import * as defaults from "./defaults";
 import { getData, setData, useCache } from "./cache";
 import { getLocationAndPopulateAppData } from "./data";
 import {
-  populateMessage,populateErrorMessage, populateAlertMessage, populateFooter, 
-  populateForecastData, populateHourlyData, populateLastUpdated, populateLocation, 
+  populateMessage,populateErrorMessage, populateFooter, populateForecastData,
+  populateHourlyData, populateLastUpdated, populateLocation,
   populatePrimaryData, populateWeatherData, populateWeatherAlert
 } from "./templates";
 
@@ -343,62 +343,50 @@ export function geoError(error) {
   showErrorAlert(errorMessage);
 }
 
-export function registerAlertClickHandler() {
-  // document.querySelector(".message-header > .delete").addEventListener("click", (event) => {
-  document.querySelector(".message-header").addEventListener("click", (event) => {
-    // document.querySelector(".message-header > .delete").removeEventListener("click", event);
-    // this.parentNode.parentNode.remove();
-    document.querySelector("article .message-body").classList.toggle(defaults.hideClassName);
-    document.querySelector("article .message-header .icon svg").classList.toggle("fa-plus-square");
-    document.querySelector("article .message-header .icon svg").classList.toggle("fa-minus-square");
-
-  });
-}
-
-export function showAlert(
-  title,
-  msg,
-  type = "danger", // type: primary | secondary | info | success | warning | danger | light | dark
-  icon = "fas fa-fw fa-exclamation-triangle" // icon: any valid font awesome string
-) {
-  populateAlertMessage(title, msg, type, icon);
-}
-
-export function parseWeatherAlertDescription(weatherAlert) {
+export function parseWeatherAlert(weatherAlert) {
   const alertParts = weatherAlert.split("... ");
   const headingText = alertParts.shift().replace(/\.\.\./g, " ").trim();
   const descriptionText = alertParts.join(" ").trim();
+  const bodyParts = descriptionText.split("* ");
+
+  let bulletPoints = "";
+  if (bodyParts.length > 1) {
+    bulletPoints = bodyParts.filter(part => {
+      return part.trim().length;
+    }).map(part => {
+      return `<li><strong>${part.replace("...", "</strong> ")}</li>`;
+    }).join("\n");
+  }
+
   return {
     heading: headingText,
-    bodyText: descriptionText
+    bodyText: descriptionText,
+    bulletPoints: bulletPoints
   };
 }
 
 export function showWeatherAlert(data) {
   const { title, time, expires, description, uri, severity } = data[0];
-  const { heading, bodyText } = parseWeatherAlertDescription(description);
+  const { heading, bodyText, bulletPoints } = parseWeatherAlert(description);
+
+  if (!bulletPoints.length) {
+    bulletPoints = `<li><strong>DETAILS</strong> ${descriptionText}<br></li>`;
+  }
 
   swal({
     title: `${title}`,
     html: `
-        <p class="message-alert-text-first">
-          <em style="text-transform: capitalize;">${getHeadingText(description)}</em>
-          <br>
-          Issued: ${dayjs.unix(time).toString()}
-          <br>
-          Expires: ${dayjs.unix(expires).toString()}
-        </p>
-        <p class="message-alert-text">
-          ${getDescriptionText(description)}
-        </p>
+        <div class="content">
+        <p class="weather-alert-heading has-text-left">${heading}</p>
+        <ul class="weather-alert-bullets has-text-left">
+          <li><strong>ISSUED</strong> ${dayjs.unix(time).format("dddd, MMMM D, YYYY at hh:mm:ss A")}</li>
+          <li><strong>EXPIRES</strong> ${dayjs.unix(expires).format("dddd, MMMM D, YYYY at hh:mm:ss A")}</li>
+          ${bulletPoints}
+        </ul>
+        </div>
     `,
-    showCancelButton: true,
-    cancelButtonText: "Close",
-    confirmButtonText: `View full ${severity}`,
+    confirmButtonText: "Close",
     confirmButtonColor: `${defaults.themeColor}`,
-    onClose: () => {
-      window.open(uri);
-    }
   });
 }
 
@@ -415,22 +403,7 @@ export function initWeatherAlerts(data) {
 }
 
 export function getWeatherIcon(icon) {
-  const iconMap = [];
-  iconMap["clear-day"] = "fal fa-fw fa-sun";
-  iconMap["clear-night"] = "fal fa-fw fa-moon-stars";
-  iconMap["rain"] = "fal fa-fw fa-cloud-rain";
-  iconMap["snow"] = "fal fa-fw fa-cloud-snow";
-  iconMap["sleet"] = "fal fa-fw fa-sleet";
-  iconMap["wind"] = "fal fa-fw fa-wind";
-  iconMap["fog"] = "fal fa-fw fa-fog";
-  iconMap["cloudy"] = "fal fa-fw fa-clouds";
-  iconMap["partly-cloudy-day"] = "fal fa-fw fa-clouds-sun";
-  iconMap["partly-cloudy-night"] = "fal fa-fw fa-clouds-moon";
-  iconMap["hail"] = "fal fa-fw fa-cloud-hail";
-  iconMap["hurricane"] = "fal fa-fw fa-hurricane";
-  iconMap["thunderstorm"] = "fal fa-fw fa-thunderstorm";
-  iconMap["tornado"] = "fal fa-fw fa-tornado";
-  return iconMap[`${icon}`];
+  return defaults.iconMap[icon];
 }
 
 export function initTooltips() {
@@ -462,14 +435,14 @@ export function initFontAwesomeIcons() {
     faCloudSnow,
     faCloudsSun,
     faCode,
-    faDewpoint, 
+    faDewpoint,
     faExclamationTriangle,
     faExternalLinkAlt,
     faEye,
     faFog,
     faGlobe,
     faGlobeAfrica,
-    faHumidity, 
+    faHumidity,
     faHurricane,
     faLongArrowAltDown,
     faLongArrowAltUp,
@@ -481,7 +454,7 @@ export function initFontAwesomeIcons() {
     faSpinner,
     faSun,
     faSunLight,
-    faSunrise, 
+    faSunrise,
     faSunset,
     faSyncAlt,
     faTachometer,

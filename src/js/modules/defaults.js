@@ -24,7 +24,7 @@ module.exports = {
   themeColor: "#133150",
   timerHandle: 0,
   title: "LocalWeather.io (powered by Dark Sky)",
-  versionString: "v0.42.1",
+  versionString: "v0.43.0",
   weatherDataKey: "weatherData",
   apiUrl: function () {
     return window.location.hostname === "localhost" ? "http://localhost:9000" : `https://${window.location.hostname}/.netlify/functions`;
@@ -34,6 +34,22 @@ module.exports = {
   },
   isOnline: function () {
     return navigator.onLine;
+  },
+  iconMap: {
+    "clear-day": "fal fa-fw fa-sun",
+    "clear-night": "fal fa-fw fa-moon-stars",
+    "rain": "fal fa-fw fa-cloud-rain",
+    "snow": "fal fa-fw fa-cloud-snow",
+    "sleet": "fal fa-fw fa-sleet",
+    "wind": "fal fa-fw fa-wind",
+    "fog": "fal fa-fw fa-fog",
+    "cloudy": "fal fa-fw fa-clouds",
+    "partly-cloudy-day": "fal fa-fw fa-clouds-sun",
+    "partly-cloudy-night": "fal fa-fw fa-clouds-moon",
+    "hail": "fal fa-fw fa-cloud-hail",
+    "hurricane": "fal fa-fw fa-hurricane",
+    "thunderstorm": "fal fa-fw fa-thunderstorm",
+    "tornado": "fal fa-fw fa-tornado",
   },
   unitLabels: {
     "nearestStormDistance": {
