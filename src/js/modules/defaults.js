@@ -35,6 +35,22 @@ module.exports = {
   isOnline: function () {
     return navigator.onLine;
   },
+  iconMap: {
+    "clear-day": "fal fa-fw fa-sun",
+    "clear-night": "fal fa-fw fa-moon-stars",
+    "rain": "fal fa-fw fa-cloud-rain",
+    "snow": "fal fa-fw fa-cloud-snow",
+    "sleet": "fal fa-fw fa-sleet",
+    "wind": "fal fa-fw fa-wind",
+    "fog": "fal fa-fw fa-fog",
+    "cloudy": "fal fa-fw fa-clouds",
+    "partly-cloudy-day": "fal fa-fw fa-clouds-sun",
+    "partly-cloudy-night": "fal fa-fw fa-clouds-moon",
+    "hail": "fal fa-fw fa-cloud-hail",
+    "hurricane": "fal fa-fw fa-hurricane",
+    "thunderstorm": "fal fa-fw fa-thunderstorm",
+    "tornado": "fal fa-fw fa-tornado",
+  },
   unitLabels: {
     "nearestStormDistance": {
       "us": ["mi", "miles"],
