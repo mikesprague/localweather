@@ -4,6 +4,8 @@ const request = require("request");
 const rp = require("request-promise");
 const bugsnag = require("bugsnag");
 
+bugsnag.register(`${process.env.BUGSNAG_KEY}`);
+
 exports.handler = function(event, context, callback) {
   const lat = event.queryStringParameters.lat;
   const lng = event.queryStringParameters.lng;
