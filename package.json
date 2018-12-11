@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.44.0",
+  "version": "0.44.1",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "./public/index.html",
@@ -44,7 +44,7 @@
     "compression-webpack-plugin": "^2.0.0",
     "concurrently": "^4.1.0",
     "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^2.0.0",
+    "css-loader": "^1.0.1",
     "dayjs": "^1.7.7",
     "dotenv": "^6.2.0",
     "eslint": "^5.10.0",
