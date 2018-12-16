@@ -609,45 +609,45 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@fortawesome/fontawesome-common-types@^0.2.9":
-  version "0.2.9"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.9.tgz#f307509ec8ac542965ae1ef96a9be0ebea837949"
-  integrity sha512-tLNNifyheh8mmgzOgxl2XSe03usa1UMTZNLDre6gxvqgIwCDi8Wya2D1MMMry/nc7vsqWf33KEF6L+ULtXZk2A==
+"@fortawesome/fontawesome-common-types@^0.2.10":
+  version "0.2.10"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.10.tgz#ae0e6858daf6f9ff1e2396f9fbea87b244628343"
+  integrity sha512-FbrzSgFDzoC6Dm8w7gCWxgdffFbYV7O/4THOtYDQEplZVOpYIA3vjgnxCXApY49YaIQ91mxIGROS3d7wS+fO3A==
 
-"@fortawesome/fontawesome-svg-core@^1.2.9":
-  version "1.2.9"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.9.tgz#73fd513e219e7e781a3a06221691f42a8f2ab065"
-  integrity sha512-XErESbPjLQ9t9t0oCTwSKX2rZCqjVm3MRETErbA7lPszt3Sx/4d2oBQZ/oIsVr5O97ev0ECshpxrjEjsl/CjmA==
+"@fortawesome/fontawesome-svg-core@^1.2.10":
+  version "1.2.10"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.10.tgz#235f82b209f36c94792a79b9aea127dfa29651c9"
+  integrity sha512-x9rYQ4jPVWnXgsle/MzaV2qDwNfc1Gm5DB0T76WOp4RDZ/esjEE0OvKtMa2qFvG1NqYbelgN4gChA+ttAqPtaw==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.9"
+    "@fortawesome/fontawesome-common-types" "^0.2.10"
 
-"@fortawesome/free-brands-svg-icons@^5.6.0":
-  version "5.6.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.6.0.tgz#1d80c0ba7f9dbecc3dcccdc95b136d7fba60e4b9"
-  integrity sha512-fMCUewReABIPWmtl+ZyY8GmO1VDYEvemnEIbNKE8mJD54TbMC+ZpXt4YE2WlsgHko5bseotx+h4gUhqcbu1ibA==
+"@fortawesome/free-brands-svg-icons@^5.6.1":
+  version "5.6.1"
+  resolved "https://npm.fontawesome.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.6.1.tgz#5f96bb8eb17cc62f962546e7d0e76086bfcec696"
+  integrity sha512-rrlucemW9+Az26+faQ9O7D50PPrBD+0ATi86yufqnyy44HapoWPuu/0AJhdUCV4hDEWMrAVAvGUEVg9oxHoTHQ==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.9"
+    "@fortawesome/fontawesome-common-types" "^0.2.10"
 
-"@fortawesome/pro-light-svg-icons@^5.6.0":
-  version "5.6.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-light-svg-icons/-/pro-light-svg-icons-5.6.0.tgz#e272f8a0876640918262f9b42cb645e1969ec4e4"
-  integrity sha512-deIMfDaOpHnuv8pveWeYHjp80jvbrruiKvKI08BKze9te5SxGOQhVhXSw9vRuC10Hp2VeE2wotVlS0kRrFVTQg==
+"@fortawesome/pro-light-svg-icons@^5.6.1":
+  version "5.6.1"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-light-svg-icons/-/pro-light-svg-icons-5.6.1.tgz#965c072297fe64d7d0dae6e904caa29272ad47ab"
+  integrity sha512-eYaazW5s75jkcsTqck+mQs+zNj8HIcRSMrBXFsGbvG7LGaRBw1fHkiIBqFlxC5S9E0nt0nibGT4MusBu2QUOHg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.9"
+    "@fortawesome/fontawesome-common-types" "^0.2.10"
 
-"@fortawesome/pro-regular-svg-icons@^5.6.0":
-  version "5.6.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/pro-regular-svg-icons-5.6.0.tgz#375f266bbbfdb2c39799695ed0bb6e06d9deb764"
-  integrity sha512-p5w1zPVLsSlGAhYFLm62PPB6hAb4xKyKXcs4Ph4sfNmgBnIz+kAyXCCRwLbyLjIz5CS1Ji8xA3Rk1QSeHBx69w==
+"@fortawesome/pro-regular-svg-icons@^5.6.1":
+  version "5.6.1"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/pro-regular-svg-icons-5.6.1.tgz#c956cf0bf3be97daa3d15019587e50d3c422a5f1"
+  integrity sha512-3FOy4EZNuAPuJnq4alAEcWO9h95GRhmLjdZKcTTjC1nMMTXu+yX12rMOAtSMmgGt8sOMT2agF67nCjgKDoekNA==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.9"
+    "@fortawesome/fontawesome-common-types" "^0.2.10"
 
-"@fortawesome/pro-solid-svg-icons@^5.6.0":
-  version "5.6.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/pro-solid-svg-icons-5.6.0.tgz#92194c3e09a60f141bd28d890ef8d608b92b7004"
-  integrity sha512-H9lc2bs8H1b9XO89Nyqucmzm84nVHNlQ3Z8JGtHHcwuyj1mVHUJw8it4SrDBv33lXnoGT+60Z7w5ba0cRpvoPA==
+"@fortawesome/pro-solid-svg-icons@^5.6.1":
+  version "5.6.1"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/pro-solid-svg-icons-5.6.1.tgz#7f6eee68dacc9d4f519d76ca0eaf6ba7fd2ae510"
+  integrity sha512-4nPqU4q1KgIgDO7QJN6uuVqagH+X77DmoQawTwrPs2CPkbtfJTNUn8N5ctXQWpJa/cYs1nxCNS5tkInYUMMq5Q==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.9"
+    "@fortawesome/fontawesome-common-types" "^0.2.10"
 
 "@iarna/toml@^2.0.0":
   version "2.2.0"
@@ -2717,10 +2717,10 @@ date-now@^0.1.4:
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
 
-dayjs@^1.7.7:
-  version "1.7.7"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.7.7.tgz#8df20f78ac2476e3f5348ef49f8f22ebc3016370"
-  integrity sha512-Qlkiu0NNDpYwhk0syK4ImvAl/5YnsEMkvC2O123INviGeOA3Q8s5VyVkZzmN5SC7Wv9bb1+rfwO+uSqtHB4UWw==
+dayjs@^1.7.8:
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.7.8.tgz#05d288f8d4b2140110cc1519cfe317d6f1f11a3c"
+  integrity sha512-Gp4Y5KWeSri0QOWGzHQz7VrKDkfEpS92dCLK7P8hYowRFbaym1vj3d6CoHio3apSS4KSi/qb5Edemv26IN5Hfg==
 
 debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.3, debug@^2.6.8:
   version "2.6.9"
@@ -5829,10 +5829,10 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
-netlify-cli@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.5.0.tgz#994ace0f909918c7ff4a38d735263aee799ae9fc"
-  integrity sha512-x8GedD6kQNel1NHwcJDHdVbiAUsyW9bzQ6PsowqJWWOZb2ELx0xpzEwR3DBJLftncfHkYVfviK+fFJvn4EvkjQ==
+netlify-cli@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.5.1.tgz#2648a58b63beda1c7277cdaec6101fca183a9087"
+  integrity sha512-r35S5Ox1qlO9bxWvUgmUx/jvYhugcQdy+0K98v82b4V60Tga7xFMxlCER7GzgImGVtuwOmoPSzKNcl335zKpqA==
   dependencies:
     "@iarna/toml" "^2.0.0"
     "@oclif/command" "^1"
@@ -5873,10 +5873,10 @@ netlify-cli@^2.5.0:
     uuid "^3.3.2"
     write-file-atomic "^2.3.0"
 
-netlify-lambda@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.1.0.tgz#e90aeba39e2e427eb040df0522e6050280f68f56"
-  integrity sha512-ctZPhBWIu4/1aKdnraeLP1nNfdHug0J38rqOvEYeWNRB9bqMfTGf1A0wN+o4YLeuGPoCyKecfARWEB1E+flJFQ==
+netlify-lambda@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.1.1.tgz#6f824502f1ed7c3aa2267edea673060b3e3639c9"
+  integrity sha512-/wfjyDLBk4Qfatl7UYJfsV5oArJEbGwLf/IO6V/ii0FvtMDfVbILZSICeuZqLiQgHHYGmTe1wrqZPGBiBdZ28A==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
@@ -8317,10 +8317,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^7.32.2:
-  version "7.32.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.32.2.tgz#bda42fe8a50f5f6445a1684ed80f87840e0f5dd1"
-  integrity sha512-BDdr3UdMi2PVLwNTbg8gXFDW0+ZAvO4r5aWbburfBuQEsszIYVM6Oh/A9bGIKQQczurFXx/HVINESszcBzPA0Q==
+sweetalert2@^7.32.4:
+  version "7.32.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.32.4.tgz#41afcba8595bceab637ce00f261b5d2dc85dc8d1"
+  integrity sha512-KQbqbG+pSpgGn7UAJNKfaXlCt/KvaEnDKTN9mQB5wYLpQoZ380MFZfPcyHQB90d6rip7nhrltxaRU0MFXFsyog==
 
 symbol-observable@1.0.1:
   version "1.0.1"
@@ -8970,10 +8970,10 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webpack-bugsnag-plugins@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/webpack-bugsnag-plugins/-/webpack-bugsnag-plugins-1.2.3.tgz#34c606c84162d7a43582c1aa69f2a5908b0f5a00"
-  integrity sha512-c5cwyyNG4Z3vGJx0gku7D2xkjqzKd+b3kPAnzVWztpS91Aw3fM9RqGoGxai95Zrr/DPNYtb8fNTWJx75J7zV6w==
+webpack-bugsnag-plugins@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/webpack-bugsnag-plugins/-/webpack-bugsnag-plugins-1.2.4.tgz#37915e5e7c20b9f1f51938874100d5ed8b2caad1"
+  integrity sha512-vin7G+vf+glhkWEzyM6+YWwgH9uu8HxHhg9eVCmci2eqeBkrB+n4rfrkiqzlQJ1pgCif1niH3njMqc9ggReJXw==
   dependencies:
     bugsnag-build-reporter "^1.0.1"
     bugsnag-sourcemaps "^1.0.5"
