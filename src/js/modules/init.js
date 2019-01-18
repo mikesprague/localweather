@@ -2,7 +2,7 @@
 
 import * as defaults from "./defaults";
 import { initCache } from "./cache";
-import { initFontAwesomeIcons, initTooltips, showGeolocationAlert, showInstallAlert, showLoading } from "./ui";
+import { initFontAwesomeIcons, initTooltips, showGeolocationAlert } from "./ui";
 import { initDataUpdateCheck } from "./data";
 
 export function init() {
@@ -16,8 +16,15 @@ export function init() {
         console.info(`[SW] Latest Version Installed - Reload to Activate`);
       };
     });
+
+    // this.clients.matchAll().then(clients => {
+    //   clients.forEach(client => client.postMessage("Latest Version Installed"));
+    // });
   }
 
+  // window.addEventListener("message", event => { 
+  //   console.log(event);
+  // }, false);
 
   window.addEventListener("offline", () => {
     // TODO: add offline handler
@@ -37,9 +44,8 @@ export function init() {
     initCache();
     showGeolocationAlert();
     initDataUpdateCheck();
-    initTooltips();
   } else {
     initFontAwesomeIcons();
-    initTooltips();
   }
+  initTooltips();
 }

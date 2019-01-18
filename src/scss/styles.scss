@@ -51,10 +51,12 @@ strong {
 .title.is-1 {
   color: inherit;
   font-size: 3em;
-  letter-spacing: 2.5vw;
-  // margin-bottom: 1vh;
   text-align: center;
   text-transform: capitalize;
+
+  .stretch-text {
+    font-size: fit-width;
+  }
 
   small {
     color: $color-text-secondary;
