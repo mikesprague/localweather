@@ -24,15 +24,15 @@ module.exports = {
   themeColor: "#133150",
   timerHandle: 0,
   title: "LocalWeather.io (powered by Dark Sky)",
-  versionString: "v0.44.2",
+  versionString: "v0.45.0",
   weatherDataKey: "weatherData",
-  apiUrl: function () {
+  apiUrl() {
     return window.location.hostname === "localhost" ? "http://localhost:9000" : `https://${window.location.hostname}/.netlify/functions`;
   },
-  canonical: function () {
+  canonical() {
     return `https://${window.location.hostname}/`;
   },
-  isOnline: function () {
+  isOnline() {
     return navigator.onLine;
   },
   iconMap: {
