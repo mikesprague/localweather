@@ -37,21 +37,35 @@ export function populateErrorMessage(messageText) {
   messageEl.innerHTML = messageTemplate;
 }
 
+const addLocationNameSpacing = () => {
+  const locationNameEl = document.querySelector(".location-name");
+  const locationNameLetters = locationNameEl.textContent.split("");
+  const updatedLetters = locationNameLetters.map(letter => {
+    console.log(`<span class="location-name-letter">${letter}</span>`);
+    return `<span class="location-name-letter">${letter}</span>`;
+  });
+  const placeHolder = '<span class="location-name-letter"></span>';
+  updatedLetters.push(placeHolder.repeat(3));
+  updatedLetters.unshift(placeHolder.repeat(3));
+  locationNameEl.innerHTML=updatedLetters.join("");
+};
+
 export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
   const locationTemplate = `
     <div class="column">
-      <h1 class="title is-1 has-text-centered has-tooltip" data-tippy-content="
+      <h1 class="title is-1 has-text-centered has-tooltip location-name" data-tippy-content="
         <i class='fas fa-fw fa-globe'></i>
         <strong>${locationName}</strong>
         <br>
         <i class='fas fa-fw fa-map-marker-alt'></i>
         ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
-      "><span class='stretch-text'>${parseLocationNameFromFormattedAddress(locationName)}</span></h1>
+      ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
     </div>
   `;
   const locationEl = document.querySelector(".location");
   locationEl.innerHTML = locationTemplate;
+  addLocationNameSpacing();
 }
 
 export function populatePrimaryData(data) {

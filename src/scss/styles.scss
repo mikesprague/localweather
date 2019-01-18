@@ -17,6 +17,10 @@
   outline: none;
 }
 
+html {
+  font-size: 16px;
+}
+
 html,
 body {
   background-color: $color-loading;
@@ -50,13 +54,10 @@ strong {
 
 .title.is-1 {
   color: inherit;
+  display: flex;
   font-size: 3em;
+  justify-content: space-between;
   text-align: center;
-  text-transform: capitalize;
-
-  .stretch-text {
-    font-size: fit-width;
-  }
 
   small {
     color: $color-text-secondary;
@@ -349,6 +350,17 @@ hr {
     font-size: 2rem;
   }
 }
+
+// @media screen and (min-width: 320px) {
+//   html {
+//     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+//   }
+// }
+// @media screen and (min-width: 1000px) {
+//   html {
+//     font-size: 22px;
+//   }
+// }
 
 .has-tooltip {
   cursor: pointer;
