@@ -47,7 +47,7 @@ export function populateLocation(data) {
         <br>
         <i class='fas fa-fw fa-map-marker-alt'></i>
         ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
-      ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
+      "><span class='stretch-text'>${parseLocationNameFromFormattedAddress(locationName)}</span></h1>
     </div>
   `;
   const locationEl = document.querySelector(".location");
