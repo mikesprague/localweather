@@ -57,6 +57,7 @@ strong {
   display: flex;
   font-size: 3em;
   justify-content: space-between;
+  margin-bottom: .25em;
   text-align: center;
 
   small {
@@ -195,11 +196,37 @@ strong {
 .snowy {
   background-color: $color-snowy;
   color: $color-gray-dark;
+
+  .powered-by-dark-sky {
+    a {
+      color: $color-gray-dark;
+
+      &:hover,
+      &:active {
+        border-bottom: 1px dashed $color-gray-dark;
+        border-top: 1px dashed $color-gray-dark;
+        color: $color-gray-dark;
+      }
+    }
+  }
 }
 
 .snowy-night {
   background-color: $color-snowy-night;
   color: $color-gray-darkest;
+
+  .powered-by-dark-sky {
+    a {
+      color: $color-gray-darkest;
+
+      &:hover,
+      &:active {
+        border-bottom: 1px dashed $color-gray-darkest;
+        border-top: 1px dashed $color-gray-darkest;
+        color: $color-gray-darkest;
+      }
+    }
+  }
 }
 
 .current-weather-data {
@@ -253,7 +280,7 @@ strong {
 }
 
 .powered-by-dark-sky {
-  font-size: .65em;
+  font-size: .6em;
   margin-top: .25em;
 
   a {
