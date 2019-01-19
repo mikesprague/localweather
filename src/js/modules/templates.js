@@ -41,7 +41,6 @@ const addLocationNameSpacing = () => {
   const locationNameEl = document.querySelector(".location-name");
   const locationNameLetters = locationNameEl.textContent.split("");
   const updatedLetters = locationNameLetters.map(letter => {
-    console.log(`<span class="location-name-letter">${letter}</span>`);
     return `<span class="location-name-letter">${letter}</span>`;
   });
   const placeHolder = '<span class="location-name-letter"></span>';
@@ -122,11 +121,11 @@ export function populatePrimaryData(data) {
 export function populateWeatherAlert(title) {
   const weatherAlertTemplate = `
     <div class="column has-text-centered">
-      <h3 class="subtitle is-2 has-text-centered">
-        <a href="#" class="text-color-danger link-weather-alert">
+      <span class="tag is-large tag-weather-alert">
+        <a href="#" class="link-weather-alert">
           <i class="fas fa-fw fa-exclamation-triangle"></i> ${title}
         </a>
-      </h3>
+      </span>
     </div>
   `;
   const weatherAlertEl = document.querySelector(".weather-alert");

@@ -94,6 +94,20 @@ strong {
   }
 }
 
+.link-weather-alert {
+  color: $color-text-night;
+  font-weight: 700;
+
+  &:hover {
+    color: $color-text-default;
+    font-weight: 700;
+  }
+}
+
+.tag-weather-alert {
+  background-color: $color-text-danger !important;
+}
+
 .message-alert-text,
 .message-alert-text-first,
 .message-alert-text-heading {

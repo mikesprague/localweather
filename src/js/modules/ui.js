@@ -344,14 +344,15 @@ export function geoError(error) {
 }
 
 export function parseWeatherAlert(weatherAlert) {
-  const alertParts = weatherAlert.split("... ");
+  const alertParts = weatherAlert.split("*");
   const headingText = alertParts.shift().replace(/\.\.\./g, " ").trim();
   const descriptionText = alertParts.join(" ").trim();
-  const bodyParts = descriptionText.split("* ");
+  console.log(weatherAlert);
+  console.log(alertParts);
 
   let bulletPoints = "";
-  if (bodyParts.length > 1) {
-    bulletPoints = bodyParts.filter(part => {
+  if (alertParts.length > 1) {
+    bulletPoints = alertParts.filter(part => {
       return part.trim().length;
     }).map(part => {
       return `<li><strong>${part.replace("...", "</strong> ")}</li>`;
