@@ -325,16 +325,16 @@ hr {
 //   }
 // }
 
-@media only screen and (max-width: 440px) {
-  body {
-    font-size: 1.25rem;
-  }
-}
+// @media only screen and (max-width: 440px) {
+//   body {
+//     font-size: 1.25rem;
+//   }
+// }
 
 @media only screen and (max-width: 500px) {
-  body {
-    font-size: 1.35rem;
-  }
+  // body {
+  //   font-size: 1.35rem;
+  // }
 
   .current-weather-data {
     p {
@@ -380,28 +380,28 @@ hr {
 
 }
 
-@media only screen and (min-width: 900px) {
-  body {
-    font-size: 1.5rem;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  body {
-    font-size: 2rem;
-  }
-}
-
-// @media screen and (min-width: 320px) {
-//   html {
-//     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+// @media only screen and (min-width: 900px) {
+//   body {
+//     font-size: 1.5rem;
 //   }
 // }
-// @media screen and (min-width: 1000px) {
-//   html {
-//     font-size: 22px;
+
+// @media only screen and (min-width: 1200px) {
+//   body {
+//     font-size: 2rem;
 //   }
 // }
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
 
 .has-tooltip {
   cursor: pointer;
