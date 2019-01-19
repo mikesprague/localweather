@@ -28,14 +28,12 @@ module.exports = {
             loader: "css-loader",
             options: {
               sourceMap: true,
-              minify: true,
             }
           },
           {
             loader: "sass-loader",
             options: {
               sourceMap: true,
-              minify: true,
             }
           }
         ],
