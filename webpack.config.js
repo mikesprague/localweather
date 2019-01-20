@@ -1,22 +1,25 @@
 const canonical = "https://localweather.io";
 const variables = require("./src/js/modules/defaults");
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
+const WebPackBar = require("webpackbar");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: [
-    "./src/js/app.js",
-    "./src/scss/styles.scss",
+    "./src/js/app.js"
   ],
+  devtool: "source-map",
   output: {
     filename: "./js/bundle.js",
     chunkFilename: "./js/[name].bundle.js",
-    path: path.resolve("public")
+    path: path.resolve(__dirname, "public"),
   },
   mode: "production",
   module: {
@@ -31,16 +34,39 @@ module.exports = {
             }
           },
           {
+            loader: "postcss-loader",
+            options: {
+              plugins() {
+                return [autoprefixer({
+                  browsers: "last 3 versions"
+                })];
+              },
+            },
+          },
+          {
             loader: "sass-loader",
             options: {
               sourceMap: true,
             }
-          }
+          },
         ],
       },
       {
-        test: /\.js$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
+        use: [{
+          loader: "babel-loader",
+          options: {
+            "presets": [
+              [
+                "@babel/preset-env",
+                {
+                  "useBuiltIns": "entry"
+                }
+              ]
+            ]
+          },
+        }],
       }
     ]
   },
@@ -58,12 +84,11 @@ module.exports = {
           compress: false
         },
       }),
-      new OptimizeCSSAssetsPlugin({
-        sourceMap: true,
-      }),
+      new OptimizeCSSAssetsPlugin(),
     ]
   },
   plugins: [
+    new WebPackBar(),
     new MiniCssExtractPlugin({
       filename: "./css/styles.css",
       chunkFilename: "./css/[id].css",

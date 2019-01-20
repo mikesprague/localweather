@@ -220,7 +220,7 @@ export function reloadWindow() {
 }
 
 export function showInstallAlert() {
-  swal({
+  swal.fire({
     title: `${defaults.appName}`,
     text: "Latest Version Installed",
     confirmButtonText: "Reload to Activate",
@@ -233,7 +233,7 @@ export function showInstallAlert() {
 
 export function showErrorAlert(errorMessage, buttonText = "Reload to Try Again") {
   hideLoading();
-  swal({
+  swal.fire({
     title: `${defaults.appName}`,
     html: `${errorMessage}`,
     confirmButtonText: `${buttonText}`,
@@ -247,7 +247,7 @@ export function showErrorAlert(errorMessage, buttonText = "Reload to Try Again")
 
 export function showGeolocationAlert() {
   if (document.cookie.replace(/(?:(?:^|.*;\s*)approvedLocationSharing\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true") {
-    swal({
+    swal.fire({
       title: `${defaults.appName}`,
       html: `
         <p class="message-alert-text-heading has-text-info">
@@ -374,16 +374,16 @@ export function showWeatherAlert(data) {
     bulletPoints = `<li><strong>DETAILS</strong> ${descriptionText}<br></li>`;
   }
 
-  swal({
+  swal.fire({
     title: `${title}`,
     html: `
         <div class="content">
-        <p class="weather-alert-heading has-text-left">${heading}</p>
-        <ul class="weather-alert-bullets has-text-left">
-          <li><strong>ISSUED</strong> ${dayjs.unix(time).format("dddd, MMMM D, YYYY at hh:mm:ss A")}</li>
-          <li><strong>EXPIRES</strong> ${dayjs.unix(expires).format("dddd, MMMM D, YYYY at hh:mm:ss A")}</li>
-          ${bulletPoints}
-        </ul>
+          <p class="weather-alert-heading has-text-left">${heading}</p>
+          <ul class="weather-alert-bullets has-text-left">
+            <li><strong>ISSUED</strong> ${dayjs.unix(time).format("dddd, MMMM D, YYYY at hh:mm:ss A")}</li>
+            <li><strong>EXPIRES</strong> ${dayjs.unix(expires).format("dddd, MMMM D, YYYY at hh:mm:ss A")}</li>
+            ${bulletPoints}
+          </ul>
         </div>
     `,
     confirmButtonText: "Close",
