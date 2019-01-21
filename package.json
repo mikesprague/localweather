@@ -21,7 +21,7 @@
     "lambda:serve": "netlify-lambda serve ./src/functions -c ./lambda.config.dev.js"
   },
   "repository": {
-    "url": "https://github.com/mikesprague/local-weather"
+    "url": "https://github.com/mikesprague/localweather-io"
   },
   "author": {
     "name": "Michael Sprague",
@@ -29,7 +29,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mikesprague/local-weather/issues"
+    "url": "https://github.com/mikesprague/localweather-io/issues"
   },
   "homepage": "https://localweather.io",
   "dependencies": {},
