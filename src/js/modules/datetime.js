@@ -1,5 +1,3 @@
-"use strict";
-
 export function formatUnixTimeAsLocalString(unixtime) {
   const date = new Date(unixtime * 1000);
   // example date.toLocaleString() '5/6/2018, 3:41:21 PM'

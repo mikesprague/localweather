@@ -1,5 +1,3 @@
-"use strict";
-
 import * as defaults from "./defaults";
 import { hideLoading, renderAppWithData, showLoading } from "./ui";
 import { useCache, getData, setData } from "./cache";

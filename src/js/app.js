@@ -1,5 +1,3 @@
-"use strict";
-
 import "../scss/styles.scss";
 import * as app from "./modules/init";
 
