@@ -4,7 +4,7 @@ const path = require("path");
 const webpack = require("webpack");
 const WebPackBar = require("webpackbar");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -78,17 +78,12 @@ module.exports = {
       chunks: "all",
     },
     minimizer: [
-      new UglifyJsPlugin({
-        cache: false,
-        parallel: false,
+      new TerserPlugin({
+        parallel: true,
         sourceMap: true,
-        uglifyOptions: {
-          ecma: 8,
-          compress: false
-        },
       }),
       new OptimizeCSSAssetsPlugin(),
-    ]
+    ],
   },
   plugins: [
     new WebPackBar(),
