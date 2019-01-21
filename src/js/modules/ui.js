@@ -345,8 +345,8 @@ export function parseWeatherAlert(weatherAlert) {
   const alertParts = weatherAlert.split("*");
   const headingText = alertParts.shift().replace(/\.\.\./g, " ").trim();
   const descriptionText = alertParts.join(" ").trim();
-  console.log(weatherAlert);
-  console.log(alertParts);
+  // console.log(weatherAlert);
+  // console.log(alertParts);
 
   let bulletPoints = "";
   if (alertParts.length > 1) {
