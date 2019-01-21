@@ -1,5 +1,3 @@
-"use strict";
-
 const request = require("request");
 const rp = require("request-promise");
 const bugsnag = require("bugsnag");

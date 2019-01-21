@@ -1,5 +1,3 @@
-"use strict";
-
 import * as defaults from "./defaults";
 import { initCache } from "./cache";
 import { initFontAwesomeIcons, initTooltips, showGeolocationAlert } from "./ui";

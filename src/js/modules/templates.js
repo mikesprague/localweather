@@ -1,5 +1,3 @@
-"use strict";
-
 import * as defaults from "./defaults";
 import { getWeatherIcon, getUnitLabel, getMoonUi } from "./ui";
 import { parseLocationNameFromFormattedAddress } from "./data";

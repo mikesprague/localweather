@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   appName: "LocalWeather.io",
   author: "Michael Sprague",
