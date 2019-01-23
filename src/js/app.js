@@ -1,8 +1,8 @@
-import "../scss/styles.scss";
-import * as app from "./modules/init";
+import '../scss/styles.scss';
+import { init } from './modules/init';
 
-document.onreadystatechange = function () {
-  if (document.readyState === "interactive") {
-    app.init();
+document.onreadystatechange = () => {
+  if (document.readyState === 'interactive') {
+    init();
   }
 };
