@@ -1,7 +1,7 @@
 import * as defaults from './defaults';
 import { hideLoading, renderAppWithData, showLoading } from './ui';
 import { useCache, getData, setData } from './cache';
-import * as init from './init';
+import { init } from './init';
 
 export function loadFromCache() {
   return useCache(getData(defaults.cacheTimeKey));
