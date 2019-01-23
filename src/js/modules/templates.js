@@ -20,6 +20,22 @@ export function populateMessage(messageText) {
   messageEl.innerHTML = messageTemplate;
 }
 
+export function populateAppShell() {
+  const appShellTemplate = `
+    <div class="container is-fullwidth loading-message hidden"></div>
+    <div class="container weather-data">
+      <div class="columns is-mobile is-vcentered primary-conditions-data"></div>
+      <div class="columns is-mobile weather-alert hidden"></div>
+      <div class="current-weather-data"></div>
+      <div class="columns is-mobile hourly-data"></div>
+      <div class="columns is-mobile forecast-data"></div>
+      <div class="columns is-mobile last-updated-time"></div>
+    </div>
+  `;
+  const appShellEl = document.querySelector(".hero-body");
+  appShellEl.innerHTML = appShellTemplate;
+}
+
 export function populateErrorMessage(messageText) {
   const messageTemplate = `
     <div class="columns is-mobile">

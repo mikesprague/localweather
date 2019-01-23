@@ -1,4 +1,5 @@
 import * as defaults from "./defaults";
+import { populateAppShell } from "./templates";
 import { initCache } from "./cache";
 import { initFontAwesomeIcons, initTooltips, showGeolocationAlert } from "./ui";
 import { initDataUpdateCheck } from "./data";
@@ -20,7 +21,7 @@ export function init() {
     // });
   }
 
-  // window.addEventListener("message", event => { 
+  // window.addEventListener("message", event => {
   //   console.log(event);
   // }, false);
 
@@ -30,15 +31,17 @@ export function init() {
   }, false);
 
   window.addEventListener("online", () => {
+    // TODO: add online handler
     console.log("Browser online");
   }, false);
 
-  window.onerror = function (msg, url, lineNo, columnNo, error) {
-    console.error("ERROR", msg, url, lineNo, columnNo, error);
-    // return false;
-  };
+  // window.onerror = function (msg, url, lineNo, columnNo, error) {
+  //   console.error("ERROR", msg, url, lineNo, columnNo, error);
+  //   // return false;
+  // };
 
   if (defaults.isOnline()) {
+    populateAppShell();
     initCache();
     showGeolocationAlert();
     initDataUpdateCheck();
