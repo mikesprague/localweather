@@ -1,6 +1,5 @@
 import axios from 'axios';
 import * as defaults from './defaults';
-import { renderAppWithData, showLoading } from './ui';
 import { useCache, getData, setData } from './cache';
 
 export function loadFromCache() {
@@ -70,12 +69,12 @@ export async function getWeatherData(lat, lng) {
 }
 
 export async function getLocationAndPopulateAppData(lat, lng) {
+  let weatherDataToReturn;
   if (loadFromCache()) {
     try {
       const cachedLocationData = getData(defaults.locationDataKey);
       defaults.locationName = cachedLocationData.formatted_address;
-      const cachedWeatherData = getData(defaults.weatherDataKey);
-      renderAppWithData(cachedWeatherData);
+      weatherDataToReturn = getData(defaults.weatherDataKey);
     } catch (error) {
       /* eslint-disable no-undef */
       bugsnagClient.notify(error); // defined in html page
@@ -84,12 +83,12 @@ export async function getLocationAndPopulateAppData(lat, lng) {
   } else {
     try {
       await getLocationNameFromLatLng(lat, lng);
-      const weatherData = await getWeatherData(lat, lng);
-      renderAppWithData(weatherData);
+      weatherDataToReturn = await getWeatherData(lat, lng);
     } catch (error) {
       /* eslint-disable no-undef */
       bugsnagClient.notify(error); // defined in html page
       /* eslint-enable no-undef */
     }
   }
+  return weatherDataToReturn;
 }

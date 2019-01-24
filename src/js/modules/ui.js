@@ -309,7 +309,8 @@ export function showErrorAlert(errorMessage, buttonText = 'Reload to Try Again')
 export async function geoSuccess(position) {
   const { coords } = position;
   showLoading('... loading weather data ...');
-  await getLocationAndPopulateAppData(coords.latitude, coords.longitude);
+  const weatherData = await getLocationAndPopulateAppData(coords.latitude, coords.longitude);
+  renderAppWithData(weatherData);
 }
 
 export async function geoError(error) {
