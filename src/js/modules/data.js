@@ -1,3 +1,4 @@
+import axios from 'axios';
 import * as defaults from './defaults';
 import { hideLoading, renderAppWithData, showLoading } from './ui';
 import { useCache, getData, setData } from './cache';
@@ -32,18 +33,10 @@ export async function getLocationNameFromLatLng(lat, lng) {
       return defaults.locationName;
     }
   } else {
-    const locationData = fetch(url)
+    const locationData = await axios.get(url)
       .then((response) => {
-        if (!response.ok) {
-          /* eslint-disable no-undef */
-          return bugsnagClient.notify(new Error(response)); // defined in html page
-          /* eslint-enable no-undef */
-        }
-        return response.json();
-      })
-      .then((json) => {
-        setData(defaults.locationDataKey, json);
-        const fullLocationName = json.results[0].formatted_address;
+        setData(defaults.locationDataKey, response.data);
+        const fullLocationName = response.data.results[0].formatted_address;
         const shortLocationName = parseLocationNameFromFormattedAddress(fullLocationName);
         setData(defaults.locationNameDataKey, fullLocationName);
         defaults.locationName = fullLocationName;
@@ -64,18 +57,10 @@ export async function getWeather(lat, lng) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   }
-  const weatherData = fetch(url)
+  const weatherData = await axios.get(url)
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-      /* eslint-disable no-undef */
-      return bugsnagClient.notify(new Error(response)); // defined in html page
-      /* eslint-enable no-undef */
-    })
-    .then((json) => {
-      setData(defaults.weatherDataKey, json);
-      return json;
+      setData(defaults.weatherDataKey, response.data);
+      return response.data;
     })
     .catch((error) => {
       /* eslint-disable no-undef */
