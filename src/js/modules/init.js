@@ -46,11 +46,11 @@ export function init() {
     }
   });
 
-  window.onerror = () => {
-    // console.error('ERROR', msg, url, lineNo, columnNo, error);
-    hideLoading();
-    // return false;
-  };
+  // window.onerror = () => {
+  //   // console.error('ERROR', msg, url, lineNo, columnNo, error);
+  //   // hideLoading();
+  //   // return false;
+  // };
 
   const checkIfDataUpdateNeeded = () => {
     if (!loadFromCache) {
