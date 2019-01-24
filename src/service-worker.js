@@ -1,4 +1,4 @@
-const VERSION = '0.53.0';
+const VERSION = '0.54.0';
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
   '.',
@@ -36,7 +36,7 @@ addEventListener('install', (installEvent) => {
         // Must have cached
         return staticCache.addAll(cacheAlways).then(() => {
           // console.info('[SW] Cached the 'must haves'');
-          console.info(`[SW] Finished Updating LocalWeather.io ${CACHE_NAME}`);
+          // console.info(`[SW] Finished Updating LocalWeather.io ${CACHE_NAME}`);
         }); // end return addAll/then
       }) // end open then
   ); // end waitUntil
@@ -51,14 +51,13 @@ addEventListener('activate', (activateEvent) => {
           cacheNames
             .filter(cacheName => cacheName !== CACHE_NAME)
             .map((cacheName) => {
-              console.info(`[SW] Deleted Old Version ${cacheName}`);
+              // console.info(`[SW] Deleted Old Version ${cacheName}`);
               return caches.delete(cacheName);
             }) // end map
         ); // end return Promise.all
       }) // end keys then
       .then(() => {
-        console.info('[SW] Activated');
-        // showInstallNotification();
+        // console.info('[SW] Activated');
         return clients.claim();
       }) // end then
   ); // end waitUntil
