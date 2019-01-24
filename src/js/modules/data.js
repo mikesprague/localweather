@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as defaults from './defaults';
-import { hideLoading, renderAppWithData, showLoading } from './ui';
+import { renderAppWithData, showLoading } from './ui';
 import { useCache, getData, setData } from './cache';
 
 export function loadFromCache() {
@@ -50,7 +50,7 @@ export async function getLocationNameFromLatLng(lat, lng) {
   }
 }
 
-export async function getWeather(lat, lng) {
+export async function getWeatherData(lat, lng) {
   const url = `${defaults.apiUrl()}/weather/?lat=${lat}&lng=${lng}`;
   if (loadFromCache()) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
@@ -65,13 +65,11 @@ export async function getWeather(lat, lng) {
       /* eslint-disable no-undef */
       bugsnagClient.notify(error); // defined in html page
       /* eslint-enable no-undef */
-      hideLoading();
     });
   return weatherData;
 }
 
 export async function getLocationAndPopulateAppData(lat, lng) {
-  showLoading('... loading weather data ...');
   if (loadFromCache()) {
     try {
       const cachedLocationData = getData(defaults.locationDataKey);
@@ -82,29 +80,16 @@ export async function getLocationAndPopulateAppData(lat, lng) {
       /* eslint-disable no-undef */
       bugsnagClient.notify(error); // defined in html page
       /* eslint-enable no-undef */
-      hideLoading();
     }
   } else {
     try {
-      getLocationNameFromLatLng(lat, lng).then(() => {
-        // console.log(name);
-        getWeather(lat, lng).then((json) => {
-          renderAppWithData(json);
-        }).catch((error) => {
-          /* eslint-disable no-undef */
-          bugsnagClient.notify(error); // defined in html page
-          /* eslint-enable no-undef */
-        });
-      }).catch((error) => {
-        /* eslint-disable no-undef */
-        bugsnagClient.notify(error); // defined in html page
-        /* eslint-enable no-undef */
-      });
+      await getLocationNameFromLatLng(lat, lng);
+      const weatherData = await getWeatherData(lat, lng);
+      renderAppWithData(weatherData);
     } catch (error) {
       /* eslint-disable no-undef */
       bugsnagClient.notify(error); // defined in html page
       /* eslint-enable no-undef */
-      hideLoading();
     }
   }
 }
