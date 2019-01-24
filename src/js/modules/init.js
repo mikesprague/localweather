@@ -52,10 +52,10 @@ export function init() {
     console.log('Browser online');
   }, false);
 
-  window.onerror = (msg, url, lineNo, columnNo, error) => {
+  window.onerror = () => {
     // console.error('ERROR', msg, url, lineNo, columnNo, error);
     hideLoading();
-    return false;
+    // return false;
   };
 
   const checkIfDataUpdateNeeded = () => {

@@ -20,7 +20,7 @@ import dayjs from 'dayjs';
 import * as defaults from './defaults';
 import { getLocationAndPopulateAppData } from './data';
 import {
-  populateMessage, populateFooter, populateForecastData,
+  populateMessage, populateForecastData,
   populateHourlyData, populateLastUpdated, populateLocation,
   populatePrimaryData, populateWeatherData, populateWeatherAlert,
   populateAppShell,
@@ -247,15 +247,17 @@ export function initTooltips() {
 export function hideUi() {
   const rows = document.querySelector('.weather-data');
   const hrAll = document.querySelectorAll('hr');
-  hideEl(hrAll);
-  hideEl(rows);
+  const initialContent = document.querySelector('.initial-content');
+  if (initialContent) { hideEl(initialContent); }
+  if (rows) { hideEl(rows); }
+  if (hrAll) { hideEl(hrAll); }
 }
 
 export function showUi() {
   const rows = document.querySelector('.weather-data');
   const hrAll = document.querySelectorAll('hr');
-  showEl(rows);
-  showEl(hrAll);
+  if (rows) { showEl(rows); }
+  if (hrAll) { showEl(hrAll); }
   initTooltips();
 }
 
@@ -306,92 +308,8 @@ export function showErrorAlert(errorMessage, buttonText = 'Reload to Try Again')
   });
 }
 
-export async function geoSuccess(position) {
-  const { coords } = position;
-  showLoading('... loading weather data ...');
-  const weatherData = await getLocationAndPopulateAppData(coords.latitude, coords.longitude);
-  renderAppWithData(weatherData);
-}
-
-export async function geoError(error) {
-  let errorMessage = '';
-  switch (error.code) {
-    case error.PERMISSION_DENIED:
-      // 'It's not going to work unless you turn location services on, Eric';
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> User denied the request for Geolocation
-        </p>
-        <p class='message-alert-text-first'>
-          Please enable location services, clear any location tracking blocks for the domain
-          'localweather.io' in your browser, and try again.
-        </p>
-      `;
-      console.error(errorMessage);
-      break;
-    case error.POSITION_UNAVAILABLE:
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> POSITION UNAVAILABLE
-        </p>
-        <p class='message-alert-text-first'>
-          Location information is unavailable.
-        </p>
-      `;
-      break;
-    case error.TIMEOUT:
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> TIMEOUT
-        </p>
-        <p class='message-alert-text-first'>
-          The request to get user location timed out.
-        </p>
-      `;
-      break;
-    case error.UNKNOWN_ERROR:
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> UNKNOWN ERROR
-        </p>
-        <p class='message-alert-text-first'>
-          An unknown error occurred.
-        </p>
-      `;
-      break;
-    default:
-      break;
-  }
-  showErrorAlert(errorMessage);
-}
-
 export function hasApprovedLocationSharing() {
   return document.cookie.replace(/(?:(?:^|.*;\s*)approvedLocationSharing\s*=\s*([^;]*).*$)|^.*$/, '$1') === 'true';
-}
-
-export function initGeolocation() {
-  if (!hasApprovedLocationSharing()) {
-    if ('geolocation' in navigator) {
-      try {
-        populateAppShell();
-        showLoading('... waiting for permission ...');
-        document.cookie = 'approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-        showLoading('... acquiring location ...');
-        navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
-      } catch (error) {
-        /* eslint-disable no-undef */
-        bugsnagClient.notify(error); // defined in html page
-        /* eslint-enable no-undef */
-        // console.log(error);
-        // TODO: Show friendly message to user
-      }
-    } else {
-      showErrorAlert('GEOLOCATION_UNAVAILABLE: Geolocation is not available with your current browser.');
-    }
-  } else {
-    showLoading('... acquiring location ...');
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
-  }
 }
 
 export function parseWeatherAlert(weatherAlert) {
@@ -453,17 +371,101 @@ export function initWeatherAlerts(data) {
 export function renderAppWithData(data) {
   initFontAwesomeIcons();
   setBodyBgClass(getBodyBgClass(data));
+  populateAppShell();
   populatePrimaryData(data);
   populateWeatherData(data);
   populateForecastData(data);
   populateHourlyData(data);
   populateLastUpdated(data);
   populateLocation(data);
-  populateFooter();
   setFavicon(data);
   setTitle(data);
   initTooltips();
   initWeatherAlerts(data);
   hideLoading();
   return true;
+}
+
+export async function geoSuccess(position) {
+  const { coords } = position;
+  showLoading('... loading weather data ...');
+  const weatherData = await getLocationAndPopulateAppData(coords.latitude, coords.longitude);
+  renderAppWithData(weatherData);
+}
+
+export async function geoError(error) {
+  let errorMessage = '';
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      // 'It's not going to work unless you turn location services on, Eric';
+      errorMessage = `
+        <p class='message-alert-text-heading has-text-danger'>
+          <i class='fas fa-fw fa-exclamation-triangle'></i> User denied the request for Geolocation
+        </p>
+        <p class='message-alert-text-first'>
+          Please enable location services, clear any location tracking blocks for the domain
+          'localweather.io' in your browser, and try again.
+        </p>
+      `;
+      console.error(errorMessage);
+      break;
+    case error.POSITION_UNAVAILABLE:
+      errorMessage = `
+        <p class='message-alert-text-heading has-text-danger'>
+          <i class='fas fa-fw fa-exclamation-triangle'></i> POSITION UNAVAILABLE
+        </p>
+        <p class='message-alert-text-first'>
+          Location information is unavailable.
+        </p>
+      `;
+      break;
+    case error.TIMEOUT:
+      errorMessage = `
+        <p class='message-alert-text-heading has-text-danger'>
+          <i class='fas fa-fw fa-exclamation-triangle'></i> TIMEOUT
+        </p>
+        <p class='message-alert-text-first'>
+          The request to get user location timed out.
+        </p>
+      `;
+      break;
+    case error.UNKNOWN_ERROR:
+      errorMessage = `
+        <p class='message-alert-text-heading has-text-danger'>
+          <i class='fas fa-fw fa-exclamation-triangle'></i> UNKNOWN ERROR
+        </p>
+        <p class='message-alert-text-first'>
+          An unknown error occurred.
+        </p>
+      `;
+      break;
+    default:
+      break;
+  }
+  showErrorAlert(errorMessage);
+}
+
+export function initGeolocation() {
+  if (!hasApprovedLocationSharing()) {
+    if ('geolocation' in navigator) {
+      try {
+        populateAppShell();
+        showLoading('... waiting for permission ...');
+        document.cookie = 'approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+        showLoading('... acquiring location ...');
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
+      } catch (error) {
+        /* eslint-disable no-undef */
+        bugsnagClient.notify(error); // defined in html page
+        /* eslint-enable no-undef */
+        // console.log(error);
+        // TODO: Show friendly message to user
+      }
+    } else {
+      showErrorAlert('GEOLOCATION_UNAVAILABLE: Geolocation is not available with your current browser.');
+    }
+  } else {
+    showLoading('... acquiring location ...');
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
+  }
 }
