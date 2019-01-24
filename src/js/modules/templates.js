@@ -1,9 +1,13 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import * as defaults from './defaults';
-import { getWeatherIcon, getUnitLabel } from './ui';
 import { parseLocationNameFromFormattedAddress } from './data';
 import { getData } from './cache';
+
+const getWeatherIcon = icon => defaults.iconMap[icon];
+
+// ex: getUnityLabel('visibility', 'si'); -> returns: ['km', 'kilometers']
+const getUnitLabel = (unitType, units) => defaults.unitLabels[unitType][units];
 
 export function populateMessage(messageText) {
   const messageTemplate = `
