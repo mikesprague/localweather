@@ -13,6 +13,7 @@
   <meta name="application-name" content="<%= htmlWebpackPlugin.options.appName %>">
   <link rel="canonical" href="<%= htmlWebpackPlugin.options.canonical %>"/>
   <link rel="preload" href="./js/vendors~main.bundle.js" as="script">
+  <link rel="preload" href="./js/bundle.js" as="script">
   <link rel="manifest" href="./manifest.json">
   <link href="./css/styles.css" media="screen" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" media="screen" type="text/css">
@@ -27,37 +28,53 @@
       <div class="columns is-mobile location"></div>
     </div>
     <div class="hero-body">
-      <div class="columns">
+      <div class="container is-fullwidth loading-message hidden"></div>
+      <div class="container is-fullwidth initial-content">
         <div class="column has-text-centered">
-          <div class="columns">
-            <div class="column">
-                <img alt="LocalWeather.io Icon" src="./assets/images/favicons/weather-icon-64.png">
-            </div>
-            <div class="column">
-              <h1 class="title is-1 is-spaced is-block">LocalWeather.io</h1>
-            </div>
-          </div>
-          <div class="content">  
-          
+          <img alt="LocalWeather.io Icon" src="./assets/images/favicons/weather-icon-64.png">
+          <h1 class="title is-1 is-spaced is-block">LocalWeather.io</h1>
+          <div class="content">
             <h2 class="subtitle is-4 is-spaced has-text-light">
               <i class='fas fa-fw fa-exclamation-triangle'></i> Location Services Required
             </h2>
             <button class="button is-outlined is-primary btn-init-app"><i class='fas fa-fw fa-sync-alt'></i> Show me the Weather</button>
             <p class="is-italic">
-              This application requires the use of location information,
-              provided by your device and browser, to get accurate weather data.
+              This application requires the use of location information
+              (provided by your browser, and your device) to get accurate
+              weather data.
             </p>
             <p class="is-italic">
               If this is your first visit you will be prompted to share your
-              location with 'localweather.io' - you must approve that request
-              for this app to work.
+              location. You must approve that request for this app to work.
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="hero-foot">
-      <div class="columns is-mobile powered-by-dark-sky"></div>
+      <div class="columns is-mobile powered-by-dark-sky">
+        <div class="column">
+          <div class="content has-text-right">
+            <a href="https://localweather.io" data-tippy-content="LocalWeather.io <%= htmlWebpackPlugin.options.versionString %>">
+              LocalWeather.io <%= htmlWebpackPlugin.options.versionString %>
+            </a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" data-tippy-content="Powered by Dark Sky">
+              <i class="fal fa-tint"></i> Powered by Dark Sky
+            </a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-left">
+            <a href="https://github.com/mikesprague/local-weather/" rel="noopener" target="_blank" data-tippy-content="Coded by Michael Sprague">
+              <i class="fal fa-code"></i> by Michael Sprague
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
