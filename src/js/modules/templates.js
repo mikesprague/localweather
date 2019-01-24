@@ -320,7 +320,7 @@ export function populateLastUpdated(data) {
   const lastUpdatedString = `
     Weather data last refreshed at ${lastUpdateTime.format('hh:mm:ss A')}
     <br>
-    Data is cached for 10 minutes, next update ${dayjs().to(nextUpdateTime)}
+    Data is cached for 5 minutes, next update ${dayjs().to(nextUpdateTime)}
   `;
   const lastUpdatedTemplate = `
     <div class="column has-text-centered">
