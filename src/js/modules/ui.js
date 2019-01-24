@@ -8,7 +8,7 @@ import {
   faCircle, faPlusSquare, faMinusSquare, faGlobeAfrica, faSyncAlt,
   faTachometer, faAngleUp, faChevronCircleUp, faDewpoint, faHumidity,
   faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud,
-  faThermometerHalf,
+  faThermometerHalf, faInfoCircle,
 } from '@fortawesome/pro-solid-svg-icons';
 import {
   faTint, faCode,
@@ -23,6 +23,7 @@ import {
   populateMessage, populateFooter, populateForecastData,
   populateHourlyData, populateLastUpdated, populateLocation,
   populatePrimaryData, populateWeatherData, populateWeatherAlert,
+  populateAppShell,
 } from './templates';
 
 export function initFontAwesomeIcons() {
@@ -51,6 +52,7 @@ export function initFontAwesomeIcons() {
     faGlobeAfrica,
     faHumidity,
     faHurricane,
+    faInfoCircle,
     faLongArrowAltDown,
     faLongArrowAltUp,
     faMapMarkerAlt,
@@ -282,7 +284,7 @@ export function showInstallAlert() {
   swal.fire({
     title: `${defaults.appName}`,
     text: 'Latest Version Installed',
-    confirmButtonText: 'Reload to Activate',
+    confirmButtonText: 'Reload for Latest Updates',
     type: 'success',
     onClose: () => {
       reloadWindow();
@@ -304,12 +306,13 @@ export function showErrorAlert(errorMessage, buttonText = 'Reload to Try Again')
   });
 }
 
-export function geoSuccess(position) {
+export async function geoSuccess(position) {
   const { coords } = position;
-  getLocationAndPopulateAppData(coords.latitude, coords.longitude);
+  showLoading('... loading weather data ...');
+  await getLocationAndPopulateAppData(coords.latitude, coords.longitude);
 }
 
-export function geoError(error) {
+export async function geoError(error) {
   let errorMessage = '';
   switch (error.code) {
     case error.PERMISSION_DENIED:
@@ -361,45 +364,29 @@ export function geoError(error) {
   showErrorAlert(errorMessage);
 }
 
-export function showGeolocationAlert() {
-  if (document.cookie.replace(/(?:(?:^|.*;\s*)approvedLocationSharing\s*=\s*([^;]*).*$)|^.*$/, '$1') !== 'true') {
-    swal.fire({
-      title: `${defaults.appName}`,
-      html: `
-        <p class='message-alert-text-heading has-text-info'>
-          <i class='fas fa-fw fa-info-circle'></i> Location Services Required
-        </p>
-        <p class='message-alert-text-first'>
-          This application requires the use of location information,
-          provided by your device and browser, to get accurate weather data.
-        </p>
-        <p class='message-alert-text'>
-          If this is your first visit you will be prompted to share your
-          location with 'localweather.io' - you must approve that request
-          for this app to work.
-        </p>
-      `,
-      confirmButtonText: `<i class='wi wi-fw wi-cloud-refresh'></i> Show me the Weather`,
-      type: 'info',
-      onClose: () => {
-        if ('geolocation' in navigator) {
-          try {
-            showLoading('... waiting for permission ...');
-            document.cookie = 'approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-            showLoading('... acquiring location ...');
-            navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
-          } catch (error) {
-            /* eslint-disable no-undef */
-            bugsnagClient.notify(error); // defined in html page
-            /* eslint-enable no-undef */
-            // console.log(error);
-            // TODO: Show friendly message to user
-          }
-        } else {
-          showErrorAlert('GEOLOCATION_UNAVAILABLE: Geolocation is not available with your current browser.');
-        }
-      },
-    });
+export function hasApprovedLocationSharing() {
+  return document.cookie.replace(/(?:(?:^|.*;\s*)approvedLocationSharing\s*=\s*([^;]*).*$)|^.*$/, '$1') === 'true';
+}
+
+export function initGeolocation() {
+  if (!hasApprovedLocationSharing()) {
+    if ('geolocation' in navigator) {
+      try {
+        populateAppShell();
+        showLoading('... waiting for permission ...');
+        document.cookie = 'approvedLocationSharing=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+        showLoading('... acquiring location ...');
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
+      } catch (error) {
+        /* eslint-disable no-undef */
+        bugsnagClient.notify(error); // defined in html page
+        /* eslint-enable no-undef */
+        // console.log(error);
+        // TODO: Show friendly message to user
+      }
+    } else {
+      showErrorAlert('GEOLOCATION_UNAVAILABLE: Geolocation is not available with your current browser.');
+    }
   } else {
     showLoading('... acquiring location ...');
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
@@ -432,10 +419,6 @@ export function showWeatherAlert(data) {
   const { title, time, expires, description } = data[0];
   /* eslint-enable object-curly-newline */
   const { heading, bulletPoints } = parseWeatherAlert(description);
-
-  // if (!bulletPoints.length) {
-  //   let bulletPoints = `<li><strong>DETAILS</strong> ${bodyText}<br></li>`;
-  // }
 
   swal.fire({
     title: `${title}`,
