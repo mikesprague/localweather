@@ -50,7 +50,7 @@ export function init() {
     console.error('ERROR', msg, url, lineNo, columnNo, error);
     hideLoading();
     /* eslint-disable no-undef */
-    bugsnagClient.notify(error); // defined in html page
+    bugsnagClient.notify(new Error(msg)); // defined in html page
     /* eslint-enable no-undef */
     return false;
   };
