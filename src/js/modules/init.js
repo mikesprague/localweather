@@ -46,16 +46,13 @@ export function init() {
     }
   });
 
-  // window.onerror = () => {
-  //   // console.error('ERROR', msg, url, lineNo, columnNo, error);
-  //   // hideLoading();
-  //   // return false;
-  // };
-
-  const checkIfDataUpdateNeeded = () => {
-    if (!loadFromCache) {
-      init();
-    }
+  window.onerror = (msg, url, lineNo, columnNo, error) => {
+    console.error('ERROR', msg, url, lineNo, columnNo, error);
+    hideLoading();
+    /* eslint-disable no-undef */
+    bugsnagClient.notify(error); // defined in html page
+    /* eslint-enable no-undef */
+    return false;
   };
 
   const initDataUpdateCheck = () => {
@@ -65,7 +62,9 @@ export function init() {
       clearInterval();
     }
     defaults.timerHandle = setInterval(() => {
-      checkIfDataUpdateNeeded();
+      if (!loadFromCache) {
+        init();
+      }
     }, 30000); // 5 minutes (5 * 6000 ms)
   };
 
