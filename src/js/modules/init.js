@@ -1,11 +1,12 @@
 import * as defaults from './defaults';
-import { populateAppShell } from './templates';
 import { initCache } from './cache';
 import {
   initFontAwesomeIcons,
   initTooltips,
-  showGeolocationAlert,
+  initGeolocation,
+  hasApprovedLocationSharing,
   showInstallAlert,
+  hideLoading,
 } from './ui';
 import { loadFromCache } from './data';
 
@@ -20,18 +21,25 @@ export function init() {
         registration.onupdatefound = () => {
           const installingWorker = registration.installing;
           installingWorker.onstatechange = () => {
-            if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            if (
+              installingWorker.state === 'installed'
+              && navigator.serviceWorker.controller
+              && hasApprovedLocationSharing()
+            ) {
               resolve(true);
+            } else {
+              resolve(false);
             }
-            resolve(false);
           };
         };
       });
     }
   });
 
-  window.isUpdateAvailable.then(() => {
-    showInstallAlert();
+  window.isUpdateAvailable.then((updateAvailable) => {
+    if (updateAvailable) {
+      showInstallAlert();
+    }
   });
 
   window.addEventListener('offline', () => {
@@ -44,10 +52,11 @@ export function init() {
     console.log('Browser online');
   }, false);
 
-  // window.onerror = function (msg, url, lineNo, columnNo, error) {
-  //   console.error('ERROR', msg, url, lineNo, columnNo, error);
-  //   // return false;
-  // };
+  window.onerror = (msg, url, lineNo, columnNo, error) => {
+    // console.error('ERROR', msg, url, lineNo, columnNo, error);
+    hideLoading();
+    return false;
+  };
 
   const checkIfDataUpdateNeeded = () => {
     if (!loadFromCache) {
@@ -63,13 +72,12 @@ export function init() {
     }
     defaults.timerHandle = setInterval(() => {
       checkIfDataUpdateNeeded();
-    }, 60000); // 10 minutes (10 * 6000 ms)
+    }, 30000); // 10 minutes (10 * 6000 ms)
   };
 
   if (defaults.isOnline()) {
-    populateAppShell();
     initCache();
-    showGeolocationAlert();
+    initGeolocation();
     initDataUpdateCheck();
   } else {
     initFontAwesomeIcons();
