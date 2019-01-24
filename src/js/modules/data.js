@@ -2,7 +2,6 @@ import axios from 'axios';
 import * as defaults from './defaults';
 import { hideLoading, renderAppWithData, showLoading } from './ui';
 import { useCache, getData, setData } from './cache';
-import { init } from './init';
 
 export function loadFromCache() {
   return useCache(getData(defaults.cacheTimeKey));
@@ -108,21 +107,4 @@ export async function getLocationAndPopulateAppData(lat, lng) {
       hideLoading();
     }
   }
-}
-
-export function checkIfDataUpdateNeeded() {
-  if (!loadFromCache()) {
-    init();
-  }
-}
-
-export function initDataUpdateCheck() {
-  if (defaults.timerHandle) {
-    clearInterval(defaults.timerHandle);
-  } else {
-    clearInterval();
-  }
-  defaults.timerHandle = setInterval(() => {
-    checkIfDataUpdateNeeded();
-  }, 60000); // 10 minutes (10 * 6000 ms)
 }
