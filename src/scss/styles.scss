@@ -308,33 +308,36 @@ hr {
   margin: .4em auto;
 }
 
-// .link-toggle-units {
-//   &,
-//   &:visited {
-//     color: $color-gray;
-//     text-decoration: none;
-//   }
+/*
+.link-toggle-units {
+  &,
+  &:visited {
+    color: $color-gray;
+    text-decoration: none;
+  }
 
-//   &:hover,
-//   &:active {
-//     border-bottom: 1px dashed $color-gray-lightest;
-//     border-top: 1px dashed $color-gray-lightest;
-//     color: $color-gray-lightest;
-//     text-decoration: none;
-//   }
-// }
+  &:hover,
+  &:active {
+    border-bottom: 1px dashed $color-gray-lightest;
+    border-top: 1px dashed $color-gray-lightest;
+    color: $color-gray-lightest;
+    text-decoration: none;
+  }
+}
 
-// @media only screen and (max-width: 440px) {
-//   body {
-//     font-size: 1.25rem;
-//   }
-// }
+@media only screen and (max-width: 440px) {
+  body {
+    font-size: 1.25rem;
+  }
+}
+*/
 
 @media only screen and (max-width: 500px) {
-  // body {
-  //   font-size: 1.35rem;
-  // }
-
+  /*
+  body {
+    font-size: 1.35rem;
+  }
+  */
   .current-weather-data {
     p {
       font-size: .95em;
@@ -379,17 +382,19 @@ hr {
 
 }
 
-// @media only screen and (min-width: 900px) {
-//   body {
-//     font-size: 1.5rem;
-//   }
-// }
+/*
+@media only screen and (min-width: 900px) {
+  body {
+    font-size: 1.5rem;
+  }
+}
 
-// @media only screen and (min-width: 1200px) {
-//   body {
-//     font-size: 2rem;
-//   }
-// }
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 2rem;
+  }
+}
+*/
 
 @media screen and (min-width: 320px) {
   html {
