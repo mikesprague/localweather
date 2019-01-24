@@ -66,7 +66,7 @@ export function init() {
     }
     defaults.timerHandle = setInterval(() => {
       checkIfDataUpdateNeeded();
-    }, 30000); // 10 minutes (10 * 6000 ms)
+    }, 30000); // 5 minutes (5 * 6000 ms)
   };
 
   initCache();
