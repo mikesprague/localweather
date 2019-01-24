@@ -10,7 +10,7 @@ import {
 } from './ui';
 import { loadFromCache } from './data';
 
-export function init() {
+export function registerServiceWorker() {
   window.isUpdateAvailable = new Promise((resolve) => {
     if ('serviceWorker' in navigator) {
       // register service worker
@@ -35,22 +35,16 @@ export function init() {
       });
     }
   });
+}
 
+registerServiceWorker();
+
+export function init() {
   window.isUpdateAvailable.then((updateAvailable) => {
     if (updateAvailable) {
       showInstallAlert();
     }
   });
-
-  window.addEventListener('offline', () => {
-    // TODO: add offline handler
-    console.log('Browser offline');
-  }, false);
-
-  window.addEventListener('online', () => {
-    // TODO: add online handler
-    console.log('Browser online');
-  }, false);
 
   window.onerror = () => {
     // console.error('ERROR', msg, url, lineNo, columnNo, error);
@@ -75,12 +69,12 @@ export function init() {
     }, 30000); // 10 minutes (10 * 6000 ms)
   };
 
-  if (defaults.isOnline()) {
-    initCache();
-    initGeolocation();
-    initDataUpdateCheck();
-  } else {
-    initFontAwesomeIcons();
-  }
+  initCache();
+  initGeolocation();
+  initDataUpdateCheck();
   initTooltips();
+}
+
+export function initOffline() {
+  initFontAwesomeIcons();
 }

@@ -11,7 +11,7 @@ import {
   faThermometerHalf, faInfoCircle,
 } from '@fortawesome/pro-solid-svg-icons';
 import {
-  faTint, faCode,
+  faTint, faCode, faWifiSlash,
   faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow,
   faCloudSleet, faWind as faWIndLight, faFog, faClouds, faCloudsSun,
   faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado,
@@ -74,6 +74,7 @@ export function initFontAwesomeIcons() {
     faUmbrella,
     faWind,
     faWIndLight,
+    faWifiSlash,
   );
   dom.watch();
 }

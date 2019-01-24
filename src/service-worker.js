@@ -3,6 +3,7 @@ const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
   '.',
   './index.html',
+  './offline.html',
   './manifest.json',
   './css/styles.css',
   './js/bundle.js',
