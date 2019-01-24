@@ -1,29 +1,38 @@
 import * as defaults from './defaults';
 import { populateAppShell } from './templates';
 import { initCache } from './cache';
-import { initFontAwesomeIcons, initTooltips, showGeolocationAlert } from './ui';
-import { initDataUpdateCheck } from './data';
+import {
+  initFontAwesomeIcons,
+  initTooltips,
+  showGeolocationAlert,
+  showInstallAlert,
+} from './ui';
+import { loadFromCache } from './data';
 
 export function init() {
-  if ('serviceWorker' in navigator) {
-    // register service worker
-    window.addEventListener('load', async () => {
-      const registration = await navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
-      // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
-      // check for updatees
-      registration.onupdatefound = () => {
-        console.info(`[SW] Latest Version Installed - Reload to Activate`);
-      };
-    });
+  window.isUpdateAvailable = new Promise((resolve) => {
+    if ('serviceWorker' in navigator) {
+      // register service worker
+      window.addEventListener('load', async () => {
+        const registration = await navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
+        // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
+        // check for updatees
+        registration.onupdatefound = () => {
+          const installingWorker = registration.installing;
+          installingWorker.onstatechange = () => {
+            if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              resolve(true);
+            }
+            resolve(false);
+          };
+        };
+      });
+    }
+  });
 
-    // this.clients.matchAll().then(clients => {
-    //   clients.forEach(client => client.postMessage('Latest Version Installed'));
-    // });
-  }
-
-  // window.addEventListener('message', event => {
-  //   console.log(event);
-  // }, false);
+  window.isUpdateAvailable.then(() => {
+    showInstallAlert();
+  });
 
   window.addEventListener('offline', () => {
     // TODO: add offline handler
@@ -39,6 +48,23 @@ export function init() {
   //   console.error('ERROR', msg, url, lineNo, columnNo, error);
   //   // return false;
   // };
+
+  const checkIfDataUpdateNeeded = () => {
+    if (!loadFromCache) {
+      init();
+    }
+  };
+
+  const initDataUpdateCheck = () => {
+    if (defaults.timerHandle) {
+      clearInterval(defaults.timerHandle);
+    } else {
+      clearInterval();
+    }
+    defaults.timerHandle = setInterval(() => {
+      checkIfDataUpdateNeeded();
+    }, 60000); // 10 minutes (10 * 6000 ms)
+  };
 
   if (defaults.isOnline()) {
     populateAppShell();
