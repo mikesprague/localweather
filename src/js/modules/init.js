@@ -46,14 +46,14 @@ export function init() {
     }
   });
 
-  window.onerror = (msg, url, lineNo, columnNo, error) => {
-    console.error('ERROR', msg, url, lineNo, columnNo, error);
-    hideLoading();
-    /* eslint-disable no-undef */
-    bugsnagClient.notify(new Error(msg)); // defined in html page
-    /* eslint-enable no-undef */
-    return false;
-  };
+  // window.onerror = (msg, url, lineNo, columnNo, error) => {
+  //   console.error('ERROR', msg, url, lineNo, columnNo, error);
+  //   hideLoading();
+  //   /* eslint-disable no-undef */
+  //   bugsnagClient.notify(new Error(msg)); // defined in html page
+  //   /* eslint-enable no-undef */
+  //   return false;
+  // };
 
   const initDataUpdateCheck = () => {
     if (defaults.timerHandle) {
