@@ -7,16 +7,16 @@
   "scripts": {
     "build": "yarn clean && yarn webpack && yarn lambda:build",
     "clean": "rm -rf ./public > /dev/null 2>&1",
-    "serve": "concurrently --kill-others --raw 'yarn webpack:serve' 'yarn lambda:serve'",
+    "serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "start": "yarn serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --config ./webpack.config.js --progress --colors",
-    "webpack:dev": "webpack --config ./webpack.config.dev.js --progress --colors",
+    "webpack": "webpack --config ./webpack.config.js -p --colors --display minimal",
+    "webpack:dev": "webpack --config ./webpack.config.dev.js -d --colors --display minial",
     "webpack:serve": "webpack-serve ./webpack.config.js --port 5500 --open",
     "webpack:serve:dev": "webpack-serve ./webpack.config.dev.js --port 5500 --open",
     "dev:build": "yarn dev:clean && yarn webpack:dev && yarn lambda:build",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
-    "dev:serve": "concurrently --kill-others --raw 'yarn webpack:serve:dev' 'yarn lambda:serve'",
+    "dev:serve": "concurrently 'yarn webpack:serve:dev' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "lambda:build": "netlify-lambda build ./src/functions",
     "lambda:serve": "netlify-lambda serve ./src/functions -c ./lambda.config.dev.js"
   },
@@ -93,6 +93,7 @@
       "@babel/preset-env"
     ]
   },
+  "browserslist": "last 3 versions",
   "eslintConfig": {
     "env": {
       "es6": true,
