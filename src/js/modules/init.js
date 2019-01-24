@@ -72,7 +72,7 @@ export function init() {
     }
     defaults.timerHandle = setInterval(() => {
       checkIfDataUpdateNeeded();
-    }, 60000); // 10 minutes (10 * 6000 ms)
+    }, 30000); // 10 minutes (10 * 6000 ms)
   };
 
   if (defaults.isOnline()) {
