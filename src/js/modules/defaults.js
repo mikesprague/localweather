@@ -2,7 +2,7 @@ module.exports = {
   appName: 'LocalWeather.io',
   author: 'Michael Sprague',
   cacheTimeKey: 'cacheTime',
-  cacheTimeSpan: 600, // 10 minutes (number of minutes * 60 seconds)
+  cacheTimeSpan: 300, // 5 minutes (number of minutes * 60 seconds)
   description: 'Minimalist local weather app powered by Dark Sky',
   errorMessageSelector: '.error-message',
   geolocationOptions: {
