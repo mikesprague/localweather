@@ -25,11 +25,6 @@ import {
   populatePrimaryData, populateWeatherData, populateWeatherAlert,
 } from './templates';
 
-export function getUnitLabel(unitType, units) {
-  // ex: getUnityLabel('visibility', 'si'); -> returns: ['km', 'kilometers']
-  return defaults.unitLabels[unitType][units];
-}
-
 export function initFontAwesomeIcons() {
   library.add(
     faAngleUp,
@@ -469,10 +464,6 @@ export function initWeatherAlerts(data) {
       showWeatherAlert(weatherAlerts);
     });
   }
-}
-
-export function getWeatherIcon(icon) {
-  return defaults.iconMap[icon];
 }
 
 export function renderAppWithData(data) {
