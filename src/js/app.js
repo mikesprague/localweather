@@ -4,14 +4,17 @@ import { initFontAwesomeIcons, hasApprovedLocationSharing } from './modules/ui';
 import { isOnline } from './modules/defaults';
 
 window.addEventListener('offline', () => {
-  // TODO: add offline handler
-  console.log('Browser offline');
+  // console.log('Browser offline');
   window.location.replace('/offline.html');
+  // TODO: improve offline experience
+  //  - make last retrieved weather data viewable
+  //  - pause update checks until online
+  //    - add functions for pause and resume
+  //  - make offline notice across top above location
 }, false);
 
 window.addEventListener('online', () => {
-  // TODO: add online handler
-  console.log('Browser online');
+  // console.log('Browser online');
   window.location.replace('/');
 }, false);
 
