@@ -387,15 +387,26 @@ export function renderAppWithData(data) {
   setTitle(data);
   initTooltips();
   initWeatherAlerts(data);
+}
+
+export async function getWeatherDataAndRenderApp(lat, lng) {
+  showLoading('... loading weather data ...');
+  try {
+    const weatherData = await getLocationAndPopulateAppData(lat, lng);
+    renderAppWithData(weatherData);
+  } catch (error) {
+    /* eslint-disable no-undef */
+    bugsnagClient.notify(error); // defined in html page
+    /* eslint-enable no-undef */
+    // console.log(error);
+    hideLoading();
+  }
   hideLoading();
-  return true;
 }
 
 export async function geoSuccess(position) {
   const { coords } = position;
-  showLoading('... loading weather data ...');
-  const weatherData = await getLocationAndPopulateAppData(coords.latitude, coords.longitude);
-  renderAppWithData(weatherData);
+  await getWeatherDataAndRenderApp(coords.latitude, coords.longitude);
 }
 
 export async function geoError(error) {
@@ -412,7 +423,6 @@ export async function geoError(error) {
           'localweather.io' in your browser, and try again.
         </p>
       `;
-      console.error(errorMessage);
       break;
     case error.POSITION_UNAVAILABLE:
       errorMessage = `
