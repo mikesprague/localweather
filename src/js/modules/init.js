@@ -1,12 +1,15 @@
 import * as defaults from './defaults';
-import { initCache } from './cache';
+import {
+  initCache,
+  getData,
+} from './cache';
 import {
   initFontAwesomeIcons,
   initTooltips,
   initGeolocation,
   hasApprovedLocationSharing,
+  refreshLastUpdatedTime,
   showInstallAlert,
-  hideLoading,
 } from './ui';
 import { loadFromCache } from './data';
 
@@ -62,10 +65,13 @@ export function init() {
       clearInterval();
     }
     defaults.timerHandle = setInterval(() => {
-      if (!loadFromCache) {
+      if (!loadFromCache()) {
         init();
+        return;
       }
-    }, 30000); // 5 minutes (5 * 6000 ms)
+      refreshLastUpdatedTime(getData(defaults.weatherDataKey));
+      initTooltips();
+    }, 60000);
   };
 
   initCache();
