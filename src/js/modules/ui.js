@@ -369,6 +369,10 @@ export function initWeatherAlerts(data) {
   }
 }
 
+export function refreshLastUpdatedTime(data) {
+  populateLastUpdated(data);
+}
+
 export function renderAppWithData(data) {
   initFontAwesomeIcons();
   setBodyBgClass(getBodyBgClass(data));
