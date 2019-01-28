@@ -1,3 +1,5 @@
+[![Greenkeeper badge](https://badges.greenkeeper.io/mikesprague/localweather-io.svg)](https://greenkeeper.io/)
+
 # LocalWeather.io
 
 Minimalist local weather app powered by Dark Sky
