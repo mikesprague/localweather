@@ -118,7 +118,7 @@ export function populatePrimaryData(data) {
   `;
   // const locationName = getData(defaults.locationNameDataKey);
   const primaryDataTemplate = `
-    <div class="column is-one-quarter has-text-right current-icon">
+    <div class="column is-one-quarter has-text-right current-icon has-tooltip" data-tippy-content="<i class='${getWeatherIcon(data.currently.icon)}'></i> ${data.currently.summary}">
       <i class="${getWeatherIcon(data.currently.icon)}"></i>
     </div>
     <div class="column is-half has-text-centered current-conditions">
@@ -126,7 +126,7 @@ export function populatePrimaryData(data) {
         ${data.currently.summary}
       </h2>
     </div>
-    <div class="column is-one-quarter has-text-left current-temp">
+    <div class="column is-one-quarter has-text-left current-temp has-tooltip" data-tippy-content="<i class='fas fa-fw fa-thermometer-half'></i> Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
       ${Math.round(data.currently.temperature)}&deg;
     </div>
   `;
@@ -315,7 +315,7 @@ export function populateHourlyData(data, numHours = 12) {
 export function populateLastUpdated(data) {
   dayjs.extend(relativeTime);
   const lastUpdateTime = dayjs.unix(data.currently.time);
-  const nextUpdateTime = dayjs.unix(data.currently.time + defaults.cacheTimeSpan);
+  const nextUpdateTime = dayjs.unix(data.currently.time + (defaults.cacheTimeSpan - 1));
 
   const lastUpdatedString = `
     Weather data last refreshed at ${lastUpdateTime.format('hh:mm:ss A')}
