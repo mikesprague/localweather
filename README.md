@@ -15,7 +15,7 @@ Minimalist local weather app powered by Dark Sky
   - App and all assets serverd over HTTPS
   - Can add app to homescreen on mobile devices that support PWAs
   - Last [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit received 100 for PWA ([results](https://googlechrome.github.io/lighthouse/viewer/?gist=489395d8244be998899fea23639fc6ba))
-    [![Google Lighthouse Scores](lighthouse-scores-20180819.png)](https://googlechrome.github.io/lighthouse/viewer/?gist=489395d8244be998899fea23639fc6ba)
+    [![Google Lighthouse Scores](lighthouse-scores-20180819.png)](https://googlechrome.github.io/lighthouse/viewer/?gist=489395d8244be998899fea23639fc6ba) [![Greenkeeper badge](https://badges.greenkeeper.io/mikesprague/localweather-io.svg)](https://greenkeeper.io/)
 - Geolocation from browser used for location (latitude/longitude)
   - Uses the [ask permission responsibly](https://developers.google.com/web/fundamentals/native-hardware/user-location/#ask_permission_responsibly) philosophy
     - Let's users know their location info will be used
