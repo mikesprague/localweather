@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.59.0",
+  "version": "0.59.1",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "main": "./public/index.html",
@@ -33,11 +33,11 @@
   },
   "homepage": "https://localweather.io",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.12",
-    "@fortawesome/free-brands-svg-icons": "^5.6.3",
-    "@fortawesome/pro-light-svg-icons": "^5.6.3",
-    "@fortawesome/pro-regular-svg-icons": "^5.6.3",
-    "@fortawesome/pro-solid-svg-icons": "^5.6.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.13",
+    "@fortawesome/free-brands-svg-icons": "^5.7.0",
+    "@fortawesome/pro-light-svg-icons": "^5.7.0",
+    "@fortawesome/pro-regular-svg-icons": "^5.7.0",
+    "@fortawesome/pro-solid-svg-icons": "^5.7.0",
     "@fullhuman/postcss-purgecss": "^1.1.0",
     "autoprefixer": "^9.4.6",
     "axios": "^0.18.0",
@@ -47,7 +47,7 @@
     "dayjs": "^1.8.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "sweetalert2": "^8.0.1",
+    "sweetalert2": "^8.0.2",
     "tippy.js": "^3.4.1"
   },
   "devDependencies": {
