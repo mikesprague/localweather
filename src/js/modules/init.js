@@ -71,7 +71,7 @@ export function init() {
       }
       refreshLastUpdatedTime(getData(defaults.weatherDataKey));
       initTooltips();
-    }, 60000);
+    }, (5 * 1000)); // (num seconds * 1000 milliseconds)
   };
 
   initCache();
