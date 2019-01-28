@@ -3,10 +3,12 @@ const path = require('path');
 const WebPackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const purgecss = require('@fullhuman/postcss-purgecss');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
 const variables = require('./src/js/modules/defaults');
 
 module.exports = {
@@ -22,7 +24,7 @@ module.exports = {
   mode: 'development',
   module: {
     rules: [{
-      test: /\.s?[ac]ss$/,
+      test: /\.(sa|sc|c)ss$/,
       use: [
         MiniCssExtractPlugin.loader,
         {
@@ -32,19 +34,27 @@ module.exports = {
           },
         },
         {
-          loader: 'sass-loader',
+          loader: 'postcss-loader',
           options: {
             sourceMap: true,
+            plugins() {
+              return [
+                autoprefixer(),
+                cssnano({ preset: 'default' }),
+                purgecss({
+                  content: ['./src/**/*.html', './src/js/**/*.js'],
+                  fontFace: true,
+                  whitelistPatterns: [/swal2/, /tippy/],
+                  whitelistPatternsChildren: [/swal2/, /tippy/],
+                }),
+              ];
+            },
           },
         },
         {
-          loader: 'postcss-loader',
+          loader: 'sass-loader',
           options: {
-            plugins() {
-              return [autoprefixer({
-                browsers: 'last 3 versions',
-              })];
-            },
+            sourceMap: true,
           },
         },
       ],
@@ -54,19 +64,6 @@ module.exports = {
       exclude: /node_modules/,
       use: [{
         loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                targets: {
-                  node: 'current',
-                },
-                useBuiltIns: 'entry',
-              },
-            ],
-          ],
-        },
       }],
     }],
   },

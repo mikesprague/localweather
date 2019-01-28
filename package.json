@@ -38,9 +38,12 @@
     "@fortawesome/pro-light-svg-icons": "^5.6.3",
     "@fortawesome/pro-regular-svg-icons": "^5.6.3",
     "@fortawesome/pro-solid-svg-icons": "^5.6.3",
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "autoprefixer": "^9.4.6",
     "axios": "^0.18.0",
     "bugsnag": "^2.4.3",
     "bulma": "^0.7.2",
+    "cssnano": "^4.1.8",
     "dayjs": "^1.8.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
@@ -55,7 +58,6 @@
     "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/runtime": "^7.3.1",
-    "autoprefixer": "^9.4.6",
     "babel-loader": "^8.0.5",
     "compression-webpack-plugin": "^2.0.0",
     "concurrently": "^4.1.0",
@@ -64,6 +66,7 @@
     "dotenv": "^6.2.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-compat": "^2.6.3",
     "eslint-plugin-html": "^5.0.0",
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-markdown": "^1.0.0",
@@ -94,7 +97,10 @@
       "@babel/preset-env"
     ]
   },
-  "browserslist": "last 3 versions",
+  "browserslist": [
+    "last 3 years",
+    "IE 10"
+  ],
   "eslintConfig": {
     "env": {
       "browser": true,
@@ -105,8 +111,9 @@
       "airbnb-base"
     ],
     "plugins": [
-      "import",
+      "compat",
       "html",
+      "import",
       "markdown",
       "prettier"
     ],
