@@ -315,7 +315,7 @@ export function populateHourlyData(data, numHours = 12) {
 export function populateLastUpdated(data) {
   dayjs.extend(relativeTime);
   const lastUpdateTime = dayjs.unix(data.currently.time);
-  const nextUpdateTime = dayjs.unix(data.currently.time + ((defaults.cacheTimeSpan - 60)));
+  const nextUpdateTime = dayjs.unix(data.currently.time + defaults.cacheTimeSpan);
 
   const lastUpdatedString = `
     Weather data last refreshed at ${lastUpdateTime.format('hh:mm:ss A')}
