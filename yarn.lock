@@ -1084,23 +1084,23 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^6.0.0-alpha.0":
-  version "6.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.0.0-alpha.0.tgz#69ee747e940de792df43a79b9ce1fb7a5abf1e66"
-  integrity sha512-4CtLJvr//pTqwsI1+m8VyYlWPbeznDcfa574FK2OXHWagxKHDSbV/GUP7OJfnou06ZwSoM7fDjx4cTYXULev0Q==
+"@bugsnag/browser@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.0.0-alpha.1.tgz#aa0ff8de55461d5e7d454fc9424ee456a686745f"
+  integrity sha512-1XblpNueB00oWJtscgsbjw367o/JbStp/mtne53infT21zPQA6Rkt+qnYHpIv/FZGnLQu34OuU4nbrnLF+lQGQ==
 
-"@bugsnag/js@^6.0.0-alpha.0":
-  version "6.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.0.0-alpha.0.tgz#dc93e5f37917f8c430711422d4d97c62a0efa166"
-  integrity sha512-24YqlsSL1XZ2CAhcOlDyq08yeEEEHZ3p3MLciXdW7NdDme7pDlnSyhBF1hz2I9BOp1kQZcbxkw2GOs+mJU1N/A==
+"@bugsnag/js@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.0.0-alpha.1.tgz#62781c1e0eab47b28409dec9a01260cde49c39da"
+  integrity sha512-HFqVOSuHdhXyU0whUw2Xp23WwS+m0NVUXscJXV2lT7tdxBvhhE7Fb8Mye33UrUW29JCVtQkR9LgLVMc3v+l6/Q==
   dependencies:
-    "@bugsnag/browser" "^6.0.0-alpha.0"
-    "@bugsnag/node" "^6.0.0-alpha.0"
+    "@bugsnag/browser" "^6.0.0-alpha.1"
+    "@bugsnag/node" "^6.0.0-alpha.1"
 
-"@bugsnag/node@^6.0.0-alpha.0":
-  version "6.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.0.0-alpha.0.tgz#349a207338f40d5d2c03c96d9b7e9ec84ce99db9"
-  integrity sha512-d1infTIEe0BgwjcrZZGZTU1mcoJ0WD+sQvnC0vLlRq5ftUzvKHY2lSu+NHm9ztmAMclWnuRBuSRpOqhmcTwHQg==
+"@bugsnag/node@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.0.0-alpha.1.tgz#a5910eec84f6d21b076ead1c38ff6d6eccfa830b"
+  integrity sha512-+7lOnjUJ46ezGkCTEjD24Vl6CG/iKdrPg48S7crzSpkyzDiyhHl+CAyoG5TURO+a8XMKEdiWdMnHpfkZSYJOzA==
   dependencies:
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
@@ -3890,10 +3890,10 @@ eslint-plugin-html@^5.0.0:
   dependencies:
     htmlparser2 "^3.10.0"
 
-eslint-plugin-import@^2.15.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.15.0.tgz#d8f3c28b8988ccde5df964706faa7c1e52f0602a"
-  integrity sha512-LEHqgR+RcnpGqYW7h9WMkPb/tP+ekKxWdQDztfTtZeV43IHF+X8lXU+1HOCcR4oXD24qRgEwNSxIweD5uNKGVg==
+eslint-plugin-import@^2.16.0:
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.16.0.tgz#97ac3e75d0791c4fac0e15ef388510217be7f66f"
+  integrity sha512-z6oqWlf1x5GkHIFgrSvtmudnqM6Q60KM4KvpWi5ubonMjycLjndvd5+8VAZIsTlHC03djdgJuyKG6XO577px6A==
   dependencies:
     contains-path "^0.1.0"
     debug "^2.6.9"
@@ -9454,10 +9454,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.0.2.tgz#eb324c294b127afd16445a23547fe0d522243cdd"
-  integrity sha512-v4bwvTBtLtib0txziCyVhpvEcRMdCTRsDjv3yuhOj5qjKlEWT1oQEZB2LfNkEgMSRdsY2eHQxy5/x/sCzdcETw==
+sweetalert2@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.0.3.tgz#1e5a927bafe3704a87bb67fe7d40d6c4069f88f9"
+  integrity sha512-PuGILHZUb3Ff5FXBYYXf87hhRSvNZiJvIB782wyjPOr4cBAymIuLF01hUkkUUUr33EnOmKyKnKib7+8K+lK6eQ==
 
 symbol-observable@1.0.1:
   version "1.0.1"
