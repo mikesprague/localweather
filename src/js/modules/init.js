@@ -1,3 +1,4 @@
+import bugsnag from '@bugsnag/js';
 import * as defaults from './defaults';
 import {
   initCache,
@@ -12,6 +13,15 @@ import {
   showInstallAlert,
 } from './ui';
 import { loadFromCache } from './data';
+
+const releaseStage = process.env.NODE_ENV || 'production';
+
+window.bugsnagClient = bugsnag({
+  apiKey: 'c9beb7c090034128a89c8e58f261e972',
+  appVersion: `${defaults.versionString}`,
+  releaseStage,
+  notifyReleaseStages: ['development', 'production'],
+});
 
 export function registerServiceWorker() {
   window.isUpdateAvailable = new Promise((resolve) => {

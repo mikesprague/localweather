@@ -12,6 +12,7 @@
   <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.appName %>">
   <meta name="application-name" content="<%= htmlWebpackPlugin.options.appName %>">
   <link rel="canonical" href="<%= htmlWebpackPlugin.options.canonical %>"/>
+  <link rel="preload" href="./css/styles.css" as="stylesheet">
   <link rel="preload" href="./js/vendors~main.bundle.js" as="script">
   <link rel="preload" href="./js/bundle.js" as="script">
   <link rel="manifest" href="./manifest.json">
@@ -77,16 +78,7 @@
       </div>
     </div>
   </section>
-
-  <script src="https://d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script>
-  <script>
-    window.bugsnagClient = bugsnag({
-      apiKey: "c9beb7c090034128a89c8e58f261e972",
-      appVersion: "<%= htmlWebpackPlugin.options.versionString %>",
-      releaseStage: "<%= htmlWebpackPlugin.options.environment %>",
-      notifyReleaseStages: [ "development", "production" ]
-    });
-  </script>
+  
   <script src="./js/vendors~main.bundle.js"></script>
   <script src="./js/bundle.js"></script>
   <script defer async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-33"></script>
