@@ -5,6 +5,7 @@
 Minimalist local weather app powered by Dark Sky
 
 ![LocalWeather.io screenshots coming soon](link_to_screenshot_here)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_shield)
 
 ## Features
 
@@ -60,3 +61,7 @@ Minimalist local weather app powered by Dark Sky
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Bugsnag](https://www.bugsnag.com/)
 - [Netlify](https://www.netlify.com/)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_large)
