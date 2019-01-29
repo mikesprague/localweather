@@ -247,17 +247,21 @@ export function initTooltips() {
 
 export function hideUi() {
   const rows = document.querySelector('.weather-data');
+  const locationName = document.querySelector('.location');
   const hrAll = document.querySelectorAll('hr');
   const initialContent = document.querySelector('.initial-content');
   if (initialContent) { hideEl(initialContent); }
+  if (locationName) { hideEl(locationName); }
   if (rows) { hideEl(rows); }
   if (hrAll) { hideEl(hrAll); }
 }
 
 export function showUi() {
   const rows = document.querySelector('.weather-data');
+  const locationName = document.querySelector('.location');
   const hrAll = document.querySelectorAll('hr');
   if (rows) { showEl(rows); }
+  if (locationName) { showEl(locationName); }
   if (hrAll) { showEl(hrAll); }
   initTooltips();
 }
