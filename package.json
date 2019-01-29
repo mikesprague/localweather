@@ -33,7 +33,7 @@
   },
   "homepage": "https://localweather.io",
   "dependencies": {
-    "@bugsnag/js": "^6.0.0-alpha.0",
+    "@bugsnag/js": "^6.0.0-alpha.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.13",
     "@fortawesome/free-brands-svg-icons": "^5.7.0",
     "@fortawesome/pro-light-svg-icons": "^5.7.0",
@@ -47,7 +47,7 @@
     "dayjs": "^1.8.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "sweetalert2": "^8.0.2",
+    "sweetalert2": "^8.0.3",
     "tippy.js": "^3.4.1"
   },
   "devDependencies": {
@@ -68,7 +68,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-compat": "^2.6.3",
     "eslint-plugin-html": "^5.0.0",
-    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-markdown": "^1.0.0",
     "eslint-plugin-prettier": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
