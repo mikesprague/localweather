@@ -1,11 +1,10 @@
-[![Greenkeeper badge](https://badges.greenkeeper.io/mikesprague/localweather-io.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/mikesprague/localweather-io.svg)](https://greenkeeper.io/) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_shield)
 
 # LocalWeather.io
 
 Minimalist local weather app powered by Dark Sky
 
 ![LocalWeather.io screenshots coming soon](link_to_screenshot_here)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_shield)
 
 ## Features
 
