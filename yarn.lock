@@ -1084,28 +1084,29 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^6.0.0-alpha.1":
-  version "6.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.0.0-alpha.1.tgz#aa0ff8de55461d5e7d454fc9424ee456a686745f"
-  integrity sha512-1XblpNueB00oWJtscgsbjw367o/JbStp/mtne53infT21zPQA6Rkt+qnYHpIv/FZGnLQu34OuU4nbrnLF+lQGQ==
+"@bugsnag/browser@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-5.2.0.tgz#69ff77c8d310eccbdecd545744a22ea6030703f1"
+  integrity sha512-QImSbwVjcEbaUjCxNRVOELUahdHmRfkZ9o0UJpMDsfYNqpMpYzI7DdyH0BUnXv/yI4ymGpAQbFSEqVMTqSa9WA==
 
-"@bugsnag/js@^6.0.0-alpha.1":
-  version "6.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.0.0-alpha.1.tgz#62781c1e0eab47b28409dec9a01260cde49c39da"
-  integrity sha512-HFqVOSuHdhXyU0whUw2Xp23WwS+m0NVUXscJXV2lT7tdxBvhhE7Fb8Mye33UrUW29JCVtQkR9LgLVMc3v+l6/Q==
+"@bugsnag/js@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-5.2.0.tgz#3ef8c63cfac7fc8764459461ad33a31fe44cad36"
+  integrity sha512-tL+Jr4DnQbCH+nLR6Kb9m5QbstIbmFbL9yKId2W3z0MvPxTg9vhRSlu35+99+04CRHrQu0VdY2n9RzDbD5kpgg==
   dependencies:
-    "@bugsnag/browser" "^6.0.0-alpha.1"
-    "@bugsnag/node" "^6.0.0-alpha.1"
+    "@bugsnag/browser" "^5.2.0"
+    "@bugsnag/node" "^5.2.0"
 
-"@bugsnag/node@^6.0.0-alpha.1":
-  version "6.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.0.0-alpha.1.tgz#a5910eec84f6d21b076ead1c38ff6d6eccfa830b"
-  integrity sha512-+7lOnjUJ46ezGkCTEjD24Vl6CG/iKdrPg48S7crzSpkyzDiyhHl+CAyoG5TURO+a8XMKEdiWdMnHpfkZSYJOzA==
+"@bugsnag/node@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-5.2.0.tgz#b1c193161d2a006fabf8ce2c22484c297d57f4ad"
+  integrity sha512-2KqUcZ/uTkNP9G4aGW+sKhdce3Z68pg9I+LnjUDvpMEQ82O/zxy+NLkGTSz9hveNBdznJ1YoqjfoBdRnHkyRSw==
   dependencies:
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
     iserror "^0.0.2"
     pump "^3.0.0"
+    request "^2.87.0"
     stack-generator "^2.0.3"
 
 "@fortawesome/fontawesome-common-types@^0.2.13":
@@ -8043,10 +8044,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.1.tgz#534c2c9d7853f8845e5e078384e71973bd74089f"
-  integrity sha512-XXUITwIkGb3CPJ2hforHah/zTINRyie5006Jd2HKy2qz7snEJXl0KLfsJZW/wst9g6R2rFvqba3VpNYdu1hDcA==
+prettier@^1.16.2:
+  version "1.16.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.2.tgz#f60bc5929a7f9a05260cc88d5430391100092414"
+  integrity sha512-vBMdCn1LjrFi2CpBsiWVKOq+WP9poXDTIGPe2sG3eE33LQ3b6IUgmaMjLZKKY+frD/8FqPeEK1qAx9mOV8iruA==
 
 pretty-error@^2.0.2:
   version "2.1.1"
