@@ -265,7 +265,7 @@ export function populateForecastData(data, numDays = 7) {
         <br>
         <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
         <br>
-        ${Math.round(data.daily.data[next].temperatureHigh)}&deg;/${Math.round(data.daily.data[next].temperatureLow)}&deg;
+        ${Math.round(data.daily.data[next].temperatureMax)}&deg;/${Math.round(data.daily.data[next].temperatureMin)}&deg;
       </p>
     `;
     const forecastEl = document.querySelector(`.forecast-${next}`);
