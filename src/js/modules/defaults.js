@@ -22,7 +22,7 @@ module.exports = {
   themeColor: '#133150',
   timerHandle: 0,
   title: 'LocalWeather.io (powered by Dark Sky)',
-  versionString: 'v0.61.4',
+  versionString: 'v0.62.0',
   weatherDataKey: 'weatherData',
   apiUrl() {
     return window.location.hostname === 'localhost' ? 'http://localhost:9000' : `https://${window.location.hostname}/.netlify/functions`;
