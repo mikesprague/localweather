@@ -1,6 +1,6 @@
 {
   "name": "LocalWeather.io (powered by Dark Sky)",
-  "short_name": "LocalWeather.io",
+  "short_name": "LocalWeather",
   "description": "Minimalist local weather app powered by Dark Sky",
   "icons": [
     {
