@@ -16,6 +16,15 @@ const mode = process.env.WEBPACK_SERVE ? 'development' : 'production';
 
 const webpackRules = [
   {
+    test: /\.(ttf|eot|woff|woff2)$/,
+    use: {
+      loader: 'file-loader',
+      options: {
+        name: 'fonts/[name].[ext]',
+      },
+    },
+  },
+  {
     test: /\.(sa|sc|c)ss$/,
     use: [
       MiniCssExtractPlugin.loader,
@@ -35,7 +44,7 @@ const webpackRules = [
               cssnano({ preset: 'default' }),
               purgecss({
                 content: ['./src/**/*.html', './src/js/**/*.js'],
-                fontFace: true,
+                fontFace: false,
                 whitelistPatterns: [/swal2/, /tippy/, /clear/, /clear-night/, /cloudy/, /cloudy-night/, /loading/, /rainy/, /rainy-night/, /snowy/, /snowy-night/],
                 whitelistPatternsChildren: [/swal2/, /tippy/],
               }),
@@ -113,6 +122,12 @@ const webpackPlugins = [
   new CopyWebpackPlugin([{
     from: './src/images/**/*',
     to: './images',
+    flatten: true,
+    force: true,
+  }]),
+  new CopyWebpackPlugin([{
+    from: './src/fonts/*.woff2',
+    to: './fonts',
     flatten: true,
     force: true,
   }]),
