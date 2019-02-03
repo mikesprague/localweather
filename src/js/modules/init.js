@@ -1,4 +1,5 @@
 import bugsnag from '@bugsnag/js';
+import { register } from 'register-service-worker';
 import * as defaults from './defaults';
 import {
   initCache,
@@ -24,41 +25,36 @@ window.bugsnagClient = bugsnag({
 });
 
 export function registerServiceWorker() {
-  window.isUpdateAvailable = new Promise((resolve) => {
-    if ('serviceWorker' in navigator) {
-      // register service worker
-      window.addEventListener('load', async () => {
-        const registration = await navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
-        // console.log(`[SW] Registration Successful With Scope ${registration.scope}`);
-        // check for updatees
-        registration.onupdatefound = () => {
-          const installingWorker = registration.installing;
-          installingWorker.onstatechange = () => {
-            if (
-              installingWorker.state === 'installed'
-              && navigator.serviceWorker.controller
-              && hasApprovedLocationSharing()
-            ) {
-              resolve(true);
-            } else {
-              resolve(false);
-            }
-          };
-        };
-      });
-    }
+  register('/service-worker.js', {
+    // ready() {
+    //   console.log('Service worker is active.');
+    // },
+    // registered(registration) {
+    //   console.log('Service worker has been registered.', registration);
+    // },
+    // cached(registration) {
+    //   console.log('Content has been cached for offline use.', registration);
+    // },
+    // updatefound(registration) {
+    //   console.log('New content is downloading.', registration);
+    // },
+    updated() { // updated(registration)
+      if (hasApprovedLocationSharing()) {
+        showInstallAlert();
+      }
+    },
+    offline() {
+      console.info('No internet connection found. App is running in offline mode.');
+    },
+    error(error) {
+      console.error('Error during service worker registration:', error);
+    },
   });
 }
 
 registerServiceWorker();
 
 export function init() {
-  window.isUpdateAvailable.then((updateAvailable) => {
-    if (updateAvailable) {
-      showInstallAlert();
-    }
-  });
-
   // window.onerror = (msg, url, lineNo, columnNo, error) => {
   //   console.error('ERROR', msg, url, lineNo, columnNo, error);
   //   hideLoading();
