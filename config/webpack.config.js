@@ -111,8 +111,9 @@ const webpackPlugins = [
     force: true,
   }]),
   new CopyWebpackPlugin([{
-    from: './assets/**/*',
+    from: './src/images/**/*',
     to: './images',
+    flatten: true,
     force: true,
   }]),
 ];

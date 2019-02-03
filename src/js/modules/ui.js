@@ -170,7 +170,7 @@ export function removeBodyBgClass(className) {
 export function setFavicon(data) {
   const currentIcon = data.currently.icon;
   const iconTags = document.getElementsByClassName('favicon');
-  const iconPath = `images/favicons/${currentIcon}.png`;
+  const iconPath = `images/${currentIcon}.png`;
   Array.from(iconTags).forEach((iconTag) => {
     iconTag.setAttribute('href', iconPath);
   });
