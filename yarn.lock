@@ -1121,24 +1121,10 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.14"
 
-"@fortawesome/free-brands-svg-icons@^5.7.1":
-  version "5.7.1"
-  resolved "https://npm.fontawesome.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.7.1.tgz#20711fe4d6a459161d052171169baa175b90fca1"
-  integrity sha512-YU+np8UJGjHUmzfGS5yyK0wWR0QHbx5lTFRSylBfEkm8QXvOkRxB03sUhOSIWVXU7iPiePuqrsglQRgxoG4nrw==
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.14"
-
 "@fortawesome/pro-light-svg-icons@^5.7.1":
   version "5.7.1"
   resolved "https://npm.fontawesome.com/@fortawesome/pro-light-svg-icons/-/pro-light-svg-icons-5.7.1.tgz#77cfc50fce11c892ccbbf19f728ea8dbf72724bd"
   integrity sha512-tvzJ9UjJMhStl2N9bWaIP657pyvLgPK+s/8jjSvq+bbidhDE4xzBBbxJ2vzeAtKpesFTeQOlxStZyI+eBRF8vw==
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.14"
-
-"@fortawesome/pro-regular-svg-icons@^5.7.1":
-  version "5.7.1"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/pro-regular-svg-icons-5.7.1.tgz#66e4ab0ec3b5389a4629dd17a743532f7224e997"
-  integrity sha512-Utu+l6J/c5ODnBXA5N9DfAnj4ZEgOf2Nn6UenxRP9DAaNsxA4fhxARexenISCltBAUVWk8GJh7vjU9A5/+eIAA==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.14"
 
