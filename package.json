@@ -131,16 +131,25 @@
       "prefer-arrow-callback": "warn",
       "arrow-spacing": "error",
       "eqeqeq": "error",
-      "quotes": ["error", "single", {
+      "quotes": [
+        "error",
+        "single",
+        {
           "avoidEscape": true,
           "allowTemplateLiterals": true
         }
       ],
-      "max-len": ["warn", {
-          "code": 120, "tabWidth": 4, "ignoreUrls": true
+      "max-len": [
+        "warn",
+        {
+          "code": 120,
+          "tabWidth": 4,
+          "ignoreUrls": true
         }
       ],
-      "import/no-cycle": ["warn", {
+      "import/no-cycle": [
+        "warn",
+        {
           "maxDepth": 1
         }
       ],
