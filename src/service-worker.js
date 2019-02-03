@@ -1,4 +1,4 @@
-const VERSION = '0.66.0';
+const VERSION = '0.66.1';
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
   '.',
@@ -19,7 +19,7 @@ const cacheWhenPossible = [
   './images/weather-icon-72.png',
   './images/weather-icon-96.png',
   './images/weather-icon-128.png',
-  './images/weather-icon-512.png',
+  './images/we1ther-icon-512.png',
 ];
 
 /* eslint-disable */
