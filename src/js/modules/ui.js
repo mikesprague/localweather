@@ -18,7 +18,11 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import dayjs from 'dayjs';
 import * as defaults from './defaults';
-import { getLocationAndPopulateAppData } from './data';
+import {
+  parseLocationNameFromFormattedAddress,
+  getLocationAndPopulateAppData,
+} from './data';
+import { getData } from './cache';
 import {
   populateMessage, populateForecastData,
   populateHourlyData, populateLastUpdated, populateLocation,
@@ -177,7 +181,8 @@ export function setFavicon(data) {
 }
 
 export function setTitle(data) {
-  const newTitle = `${Math.round(data.currently.temperature)}° ${data.currently.summary} | ${defaults.title}`;
+  const locationName = getData(defaults.locationNameDataKey);
+  const newTitle = `${Math.round(data.currently.temperature)}° ${data.currently.summary} | ${parseLocationNameFromFormattedAddress(locationName)} | ${defaults.title}`;
   window.document.title = newTitle;
 }
 
