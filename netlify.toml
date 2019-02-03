@@ -9,13 +9,3 @@
   from = "https://localweather-io.netlify.com/*"
   to = "https://localweather.io/:splat"
   status = 301
-
-[[headers]]
-  for = "https://www.googletagmanager.com/gtag/js?id=UA-461185-33"
-  [headers.values]
-  Cache-Control = "max-age=31536000"
-
-[[headers]]
-  for = "https://www.google-analytics.com/analytics.js"
-  [headers.values]
-  Cache-Control = "max-age=31536000"
