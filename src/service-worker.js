@@ -19,7 +19,7 @@ const cacheWhenPossible = [
   './images/weather-icon-72.png',
   './images/weather-icon-96.png',
   './images/weather-icon-128.png',
-  './images/we1ther-icon-512.png',
+  './images/weather-icon-512.png',
 ];
 
 /* eslint-disable */
