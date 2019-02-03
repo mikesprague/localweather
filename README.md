@@ -1,4 +1,4 @@
-[![Greenkeeper badge](https://badges.greenkeeper.io/mikesprague/localweather-io.svg)](https://greenkeeper.io/) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_shield)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/91ecd22f-e283-48e1-ab1a-925a57b8dc42/deploy-status)](https://app.netlify.com/sites/localweather-io/deploys) [![Greenkeeper badge](https://badges.greenkeeper.io/mikesprague/localweather-io.svg)](https://greenkeeper.io/) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_shield)
 
 # LocalWeather.io
 
