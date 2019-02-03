@@ -4,37 +4,37 @@
   "description": "Minimalist local weather app powered by Dark Sky",
   "icons": [
     {
-      "src": "./images/favicons/weather-icon-32.png",
+      "src": "./images/weather-icon-32.png",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "./images/favicons/weather-icon-48.png",
+      "src": "./images/weather-icon-48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "./images/favicons/weather-icon-64.png",
+      "src": "./images/weather-icon-64.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "./images/favicons/weather-icon-72.png",
+      "src": "./images/weather-icon-72.png",
       "type": "image/png",
       "sizes": "72x72"
     },
     {
-      "src": "./images/favicons/weather-icon-96.png",
+      "src": "./images/weather-icon-96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "./images/favicons/weather-icon-128.png",
+      "src": "./images/weather-icon-128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "./images/favicons/weather-icon-512.png",
+      "src": "./images/weather-icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
