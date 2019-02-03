@@ -4,6 +4,7 @@ const cacheAlways = [
   '.',
   './index.html',
   './offline.html',
+  './images/favicons/weather-icon-64.png',
   './manifest.json',
   './css/styles.css',
   './js/bundle.js',
