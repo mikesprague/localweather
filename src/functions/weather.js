@@ -6,7 +6,7 @@ const rp = require('request-promise');
 const bugsnagClient = bugsnag(process.env.BUGSNAG_KEY);
 FunctionShield.configure({
   policy: {
-    outbound_connectivity: 'block',
+    outbound_connectivity: 'alert',
     read_write_tmp: 'block',
     create_child_process: 'block',
     read_handler: 'block',
