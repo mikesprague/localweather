@@ -20,6 +20,13 @@ const releaseStage = process.env.NODE_ENV || 'production';
 
 LogRocket.init('skxlwh/localweatherio');
 
+bugsnag.beforeNotify = (data) => {
+  /* eslint-disable no-param-reassign */
+  data.metaData.sessionURL = LogRocket.sessionURL;
+  /* eslint-enable no-param-reassign */
+  return data;
+};
+
 window.bugsnagClient = bugsnag({
   apiKey: 'c9beb7c090034128a89c8e58f261e972',
   appVersion: `${defaults.versionString}`,
