@@ -240,6 +240,7 @@ export function hideEl(el) {
 
 export function initTooltips() {
   tippy('.has-tooltip', {
+    a11y: false,
     allowHTML: true,
     arrow: true,
     interactive: true,
