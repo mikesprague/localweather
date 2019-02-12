@@ -7086,10 +7086,10 @@ netlify-cli@^2.7.0:
     uuid "^3.3.2"
     write-file-atomic "^2.4.2"
 
-netlify-lambda@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.3.3.tgz#8b20e31a2b9e38f82bacfac4067ae1633099c972"
-  integrity sha512-S8bKfCQz5xDFe15J+YUNIahLV4dKL8Yvfj/xLVSN+R2Vo918+0SMipRELjazOaabEQWJzXbaFI+HgSSXHDP7ow==
+netlify-lambda@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.4.0.tgz#c49f50892bdf24746392c38ee98056fbb21e52bc"
+  integrity sha512-s5zqXU/8TyoyUsSEoJSrqiid3HxXSr2nNGy6uay8MpoKe5l0r+SrrqzBq5UHSQ6z8aUttmsby9mYHg1uykLNhA==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
