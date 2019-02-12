@@ -44,6 +44,7 @@
     "cssnano": "^4.1.8",
     "dayjs": "^1.8.5",
     "dotenv": "^6.2.0",
+    "logrocket": "^0.6.19",
     "register-service-worker": "^1.6.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
