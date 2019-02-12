@@ -243,8 +243,8 @@ export function initTooltips() {
     a11y: false,
     allowHTML: true,
     arrow: true,
+    flipOnUpdate: true,
     interactive: true,
-    livePlacement: true,
     size: 'large',
     touch: true,
     trigger: 'click', // mouseenter
