@@ -356,7 +356,7 @@ export function showWeatherAlert(data) {
         <div class='content'>
           <p class='weather-alert-heading has-text-left'>${heading}</p>
           <ul class='weather-alert-bullets has-text-left'>
-            <li><strong>ISSUED</strong> ${dayjs.unix(time).format('dddd, MMMM D, YYYY at hh:mm:ss A')}</li>
+            <li><strong>BEGINS</strong> ${dayjs.unix(time).format('dddd, MMMM D, YYYY at hh:mm:ss A')}</li>
             <li><strong>EXPIRES</strong> ${dayjs.unix(expires).format('dddd, MMMM D, YYYY at hh:mm:ss A')}</li>
             ${bulletPoints}
           </ul>
