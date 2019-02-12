@@ -38,17 +38,17 @@
     "@fullhuman/postcss-purgecss": "^1.1.0",
     "@puresec/function-shield": "^1.2.4",
     "autoprefixer": "^9.4.7",
-    "aws-sdk": "^2.400.0",
+    "aws-sdk": "^2.401.0",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
     "cssnano": "^4.1.8",
     "dayjs": "^1.8.5",
     "dotenv": "^6.2.0",
-    "register-service-worker": "^1.6.0",
+    "register-service-worker": "^1.6.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "sweetalert2": "^8.0.6",
-    "tippy.js": "^3.4.1"
+    "tippy.js": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
