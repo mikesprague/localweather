@@ -1,4 +1,5 @@
 import bugsnag from '@bugsnag/js';
+import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import * as defaults from './defaults';
 import {
@@ -16,6 +17,8 @@ import {
 import { loadFromCache } from './data';
 
 const releaseStage = process.env.NODE_ENV || 'production';
+
+LogRocket.init('skxlwh/localweatherio');
 
 window.bugsnagClient = bugsnag({
   apiKey: 'c9beb7c090034128a89c8e58f261e972',
