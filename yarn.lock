@@ -1907,10 +1907,10 @@ autoprefixer@^9.4.7:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.401.0:
-  version "2.401.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.401.0.tgz#867fd36fa4fc789da8b7c1c387f4ca41b757af75"
-  integrity sha512-mOI4gzKoP/g8Q0ToAaqTh7TijGG9PvGVVUkKmurXqBKy7GTPmy4JizfVkTrM+iBg7RAsx5H2lBxBFpdEFBa5fg==
+aws-sdk@^2.402.0:
+  version "2.402.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.402.0.tgz#d4bfe8f16f476e26a7da4edba79b878a1cabb0fb"
+  integrity sha512-cit/4UaNMtVWwkJtxa7gSSrvMURjPpej5guas1Dhaivoz7QcIrAyoOZo49uSdTSPoGG9YtjFy/tSgdSY61BDTQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -3466,10 +3466,10 @@ dayjs@^1.7.7:
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.0.tgz#507963ac3023f4b1f9f399a278356946fc4c9ae9"
   integrity sha512-2ofInmfMKLLR5R02q3WEUuDt86UK33VQQTaEeJudF+C04ZUaekCP3VpB0NJPiyPDCGJWq9XYhHX2AemdxA8+dg==
 
-dayjs@^1.8.5:
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.5.tgz#0b066770f89a20022218544989f3d23e5e8db29a"
-  integrity sha512-jo5sEFdsT43RqXxoqQVEuD7XL6iSIRxcjTgheJdlV0EHKObKP3pb9JcJEv/KStVMy25ABNQrFnplKcCit05vOA==
+dayjs@^1.8.6:
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.6.tgz#b7a8ccfef173dae03e83a05a58788c9dbe948a35"
+  integrity sha512-NLhaSS1/wWLRFy0Kn/VmsAExqll2zxRUPmPbqJoeMKQrFxG+RT94VMSE+cVljB6A76/zZkR0Xub4ihTHQ5HgGg==
 
 debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
