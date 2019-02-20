@@ -1160,15 +1160,15 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.2.tgz#76f6ce878d436c5cece0229ef1d24e796b2c596c"
   integrity sha512-xm/Wpip5LRK1y1ZlzQLC/pDHlk0e1lNpQgOqWamfZSAU9pbTBHJFLM8wS4EB7LOc3EySARf9lZoGVX7cO26tJQ==
 
-"@netlify/open-api@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.5.0.tgz#9b4e4930c66326c73e09d0ec854a98eee75e660d"
-  integrity sha512-9Lm4kM6uU7EN2IeV2LDt9oKReGLfU+Qxk9qbH4oReU21/vZIuEc41B8jWLN0/M8AuKRJtCERaMDboNvAE0kpsg==
+"@netlify/open-api@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.8.0.tgz#4d4592c68f30b0a96ba58ecbacd6f96f321ea0c6"
+  integrity sha512-SiglzDOK89WcDnVqNOpPeq6LtSl9wc4TXOvfT0A7gY4JxmKWn8P/P888dMslvToUAHObI0zpsc7io9fUy0Ehjw==
 
-"@netlify/zip-it-and-ship-it@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.2.0.tgz#3e714980b7fc1d3d0c9db459c40b6f32ac9abc62"
-  integrity sha512-69/djm/Cmou19gZsV3GvQlBvCsCUa3XCfR96UcerVFxGVhVWbyU3KdALB5LrfGCMcrDBW9BHcJbxH5Aw/tJcPg==
+"@netlify/zip-it-and-ship-it@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.2.1.tgz#22a256048ae3e0b08b7636eb7be45f0ff6ca2718"
+  integrity sha512-ot3S0kbLhAK56VH1xyDQ8kFkKsKjhHfwKLRjZ05yU4S8P96gPWyqxANLUKzSZfT8BoeUCjMy6l59WPa7lgHzCg==
   dependencies:
     archiver "^3.0.0"
     body-parser "^1.18.3"
@@ -1184,6 +1184,7 @@
     precinct "^5.2.1"
     read-pkg-up "^4.0.0"
     require-package-name "^2.0.1"
+    resolve "^1.10.0"
 
 "@oclif/color@^0.0.0":
   version "0.0.0"
@@ -2238,7 +2239,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.5.0, bluebird@^3.5.1:
+bluebird@^3.5.0, bluebird@^3.5.1, bluebird@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
   integrity sha512-/qKPUQlaW1OyR51WeCPBvRnAlnZFUJkCSG5HzGnuIqhgyJtF+T94lFnn33eiazjRm2LAHVy2guNnaq48X9SJuw==
@@ -2493,25 +2494,6 @@ bytes@3.0.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
   integrity sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=
 
-cacache@^10.0.4:
-  version "10.0.4"
-  resolved "https://registry.yarnpkg.com/cacache/-/cacache-10.0.4.tgz#6452367999eff9d4188aefd9a14e9d7c6a263460"
-  integrity sha512-Dph0MzuH+rTQzGPNT9fAnrPmMmjKfST6trxJeK7NQuHRaVw24VzPRWTmg9MpcwOVQZO0E1FBICUlFeNaKPIfHA==
-  dependencies:
-    bluebird "^3.5.1"
-    chownr "^1.0.1"
-    glob "^7.1.2"
-    graceful-fs "^4.1.11"
-    lru-cache "^4.1.1"
-    mississippi "^2.0.0"
-    mkdirp "^0.5.1"
-    move-concurrently "^1.0.1"
-    promise-inflight "^1.0.1"
-    rimraf "^2.6.2"
-    ssri "^5.2.4"
-    unique-filename "^1.1.0"
-    y18n "^4.0.0"
-
 cacache@^11.0.2, cacache@^11.2.0:
   version "11.3.1"
   resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.3.1.tgz#d09d25f6c4aca7a6d305d141ae332613aa1d515f"
@@ -2530,6 +2512,26 @@ cacache@^11.0.2, cacache@^11.2.0:
     rimraf "^2.6.2"
     ssri "^6.0.0"
     unique-filename "^1.1.0"
+    y18n "^4.0.0"
+
+cacache@^11.3.1:
+  version "11.3.2"
+  resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.3.2.tgz#2d81e308e3d258ca38125b676b98b2ac9ce69bfa"
+  integrity sha512-E0zP4EPGDOaT2chM08Als91eYnf8Z+eH1awwwVsngUmgppfM5jjJ8l3z5vO5p5w/I3LsiXawb1sW0VY65pQABg==
+  dependencies:
+    bluebird "^3.5.3"
+    chownr "^1.1.1"
+    figgy-pudding "^3.5.1"
+    glob "^7.1.3"
+    graceful-fs "^4.1.15"
+    lru-cache "^5.1.1"
+    mississippi "^3.0.0"
+    mkdirp "^0.5.1"
+    move-concurrently "^1.0.1"
+    promise-inflight "^1.0.1"
+    rimraf "^2.6.2"
+    ssri "^6.0.1"
+    unique-filename "^1.1.1"
     y18n "^4.0.0"
 
 cache-base@^1.0.1:
@@ -2922,7 +2924,7 @@ cli-ux@^4.9.0:
     treeify "^1.1.0"
     tslib "^1.9.3"
 
-cli-ux@^5.0.0, cli-ux@^5.1.0:
+cli-ux@^5.0.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-5.1.0.tgz#945c672bb835f68f590924cbf83b975743299c64"
   integrity sha512-cSBrgGkS1yDC7aHVZU9+TzLdqyvHumyyKXs3Ts4q3YKzOPFy2d9EaNkBgeV5JVR4gdCwNJuQJhYTXguewE70lA==
@@ -2944,6 +2946,36 @@ cli-ux@^5.0.0, cli-ux@^5.1.0:
     lodash "^4.17.11"
     natural-orderby "^1.0.2"
     password-prompt "^1.0.7"
+    semver "^5.6.0"
+    string-width "^2.1.1"
+    strip-ansi "^5.0.0"
+    supports-color "^5.5.0"
+    supports-hyperlinks "^1.0.1"
+    treeify "^1.1.0"
+    tslib "^1.9.3"
+
+cli-ux@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-5.2.0.tgz#a6c170e306beece72d916cbac49e175b134b1ea2"
+  integrity sha512-Z1fkInh/k+VBpBi4UkeUGr7Ees6HX4P5+LMdgNlqkq06e7XQDmZkz65smc/PMiF5WfecD2MW58MaUbvJmS2Xww==
+  dependencies:
+    "@oclif/command" "^1.5.1"
+    "@oclif/errors" "^1.2.1"
+    "@oclif/linewrap" "^1.0.0"
+    "@oclif/screen" "^1.0.3"
+    ansi-escapes "^3.1.0"
+    ansi-styles "^3.2.1"
+    cardinal "^2.1.1"
+    chalk "^2.4.1"
+    clean-stack "^2.0.0"
+    extract-stack "^1.0.0"
+    fs-extra "^7.0.0"
+    hyperlinker "^1.0.0"
+    indent-string "^3.2.0"
+    is-wsl "^1.1.0"
+    lodash "^4.17.11"
+    natural-orderby "^1.0.2"
+    password-prompt "^1.1.0"
     semver "^5.6.0"
     string-width "^2.1.1"
     strip-ansi "^5.0.0"
@@ -3259,19 +3291,21 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-copy-webpack-plugin@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.6.0.tgz#e7f40dd8a68477d405dd1b7a854aae324b158bae"
-  integrity sha512-Y+SQCF+0NoWQryez2zXn5J5knmr9z/9qSQt7fbL78u83rxmigOy8X5+BFn8CFSuX+nKT8gpYwJX68ekqtQt6ZA==
+copy-webpack-plugin@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-5.0.0.tgz#db3269ab83e8a2c3316c1bc9cba54019bbcf5c17"
+  integrity sha512-iiDj+8nnZeW/i8vYJ3+ABSZkOefJnDYIGLojiZKKFDvf1wcEInABXH1+hN7axQMn04qvJxKjgVOee0e14XPtCg==
   dependencies:
-    cacache "^10.0.4"
-    find-cache-dir "^1.0.0"
+    cacache "^11.3.1"
+    find-cache-dir "^2.0.0"
     globby "^7.1.1"
     is-glob "^4.0.0"
     loader-utils "^1.1.0"
     minimatch "^3.0.4"
-    p-limit "^1.0.0"
+    normalize-path "^3.0.0"
+    p-limit "^2.1.0"
     serialize-javascript "^1.4.0"
+    webpack-log "^2.0.0"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -5244,7 +5278,7 @@ got@^6.7.1:
     unzip-response "^2.0.1"
     url-parse-lax "^1.0.0"
 
-graceful-fs@^4.1.0, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
+graceful-fs@^4.1.0, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
@@ -6737,12 +6771,19 @@ lowercase-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
   integrity sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0JTG4icfZQH+xPyh8VA==
 
-lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.3:
+lru-cache@^4.0.1, lru-cache@^4.1.3:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.4.tgz#51cc46e8e6d9530771c857e24ccc720ecdbcc031"
   integrity sha512-EPstzZ23znHUVLKj+lcXO1KvZkrlw+ZirdwvOmnAnA/1PB4ggyXJ77LRkCqkff+ShQ+cqoxCxLQOh4cKITO5iA==
   dependencies:
     pseudomap "^1.0.2"
+    yallist "^3.0.2"
+
+lru-cache@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-5.1.1.tgz#1da27e6710271947695daf6848e847f01d84b920"
+  integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
+  dependencies:
     yallist "^3.0.2"
 
 macos-release@^2.0.0:
@@ -7058,22 +7099,6 @@ minizlib@^1.1.1:
   dependencies:
     minipass "^2.2.1"
 
-mississippi@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mississippi/-/mississippi-2.0.0.tgz#3442a508fafc28500486feea99409676e4ee5a6f"
-  integrity sha512-zHo8v+otD1J10j/tC+VNoGK9keCuByhKovAvdn74dmxJl9+mWHnx6EMsDN4lgRoMI/eYo2nchAxniIbUPb5onw==
-  dependencies:
-    concat-stream "^1.5.0"
-    duplexify "^3.4.2"
-    end-of-stream "^1.1.0"
-    flush-write-stream "^1.0.0"
-    from2 "^2.1.0"
-    parallel-transform "^1.1.0"
-    pump "^2.0.1"
-    pumpify "^1.3.3"
-    stream-each "^1.1.0"
-    through2 "^2.0.0"
-
 mississippi@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/mississippi/-/mississippi-3.0.0.tgz#ea0a3291f97e0b5e8776b363d5f0a12d94c67022"
@@ -7242,10 +7267,10 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
-netlify-cli@^2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.7.2.tgz#dd4110bb42c8974fca330755cc1a5e24e8d171bb"
-  integrity sha512-2u985qIMoi2G8vuN/3E5nsAMSOA8tjVRmN2sliftSgoyEPquBdN0QHmqA502W4EChJZvCYh0W3rNxG6To3/QGQ==
+netlify-cli@^2.7.4:
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.7.4.tgz#66dd83e091232595e4528fb75234119268aea8fa"
+  integrity sha512-3Zir9wNJLOTjS8+j02BaQ0ffyy/C1IwDDqaw1MbvshSqYdKnX/GKhcADYmr/u2C7FepN+j92RnBJzUgyl0dLDQ==
   dependencies:
     "@iarna/toml" "^2.2.2"
     "@oclif/command" "^1.5.10"
@@ -7260,7 +7285,7 @@ netlify-cli@^2.7.2:
     ci-info "^2.0.0"
     clean-deep "^3.0.2"
     cli-spinners "^1.3.1"
-    cli-ux "^5.1.0"
+    cli-ux "^5.2.0"
     configstore "^4.0.0"
     dot-prop "^4.2.0"
     find-up "^3.0.0"
@@ -7275,7 +7300,7 @@ netlify-cli@^2.7.2:
     lodash.snakecase "^4.1.1"
     log-symbols "^2.2.0"
     make-dir "^2.0.0"
-    netlify "^2.3.0"
+    netlify "^2.3.1"
     node-fetch "^2.2.0"
     ora "^3.1.0"
     p-wait-for "^2.0.0"
@@ -7306,13 +7331,13 @@ netlify-lambda@^1.4.2:
     webpack "^4.17.1"
     webpack-merge "^4.1.4"
 
-netlify@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-2.3.0.tgz#467d5fb84169d386a08fff1b3ad04eb5cad9be82"
-  integrity sha512-FI5PGYDR44NrHf7xxQ/Q3m+JwG4sHBvJuvkdW65Zd51FNbyOeLZAZk7BRrbhNIlO65VzPn0JJJNB7T3EQH0uGQ==
+netlify@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-2.3.1.tgz#9476142e57cebdcb9c3a84f019c04fb6d9bf2c29"
+  integrity sha512-iuRP0yYH1o/9lw3O2KWUmorsmYWCoDpNWF+PuY/r24kAPtZF3CVEGxswJtzSdr1oXenPTvYq9oYwN+MQ12KsEw==
   dependencies:
-    "@netlify/open-api" "^0.5.0"
-    "@netlify/zip-it-and-ship-it" "^0.2.0"
+    "@netlify/open-api" "^0.8.0"
+    "@netlify/zip-it-and-ship-it" "^0.2.1"
     backoff "^2.5.0"
     clean-deep "^3.0.2"
     debug "^4.1.1"
@@ -7824,7 +7849,7 @@ p-is-promise@^1.1.0:
   resolved "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-1.1.0.tgz#9c9456989e9f6588017b0434d56097675c3da05e"
   integrity sha1-nJRWmJ6fZYgBewQ01WCXZ1w9oF4=
 
-p-limit@^1.0.0, p-limit@^1.1.0:
+p-limit@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.3.0.tgz#b86bd5f0c25690911c7590fcbfc2010d54b3ccb8"
   integrity sha512-vvcXsLAJ9Dr5rQOPk7toZQZJApBl2K4J6dANSsEuh6QI41JYcsS/qhTGa9ErIUUgK3WNQoJYvylxvjqmiqEA9Q==
@@ -7835,6 +7860,13 @@ p-limit@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-2.0.0.tgz#e624ed54ee8c460a778b3c9f3670496ff8a57aec"
   integrity sha512-fl5s52lI5ahKCernzzIyAP0QAZbGIovtVHGwpcu1Jr/EpzLVDI2myISHwGqK7m8uQFugVWSrbxH7XnhGtvEc+A==
+  dependencies:
+    p-try "^2.0.0"
+
+p-limit@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-2.1.0.tgz#1d5a0d20fb12707c758a655f6bbc4386b5930d68"
+  integrity sha512-NhURkNcrVB+8hNfLuysU8enY5xn2KXphsHBaC2YmRNTZRc7RWusw6apSpdEj3jo4CMb6W9nrF6tTnsJsJeyu6g==
   dependencies:
     p-try "^2.0.0"
 
@@ -7999,6 +8031,14 @@ password-prompt@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/password-prompt/-/password-prompt-1.0.7.tgz#8e27748d3400bc9c9140d5ade705dfb7aeb7d91a"
   integrity sha1-jid0jTQAvJyRQNWt5wXft6632Ro=
+  dependencies:
+    ansi-escapes "^3.1.0"
+    cross-spawn "^6.0.5"
+
+password-prompt@^1.1.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/password-prompt/-/password-prompt-1.1.2.tgz#85b2f93896c5bd9e9f2d6ff0627fa5af3dc00923"
+  integrity sha512-bpuBhROdrhuN3E7G/koAju0WjVw9/uQOG5Co5mokNj0MiOSBVZS1JTwM4zl55hu0WFmIEFvO9cU9sJQiBIYeIA==
   dependencies:
     ansi-escapes "^3.1.0"
     cross-spawn "^6.0.5"
@@ -8828,7 +8868,7 @@ public-encrypt@^4.0.0:
     randombytes "^2.0.1"
     safe-buffer "^5.1.2"
 
-pump@^2.0.0, pump@^2.0.1:
+pump@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pump/-/pump-2.0.1.tgz#12399add6e4cf7526d973cbc8b5ce2e2908b3909"
   integrity sha512-ruPMNRkN3MHP1cWJc9OWr+T/xDP0jhXYCLfJcBuX54hhfIBnaQmAUMfDcG4DM5UMWByBbJY69QSphm3jtDKIkA==
@@ -9395,19 +9435,19 @@ resolve-url@^0.2.1:
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
 
+resolve@^1.10.0, resolve@^1.5.0, resolve@^1.8.1, resolve@^1.9.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
+  integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
+  dependencies:
+    path-parse "^1.0.6"
+
 resolve@^1.3.2, resolve@^1.6.0:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   integrity sha512-AicPrAC7Qu1JxPCZ9ZgCZlY35QgFnNqc+0LtbRNxnVw4TXvjQ72wnuL9JQcEBgXkI9JM8MsT9kaQoHcpCRJOYA==
   dependencies:
     path-parse "^1.0.5"
-
-resolve@^1.5.0, resolve@^1.8.1, resolve@^1.9.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
-  integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
-  dependencies:
-    path-parse "^1.0.6"
 
 restore-cursor@^1.0.1:
   version "1.0.1"
@@ -9918,14 +9958,7 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
-ssri@^5.2.4:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.3.0.tgz#ba3872c9c6d33a0704a7d71ff045e5ec48999d06"
-  integrity sha512-XRSIPqLij52MtgoQavH/x/dU1qVKtWUAAZeOHsR9c2Ddi4XerFy3mc1alf+dLJKl9EUIm/Ht+EowFkTUOA6GAQ==
-  dependencies:
-    safe-buffer "^5.1.1"
-
-ssri@^6.0.0:
+ssri@^6.0.0, ssri@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
   integrity sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==
@@ -10204,10 +10237,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.2.1.tgz#641cb3db8a9a957dc15d07d8efc58bfd02a5cd11"
-  integrity sha512-ozle0Jek8Nua7FTW9Q5wi0jMbzKnR+TeJjh8nK59+vJ5w9Yxf3agrihaUvzq3t4Xx1PPEB50mJaTBVDi3tf7xw==
+sweetalert2@^8.2.2:
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.2.2.tgz#b894b328b37c639c388edc482d290c74922f2d36"
+  integrity sha512-gKO69XLVrQ+wb5/geRYIvlRAGsPSUUbPNALuCk34sc7BSd5lWUNWwXffThWcetGDrFO8POTBJY8bbzPS+hCI9Q==
 
 symbol-observable@1.0.1:
   version "1.0.1"
@@ -10670,7 +10703,7 @@ uniqs@^2.0.0:
   resolved "https://registry.yarnpkg.com/uniqs/-/uniqs-2.0.0.tgz#ffede4b36b25290696e6e165d4a59edb998e6b02"
   integrity sha1-/+3ks2slKQaW5uFl1KWe25mOawI=
 
-unique-filename@^1.1.0:
+unique-filename@^1.1.0, unique-filename@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/unique-filename/-/unique-filename-1.1.1.tgz#1d69769369ada0583103a1e6ae87681b56573230"
   integrity sha512-Vmp0jIp2ln35UTXuryvjzkjGdRyf9b2lTXuSYUiPmzRcl3FDtYqAwOnTJkAngD9SWhnoJzDbTKwaOrZ+STtxNQ==
