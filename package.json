@@ -31,7 +31,7 @@
   },
   "homepage": "https://localweather.io",
   "dependencies": {
-    "@bugsnag/js": "^5.2.0",
+    "@bugsnag/js": "^6.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/pro-light-svg-icons": "^5.7.2",
     "@fortawesome/pro-solid-svg-icons": "^5.7.2",
