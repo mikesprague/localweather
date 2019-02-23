@@ -28,7 +28,7 @@ bugsnag.beforeNotify = (data) => {
 };
 
 window.bugsnagClient = bugsnag({
-  apiKey: 'c9beb7c090034128a89c8e58f261e972',
+  apiKey: `${process.env.BUGSNAG_KEY}`,
   appVersion: `${defaults.versionString}`,
   releaseStage,
   notifyReleaseStages: ['development', 'production'],
