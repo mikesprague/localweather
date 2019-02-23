@@ -2108,10 +2108,10 @@ autoprefixer@^9.4.8:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.408.0:
-  version "2.408.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.408.0.tgz#63b5fd9aad198b34aa45b12ee6100c0f612cb13d"
-  integrity sha512-xPbFDeq8biFVth+5N8NiwcPmRXJqldVsvtx3LKo0ecCLyUIziH12ZzHBo7em4M0uVPj3fpA76j7gocB5NX9xQQ==
+aws-sdk@^2.409.0:
+  version "2.409.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.409.0.tgz#d017060ba9e005487c68dc34a592af74d916f295"
+  integrity sha512-QV6j9zBQq/Kz8BqVOrJ03ABjMKtErXdUT1YdYEljoLQZimpzt0ZdQwJAsoZIsxxriOJgrqeZsQUklv9AFQaldQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -10302,10 +10302,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.2.3:
-  version "8.2.3"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.2.3.tgz#37dcac6407d027d0b6ac586bc8f6010821fd9379"
-  integrity sha512-QE3V+jNDKlv9OF+SvSsh5M3NJnNX289hs+lPhTIRGFEhzbjoYXapHXYTm0OJvUQeZJz9vYCcaPpJ8Laylid31g==
+sweetalert2@^8.2.4:
+  version "8.2.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.2.4.tgz#d1f0c7367bc015e83582e86146e88e2508d8a968"
+  integrity sha512-r0Eu4tfloXr6W7RslNOM0kfBeE6Tzs6sYjaKHDoD1pWxLkuxZ5t54GWcQClvkGWa+yqgJri3SXlMWob1mZZBaA==
 
 symbol-observable@1.0.1:
   version "1.0.1"
@@ -10515,10 +10515,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tippy.js@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-4.0.2.tgz#2e292fd025fa31bedf91408a50dd3dbdfbcf881d"
-  integrity sha512-aFpO4/aUnFjuGLxH710y4CiCJ6jBQ7r4f4fTs1n6U6Wt155/k0W5uJill23VT1F9b0QhJjF4w1kJP39aS8nQZQ==
+tippy.js@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-4.0.3.tgz#fc1bdb1f995616099bd1007e42d9dbb66d081797"
+  integrity sha512-an3hGGD29DruVArvST9LhiqrFEK8Lf7/nvhUir2Z/D8LmsmrO3Folw3YoG0ha2QUqbmAMKxpcSOvnHWi3rdl2Q==
   dependencies:
     popper.js "^1.14.7"
 
