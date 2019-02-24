@@ -3724,10 +3724,10 @@ dayjs@^1.7.7:
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.0.tgz#507963ac3023f4b1f9f399a278356946fc4c9ae9"
   integrity sha512-2ofInmfMKLLR5R02q3WEUuDt86UK33VQQTaEeJudF+C04ZUaekCP3VpB0NJPiyPDCGJWq9XYhHX2AemdxA8+dg==
 
-dayjs@^1.8.6:
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.6.tgz#b7a8ccfef173dae03e83a05a58788c9dbe948a35"
-  integrity sha512-NLhaSS1/wWLRFy0Kn/VmsAExqll2zxRUPmPbqJoeMKQrFxG+RT94VMSE+cVljB6A76/zZkR0Xub4ihTHQ5HgGg==
+dayjs@^1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.7.tgz#21f8593317830c8ba97bba5d53fc523cf4b7215f"
+  integrity sha512-ugOPjw2XWFMVEV86KvwB25FW8+HLJohDdx5PSl9TatuZCiEAAoFzyGjEzi8taLTDpsbNwaH0rWPUcd5DwqXDhw==
 
 debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
