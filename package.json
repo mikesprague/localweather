@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.72.1",
+  "version": "0.72.2",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "scripts": {
@@ -98,8 +98,8 @@
     ]
   },
   "browserslist": [
-    "last 2 years",
-    "IE 11"
+    "last 3 years",
+    "IE 10"
   ],
   "eslintConfig": {
     "env": {
