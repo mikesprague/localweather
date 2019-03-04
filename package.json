@@ -49,7 +49,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "sweetalert2": "^8.2.6",
-    "tippy.js": "^4.0.3"
+    "tippy.js": "^4.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
