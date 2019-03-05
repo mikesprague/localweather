@@ -2112,10 +2112,10 @@ autoprefixer@^9.4.10:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.414.0:
-  version "2.414.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.414.0.tgz#38f43a536fc47ecd407049565737a0fb009d4cc9"
-  integrity sha512-ZJvZei479gJdp0N2MKb1I0COcowNIN5L5cllooMV0RPztrianR72SyE1gquPeT7TA37l/fVuSmYat2dh4C2GTg==
+aws-sdk@^2.415.0:
+  version "2.415.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.415.0.tgz#201b468ceb5cbaea6d1a115f39aea52f569ce180"
+  integrity sha512-QPrJNWR4f56N2VPNLCD/XVnEufiZB08bvRPO7xkajHJdeOvrECpjFlJNkvXmjpnkCfTwaQC0sHHMsJyzMeL7+g==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -7366,10 +7366,10 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
-netlify-cli@^2.8.2:
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.8.2.tgz#61e1a457fbae4b9dad8280f4ec6f538b77107b6d"
-  integrity sha512-qV5lmQ1kuGq01ORQ0tsL5TveVqW0utN6Te6gQk3CXwMXgiV2VFSesS5hCUXULAbyQ5pLvVD8w5R9RPnJT+1QwQ==
+netlify-cli@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.8.3.tgz#42d0640dc9839c8dcbbf78bb6db7f8929684dd45"
+  integrity sha512-SRexmS2yPTy2Ne6cUPIDU8a5Ro/3ADuUPkGSIbDea1fqTU8HViTpO4YScVCrngmOZZQS3lvkcB63JLy3e8YUBw==
   dependencies:
     "@iarna/toml" "^2.2.3"
     "@oclif/command" "^1.5.11"
