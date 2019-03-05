@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "0.72.14",
+  "version": "0.72.15",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "scripts": {
