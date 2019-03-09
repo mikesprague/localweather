@@ -1,4 +1,4 @@
-const VERSION = '0.72.18';
+const VERSION = '0.73.0';
 const CACHE_NAME = `localWeather-io-${VERSION}`;
 const cacheAlways = [
   '.',
