@@ -38,7 +38,7 @@
     "@fullhuman/postcss-purgecss": "^1.1.0",
     "@puresec/function-shield": "^1.2.6",
     "autoprefixer": "^9.4.10",
-    "aws-sdk": "^2.418.0",
+    "aws-sdk": "^2.419.0",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
     "cssnano": "^4.1.10",
@@ -48,7 +48,7 @@
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "sweetalert2": "^8.2.6",
+    "sweetalert2": "^8.3.0",
     "tippy.js": "^4.0.4"
   },
   "devDependencies": {
@@ -61,7 +61,7 @@
     "babel-loader": "^8.0.5",
     "compression-webpack-plugin": "^2.0.0",
     "concurrently": "^4.1.0",
-    "copy-webpack-plugin": "^5.0.0",
+    "copy-webpack-plugin": "^5.0.1",
     "css-loader": "^2.1.1",
     "eslint": "^5.15.1",
     "eslint-config-airbnb-base": "^13.1.0",
