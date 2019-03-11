@@ -2112,10 +2112,10 @@ autoprefixer@^9.4.10:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.418.0:
-  version "2.418.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.418.0.tgz#840c4562c28fc63e99a9195a4644d0021f5b3e35"
-  integrity sha512-15aCtqqCsiyMW+CDwo6Fq3V5jDzpgb5//aPMosL+5FQnQu65t2GiLidcIPx4fWvsYpRiE/i4enz3a0Kqtt2acQ==
+aws-sdk@^2.419.0:
+  version "2.419.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.419.0.tgz#e0fec4acde5cec0d1591f819284bae7c1130726c"
+  integrity sha512-v071NTHwsgYmrnJBAboOjhcTVqB99GAQuqVaaeLBBt33/AebawxoJUkuJrezIni+inqnKOi9F6pi87g48iR1+w==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -3335,13 +3335,14 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-copy-webpack-plugin@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-5.0.0.tgz#db3269ab83e8a2c3316c1bc9cba54019bbcf5c17"
-  integrity sha512-iiDj+8nnZeW/i8vYJ3+ABSZkOefJnDYIGLojiZKKFDvf1wcEInABXH1+hN7axQMn04qvJxKjgVOee0e14XPtCg==
+copy-webpack-plugin@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-5.0.1.tgz#97997989cc5bc69976bf64f660bd19663481f089"
+  integrity sha512-yMTURAkYZO/6h6pGMbHQl2jpKtRNC+0Cy/4kRRP6qUHmpbGGAzNnyMecE6aHgGFCb4ksrL3YcDqYGb8ds3J9cw==
   dependencies:
     cacache "^11.3.1"
     find-cache-dir "^2.0.0"
+    glob-parent "^3.1.0"
     globby "^7.1.1"
     is-glob "^4.0.0"
     loader-utils "^1.1.0"
@@ -10332,10 +10333,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.2.6:
-  version "8.2.6"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.2.6.tgz#1381739f164b807917f6054652fd173187a497c5"
-  integrity sha512-F14KlRBBJr7Hl+WWCYnBZR8heUNTBQY9nfhNWlrocnj5equ7lkWZC8BfxHXX699D8tb/LrHaEWtpIhWVMgoacA==
+sweetalert2@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.3.0.tgz#ebbcd3438a1249c8f75615955273f5a22675cf6c"
+  integrity sha512-HpZVbAxAyh03N5uzNs2e4gpVaaPyZYtBctyAZP8jUrF8Es9e3uvWFsO9I0m8DnlY4771dYIIeUDvlkwhdcKacA==
 
 symbol-observable@1.0.1:
   version "1.0.1"
