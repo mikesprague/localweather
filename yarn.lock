@@ -2112,10 +2112,10 @@ autoprefixer@^9.4.10:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.420.0:
-  version "2.420.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.420.0.tgz#b341c805b6206014fb5caebf2c5d4697d3de373d"
-  integrity sha512-lpkGYiJ3dvZ0e4OUE9S3eGuMGCdtG9f04wLwtvaoqSvoPb4PNgCFv42EwBeEkKr6VcnofwcRpqPpzN+cSLFBzQ==
+aws-sdk@^2.421.0:
+  version "2.421.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.421.0.tgz#39c8066b103ef01849f7da587cec40cc874f2fbc"
+  integrity sha512-N0vY++NJc0MV96pu4vcnJIe8MXNKgcNLxlRPDALlIbaYHSC+btJSAdXpC5+4uFFF30uWCaIM1WiX8O/9Obg5oA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -4091,10 +4091,10 @@ dot-prop@^4.1.0, dot-prop@^4.1.1, dot-prop@^4.2.0:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
-  integrity sha512-HygQCKUBSFl8wKQZBSemMywRWcEDNidvNbjGVyZu3nbZ8qq9ubiPoGLMdRDpfSrpkkm9BXYFkpKxxFX38o/76w==
+dotenv@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-7.0.0.tgz#a2be3cd52736673206e8a85fb5210eea29628e7c"
+  integrity sha512-M3NhsLbV1i6HuGzBUH8vXrtxOk+tWmzWKDMbAVSUp3Zsjm7ywFeuwrUXhmhQyRK1q5B5GGy7hcXPbj3bnfZg2g==
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -10546,10 +10546,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tippy.js@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-4.1.0.tgz#aea4f7d983d6714e0521975798e216eac8dbfa51"
-  integrity sha512-dNtBNbv40SXw9oUUOfSRUev9Ljj/xRcxr6LlwnF96SGH7SouEIMYIx4q8nO2ZfJBN+WTd9P2EBmS6vMxMr43Bw==
+tippy.js@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-4.2.0.tgz#68387485cbc5d30ad5416bb01a20e63548898145"
+  integrity sha512-+WZRGtpIusZeJdZB2W5/rmOsT+6t3ASiQP0gln/OW1c+Goc6lx4vf+3i3KAJO875y7Vc1hGmFgyAMHor/eISBQ==
   dependencies:
     popper.js "^1.14.7"
 
@@ -11093,10 +11093,10 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webpack-bugsnag-plugins@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/webpack-bugsnag-plugins/-/webpack-bugsnag-plugins-1.3.0.tgz#dad53bc3420acaafb276bc0202c36aa5d5f91818"
-  integrity sha512-QBUzCgOzs3dMpfY61n6exfrSqTc8iaCRND4I0b1gg7xTZ+xpqfqc0Q/5eN2PUW87GKoyoPT9lb5i4BsbMMb4+g==
+webpack-bugsnag-plugins@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/webpack-bugsnag-plugins/-/webpack-bugsnag-plugins-1.4.0.tgz#230384a71b620523bcd3fff2316b7dbde066c640"
+  integrity sha512-yjKLXOJok0Ms2PTOlc4rzahKkE0nABL0D5/Tn7hu8rMoxR7JPvkwWlt1yA7x1E815KvYCW8ahyRJ+Nj+8HdXEA==
   dependencies:
     bugsnag-build-reporter "^1.0.1"
     bugsnag-sourcemaps "^1.0.7"
