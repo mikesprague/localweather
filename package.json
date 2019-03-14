@@ -99,11 +99,10 @@
       "@babel/preset-env"
     ]
   },
-  "browserslist": [
-    "last 3 years",
-    "safari >= 8",
-    "IE >= 9"
-  ],
+  "browserslist": {
+    "development": ["last 2 versions"],
+    "production": ["last 3 years", "safari >= 8", "IE >= 9"]
+  },
   "eslintConfig": {
     "env": {
       "browser": true,
