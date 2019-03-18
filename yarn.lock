@@ -2110,10 +2110,10 @@ autoprefixer@^9.5.0:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.422.0:
-  version "2.422.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.422.0.tgz#d875ca4098ced6f47d466f4c7addf8a79332651f"
-  integrity sha512-t/hUQcRVhbw3EPS84d7YqwIAMSXHT5V/s6m0ivgLjIXnzRng0qRD1KGTkoLkXnY+X/o/NdvVIIfLfO4VF8xqMw==
+aws-sdk@^2.423.0:
+  version "2.423.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.423.0.tgz#bc67427fb602b88a652143fafd2febde94a8141d"
+  integrity sha512-BgsqrCMeJuE+gyWbqzDXvwzdEOyl5f9VIy0tgh78vqPI/09j9s4TKC9McMr6I4uTifVUpOxxultPS39PcTjQeA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -4479,10 +4479,10 @@ eslint@^2.7.0:
     text-table "~0.2.0"
     user-home "^2.0.0"
 
-eslint@^5.15.2:
-  version "5.15.2"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.15.2.tgz#0237bbb2362f89f4effef2f191eb0fea5279c0a5"
-  integrity sha512-I8VM4SILpMwUvsRt83bQVwIRQAJ2iPMXun1FVZ/lV1OHklH2tJaXqoDnNzdiFc6bnCtGKXvQIQNP3kj1eMskSw==
+eslint@^5.15.3:
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.15.3.tgz#c79c3909dc8a7fa3714fb340c11e30fd2526b8b5"
+  integrity sha512-vMGi0PjCHSokZxE0NLp2VneGw5sio7SSiDNgIUn2tC0XkWJRNOIoHIg3CliLVfXnJsiHxGAYrkw0PieAu8+KYQ==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.9.1"
