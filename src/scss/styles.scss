@@ -7,7 +7,7 @@
 @import "variables";
 
 @font-face {
-  font-display: fallback;
+  font-display: swap;
   font-family: "Open Sans Condensed";
   font-style: italic;
   font-weight: 300;
@@ -16,7 +16,7 @@
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: swap;
   font-family: "Open Sans Condensed";
   font-style: normal;
   font-weight: 300;
@@ -25,7 +25,7 @@
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: swap;
   font-family: "Open Sans Condensed";
   font-style: normal;
   font-weight: 700;
