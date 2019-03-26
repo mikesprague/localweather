@@ -38,7 +38,7 @@
     "@fullhuman/postcss-purgecss": "^1.1.0",
     "@puresec/function-shield": "^1.2.6",
     "autoprefixer": "^9.5.0",
-    "aws-sdk": "^2.428.0",
+    "aws-sdk": "^2.429.0",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
     "cssnano": "^4.1.10",
@@ -49,7 +49,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "sweetalert2": "^8.7.0",
-    "tippy.js": "^4.2.0"
+    "tippy.js": "^4.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
