@@ -337,7 +337,7 @@ export function populateFooter() {
   const footerTemplate = `
     <div class="column">
       <div class="content has-text-right">
-        <a href="https://github.com/mikesprague/localweather-io/releases/tag/${defaults.versionString.replace('v', '')}" target="_blank" rel="noopener" data-tippy-content="${defaults.versionString} Release Notes">
+        <a href="https://github.com/mikesprague/localweather-io/releases/latest" target="_blank" rel="noopener" data-tippy-content="${defaults.versionString} Release Notes">
           LocalWeather.io ${defaults.versionString}
         </a>
       </div>
