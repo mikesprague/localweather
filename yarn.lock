@@ -2137,10 +2137,10 @@ autoprefixer@^9.5.0:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.429.0:
-  version "2.429.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.429.0.tgz#27c32734f6473f69a39c29a694d54d15b5beb68a"
-  integrity sha512-8RmRyCXYjDC15BQlkkgT5Yqs8GAdPmjaLRP03Lc6kqaKuMMIi4EnNIlXDKi9kwj3zl2AXfm0GE5blcE0+ZfaxQ==
+aws-sdk@^2.430.0:
+  version "2.430.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.430.0.tgz#40ff492c6315084b91c85ddf618f961bca0f3862"
+  integrity sha512-xJC1Sd6pjiIUg0W6v189QFWaY/jo+dVdQEJpplzqqBWmdUhZrBVmuWBVjC/wf5r6+Tj2KCc0G1fvjZqVutYnMw==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -6882,10 +6882,10 @@ loglevelnext@^1.0.1, loglevelnext@^1.0.2:
     es6-symbol "^3.1.1"
     object.assign "^4.1.0"
 
-logrocket@^0.6.19:
-  version "0.6.19"
-  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-0.6.19.tgz#7dfbaf3383370f0cc4fa5f61bef51541f86c628b"
-  integrity sha512-awRidM5W/hYnkezpSG4gpX0O0izioWItn7ExmLfMGg3/4WGbDRBW91HPlv1hHItB9eou68qrIDlEqNlvZYi1dQ==
+logrocket@^0.6.20:
+  version "0.6.20"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-0.6.20.tgz#704c3a6670edec7e413f104910146604c4d974b4"
+  integrity sha512-My3lR6Hm3NH+sBF50F8tf2aMLQdSHZV2DZNWRkZiVSX482W+ByD40x+UJWfkShJeoPhAOJciP7iylFrMGir6UA==
 
 loose-envify@^1.0.0:
   version "1.4.0"
