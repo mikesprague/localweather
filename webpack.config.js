@@ -10,7 +10,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const purgecss = require('@fullhuman/postcss-purgecss');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
-const variables = require('../src/js/modules/defaults');
+const variables = require('./src/js/modules/defaults');
 
 const mode = process.env.WEBPACK_SERVE ? 'development' : 'production';
 
@@ -149,6 +149,9 @@ module.exports = {
   entry: [
     './src/js/app.js',
   ],
+  devServer: {
+    port: 5500,
+  },
   devtool: 'source-map',
   output: {
     filename: './js/bundle.js',
