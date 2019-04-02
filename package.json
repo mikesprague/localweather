@@ -9,14 +9,14 @@
     "serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "start": "yarn serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --config ./config/webpack.config.js -p --colors --display minimal",
-    "webpack:dev": "webpack --config ./config/webpack.config.js -d --colors --display minimal",
-    "webpack:serve": "webpack-serve ./config/webpack.config.js --port 5500",
+    "webpack": "webpack --config ./webpack.config.js -p --colors --display minimal",
+    "webpack:dev": "webpack --config ./webpack.config.js -d --colors --display minimal",
+    "webpack:serve": "webpack-dev-server",
     "dev:build": "yarn dev:clean && yarn webpack:dev && yarn lambda:build",
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "lambda:build": "netlify-lambda build ./src/functions",
-    "lambda:serve": "netlify-lambda serve ./src/functions -c ./config/lambda.config.dev.js"
+    "lambda:serve": "netlify-lambda serve ./src/functions -c ./lambda.config.dev.js"
   },
   "repository": {
     "url": "https://github.com/mikesprague/localweather-io"
