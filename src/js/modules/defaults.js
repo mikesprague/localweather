@@ -38,7 +38,7 @@ module.exports = {
     'clear-night': 'fal fa-fw fa-moon-stars',
     rain: 'fal fa-fw fa-cloud-rain',
     snow: 'fal fa-fw fa-cloud-snow',
-    sleet: 'fal fa-fw fa-sleet',
+    sleet: 'fal fa-fw fa-cloud-sleet',
     wind: 'fal fa-fw fa-wind',
     fog: 'fal fa-fw fa-fog',
     cloudy: 'fal fa-fw fa-clouds',
