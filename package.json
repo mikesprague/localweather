@@ -38,7 +38,7 @@
     "@fullhuman/postcss-purgecss": "^1.1.0",
     "@puresec/function-shield": "^1.2.6",
     "autoprefixer": "^9.5.0",
-    "aws-sdk": "^2.436.0",
+    "aws-sdk": "^2.437.0",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
     "cssnano": "^4.1.10",
