@@ -11,10 +11,11 @@ import {
   faThermometerHalf, faInfoCircle,
 } from '@fortawesome/pro-solid-svg-icons';
 import {
-  faTint, faCode, faWifiSlash,
+  faTint, faClock, faCode, faWifiSlash,
   faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow,
   faCloudSleet, faWind as faWIndLight, faFog, faClouds, faCloudsSun,
   faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado,
+  faTemperatureHigh, faTemperatureLow,
 } from '@fortawesome/pro-light-svg-icons';
 import dayjs from 'dayjs';
 import * as defaults from './defaults';
@@ -38,6 +39,7 @@ export function initFontAwesomeIcons() {
     faBan,
     faChevronCircleUp,
     faCircle,
+    faClock,
     faCloud,
     faCloudHail,
     faCloudRain,
@@ -71,6 +73,8 @@ export function initFontAwesomeIcons() {
     faSunset,
     faSyncAlt,
     faTachometer,
+    faTemperatureHigh,
+    faTemperatureLow,
     faThermometerHalf,
     faThunderstorm,
     faTint,
