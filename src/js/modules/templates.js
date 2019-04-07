@@ -259,6 +259,7 @@ export function populateForecastData(data, numDays = 7) {
   forecastWrappersEl.innerHTML = forecastWrappers;
   for (let i = 0; i < numDays; i += 1) {
     const next = i + 1;
+
     const forecastTemplate = `
       <p class="has-tooltip" data-tippy-content="${data.daily.data[next].summary}">
         <strong>${dayjs.unix(data.daily.data[next].time).format('ddd')}</strong>
@@ -292,9 +293,6 @@ export function populateHourlyData(data, numHours = 12) {
   hourlyWrappersEl.innerHTML = hourlyWrappers;
   for (let i = 0; i < numHours; i += 1) {
     const next = i + 1;
-    // const hourlyPopup = `
-    //   <!-- more complete detail here -->
-    // `;
     const conditionText = `<i class='${getWeatherIcon(data.hourly.data[next].icon)}'></i> ${data.hourly.data[next].summary}`;
     const tempText = `<i class='fas fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[next].temperature)}&deg; (feels like ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;)`;
     const precipitationText = Math.floor(data.hourly.data[next].precipProbability * 100)
