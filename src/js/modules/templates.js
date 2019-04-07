@@ -259,9 +259,25 @@ export function populateForecastData(data, numDays = 7) {
   forecastWrappersEl.innerHTML = forecastWrappers;
   for (let i = 0; i < numDays; i += 1) {
     const next = i + 1;
-
+    const conditionText = `<i class='${getWeatherIcon(data.daily.data[next].icon)}'></i> ${data.daily.data[next].summary}`;
+    const tempText = `
+      <i class='fal fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[next].temperatureMax)}&deg;
+      (feels ${Math.round(data.daily.data[next].apparentTemperatureMax)}&deg;)
+      around ${dayjs.unix(data.daily.data[next].apparentTemperatureMaxTime).format('h:mma')}
+      <br>
+      <i class='fal fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[next].temperatureMin)}&deg;
+      (feels ${Math.round(data.daily.data[next].apparentTemperatureMin)}&deg;)
+      around ${dayjs.unix(data.daily.data[next].apparentTemperatureMinTime).format('h:mma')}
+    `;
+    const precipitationText = Math.floor(data.daily.data[next].precipProbability * 100)
+      ? `${Math.floor(data.daily.data[next].precipProbability * 100)}% chance of ${data.daily.data[next].precipType} around ${dayjs.unix(data.daily.data[next].precipIntensityMaxTime).format('h:mma')}`
+      : 'No precipitation';
+    const sunText = `
+      <i class='fas fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[next].sunriseTime).format('h:mma')}
+      <i class='fas fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[next].sunsetTime).format('h:mma')}
+    `;
     const forecastTemplate = `
-      <p class="has-tooltip" data-tippy-content="${data.daily.data[next].summary}">
+      <p class="has-tooltip" data-tippy-content="${conditionText}<br>${tempText}<br>${sunText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}">
         <strong>${dayjs.unix(data.daily.data[next].time).format('ddd')}</strong>
         <br>
         <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
@@ -294,7 +310,7 @@ export function populateHourlyData(data, numHours = 12) {
   for (let i = 0; i < numHours; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(data.hourly.data[next].icon)}'></i> ${data.hourly.data[next].summary}`;
-    const tempText = `<i class='fas fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[next].temperature)}&deg; (feels like ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;)`;
+    const tempText = `<i class='fas fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[next].temperature)}&deg; (feels ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;)`;
     const precipitationText = Math.floor(data.hourly.data[next].precipProbability * 100)
       ? `${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}`
       : 'No precipitation';
