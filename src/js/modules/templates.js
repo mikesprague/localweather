@@ -295,11 +295,13 @@ export function populateHourlyData(data, numHours = 12) {
     // const hourlyPopup = `
     //   <!-- more complete detail here -->
     // `;
+    const conditionText = `<i class='${getWeatherIcon(data.hourly.data[next].icon)}'></i> ${data.hourly.data[next].summary}`;
+    const tempText = `<i class='fas fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[next].temperature)}&deg; (feels like ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;)`;
     const precipitationText = Math.floor(data.hourly.data[next].precipProbability * 100)
       ? `${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}`
       : 'No precipitation';
     const hourlyTemplate = `
-      <p class="has-tooltip" data-tippy-content="${data.hourly.data[next].summary}<br>${precipitationText}">
+      <p class="has-tooltip" data-tippy-content="${conditionText}<br>${tempText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}">
         <strong>${dayjs.unix(data.hourly.data[next].time).format('ha')}</strong>
         <br>
         <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
