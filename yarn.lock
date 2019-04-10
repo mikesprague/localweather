@@ -1490,7 +1490,7 @@
     once "^1.4.0"
     universal-user-agent "^2.0.1"
 
-"@octokit/rest@^16.23.3":
+"@octokit/rest@^16.23.4":
   version "16.23.4"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.23.4.tgz#4d8bcb1cc0cf6eeb8865632d4d60d79fc3425bbf"
   integrity sha512-fQuYQ0vgNLkzeN0KEsqN0aS6EPzcuaePT5M5cE5qnKayaxFwRIQOMhNR/rTmEqo/zDK/20ZAcHsgLKodSsJtww==
@@ -1508,10 +1508,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@puresec/function-shield@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-1.2.6.tgz#e4c45e1b6509b3d864f1aa64674daaee4efcb4c3"
-  integrity sha512-56MCAbXiJjDiJ3IhNKfYopDwLUcPNOrRvkb6VBM9LxJuhl3NL5sa+KTyAEQwxJPWryDLh+3TPwWSiA/dvyU0xw==
+"@puresec/function-shield@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-1.2.7.tgz#3ac0f362b02eba95476a49773d2ed72f623e0780"
+  integrity sha512-AlEWKZEBLSijgFoqzDFLt17dPISqLYlCEJGqPPzqNsqyGdfVGIQ/Qo8TmePGYragg3/BzXl2NKrLImaTCqShuw==
   dependencies:
     fs-extra "^7.0.0"
     node-gyp-build "^3.5.1"
@@ -7851,12 +7851,13 @@ mimic-response@^1.0.0:
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
   integrity sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
 
-mini-css-extract-plugin@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.5.0.tgz#ac0059b02b9692515a637115b0cc9fed3a35c7b0"
-  integrity sha512-IuaLjruM0vMKhUUT51fQdQzBYTX49dLj8w68ALEAe2A4iYNpIC4eMac67mt3NzycvjOlf07/kYxJDc0RTl1Wqw==
+mini-css-extract-plugin@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.6.0.tgz#a3f13372d6fcde912f3ee4cd039665704801e3b9"
+  integrity sha512-79q5P7YGI6rdnVyIAV4NXpBQJFWdkzJxCim3Kog4078fM0piAaFlwocqbejdWtLW1cEzCexPrh6EdyFsPgVdAw==
   dependencies:
     loader-utils "^1.1.0"
+    normalize-url "^2.0.1"
     schema-utils "^1.0.0"
     webpack-sources "^1.1.0"
 
@@ -8063,10 +8064,10 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
-netlify-cli@^2.11.3:
-  version "2.11.3"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.3.tgz#e35ce2d6eda240f92769e3a558e6ea2c26250f87"
-  integrity sha512-bTizEwnhPhz3S2E61XQSfgM5L/N/RG0uWRPWe5Z+Kvtc8MCwfGLSsgybjBHXTKIS4+rIMB9hckysPJFr7fpHzg==
+netlify-cli@^2.11.4:
+  version "2.11.4"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.4.tgz#dc8836c2beba8fb53f49002c33240f84d9b09d16"
+  integrity sha512-r6bkh855XkGiOqaj5wSLovCdhbl+Dk1gvu56S0AopiSSyMcf8iibWr6PZ/9fA+92xUQUOp2hNF/CVO77spWLZQ==
   dependencies:
     "@iarna/toml" "^2.2.3"
     "@oclif/command" "^1.5.12"
@@ -8075,7 +8076,7 @@ netlify-cli@^2.11.3:
     "@oclif/plugin-help" "^2.1.6"
     "@oclif/plugin-not-found" "^1.1.4"
     "@oclif/plugin-plugins" "^1.7.8"
-    "@octokit/rest" "^16.23.3"
+    "@octokit/rest" "^16.23.4"
     ansi-styles "^3.2.1"
     ascii-table "0.0.9"
     chalk "^2.4.2"
@@ -8099,7 +8100,7 @@ netlify-cli@^2.11.3:
     log-symbols "^2.2.0"
     make-dir "^2.1.0"
     netlify "^2.4.1"
-    netlify-dev-plugin "^1.0.2"
+    netlify-dev-plugin "^1.0.5"
     node-fetch "^2.2.0"
     ora "^3.4.0"
     p-wait-for "^2.0.0"
@@ -8110,10 +8111,10 @@ netlify-cli@^2.11.3:
     uuid "^3.3.2"
     write-file-atomic "^2.4.2"
 
-netlify-dev-plugin@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.2.tgz#56437dbd29a54139a3293ca8e59b1d557e86ec93"
-  integrity sha512-X44IauUDum6EjAJygbJ84lYfgT4tmdPvBw+ZFVSCejW/YEtqRLsVNuwThT/HAfYo9WlxkBaafbiXNgF6rocAKQ==
+netlify-dev-plugin@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.5.tgz#863c858e81b2ea5de5240f778959519330d251b2"
+  integrity sha512-O8KQyKt92jvhpQnEMrEcxZcggVsjCIoAi7TDCvQnGRQn6SEJEiNMLfMIUQeX5W/74kOv4dDvxeoEBw7kakBb7Q==
   dependencies:
     "@netlify/cli-utils" "^1.0.1"
     "@netlify/rules-proxy" "^0.1.2"
@@ -8399,7 +8400,7 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
-normalize-url@2.0.1:
+normalize-url@2.0.1, normalize-url@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-2.0.1.tgz#835a9da1551fa26f70e92329069a23aa6574d7e6"
   integrity sha512-D6MUW4K/VzoJ4rJ01JFKxDrtY1v9wrgzCX5f2qj/lzH1m/lW6MhUZFKerVsnyjOhOsYzI9Kqqak+10l4LvLpMw==
@@ -11392,10 +11393,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.8.1:
-  version "8.8.1"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.8.1.tgz#26c82536c0aec55a1e5ad6cb268e132f34da5adf"
-  integrity sha512-9SvZrgQW1X95F2k2LSHY7pU00dwB2v0ZXycX/jgWzAiXAQldPVqUozfU/uBnD95fLJIU+BeIoIUMXVOYdslDFA==
+sweetalert2@^8.8.2:
+  version "8.8.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.8.2.tgz#cdcf45c4b76404dacda86cf610bb3db9bd69572b"
+  integrity sha512-aJxVxd2HNZo1iwacrAFAwvdcItXiIVCLRFx6/NM5xi1PmRzbmNuYBhTm8xWtsq0TjL4Oc8mZgxUbot7+xF5/WA==
 
 symbol-observable@1.0.1:
   version "1.0.1"
@@ -12243,10 +12244,10 @@ webpack-dev-middleware@^3.6.2:
     range-parser "^1.0.3"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.3.0.tgz#eee6b5cf0f754661aed796ffdcc9c6493a963a8b"
-  integrity sha512-75LTgV367MRDVIC+IBETrKEy9175+i5fy9nkw8MW+udnPCzNzSfZtKUIG5thQcooaNruPZZoEV8fCZqKJszOIw==
+webpack-dev-server@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.3.1.tgz#7046e49ded5c1255a82c5d942bcdda552b72a62d"
+  integrity sha512-jY09LikOyGZrxVTXK0mgIq9y2IhCoJ05848dKZqX1gAGLU1YDqgpOT71+W53JH/wI4v6ky4hm+KvSyW14JEs5A==
   dependencies:
     ansi-html "0.0.7"
     bonjour "^3.5.0"
