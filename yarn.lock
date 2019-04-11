@@ -8064,10 +8064,10 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
-netlify-cli@^2.11.4:
-  version "2.11.4"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.4.tgz#dc8836c2beba8fb53f49002c33240f84d9b09d16"
-  integrity sha512-r6bkh855XkGiOqaj5wSLovCdhbl+Dk1gvu56S0AopiSSyMcf8iibWr6PZ/9fA+92xUQUOp2hNF/CVO77spWLZQ==
+netlify-cli@^2.11.7:
+  version "2.11.7"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.7.tgz#30caf16a56dd81ddf73bde2f7eb0827f36cef267"
+  integrity sha512-vbTHajmNMyG3EW5cP90JTjlTmz5yZmeiUH2/N4Hg4V7dMUnKjfHi0+0Q3VRZ5Kldv8M/uLSo7wFQ4mNzuS2LnA==
   dependencies:
     "@iarna/toml" "^2.2.3"
     "@oclif/command" "^1.5.12"
@@ -8100,7 +8100,7 @@ netlify-cli@^2.11.4:
     log-symbols "^2.2.0"
     make-dir "^2.1.0"
     netlify "^2.4.1"
-    netlify-dev-plugin "^1.0.5"
+    netlify-dev-plugin "^1.0.9"
     node-fetch "^2.2.0"
     ora "^3.4.0"
     p-wait-for "^2.0.0"
@@ -8111,10 +8111,10 @@ netlify-cli@^2.11.4:
     uuid "^3.3.2"
     write-file-atomic "^2.4.2"
 
-netlify-dev-plugin@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.5.tgz#863c858e81b2ea5de5240f778959519330d251b2"
-  integrity sha512-O8KQyKt92jvhpQnEMrEcxZcggVsjCIoAi7TDCvQnGRQn6SEJEiNMLfMIUQeX5W/74kOv4dDvxeoEBw7kakBb7Q==
+netlify-dev-plugin@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.9.tgz#8ef9d8750d0e83b916832c24b72936e2c3657505"
+  integrity sha512-ffP8/+sDT8f7rFTOgpXd5QbRcQ8RZa+MO1Tn4XXQcEC81f1uQxaRMv7U2Xnu53+olhHBJGXkpDTlKDonXgLuaA==
   dependencies:
     "@netlify/cli-utils" "^1.0.1"
     "@netlify/rules-proxy" "^0.1.2"
@@ -11393,10 +11393,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.8.2:
-  version "8.8.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.8.2.tgz#cdcf45c4b76404dacda86cf610bb3db9bd69572b"
-  integrity sha512-aJxVxd2HNZo1iwacrAFAwvdcItXiIVCLRFx6/NM5xi1PmRzbmNuYBhTm8xWtsq0TjL4Oc8mZgxUbot7+xF5/WA==
+sweetalert2@^8.8.3:
+  version "8.8.3"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.8.3.tgz#4cee46c4a38ecb55550283cd03c632622769c00d"
+  integrity sha512-ITLREtNzv5RBAB0HJytly/3CJEMvqsJfTk+mwkgtJudQsp2iI5IZlPgKAVGQGLeYwH4vnHRRJu/GIiIjp9Fp9g==
 
 symbol-observable@1.0.1:
   version "1.0.1"

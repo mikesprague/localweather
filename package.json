@@ -48,7 +48,7 @@
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "sweetalert2": "^8.8.2",
+    "sweetalert2": "^8.8.3",
     "tippy.js": "^4.2.1"
   },
   "devDependencies": {
@@ -73,7 +73,7 @@
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.6.0",
-    "netlify-cli": "^2.11.4",
+    "netlify-cli": "^2.11.7",
     "netlify-lambda": "^1.4.3",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
