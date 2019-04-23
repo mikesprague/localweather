@@ -1191,23 +1191,23 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.1.0.tgz#95be7bdcbbb9acbb9485e1022024f1430de06056"
-  integrity sha512-hbY7pMD4th7Ar5wW4CNjudQVW2KB0RW9UhQBhs4ApOuOR2eZ/W/jq5A5uj1/Pz7lOZQeGJkdb9Xfrzjegbo78Q==
+"@bugsnag/browser@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.2.0.tgz#8588303053b51e5f3c371271ea13a0b468ed5f37"
+  integrity sha512-3v3EZ74H3zaj1rGP/gR40Ahem1t4g+rk/1CwzA0dz/XoME3XVc9BgQBm8uk3TMeUxLTCOC7qCpjoo5N06Hyb9A==
 
-"@bugsnag/js@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.1.0.tgz#6b699b168a83b592b71ef6546448b816285c7c15"
-  integrity sha512-aWkhIdFClQ0u7cBLqRDAi0eo03UwX+utnWQAxPE22rFPHuEVzidv+GUf4Fl1f/I923CDpsQSs4KU3A2RHsAYdA==
+"@bugsnag/js@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.2.0.tgz#0ac65ffa61abe8f2c1a89b055620151fe03ec59a"
+  integrity sha512-gU3Hu08LePqroG0+5JQTdDCL7EQSLlQrA0XOzlSKjtlMVkJ0T0iALgodGeiG7qac4QnFYullci155F+sQ/APYA==
   dependencies:
-    "@bugsnag/browser" "^6.1.0"
-    "@bugsnag/node" "^6.1.0"
+    "@bugsnag/browser" "^6.2.0"
+    "@bugsnag/node" "^6.2.0"
 
-"@bugsnag/node@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.1.0.tgz#26339c3b8427bc7106e736cce5cbb7caf5eaaf28"
-  integrity sha512-nWgvHu9rzgW89scrk2RmHa7r9Uj/0L5St8OIGdZW5LzCD0O1R+KmRyhUZc2q5x1zWDzuvt4CuxzU+vKkADoEFQ==
+"@bugsnag/node@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.2.0.tgz#e77fa9dcbe49c4b2f5ef8a3cb09e510b1231fec7"
+  integrity sha512-iRSbBlI2Ii3qxE3NaJ48H4YAAm/Bk4hPVXSpyAlOHkxmRM/JJd7y6A8O0NgPzuPiDz3u/oL0fg2tgNG9VrWAVw==
   dependencies:
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
@@ -1340,6 +1340,24 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.3.0.tgz#65b7cc46e8a6a4ca0323124ba3098900631f188b"
   integrity sha512-Y7mJWe/c6D9Rn1D1ymjcpYr+D1yjLu7gm9e0G37nQAlB/+OoZFQmFZXi954gWp7eTYURLiyH4qoparIM5h3TVw==
+  dependencies:
+    archiver "^3.0.0"
+    cliclopts "^1.1.1"
+    debug "^4.1.1"
+    elf-tools "^1.1.1"
+    glob "^7.1.3"
+    minimist "^1.2.0"
+    npm-packlist "^1.1.12"
+    p-all "^2.0.0"
+    precinct "^6.1.1"
+    read-pkg-up "^4.0.0"
+    require-package-name "^2.0.1"
+    resolve "^1.10.0"
+
+"@netlify/zip-it-and-ship-it@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.3.1.tgz#931ba0b6f8d086b8ea2dba7cd69bf10959d3e529"
+  integrity sha512-vLKxc1/Kvy7c0TL6AMr39/3SIweMkXZXkfU5nUtw1DSBVXaz9aYtiFLBX8YOblJXFFs3rpcyhzmzctoQsOnqVA==
   dependencies:
     archiver "^3.0.0"
     cliclopts "^1.1.1"
@@ -8155,10 +8173,10 @@ netlify-cli-logo@^1.0.0:
   dependencies:
     chalk "^2.4.2"
 
-netlify-cli@^2.11.11:
-  version "2.11.11"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.11.tgz#66dab4b3031780757af00b4498e54c77bc60d061"
-  integrity sha512-hV8PvY79mznAHre546ui+A50H59p0Aol4hJlKWUfROrGI3s01rmPX3I3dlzB0o25f/6TbfV2rlkY6Hwq9GuNJw==
+netlify-cli@^2.11.12:
+  version "2.11.12"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.12.tgz#1dba80e6b499997ebcc4230fa1a5487d8d0f91fa"
+  integrity sha512-23rN2ursKLZHtbL96PaO/NPH8RPIA+uiQ0f7flYa+PGn4O03MAVksuSXko3zKYCnhPqBU9mLN52sFKd6n012pA==
   dependencies:
     "@netlify/cli-utils" "^1.0.2"
     "@oclif/command" "^1.5.13"
@@ -8185,7 +8203,7 @@ netlify-cli@^2.11.11:
     lodash.isempty "^4.4.0"
     lodash.isequal "^4.5.0"
     log-symbols "^2.2.0"
-    netlify "^2.4.3"
+    netlify "^2.4.4"
     netlify-dev-plugin "^1.0.12"
     node-fetch "^2.2.0"
     ora "^3.4.0"
@@ -8300,13 +8318,13 @@ netlify@2.4.1, netlify@^2.2.1:
     through2-map "^3.0.0"
     util.promisify "^1.0.0"
 
-netlify@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-2.4.3.tgz#396763befad54c887e824b2de3c145a794e84d33"
-  integrity sha512-QjtY605N0gCDFoxvEBF+Rb8Vile2A3RFHI6p/D+o+zwdMXiX+17STlbTgYvJ4W8Eae+YLxxxKe/zEPY7xbiq6g==
+netlify@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-2.4.4.tgz#72ba73d63fb39589b9143fdfe36d39bfe01bfb26"
+  integrity sha512-8Z6Fx3yz/zIt9oGTvnMaRGgErxtAYkp4lgZm8O7ooWKrxo2V2148sK+t1Wob6Dt9x1oOvTkAn8PA6eXjXft2+A==
   dependencies:
     "@netlify/open-api" "^0.9.0"
-    "@netlify/zip-it-and-ship-it" "^0.3.0"
+    "@netlify/zip-it-and-ship-it" "^0.3.1"
     backoff "^2.5.0"
     clean-deep "^3.0.2"
     debug "^4.1.1"
@@ -8321,11 +8339,11 @@ netlify@^2.4.3:
     lodash.set "^4.3.2"
     micro-api-client "^3.3.0"
     node-fetch "^2.2.0"
-    p-map "^2.0.0"
+    p-map "^2.1.0"
     p-wait-for "^2.0.0"
     parallel-transform "^1.1.0"
     pump "^3.0.0"
-    qs "^6.5.2"
+    qs "^6.7.0"
     rimraf "^2.6.3"
     tempy "^0.2.1"
     through2-filter "^3.0.0"
@@ -8940,6 +8958,11 @@ p-map@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-2.0.0.tgz#be18c5a5adeb8e156460651421aceca56c213a50"
   integrity sha512-GO107XdrSUmtHxVoi60qc9tUl/KkNKm+X2CF4P9amalpGxv5YqVPJNfSb0wcA+syCopkZvYYIzW8OVTQW59x/w==
+
+p-map@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/p-map/-/p-map-2.1.0.tgz#310928feef9c9ecc65b68b17693018a665cea175"
+  integrity sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
 
 p-timeout@^2.0.1:
   version "2.0.1"
@@ -10022,6 +10045,11 @@ qs@^6.5.2:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.6.0.tgz#a99c0f69a8d26bf7ef012f871cdabb0aee4424c2"
   integrity sha512-KIJqT9jQJDQx5h5uAVPimw6yVg2SekOKu959OCtktD3FjzbpvaPr8i4zzg07DOMz+igA4W/aNM7OV8H37pFYfA==
+
+qs@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+  integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
 query-string@^5.0.1:
   version "5.1.1"
