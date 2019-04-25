@@ -87,7 +87,8 @@
     "webpack-bugsnag-plugins": "^1.4.0",
     "webpack-cli": "^3.3.1",
     "webpack-dev-server": "^3.3.1",
-    "webpackbar": "^3.2.0"
+    "webpackbar": "^3.2.0",
+    "workbox-webpack-plugin": "^4.3.0"
   },
   "babel": {
     "plugins": [
