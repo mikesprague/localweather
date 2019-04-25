@@ -1,5 +1,6 @@
 const canonical = 'https://localweather.io';
 const path = require('path');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const WebPackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -104,11 +105,10 @@ const webpackPlugins = [
     title: variables.title,
     versionString: variables.versionString,
   }),
-  new CopyWebpackPlugin([{
-    from: './src/service-worker.js',
-    to: './',
-    force: true,
-  }]),
+  new WorkboxPlugin.GenerateSW({
+    clientsClaim: true,
+    skipWaiting: true,
+  }),
   new CopyWebpackPlugin([{
     from: './src/manifest.json',
     to: './',
