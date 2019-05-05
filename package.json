@@ -22,7 +22,9 @@
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "lambda:build": "netlify-lambda build ./src/functions",
-    "lambda:serve": "netlify-lambda serve ./src/functions -c ./lambda.config.dev.js"
+    "lambda:serve": "netlify-lambda serve ./src/functions -c ./lambda.config.dev.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "url": "https://github.com/mikesprague/localweather-io"
@@ -55,7 +57,8 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "sweetalert2": "^8.10.0",
-    "tippy.js": "^4.3.0"
+    "tippy.js": "^4.3.0",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -185,5 +188,6 @@
       "all"
     ],
     "printWidth": 120
-  }
+  },
+  "snyk": true
 }
