@@ -13,7 +13,7 @@ const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 const variables = require('./src/js/modules/defaults');
 
-const mode = process.env.WEBPACK_SERVE ? 'development' : 'production';
+const mode = process.env.NODE_ENV;
 
 const webpackRules = [
   {
