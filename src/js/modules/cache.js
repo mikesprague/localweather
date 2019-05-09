@@ -23,6 +23,8 @@ export function areCachesEmpty() {
     (getData(defaults.cacheTimeKey) === null)
     || (getData(defaults.weatherDataKey) === null)
     || (getData(defaults.locationDataKey) === null)
+    || (getData(defaults.locationNameDataKey) === null)
+    || (getData(defaults.locationAddressDataKey) === null)
   );
 }
 

@@ -50,6 +50,7 @@ export function registerServiceWorker() {
     //   console.log('New content is downloading.', registration);
     // },
     updated() { // updated(registration)
+      initCache();
       if (hasApprovedLocationSharing()) {
         showInstallAlert();
       }
