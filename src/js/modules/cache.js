@@ -23,7 +23,6 @@ export function areCachesEmpty() {
     (getData(defaults.cacheTimeKey) === null)
     || (getData(defaults.weatherDataKey) === null)
     || (getData(defaults.locationDataKey) === null)
-    || (getData(defaults.locationNameDataKey) === null)
   );
 }
 
@@ -43,13 +42,7 @@ export function setCacheTime() {
 }
 
 export function initCache() {
-  if (areCachesEmpty()) {
-    resetData();
-    setCacheTime();
-  } else {
-    defaults.loadFromCache = useCache(getData(defaults.cacheTimeKey));
-  }
-  if (!defaults.loadFromCache) {
+  if (areCachesEmpty() || !useCache(getData(defaults.cacheTimeKey))) {
     resetData();
     setCacheTime();
   }

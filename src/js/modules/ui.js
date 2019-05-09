@@ -19,10 +19,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import dayjs from 'dayjs';
 import * as defaults from './defaults';
-import {
-  parseLocationNameFromFormattedAddress,
-  getLocationAndPopulateAppData,
-} from './data';
+import { getWeatherData } from './data';
 import { getData } from './cache';
 import {
   populateMessage, populateForecastData,
@@ -185,8 +182,7 @@ export function setFavicon(data) {
 }
 
 export function setTitle(data) {
-  const locationName = getData(defaults.locationNameDataKey);
-  const newTitle = `${Math.round(data.currently.temperature)}° ${data.currently.summary} | ${parseLocationNameFromFormattedAddress(locationName)} | ${defaults.title}`;
+  const newTitle = `${Math.round(data.currently.temperature)}° ${data.currently.summary} | ${getData(defaults.locationNameDataKey)} | ${defaults.title}`;
   window.document.title = newTitle;
 }
 
@@ -406,16 +402,14 @@ export function renderAppWithData(data) {
 export async function getWeatherDataAndRenderApp(lat, lng) {
   showLoading('... loading weather data ...');
   try {
-    const weatherData = await getLocationAndPopulateAppData(lat, lng);
+    const weatherData = await getWeatherData(lat, lng);
     renderAppWithData(weatherData);
+    hideLoading();
   } catch (error) {
-    /* eslint-disable no-undef */
-    bugsnagClient.notify(error); // defined in html page
-    /* eslint-enable no-undef */
-    // console.log(error);
+    defaults.handleError(error);
+    // show error message to user
     hideLoading();
   }
-  hideLoading();
 }
 
 export async function geoSuccess(position) {
@@ -484,10 +478,7 @@ export function initGeolocation() {
         showLoading('... acquiring location ...');
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
       } catch (error) {
-        /* eslint-disable no-undef */
-        bugsnagClient.notify(error); // defined in html page
-        /* eslint-enable no-undef */
-        // console.log(error);
+        defaults.handleError(error);
         // TODO: Show friendly message to user
       }
     } else {
