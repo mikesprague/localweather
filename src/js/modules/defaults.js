@@ -17,6 +17,7 @@ module.exports = {
   loadingSpinnerSelector: '.loading-message',
   loadingText: '... loading weather data for your location ...',
   locationDataKey: 'locationData',
+  locationAddressDataKey: 'locationAddress',
   locationNameDataKey: 'locationName',
   locationName: '',
   offlineHeading: 'You appear to be offline',
@@ -26,10 +27,13 @@ module.exports = {
   title: 'LocalWeather.io (powered by Dark Sky)',
   versionString: `v${versionNumber}`,
   weatherDataKey: 'weatherData',
-  apiUrl() {
-    return window.location.hostname === 'localhost' ? 'http://localhost:9000' : `https://${window.location.hostname}/.netlify/functions`;
+  apiUrl: () => {
+    if (window.location.hostname === 'localhost') {
+      return 'http://localhost:9000';
+    }
+    return `https://${window.location.hostname}/.netlify/functions`;
   },
-  canonical() {
+  canonical: () => `https://${window.location.hostname}/`,
   handleError: (error) => {
     if (window.location.hostname === 'localhost') {
       console.error(error);
