@@ -13,7 +13,7 @@ FunctionShield.configure({
   token: process.env.FUNCTION_SHIELD_TOKEN,
 });
 
-exports.handler = async (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   const { lat, lng } = event.queryStringParameters;
   const callbackHeaders = {
     'Access-Control-Allow-Origin': '*',
