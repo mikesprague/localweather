@@ -19,9 +19,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import dayjs from 'dayjs';
 import * as defaults from './defaults';
-import {
-  getLocationAndPopulateAppData,
-} from './data';
+import { getWeatherData } from './data';
 import { getData } from './cache';
 import {
   populateMessage, populateForecastData,
@@ -404,7 +402,7 @@ export function renderAppWithData(data) {
 export async function getWeatherDataAndRenderApp(lat, lng) {
   showLoading('... loading weather data ...');
   try {
-    const weatherData = await getLocationAndPopulateAppData(lat, lng);
+    const weatherData = await getWeatherData(lat, lng);
     renderAppWithData(weatherData);
     hideLoading();
   } catch (error) {
