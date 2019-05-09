@@ -1,7 +1,6 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import * as defaults from './defaults';
-import { parseLocationNameFromFormattedAddress } from './data';
 import { getData } from './cache';
 
 const getWeatherIcon = icon => defaults.iconMap[icon];
@@ -67,15 +66,16 @@ const addLocationNameSpacing = () => {
 
 export function populateLocation(data) {
   const locationName = getData(defaults.locationNameDataKey);
+  const locationAddress = getData(defaults.locationAddressDataKey);
   const locationTemplate = `
     <div class="column">
       <h1 class="title is-1 has-text-centered has-tooltip location-name" data-tippy-content="
         <i class='fas fa-fw fa-globe'></i>
-        <strong>${locationName}</strong>
+        <strong>${locationAddress}</strong>
         <br>
         <i class='fas fa-fw fa-map-marker-alt'></i>
         ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
-      ">${parseLocationNameFromFormattedAddress(locationName)}</h1>
+      ">${locationName}</h1>
     </div>
   `;
   const locationEl = document.querySelector('.location');

@@ -67,11 +67,8 @@ registerServiceWorker();
 
 export function init() {
   window.onerror = (msg, url, lineNo, columnNo, error) => {
-    console.error('ERROR', msg, url, lineNo, columnNo, error);
     hideLoading();
-    /* eslint-disable no-undef */
-    bugsnagClient.notify(error);
-    /* eslint-enable no-undef */
+    defaults.handleError(error);
     return false;
   };
 
