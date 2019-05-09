@@ -115,7 +115,9 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "last 4 chrome version",
+      "last 4 firefox version",
+      "last 4 safari version"
     ],
     "development": [
       "last 1 chrome version",
