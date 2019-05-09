@@ -19,10 +19,6 @@ export async function getWeatherData(lat, lng) {
       setData(defaults.locationNameDataKey, response.data[0].location.locationName);
       setData(defaults.locationAddressDataKey, response.data[0].location.formattedAddress);
       return response.data[1].weather;
-    })
-    .catch((error) => {
-      // add error notification to user with option to reload/retry
-      defaults.handleError(error);
     });
   return weatherData;
 }
