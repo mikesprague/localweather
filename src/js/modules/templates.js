@@ -116,7 +116,6 @@ export function populatePrimaryData(data) {
       </div>
     </div>
   `;
-  // const locationName = getData(defaults.locationNameDataKey);
   const primaryDataTemplate = `
     <div class="column is-one-quarter has-text-right current-icon has-tooltip" data-tippy-content="<i class='${getWeatherIcon(data.currently.icon)}'></i> ${data.currently.summary}">
       <i class="${getWeatherIcon(data.currently.icon)}"></i>
