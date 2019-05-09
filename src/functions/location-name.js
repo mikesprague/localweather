@@ -1,5 +1,4 @@
 const bugsnag = require('@bugsnag/js');
-const AWS = require('aws-sdk');
 const FunctionShield = require('@puresec/function-shield');
 const rp = require('request-promise');
 
