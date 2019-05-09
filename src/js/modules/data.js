@@ -7,15 +7,18 @@ export function loadFromCache() {
 }
 
 export async function getWeatherData(lat, lng) {
-  const url = `${defaults.apiUrl()}/weather/?lat=${lat}&lng=${lng}`;
   if (loadFromCache()) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   }
+  const url = `${defaults.apiUrl()}/location-and-weather/?lat=${lat}&lng=${lng}`;
   const weatherData = await axios.get(url)
     .then((response) => {
-      setData(defaults.weatherDataKey, response.data);
-      return response.data;
+      setData(defaults.weatherDataKey, response.data[1].weather);
+      setData(defaults.locationDataKey, response.data[0].location);
+      setData(defaults.locationNameDataKey, response.data[0].location.locationName);
+      setData(defaults.locationAddressDataKey, response.data[0].location.formattedAddress);
+      return response.data[1].weather;
     })
     .catch((error) => {
       // add error notification to user with option to reload/retry
