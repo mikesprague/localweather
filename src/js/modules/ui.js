@@ -20,7 +20,6 @@ import {
 import dayjs from 'dayjs';
 import * as defaults from './defaults';
 import {
-  parseLocationNameFromFormattedAddress,
   getLocationAndPopulateAppData,
 } from './data';
 import { getData } from './cache';
@@ -185,8 +184,7 @@ export function setFavicon(data) {
 }
 
 export function setTitle(data) {
-  const locationName = getData(defaults.locationNameDataKey);
-  const newTitle = `${Math.round(data.currently.temperature)}° ${data.currently.summary} | ${parseLocationNameFromFormattedAddress(locationName)} | ${defaults.title}`;
+  const newTitle = `${Math.round(data.currently.temperature)}° ${data.currently.summary} | ${getData(defaults.locationNameDataKey)} | ${defaults.title}`;
   window.document.title = newTitle;
 }
 
