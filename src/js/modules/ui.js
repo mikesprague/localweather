@@ -408,14 +408,12 @@ export async function getWeatherDataAndRenderApp(lat, lng) {
   try {
     const weatherData = await getLocationAndPopulateAppData(lat, lng);
     renderAppWithData(weatherData);
+    hideLoading();
   } catch (error) {
-    /* eslint-disable no-undef */
-    bugsnagClient.notify(error); // defined in html page
-    /* eslint-enable no-undef */
-    // console.log(error);
+    defaults.handleError(error);
+    // show error message to user
     hideLoading();
   }
-  hideLoading();
 }
 
 export async function geoSuccess(position) {
@@ -484,10 +482,7 @@ export function initGeolocation() {
         showLoading('... acquiring location ...');
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
       } catch (error) {
-        /* eslint-disable no-undef */
-        bugsnagClient.notify(error); // defined in html page
-        /* eslint-enable no-undef */
-        // console.log(error);
+        defaults.handleError(error);
         // TODO: Show friendly message to user
       }
     } else {

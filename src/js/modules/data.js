@@ -61,9 +61,8 @@ export async function getWeatherData(lat, lng) {
       return response.data;
     })
     .catch((error) => {
-      /* eslint-disable no-undef */
-      bugsnagClient.notify(error); // defined in html page
-      /* eslint-enable no-undef */
+      // add error notification to user with option to reload/retry
+      defaults.handleError(error);
     });
   return weatherData;
 }
