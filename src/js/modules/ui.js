@@ -20,7 +20,7 @@ import {
 import dayjs from 'dayjs';
 import * as defaults from './defaults';
 import { getWeatherData } from './data';
-import { getData } from './cache';
+import { getData, resetData } from './cache';
 import {
   populateMessage, populateForecastData,
   populateHourlyData, populateLastUpdated, populateLocation,
@@ -299,8 +299,11 @@ export function showInstallAlert() {
     text: 'Latest Version Installed',
     confirmButtonText: 'Reload for Latest Updates',
     type: 'success',
-    onClose: () => {
+    onAfterClose: () => {
       reloadWindow();
+    },
+    onClose: () => {
+      resetData();
     },
   });
 }
