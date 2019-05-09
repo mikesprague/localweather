@@ -409,9 +409,17 @@ export async function getWeatherDataAndRenderApp(lat, lng) {
     renderAppWithData(weatherData);
     hideLoading();
   } catch (error) {
+    const errorMessage = `
+      <p class='message-alert-text-heading has-text-danger'>
+        <i class='fas fa-fw fa-exclamation-triangle'></i> Error
+      </p>
+      <p class='message-alert-text-first'>
+        We're sorry, an error occurred. Our developers have been notified.
+        Please reload to try again or come back later.
+      </p>
+    `;
+    showErrorAlert(errorMessage);
     defaults.handleError(error);
-    // show error message to user
-    hideLoading();
   }
 }
 
@@ -481,8 +489,18 @@ export function initGeolocation() {
         showLoading('... acquiring location ...');
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
       } catch (error) {
+        const errorMessage = `
+          <p class='message-alert-text-heading has-text-danger'>
+            <i class='fas fa-fw fa-exclamation-triangle'></i> Error
+          </p>
+          <p class='message-alert-text-first'>
+            We're sorry, an error occurred identifying your location.
+            Our developers have been notified of the problem and sent the error details.
+            Please reload to try again or come back later.
+          </p>
+        `;
+        showErrorAlert(errorMessage);
         defaults.handleError(error);
-        // TODO: Show friendly message to user
       }
     } else {
       showErrorAlert('GEOLOCATION_UNAVAILABLE: Geolocation is not available with your current browser.');
