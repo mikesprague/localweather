@@ -64,6 +64,7 @@
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/runtime": "^7.4.4",
@@ -103,7 +104,8 @@
     "plugins": [
       "@babel/plugin-transform-runtime",
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-transform-object-assign"
+      "@babel/plugin-transform-object-assign",
+      "@babel/plugin-proposal-object-rest-spread"
     ],
     "presets": [
       "@babel/preset-env"
