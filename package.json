@@ -57,7 +57,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "snyk": "^1.163.0",
-    "sweetalert2": "^8.10.2",
+    "sweetalert2": "^8.10.4",
     "tippy.js": "^4.3.1"
   },
   "devDependencies": {
@@ -92,7 +92,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.2.3",
-    "webpack": "^4.30.0",
+    "webpack": "^4.31.0",
     "webpack-bugsnag-plugins": "^1.4.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1",
