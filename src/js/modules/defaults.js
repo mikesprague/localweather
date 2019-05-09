@@ -30,7 +30,14 @@ module.exports = {
     return window.location.hostname === 'localhost' ? 'http://localhost:9000' : `https://${window.location.hostname}/.netlify/functions`;
   },
   canonical() {
-    return `https://${window.location.hostname}/`;
+  handleError: (error) => {
+    if (window.location.hostname === 'localhost') {
+      console.error(error);
+    } else {
+      /* eslint-disable no-undef */
+      bugsnagClient.notify(error);
+      /* eslint-enable no-undef */
+    }
   },
   isOnline() {
     return navigator.onLine;
