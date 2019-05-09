@@ -2,7 +2,6 @@ const bugsnag = require('@bugsnag/js');
 const FunctionShield = require('@puresec/function-shield');
 const rp = require('request-promise');
 
-const bugsnagClient = bugsnag(process.env.BUGSNAG_KEY);
 FunctionShield.configure({
   policy: {
     outbound_connectivity: 'alert',
@@ -14,6 +13,7 @@ FunctionShield.configure({
 });
 
 exports.handler = (event, context, callback) => {
+  const bugsnagClient = bugsnag(process.env.BUGSNAG_KEY);
   const { lat, lng } = event.queryStringParameters;
   const callbackHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -77,12 +77,12 @@ exports.handler = (event, context, callback) => {
         return locationData;
       }
     })
-    .catch((error) => {
-      // console.error(error);
-      callback(bugsnagClient.notify(error), {
+    .catch((err) => {
+      console.log(err);
+      callback(bugsnagClient.notify(err), {
         statusCode: 500,
         headers: callbackHeaders,
-        body: JSON.stringify(error),
+        body: JSON.stringify(err),
       });
     });
 
@@ -100,12 +100,12 @@ exports.handler = (event, context, callback) => {
       };
       return weatherData;
     })
-    .catch((error) => {
-      // console.error(error);
-      callback(bugsnagClient.notify(error), {
+    .catch((err) => {
+      console.log(err);
+      callback(bugsnagClient.notify(err), {
         statusCode: 500,
         headers: callbackHeaders,
-        body: JSON.stringify(error),
+        body: JSON.stringify(err),
       });
     });
 
@@ -117,12 +117,12 @@ exports.handler = (event, context, callback) => {
       headers: callbackHeaders,
       body: JSON.stringify(response),
     });
-  }).catch((error) => {
-    // console.error(error);
-    callback(bugsnagClient.notify(error), {
+  }).catch((err) => {
+    console.log(err);
+    callback(bugsnagClient.notify(err), {
       statusCode: 500,
       headers: callbackHeaders,
-      body: JSON.stringify(error),
+      body: JSON.stringify(err),
     });
   });
 };
