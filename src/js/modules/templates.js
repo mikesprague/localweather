@@ -84,27 +84,51 @@ export function populateLocation(data) {
 }
 
 export function populatePrimaryData(data) {
+  const conditionNextHourText = `<i class='${getWeatherIcon(data.hourly.data[1].icon)}'></i> ${data.hourly.data[1].summary}`;
+  const tempNextHourText = `<i class='fas fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[1].temperature)}&deg; (feels ${Math.round(data.hourly.data[1].apparentTemperature)}&deg;)`;
+  const precipitationNextHourText = Math.floor(data.hourly.data[1].precipProbability * 100)
+    ? `${Math.floor(data.hourly.data[1].precipProbability * 100)}% chance of ${data.hourly.data[1].precipType}`
+    : 'No precipitation';
+  const conditionTodayText = `<i class='${getWeatherIcon(data.daily.data[1].icon)}'></i> ${data.daily.data[1].summary}`;
+  const tempTodayText = `
+    <i class='fal fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[1].temperatureMax)}&deg;
+    (feels ${Math.round(data.daily.data[1].apparentTemperatureMax)}&deg;)
+    around ${dayjs.unix(data.daily.data[1].apparentTemperatureMaxTime).format('h:mma')}
+    <br>
+    <i class='fal fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[1].temperatureMin)}&deg;
+    (feels ${Math.round(data.daily.data[1].apparentTemperatureMin)}&deg;)
+    around ${dayjs.unix(data.daily.data[1].apparentTemperatureMinTime).format('h:mma')}
+  `;
+  const precipitationTodayText = Math.floor(data.daily.data[1].precipProbability * 100)
+    ? `${Math.floor(data.daily.data[1].precipProbability * 100)}% chance of ${data.daily.data[1].precipType} around ${dayjs.unix(data.daily.data[1].precipIntensityMaxTime).format('h:mma')}`
+    : 'No precipitation';
+  const sunTodayText = `
+    <i class='fas fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[1].sunriseTime).format('h:mma')}
+    <i class='fas fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[1].sunsetTime).format('h:mma')}
+  `;
   const currentConditionsTooltip = `
     <div class='primarySummaryWrapper'>
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>NEXT HOUR</strong>
           <br>
-          <i class='${getWeatherIcon(data.minutely.icon)}'></i>
-          ${Math.round(data.hourly.data[1].temperature)}&deg;
+          ${conditionNextHourText}
           <br>
-          ${data.minutely.summary}
+          ${tempNextHourText}
+          <br>
+          <i class='fas fa-fw fa-umbrella'></i> ${precipitationNextHourText}
         </div>
       </div>
       <div class='columns is-mobile'>
         <div class='column'>
           <strong>TODAY</strong>
           <br>
-          <i class='${getWeatherIcon(data.daily.data[0].icon)}'></i>
-          ${Math.round(data.daily.data[0].temperatureHigh)}&deg;/
-          ${Math.round(data.daily.data[0].temperatureLow)}&deg;
+          ${conditionTodayText}
           <br>
-          ${data.daily.data[0].summary}
+          ${tempTodayText}
+          <br>
+          ${sunTodayText}
+          <br><i class='fas fa-fw fa-umbrella'></i> ${precipitationTodayText}
         </div>
       </div>
       <div class='columns is-mobile'>
