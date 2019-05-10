@@ -457,7 +457,7 @@ export function initGeolocation() {
       showErrorAlert(errorTemplates.geolocationUnavailable);
     }
   } else {
-    const skipGeolocation = getData('skipGeolocationCheckKey');
+    const skipGeolocation = getData(defaults.skipGeolocationCheckKey);
     if (skipGeolocation) {
       const weatherData = getData(defaults.weatherDataKey);
       renderAppWithData(weatherData);
