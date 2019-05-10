@@ -11,6 +11,7 @@ const setLocalStorageData = ((data) => {
   setData(defaults.locationDataKey, data[0].location);
   setData(defaults.locationNameDataKey, data[0].location.locationName);
   setData(defaults.locationAddressDataKey, data[0].location.formattedAddress);
+  setData(defaults.skipGeolocationCheckKey, true);
 });
 
 export async function getWeatherData(lat, lng) {

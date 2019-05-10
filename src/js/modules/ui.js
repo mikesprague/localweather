@@ -457,7 +457,13 @@ export function initGeolocation() {
       showErrorAlert(errorTemplates.geolocationUnavailable);
     }
   } else {
-    showLoading('... acquiring location ...');
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
+    const skipGeolocation = getData('skipGeolocationCheckKey');
+    if (skipGeolocation) {
+      const weatherData = getData(defaults.weatherDataKey);
+      renderAppWithData(weatherData);
+    } else {
+      showLoading('... acquiring location ...');
+      navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
+    }
   }
 }
