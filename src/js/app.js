@@ -1,7 +1,6 @@
 import '../scss/styles.scss';
-import { init, initOffline } from './modules/init';
+import { init } from './modules/init';
 import { initFontAwesomeIcons, hasApprovedLocationSharing } from './modules/ui';
-import { isOnline } from './modules/defaults';
 
 window.addEventListener('offline', () => {
   // console.log('Browser offline');
@@ -19,18 +18,14 @@ window.addEventListener('online', () => {
 }, false);
 
 document.onreadystatechange = () => {
-  if (isOnline()) {
-    if (document.readyState === 'interactive') {
-      if (hasApprovedLocationSharing()) {
+  if (document.readyState === 'interactive') {
+    if (hasApprovedLocationSharing()) {
+      init();
+    } else {
+      initFontAwesomeIcons();
+      document.querySelector('.btn-init-app').addEventListener('click', () => {
         init();
-      } else {
-        initFontAwesomeIcons();
-        document.querySelector('.btn-init-app').addEventListener('click', () => {
-          init();
-        });
-      }
+      });
     }
-  } else {
-    initOffline();
   }
 };
