@@ -6,6 +6,13 @@ export function loadFromCache() {
   return useCache(getData(defaults.cacheTimeKey));
 }
 
+const setLocalStorageData = ((data) => {
+  setData(defaults.weatherDataKey, data[1].weather);
+  setData(defaults.locationDataKey, data[0].location);
+  setData(defaults.locationNameDataKey, data[0].location.locationName);
+  setData(defaults.locationAddressDataKey, data[0].location.formattedAddress);
+});
+
 export async function getWeatherData(lat, lng) {
   if (loadFromCache()) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
@@ -14,10 +21,7 @@ export async function getWeatherData(lat, lng) {
   const url = `${defaults.apiUrl()}/location-and-weather/?lat=${lat}&lng=${lng}`;
   const weatherData = await axios.get(url)
     .then((response) => {
-      setData(defaults.weatherDataKey, response.data[1].weather);
-      setData(defaults.locationDataKey, response.data[0].location);
-      setData(defaults.locationNameDataKey, response.data[0].location.locationName);
-      setData(defaults.locationAddressDataKey, response.data[0].location.formattedAddress);
+      setLocalStorageData(response.data);
       return response.data[1].weather;
     });
   return weatherData;
