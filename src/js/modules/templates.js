@@ -399,3 +399,61 @@ export function populateFooter() {
   const footerEl = document.querySelector('.powered-by-dark-sky');
   footerEl.innerHTML = footerTemplate;
 }
+
+export const errorTemplates = {
+  genericError: `
+    <p class='message-alert-text-heading has-text-danger'>
+      <i class='fas fa-fw fa-exclamation-triangle'></i> Error
+    </p>
+    <p class='message-alert-text-first'>
+      We're sorry, an error occurred. Our developers have been notified.
+      Please reload to try again or come back later.
+    </p>
+  `,
+  locationError: `
+    <p class='message-alert-text-heading has-text-danger'>
+      <i class='fas fa-fw fa-exclamation-triangle'></i> Error
+    </p>
+    <p class='message-alert-text-first'>
+      We're sorry, an error occurred identifying your location.
+      Our developers have been notified of the problem and sent the error details.
+      Please reload to try again or come back later.
+    </p>`,
+  geolocationUnavailable: `
+    <p class='message-alert-text-heading has-text-danger'>
+      <i class='fas fa-fw fa-exclamation-triangle'></i> GEOLOCATION_UNAVAILABLE
+    </p>
+    <p class='message-alert-text-first'>
+      Geolocation is not available with your current browser.
+    </p>
+  `,
+  geolocationUnknown: `
+    <p class='message-alert-text-heading has-text-danger'>
+      <i class='fas fa-fw fa-exclamation-triangle'></i> UNKNOWN ERROR
+    </p>
+    <p class='message-alert-text-first'>
+      An unknown error occurred.
+    </p>`,
+  geolocationTimeout: `
+    <p class='message-alert-text-heading has-text-danger'>
+      <i class='fas fa-fw fa-exclamation-triangle'></i> TIMEOUT
+    </p>
+    <p class='message-alert-text-first'>
+      The request to get user location timed out.
+    </p>`,
+  geolocationPosition: `
+    <p class='message-alert-text-heading has-text-danger'>
+      <i class='fas fa-fw fa-exclamation-triangle'></i> POSITION UNAVAILABLE
+    </p>
+    <p class='message-alert-text-first'>
+      Location information is unavailable.
+    </p>`,
+  geolocationPermission: `
+    <p class='message-alert-text-heading has-text-danger'>
+      <i class='fas fa-fw fa-exclamation-triangle'></i> User denied the request for Geolocation
+    </p>
+    <p class='message-alert-text-first'>
+      Please enable location services, clear any location tracking blocks for the domain
+      'localweather.io' in your browser, and try again.
+    </p>`,
+};

@@ -25,7 +25,7 @@ import {
   populateMessage, populateForecastData,
   populateHourlyData, populateLastUpdated, populateLocation,
   populatePrimaryData, populateWeatherData, populateWeatherAlert,
-  populateAppShell,
+  populateAppShell, errorTemplates,
 } from './templates';
 
 export function initFontAwesomeIcons() {
@@ -409,16 +409,7 @@ export async function getWeatherDataAndRenderApp(lat, lng) {
     renderAppWithData(weatherData);
     hideLoading();
   } catch (error) {
-    const errorMessage = `
-      <p class='message-alert-text-heading has-text-danger'>
-        <i class='fas fa-fw fa-exclamation-triangle'></i> Error
-      </p>
-      <p class='message-alert-text-first'>
-        We're sorry, an error occurred. Our developers have been notified.
-        Please reload to try again or come back later.
-      </p>
-    `;
-    showErrorAlert(errorMessage);
+    showErrorAlert(errorTemplates.genericError);
     defaults.handleError(error);
   }
 }
@@ -433,45 +424,16 @@ export async function geoError(error) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
       // 'It's not going to work unless you turn location services on, Eric';
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> User denied the request for Geolocation
-        </p>
-        <p class='message-alert-text-first'>
-          Please enable location services, clear any location tracking blocks for the domain
-          'localweather.io' in your browser, and try again.
-        </p>
-      `;
+      errorMessage = errorTemplates.geolocationPermission;
       break;
     case error.POSITION_UNAVAILABLE:
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> POSITION UNAVAILABLE
-        </p>
-        <p class='message-alert-text-first'>
-          Location information is unavailable.
-        </p>
-      `;
+      errorMessage = errorTemplates.geolocationPosition;
       break;
     case error.TIMEOUT:
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> TIMEOUT
-        </p>
-        <p class='message-alert-text-first'>
-          The request to get user location timed out.
-        </p>
-      `;
+      errorMessage = errorTemplates.geolocationTimeout;
       break;
     case error.UNKNOWN_ERROR:
-      errorMessage = `
-        <p class='message-alert-text-heading has-text-danger'>
-          <i class='fas fa-fw fa-exclamation-triangle'></i> UNKNOWN ERROR
-        </p>
-        <p class='message-alert-text-first'>
-          An unknown error occurred.
-        </p>
-      `;
+      errorMessage = errorTemplates.geolocationUnknown;
       break;
     default:
       break;
@@ -489,21 +451,11 @@ export function initGeolocation() {
         showLoading('... acquiring location ...');
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
       } catch (error) {
-        const errorMessage = `
-          <p class='message-alert-text-heading has-text-danger'>
-            <i class='fas fa-fw fa-exclamation-triangle'></i> Error
-          </p>
-          <p class='message-alert-text-first'>
-            We're sorry, an error occurred identifying your location.
-            Our developers have been notified of the problem and sent the error details.
-            Please reload to try again or come back later.
-          </p>
-        `;
-        showErrorAlert(errorMessage);
+        showErrorAlert(errorTemplates.locationError);
         defaults.handleError(error);
       }
     } else {
-      showErrorAlert('GEOLOCATION_UNAVAILABLE: Geolocation is not available with your current browser.');
+      showErrorAlert(errorTemplates.geolocationUnavailable);
     }
   } else {
     showLoading('... acquiring location ...');
