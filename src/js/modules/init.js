@@ -72,29 +72,28 @@ export function init() {
     defaults.handleError(error);
     return false;
   };
-
-  const initDataUpdateCheck = () => {
-    if (defaults.timerHandle) {
-      clearInterval(defaults.timerHandle);
-    } else {
-      clearInterval();
-    }
-    defaults.timerHandle = setInterval(() => {
-      if (!loadFromCache()) {
-        init();
-        return;
+  if (defaults.isOnline()) {
+    const initDataUpdateCheck = () => {
+      if (defaults.timerHandle) {
+        clearInterval(defaults.timerHandle);
+      } else {
+        clearInterval();
       }
-      refreshLastUpdatedTime(getData(defaults.weatherDataKey));
-      initTooltips();
-    }, (10 * 1000)); // (num seconds * 1000 milliseconds)
-  };
-
-  initCache();
-  initGeolocation();
-  initDataUpdateCheck();
-  initTooltips();
-}
-
-export function initOffline() {
-  initFontAwesomeIcons();
+      defaults.timerHandle = setInterval(() => {
+        if (!loadFromCache()) {
+          init();
+          return;
+        }
+        refreshLastUpdatedTime(getData(defaults.weatherDataKey));
+        initTooltips();
+      }, (10 * 1000)); // (num seconds * 1000 milliseconds)
+    };
+    initFontAwesomeIcons();
+    initCache();
+    initGeolocation();
+    initDataUpdateCheck();
+    initTooltips();
+  } else {
+    initFontAwesomeIcons();
+  }
 }
