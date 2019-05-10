@@ -315,6 +315,7 @@ export function showErrorAlert(errorMessage, buttonText = 'Reload to Try Again')
     confirmButtonColor: `${defaults.themeColor}`,
     type: 'error',
     onClose: () => {
+      resetData();
       reloadWindow();
     },
   });
