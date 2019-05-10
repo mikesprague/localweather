@@ -299,11 +299,9 @@ export function showInstallAlert() {
     text: 'Latest Version Installed',
     confirmButtonText: 'Reload for Latest Updates',
     type: 'success',
-    onAfterClose: () => {
-      reloadWindow();
-    },
     onClose: () => {
       resetData();
+      reloadWindow();
     },
   });
 }
