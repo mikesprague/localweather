@@ -22,6 +22,7 @@ module.exports = {
   locationName: '',
   offlineHeading: 'You appear to be offline',
   offlineText: 'This page will automatically update with current weather data when you have a stable connection again',
+  skipGeolocationCheckKey: 'skipLocationCheck',
   themeColor: '#133150',
   timerHandle: 0,
   title: 'LocalWeather.io (powered by Dark Sky)',
