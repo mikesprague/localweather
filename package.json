@@ -115,14 +115,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "last 4 chrome version",
-      "last 4 firefox version",
-      "last 4 safari version"
+      "last 4 chrome versions",
+      "last 4 firefox versions",
+      "last 4 safari versions"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 chrome versions",
+      "last 1 firefox versions",
+      "last 1 safari versions"
     ]
   },
   "eslintConfig": {
