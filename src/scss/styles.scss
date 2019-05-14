@@ -57,6 +57,29 @@ body {
   font-size: 1.25rem;
 }
 
+.loading-animation {
+  margin: 0 auto;
+  animation: spin-stretch 2s ease infinite;
+  border: 6px solid transparent;
+  border-bottom-color: $color-text-default;
+  border-radius: 50%;
+  border-top-color: $color-text-default;
+  height: 6em;
+  width: 5em;
+}
+
+@keyframes spin-stretch {
+  50% {
+    border-width: 8px;
+    transform: rotate(360deg) scale(.4, .33);
+  }
+
+  100% {
+    border-width: 3px;
+    transform: rotate(720deg) scale(1, 1);
+  }
+}
+
 .section {
   padding: .75rem !important;
 }

@@ -13,7 +13,8 @@ export function populateMessage(messageText) {
     <div class="columns is-mobile">
       <div class="column">
         <div class="content has-text-centered">
-          <i class="fas fa-fw fa-spinner fa-5x fa-pulse"></i>
+          <div class="loading-animation"></div>
+          <!-- <i class="fas fa-fw fa-spinner fa-5x fa-pulse"></i> -->
           <p class="message-text">${messageText}</p>
         </div>
       </div>
