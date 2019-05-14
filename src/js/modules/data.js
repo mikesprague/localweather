@@ -4,10 +4,6 @@ import {
   useCache, getData, resetData, setCacheTime, setData,
 } from './cache';
 
-export function loadFromCache() {
-  return useCache(getData(defaults.cacheTimeKey));
-}
-
 const setLocalStorageData = ((data) => {
   resetData();
   setCacheTime();
@@ -19,7 +15,7 @@ const setLocalStorageData = ((data) => {
 });
 
 export async function getWeatherData(lat, lng) {
-  if (loadFromCache()) {
+  if (useCache(getData(defaults.cacheTimeKey))) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   }

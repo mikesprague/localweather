@@ -13,7 +13,6 @@ module.exports = {
   },
   hideClassName: 'hidden',
   keywords: 'weather, local, dark sky, localweather.io, local weather',
-  loadFromCache: false,
   loadingSpinnerSelector: '.loading-message',
   loadingText: '... loading weather data for your location ...',
   locationDataKey: 'locationData',

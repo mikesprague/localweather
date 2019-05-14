@@ -2,7 +2,7 @@ import bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import * as defaults from './defaults';
-import { resetData, getData } from './cache';
+import { getData, resetData, useCache } from './cache';
 import {
   initFontAwesomeIcons,
   initTooltips,
@@ -12,7 +12,6 @@ import {
   showInstallAlert,
   hideLoading,
 } from './ui';
-import { loadFromCache } from './data';
 
 const releaseStage = process.env.NODE_ENV || 'production';
 
@@ -76,7 +75,7 @@ export function init() {
         clearInterval();
       }
       defaults.timerHandle = setInterval(() => {
-        if (!loadFromCache()) {
+        if (!useCache(getData(defaults.cacheTimeKey))) {
           init();
           return;
         }
