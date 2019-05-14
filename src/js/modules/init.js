@@ -2,10 +2,7 @@ import bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import * as defaults from './defaults';
-import {
-  initCache,
-  getData,
-} from './cache';
+import { resetData, getData } from './cache';
 import {
   initFontAwesomeIcons,
   initTooltips,
@@ -50,7 +47,6 @@ export function registerServiceWorker() {
     //   console.log('New content is downloading.', registration);
     // },
     updated() { // updated(registration)
-      initCache();
       if (hasApprovedLocationSharing()) {
         showInstallAlert();
       }
@@ -88,8 +84,8 @@ export function init() {
         initTooltips();
       }, (10 * 1000)); // (num seconds * 1000 milliseconds)
     };
+    resetData();
     initFontAwesomeIcons();
-    initCache();
     initGeolocation();
     initDataUpdateCheck();
     initTooltips();
