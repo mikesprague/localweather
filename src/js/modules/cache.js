@@ -42,10 +42,3 @@ export function setCacheTime() {
   setData(defaults.cacheTimeKey, cacheTime);
   return cacheTime;
 }
-
-export function initCache() {
-  if (areCachesEmpty() || !useCache(getData(defaults.cacheTimeKey))) {
-    resetData();
-    setCacheTime();
-  }
-}
