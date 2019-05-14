@@ -301,7 +301,7 @@ export function populateForecastData(data, numDays = 7) {
       <i class='fas fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[next].sunsetTime).format('h:mma')}
     `;
     const forecastTemplate = `
-      <p class="has-tooltip" data-tippy-content="${conditionText}<br>${tempText}<br>${sunText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}">
+      <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br>${sunText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}</div>">
         <strong>${dayjs.unix(data.daily.data[next].time).format('ddd')}</strong>
         <br>
         <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
@@ -339,7 +339,7 @@ export function populateHourlyData(data, numHours = 12) {
       ? `${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}`
       : 'No precipitation';
     const hourlyTemplate = `
-      <p class="has-tooltip" data-tippy-content="${conditionText}<br>${tempText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}">
+      <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}</div>">
         <strong>${dayjs.unix(data.hourly.data[next].time).format('ha')}</strong>
         <br>
         <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
