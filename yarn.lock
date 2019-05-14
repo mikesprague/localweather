@@ -2423,10 +2423,10 @@ autoprefixer@^9.5.1:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.453.0:
-  version "2.453.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.453.0.tgz#7f1ada4efc78d255dfd43adc3decd5f01a21ac2c"
-  integrity sha512-UsofQeX8XVElr4+bqw47jOZUGNiwUdFVTNyOdOHcK14RHH2ySsve6JWyvQT8L2rS//XQP1OBIQo20PAl1Zf7ig==
+aws-sdk@^2.454.0:
+  version "2.454.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.454.0.tgz#d7c1ceec21b6245949c1934d9aedfad3aaf9694a"
+  integrity sha512-1vB9DNIwh+mqKD2IZspYTQapCD6f5VnMT5V2VPlXJ1CNcUdFSU8FFyxKmYApNs+S3re1h3fhWDjpwTreS+XLRQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -5103,10 +5103,10 @@ eslint-plugin-compat@^3.1.1:
     mdn-browser-compat-data "^0.0.72"
     semver "^5.6.0"
 
-eslint-plugin-html@^5.0.4:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-html/-/eslint-plugin-html-5.0.4.tgz#3bd0cc8279bf3d77d049942aa238a9118f9fafbe"
-  integrity sha512-hLnMbi0aghaQPItEOzMebHpDSaVPutXA87OtEXSo1tXcpim8Hx70KxUrioNuwm9To4K2O0jv/QbCTioBSsvKnQ==
+eslint-plugin-html@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-html/-/eslint-plugin-html-5.0.5.tgz#e2388f813f75b2287cde884811eab287de8e0f56"
+  integrity sha512-v/33i3OD0fuXcRXexVyXXBOe4mLBLBQoF1UO1Uy9D+XLq4MC8K45GcQKfqjC/FnHAHp3pYUjpHHktYNCtShGmg==
   dependencies:
     htmlparser2 "^3.10.0"
 
@@ -10316,10 +10316,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.17.0:
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.17.0.tgz#53b303676eed22cc14a9f0cec09b477b3026c008"
-  integrity sha512-sXe5lSt2WQlCbydGETgfm1YBShgOX4HxQkFPvbxkcwgDvGDeqVau8h+12+lmSVlP3rHPz0oavfddSZg/q+Szjw==
+prettier@^1.17.1:
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.17.1.tgz#ed64b4e93e370cb8a25b9ef7fef3e4fd1c0995db"
+  integrity sha512-TzGRNvuUSmPgwivDqkZ9tM/qTGW9hqDKWOE9YHiyQdixlKbv7kvEqsmDPrcHJTKwthU774TQwZXVtaQ/mMsvjg==
 
 pretty-bytes@^5.1.0:
   version "5.2.0"
