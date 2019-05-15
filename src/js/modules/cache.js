@@ -34,6 +34,7 @@ export function useCache(cacheTime) {
   if (nextUpdateTime > now && !areCachesEmpty()) {
     return true;
   }
+  resetData();
   return false;
 }
 
