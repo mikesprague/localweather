@@ -2,7 +2,7 @@ import bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import * as defaults from './defaults';
-import { getData, useCache } from './cache';
+import { getData, useCache, resetData } from './cache';
 import {
   initFontAwesomeIcons,
   initTooltips,
@@ -76,6 +76,7 @@ export function init() {
       }
       defaults.timerHandle = setInterval(() => {
         if (!useCache(getData(defaults.cacheTimeKey))) {
+          resetData();
           init();
           return;
         }
