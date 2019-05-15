@@ -76,7 +76,6 @@ export function init() {
       }
       defaults.timerHandle = setInterval(() => {
         if (!useCache(getData(defaults.cacheTimeKey))) {
-          resetData();
           init();
           return;
         }
@@ -84,6 +83,7 @@ export function init() {
         initTooltips();
       }, (10 * 1000)); // (num seconds * 1000 milliseconds)
     };
+    resetData();
     initFontAwesomeIcons();
     initGeolocation();
     initDataUpdateCheck();
