@@ -57,7 +57,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "snyk": "^1.165.0",
-    "sweetalert2": "^8.10.7",
+    "sweetalert2": "^8.11.0",
     "tippy.js": "^4.3.1"
   },
   "devDependencies": {
