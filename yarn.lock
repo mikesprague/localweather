@@ -8638,10 +8638,10 @@ netlify-dev-plugin@^1.0.19:
     wait-port "^0.2.2"
     wrap-ansi "^5.1.0"
 
-netlify-lambda@^1.4.7:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.4.7.tgz#a03e4a4c6f6f8d27abb7986891b11b4a74d82e82"
-  integrity sha512-tTS1Vm6sDky8lTi6SZgAwrOWz9sLhlwUpoh5Vg3L/Iz6oR03XAdIxXAoSZjbRD2OHhLzATh0LsBpCN1BlFF2ug==
+netlify-lambda@^1.4.9:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.4.9.tgz#d446e9251bc2658916a846008001bc2e499495f2"
+  integrity sha512-CzK12IWjC3IEPrrEfhpdtqK1pzw7lcTBvqCLqiZwZdv1o0UxZhrWCJKQ/ZO9j8FJD+g4O+mPDzlJthYqu6zX1A==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
@@ -12373,10 +12373,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.11.0:
-  version "8.11.0"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.11.0.tgz#af7bf991f3066e010d551550bac23c4bfbde5661"
-  integrity sha512-9C13Ljs7ikR3AmNLmoWQmCCVWoQO7JaqA+6Ox8qGH0fDsF1Mlek5LNg3tLvqiZhqR4qT4GFaErotWCBxUkF2sQ==
+sweetalert2@^8.11.1:
+  version "8.11.1"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.11.1.tgz#deb4a729618ae536db6210028fb5d133ccb5a17b"
+  integrity sha512-yjN01bRiIagiL47zhiR6IHh2F0KcMdw8azeJzeFaOpIR28LqHcVZnH7xLsxD32xmCwoDk/BuuAwCosmQHhy+Ag==
 
 symbol-observable@1.0.1:
   version "1.0.1"
