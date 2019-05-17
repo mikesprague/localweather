@@ -34,6 +34,26 @@
       "sizes": "128x128"
     },
     {
+      "src": "./images/weather-icon-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "./images/weather-icon-152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "./images/weather-icon-167.png",
+      "type": "image/png",
+      "sizes": "167x167"
+    },
+    {
+      "src": "./images/weather-icon-180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
       "src": "./images/weather-icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
