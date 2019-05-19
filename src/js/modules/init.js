@@ -51,10 +51,11 @@ export function registerServiceWorker() {
       }
     },
     offline() {
-      console.info('No internet connection found. App is running in offline mode.');
+      console.info('No internet connection found. LocalWeather is running in offline mode.');
     },
     error(error) {
-      console.error('Error during service worker registration:', error);
+      // console.error('Error during service worker registration:', error);
+      defaults.handleError(error);
     },
   });
 }
