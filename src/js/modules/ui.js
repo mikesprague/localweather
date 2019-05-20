@@ -243,6 +243,7 @@ export function initTooltips() {
     a11y: false,
     allowHTML: true,
     arrow: true,
+    boundary: 'viewport',
     flipOnUpdate: true,
     interactive: true,
     size: 'large',

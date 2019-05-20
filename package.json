@@ -22,7 +22,7 @@
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "lambda:build": "netlify-lambda build ./src/functions",
-    "lambda:serve": "netlify-lambda serve ./src/functions -c ./lambda.config.dev.js",
+    "lambda:serve": "netlify-lambda serve ./src/functions",
     "snyk-protect": "snyk protect",
     "prepublish": "yarn snyk-protect"
   },
@@ -93,7 +93,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.2.4",
-    "webpack": "^4.31.0",
+    "webpack": "^4.32.0",
     "webpack-bugsnag-plugins": "^1.4.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.4.1",
