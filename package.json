@@ -52,11 +52,11 @@
     "cssnano": "^4.1.10",
     "dayjs": "^1.8.14",
     "dotenv": "^8.0.0",
-    "logrocket": "^0.6.21",
+    "logrocket": "^1.0.0",
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "snyk": "^1.165.1",
+    "snyk": "^1.166.0",
     "sweetalert2": "^8.11.1",
     "tippy.js": "^4.3.1"
   },
