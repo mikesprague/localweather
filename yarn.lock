@@ -2488,10 +2488,10 @@ autoprefixer@^9.5.1:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.461.0:
-  version "2.461.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.461.0.tgz#7c56162a28b7c143480183de1070e0cfe0971e11"
-  integrity sha512-nqRqlOaM92P6BTx/huq8FuowWNPiRRcpEKHvAQ2XTWTQUADx9HIP9KtbEzLpauxE4Er2reM0UYz9Kbtyke/3EQ==
+aws-sdk@^2.462.0:
+  version "2.462.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.462.0.tgz#786606c4787cfa602a0539bf6bd573c3d995961c"
+  integrity sha512-CSN6wiFKlAqtafKR7EzM31s6GxLAXKv4wBhuXiFvCjc0txYdXEhIsXMRZSOh6daTAjgPOps2IMTK9/adCSe+9g==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -4404,7 +4404,7 @@ debug@4, debug@^4.0.0, debug@^4.1.1:
   dependencies:
     ms "^2.1.1"
 
-debug@^3, debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
+debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
@@ -4757,10 +4757,10 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
-dockerfile-ast@0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/dockerfile-ast/-/dockerfile-ast-0.0.12.tgz#6f25f6ad55eeecdd297ab68b08be1b32e64b5aeb"
-  integrity sha512-cIV8oXkAxpIuN5XgG0TGg07nLDgrj4olkfrdT77OTA3VypscsYHBUg/FjHxW9K3oA+CyH4Th/qtoMgTVpzSobw==
+dockerfile-ast@0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/dockerfile-ast/-/dockerfile-ast-0.0.16.tgz#10b329d343329dab1de70375833495f85ad65913"
+  integrity sha512-+HZToHjjiLPl46TqBrok5dMrg5oCkZFPSROMQjRmvin0zG4FxK0DJXTpV/CUPYY2zpmEvVza55XLwSHFx/xZMw==
   dependencies:
     vscode-languageserver-types "^3.5.0"
 
@@ -11548,6 +11548,11 @@ semver@^6.0.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.0.0.tgz#05e359ee571e5ad7ed641a6eec1e547ba52dea65"
   integrity sha512-0UewU+9rFapKFnlbirLi3byoOuhrSsli/z/ihNnvM24vgF+8sNBiI1LZPBSH9wJKUwaUbw+s3hToDLCXkrghrQ==
 
+semver@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.1.0.tgz#e95dc415d45ecf03f2f9f83b264a6b11f49c0cca"
+  integrity sha512-kCqEOOHoBcFs/2Ccuk4Xarm/KiWRSLEX9CAZF8xkJ6ZPlIoTZ8V5f7J16vYLJqDbR7KrxTJpR2lqjIEm2Qx9cQ==
+
 semver@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
@@ -11798,14 +11803,14 @@ snyk-config@^2.2.1:
     lodash "^4.17.11"
     nconf "^0.10.0"
 
-snyk-docker-plugin@1.24.1:
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.24.1.tgz#a27fdabfdc86b00423968217850eff17ccdbd212"
-  integrity sha512-Y130BbrZ5hEPhjR1s57n5m1kNnlh4ydA000nPY4HvXylAX3JWQZR3/HFJ6nCKLes/z1cH19EsSdBNw7+r/N2ag==
+snyk-docker-plugin@1.24.2:
+  version "1.24.2"
+  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.24.2.tgz#9b26fb53a944580621347e710e117d38e3375bcf"
+  integrity sha512-0tUrfh2O/WdO6SAHIq27AgGM/RKTQK3VPcY2XTaDmy0ObI6IfztEXN5Ysolw9KyEIZcs0qoWyCx6QDZlb1/sNQ==
   dependencies:
-    debug "^3"
-    dockerfile-ast "0.0.12"
-    semver "^5.6.0"
+    debug "^4.1.1"
+    dockerfile-ast "0.0.16"
+    semver "^6.1.0"
     tslib "^1"
 
 snyk-go-parser@1.0.2:
@@ -11963,10 +11968,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.167.0:
-  version "1.167.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.167.0.tgz#bdd8906d8e5111e4c0eeafe0cf6ec54da45abd71"
-  integrity sha512-xNlANd2fAC5Gjd+t7NGMUeEf1re+njM9LPwp6Ho34CGkT1HngkSArUus9N7VwvovMCfs8wyTH5nR3SyaKjDxBA==
+snyk@^1.167.2:
+  version "1.167.2"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.167.2.tgz#add2a7fb1e4a687b59106d7fdaee79f039bc5e15"
+  integrity sha512-mWH5cBtTjOomsOLQV6ohCogqPi2XJL2ZxwHoRlUSBaLUdNuK9p5bz3bz+3zfxmrWdgnMi0EHEX3hm0yXdcR2fQ==
   dependencies:
     "@snyk/dep-graph" "1.4.1"
     "@snyk/gemfile" "1.2.0"
@@ -11987,7 +11992,7 @@ snyk@^1.167.0:
     proxy-from-env "^1.0.0"
     semver "^6.0.0"
     snyk-config "^2.2.1"
-    snyk-docker-plugin "1.24.1"
+    snyk-docker-plugin "1.24.2"
     snyk-go-plugin "1.7.2"
     snyk-gradle-plugin "2.10.4"
     snyk-module "1.9.1"
@@ -12682,29 +12687,21 @@ terser-webpack-plugin@^1.1.0:
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
 
-terser-webpack-plugin@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.2.4.tgz#56f87540c28dd5265753431009388f473b5abba3"
-  integrity sha512-64IiILNQlACWZLzFlpzNaG0bpQ4ytaB7fwOsbpsdIV70AfLUmIGGeuKL0YV2WmtcrURjE2aOvHD4/lrFV3Rg+Q==
+terser-webpack-plugin@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.3.0.tgz#69aa22426299f4b5b3775cbed8cb2c5d419aa1d4"
+  integrity sha512-W2YWmxPjjkUcOWa4pBEv4OP4er1aeQJlSo2UhtCFQCuRXEHjOFscO8VyWHj9JLlA0RzQb8Y2/Ta78XZvT54uGg==
   dependencies:
     cacache "^11.3.2"
     find-cache-dir "^2.0.0"
     is-wsl "^1.1.0"
+    loader-utils "^1.2.3"
     schema-utils "^1.0.0"
     serialize-javascript "^1.7.0"
     source-map "^0.6.1"
-    terser "^3.17.0"
+    terser "^4.0.0"
     webpack-sources "^1.3.0"
     worker-farm "^1.7.0"
-
-terser@^3.17.0:
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-3.17.0.tgz#f88ffbeda0deb5637f9d24b0da66f4e15ab10cb2"
-  integrity sha512-/FQzzPJmCpjAH9Xvk2paiWrFq+5M6aVOf+2KRbwhByISDX/EujxsK+BAvrhb6H+2rtrLCHK9N01wO014vrIwVQ==
-  dependencies:
-    commander "^2.19.0"
-    source-map "~0.6.1"
-    source-map-support "~0.5.10"
 
 terser@^3.8.1:
   version "3.10.12"
@@ -12714,6 +12711,15 @@ terser@^3.8.1:
     commander "~2.17.1"
     source-map "~0.6.1"
     source-map-support "~0.5.6"
+
+terser@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.0.0.tgz#ef356f6f359a963e2cc675517f21c1c382877374"
+  integrity sha512-dOapGTU0hETFl1tCo4t56FN+2jffoKyER9qBGoUFyZ6y7WLoKT0bF+lAYi6B6YsILcGF3q1C2FBh8QcKSCgkgA==
+  dependencies:
+    commander "^2.19.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.10"
 
 text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
