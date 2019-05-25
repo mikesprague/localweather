@@ -22,7 +22,7 @@
     "dev:clean": "rm -rf ./build > /dev/null 2>&1",
     "dev:serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "lambda:build": "netlify-lambda build ./src/functions",
-    "lambda:serve": "netlify-lambda serve ./src/functions",
+    "lambda:serve": "netlify-lambda serve ./src/functions --config ./webpack.functions.js",
     "snyk-protect": "snyk protect",
     "prepublish": "yarn snyk-protect"
   },
