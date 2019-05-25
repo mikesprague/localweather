@@ -82,7 +82,7 @@ export function init() {
         }
         refreshLastUpdatedTime(getData(defaults.weatherDataKey));
         initTooltips();
-      }, (10 * 1000)); // (num seconds * 1000 milliseconds)
+      }, (1 * 1000)); // (num seconds * 1000 milliseconds)
     };
     initFontAwesomeIcons();
     initGeolocation();
