@@ -51,7 +51,7 @@ exports.handler = (event, context, callback) => {
       const fullResults = response.results;
       const formattedAddress = response.results[0].formatted_address;
       let locationName = '';
-      const addressTargets = ['neighborhood', 'locality', 'administrative_area_level_1'];
+      const addressTargets = ['neighborhood', 'locality', 'administrative_area_level_2', 'administrative_area_level_1'];
       addressTargets.map((target) => {
         if (!locationName.length) {
           response.results.map((result) => {
