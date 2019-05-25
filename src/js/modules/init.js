@@ -2,7 +2,7 @@ import bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import * as defaults from './defaults';
-import { getData, useCache, resetData } from './cache';
+import { getData, useCache } from './cache';
 import {
   initFontAwesomeIcons,
   initTooltips,
@@ -84,7 +84,6 @@ export function init() {
         initTooltips();
       }, (10 * 1000)); // (num seconds * 1000 milliseconds)
     };
-    resetData();
     initFontAwesomeIcons();
     initGeolocation();
     initDataUpdateCheck();

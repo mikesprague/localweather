@@ -1,11 +1,10 @@
 import axios from 'axios';
 import * as defaults from './defaults';
 import {
-  useCache, getData, resetData, setCacheTime, setData,
+  useCache, getData, setCacheTime, setData,
 } from './cache';
 
 const setLocalStorageData = ((data) => {
-  resetData();
   setCacheTime();
   setData(defaults.weatherDataKey, data[1].weather);
   setData(defaults.locationDataKey, data[0].location);
