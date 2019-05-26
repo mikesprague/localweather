@@ -65,6 +65,10 @@ export function registerServiceWorker() {
 registerServiceWorker();
 
 export function init() {
+  if (!useCache(getData(defaults.cacheTimeKey))) {
+    resetData();
+  }
+
   window.onerror = (msg, url, lineNo, columnNo, error) => {
     hideLoading();
     defaults.handleError(error);
