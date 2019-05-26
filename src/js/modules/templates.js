@@ -75,22 +75,22 @@ export function populatePrimaryData(data) {
   const precipitationNextHourText = Math.floor(data.hourly.data[1].precipProbability * 100)
     ? `${Math.floor(data.hourly.data[1].precipProbability * 100)}% chance of ${data.hourly.data[1].precipType}`
     : 'No precipitation';
-  const conditionTodayText = `<i class='${getWeatherIcon(data.daily.data[1].icon)}'></i> ${data.daily.data[1].summary}`;
+  const conditionTodayText = `<i class='${getWeatherIcon(data.daily.data[0].icon)}'></i> ${data.daily.data[1].summary}`;
   const tempTodayText = `
-    <i class='fal fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[1].temperatureMax)}&deg;
-    (feels ${Math.round(data.daily.data[1].apparentTemperatureMax)}&deg;)
-    around ${dayjs.unix(data.daily.data[1].apparentTemperatureMaxTime).format('h:mma')}
+    <i class='fal fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[0].temperatureMax)}&deg;
+    (feels ${Math.round(data.daily.data[0].apparentTemperatureMax)}&deg;)
+    around ${dayjs.unix(data.daily.data[0].apparentTemperatureMaxTime).format('h:mma')}
     <br>
-    <i class='fal fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[1].temperatureMin)}&deg;
-    (feels ${Math.round(data.daily.data[1].apparentTemperatureMin)}&deg;)
-    around ${dayjs.unix(data.daily.data[1].apparentTemperatureMinTime).format('h:mma')}
+    <i class='fal fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[0].temperatureMin)}&deg;
+    (feels ${Math.round(data.daily.data[0].apparentTemperatureMin)}&deg;)
+    around ${dayjs.unix(data.daily.data[0].apparentTemperatureMinTime).format('h:mma')}
   `;
-  const precipitationTodayText = Math.floor(data.daily.data[1].precipProbability * 100)
-    ? `${Math.floor(data.daily.data[1].precipProbability * 100)}% chance of ${data.daily.data[1].precipType} around ${dayjs.unix(data.daily.data[1].precipIntensityMaxTime).format('h:mma')}`
+  const precipitationTodayText = Math.floor(data.daily.data[0].precipProbability * 100)
+    ? `${Math.floor(data.daily.data[0].precipProbability * 100)}% chance of ${data.daily.data[0].precipType} around ${dayjs.unix(data.daily.data[0].precipIntensityMaxTime).format('h:mma')}`
     : 'No precipitation';
   const sunTodayText = `
-    <i class='fas fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[1].sunriseTime).format('h:mma')}
-    <i class='fas fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[1].sunsetTime).format('h:mma')}
+    <i class='fas fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
+    <i class='fas fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
   `;
   const currentConditionsTooltip = `
     <div class='primarySummaryWrapper'>
