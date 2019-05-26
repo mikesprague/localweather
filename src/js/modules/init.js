@@ -2,7 +2,7 @@ import bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import * as defaults from './defaults';
-import { getData, useCache } from './cache';
+import { getData, useCache, resetData } from './cache';
 import {
   initFontAwesomeIcons,
   initTooltips,
@@ -11,6 +11,8 @@ import {
   refreshLastUpdatedTime,
   showInstallAlert,
   hideLoading,
+  hideEl,
+  showEl,
 } from './ui';
 
 const releaseStage = process.env.NODE_ENV || 'production';
@@ -68,7 +70,8 @@ export function init() {
     defaults.handleError(error);
     return false;
   };
-  if (defaults.isOnline()) {
+
+  const initOnline = (() => {
     const initDataUpdateCheck = () => {
       if (defaults.timerHandle) {
         clearInterval(defaults.timerHandle);
@@ -84,11 +87,33 @@ export function init() {
         initTooltips();
       }, (1 * 1000)); // (num seconds * 1000 milliseconds)
     };
+    hideEl('.offline-notification');
     initFontAwesomeIcons();
     initGeolocation();
     initDataUpdateCheck();
     initTooltips();
-  } else {
+  });
+
+  const initOffline = (() => {
+    if (defaults.timerHandle) {
+      clearInterval(defaults.timerHandle);
+    } else {
+      clearInterval();
+    }
+    showEl('.offline-notification');
+    refreshLastUpdatedTime(getData(defaults.weatherDataKey));
     initFontAwesomeIcons();
-  }
+    initTooltips();
+  });
+
+  window.addEventListener('offline', () => {
+    initOffline();
+  }, false);
+
+  window.addEventListener('online', () => {
+    resetData();
+    initOnline();
+  }, false);
+
+  initOnline();
 }

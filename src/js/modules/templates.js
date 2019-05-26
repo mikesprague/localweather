@@ -40,21 +40,6 @@ export function populateAppShell() {
   appShellEl.innerHTML = appShellTemplate;
 }
 
-export function populateErrorMessage(messageText) {
-  const messageTemplate = `
-    <div class="columns is-mobile">
-      <div class="column">
-        <div class="content has-text-centered">
-          <i class="has-text-danger fas fa-fw fa-exclamation-triangle fa-5x"></i>
-          <p class="message-text">${messageText}</p>
-        </div>
-      </div>
-    </div>
-  `;
-  const messageEl = document.querySelector('.loading-message');
-  messageEl.innerHTML = messageTemplate;
-}
-
 const addLocationNameSpacing = () => {
   const locationNameEl = document.querySelector('.location-name');
   const locationNameLetters = locationNameEl.textContent.split('');
@@ -357,18 +342,32 @@ export function populateLastUpdated(data) {
   const lastUpdateTime = dayjs.unix(data.currently.time);
   const nextUpdateTime = dayjs.unix(data.currently.time + defaults.cacheTimeSpan);
 
-  const lastUpdatedString = `
+  let lastUpdatedString = `
     Weather data last refreshed at ${lastUpdateTime.format('hh:mm:ss A')}
     <br>
     Data is cached for 5 minutes, next update ${dayjs().to(nextUpdateTime)}
   `;
-  const lastUpdatedTemplate = `
+  let lastUpdatedTemplate = `
     <div class="column has-text-centered">
       <p class="last-updated has-tooltip" data-tippy-content="${lastUpdatedString}">
         Weather data last updated ${dayjs().from(lastUpdateTime, true)} ago
       </p>
     </div>
   `;
+
+  if (!defaults.isOnline()) {
+    lastUpdatedString = `
+      <i class='fal fa-fw fa-wifi-slash'></i> Weather data will be refreshed when your device has connectivity again
+    `;
+    lastUpdatedTemplate = `
+      <div class="column has-text-centered">
+        <p class="last-updated has-tooltip" data-tippy-content="${lastUpdatedString}">
+          <i class='fal fa-fw fa-wifi-slash'></i> Weather data last updated ${lastUpdateTime.format('hh:mm:ss A')}
+        </p>
+      </div>
+    `;
+  }
+
   const lastUpdatedEl = document.querySelector('.last-updated-time');
   lastUpdatedEl.innerHTML = lastUpdatedTemplate;
 }
