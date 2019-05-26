@@ -357,7 +357,7 @@ export function populateLastUpdated(data) {
 
   if (!defaults.isOnline()) {
     lastUpdatedString = `
-      <i class='fal fa-fw fa-wifi-slash'></i> Weather data will be refreshed when your device has connectivity again
+      Weather data will be refreshed automatically when your device has connectivity again
     `;
     lastUpdatedTemplate = `
       <div class="column has-text-centered">

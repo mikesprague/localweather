@@ -85,13 +85,13 @@ export function init() {
         }
         refreshLastUpdatedTime(getData(defaults.weatherDataKey));
         initTooltips();
-      }, (1 * 1000)); // (num seconds * 1000 milliseconds)
+      }, (10 * 1000)); // (num seconds * 1000 milliseconds)
     };
     hideEl('.offline-notification');
     initFontAwesomeIcons();
+    initTooltips();
     initGeolocation();
     initDataUpdateCheck();
-    initTooltips();
   });
 
   const initOffline = (() => {
