@@ -662,23 +662,23 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.2.0.tgz#8588303053b51e5f3c371271ea13a0b468ed5f37"
-  integrity sha512-3v3EZ74H3zaj1rGP/gR40Ahem1t4g+rk/1CwzA0dz/XoME3XVc9BgQBm8uk3TMeUxLTCOC7qCpjoo5N06Hyb9A==
+"@bugsnag/browser@^6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.3.0.tgz#0c8bcf3fb2dfe8aa0b97f59cfcd43c55a7bd8fbc"
+  integrity sha512-IS9s4WkgDMn9CE0qoo8mZE7blPvWy8mnFPxO1AAE8oewqUw3hWV5Fv+FFgHe+kB8oLaW+2E1EFG5E7xHS3ytxg==
 
-"@bugsnag/js@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.2.0.tgz#0ac65ffa61abe8f2c1a89b055620151fe03ec59a"
-  integrity sha512-gU3Hu08LePqroG0+5JQTdDCL7EQSLlQrA0XOzlSKjtlMVkJ0T0iALgodGeiG7qac4QnFYullci155F+sQ/APYA==
+"@bugsnag/js@^6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.3.0.tgz#aa8206c16b28fff5f78ad65fdf7d6696bc1cb93e"
+  integrity sha512-waGwrqmMdjMJ9KEjPZgP3iFAQrepM8HwMAXP6ycUJMUfsb5e4JwoalW3ktyamJztNIM4AJ9yoTIpPxnCz7dCvA==
   dependencies:
-    "@bugsnag/browser" "^6.2.0"
-    "@bugsnag/node" "^6.2.0"
+    "@bugsnag/browser" "^6.3.0"
+    "@bugsnag/node" "^6.3.0"
 
-"@bugsnag/node@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.2.0.tgz#e77fa9dcbe49c4b2f5ef8a3cb09e510b1231fec7"
-  integrity sha512-iRSbBlI2Ii3qxE3NaJ48H4YAAm/Bk4hPVXSpyAlOHkxmRM/JJd7y6A8O0NgPzuPiDz3u/oL0fg2tgNG9VrWAVw==
+"@bugsnag/node@^6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.3.0.tgz#c75f7a1284f97823b24c0a2489b7f9ea8bcd6851"
+  integrity sha512-TuvvGx98AFhhuntKzFUnD7rSko77R2im6Ec8ZNL0w8JJe9nGaVF35uCK297Pk6E7x136+FY7dBNRWgdJJZ3RNA==
   dependencies:
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
@@ -1681,10 +1681,10 @@ autoprefixer@^9.5.1:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.463.0:
-  version "2.463.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.463.0.tgz#57562a95aa9b071ee16bb9e18ddd5c6c27c6eda6"
-  integrity sha512-bl0S6mxA2o8Hpy9LsMcPC9kVnrL4+B4qayiMlNMrp+8gcEMzJSMzfrUDX4SCWsqGYT25sZn8TDqTGJp7XIh3yw==
+aws-sdk@^2.464.0:
+  version "2.464.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.464.0.tgz#1415ba026f5ca76ad32fce79d99131246d37cd6f"
+  integrity sha512-DsJ/V/Eaazio5klO49IXIgnDpBcObgOunFs0KsUbdPz5yxvznZQiez9LqTcaj0SaCS7zsrT9K5p+Jtbt60z1SA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -9950,10 +9950,10 @@ snyk-config@^2.2.1:
     lodash "^4.17.11"
     nconf "^0.10.0"
 
-snyk-docker-plugin@1.24.2:
-  version "1.24.2"
-  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.24.2.tgz#9b26fb53a944580621347e710e117d38e3375bcf"
-  integrity sha512-0tUrfh2O/WdO6SAHIq27AgGM/RKTQK3VPcY2XTaDmy0ObI6IfztEXN5Ysolw9KyEIZcs0qoWyCx6QDZlb1/sNQ==
+snyk-docker-plugin@1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.25.0.tgz#52a6d042142d45873bee58938ee9cd7abf82c140"
+  integrity sha512-vJY7KpN+055cehFAmoUUrbdIao8DbeZ6qU+PLanJ5VkLWHmonEMrhptIy134oagHewb4P2ZfpvdKxGJwGKafDw==
   dependencies:
     debug "^4.1.1"
     dockerfile-ast "0.0.16"
@@ -10115,10 +10115,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.167.2:
-  version "1.167.2"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.167.2.tgz#add2a7fb1e4a687b59106d7fdaee79f039bc5e15"
-  integrity sha512-mWH5cBtTjOomsOLQV6ohCogqPi2XJL2ZxwHoRlUSBaLUdNuK9p5bz3bz+3zfxmrWdgnMi0EHEX3hm0yXdcR2fQ==
+snyk@^1.168.0:
+  version "1.168.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.168.0.tgz#0acee52f2e6d4ceb9fee7651d90e90c955490b55"
+  integrity sha512-W4Jm4KAQtEhTgdGpJ2htKxqFkaQ98WcUiMKpcW4dmap4DUqAGYEpZyEp8Kfyfh58o0k8Uiy/Grj3jeS7jRnT/w==
   dependencies:
     "@snyk/dep-graph" "1.4.1"
     "@snyk/gemfile" "1.2.0"
@@ -10139,7 +10139,7 @@ snyk@^1.167.2:
     proxy-from-env "^1.0.0"
     semver "^6.0.0"
     snyk-config "^2.2.1"
-    snyk-docker-plugin "1.24.2"
+    snyk-docker-plugin "1.25.0"
     snyk-go-plugin "1.7.2"
     snyk-gradle-plugin "2.10.4"
     snyk-module "1.9.1"
