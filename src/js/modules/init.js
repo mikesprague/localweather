@@ -3,6 +3,7 @@ import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import { getData, useCache, resetData } from './cache';
 import * as defaults from './defaults';
+import { handleError } from './helpers';
 import {
   initFontAwesomeIcons,
   initTooltips,
@@ -57,7 +58,7 @@ export function registerServiceWorker() {
     },
     error(error) {
       // console.error('Error during service worker registration:', error);
-      defaults.handleError(error);
+      handleError(error);
     },
   });
 }
@@ -71,7 +72,7 @@ export function init() {
 
   window.onerror = (msg, url, lineNo, columnNo, error) => {
     hideLoading();
-    defaults.handleError(error);
+    handleError(error);
     return false;
   };
 

@@ -3,6 +3,7 @@ import {
   useCache, getData, setCacheTime, setData,
 } from './cache';
 import * as defaults from './defaults';
+import { apiUrl } from './helpers';
 
 const setLocalStorageData = ((data) => {
   setCacheTime();
@@ -18,7 +19,7 @@ export async function getWeatherData(lat, lng) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   }
-  const url = `${defaults.apiUrl()}/location-and-weather/?lat=${lat}&lng=${lng}`;
+  const url = `${apiUrl()}/location-and-weather/?lat=${lat}&lng=${lng}`;
   const weatherData = await axios.get(url)
     .then((response) => {
       setLocalStorageData(response.data);

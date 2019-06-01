@@ -21,7 +21,7 @@ import tippy from 'tippy.js';
 import { getData, resetData } from './cache';
 import { getWeatherData } from './data';
 import * as defaults from './defaults';
-import { reloadWindow } from './helpers';
+import { handleError, reloadWindow } from './helpers';
 import {
   populateMessage, populateForecastData,
   populateHourlyData, populateLastUpdated, populateLocation,
@@ -407,7 +407,7 @@ export async function getWeatherDataAndRenderApp(lat, lng) {
     hideLoading();
   } catch (error) {
     showErrorAlert(errorTemplates.genericError);
-    defaults.handleError(error);
+    handleError(error);
   }
 }
 
@@ -449,7 +449,7 @@ export function initGeolocation() {
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, defaults.geolocationOptions);
       } catch (error) {
         showErrorAlert(errorTemplates.locationError);
-        defaults.handleError(error);
+        handleError(error);
       }
     } else {
       showErrorAlert(errorTemplates.geolocationUnavailable);
