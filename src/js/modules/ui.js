@@ -19,7 +19,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import dayjs from 'dayjs';
 import * as defaults from './defaults';
-import { getWeatherData } from './data';
+import { reloadWindow } from './helpers';
 import { getData, resetData } from './cache';
 import {
   populateMessage, populateForecastData,
@@ -288,10 +288,6 @@ export function hideLoading() {
   hideEl(loadingSpinner);
   showUi();
   initFontAwesomeIcons();
-}
-
-export function reloadWindow() {
-  window.location.reload(true);
 }
 
 export function showInstallAlert() {
