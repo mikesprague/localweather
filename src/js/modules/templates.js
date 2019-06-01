@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { getData } from './cache';
 import * as defaults from './defaults';
-import { getUnitLabel, getWeatherIcon } from './helpers';
+import { getUnitLabel, getWeatherIcon, isOnline } from './helpers';
 
 export function populateMessage(messageText) {
   const messageTemplate = `
@@ -351,7 +351,7 @@ export function populateLastUpdated(data) {
     </div>
   `;
 
-  if (!defaults.isOnline()) {
+  if (!isOnline()) {
     lastUpdatedString = `
       Weather data will be refreshed automatically when your device has connectivity again
     `;
