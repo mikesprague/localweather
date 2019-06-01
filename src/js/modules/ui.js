@@ -1,6 +1,10 @@
-import tippy from 'tippy.js';
-import swal from 'sweetalert2';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import {
+  faTint, faClock, faCode, faWifiSlash,
+  faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow,
+  faCloudSleet, faWind as faWIndLight, faFog, faClouds, faCloudsSun,
+  faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado,
+  faTemperatureHigh, faTemperatureLow,
+} from '@fortawesome/pro-light-svg-icons';
 import {
   faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle,
   faArrowAltCircleDown, faArrowAltCircleUp, faBan, faSignal,
@@ -10,17 +14,14 @@ import {
   faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud,
   faThermometerHalf, faInfoCircle,
 } from '@fortawesome/pro-solid-svg-icons';
-import {
-  faTint, faClock, faCode, faWifiSlash,
-  faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow,
-  faCloudSleet, faWind as faWIndLight, faFog, faClouds, faCloudsSun,
-  faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado,
-  faTemperatureHigh, faTemperatureLow,
-} from '@fortawesome/pro-light-svg-icons';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import dayjs from 'dayjs';
+import swal from 'sweetalert2';
+import tippy from 'tippy.js';
+import { getData, resetData } from './cache';
+import { getWeatherData } from './data';
 import * as defaults from './defaults';
 import { reloadWindow } from './helpers';
-import { getData, resetData } from './cache';
 import {
   populateMessage, populateForecastData,
   populateHourlyData, populateLastUpdated, populateLocation,

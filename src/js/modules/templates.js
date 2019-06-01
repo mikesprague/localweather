@@ -1,8 +1,7 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import * as defaults from './defaults';
 import { getData } from './cache';
-
+import * as defaults from './defaults';
 import { getUnitLabel, getWeatherIcon } from './helpers';
 
 export function populateMessage(messageText) {

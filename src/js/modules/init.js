@@ -1,8 +1,8 @@
 import bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
-import * as defaults from './defaults';
 import { getData, useCache, resetData } from './cache';
+import * as defaults from './defaults';
 import {
   initFontAwesomeIcons,
   initTooltips,
@@ -30,7 +30,7 @@ window.bugsnagClient = bugsnag({
   apiKey: 'c9beb7c090034128a89c8e58f261e972',
   appVersion: `${defaults.versionString}`,
   releaseStage,
-  notifyReleaseStages: ['development', 'production'],
+  notifyReleaseStages: ['production'],
 });
 
 export function registerServiceWorker() {

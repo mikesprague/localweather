@@ -1,8 +1,8 @@
 import axios from 'axios';
-import * as defaults from './defaults';
 import {
   useCache, getData, setCacheTime, setData,
 } from './cache';
+import * as defaults from './defaults';
 
 const setLocalStorageData = ((data) => {
   setCacheTime();
