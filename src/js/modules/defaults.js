@@ -12,18 +12,6 @@ module.exports = {
     maximumAge: 30000, // 30 seconds (number of seconds * 1000 milliseconds)
   },
   hideClassName: 'hidden',
-  keywords: 'weather, local, dark sky, localweather.io, local weather',
-  loadingSpinnerSelector: '.loading-message',
-  loadingText: '... loading weather data for your location ...',
-  locationDataKey: 'locationData',
-  locationAddressDataKey: 'locationAddress',
-  locationNameDataKey: 'locationName',
-  skipGeolocationCheckKey: 'skipLocationCheck',
-  themeColor: '#133150',
-  timerHandle: 0,
-  title: 'LocalWeather.io (powered by Dark Sky)',
-  versionString: `v${versionNumber}`,
-  weatherDataKey: 'weatherData',
   iconMap: {
     'clear-day': 'fal fa-fw fa-sun',
     'clear-night': 'fal fa-fw fa-moon-stars',
@@ -40,6 +28,15 @@ module.exports = {
     thunderstorm: 'fal fa-fw fa-thunderstorm',
     tornado: 'fal fa-fw fa-tornado',
   },
+  keywords: 'weather, local, dark sky, localweather.io, local weather',
+  loadingSpinnerSelector: '.loading-message',
+  loadingText: '... loading weather data for your location ...',
+  locationDataKey: 'locationData',
+  locationAddressDataKey: 'locationAddress',
+  locationNameDataKey: 'locationName',
+  skipGeolocationCheckKey: 'skipLocationCheck',
+  themeColor: '#133150',
+  title: 'LocalWeather.io (powered by Dark Sky)',
   unitLabels: {
     nearestStormDistance: {
       us: ['mi', 'miles'],
@@ -90,4 +87,6 @@ module.exports = {
       ca: ['km', 'kilometers'],
     },
   },
+  versionString: `v${versionNumber}`,
+  weatherDataKey: 'weatherData',
 };
