@@ -3,10 +3,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import * as defaults from './defaults';
 import { getData } from './cache';
 
-const getWeatherIcon = icon => defaults.iconMap[icon];
-
-// ex: getUnityLabel('visibility', 'si'); -> returns: ['km', 'kilometers']
-const getUnitLabel = (unitType, units) => defaults.unitLabels[unitType][units];
+import { getUnitLabel, getWeatherIcon } from './helpers';
 
 export function populateMessage(messageText) {
   const messageTemplate = `

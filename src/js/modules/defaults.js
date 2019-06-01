@@ -27,25 +27,6 @@ module.exports = {
   title: 'LocalWeather.io (powered by Dark Sky)',
   versionString: `v${versionNumber}`,
   weatherDataKey: 'weatherData',
-  apiUrl: () => {
-    if (window.location.hostname === 'localhost') {
-      return 'http://localhost:9000';
-    }
-    return `https://${window.location.hostname}/.netlify/functions`;
-  },
-  canonical: () => `https://${window.location.hostname}/`,
-  handleError: (error) => {
-    if (window.location.hostname === 'localhost') {
-      console.error(error);
-    } else {
-      /* eslint-disable no-undef */
-      bugsnagClient.notify(error);
-      /* eslint-enable no-undef */
-    }
-  },
-  isOnline() {
-    return navigator.onLine;
-  },
   iconMap: {
     'clear-day': 'fal fa-fw fa-sun',
     'clear-night': 'fal fa-fw fa-moon-stars',
