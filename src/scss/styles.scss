@@ -58,13 +58,13 @@ body {
 }
 
 .loading-animation {
-  margin: 0 auto;
   animation: spin-stretch 2s ease infinite;
   border: 6px solid transparent;
   border-bottom-color: $color-text-default;
   border-radius: 50%;
   border-top-color: $color-text-default;
   height: 6em;
+  margin: 0 auto;
   width: 5em;
 }
 
