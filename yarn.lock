@@ -1697,10 +1697,10 @@ autoprefixer@^9.6.0:
     postcss "^7.0.16"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.468.0:
-  version "2.468.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.468.0.tgz#ce6ce1143eaa1630037afc862abcae62d16be02f"
-  integrity sha512-Bo4j1DLDBWSLgNsfpLNU2RKU2+24JzdFqgyyOKOyJ1p6RgrnDxcwoR2CPWK5olPU2cgXmIicetfOGDsC3LjLtg==
+aws-sdk@^2.470.0:
+  version "2.470.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.470.0.tgz#33cbf793b4ab6a08770e8af90fbf45d517526e7e"
+  integrity sha512-XCMLSNiYaUUc3wxH3NxFxPPmYAF95IHhDwc0o6pOIY30om83ZYJwuPizgheRWXuOGjrXQxWgT6W3EfyfeuAISA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -7403,10 +7403,10 @@ netlify-cli-logo@^1.0.0:
   dependencies:
     chalk "^2.4.2"
 
-netlify-cli@^2.11.20:
-  version "2.11.20"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.20.tgz#2bff6688a00f75002a8a98bfceccc68d22479bb9"
-  integrity sha512-xutUBGrGTXRLm35w4L2j1/cTPkw6AN1p9w3MucFRd9Vimvo0Bv7tuhlzoCPgA6efnWXpBdzkCLCkziy3iR6RVQ==
+netlify-cli@^2.11.22:
+  version "2.11.22"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.22.tgz#1de62781057d418459ee0f2acd8bef08b1b6719f"
+  integrity sha512-1PviUHi487rVzrJ8XOxW8WevVVGlSTcroPZ+rdIOh/CzSFHPM2qn7MEE0ytdriif3vNL5jqk/lEIktSfSr1QUQ==
   dependencies:
     "@netlify/cli-utils" "^1.0.2"
     "@oclif/command" "^1.5.14"
@@ -7432,7 +7432,7 @@ netlify-cli@^2.11.20:
     lodash.isempty "^4.4.0"
     lodash.isequal "^4.5.0"
     log-symbols "^2.2.0"
-    netlify "^2.4.4"
+    netlify "^2.4.6"
     netlify-dev-plugin "^1.0.21"
     node-fetch "^2.6.0"
     ora "^3.4.0"
@@ -7547,10 +7547,42 @@ netlify@2.4.1:
     through2-map "^3.0.0"
     util.promisify "^1.0.0"
 
-netlify@^2.2.1, netlify@^2.4.4:
+netlify@^2.2.1:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/netlify/-/netlify-2.4.4.tgz#72ba73d63fb39589b9143fdfe36d39bfe01bfb26"
   integrity sha512-8Z6Fx3yz/zIt9oGTvnMaRGgErxtAYkp4lgZm8O7ooWKrxo2V2148sK+t1Wob6Dt9x1oOvTkAn8PA6eXjXft2+A==
+  dependencies:
+    "@netlify/open-api" "^0.9.0"
+    "@netlify/zip-it-and-ship-it" "^0.3.1"
+    backoff "^2.5.0"
+    clean-deep "^3.0.2"
+    debug "^4.1.1"
+    flush-write-stream "^2.0.0"
+    folder-walker "^3.2.0"
+    from2-array "0.0.4"
+    hasha "^3.0.0"
+    is-stream "^1.1.0"
+    lodash.camelcase "^4.3.0"
+    lodash.flatten "^4.4.0"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
+    micro-api-client "^3.3.0"
+    node-fetch "^2.2.0"
+    p-map "^2.1.0"
+    p-wait-for "^2.0.0"
+    parallel-transform "^1.1.0"
+    pump "^3.0.0"
+    qs "^6.7.0"
+    rimraf "^2.6.3"
+    tempy "^0.2.1"
+    through2-filter "^3.0.0"
+    through2-map "^3.0.0"
+    util.promisify "^1.0.0"
+
+netlify@^2.4.6:
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-2.4.6.tgz#8f974d184e77d30d59fc89e02b7a03711cfc9df3"
+  integrity sha512-p/Uad5WxS6q+QeJwxGT8P2GPL8x7oUYJSaimsmRYHTuP+qMyvS0ff5jufd41WT9P+lyT9CaFjcH5UgPOcW/6CA==
   dependencies:
     "@netlify/open-api" "^0.9.0"
     "@netlify/zip-it-and-ship-it" "^0.3.1"
@@ -8144,6 +8176,13 @@ p-map@^2.0.0, p-map@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-2.1.0.tgz#310928feef9c9ecc65b68b17693018a665cea175"
   integrity sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
+
+p-retry@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/p-retry/-/p-retry-3.0.1.tgz#316b4c8893e2c8dc1cfa891f406c4b422bebf328"
+  integrity sha512-XE6G4+YTTkT2a0UWb2kjZe8xNwf8bIbnqpc/IS/idOBVhyves0mK5OJgeocjx7q5pvX/6m23xuzVPYT1uGM73w==
+  dependencies:
+    retry "^0.12.0"
 
 p-timeout@^2.0.1:
   version "2.0.1"
@@ -8898,10 +8937,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.17.1:
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.17.1.tgz#ed64b4e93e370cb8a25b9ef7fef3e4fd1c0995db"
-  integrity sha512-TzGRNvuUSmPgwivDqkZ9tM/qTGW9hqDKWOE9YHiyQdixlKbv7kvEqsmDPrcHJTKwthU774TQwZXVtaQ/mMsvjg==
+prettier@^1.17.0, prettier@^1.18.2:
+  version "1.18.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
+  integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
 
 pretty-bytes@^5.1.0:
   version "5.2.0"
@@ -9657,6 +9696,11 @@ ret@~0.1.10:
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
 
+retry@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
+  integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
+
 rgb-regex@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/rgb-regex/-/rgb-regex-1.0.1.tgz#c0e0d6882df0e23be254a475e8edd41915feaeb1"
@@ -10083,10 +10127,10 @@ snyk-config@^2.2.1:
     lodash "^4.17.11"
     nconf "^0.10.0"
 
-snyk-docker-plugin@1.25.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.25.0.tgz#52a6d042142d45873bee58938ee9cd7abf82c140"
-  integrity sha512-vJY7KpN+055cehFAmoUUrbdIao8DbeZ6qU+PLanJ5VkLWHmonEMrhptIy134oagHewb4P2ZfpvdKxGJwGKafDw==
+snyk-docker-plugin@1.25.1:
+  version "1.25.1"
+  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.25.1.tgz#3f97dda88adfac2e1938151372d07905767bc8a1"
+  integrity sha512-n/LfA7VXjPEcSz2ZfZonT/DPSC89Zs1/HD0inPFN4RLQT3WiQnjqJUXct+D0nWwEVfhLWNc+Y7PLcTjpnZ9R3Q==
   dependencies:
     debug "^4.1.1"
     dockerfile-ast "0.0.16"
@@ -10111,10 +10155,10 @@ snyk-go-plugin@1.9.0:
     snyk-go-parser "1.3.0"
     tmp "0.0.33"
 
-snyk-gradle-plugin@2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-2.12.0.tgz#d4dae0b2f9df9a59d5c865c5d841e2e8a2c26ecd"
-  integrity sha512-9J3wiqbd/CR6MbmqRfmXxvlGdQHo9cINwxsAoLKTErexGMXzlrEUVUiQ5F3XzUNajVCn+Kf9ukZdsLJF3JhA8A==
+snyk-gradle-plugin@2.11.2:
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-2.11.2.tgz#9052a99a35da7625b8ba587be2b6a20122e302e4"
+  integrity sha512-WrllhpLZ9wlGO3BUu8HPLbVYPbgjtXDSIBX/QhJWuWmEFi4BSav9XmpKxqgdNZ5Ds0R6ChaSmokEjbkJrBezIg==
   dependencies:
     "@types/debug" "^4.1.4"
     chalk "^2.4.2"
@@ -10250,10 +10294,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.173.0:
-  version "1.173.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.173.0.tgz#082defc48528e9ab09a106f4b02607696bcdb421"
-  integrity sha512-VZZYZ9tB3QoCWN8yx/zs9O4xrI2ROc9pgM4GzKxfntMRhNMXT+qhIqt2bOOaQ3XNrq45SaHnRZesDnDfYUQV/g==
+snyk@^1.174.1:
+  version "1.174.1"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.174.1.tgz#87b9b13958e8a7b2f299e9b58fb4d9e652df4a3e"
+  integrity sha512-awfrnVxlT3kZ3xdVYd1fqRu3fChQsGRL8QYv4cePvrtGXCeFqbgTu6eBPNBa582r/c12a9lwSTI2xqH8KmbcWA==
   dependencies:
     "@snyk/dep-graph" "1.4.1"
     "@snyk/gemfile" "1.2.0"
@@ -10274,9 +10318,9 @@ snyk@^1.173.0:
     proxy-from-env "^1.0.0"
     semver "^6.0.0"
     snyk-config "^2.2.1"
-    snyk-docker-plugin "1.25.0"
+    snyk-docker-plugin "1.25.1"
     snyk-go-plugin "1.9.0"
-    snyk-gradle-plugin "2.12.0"
+    snyk-gradle-plugin "2.11.2"
     snyk-module "1.9.1"
     snyk-mvn-plugin "2.3.0"
     snyk-nodejs-lockfile-parser "1.13.0"
@@ -10822,10 +10866,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.11.7:
-  version "8.11.7"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.11.7.tgz#f16dfc18bb99ce9f0956456f03fd3b5615c477a6"
-  integrity sha512-WC5x+L9ejKpWERNc3aAyxeUs+nchGNEBZeB7CPP/bRVOUVEBZsKw2Ibt1qdV4Ap90JOTK/4/xrCnZ/XyUNzqBw==
+sweetalert2@^8.11.8:
+  version "8.11.8"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.11.8.tgz#f5535932b2004955e3035edbab6223275417d8d3"
+  integrity sha512-zQ+DAEJuOMdebynVs/MW6+NOQZDBrA7NDDktpLF0gasbCl0AkKuKK4l3Esxur9kkmts9BVAxjHCJUpZCs2jRIA==
 
 table@^3.7.8:
   version "3.8.3"
@@ -11636,10 +11680,10 @@ webpack-bugsnag-plugins@^1.4.0:
     bugsnag-sourcemaps "^1.0.7"
     run-parallel-limit "^1.0.3"
 
-webpack-cli@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.3.2.tgz#aed2437b0db0a7faa2ad28484e166a5360014a91"
-  integrity sha512-FLkobnaJJ+03j5eplxlI0TUxhGCOdfewspIGuvDVtpOlrAuKMFC57K42Ukxqs1tn8947/PM6tP95gQc0DCzRYA==
+webpack-cli@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.3.3.tgz#8b7587dee369a838eb4722f6cfa711c779011e5f"
+  integrity sha512-/qBxTvsxZ7bIFQtSa08QRY5BZuiJb27cbJM/nzmgXg9NEaudP20D7BruKKIuWfABqWoMEJQcNYYq/OxxSbPHlg==
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"
@@ -11649,6 +11693,7 @@ webpack-cli@^3.3.2:
     import-local "^2.0.0"
     interpret "^1.1.0"
     loader-utils "^1.1.0"
+    prettier "^1.17.0"
     supports-color "^5.5.0"
     v8-compile-cache "^2.0.2"
     yargs "^12.0.5"
@@ -11663,10 +11708,10 @@ webpack-dev-middleware@^3.7.0:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.6.0.tgz#7f675f69bf0999e5f489d1e2532182cfdf55706c"
-  integrity sha512-49CWhocbMzjNW2Dzo3ETnxtzifcKGx4Pa3Hx+sl0hBU5/t7zJTkOvMP1sCnu9/qGNDYW1PKCuszYQn5r2g5Sww==
+webpack-dev-server@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.7.1.tgz#ce10ca0ad6cf28b03e2ce9808684a8616039155d"
+  integrity sha512-GSBjjDMQ+uJI/Rcw/NfXDq5QpfE4HviafCy2SdbJ8Q22MwsnyoHd5TbWRfxgkbklsMx+ZNgWIKK+cB28ynjiDQ==
   dependencies:
     ansi-html "0.0.7"
     bonjour "^3.5.0"
@@ -11684,6 +11729,7 @@ webpack-dev-server@^3.6.0:
     killable "^1.0.1"
     loglevel "^1.6.2"
     opn "^5.5.0"
+    p-retry "^3.0.1"
     portfinder "^1.0.20"
     schema-utils "^1.0.0"
     selfsigned "^1.10.4"
