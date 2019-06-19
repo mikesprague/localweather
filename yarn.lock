@@ -991,13 +991,13 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@puresec/function-shield@^1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-1.2.7.tgz#3ac0f362b02eba95476a49773d2ed72f623e0780"
-  integrity sha512-AlEWKZEBLSijgFoqzDFLt17dPISqLYlCEJGqPPzqNsqyGdfVGIQ/Qo8TmePGYragg3/BzXl2NKrLImaTCqShuw==
+"@puresec/function-shield@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-2.0.2.tgz#311ba4f5e3b38795ff1a3a7320093387769d11d9"
+  integrity sha512-5+p84Bg0kPNjNFO26uktBvUC8MNdcenQkVzO0zYiAXJfvr3G2MOuCUcRZ2gvD8hA4yYv+JVKkGfRlBoz/HcIWA==
   dependencies:
-    fs-extra "^7.0.0"
-    node-gyp-build "^3.5.1"
+    fs-extra "^8.0.1"
+    node-gyp-build "^4.1.0"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -4987,6 +4987,15 @@ fs-extra@^7.0.0, fs-extra@^7.0.1:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.0.1.tgz#90294081f978b1f182f347a440a209154344285b"
+  integrity sha512-W+XLrggcDzlle47X/XnS7FXrXu9sDo+Ze9zpndeBxdgv88FHLm1HtmkhEwavruS6koanBjp098rUpHs65EmG7A==
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-minipass@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.6.tgz#2c5cc30ded81282bfe8a0d7c7c1853ddeb102c07"
@@ -7687,10 +7696,10 @@ node-forge@0.7.5:
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"
   integrity sha512-MmbQJ2MTESTjt3Gi/3yG1wGpIMhUfcIypUCGtTizFR9IiccFwxSpfp0vtIZlkFclEqERemxfnSdZEMR9VqqEFQ==
 
-node-gyp-build@^3.5.1:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-3.9.0.tgz#53a350187dd4d5276750da21605d1cb681d09e25"
-  integrity sha512-zLcTg6P4AbcHPq465ZMFNXx7XpKKJh+7kkN699NiQWisR2uWYOWNWqRHAmbnmKiL4e9aLSlmy5U7rEMUXV59+A==
+node-gyp-build@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.1.0.tgz#3bc3dd7dd4aafecaf64a2e3729e785bc3cdea565"
+  integrity sha512-rGLv++nK20BG8gc0MzzcYe1Nl3p3mtwJ74Q2QD0HTEDKZ6NvOFSelY6s2QBPWIHRR8h7hpad0LiwajfClBJfNg==
 
 node-gyp@^3.8.0:
   version "3.8.0"
