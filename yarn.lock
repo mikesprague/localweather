@@ -1717,10 +1717,10 @@ autoprefixer@^9.6.0:
     postcss "^7.0.16"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@^2.480.0:
-  version "2.480.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.480.0.tgz#ab4bb7ad2f4372fa5aa1051fc1553e82d34b27ca"
-  integrity sha512-X6xOgBeg8ZZJPnL4/wHXFIP6QF2SBABqw/F5l5zT/vEPUfmrIg24LVSUwPXmV6ZMh4hwsuuOjO910MbjNoHXXg==
+aws-sdk@^2.481.0:
+  version "2.481.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.481.0.tgz#61f46b830100947cd9156d721369975125c19f36"
+  integrity sha512-uwFGzwb2bKkh2KdX0nsebGqQNItZZ6j8+oL03jqSxCouO4FvFZpo8jd0ZnmkEeL6mWvv52WqV8HHhQNEyWkfNQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -4141,10 +4141,10 @@ eslint-plugin-html@^5.0.5:
   dependencies:
     htmlparser2 "^3.10.0"
 
-eslint-plugin-import@^2.17.3:
-  version "2.17.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.17.3.tgz#00548b4434c18faebaba04b24ae6198f280de189"
-  integrity sha512-qeVf/UwXFJbeyLbxuY8RgqDyEKCkqV7YC+E5S5uOjAp4tOc8zj01JP3ucoBM8JcEqd1qRasJSg6LLlisirfy0Q==
+eslint-plugin-import@^2.18.0:
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.18.0.tgz#7a5ba8d32622fb35eb9c8db195c2090bd18a3678"
+  integrity sha512-PZpAEC4gj/6DEMMoU2Df01C5c50r7zdGIN52Yfi7CvvWaYssG7Jt5R9nFG5gmqodxNOz9vQS87xk6Izdtpdrig==
   dependencies:
     array-includes "^3.0.3"
     contains-path "^0.1.0"
@@ -10379,10 +10379,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.180.2:
-  version "1.180.2"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.180.2.tgz#5aea00699803927c120fb84d6d1e41513e4d2637"
-  integrity sha512-lEOMBtkttOx1aroLaQnRbP7hwkNls+LSX8YAXI752MsqwCU7SoHCYV01s85m+rn8Q4UemfEAvn5zMOlq8QaaXw==
+snyk@^1.184.0:
+  version "1.184.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.184.0.tgz#5f23bf9702e5fe3ce1029ed61dbe88a992bcec5a"
+  integrity sha512-vOHHkwOolKth/v9jhOdFpg5iBeX6EPk/egf5xf0IqVUzqQ0bZ2A8TQk1X2aoY54bRZrsMidWnuyGd466tGf1SA==
   dependencies:
     "@snyk/dep-graph" "1.4.1"
     "@snyk/gemfile" "1.2.0"
