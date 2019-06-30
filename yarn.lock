@@ -991,10 +991,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@puresec/function-shield@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-2.0.3.tgz#7677bc5b4b6d26e8bd275f59aa41c90a14f91f69"
-  integrity sha512-rxDSVqKdLB3r8zdbxSA+xP/lGWempltjWp6I+DDDPCfF7KCHJ1K/x/J1GYoWALNEU/L3/v8P5y5vNzYSJPNMGg==
+"@puresec/function-shield@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-2.0.4.tgz#f068eb422f7ff093a9e0354cb2eefd8a0fd38a8c"
+  integrity sha512-apGjxcGpJlS4nbVrHMcobtPnaw1G7w13lqTjy+0q5D6VH8Zutnl7rDOQvjTlRTy9/uA2fQU2FYNmho8JDGFQVA==
   dependencies:
     fs-extra "^8.0.1"
     node-gyp-build "^4.1.0"
