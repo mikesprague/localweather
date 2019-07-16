@@ -1217,10 +1217,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@puresec/function-shield@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-2.0.5.tgz#5adc8ad87a38f591549348167d8b4259f5f008e4"
-  integrity sha512-9oA2NWGxHdL1rp5VLSQQtJp+BDsjuR8jYFMGbmpMsT1U2S2U+sdc/DuONqHp9gqHh8O8jQm4D0GfiZwoimOAGA==
+"@puresec/function-shield@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-2.0.6.tgz#85d4e5e4d7dddaece4c7bc952aa6a67f78c39eca"
+  integrity sha512-Zw05Ku+1IomtYVrqbU9NpoJ/LbLGM8HEyt3ri03kc2kTyDgZs0Jjw+3uT/7OeaSe08+wI71G246GbpUMGigJ1g==
   dependencies:
     fs-extra "^8.0.1"
     node-gyp-build "^4.1.0"
@@ -4360,15 +4360,16 @@ eslint-module-utils@^2.4.0:
     debug "^2.6.8"
     pkg-dir "^2.0.0"
 
-eslint-plugin-compat@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-compat/-/eslint-plugin-compat-3.2.0.tgz#82ab2e5df99624c45e46565474de5abc43a4af4c"
-  integrity sha512-m8sXkfh7gBV2upq3pUkXbYKi5y+qCGbvCxRASGYS9N2JDQH2dWdq1aZe0bBBOci4JECdsLD7M2CERqhseG6Zdg==
+eslint-plugin-compat@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-compat/-/eslint-plugin-compat-3.3.0.tgz#ece063f53793e6859243ce6cb9634865f745b72e"
+  integrity sha512-QCgYy3pZ+zH10dkBJus1xER0359h1UhJjufhQRqp9Owm6BEoLZeSqxf2zINwL1OGao9Yc96xPYIW3nQj5HUryg==
   dependencies:
     "@babel/runtime" "^7.4.5"
     ast-metadata-inferer "^0.1.1"
     browserslist "^4.6.3"
     caniuse-db "^1.0.30000977"
+    lodash.memoize "4.1.2"
     mdn-browser-compat-data "^0.0.84"
     semver "^6.1.2"
 
@@ -7093,7 +7094,7 @@ lodash.kebabcase@^4.0.0:
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
   integrity sha1-hImxyw0p/4gZXM7KRI/21swpXDY=
 
-lodash.memoize@^4.1.2:
+lodash.memoize@4.1.2, lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
@@ -7163,7 +7164,7 @@ lodash@^4, lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, loda
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
-lodash@^4.17.13:
+lodash@^4.17.13, lodash@^4.17.14:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
@@ -10625,10 +10626,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.193.1:
-  version "1.193.1"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.193.1.tgz#73e4b133b59c785a23b88ece499dd06c8d9e1e34"
-  integrity sha512-bwxrpR8T5tOQgLGwBMq7BYKDvLQRVsB3znMJpdZpYnMCY34MpmkuDhU+546TA8kmp5cLPCg+0BlaO7Yrj3Ouag==
+snyk@^1.193.2:
+  version "1.193.2"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.193.2.tgz#63d11f85e1ba7d003de520897f70326568f03bd5"
+  integrity sha512-v65VDFgBqUow+z+wcV01d0lijVesd0CfOywlNhDuWW3qbPVwd4lb6bNt5M9bSrgk7/76fbA33udanRnxXsOjSA==
   dependencies:
     "@snyk/dep-graph" "1.8.1"
     "@snyk/gemfile" "1.2.0"
@@ -10642,7 +10643,7 @@ snyk@^1.193.1:
     git-url-parse "11.1.2"
     glob "^7.1.3"
     inquirer "^6.2.2"
-    lodash "^4.17.13"
+    lodash "^4.17.14"
     needle "^2.2.4"
     opn "^5.5.0"
     os-name "^3.0.0"
@@ -11198,10 +11199,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.13.5:
-  version "8.13.5"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.13.5.tgz#885f49cdd6989566d91e81b77b0bb2e9253f8d89"
-  integrity sha512-CqYgwpxua2j/e7Agjrr+Ox1YObIgHTsYgYpTg1HHSHnFSpMMuLME6ai/Mm4P41dZ69wLvzqaG6DiDyMygtYufg==
+sweetalert2@^8.13.6:
+  version "8.13.6"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.13.6.tgz#f556415d7034b55cc70dbe0db72a63a52211aa2e"
+  integrity sha512-UPmad+ctpnTc6AD88CCyUFCWbGmivF0hJf+uk7V5bxybULAYBnbJiNDBOjmHvHqB9PglinHB1bx4o9MwQgunXg==
 
 table@^3.7.8:
   version "3.8.3"
