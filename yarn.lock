@@ -2031,10 +2031,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-sdk@^2.495.0:
-  version "2.495.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.495.0.tgz#0b0ad8fcf581cb7bb858864fab88d461f0e67677"
-  integrity sha512-KG2nqF3biiAliMJpbavM0tLGzhcLkgJMHQ/q84+Wi5kc6+mjPSbtnctWYnvAFwoRiiygx82FA4Fx5ShnHOqinw==
+aws-sdk@^2.496.0:
+  version "2.496.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.496.0.tgz#073bf36ed868891a656a895bf2c548b2d0bc3588"
+  integrity sha512-6xZ//phdvp7/dUZjOdDsorl+xehhkAgxOMber9vUlMO9ckBOeufIvED7oKF0NvSlfG8laHK4JprXKQvhXqVLqA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -4466,10 +4466,10 @@ eslint-plugin-html@^6.0.0:
   dependencies:
     htmlparser2 "^3.10.1"
 
-eslint-plugin-import@^2.18.1:
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.18.1.tgz#2e4f571d13839543992ad626a18c0edffde9626b"
-  integrity sha512-YEESFKOcMIXJTosb5YaepqVhQHGMb8dxkgov560GqMDP/658U5vk6FeVSR7xXLeYkPc7xPYy+uAoiYE/bKMphA==
+eslint-plugin-import@^2.18.2:
+  version "2.18.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.18.2.tgz#02f1180b90b077b33d447a17a2326ceb400aceb6"
+  integrity sha512-5ohpsHAiUBRNaBWAF08izwUGlbrJoJJ+W9/TBwsGoR1MnlgfwMIKrFeSjWbt6moabiXW9xNvtFz+97KHRfI4HQ==
   dependencies:
     array-includes "^3.0.3"
     contains-path "^0.1.0"
@@ -7810,10 +7810,10 @@ netlify-cli-logo@^1.0.0:
   dependencies:
     chalk "^2.4.2"
 
-netlify-cli@^2.11.27:
-  version "2.11.27"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.27.tgz#7943f01796c0cbd8c2213c4dcab95bd5a1a47646"
-  integrity sha512-PbP5XRB2Njp7vdfI82TpCAf9hItSu1YxwAkZXDJbmN5/J6pWvRnzT4uT+0wMcGguxL6PqGpQDJ0wUOPRXBp6bg==
+netlify-cli@^2.11.29:
+  version "2.11.29"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.29.tgz#4617cb7cb5487ed2925d8ea102f0c97bd0d55076"
+  integrity sha512-osk4GMQ30KccVXwEANK7StcwcaCWMZrZOjEMkjPmVB0iq3EwntcLsvDZHPI3+bGImGCzCPWOhwYUFyKP1R5uxw==
   dependencies:
     "@netlify/cli-utils" "^1.0.6"
     "@oclif/command" "^1.5.14"
@@ -7842,7 +7842,7 @@ netlify-cli@^2.11.27:
     lodash.sample "^4.2.1"
     log-symbols "^2.2.0"
     netlify "^2.4.6"
-    netlify-dev-plugin "^1.0.22"
+    netlify-dev-plugin "^1.0.23"
     node-fetch "^2.6.0"
     open "^6.4.0"
     ora "^3.4.0"
@@ -7852,10 +7852,10 @@ netlify-cli@^2.11.27:
     random-item "^1.0.0"
     update-notifier "^2.5.0"
 
-netlify-dev-plugin@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.22.tgz#5e5e8ec0b5a76db44b827c15f1585246c2711a06"
-  integrity sha512-gl5AjDFXzubgvCrLVojSTL/KABxcctcfh+cdaLMOi+C8blX2gW7kXO+2p3gwQ5FA3OzkTdZMlVe3wL3V7aPDXQ==
+netlify-dev-plugin@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.23.tgz#6105b5f334563519531cbb0a0344bbb22b347145"
+  integrity sha512-6C3qd71e/eXJvbkmw7g99MaM6btWdkuwVTGPQKKjRgMJtoyyNE8SrN3Ki218e57puTeSdioSWAv5vezCNC6dLg==
   dependencies:
     "@netlify/cli-utils" "^1.0.1"
     "@netlify/rules-proxy" "^0.1.3"
@@ -10747,10 +10747,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.195.0:
-  version "1.195.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.195.0.tgz#bf93e5acefe2502185fa134c404c8b820fc18603"
-  integrity sha512-n63w+5OPT1j5fPonC0vX0FxHlXgBWk0AT2JIRidkpcb4kos6MC6qbGM8ylK9z7wVgu35A2LV42ixLJNwzH7xPg==
+snyk@^1.195.1:
+  version "1.195.1"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.195.1.tgz#ab28808a600ccdf0aaa91352941deba7e4904694"
+  integrity sha512-PJ5K8W+gTkg/CktePxvhahiHZ75PC6ZPVpsk2icYX9nx9Fx4VYZ8pt8GJYo31KLrlwENG3WxBNV5xas+dd2csg==
   dependencies:
     "@snyk/dep-graph" "1.10.0"
     "@snyk/gemfile" "1.2.0"
