@@ -2019,10 +2019,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-sdk@^2.499.0:
-  version "2.499.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.499.0.tgz#280955126c4bf245c154eeb00cac6ba987c91c68"
-  integrity sha512-Uz9147/QJ2e14LwvnLngkCjjiII3cGKSYggd7ywyYWJciPZPNMPJFSbWdCSjSqiFoRVsHdHQ8bBPhr+Sn22zSw==
+aws-sdk@^2.500.0:
+  version "2.500.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.500.0.tgz#2e4c5b7027c2d583fd0018f0aeed712cea135f7f"
+  integrity sha512-zVSO6STyBbbn5foqiH8Z0agpudtOibSRLhTXNkVnJTwJwYK5f9mv5WKOKcLivx/fvXwVE8QehZWyE3vBzl8I+w==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2184,7 +2184,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.5.0, bluebird@^3.5.3:
+bluebird@^3.5.0, bluebird@^3.5.3, bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
@@ -2491,6 +2491,26 @@ cacache@^11.2.0, cacache@^11.3.2:
     move-concurrently "^1.0.1"
     promise-inflight "^1.0.1"
     rimraf "^2.6.2"
+    ssri "^6.0.1"
+    unique-filename "^1.1.1"
+    y18n "^4.0.0"
+
+cacache@^11.3.3:
+  version "11.3.3"
+  resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.3.3.tgz#8bd29df8c6a718a6ebd2d010da4d7972ae3bbadc"
+  integrity sha512-p8WcneCytvzPxhDvYp31PD039vi77I12W+/KfR9S8AZbaiARFBCpsPJS+9uhWfeBfeAtW7o/4vt3MUqLkbY6nA==
+  dependencies:
+    bluebird "^3.5.5"
+    chownr "^1.1.1"
+    figgy-pudding "^3.5.1"
+    glob "^7.1.4"
+    graceful-fs "^4.1.15"
+    lru-cache "^5.1.1"
+    mississippi "^3.0.0"
+    mkdirp "^0.5.1"
+    move-concurrently "^1.0.1"
+    promise-inflight "^1.0.1"
+    rimraf "^2.6.3"
     ssri "^6.0.1"
     unique-filename "^1.1.1"
     y18n "^4.0.0"
@@ -3311,12 +3331,12 @@ copy-template-dir@^1.4.0:
     readdirp "^2.0.0"
     run-parallel "^1.1.4"
 
-copy-webpack-plugin@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-5.0.3.tgz#2179e3c8fd69f13afe74da338896f1f01a875b5c"
-  integrity sha512-PlZRs9CUMnAVylZq+vg2Juew662jWtwOXOqH4lbQD9ZFhRG9R7tVStOgHt21CBGVq7k5yIJaz8TXDLSjV+Lj8Q==
+copy-webpack-plugin@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-5.0.4.tgz#c78126f604e24f194c6ec2f43a64e232b5d43655"
+  integrity sha512-YBuYGpSzoCHSSDGyHy6VJ7SHojKp6WHT4D7ItcQFNAYx2hrwkMe56e97xfVR0/ovDuMTrMffXUiltvQljtAGeg==
   dependencies:
-    cacache "^11.3.2"
+    cacache "^11.3.3"
     find-cache-dir "^2.1.0"
     glob-parent "^3.1.0"
     globby "^7.1.1"
@@ -7882,10 +7902,10 @@ netlify-dev-plugin@^1.0.25:
     wait-port "^0.2.2"
     wrap-ansi "^5.1.0"
 
-netlify-lambda@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.5.0.tgz#52b1a16af73b3eeb1dee3c6178f189f010dd6450"
-  integrity sha512-Np1+dGu850o5qVzVlUlvuLD7M2QzL9HuH0BqKZisXtFPz8SYLv7Ulyj1GNYnUfBBa6SnZAQ+wU4L4u3laGm7Ww==
+netlify-lambda@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.5.1.tgz#723f83494bd3f2fd1681d0a9c5db3df571c70074"
+  integrity sha512-i8Sd47KKUtlNziEZlwJjoE5p9gQMt8PM+NS/bimMe9lFiOoZWliSUAk2yIGsQqLCT1uxFIFFmMM99M5LuKfdJw==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
@@ -12253,10 +12273,10 @@ webpack@^4.17.1:
     watchpack "^1.5.0"
     webpack-sources "^1.3.0"
 
-webpack@^4.37.0:
-  version "4.37.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.37.0.tgz#3508ef10f7996612c2be6026076d89760f776f54"
-  integrity sha512-iJPPvL7XpbcbwOthbzpa2BSPlmGp8lGDokAj/LdWtK80rsPoPOdANSbDBf2GAVLKZD3GhCuQ/gGkgN9HWs0Keg==
+webpack@^4.38.0:
+  version "4.38.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.38.0.tgz#6d77108404b08883c78f4e7e45a43c4e5c47c931"
+  integrity sha512-lbuFsVOq8PZY+1Ytz/mYOvYOo+d4IJ31hHk/7iyoeWtwN33V+5HYotSH+UIb9tq914ey0Hot7z6HugD+je3sWw==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
