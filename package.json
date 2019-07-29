@@ -40,9 +40,9 @@
   "homepage": "https://localweather.io",
   "dependencies": {
     "@bugsnag/js": "^6.3.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/pro-light-svg-icons": "^5.9.0",
-    "@fortawesome/pro-solid-svg-icons": "^5.9.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.20",
+    "@fortawesome/pro-light-svg-icons": "^5.10.0",
+    "@fortawesome/pro-solid-svg-icons": "^5.10.0",
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@puresec/function-shield": "^2.0.6",
     "autoprefixer": "^9.6.1",
@@ -56,7 +56,7 @@
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "snyk": "^1.200.1",
+    "snyk": "^1.203.0",
     "sweetalert2": "^8.14.0",
     "tippy.js": "^4.3.4"
   },
