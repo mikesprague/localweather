@@ -2019,10 +2019,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-sdk@^2.501.0:
-  version "2.501.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.501.0.tgz#611d900fae284bfe8175fe9ee3d101e01a877f06"
-  integrity sha512-eFihkJEsDia9LPfVh8AVc7KXiL6KARRTdop/P3bwVv+sAxi2cfeX231WNeeBLCGBnITL1MmyndkG8gaCg6UgbQ==
+aws-sdk@^2.503.0:
+  version "2.503.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.503.0.tgz#983b8c03aa919060a81127cb9d94fbb1667f4cf2"
+  integrity sha512-DPwRxhPYCGNvKL9rUhpAoOVpMRyISbVMlXykLQknYo7wyOI+jYcyA7t8H7IFPAqj4ZG+R+Au9tO/KT4im+2gbg==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -10758,10 +10758,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.203.0:
-  version "1.203.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.203.0.tgz#6b3d3279e6fb99a1980c3a9829f4ea8409b70c16"
-  integrity sha512-+E/slD4fy8L/dqOqwf28WvtuNO/B0l1TF7TJvnPEygyUi6DG8ZSsHPG1IVvC5EEYm+02AwoGA/oUtog9edv47A==
+snyk@^1.205.0:
+  version "1.205.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.205.0.tgz#4e8a834ad894566a8ff5fe4799169da9dcd47889"
+  integrity sha512-8C2bClZrqI68JjEHHx65w50QLvYzAYtdKTcqcbPheXAJ4ArmIUAvnZZOEWm+Ksexj+KgNxUSTF/+q9qbb1lc8g==
   dependencies:
     "@snyk/dep-graph" "1.10.0"
     "@snyk/gemfile" "1.2.0"
