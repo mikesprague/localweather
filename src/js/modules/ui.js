@@ -126,11 +126,11 @@ export function getTempTrend(data) {
   const now = Math.round(new Date().getTime() / 1000);
   console.log(now);
   console.log(data.daily.data[0].apparentTemperatureHighTime);
-  let iconClass = 'fas fa-fw fa-long-arrow-alt-down';
+  let iconClass = 'fad fa-fw fa-long-arrow-alt-down';
   let iconTransform = 'rotate--30';
   let tempTrendText = 'falling';
   if (now < data.daily.data[0].apparentTemperatureHighTime) {
-    iconClass = 'fas fa-fw fa-long-arrow-alt-up';
+    iconClass = 'fad fa-fw fa-long-arrow-alt-up';
     iconTransform = 'rotate-45';
     tempTrendText = 'rising';
   }
