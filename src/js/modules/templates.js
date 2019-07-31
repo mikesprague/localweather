@@ -10,7 +10,7 @@ export function populateMessage(messageText) {
       <div class="column">
         <div class="content has-text-centered">
           <div class="loading-animation"></div>
-          <!-- <i class="fas fa-fw fa-spinner fa-5x fa-pulse"></i> -->
+          <!-- <i class="fad fa-fw fa-spinner fa-5x fa-pulse"></i> -->
           <p class="message-text">${messageText}</p>
         </div>
       </div>
@@ -52,10 +52,10 @@ export function populateLocation(data) {
   const locationTemplate = `
     <div class="column">
       <h1 class="title is-1 has-text-centered has-tooltip location-name" data-tippy-content="
-        <i class='fas fa-fw fa-globe'></i>
+        <i class='fad fa-fw fa-globe'></i>
         <strong>${locationAddress}</strong>
         <br>
-        <i class='fas fa-fw fa-map-marker-alt'></i>
+        <i class='fad fa-fw fa-map-marker-alt'></i>
         ${Math.fround(data.latitude).toFixed(4)},${data.longitude.toFixed(4)}
       ">${locationName}</h1>
     </div>
@@ -67,17 +67,17 @@ export function populateLocation(data) {
 
 export function populatePrimaryData(data) {
   const conditionNextHourText = `<i class='${getWeatherIcon(data.hourly.data[1].icon)}'></i> ${data.hourly.data[1].summary}`;
-  const tempNextHourText = `<i class='fas fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[1].temperature)}&deg; (feels ${Math.round(data.hourly.data[1].apparentTemperature)}&deg;)`;
+  const tempNextHourText = `<i class='fad fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[1].temperature)}&deg; (feels ${Math.round(data.hourly.data[1].apparentTemperature)}&deg;)`;
   const precipitationNextHourText = Math.floor(data.hourly.data[1].precipProbability * 100)
     ? `${Math.floor(data.hourly.data[1].precipProbability * 100)}% chance of ${data.hourly.data[1].precipType}`
     : 'No precipitation';
   const conditionTodayText = `<i class='${getWeatherIcon(data.daily.data[0].icon)}'></i> ${data.daily.data[1].summary}`;
   const tempTodayText = `
-    <i class='fal fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[0].temperatureMax)}&deg;
+    <i class='fad fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[0].temperatureMax)}&deg;
     (feels ${Math.round(data.daily.data[0].apparentTemperatureMax)}&deg;)
     around ${dayjs.unix(data.daily.data[0].apparentTemperatureMaxTime).format('h:mma')}
     <br>
-    <i class='fal fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[0].temperatureMin)}&deg;
+    <i class='fad fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[0].temperatureMin)}&deg;
     (feels ${Math.round(data.daily.data[0].apparentTemperatureMin)}&deg;)
     around ${dayjs.unix(data.daily.data[0].apparentTemperatureMinTime).format('h:mma')}
   `;
@@ -85,8 +85,8 @@ export function populatePrimaryData(data) {
     ? `${Math.floor(data.daily.data[0].precipProbability * 100)}% chance of ${data.daily.data[0].precipType} around ${dayjs.unix(data.daily.data[0].precipIntensityMaxTime).format('h:mma')}`
     : 'No precipitation';
   const sunTodayText = `
-    <i class='fas fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
-    <i class='fas fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
+    <i class='fad fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
+    <i class='fad fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
   `;
   const currentConditionsTooltip = `
     <div class='primarySummaryWrapper'>
@@ -98,7 +98,7 @@ export function populatePrimaryData(data) {
           <br>
           ${tempNextHourText}
           <br>
-          <i class='fas fa-fw fa-umbrella'></i> ${precipitationNextHourText}
+          <i class='fad fa-fw fa-umbrella'></i> ${precipitationNextHourText}
         </div>
       </div>
       <div class='columns is-mobile'>
@@ -110,7 +110,7 @@ export function populatePrimaryData(data) {
           ${tempTodayText}
           <br>
           ${sunTodayText}
-          <br><i class='fas fa-fw fa-umbrella'></i> ${precipitationTodayText}
+          <br><i class='fad fa-fw fa-umbrella'></i> ${precipitationTodayText}
         </div>
       </div>
       <div class='columns is-mobile'>
@@ -131,7 +131,7 @@ export function populatePrimaryData(data) {
         ${data.currently.summary}
       </h2>
     </div>
-    <div class="column is-one-quarter has-text-left current-temp has-tooltip" data-tippy-content="<i class='fas fa-fw fa-thermometer-half'></i> Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
+    <div class="column is-one-quarter has-text-left current-temp has-tooltip" data-tippy-content="<i class='fad fa-fw fa-thermometer-half'></i> Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
       ${Math.round(data.currently.temperature)}&deg;
     </div>
   `;
@@ -144,7 +144,7 @@ export function populateWeatherAlert(title) {
     <div class="column has-text-centered">
       <span class="tag is-large tag-weather-alert">
         <a href="#" class="link-weather-alert">
-          <i class="fas fa-fw fa-exclamation-triangle"></i> ${title}
+          <i class="fad fa-fw fa-exclamation-triangle"></i> ${title}
         </a>
       </span>
     </div>
@@ -159,36 +159,36 @@ export function populateWeatherData(data) {
     <div class="columns is-mobile is-vcentered">
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Wind">
         <p>
-          <i class="fas fa-fw fa-wind"></i>
+          <i class="fad fa-fw fa-wind"></i>
           <br>
-          <i class="fas fa-fw fa-chevron-circle-up" data-fa-transform="rotate-${data.currently.windBearing}"></i>
+          <i class="fad fa-fw fa-chevron-circle-up" data-fa-transform="rotate-${data.currently.windBearing}"></i>
           ${Math.round(data.currently.windSpeed)}${getUnitLabel('windSpeed', data.flags.units)[0]}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Precipitation">
         <p>
-          <i class="fas fa-fw fa-umbrella"></i>
+          <i class="fad fa-fw fa-umbrella"></i>
           <br>
           ${Math.round(data.currently.precipProbability * 100)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="UV">
         <p>
-          <i class="fas fa-fw fa-sun"></i>
+          <i class="fad fa-fw fa-sun"></i>
           <br>
           ${Math.round(data.currently.uvIndex)}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Visibility">
         <p>
-          <i class="fas fa-fw fa-eye"></i>
+          <i class="fad fa-fw fa-eye"></i>
           <br>
           ${data.currently.visibility}${getUnitLabel('visibility', data.flags.units)[0]}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
         <p>
-          <i class="fas fa-fw fa-sunrise"></i>
+          <i class="fad fa-fw fa-sunrise"></i>
           <br>
           ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
         </p>
@@ -197,35 +197,35 @@ export function populateWeatherData(data) {
     <div class="columns is-mobile is-vcentered">
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Barometric Pressure">
         <p>
-          <i class="fas fa-fw fa-tachometer"></i>
+          <i class="fad fa-fw fa-tachometer"></i>
           <br>
           ${Math.round(data.currently.pressure)}${getUnitLabel('pressure', data.flags.units)[0]}</i>
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Humidity">
         <p>
-          <i class="fas fa-fw fa-humidity"></i>
+          <i class="fad fa-fw fa-humidity"></i>
           <br>
           ${Math.round(data.currently.humidity * 100)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Dew Point">
         <p>
-          <i class="fas fa-fw fa-dewpoint"></i>
+          <i class="fad fa-fw fa-dewpoint"></i>
           <br>
           ${Math.round(data.currently.dewPoint)}&deg;</i>
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Cloud Cover">
         <p>
-          <i class="fas fa-fw fa-cloud"></i>
+          <i class="fad fa-fw fa-cloud"></i>
           <br>
           ${Math.round(data.currently.cloudCover * 100)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
-          <i class="fas fa-fw fa-sunset"></i>
+          <i class="fad fa-fw fa-sunset"></i>
           <br>${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
         </p>
       </div>
@@ -244,7 +244,7 @@ export function populateWeatherData(data) {
 // </div>
 // <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Feels Like">
 //   <p>
-//     <i class="fas fa-fw fa-thermometer-half"></i>
+//     <i class="fad fa-fw fa-thermometer-half"></i>
 //     <br>
 //     ${Math.round(data.currently.apparentTemperature)}&deg;</i>
 //   </p>
@@ -266,11 +266,11 @@ export function populateForecastData(data, numDays = 7) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(data.daily.data[next].icon)}'></i> ${data.daily.data[next].summary}`;
     const tempText = `
-      <i class='fal fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[next].temperatureMax)}&deg;
+      <i class='fad fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[next].temperatureMax)}&deg;
       (feels ${Math.round(data.daily.data[next].apparentTemperatureMax)}&deg;)
       around ${dayjs.unix(data.daily.data[next].apparentTemperatureMaxTime).format('h:mma')}
       <br>
-      <i class='fal fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[next].temperatureMin)}&deg;
+      <i class='fad fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[next].temperatureMin)}&deg;
       (feels ${Math.round(data.daily.data[next].apparentTemperatureMin)}&deg;)
       around ${dayjs.unix(data.daily.data[next].apparentTemperatureMinTime).format('h:mma')}
     `;
@@ -278,11 +278,11 @@ export function populateForecastData(data, numDays = 7) {
       ? `${Math.floor(data.daily.data[next].precipProbability * 100)}% chance of ${data.daily.data[next].precipType} around ${dayjs.unix(data.daily.data[next].precipIntensityMaxTime).format('h:mma')}`
       : 'No precipitation';
     const sunText = `
-      <i class='fas fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[next].sunriseTime).format('h:mma')}
-      <i class='fas fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[next].sunsetTime).format('h:mma')}
+      <i class='fad fa-fw fa-sunrise'></i> Sunrise ${dayjs.unix(data.daily.data[next].sunriseTime).format('h:mma')}
+      <i class='fad fa-fw fa-sunset'></i> Sunset ${dayjs.unix(data.daily.data[next].sunsetTime).format('h:mma')}
     `;
     const forecastTemplate = `
-      <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br>${sunText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}</div>">
+      <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br>${sunText}<br><i class='fad fa-fw fa-umbrella'></i> ${precipitationText}</div>">
         <strong>${dayjs.unix(data.daily.data[next].time).format('ddd')}</strong>
         <br>
         <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
@@ -315,12 +315,12 @@ export function populateHourlyData(data, numHours = 12) {
   for (let i = 0; i < numHours; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(data.hourly.data[next].icon)}'></i> ${data.hourly.data[next].summary}`;
-    const tempText = `<i class='fas fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[next].temperature)}&deg; (feels ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;)`;
+    const tempText = `<i class='fad fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[next].temperature)}&deg; (feels ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;)`;
     const precipitationText = Math.floor(data.hourly.data[next].precipProbability * 100)
       ? `${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}`
       : 'No precipitation';
     const hourlyTemplate = `
-      <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br><i class='fas fa-fw fa-umbrella'></i> ${precipitationText}</div>">
+      <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br><i class='fad fa-fw fa-umbrella'></i> ${precipitationText}</div>">
         <strong>${dayjs.unix(data.hourly.data[next].time).format('ha')}</strong>
         <br>
         <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
@@ -358,7 +358,7 @@ export function populateLastUpdated(data) {
     lastUpdatedTemplate = `
       <div class="column has-text-centered">
         <p class="last-updated has-tooltip" data-tippy-content="${lastUpdatedString}">
-          <i class='fal fa-fw fa-wifi-slash'></i> Weather data last updated ${lastUpdateTime.format('hh:mm:ss A')}
+          <i class='fad fa-fw fa-wifi-slash'></i> Weather data last updated ${lastUpdateTime.format('hh:mm:ss A')}
         </p>
       </div>
     `;
@@ -380,14 +380,14 @@ export function populateFooter() {
     <div class="column">
       <div class="content has-text-centered">
         <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" data-tippy-content="Powered by Dark Sky">
-          <i class="fal fa-tint"></i> Powered by Dark Sky
+          <i class="fad fa-tint"></i> Powered by Dark Sky
         </a>
       </div>
     </div>
     <div class="column">
       <div class="content has-text-left">
         <a href="https://github.com/mikesprague/localweather-io/" rel="noopener" target="_blank" data-tippy-content="Coded by Michael Sprague">
-          <i class="fal fa-code"></i> by Michael Sprague
+          <i class="fad fa-code"></i> by Michael Sprague
         </a>
       </div>
     </div>
@@ -399,7 +399,7 @@ export function populateFooter() {
 export const errorTemplates = {
   genericError: `
     <p class='message-alert-text-heading has-text-danger'>
-      <i class='fas fa-fw fa-exclamation-triangle'></i> Error
+      <i class='fad fa-fw fa-exclamation-triangle'></i> Error
     </p>
     <p class='message-alert-text-first'>
       We're sorry, an error occurred. Our developers have been notified.
@@ -408,7 +408,7 @@ export const errorTemplates = {
   `,
   locationError: `
     <p class='message-alert-text-heading has-text-danger'>
-      <i class='fas fa-fw fa-exclamation-triangle'></i> Error
+      <i class='fad fa-fw fa-exclamation-triangle'></i> Error
     </p>
     <p class='message-alert-text-first'>
       We're sorry, an error occurred identifying your location.
@@ -417,7 +417,7 @@ export const errorTemplates = {
     </p>`,
   geolocationUnavailable: `
     <p class='message-alert-text-heading has-text-danger'>
-      <i class='fas fa-fw fa-exclamation-triangle'></i> GEOLOCATION_UNAVAILABLE
+      <i class='fad fa-fw fa-exclamation-triangle'></i> GEOLOCATION_UNAVAILABLE
     </p>
     <p class='message-alert-text-first'>
       Geolocation is not available with your current browser.
@@ -425,28 +425,28 @@ export const errorTemplates = {
   `,
   geolocationUnknown: `
     <p class='message-alert-text-heading has-text-danger'>
-      <i class='fas fa-fw fa-exclamation-triangle'></i> UNKNOWN ERROR
+      <i class='fad fa-fw fa-exclamation-triangle'></i> UNKNOWN ERROR
     </p>
     <p class='message-alert-text-first'>
       An unknown error occurred.
     </p>`,
   geolocationTimeout: `
     <p class='message-alert-text-heading has-text-danger'>
-      <i class='fas fa-fw fa-exclamation-triangle'></i> TIMEOUT
+      <i class='fad fa-fw fa-exclamation-triangle'></i> TIMEOUT
     </p>
     <p class='message-alert-text-first'>
       The request to get user location timed out.
     </p>`,
   geolocationPosition: `
     <p class='message-alert-text-heading has-text-danger'>
-      <i class='fas fa-fw fa-exclamation-triangle'></i> POSITION UNAVAILABLE
+      <i class='fad fa-fw fa-exclamation-triangle'></i> POSITION UNAVAILABLE
     </p>
     <p class='message-alert-text-first'>
       Location information is unavailable.
     </p>`,
   geolocationPermission: `
     <p class='message-alert-text-heading has-text-danger'>
-      <i class='fas fa-fw fa-exclamation-triangle'></i> User denied the request for Geolocation
+      <i class='fad fa-fw fa-exclamation-triangle'></i> User denied the request for Geolocation
     </p>
     <p class='message-alert-text-first'>
       Please enable location services, clear any location tracking blocks for the domain
