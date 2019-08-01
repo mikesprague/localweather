@@ -1284,10 +1284,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@puresec/function-shield@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-2.0.6.tgz#85d4e5e4d7dddaece4c7bc952aa6a67f78c39eca"
-  integrity sha512-Zw05Ku+1IomtYVrqbU9NpoJ/LbLGM8HEyt3ri03kc2kTyDgZs0Jjw+3uT/7OeaSe08+wI71G246GbpUMGigJ1g==
+"@puresec/function-shield@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@puresec/function-shield/-/function-shield-2.0.7.tgz#74c733d40b3efa171de036fc7cb4f9cc5af9c471"
+  integrity sha512-pbpS1fKdEIvbYLE/YdOL4a8uZtyM55NWXpjw/PxcJdUWOdRYKAleTxtUBrUcdWluxdjlffwGk7MNWRQ4n5mtzQ==
   dependencies:
     fs-extra "^8.0.1"
     node-gyp-build "^4.1.0"
