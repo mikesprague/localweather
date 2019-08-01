@@ -1,7 +1,7 @@
 import {
   faTint, faClock, faCode, faWifiSlash,
-  faSun as faSunLight, faMoonStars, faCloudRain, faCloudSnow,
-  faCloudSleet, faWind as faWIndLight, faFog, faClouds, faCloudsSun,
+  faMoonStars, faCloudRain, faCloudSnow,
+  faCloudSleet, faFog, faClouds, faCloudsSun,
   faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado,
   faTemperatureHigh, faTemperatureLow,
   faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle,
@@ -64,7 +64,6 @@ export function initFontAwesomeIcons() {
     faSignal,
     faSpinner,
     faSun,
-    faSunLight,
     faSunrise,
     faSunset,
     faSyncAlt,
@@ -77,7 +76,6 @@ export function initFontAwesomeIcons() {
     faTornado,
     faUmbrella,
     faWind,
-    faWIndLight,
     faWifiSlash,
   );
   dom.watch();
