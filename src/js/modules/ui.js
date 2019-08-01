@@ -4,8 +4,6 @@ import {
   faCloudSleet, faWind as faWIndLight, faFog, faClouds, faCloudsSun,
   faCloudsMoon, faCloudHail, faHurricane, faThunderstorm, faTornado,
   faTemperatureHigh, faTemperatureLow,
-} from '@fortawesome/pro-light-svg-icons';
-import {
   faSpinner, faGlobe, faMapMarkerAlt, faExclamationTriangle,
   faArrowAltCircleDown, faArrowAltCircleUp, faBan, faSignal,
   faLongArrowAltDown, faLongArrowAltUp, faExternalLinkAlt,
@@ -13,7 +11,7 @@ import {
   faTachometer, faAngleUp, faChevronCircleUp, faDewpoint, faHumidity,
   faWind, faSunrise, faSunset, faEye, faUmbrella, faSun, faCloud,
   faThermometerHalf, faInfoCircle,
-} from '@fortawesome/pro-solid-svg-icons';
+} from '@fortawesome/pro-duotone-svg-icons';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import dayjs from 'dayjs';
 import swal from 'sweetalert2';
