@@ -188,7 +188,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
         <p>
-          <i class="fad fa-fw fa-sunrise"></i>
+          <i class="fad fa-fw fa-sunrise fa-swap-opacity"></i>
           <br>
           ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
         </p>
@@ -197,14 +197,14 @@ export function populateWeatherData(data) {
     <div class="columns is-mobile is-vcentered">
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Barometric Pressure">
         <p>
-          <i class="fad fa-fw fa-tachometer"></i>
+          <i class="fad fa-fw fa-tachometer fa-swap-opacity"></i>
           <br>
           ${Math.round(data.currently.pressure)}${getUnitLabel('pressure', data.flags.units)[0]}</i>
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Humidity">
         <p>
-          <i class="fad fa-fw fa-humidity"></i>
+          <i class="fad fa-fw fa-humidity fa-swap-opacity"></i>
           <br>
           ${Math.round(data.currently.humidity * 100)}%
         </p>
@@ -225,7 +225,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
-          <i class="fad fa-fw fa-sunset"></i>
+          <i class="fad fa-fw fa-sunset fa-swap-opacity"></i>
           <br>${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
         </p>
       </div>
