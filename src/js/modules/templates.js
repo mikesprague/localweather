@@ -174,21 +174,21 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="UV">
         <p>
-          <i class="fad fa-fw fa-sun"></i>
+          <i class="fad fa-fw fa-sun fa-swap-opacity"></i>
           <br>
           ${Math.round(data.currently.uvIndex)}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Visibility">
         <p>
-          <i class="fad fa-fw fa-eye"></i>
+          <i class="fad fa-fw fa-eye fa-swap-opacity"></i>
           <br>
           ${data.currently.visibility}${getUnitLabel('visibility', data.flags.units)[0]}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
         <p>
-          <i class="fad fa-fw fa-sunrise fa-swap-opacity"></i>
+          <i class="fad fa-fw fa-sunrise"></i>
           <br>
           ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
         </p>
@@ -225,7 +225,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
-          <i class="fad fa-fw fa-sunset fa-swap-opacity"></i>
+          <i class="fad fa-fw fa-sunset"></i>
           <br>${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
         </p>
       </div>
