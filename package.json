@@ -80,7 +80,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-markdown": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "file-loader": "^4.1.0",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "netlify-cli": "^2.12.0",
