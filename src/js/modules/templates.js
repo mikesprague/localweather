@@ -188,7 +188,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
         <p>
-          <i class="fad fa-fw fa-sunrise"></i>
+          <i class="fad fa-fw fa-sunrise fa-swap-opacity"></i>
           <br>
           ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
         </p>
@@ -225,7 +225,7 @@ export function populateWeatherData(data) {
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
-          <i class="fad fa-fw fa-sunset"></i>
+          <i class="fad fa-fw fa-sunset fa-swap-opacity"></i>
           <br>${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
         </p>
       </div>
