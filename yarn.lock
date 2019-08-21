@@ -1369,6 +1369,13 @@
     "@types/events" "*"
     "@types/node" "*"
 
+"@types/bunyan@*":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@types/bunyan/-/bunyan-1.8.6.tgz#6527641cca30bedec5feb9ab527b7803b8000582"
+  integrity sha512-YiozPOOsS6bIuz31ilYqR5SlLif4TBWsousN2aCWLi5233nZSX19tFbcQUPdR7xJ8ypPyxkCGNxg0CIV5n9qxQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/debug@^4.1.4":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.4.tgz#56eec47706f0fd0b7c694eae2f3172e6b0b769da"
@@ -1461,6 +1468,14 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
+
+"@types/restify@^4.3.6":
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/@types/restify/-/restify-4.3.6.tgz#5da5889b65c34c33937a67686bab591325dde806"
+  integrity sha512-4l4f0EXnleXQttlhRCXtTuJ8UelsKiAKIK2AAEd2epBHu41aEbM0U2z6E5tUrNwlbxz7qaNBISduGMeg+G3PaA==
+  dependencies:
+    "@types/bunyan" "*"
+    "@types/node" "*"
 
 "@types/semver@^5.5.0":
   version "5.5.0"
@@ -2104,10 +2119,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-sdk@^2.512.0:
-  version "2.512.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.512.0.tgz#2480184c37964a224b2db1259aa07231403a09cc"
-  integrity sha512-ioZZ6dTiZyETpJJ3aYy81OS3idnU5n8eyFssvgMXdsX8PRJ3KJZ/dQAdCD/680xDt3ymRNClGvlkPcOLPNlDKQ==
+aws-sdk@^2.514.0:
+  version "2.514.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.514.0.tgz#fe1cc76eb93982b3d6062866a1bc0fd501a02ee5"
+  integrity sha512-QKfmUJhn8iapnmx1pc86zLuJIKj5ereMz/ujjaFxMl6zKyypzdMJbNcZQHSqyQyVoU/EDsHt838L4sWbwVLCNQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -11167,14 +11182,15 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.217.0:
-  version "1.217.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.217.0.tgz#a588b06e406a6970de1f786d0c9a4692d901d4ed"
-  integrity sha512-yjD7vp2XYv5jxCzAJMcnPXbSzeOPqsPzO5dBjKK7GTZb9THXfvzEvW7rWkKY+miWcd50o2exgCLq4eeu1PxKoA==
+snyk@^1.217.3:
+  version "1.217.3"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.217.3.tgz#9a363986e3c5c9fb8769e744159c9e416a794595"
+  integrity sha512-VVTIEuKqw6O5Cj/ypps3TC/MShc2cM5P6ilMhf5xg6IETMvAFt04svNiE84oMWRedPPTVKhDBhTAOaAWx2qCAA==
   dependencies:
     "@snyk/dep-graph" "1.12.0"
     "@snyk/gemfile" "1.2.0"
     "@types/agent-base" "^4.2.0"
+    "@types/restify" "^4.3.6"
     abbrev "^1.1.1"
     ansi-escapes "3.2.0"
     chalk "^2.4.2"
@@ -11762,10 +11778,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.16.1:
-  version "8.16.1"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.16.1.tgz#ac5867f06e37754bbaaf97b62f5ab5af0c3305cc"
-  integrity sha512-6xRWaD2dhQDrH+YYjK4fFkA2HhOHHrmknSmQbpkoFd+z409vxZXAXj9MZz1n79bkLLOylgv1pIlrrMMVDv1ujw==
+sweetalert2@^8.16.2:
+  version "8.16.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.16.2.tgz#3ebc47a4f76b31e7d1d2b9a3b524f5c822a8776f"
+  integrity sha512-x0QMDnRbxETUi28Aiv/ucLCvLKc/vzE03wIqzJ0c6wy2xINJ+tFht3vZ+5QLZAiLHRoA0uPO54oq4+hSqUVHzw==
 
 table@^3.7.8:
   version "3.8.3"
