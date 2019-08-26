@@ -45,7 +45,7 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@puresec/function-shield": "^2.0.12",
     "autoprefixer": "^9.6.1",
-    "aws-sdk": "^2.517.0",
+    "aws-sdk": "^2.518.0",
     "axios": "^0.19.0",
     "bulma": "^0.7.5",
     "cssnano": "^4.1.10",
@@ -55,7 +55,7 @@
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "snyk": "^1.219.0",
+    "snyk": "^1.220.0",
     "sweetalert2": "^8.16.3",
     "tippy.js": "^4.3.5"
   },
