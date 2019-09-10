@@ -4702,10 +4702,10 @@ eslint-config-airbnb-base@^14.0.0:
     object.assign "^4.1.0"
     object.entries "^1.1.0"
 
-eslint-config-prettier@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.2.0.tgz#80e0b8714e3f6868c4ac2a25fbf39c02e73527a7"
-  integrity sha512-VLsgK/D+S/FEsda7Um1+N8FThec6LqE3vhcMyp8mlmto97y3fGf3DX7byJexGuOb1QY0Z/zz222U5t+xSfcZDQ==
+eslint-config-prettier@6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.3.0.tgz#e73b48e59dc49d950843f3eb96d519e2248286a3"
+  integrity sha512-EWaGjlDAZRzVFveh2Jsglcere2KK5CJBhkNSa1xs3KfMUGdRiT7lG089eqPdvlzWHpAqaekubOsOMu8W8Yk71A==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -12811,10 +12811,10 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webpack-bugsnag-plugins@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/webpack-bugsnag-plugins/-/webpack-bugsnag-plugins-1.4.1.tgz#2c76f76c9619b4fbe262ae4c098e76c415af1018"
-  integrity sha512-2ywprckxjH+48q+GLNl9xRfB0b8peg5UU2HD8XZZVx3b+n8t5gaKjai43OeB2Tv5zpE6nkgxFZhLNlakKJvzeg==
+webpack-bugsnag-plugins@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/webpack-bugsnag-plugins/-/webpack-bugsnag-plugins-1.4.2.tgz#7af0fdfe638369f73ff5ab89228b2cb0c255118b"
+  integrity sha512-BXMAUxWrXgH5gLBhg4TACDjmUXFSFIvx2bvrMJpeGspM+57eTFeWrUyV7FSCs0Hdtdd3jSRfe0cSxy3E9TyqGw==
   dependencies:
     bugsnag-build-reporter "^1.0.1"
     bugsnag-sourcemaps "^1.0.7"
