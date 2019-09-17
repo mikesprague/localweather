@@ -95,7 +95,7 @@
     "terser-webpack-plugin": "^2.1.0",
     "webpack": "^4.40.2",
     "webpack-bugsnag-plugins": "^1.4.2",
-    "webpack-cli": "^3.3.8",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1",
     "webpackbar": "^4.0.0",
     "workbox-webpack-plugin": "^4.3.1"
