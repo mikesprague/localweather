@@ -1007,23 +1007,23 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.4.0.tgz#96211bd3fcff48c91f91fdc270c02d2665585189"
-  integrity sha512-f6KUTIQ4hvJ35MxU35ORsyWwbLPxQ/vFOJdmYwvqrpH1FJSMJjTEmjW4pZbXY0iFkyJ0utYdMVek4ezY7xLtJg==
+"@bugsnag/browser@^6.4.1":
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.4.1.tgz#6e959e687a6cb722c994336be69546ff721bf9db"
+  integrity sha512-dpNrD0ghigSh21mbR7GlfFrLJdtbpgmCWnNSHhSR1AOqsdl82ZGitsb6tPwmTTLatCFrFiptLkGjKBhkGLI3DA==
 
-"@bugsnag/js@^6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.4.0.tgz#1690cc0de987198819c4cea4446f2a8119a034dc"
-  integrity sha512-4wcNz3fY4Cos3JPWxHz0IADRqFVIIPclX5peihQmSRJgPqpKuZlnwNVzIpp3VPw00cHjEAXKKID7CCv9NuQObA==
+"@bugsnag/js@^6.4.1":
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.4.1.tgz#ae5eb64cbef334228114b5c0e888f97c789cd02b"
+  integrity sha512-1JME0OOkVup35YHJ8MHDOwN6lK+7ftwSld0oWkehLMRLjteWhoSg57XqMYsbSFK0IAbOrWdlTiL6ceU/lNeu6A==
   dependencies:
-    "@bugsnag/browser" "^6.4.0"
-    "@bugsnag/node" "^6.4.0"
+    "@bugsnag/browser" "^6.4.1"
+    "@bugsnag/node" "^6.4.1"
 
-"@bugsnag/node@^6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.4.0.tgz#946af87eb2dd284901ac3c05faf979d8664198a2"
-  integrity sha512-vr/1u59oQ0batGfPGzlk9Mhg2n7TV/pwEpbaYBA8nsdMF3wiEsJkvpkq1tvixOSClzdVfI1h85v1IrHOFOgXaQ==
+"@bugsnag/node@^6.4.1":
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.4.1.tgz#8771c04c7bf4a07da255d48e9755c07013a88ca4"
+  integrity sha512-ncVPJtg16hp4kMsDwbqGRRCX3wUwjyPfoiCx73qLDmuuthFYBKq7qLZCHjWSQ5/6rm/8ahF6TFa4JEnaZXb3qQ==
   dependencies:
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
@@ -2168,10 +2168,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-sdk@^2.534.0:
-  version "2.534.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.534.0.tgz#72eac35c58651eb533044551e5fd06a7a8c8be79"
-  integrity sha512-0wm8mQg+N7vzOaFiM8wwvUXqWayf1ebqfi/SYVygASA79SnRe16pT73X2kEB/DbhXo+487Hf9p3hBGAsjoLcIA==
+aws-sdk@^2.535.0:
+  version "2.535.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.535.0.tgz#b14bf4fc8e579b4a672eecd900efbb42e29cf10a"
+  integrity sha512-k/ujHppqiEL05jKMPMvABPJhLTxodE/eGLkL9sUjwF5kLcxvzCC6W8K3KbH/pucrKNk5LSz0iQq04+FFvrEy8w==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -11321,10 +11321,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.228.3:
-  version "1.228.3"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.228.3.tgz#98e9aa797f194d2deda7b7318350f0f0c91cf325"
-  integrity sha512-TwyJcMXBvic1xJ+rVLdIYS1xDYuzcogIXdmyvGvXBZgwIQdjOVMnZBVxUo5igkOIntBL2sCynZiydQtGbe08JA==
+snyk@^1.228.5:
+  version "1.228.5"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.228.5.tgz#17b3373ba5f8ae29f33f4fcc39541db2339b63da"
+  integrity sha512-3gC39DW/F+4vDCKL47frng0MPbwv9P1zbPFRFE2eWQXpsD1KDd2Ch3MHPamJsfqdXUNKXQwf+R5e8oFOF7YtRg==
   dependencies:
     "@snyk/dep-graph" "1.12.0"
     "@snyk/gemfile" "1.2.0"
