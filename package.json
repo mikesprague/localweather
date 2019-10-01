@@ -57,7 +57,7 @@
     "request-promise": "^4.2.4",
     "snyk": "^1.230.0",
     "sweetalert2": "^8.18.0",
-    "tippy.js": "^4.3.5"
+    "tippy.js": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
