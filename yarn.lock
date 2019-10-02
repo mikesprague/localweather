@@ -2276,10 +2276,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-sdk@^2.539.0:
-  version "2.539.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.539.0.tgz#4bae923b20723d78fbe4e208847f07de2965f87a"
-  integrity sha512-jPnggqa676kqFHFPCJvfckN2SKI/+IQJREL+XxOocS1lyI+5iGxbJvlU0BLEsY2Is4LvMjsnxdqSAVIL5NRbyw==
+aws-sdk@^2.540.0:
+  version "2.540.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.540.0.tgz#3a636c32f48e657904f5b38592c057ceb87ae535"
+  integrity sha512-CQdXuMED/xPW7y50vObadERIzrVB6Zr87Ln9RIm3VyJuIWUWS92Z7DKAe9F+LdFh1/6zKVd/iLDJ7Fsd/pAEmA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -11500,10 +11500,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.230.2:
-  version "1.230.2"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.230.2.tgz#28f5cbb565142b48f6a6a004b08f85428a6998ef"
-  integrity sha512-jih2NlHLMNxwLiXOj+X/cFgVJR6m1Iu7JqfDM2A0SnZ/PCULL5QKN89V2Ii0YQbaBm6lnZ3NIn4X4yE2PlFyDA==
+snyk@^1.230.3:
+  version "1.230.3"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.230.3.tgz#980dc5ddaa70943d6b6dc6235446e9d4b77535a8"
+  integrity sha512-4Toymd4aN4MU3aRc6rGAGVDxxcT2zN5mRfeRngGiCgLa16hdXlR3kKEsMgzsUDyGqD5zMbUkI66xgAisA99iCA==
   dependencies:
     "@snyk/cli-interface" "^2.0.3"
     "@snyk/dep-graph" "1.12.0"
