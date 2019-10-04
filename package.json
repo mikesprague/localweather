@@ -24,7 +24,7 @@
     "lambda:build": "netlify-lambda build ./src/functions",
     "lambda:serve": "netlify-lambda serve ./src/functions --config ./webpack.functions.js",
     "snyk-protect": "snyk protect",
-    "prepublish": "yarn snyk-protect"
+    "prepublish": "npm run snyk-protect && yarn snyk-protect"
   },
   "repository": {
     "url": "https://github.com/mikesprague/localweather-io"
@@ -55,7 +55,7 @@
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "snyk": "^1.230.4",
+    "snyk": "^1.230.5",
     "sweetalert2": "^8.18.0",
     "tippy.js": "^4.3.5"
   },
