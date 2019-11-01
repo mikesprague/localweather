@@ -16,6 +16,7 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import dayjs from 'dayjs';
 import swal from 'sweetalert2';
 import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 import { getData, resetData } from './cache';
 import { getWeatherData } from './data';
 import * as defaults from './defaults';
@@ -237,15 +238,16 @@ export function hideEl(el) {
 
 export function initTooltips() {
   tippy('.has-tooltip', {
-    a11y: false,
     allowHTML: true,
     arrow: true,
     boundary: 'viewport',
     flipOnUpdate: true,
     interactive: true,
-    size: 'large',
     touch: true,
     trigger: 'click', // mouseenter
+    popperOptions: {
+      positionFixed: true,
+    },
   });
 }
 
