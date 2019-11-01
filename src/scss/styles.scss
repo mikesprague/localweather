@@ -1,5 +1,5 @@
 @import "~bulma/bulma";
-@import "~tippy.js/index";
+@import "~tippy.js/dist/tippy";
 @import "~sweetalert2/src/sweetalert2";
 /*!
  * LocalWeather.io Styles
@@ -463,4 +463,10 @@ hr {
 
 .has-tooltip {
   cursor: pointer;
+}
+
+.tippy-content {
+  font-size: 1rem;
+  padding: .375rem .75rem;
+  text-align: center;
 }
