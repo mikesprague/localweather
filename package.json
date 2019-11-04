@@ -54,8 +54,8 @@
     "logrocket": "^1.0.3",
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "snyk": "^1.241.0",
+    "request-promise": "^4.2.5",
+    "snyk": "^1.242.0",
     "sweetalert2": "^8.19.0",
     "tippy.js": "^5.1.1"
   },
