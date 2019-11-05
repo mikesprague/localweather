@@ -294,7 +294,7 @@ export function showInstallAlert() {
     title: `${defaults.appName}`,
     text: 'Latest Version Installed',
     confirmButtonText: 'Reload for Latest Updates',
-    type: 'success',
+    icon: 'success',
     onClose: () => {
       resetData();
       reloadWindow();
@@ -309,7 +309,7 @@ export function showErrorAlert(errorMessage, buttonText = 'Reload to Try Again')
     html: `${errorMessage}`,
     confirmButtonText: `${buttonText}`,
     confirmButtonColor: `${defaults.themeColor}`,
-    type: 'error',
+    icon: 'error',
     onClose: () => {
       resetData();
       reloadWindow();
