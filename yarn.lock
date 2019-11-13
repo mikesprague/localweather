@@ -9243,10 +9243,10 @@ netlify-cli-logo@^1.0.0:
   dependencies:
     chalk "^2.4.2"
 
-netlify-cli@2.20.2:
-  version "2.20.2"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.20.2.tgz#585899befc0ff3cbb37da1986a7359982cc5400c"
-  integrity sha512-geUIX8LzNTxglsW6WgtRG+KJpvO2cppBx+D16qpVJpafFDuZFpQ6Ll+2oNVaryuYeZrj3PRx8ZKIKuJ3vpZV/g==
+netlify-cli@2.21.0:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.21.0.tgz#b5b6335139719b506f2aafb7520e6865ae1b9cdb"
+  integrity sha512-zUVPXHo1HwyXtsuKny4W1cKWBLAxsTMkdDsbSCpTK/2bwZgixUXWxk2bT/xMBYH+9Xb0SOnhfeEiDYqQ7uRB1Q==
   dependencies:
     "@iarna/toml" "^2.2.3"
     "@netlify/build" "^0.1.7"
