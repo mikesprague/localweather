@@ -9356,10 +9356,10 @@ netlify-cli-logo@^1.0.0:
   dependencies:
     chalk "^2.4.2"
 
-netlify-cli@2.22.0:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.22.0.tgz#1fc4ec4d6ce97b04ba5754714ee9c8f36e9ce53b"
-  integrity sha512-GrxkD+9dbNaeNIbWFEIvTOlLwR53wpOGtdyeSl8Ex4MEsGXKg+8Qgn7B6YubTNSzns8vmK8p8eXSBglB1p53MQ==
+netlify-cli@2.23.0:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.23.0.tgz#e203995df64c3ff848f11df1781d9df1e3c0da66"
+  integrity sha512-4Ca6fhCNWiEvucNvRRbUQjhAI6S2YsJ97bQZ0x2sQxS89HMP+SfDrBZR7c01tKd+qJtUfAwZMg4cT57spbjYlw==
   dependencies:
     "@iarna/toml" "^2.2.3"
     "@netlify/build" "^0.1.7"
