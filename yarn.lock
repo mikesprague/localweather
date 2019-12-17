@@ -1352,23 +1352,23 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^6.4.3":
-  version "6.4.3"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.4.3.tgz#2f11163aa513e14215d3e409e713f90c9bb7aa33"
-  integrity sha512-BE87ikYMRmA9/1hg9v9ESukEaiOO6/rWbByGbonwjTRgK+hccQZXqF/9Uy7BtjNVuQVuhx0WTKp8pfw+s4r7QQ==
+"@bugsnag/browser@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.5.0.tgz#cec29fba00b47cbfca464be7f52b3900dd809cef"
+  integrity sha512-BBUK4XlCkzRsAwFbdAOBPSa353EqDmGuVvbnXom0xG1D2IySGyNmYdPBproTRNKp+h0XuCkXeBrjsyC9Wph6+g==
 
-"@bugsnag/js@^6.4.3":
-  version "6.4.3"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.4.3.tgz#6439c8b1f3fdae45a09f6f525a2e22999b8d0329"
-  integrity sha512-w/VjJbao+B9PCwxTypD35LPRWA96HUf30FzXSha7uXojVihQpCAycVrVp9nM/1UYFY7THnvwlw9C1SIQNlc/HQ==
+"@bugsnag/js@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.5.0.tgz#4961e799d93c84ca9dd37877ecdbfa939ebf3404"
+  integrity sha512-iY0e3BOjDkTV6YssVeAC/TfP27RRdqZoZWJGKBU1mTdfKdNb0aSkR8DsU5UTriwY900ughNVONLQm87ecHyNUQ==
   dependencies:
-    "@bugsnag/browser" "^6.4.3"
-    "@bugsnag/node" "^6.4.2"
+    "@bugsnag/browser" "^6.5.0"
+    "@bugsnag/node" "^6.5.0"
 
-"@bugsnag/node@^6.4.2":
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.4.2.tgz#0ca3b155066f213d4bb7d331f0bdcc09ee2b275c"
-  integrity sha512-Z2IU8+edZQbZGRtyhqvObSWiYLbP9xC/agFLepGEDCipVapRfO+8isDwFGU1autb693wz71m3jBewV+2Vn9nVg==
+"@bugsnag/node@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.5.0.tgz#10ebba701f3f78bbbc1cf7cc806ffa633d61e5ec"
+  integrity sha512-qW6+MYeXxcUA1nYzfeO637PzwPhKP89udYrIRXhhTLFIZwMyyFRes9Fok4M6RGN6VKP6H4zpQrzMc6/dU08Jxw==
   dependencies:
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
@@ -2786,10 +2786,10 @@ autoprefixer@^9.7.3:
     postcss "^7.0.23"
     postcss-value-parser "^4.0.2"
 
-aws-sdk@^2.590.0:
-  version "2.590.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.590.0.tgz#1c2496a3f1e7ea57ada696989bee60b04f0453d7"
-  integrity sha512-cdH3B/IuEuds84zRvi52WEW0UXOjsyl9hEkdbS2Uo8P7pWepaKTOZ3BKIUsy/lXen0nHcRWDCHeUkBwNW1Q2bg==
+aws-sdk@^2.591.0:
+  version "2.591.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.591.0.tgz#e95730957d2fec58241f0336e7f6ee15b3c2ab33"
+  integrity sha512-rjA6H39g6/Kuio5gsCf1O70v9WF0RNVg71ByZkUUJWdHCWTikUv0Z+aCNBwYV5Mkta9dkRY8UPF4hgSsl41Y6w==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -12709,10 +12709,10 @@ snyk-policy@1.13.5:
     snyk-try-require "^1.3.1"
     then-fs "^2.0.0"
 
-snyk-python-plugin@^1.14.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.14.0.tgz#43d7933352514460d0c7732372b89d919f5bebac"
-  integrity sha512-OZYkI7Xq++DgxNk8SrJPJK24y0WFTI5Jf10dI+FyoF2Gz1GxqmNNF4B/4yd+QqrSoIJ1SlM75qqG4M0qj8rylQ==
+snyk-python-plugin@1.14.1:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.14.1.tgz#ca512cce83757b2231b9aea6caa3590ac7775bef"
+  integrity sha512-76u10VrYJp0tz7eD7DC5/Q3fBMPlLieOqoUbN67u0OqF1nF7BLnFBnakZ9VbOqYeJyBoloL9+HIMJ5Nma9qLCQ==
   dependencies:
     "@snyk/cli-interface" "^2.0.3"
     tmp "0.0.33"
@@ -12748,14 +12748,15 @@ snyk-resolve@1.0.1, snyk-resolve@^1.0.0, snyk-resolve@^1.0.1:
     debug "^3.1.0"
     then-fs "^2.0.0"
 
-snyk-sbt-plugin@2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-2.9.1.tgz#41f90f6c318b4657d8bf0cb0ed6856ba0518880f"
-  integrity sha512-+cRFH4uAaoW7NeVLaWmpU236uhe4JRBakNGe+M9UhAswEqDAyFmyzWVU57EAjlzJKLIdh9JPFUvzjntGNs1I1A==
+snyk-sbt-plugin@2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-2.9.2.tgz#2c79b9aa49056367bf78a6bf693a282c8648366e"
+  integrity sha512-Mikl/ga3kJkvDs9KURmEa9YydmRguMW1CdJ4f7kA3iULSIsP7xqi8C4jYkJ/v3xfNrkfr8jACu2q9IDQRYJ+rg==
   dependencies:
     debug "^4.1.1"
     semver "^6.1.2"
     tmp "^0.1.0"
+    tree-kill "^1.2.2"
     tslib "^1.10.0"
 
 snyk-tree@^1.0.0:
@@ -12775,10 +12776,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.260.0:
-  version "1.260.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.260.0.tgz#22269952ba851dc9016f7a5f9d64afe94f0d575f"
-  integrity sha512-exaELuyt5dq9ZlJ5obKePxPu50Zg4+UgEVE8RJdAnbgB/hL/yBX3yGEmKi9h1FSlklH88Zgi5vsjxI8GE3SdyQ==
+snyk@^1.261.1:
+  version "1.261.1"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.261.1.tgz#052dee4ed4fa99c3c38e35790b96b71ed1b1c8e3"
+  integrity sha512-1LMWdY6KAAHoe/nkJtU+GCiBtoSQHfclX5vn33T1qmvgFFT8bQWgyS02k5lI8w1H+XdRVi73pCp/QJNwnxAF4g==
   dependencies:
     "@snyk/cli-interface" "2.3.0"
     "@snyk/dep-graph" "1.13.1"
@@ -12813,10 +12814,10 @@ snyk@^1.260.0:
     snyk-nuget-plugin "1.15.0"
     snyk-php-plugin "1.7.0"
     snyk-policy "1.13.5"
-    snyk-python-plugin "^1.14.0"
+    snyk-python-plugin "1.14.1"
     snyk-resolve "1.0.1"
     snyk-resolve-deps "4.4.0"
-    snyk-sbt-plugin "2.9.1"
+    snyk-sbt-plugin "2.9.2"
     snyk-tree "^1.0.0"
     snyk-try-require "1.3.1"
     source-map-support "^0.5.11"
@@ -13792,6 +13793,11 @@ tree-kill@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.1.tgz#5398f374e2f292b9dcc7b2e71e30a5c3bb6c743a"
   integrity sha512-4hjqbObwlh2dLyW4tcz0Ymw0ggoaVDMveUB9w8kFSQScdRLo0gxO9J7WFcUBo+W3C1TLdFIEwNOWebgZZ0RH9Q==
+
+tree-kill@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
+  integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
 treeify@^1.1.0:
   version "1.1.0"
