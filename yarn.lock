@@ -2786,10 +2786,10 @@ autoprefixer@^9.7.3:
     postcss "^7.0.23"
     postcss-value-parser "^4.0.2"
 
-aws-sdk@^2.591.0:
-  version "2.591.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.591.0.tgz#e95730957d2fec58241f0336e7f6ee15b3c2ab33"
-  integrity sha512-rjA6H39g6/Kuio5gsCf1O70v9WF0RNVg71ByZkUUJWdHCWTikUv0Z+aCNBwYV5Mkta9dkRY8UPF4hgSsl41Y6w==
+aws-sdk@^2.592.0:
+  version "2.592.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.592.0.tgz#6896db3edb27cc364f99146da48bf8d560776cf2"
+  integrity sha512-4L0SuERTJnz4JMf70q4VvYG5trR72k+ynJeMZuvE79apUBSs+tAUZTrFwSeDgbJnYycQdwQf6Ocm5wHwIzNHRg==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -4766,10 +4766,10 @@ date-time@^2.1.0:
   dependencies:
     time-zone "^1.0.0"
 
-dayjs@^1.8.17:
-  version "1.8.17"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.17.tgz#53ec413f2a7b02afbea1846d61bb260fa8567cea"
-  integrity sha512-47VY/htqYqr9GHd7HW/h56PpQzRBSJcxIQFwqL3P20bMF/3az5c3PWdVY3LmPXFl6cQCYHL7c79b9ov+2bOBbw==
+dayjs@^1.8.18:
+  version "1.8.18"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.18.tgz#c9b3fcd5a8eca96ed20a907f4491516d6eda15c9"
+  integrity sha512-JBMJZghNK8TtuoPnKNIzW9xavVVigld/zmZNpZSyQbkb2Opp55YIfZUpE4OEqPF/iyUVQTKcn1bC2HtC8B7s3g==
 
 debug@2, debug@2.6.9, debug@^2.1.1, debug@^2.2.0, debug@^2.3.3, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -12776,10 +12776,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.261.1:
-  version "1.261.1"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.261.1.tgz#052dee4ed4fa99c3c38e35790b96b71ed1b1c8e3"
-  integrity sha512-1LMWdY6KAAHoe/nkJtU+GCiBtoSQHfclX5vn33T1qmvgFFT8bQWgyS02k5lI8w1H+XdRVi73pCp/QJNwnxAF4g==
+snyk@^1.262.2:
+  version "1.262.2"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.262.2.tgz#3785c61916b49e8893afa63c2ae2564f93daffbb"
+  integrity sha512-9H1rqLOJK/oLwTMJegYaE9M2HonPe0KRI6A21csg2i5MNTb3lPJAvwmFPzPEadvdCLuiYVysJI5WG5tX1fIxlg==
   dependencies:
     "@snyk/cli-interface" "2.3.0"
     "@snyk/dep-graph" "1.13.1"
