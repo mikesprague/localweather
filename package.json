@@ -91,7 +91,7 @@
     "prettier": "^1.19.1",
     "sass-lint": "^1.13.1",
     "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.2",
+    "style-loader": "^1.1.0",
     "terser-webpack-plugin": "^2.3.1",
     "webpack": "^4.41.4",
     "webpack-bugsnag-plugins": "^1.4.2",
