@@ -112,11 +112,13 @@
     ]
   },
   "browserslist": {
-    "production": [
-      "defaults"
-    ],
     "development": [
-      "last 2 versions"
+      "last 1 version1"
+    ],
+    "production": [
+      "> 1%",
+      "last 2 versions",
+      "not ie <= 10"
     ]
   },
   "eslintConfig": {
