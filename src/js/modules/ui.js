@@ -366,7 +366,7 @@ export function showWeatherAlert(data) {
 }
 
 export function initWeatherAlerts(data) {
-  const weatherAlerts = data.alerts;
+  const { alerts: weatherAlerts } = data;
   if (weatherAlerts) {
     populateWeatherAlert(weatherAlerts[0].title);
     showEl('.weather-alert');
