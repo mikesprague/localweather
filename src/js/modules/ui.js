@@ -330,8 +330,8 @@ export function parseWeatherAlert(weatherAlert) {
 
   let bulletPoints = '';
   if (alertParts.length > 1) {
-    bulletPoints = alertParts.filter(part => part.trim().length)
-      .map(part => `<li><strong>${part.replace('...', '</strong> ')}</li>`)
+    bulletPoints = alertParts.filter((part) => part.trim().length)
+      .map((part) => `<li><strong>${part.replace('...', '</strong> ')}</li>`)
       .join('\n');
   }
 
