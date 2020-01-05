@@ -1,6 +1,9 @@
 import axios from 'axios';
 import {
-  useCache, getData, setCacheTime, setData,
+  getData,
+  setCacheTime,
+  setData,
+  useCache,
 } from './cache';
 import * as defaults from './defaults';
 import { apiUrl } from './helpers';
