@@ -91,25 +91,32 @@ export function getMoonUi(data) {
   if (moonAge > 0 && moonAge < 8) {
     iconSuffix = `waxing-crescent-${moonAge}`;
     phaseText = 'Waxing Crescent';
-  } else if (moonAge === 8) {
+  }
+  if (moonAge === 8) {
     iconSuffix = 'first-quarter';
     phaseText = 'First Quarter';
-  } else if (moonAge > 8 && moonAge < 15) {
+  }
+  if (moonAge > 8 && moonAge < 15) {
     iconSuffix = `waxing-gibbous-${moonAge - 8}`;
     phaseText = 'Waxing Gibbous';
-  } else if (moonAge === 15) {
+  }
+  if (moonAge === 15) {
     iconSuffix = 'full';
     phaseText = 'Full Moon';
-  } else if (moonAge > 15 && moonAge < 22) {
+  }
+  if (moonAge > 15 && moonAge < 22) {
     iconSuffix = `waning-gibbous-${moonAge - 15}`;
     phaseText = 'Waning Gibbous';
-  } else if (moonAge === 22) {
+  }
+  if (moonAge === 22) {
     iconSuffix = 'third-quarter';
     phaseText = 'Third Quarter';
-  } else if (moonAge > 22 && moonAge < 29) {
+  }
+  if (moonAge > 22 && moonAge < 29) {
     iconSuffix = `waning-crescent-${moonAge - 22}`;
     phaseText = 'Waning Crescent';
-  } else if (moonAge === 29 || moonAge === 0) {
+  }
+  if (moonAge === 29 || moonAge === 0) {
     iconSuffix = 'new';
     phaseText = 'New Moon';
   }
