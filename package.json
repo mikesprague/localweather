@@ -49,7 +49,7 @@
     "axios": "^0.19.0",
     "bulma": "^0.8.0",
     "cssnano": "^4.1.10",
-    "dayjs": "^1.8.18",
+    "dayjs": "^1.8.19",
     "dotenv": "^8.2.0",
     "logrocket": "^1.0.5",
     "register-service-worker": "^1.6.2",
