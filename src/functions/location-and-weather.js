@@ -1,16 +1,5 @@
 const bugsnag = require('@bugsnag/js');
-const FunctionShield = require('@puresec/function-shield');
 const rp = require('request-promise');
-
-FunctionShield.configure({
-  policy: {
-    outbound_connectivity: 'alert',
-    read_write_tmp: 'block',
-    create_child_process: 'block',
-    read_handler: 'block',
-  },
-  token: process.env.FUNCTION_SHIELD_TOKEN,
-});
 
 exports.handler = (event, context, callback) => {
   const bugsnagClient = bugsnag(process.env.BUGSNAG_KEY);
