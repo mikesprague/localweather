@@ -41,8 +41,10 @@ const addLocationNameSpacing = () => {
   const locationNameLetters = locationNameEl.textContent.split('');
   const updatedLetters = locationNameLetters.map((letter) => `<span class="location-name-letter">${letter}</span>`);
   const placeHolder = '<span class="location-name-letter"></span>';
-  updatedLetters.push(placeHolder.repeat(3));
-  updatedLetters.unshift(placeHolder.repeat(3));
+  if (locationNameLetters.length <= 24) {
+    updatedLetters.push(placeHolder.repeat(3));
+    updatedLetters.unshift(placeHolder.repeat(3));
+  }
   locationNameEl.innerHTML = updatedLetters.join('');
 };
 
