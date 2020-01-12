@@ -46,8 +46,8 @@ const webpackRules = [
               purgecss({
                 content: ['./src/**/*.html', './src/js/**/*.js'],
                 fontFace: false,
-                whitelistPatterns: [/swal2/, /tippy/, /clear/, /clear-night/, /cloudy/, /cloudy-night/, /loading/, /rainy/, /rainy-night/, /snowy/, /snowy-night/],
-                whitelistPatternsChildren: [/swal2/, /tippy/],
+                whitelistPatterns: [/swal2/, /tippy/, /clear/, /clear-night/, /cloudy/, /cloudy-night/, /loading/, /rainy/, /rainy-night/, /snowy/, /snowy-night/, /switch/, /field/],
+                whitelistPatternsChildren: [/swal2/, /tippy/, /switch/, /field/],
               }),
             ];
           },

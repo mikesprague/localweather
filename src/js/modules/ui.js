@@ -17,12 +17,12 @@ import dayjs from 'dayjs';
 import swal from 'sweetalert2';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
-import { getData, resetData } from './cache';
+import { getData, resetData, setData } from './cache';
 import { getWeatherData } from './data';
 import * as defaults from './defaults';
 import { handleError, reloadWindow } from './helpers';
 import {
-  populateMessage, populateForecastData,
+  populateMessage, populateForecastData, populateTempUnitsToggle,
   populateHourlyData, populateLastUpdated, populateLocation,
   populatePrimaryData, populateWeatherData, populateWeatherAlert,
   populateAppShell, errorTemplates,
@@ -243,17 +243,34 @@ export function hideEl(el) {
   }
 }
 
+const fToC = (fTemp) => Math.round((fTemp - 32) * 0.5556);
+const cToF = (cTemp) => Math.round((cTemp * 1.8) + 32);
+
 export function initTooltips() {
   tippy('.has-tooltip', {
     allowHTML: true,
     arrow: true,
-    boundary: 'viewport',
     flipOnUpdate: true,
     interactive: true,
     touch: true,
     trigger: 'click', // mouseenter
     popperOptions: {
       positionFixed: true,
+    },
+    onMount() {
+      const toFahrenheit = document.querySelector('#fc-toggle').checked;
+      const tempElsInTooltip = Array.from(document.querySelectorAll('.temperature'));
+      tempElsInTooltip.forEach((tempEl) => {
+        if (toFahrenheit) {
+          tempEl.innerHTML = cToF(parseInt(tempEl.textContent));
+          tempEl.classList.remove('temperature');
+          tempEl.classList.add('temperature-converted');
+        } else {
+          tempEl.innerHTML = fToC(parseInt(tempEl.textContent));
+          tempEl.classList.remove('temperature');
+          tempEl.classList.add('temperature-converted');
+        }
+      });
     },
   });
 }
@@ -384,6 +401,63 @@ export function initWeatherAlerts(data) {
   }
 }
 
+export function toggleTempUnits(data) {
+  const { flags } = data;
+  const { units } = flags;
+  const defaultUnit = units === 'us' ? 'fahrenheit' : 'calsius';
+  const toFahrenheit = document.querySelector('#fc-toggle').checked;
+  if (defaultUnit === 'fahrenheit' && toFahrenheit) {
+    setData(defaults.temperatureUnitsKey, 'fahrenheit');
+    reloadWindow();
+  } else if (defaultUnit === 'celsius' && !toFahrenheit) {
+    setData(defaults.temperatureUnitsKey, 'celsius');
+    reloadWindow();
+  } else {
+    const tempEls = Array.from(document.querySelectorAll('.temperature'));
+    setData(defaults.temperatureUnitsKey, toFahrenheit ? 'fahrenheit' : 'celsius');
+    tempEls.forEach((tempEl) => {
+      if (toFahrenheit) {
+        tempEl.innerHTML = cToF(parseInt(tempEl.textContent));
+        tempEl.classList.remove('temperature');
+        tempEl.classList.add('temperature-converted');
+      } else {
+        tempEl.innerHTML = fToC(parseInt(tempEl.textContent));
+        tempEl.classList.remove('temperature');
+        tempEl.classList.add('temperature-converted');
+      }
+    });
+  }
+}
+
+export function initTempUnitsToggle(data) {
+  const { flags } = data;
+  const { units } = flags;
+  const defaultUnits = units === 'us' ? 'fahrenheit' : 'calsius';
+  const tempUnitsToggle = document.querySelector('#fc-toggle');
+  const tempToggleSetting = getData(defaults.temperatureUnitsKey);
+  if (!tempToggleSetting) {
+    setData(defaults.temperatureUnitsKey, defaultUnits);
+    setData(defaults.temperatureDefaultUnitsKey, defaultUnits);
+  }
+  if (tempToggleSetting && tempToggleSetting === 'fahrenheit') {
+    tempUnitsToggle.checked = 'checked';
+    const origUnits = getData(defaults.temperatureDefaultUnitsKey);
+    if (origUnits !== tempToggleSetting) {
+      toggleTempUnits(data);
+    }
+  }
+  if (tempToggleSetting && tempToggleSetting === 'celsius') {
+    tempUnitsToggle.checked = '';
+    const origUnits = getData(defaults.temperatureDefaultUnitsKey);
+    if (origUnits !== tempToggleSetting) {
+      toggleTempUnits(data);
+    }
+  }
+  tempUnitsToggle.addEventListener('click', () => {
+    toggleTempUnits(data);
+  });
+}
+
 export function refreshLastUpdatedTime(data) {
   populateLastUpdated(data);
 }
@@ -398,8 +472,10 @@ export function renderAppWithData(data) {
   populateHourlyData(data);
   populateLastUpdated(data);
   populateLocation(data);
+  populateTempUnitsToggle(data);
   setFavicon(data);
   setTitle(data);
+  initTempUnitsToggle(data);
   initTooltips();
   initWeatherAlerts(data);
 }
