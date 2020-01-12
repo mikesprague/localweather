@@ -40,7 +40,7 @@ export function populateAppShell() {
 export function populateTempUnitsToggle(data) {
   const { flags } = data;
   const { units } = flags;
-  const tempUnits = units === 'us' ? 'fahrenheit' : 'calsius';
+  const tempUnits = units === 'us' ? 'fahrenheit' : 'celsius';
   const isChecked = tempUnits === 'fahrenheit' ? 'checked' : '';
   const tempUnitsToggleTemplate = `
     <div class="column has-text-centered">

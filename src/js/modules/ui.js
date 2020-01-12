@@ -259,18 +259,22 @@ export function initTooltips() {
     },
     onMount() {
       const toFahrenheit = document.querySelector('#fc-toggle').checked;
+      const currentUnits = getData(defaults.temperatureUnitsKey);
+      const defaultUnits = getData(defaults.temperatureDefaultUnitsKey);
       const tempElsInTooltip = Array.from(document.querySelectorAll('.temperature'));
-      tempElsInTooltip.forEach((tempEl) => {
-        if (toFahrenheit) {
-          tempEl.innerHTML = cToF(parseInt(tempEl.textContent));
-          tempEl.classList.remove('temperature');
-          tempEl.classList.add('temperature-converted');
-        } else {
-          tempEl.innerHTML = fToC(parseInt(tempEl.textContent));
-          tempEl.classList.remove('temperature');
-          tempEl.classList.add('temperature-converted');
-        }
-      });
+      if (currentUnits !== defaultUnits) {
+        tempElsInTooltip.forEach((tempEl) => {
+          if (toFahrenheit) {
+            tempEl.innerHTML = cToF(parseInt(tempEl.textContent));
+            tempEl.classList.remove('temperature');
+            tempEl.classList.add('temperature-converted');
+          } else {
+            tempEl.innerHTML = fToC(parseInt(tempEl.textContent));
+            tempEl.classList.remove('temperature');
+            tempEl.classList.add('temperature-converted');
+          }
+        });
+      }
     },
   });
 }
@@ -404,7 +408,7 @@ export function initWeatherAlerts(data) {
 export function toggleTempUnits(data) {
   const { flags } = data;
   const { units } = flags;
-  const defaultUnit = units === 'us' ? 'fahrenheit' : 'calsius';
+  const defaultUnit = units === 'us' ? 'fahrenheit' : 'celsius';
   const toFahrenheit = document.querySelector('#fc-toggle').checked;
   if (defaultUnit === 'fahrenheit' && toFahrenheit) {
     setData(defaults.temperatureUnitsKey, 'fahrenheit');
@@ -432,26 +436,15 @@ export function toggleTempUnits(data) {
 export function initTempUnitsToggle(data) {
   const { flags } = data;
   const { units } = flags;
-  const defaultUnits = units === 'us' ? 'fahrenheit' : 'calsius';
+  const defaultUnits = units === 'us' ? 'fahrenheit' : 'celsius';
   const tempUnitsToggle = document.querySelector('#fc-toggle');
-  const tempToggleSetting = getData(defaults.temperatureUnitsKey);
-  if (!tempToggleSetting) {
-    setData(defaults.temperatureUnitsKey, defaultUnits);
-    setData(defaults.temperatureDefaultUnitsKey, defaultUnits);
-  }
-  if (tempToggleSetting && tempToggleSetting === 'fahrenheit') {
+  setData(defaults.temperatureUnitsKey, defaultUnits);
+  setData(defaults.temperatureDefaultUnitsKey, defaultUnits);
+  if (defaultUnits === 'fahrenheit') {
     tempUnitsToggle.checked = 'checked';
-    const origUnits = getData(defaults.temperatureDefaultUnitsKey);
-    if (origUnits !== tempToggleSetting) {
-      toggleTempUnits(data);
-    }
   }
-  if (tempToggleSetting && tempToggleSetting === 'celsius') {
+  if (defaultUnits === 'celsius') {
     tempUnitsToggle.checked = '';
-    const origUnits = getData(defaults.temperatureDefaultUnitsKey);
-    if (origUnits !== tempToggleSetting) {
-      toggleTempUnits(data);
-    }
   }
   tempUnitsToggle.addEventListener('click', () => {
     toggleTempUnits(data);
