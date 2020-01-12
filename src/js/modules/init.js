@@ -1,7 +1,12 @@
 import bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
-import { getData, useCache, resetData } from './cache';
+import {
+  getData,
+  resetData,
+  setData,
+  useCache,
+} from './cache';
 import * as defaults from './defaults';
 import { handleError } from './helpers';
 import {

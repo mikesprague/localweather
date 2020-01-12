@@ -29,11 +29,30 @@ export function populateAppShell() {
       <div class="current-weather-data"></div>
       <div class="columns is-mobile hourly-data"></div>
       <div class="columns is-mobile forecast-data"></div>
+      <div class="columns is-mobile temp-units-toggle"></div>
       <div class="columns is-mobile last-updated-time"></div>
     </div>
   `;
   const appShellEl = document.querySelector('.hero-body');
   appShellEl.innerHTML = appShellTemplate;
+}
+
+export function populateTempUnitsToggle(data) {
+  const { flags } = data;
+  const { units } = flags;
+  const tempUnits = units === 'us' ? 'fahrenheit' : 'calsius';
+  const isChecked = tempUnits === 'fahrenheit' ? 'checked' : '';
+  const tempUnitsToggleTemplate = `
+    <div class="column has-text-centered">
+      <div class="field">
+        <small id="fc-toggle-c" class="fc-toggle-text-c">celsius&nbsp;</small>
+        <input id="fc-toggle" type="checkbox" name="fc-toggle" class="switch is-rounded" checked="${isChecked}">
+        <label for="fc-toggle" class="fc-toggle-text">fahrenheit</label>
+      </div>
+    </div>
+  `;
+  const tempUnitsToggleEl = document.querySelector('.temp-units-toggle');
+  tempUnitsToggleEl.innerHTML = tempUnitsToggleTemplate;
 }
 
 const addLocationNameSpacing = () => {
@@ -69,18 +88,18 @@ export function populateLocation(data) {
 
 export function populatePrimaryData(data) {
   const conditionNextHourText = `<i class='${getWeatherIcon(data.hourly.data[1].icon)}'></i> ${data.hourly.data[1].summary}`;
-  const tempNextHourText = `<i class='fad fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[1].temperature)}&deg; (feels ${Math.round(data.hourly.data[1].apparentTemperature)}&deg;)`;
+  const tempNextHourText = `<i class='fad fa-fw fa-thermometer-half'></i><span class='temperature'>${Math.round(data.hourly.data[1].temperature)}</span>&deg; (feels <span class='temperature'>${Math.round(data.hourly.data[1].apparentTemperature)}</span>&deg;)`;
   const precipitationNextHourText = Math.floor(data.hourly.data[1].precipProbability * 100)
     ? `${Math.floor(data.hourly.data[1].precipProbability * 100)}% chance of ${data.hourly.data[1].precipType}`
     : 'No precipitation';
   const conditionTodayText = `<i class='${getWeatherIcon(data.daily.data[0].icon)}'></i> ${data.daily.data[1].summary}`;
   const tempTodayText = `
-    <i class='fad fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[0].temperatureMax)}&deg;
-    (feels ${Math.round(data.daily.data[0].apparentTemperatureMax)}&deg;)
+    <i class='fad fa-fw fa-temperature-high'></i> High <span class='temperature'>${Math.round(data.daily.data[0].temperatureMax)}</span>&deg;
+    (feels <span class='temperature'>${Math.round(data.daily.data[0].apparentTemperatureMax)}</span>&deg;)
     around ${dayjs.unix(data.daily.data[0].apparentTemperatureMaxTime).format('h:mma')}
     <br>
-    <i class='fad fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[0].temperatureMin)}&deg;
-    (feels ${Math.round(data.daily.data[0].apparentTemperatureMin)}&deg;)
+    <i class='fad fa-fw fa-temperature-low'></i> Low <span class='temperature'>${Math.round(data.daily.data[0].temperatureMin)}</span>&deg;
+    (feels <span class='temperature'>${Math.round(data.daily.data[0].apparentTemperatureMin)}</span>&deg;)
     around ${dayjs.unix(data.daily.data[0].apparentTemperatureMinTime).format('h:mma')}
   `;
   const precipitationTodayText = Math.floor(data.daily.data[0].precipProbability * 100)
@@ -133,8 +152,8 @@ export function populatePrimaryData(data) {
         ${data.currently.summary}
       </h2>
     </div>
-    <div class="column is-one-quarter has-text-left current-temp has-tooltip" data-tippy-content="<i class='fad fa-fw fa-thermometer-half'></i> Feels like ${Math.round(data.currently.apparentTemperature)}&deg;">
-      ${Math.round(data.currently.temperature)}&deg;
+    <div class="column is-one-quarter has-text-left current-temp has-tooltip" data-tippy-content="<i class='fad fa-fw fa-thermometer-half'></i> Feels like <span class='temperature'>${Math.round(data.currently.apparentTemperature)}</span>&deg;">
+      <span class="temperature">${Math.round(data.currently.temperature)}</span>&deg;
     </div>
   `;
   const priamryDataEl = document.querySelector('.primary-conditions-data');
@@ -215,7 +234,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-dewpoint"></i>
           <br>
-          ${Math.round(data.currently.dewPoint)}&deg;</i>
+          <span class="temperature">${Math.round(data.currently.dewPoint)}</span>&deg;</i>
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Cloud Cover">
@@ -268,12 +287,12 @@ export function populateForecastData(data, numDays = 7) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(data.daily.data[next].icon)}'></i> ${data.daily.data[next].summary}`;
     const tempText = `
-      <i class='fad fa-fw fa-temperature-high'></i> High ${Math.round(data.daily.data[next].temperatureMax)}&deg;
-      (feels ${Math.round(data.daily.data[next].apparentTemperatureMax)}&deg;)
+      <i class='fad fa-fw fa-temperature-high'></i> High <span class='temperature'>${Math.round(data.daily.data[next].temperatureMax)}</span>&deg;
+      (feels <span class='temperature'>${Math.round(data.daily.data[next].apparentTemperatureMax)}</span>&deg;)
       around ${dayjs.unix(data.daily.data[next].apparentTemperatureMaxTime).format('h:mma')}
       <br>
-      <i class='fad fa-fw fa-temperature-low'></i> Low ${Math.round(data.daily.data[next].temperatureMin)}&deg;
-      (feels ${Math.round(data.daily.data[next].apparentTemperatureMin)}&deg;)
+      <i class='fad fa-fw fa-temperature-low'></i> Low <span class='temperature'>${Math.round(data.daily.data[next].temperatureMin)}</span>&deg;
+      (feels <span class='temperature'>${Math.round(data.daily.data[next].apparentTemperatureMin)}</span>&deg;)
       around ${dayjs.unix(data.daily.data[next].apparentTemperatureMinTime).format('h:mma')}
     `;
     const precipitationText = Math.floor(data.daily.data[next].precipProbability * 100)
@@ -289,7 +308,7 @@ export function populateForecastData(data, numDays = 7) {
         <br>
         <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
         <br>
-        ${Math.round(data.daily.data[next].temperatureMax)}&deg;/${Math.round(data.daily.data[next].temperatureMin)}&deg;
+        <span class="temperature">${Math.round(data.daily.data[next].temperatureMax)}</span>&deg;/<span class="temperature">${Math.round(data.daily.data[next].temperatureMin)}</span>&deg;
       </p>
     `;
     const forecastEl = document.querySelector(`.forecast-${next}`);
@@ -317,7 +336,7 @@ export function populateHourlyData(data, numHours = 12) {
   for (let i = 0; i < numHours; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(data.hourly.data[next].icon)}'></i> ${data.hourly.data[next].summary}`;
-    const tempText = `<i class='fad fa-fw fa-thermometer-half'></i>${Math.round(data.hourly.data[next].temperature)}&deg; (feels ${Math.round(data.hourly.data[next].apparentTemperature)}&deg;)`;
+    const tempText = `<i class='fad fa-fw fa-thermometer-half'></i><span class='temperature'>${Math.round(data.hourly.data[next].temperature)}</span>&deg; (feels <span class='temperature'>${Math.round(data.hourly.data[next].apparentTemperature)}</span>&deg;)`;
     const precipitationText = Math.floor(data.hourly.data[next].precipProbability * 100)
       ? `${Math.floor(data.hourly.data[next].precipProbability * 100)}% chance of ${data.hourly.data[next].precipType}`
       : 'No precipitation';
@@ -327,7 +346,7 @@ export function populateHourlyData(data, numHours = 12) {
         <br>
         <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
         <br>
-        ${Math.round(data.hourly.data[next].temperature)}&deg;
+        <span class="temperature">${Math.round(data.hourly.data[next].temperature)}</span>&deg;
       </p>
     `;
     const hourlyEl = document.querySelector(`.hourly-${next}`);

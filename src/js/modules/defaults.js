@@ -35,6 +35,8 @@ module.exports = {
   locationAddressDataKey: 'locationAddress',
   locationNameDataKey: 'locationName',
   skipGeolocationCheckKey: 'skipLocationCheck',
+  temperatureUnitsKey: 'tempUnits',
+  temperatureDefaultUnitsKey: 'tempDefaultUnits',
   themeColor: '#133150',
   title: 'LocalWeather.io (powered by Dark Sky)',
   unitLabels: {
