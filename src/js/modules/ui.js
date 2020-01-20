@@ -371,10 +371,16 @@ export function parseWeatherAlert(weatherAlert) {
 }
 
 export function showWeatherAlert(data) {
-  /* eslint-disable object-curly-newline */
-  const { title, time, expires, description } = data[0];
-  /* eslint-enable object-curly-newline */
-  const { heading, bulletPoints } = parseWeatherAlert(description);
+  const {
+    title,
+    time,
+    expires,
+    description,
+  } = data[0];
+  const {
+    heading,
+    bulletPoints,
+  } = parseWeatherAlert(description);
 
   swal.fire({
     title: `${title}`,
