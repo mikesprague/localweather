@@ -4,7 +4,6 @@ import { register } from 'register-service-worker';
 import {
   getData,
   resetData,
-  setData,
   useCache,
 } from './cache';
 import * as defaults from './defaults';
