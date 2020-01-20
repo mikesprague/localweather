@@ -154,6 +154,7 @@
       "semi": "error",
       "prefer-arrow-callback": "warn",
       "arrow-spacing": "error",
+      "no-param-reassign": "warn",
       "eqeqeq": "error",
       "quotes": [
         "error",
