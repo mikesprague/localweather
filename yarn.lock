@@ -1471,10 +1471,10 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.26"
 
-"@fullhuman/postcss-purgecss@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.0.3.tgz#54998de7c468e1f1637e7c23b05cc98ceac30a05"
-  integrity sha512-dxHmlm3hn6DD+diMdUSRFRppVcE6xl2BYqydnoOlwu9FsFg9IDDmmXYz1MwBm9EEAqFZDlRFYu79vIGZFk1TTA==
+"@fullhuman/postcss-purgecss@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.0.4.tgz#0b53279aeec7801d7747f7d718b045623d727a5c"
+  integrity sha512-h1BohiFiVBuOEaG/t45u6kV4zBbS9FOvC7sXxFAa/cG/W9Cl5yGCzHne++/vWf4R4WyWJFInaV/fhLUAcXzMjg==
   dependencies:
     postcss "7.0.26"
     purgecss "^2.0.3"
