@@ -42,7 +42,7 @@
     "@bugsnag/js": "^6.5.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/pro-duotone-svg-icons": "^5.12.0",
-    "@fullhuman/postcss-purgecss": "^2.0.3",
+    "@fullhuman/postcss-purgecss": "^2.0.4",
     "autoprefixer": "^9.7.4",
     "aws-sdk": "^2.606.0",
     "axios": "^0.19.1",
