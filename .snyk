@@ -9,43 +9,93 @@ patch:
   SNYK-JS-LODASH-450202:
     - snyk > snyk-mvn-plugin > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/helpers > @babel/traverse > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-nuget-plugin > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/generator > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-nodejs-lockfile-parser > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > @snyk/dep-graph > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/helpers > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > inquirer > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/generator > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - request-promise > request-promise-core > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/helpers > @babel/traverse > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-config > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > @snyk/dep-graph > graphlib > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/traverse > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/template > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-go-plugin > graphlib > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/traverse > @babel/generator > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
         patched: '2019-07-07T21:34:05.030Z'
+      '@babel/core > @babel/traverse > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - request-promise > request-promise-core > lodash:
         patched: '2019-08-26T21:52:28.043Z'
+      '@babel/core > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > inquirer > lodash:
         patched: '2019-08-26T21:52:28.043Z'
+      '@babel/core > @babel/helpers > @babel/template > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-config > lodash:
         patched: '2019-08-26T21:52:28.043Z'
+      '@babel/core > @babel/traverse > @babel/helper-function-name > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > @snyk/dep-graph > graphlib > lodash:
         patched: '2019-08-26T21:52:28.043Z'
+      '@babel/core > @babel/helpers > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-go-plugin > graphlib > lodash:
         patched: '2019-08-26T21:52:28.043Z'
+      '@babel/core > @babel/helpers > @babel/traverse > @babel/helper-function-name > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
         patched: '2019-08-26T21:52:28.043Z'
+      '@babel/core > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
         patched: '2019-08-26T21:52:28.043Z'
+      '@babel/core > @babel/helpers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > graphlib > lodash:
         patched: '2019-09-30T19:33:17.627Z'
+      '@babel/core > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
         patched: '2019-09-30T19:33:17.627Z'
+      '@babel/core > @babel/helpers > @babel/traverse > @babel/generator > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
+    - '@babel/core > @babel/helpers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
+    - '@babel/core > @babel/helpers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
+    - '@babel/helper-simple-access > @babel/template > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
+    - '@babel/helper-simple-access > @babel/types > lodash':
+        patched: '2020-01-22T18:39:48.788Z'
