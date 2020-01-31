@@ -55,9 +55,9 @@
     "register-service-worker": "^1.6.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
-    "snyk": "^1.288.0",
+    "snyk": "^1.290.0",
     "sweetalert2": "^9.7.1",
-    "tippy.js": "^5.1.4"
+    "tippy.js": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
