@@ -46,6 +46,7 @@
     "autoprefixer": "^9.7.4",
     "aws-sdk": "^2.610.0",
     "axios": "^0.19.2",
+    "azure-maps-control": "^2.0.21",
     "bulma": "^0.8.0",
     "bulma-switch": "^2.0.0",
     "cssnano": "^4.1.10",

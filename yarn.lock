@@ -2059,6 +2059,11 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
+"@types/adal-angular@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/adal-angular/-/adal-angular-1.0.1.tgz#424822e2e17a6c185f33ef80b1208f035e52a735"
+  integrity sha512-2sRGxJYrluhvIz8ae98i5k5woe9Fics4dMFHTcNfY2xAkj5QGZor+sfZzlgM58Fpw7Kklau9Gn6OhgJP25dKug==
+
 "@types/agent-base@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@types/agent-base/-/agent-base-4.2.0.tgz#00644e8b395b40e1bf50aaf1d22cabc1200d5051"
@@ -3028,6 +3033,13 @@ axios@^0.19.2:
   integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
     follow-redirects "1.5.10"
+
+azure-maps-control@^2.0.21:
+  version "2.0.21"
+  resolved "https://registry.yarnpkg.com/azure-maps-control/-/azure-maps-control-2.0.21.tgz#9f7c0fc647bc0c0d4bf186d4e70a1f9d6db00899"
+  integrity sha512-lgmX/527qlN+yeKKsNvZA8tj88dUTsiU4lk+pPyRA6HUq/T1M9V+u8UFAvjazPs764mYfIcS3Em4t3m3TVwe1Q==
+  dependencies:
+    "@types/adal-angular" "^1.0.1"
 
 babel-extract-comments@^1.0.0:
   version "1.0.0"
