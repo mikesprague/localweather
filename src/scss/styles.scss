@@ -337,23 +337,23 @@ strong {
 .powered-by-dark-sky {
   font-size: .6em;
   margin-top: .25em;
+}
 
-  a {
+a {
+  color: $color-gray-lightest;
+  text-decoration: none;
+
+  &:visited {
+    // color: $color-gray-lightest;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    border-bottom: 1px dashed $color-gray-lightest;
+    border-top: 1px dashed $color-gray-lightest;
     color: $color-gray-lightest;
     text-decoration: none;
-
-    &:visited {
-      // color: $color-gray-lightest;
-      text-decoration: none;
-    }
-
-    &:hover,
-    &:active {
-      border-bottom: 1px dashed $color-gray-lightest;
-      border-top: 1px dashed $color-gray-lightest;
-      color: $color-gray-lightest;
-      text-decoration: none;
-    }
   }
 }
 
