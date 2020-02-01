@@ -2059,6 +2059,11 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
+"@sweetalert2/theme-dark@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-3.1.0.tgz#b0289b775f65bb17090ad23e4efc4e348939cdb0"
+  integrity sha512-tXChn56erfY02Ie82mEc/Pp4RFQ40FoaS4Ys7moQgePZOlOoyZd/o4Z1H7dzA4bpHEF6ItYXZCk+e0RkW7CKPA==
+
 "@types/adal-angular@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/adal-angular/-/adal-angular-1.0.1.tgz#424822e2e17a6c185f33ef80b1208f035e52a735"
