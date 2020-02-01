@@ -2,14 +2,14 @@
 $switch-background-active: #545454;
 @import "~bulma-switch/dist/css/bulma-switch";
 @import "~tippy.js/dist/tippy";
-@import "~sweetalert2/src/sweetalert2";
+@import "~@sweetalert2/theme-dark/dark";
 /*!
  * LocalWeather.io Styles
  */
 @import "variables";
 
 @font-face {
-  font-display: fallback;
+  font-display: swap;
   font-family: "Open Sans Condensed";
   font-style: italic;
   font-weight: 300;
@@ -18,7 +18,7 @@ $switch-background-active: #545454;
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: swap;
   font-family: "Open Sans Condensed";
   font-style: normal;
   font-weight: 300;
@@ -27,7 +27,7 @@ $switch-background-active: #545454;
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: swap;
   font-family: "Open Sans Condensed";
   font-style: normal;
   font-weight: 700;
