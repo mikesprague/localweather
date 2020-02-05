@@ -45,8 +45,8 @@
   "homepage": "https://localweather.io",
   "dependencies": {
     "@bugsnag/js": "^6.5.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.26",
-    "@fortawesome/pro-duotone-svg-icons": "^5.12.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/pro-duotone-svg-icons": "^5.12.1",
     "@fullhuman/postcss-purgecss": "^2.0.6",
     "@sweetalert2/theme-dark": "^3.1.0",
     "autoprefixer": "^9.7.4",
