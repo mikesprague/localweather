@@ -2289,10 +2289,10 @@ autoprefixer@^9.7.4:
     postcss "^7.0.26"
     postcss-value-parser "^4.0.2"
 
-aws-sdk@^2.612.0:
-  version "2.612.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.612.0.tgz#3af06638ec785bad10986b81ce265422fca552e3"
-  integrity sha512-/oAeVw9okULGczQLNMAO3/w9sA2ubf/+iqRQRXRjrJXVUi7INV6qYnNzIXzy7GabOkN7xpZiTbVcU+Yij5yrxg==
+aws-sdk@^2.613.0:
+  version "2.613.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.613.0.tgz#f0d4c99f0df7ee8227d331dde19d5251b31a5da7"
+  integrity sha512-FYLaVtC/AlrcnjsPw1JhAsKd6yapr918Mk0jAcw3yFZp1sI2V0Um+2pmijLFsV+nNRxFlCVJRhhFWB5GK6yALA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -13117,10 +13117,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^9.7.1:
-  version "9.7.1"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.7.1.tgz#10a6aeb8516c6d55f6fb931cf6b595d007a65e54"
-  integrity sha512-ytBEyqRmZQsEFuPsYcuEXpruj9AgT32ELEBWGnioflsqbxHMMM8/Ghm1+hi4hsZ1PU7cp9TFFWe06WveGfwWKw==
+sweetalert2@^9.7.2:
+  version "9.7.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.7.2.tgz#ad11a75e765b543792b032c27a5ab981a7c8429e"
+  integrity sha512-VmFmigf+rO20t5fOql21wIZlk60B8M02kXwPLmMA2qaBcVwvDQA+qGXuqtXipx1wsztTOiXgyDiBvdbHbIvQpw==
 
 symbol-observable@^1.0.3:
   version "1.2.0"
