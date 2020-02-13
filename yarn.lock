@@ -2289,10 +2289,10 @@ autoprefixer@^9.7.4:
     postcss "^7.0.26"
     postcss-value-parser "^4.0.2"
 
-aws-sdk@^2.616.0:
-  version "2.616.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.616.0.tgz#c8772f2cde6e250ce126747e6f995aa969f0632a"
-  integrity sha512-jvmUn5WgL7EQz3e40tDpmCQA2RlchMZkxp/yVOYv4eKVrW5Mxz4QVnPqIWXutK6Ml3C3/DBMR0uIQybztvSrGA==
+aws-sdk@^2.617.0:
+  version "2.617.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.617.0.tgz#aa040a75b78494dafdec9c6cce9dc0b6933e19d7"
+  integrity sha512-08CVFCHdLgSqXC5kHDDyuCf62qgzJnzHcZEgSd64zM91VaQqFzGIqi/b9iTtE47JKl1UIvrj7v8g+LPrfrGULQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -13398,10 +13398,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tippy.js@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-5.2.0.tgz#5e5a13a196ad2e39c7ee6cac5bfdb0513e797501"
-  integrity sha512-bmZu+TP1Fs6+1cq0GI1lfS9R0QxXDthP45zNGSLLMY5p2uC8sODNL4TiUOhEG25q5upk5LUrTnCkc+Q3H2aZJQ==
+tippy.js@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-5.2.1.tgz#e08d7332c103a15e427124d710d881fca82365d6"
+  integrity sha512-66UT6JRVn3dXNCORE+0UvUK3JZqV/VhLlU6HTDm3FmrweUUFUxUGvT8tUQ7ycMp+uhuLAwQw6dBabyC+iKf/MA==
   dependencies:
     popper.js "^1.16.0"
 
