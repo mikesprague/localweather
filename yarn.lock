@@ -2289,10 +2289,10 @@ autoprefixer@^9.7.4:
     postcss "^7.0.26"
     postcss-value-parser "^4.0.2"
 
-aws-sdk@^2.617.0:
-  version "2.617.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.617.0.tgz#aa040a75b78494dafdec9c6cce9dc0b6933e19d7"
-  integrity sha512-08CVFCHdLgSqXC5kHDDyuCf62qgzJnzHcZEgSd64zM91VaQqFzGIqi/b9iTtE47JKl1UIvrj7v8g+LPrfrGULQ==
+aws-sdk@^2.618.0:
+  version "2.618.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.618.0.tgz#628d4d3bdd5024ce0701ff74713e5be0a2ffd803"
+  integrity sha512-GlwR9Eeolhm/D6NFuJosyatsdDeIeV68VRkACwt2v81seFGT7QAtpcRN72ZzVxLbeXSTMRgb6axJK17CS5whKw==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2321,10 +2321,10 @@ axios@^0.19.2:
   dependencies:
     follow-redirects "1.5.10"
 
-azure-maps-control@^2.0.21:
-  version "2.0.21"
-  resolved "https://registry.yarnpkg.com/azure-maps-control/-/azure-maps-control-2.0.21.tgz#9f7c0fc647bc0c0d4bf186d4e70a1f9d6db00899"
-  integrity sha512-lgmX/527qlN+yeKKsNvZA8tj88dUTsiU4lk+pPyRA6HUq/T1M9V+u8UFAvjazPs764mYfIcS3Em4t3m3TVwe1Q==
+azure-maps-control@^2.0.22:
+  version "2.0.22"
+  resolved "https://registry.yarnpkg.com/azure-maps-control/-/azure-maps-control-2.0.22.tgz#edcf0da0d746ac59d0cdc41bb047beeab551fdcc"
+  integrity sha512-awu+7+vp8qBjqTyHcOkOlEjuQ2eptmOyNQjLoiRW34/eU5nTpK+zq4Uh5fiZxcHzJRlo7VIg8FNOZ1QSuPtueQ==
   dependencies:
     "@types/adal-angular" "^1.0.1"
 
