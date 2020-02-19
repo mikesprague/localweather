@@ -50,7 +50,7 @@
     "@fullhuman/postcss-purgecss": "^2.0.6",
     "@sweetalert2/theme-dark": "^3.1.0",
     "autoprefixer": "^9.7.4",
-    "aws-sdk": "^2.621.0",
+    "aws-sdk": "^2.622.0",
     "axios": "^0.19.2",
     "azure-maps-control": "^2.0.22",
     "bulma": "^0.8.0",
