@@ -1379,10 +1379,10 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
-"@sweetalert2/theme-dark@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-3.1.0.tgz#b0289b775f65bb17090ad23e4efc4e348939cdb0"
-  integrity sha512-tXChn56erfY02Ie82mEc/Pp4RFQ40FoaS4Ys7moQgePZOlOoyZd/o4Z1H7dzA4bpHEF6ItYXZCk+e0RkW7CKPA==
+"@sweetalert2/theme-dark@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-3.1.1.tgz#3499632761957cd2916703c49bf5520938ae18ac"
+  integrity sha512-BXm9TSTLW5H4PLBS8URYZR+/+nb6Eu09ayPLKVw44nUhWnj9in5abbam1wR6VpW8xzUxJruC3NIRIf/X+8u+yQ==
 
 "@types/adal-angular@^1.0.1":
   version "1.0.1"
@@ -13239,10 +13239,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^9.7.2:
-  version "9.7.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.7.2.tgz#ad11a75e765b543792b032c27a5ab981a7c8429e"
-  integrity sha512-VmFmigf+rO20t5fOql21wIZlk60B8M02kXwPLmMA2qaBcVwvDQA+qGXuqtXipx1wsztTOiXgyDiBvdbHbIvQpw==
+sweetalert2@^9.8.2:
+  version "9.8.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.8.2.tgz#6dc89d84267ae4b35bfc2dc244bb7265ce961d4a"
+  integrity sha512-Lr7DbVi/uNwQ9LOJXt9N5JZkJT0Tga9bCGfPbtnm9Gwfhs/Wthp8vSrtE+x9kjMSpvlkvoPO7TDFxoP0jFnDow==
 
 symbol-observable@^1.0.3:
   version "1.2.0"
