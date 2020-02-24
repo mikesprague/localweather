@@ -5136,6 +5136,13 @@ eslint-plugin-prettier@^3.1.2:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
+eslint-plugin-security@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-security/-/eslint-plugin-security-1.4.0.tgz#d4f314484a80b1b613b8c8886e84f52efe1526c2"
+  integrity sha512-xlS7P2PLMXeqfhyf3NpqbvbnW04kN8M9NtmhpR3XGyOvt/vNKS7XPXT5EDbwKW9vCjWH4PpfQvgD/+JgN0VJKA==
+  dependencies:
+    safe-regex "^1.1.0"
+
 eslint-scope@^3.7.1:
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-3.7.3.tgz#bb507200d3d17f60247636160b4826284b108535"
