@@ -67,12 +67,12 @@
     "tippy.js": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
+    "@babel/core": "^7.8.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/plugin-transform-object-assign": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
     "@babel/runtime": "^7.8.4",
     "babel-loader": "^8.0.6",
     "compression-webpack-plugin": "^3.1.0",
