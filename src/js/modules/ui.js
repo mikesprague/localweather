@@ -250,12 +250,20 @@ export function initTooltips() {
   tippy('.has-tooltip', {
     allowHTML: true,
     arrow: true,
-    flipOnUpdate: true,
     interactive: true,
     touch: true,
     trigger: 'click', // mouseenter
     popperOptions: {
-      positionFixed: true,
+      placement: 'top',
+      modifiers: [
+        {
+          name: 'flip',
+          enabled: true,
+          // options: {
+          //   fallbackPlacements: ['top'],
+          // },
+        },
+      ],
     },
     onMount() {
       const toFahrenheit = document.querySelector('#fc-toggle').checked;
