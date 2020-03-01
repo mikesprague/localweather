@@ -1439,6 +1439,11 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@popperjs/core@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.6.tgz#5a39ac118811ca844155b0ad5190b8c24f35e533"
+  integrity sha512-zj7Gw8QC4jmR92eKUvtrZUEpl2ypRbq+qlE4pwf9n2hnUO9BOAcWUs4/Ht+gNIbFt98xtqhLvccdCfD469MzpQ==
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -10528,11 +10533,6 @@ pluralize@^1.2.1:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
   integrity sha1-0aIUg/0iu0HlihL6NCGCMUCJfEU=
 
-popper.js@^1.16.0:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
-  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
-
 portfinder@^1.0.25:
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.25.tgz#254fd337ffba869f4b9d37edc298059cb4d35eca"
@@ -13733,12 +13733,12 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tippy.js@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-5.2.1.tgz#e08d7332c103a15e427124d710d881fca82365d6"
-  integrity sha512-66UT6JRVn3dXNCORE+0UvUK3JZqV/VhLlU6HTDm3FmrweUUFUxUGvT8tUQ7ycMp+uhuLAwQw6dBabyC+iKf/MA==
+tippy.js@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.0.0.tgz#6bc4f477ea82ef344db51ae34f106a8b25f2d02c"
+  integrity sha512-2NVc5A8cnO9N/Fk+tTU6KEm6m8ZXT1u3pOY756zZ5BE38rWDl/hVyoWhTfM79HW1nEJSpn/VujqAMMZGHsE9qQ==
   dependencies:
-    popper.js "^1.16.0"
+    "@popperjs/core" "^2.0.6"
 
 tmp@0.0.33, tmp@^0.0.33:
   version "0.0.33"
