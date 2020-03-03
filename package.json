@@ -50,7 +50,7 @@
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "@sweetalert2/theme-dark": "^3.1.1",
     "autoprefixer": "^9.7.4",
-    "aws-sdk": "^2.630.0",
+    "aws-sdk": "^2.631.0",
     "axios": "^0.19.2",
     "azure-maps-control": "^2.0.23",
     "bulma": "^0.8.0",
@@ -62,7 +62,7 @@
     "register-service-worker": "^1.6.2",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
-    "snyk": "^1.297.3",
+    "snyk": "^1.297.4",
     "sweetalert2": "^9.8.2",
     "tippy.js": "^6.0.0"
   },
