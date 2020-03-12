@@ -9,7 +9,10 @@
     "yarn": ">= 1.x"
   },
   "scripts": {
-    "build": "yarn clean && yarn webpack && yarn lambda:build",
+    "build": "yarn webpack",
+    "prebuild": "yarn clean",
+    "postbuild": "yarn lambda:build",
+    "check-env": "node -e 'console.log(process.env)' | grep npm",
     "clean": "rm -rf ./public > /dev/null 2>&1",
     "serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "start": "yarn serve",
