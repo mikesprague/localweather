@@ -2583,10 +2583,10 @@ aws-sdk@^2.488.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-sdk@^2.636.0:
-  version "2.636.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.636.0.tgz#247124540b5b88a217aa6c282ce662b2f539721f"
-  integrity sha512-Zd/jed8qSNCm4pT2+8BuFfveouZrqUqmsOdhzpi3ZB3GYqV5eD+dmsl8OY+qvMgIJIFCB34a1SMucsC4zdBokg==
+aws-sdk@^2.637.0:
+  version "2.637.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.637.0.tgz#810e25e53acf2250d35fc74498f9d4492e154217"
+  integrity sha512-e7EYX5rNtQyEaleQylUtLSNKXOmvOwfifQ4bYkfF80mFsVI3DSydczLHXrqPzXoEJaS/GI/9HqVnlQcPs6Q3ew==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -13901,10 +13901,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tippy.js@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.0.1.tgz#8556e9a94c99059e6ccde6f0c92fd880195e73ab"
-  integrity sha512-b69hYyVLRcgo1H8NQ6MrBYnxp0YzznuRhUfefGdYTLYlsYTznIXCpN0ym0hCwnB8CcSItOOustPbY2A/aRfbkw==
+tippy.js@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.0.3.tgz#caf7730132c41b835a0cc41d698f4e2858a10f3c"
+  integrity sha512-buQF6HugTA4YeSA/s9xBhu0ferEAx7sRSn45G+Juh3p+Dz3vEKfxtqdg6JUnHIWDCV/r0u8Lrobs9AB4dtYcUQ==
   dependencies:
     "@popperjs/core" "^2.1.0"
 
