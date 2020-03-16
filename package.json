@@ -51,7 +51,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/pro-duotone-svg-icons": "^5.12.1",
     "@fullhuman/postcss-purgecss": "^2.1.0",
-    "@sweetalert2/theme-dark": "^3.1.2",
+    "@sweetalert2/theme-dark": "^3.1.4",
     "autoprefixer": "^9.7.4",
     "aws-sdk": "^2.639.0",
     "axios": "^0.19.2",
@@ -59,15 +59,15 @@
     "bulma": "^0.8.0",
     "bulma-switch": "^2.0.0",
     "cssnano": "^4.1.10",
-    "dayjs": "^1.8.22",
+    "dayjs": "^1.8.23",
     "dotenv": "^8.2.0",
     "logrocket": "^1.0.6",
     "register-service-worker": "^1.7.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
-    "snyk": "^1.298.1",
-    "sweetalert2": "^9.10.0",
-    "tippy.js": "^6.0.3"
+    "snyk": "^1.299.0",
+    "sweetalert2": "^9.10.2",
+    "tippy.js": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",

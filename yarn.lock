@@ -1481,10 +1481,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@popperjs/core@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.1.0.tgz#09a7a352a40508156e1256efdc015593feca28e0"
-  integrity sha512-ntN5t5spqhQv28cLfmmt1dYabsudzR5A7PU15gr/gzcT/gzqAOnYFQPaLPFraDa7ZCJG2eJ1JsO7pgXbYXGIrw==
+"@popperjs/core@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.1.1.tgz#12c572ab88ef7345b43f21883fca26631c223085"
+  integrity sha512-sLqWxCzC5/QHLhziXSCAksBxHfOnQlhPRVgPK0egEw+ktWvG75T2k+aYWVjVh9+WKeT3tlG3ZNbZQvZLmfuOIw==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -1634,10 +1634,10 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
-"@sweetalert2/theme-dark@^3.1.2":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-3.1.2.tgz#90d02387acacc0f5d91b22038e153911fe89f4a2"
-  integrity sha512-5LWZtCE69zE/Kk7ZAooFir99nk7FogT7q4K35U1CByrHY1cR5yaVWcLUmG0EEc9+2B9tEyuA+fempZA5aiHJyQ==
+"@sweetalert2/theme-dark@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-3.1.4.tgz#2d6186a9a1854e163493032dbf59366650d315eb"
+  integrity sha512-JiFqylrr7bKw1WSxyu7KmaIUq9iV7C1PD1Paaaxpvr1Bs4mK+lFJrV5TaGEECcke0wkV1koDyxBZllE7V7tRJg==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -4508,10 +4508,10 @@ date-time@^2.1.0:
   dependencies:
     time-zone "^1.0.0"
 
-dayjs@^1.8.22:
-  version "1.8.22"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.22.tgz#5e835d776b373e216678be8d12c336da71a25a9c"
-  integrity sha512-N8IXfxBD62Y9cKTuuuSoOlCXRnnzaTj1vu91r855iq6FbY5cZqOZnW/95nUn6kJiR+W9PHHrLykEoQOe6fUKxQ==
+dayjs@^1.8.23:
+  version "1.8.23"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.23.tgz#07b5a8e759c4d75ae07bdd0ad6977f851c01e510"
+  integrity sha512-NmYHMFONftoZbeOhVz6jfiXI4zSiPN6NoVWJgC0aZQfYVwzy/ZpESPHuCcI0B8BUMpSJQ08zenHDbofOLKq8hQ==
 
 debug@2, debug@2.6.9, debug@^2.1.1, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
@@ -12922,10 +12922,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.298.1:
-  version "1.298.1"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.298.1.tgz#662e128c145b2b98f8d3a359128d3c13f677ea8a"
-  integrity sha512-HTpycsQ4uLAGoPAt9HjX+eLTdHRXOcTzBAzjSIav1UvXzkyPD6kvP8EJJ5PlL/6MHFmoUpn9Io1+OKEUmPtpVA==
+snyk@^1.299.0:
+  version "1.299.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.299.0.tgz#72b6251b7d924b1bc54e237055b549743370b005"
+  integrity sha512-K2dlmwlmJpD7CZE8B8GguwIJmjOWdXzQ7UlcFIscg8y0tP8OT9a1gouLgBaU4uyS5J5wByipGNX1Cpwi6WRt5w==
   dependencies:
     "@snyk/cli-interface" "2.3.2"
     "@snyk/configstore" "^3.2.0-rc1"
@@ -13648,10 +13648,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^9.10.0:
-  version "9.10.0"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.10.0.tgz#f0a0e45d73141528e80b8c47f997c254fddcd780"
-  integrity sha512-HYLRj1zuXtrMrYh2kzrRNzmcDIuNBsIB7ZN0AZctFaVS433QnnL/ihLoRm0COTqy38KOhYwKK1PMYVK/1rQ0Lg==
+sweetalert2@^9.10.2:
+  version "9.10.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.10.2.tgz#6cad40638fb65907c38942ea01194a8fd4be1f68"
+  integrity sha512-muth00S/u8739EY3JqaqAAw3mZd8DNldQWBpIq5GTo9V+2C7qMBEh3oZOr9DmO39va5D2zx4T3xq4VU5VAnLmg==
 
 symbol-observable@^1.0.3:
   version "1.2.0"
@@ -13901,12 +13901,12 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tippy.js@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.0.3.tgz#caf7730132c41b835a0cc41d698f4e2858a10f3c"
-  integrity sha512-buQF6HugTA4YeSA/s9xBhu0ferEAx7sRSn45G+Juh3p+Dz3vEKfxtqdg6JUnHIWDCV/r0u8Lrobs9AB4dtYcUQ==
+tippy.js@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.1.0.tgz#9c58b94f92f3044d5e861b9d83da3c2a6d3d4323"
+  integrity sha512-cRFydlVZlvo4soQSUfVNbH2K77zDUhDAzaAjxseyn81gGIa+j72y98yDL2yB0n8gas/E+Zlr1iOyR5ckslUFqA==
   dependencies:
-    "@popperjs/core" "^2.1.0"
+    "@popperjs/core" "^2.1.1"
 
 tmp@0.0.33, tmp@^0.0.33:
   version "0.0.33"
