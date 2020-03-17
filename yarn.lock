@@ -2583,10 +2583,10 @@ aws-sdk@^2.488.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-sdk@^2.639.0:
-  version "2.639.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.639.0.tgz#ae887a179939750de240ddeb680668300256900f"
-  integrity sha512-cbH69oV0ObZ4tapbjDqu0j3I779uscQNhRaewjIJY5O5At4RULtd7us24n72FtT4HIwM9cwORzVxA9rK6DHKOA==
+aws-sdk@^2.640.0:
+  version "2.640.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.640.0.tgz#9162bbdcf9d52b61a0551f6b8c17c7ff666eee36"
+  integrity sha512-lcgCq8P+pJAag6IoIVyU1aiCNdxDIhH6GUHB7xRm01dhl/9akY8T8KE3x9ueIK+BouNWkcQEwNMk0djZzNP5sA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2615,10 +2615,10 @@ axios@^0.19.2:
   dependencies:
     follow-redirects "1.5.10"
 
-azure-maps-control@^2.0.23:
-  version "2.0.23"
-  resolved "https://registry.yarnpkg.com/azure-maps-control/-/azure-maps-control-2.0.23.tgz#a588069e048dc8043750c835a8053274cfa16e63"
-  integrity sha512-pEK9hOajeF9qpLlobfZwygp0SfCeRrVDsLcs/ZjJMx07ikI0ewS/hRGzSwwt/NWFrWcURJh+n7Vuzrm6H+L2iw==
+azure-maps-control@^2.0.25:
+  version "2.0.25"
+  resolved "https://registry.yarnpkg.com/azure-maps-control/-/azure-maps-control-2.0.25.tgz#34a901efd7920e3d7223c31bd68ce1230c50437a"
+  integrity sha512-Afdw9ph+hOfauKYFec7V8ZWmTrqWSJJYo0mKPjEnUyOrEYgO9/uKbg/lleEgz/CHbhziyhwMBwXvSTMLbtqOZg==
   dependencies:
     "@types/adal-angular" "^1.0.1"
 
