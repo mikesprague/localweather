@@ -111,7 +111,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "3.10.3",
     "webpackbar": "^4.0.0",
-    "workbox-webpack-plugin": "^5.0.0"
+    "workbox-webpack-plugin": "^5.1.1"
   },
   "babel": {
     "plugins": [
