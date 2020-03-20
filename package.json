@@ -65,8 +65,8 @@
     "register-service-worker": "^1.7.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
-    "snyk": "^1.299.0",
-    "sweetalert2": "^9.10.2",
+    "snyk": "^1.301.0",
+    "sweetalert2": "^9.10.3",
     "tippy.js": "^6.1.0"
   },
   "devDependencies": {
