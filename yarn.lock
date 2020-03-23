@@ -1307,24 +1307,24 @@
     pump "^3.0.0"
     stack-generator "^2.0.3"
 
-"@fortawesome/fontawesome-common-types@^0.2.27":
-  version "0.2.27"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/0.2.27/fontawesome-common-types-0.2.27.tgz#19706345859fc46adf3684ed01d11b40903b87e9"
-  integrity sha512-97GaByGaXDGMkzcJX7VmR/jRJd8h1mfhtA7RsxDBN61GnWE/PPCZhOdwG/8OZYktiRUF0CvFOr+VgRkJrt6TWg==
+"@fortawesome/fontawesome-common-types@^0.2.28":
+  version "0.2.28"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/0.2.28/fontawesome-common-types-0.2.28.tgz#1091bdfe63b3f139441e9cba27aa022bff97d8b2"
+  integrity sha512-gtis2/5yLdfI6n0ia0jH7NJs5i/Z/8M/ZbQL6jXQhCthEOe5Cr5NcQPhgTvFxNOtURE03/ZqUcEskdn2M+QaBg==
 
-"@fortawesome/fontawesome-svg-core@^1.2.27":
-  version "1.2.27"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/1.2.27/fontawesome-svg-core-1.2.27.tgz#e4db8e3be81a40988213507c3e3d0c158a6641a3"
-  integrity sha512-sOD3DKynocnHYpuw2sLPnTunDj7rLk91LYhi2axUYwuGe9cPCw7Bsu9EWtVdNJP+IYgTCZIbyARKXuy5K/nv+Q==
+"@fortawesome/fontawesome-svg-core@^1.2.28":
+  version "1.2.28"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/1.2.28/fontawesome-svg-core-1.2.28.tgz#e5b8c8814ef375f01f5d7c132d3c3a2f83a3abf9"
+  integrity sha512-4LeaNHWvrneoU0i8b5RTOJHKx7E+y7jYejplR7uSVB34+mp3Veg7cbKk7NBCLiI4TyoWS1wh9ZdoyLJR8wSAdg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.27"
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
 
-"@fortawesome/pro-duotone-svg-icons@^5.12.1":
-  version "5.12.1"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-duotone-svg-icons/-/5.12.1/pro-duotone-svg-icons-5.12.1.tgz#fc2c3b7eeab90a20990b3dcace2b730585907eee"
-  integrity sha512-4dcKEbHKR9log2iowQDb3/nsVyQKrSArj7IVuG5hgNJFfPpeBNXM1LJQBSFgcDLyxmO3fkthU/ZS5pe9M1rwCQ==
+"@fortawesome/pro-duotone-svg-icons@^5.13.0":
+  version "5.13.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-duotone-svg-icons/-/5.13.0/pro-duotone-svg-icons-5.13.0.tgz#d37942a4ad814da0b286f33d0115cd7d584662a8"
+  integrity sha512-9A6rH9o6k3Deh8upCQx80o39XdUeFNcpaF/IEhJtKzPFwRp5hGFYYJhMcN5Y0F5q7IfBDLcabw+SiDVdteqRfg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.27"
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
 
 "@fullhuman/postcss-purgecss@^2.1.0":
   version "2.1.0"
@@ -2889,10 +2889,10 @@ aws-sdk@^2.488.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-sdk@^2.643.0:
-  version "2.643.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.643.0.tgz#0b4cc49165a25c42ab0503580806d367d32ffb88"
-  integrity sha512-4r7VGQFqshrhXnOCVQdlatAWiK/8kmmtAtY9gbITPNpY5Is+SfIy6k/1BgrnL5H/2sYd27H+Xp8itXZoCnQeTw==
+aws-sdk@^2.644.0:
+  version "2.644.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.644.0.tgz#a7422be28b5952955db8a0e09defb5341082b252"
+  integrity sha512-FkglRU5fvWHwT2Ll0caXS/QzRNzh5ZCS5cs4pF2nP0OjdD7VNJhNtu5lOnSzvMHAtZQJMsG3k0em8PoI8vk1AQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -13076,10 +13076,10 @@ snyk-config@^2.2.1:
     lodash "^4.17.15"
     nconf "^0.10.0"
 
-snyk-docker-plugin@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-2.4.0.tgz#c89b52d87494f6112bb29442a425c8b8eb18f283"
-  integrity sha512-8wlp33/oPRhVxWT3CfpZ1t5jRswEyusDYVp/qZYFQ/zTAC3ts2gA7P5s38yE59UalzrOWVN27ir/HCviWeZu8Q==
+snyk-docker-plugin@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-2.6.1.tgz#f57984c9aec8fb6d557da2c88db9aa52a601d428"
+  integrity sha512-v3LIPILRL5faZ+qiIhF9on0rAxuFaQku3UwaiGumoTrfXywLkv7x8PJgdMnrsWUxDwB8EZFc1k2qvI6V6rTF5g==
   dependencies:
     debug "^4.1.1"
     dockerfile-ast "0.0.19"
@@ -13263,10 +13263,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.303.0:
-  version "1.303.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.303.0.tgz#1c863571c84e4cc4d36271c56f1c95988e606224"
-  integrity sha512-APoUv0SIuZfTmYQ69XBITWGxqcp4dhQzWEKWyRASczFHBtZTzeApXEQ3RD7yNpXpqcSyYuqikyowBNS4mAY6DQ==
+snyk@^1.303.1:
+  version "1.303.1"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.303.1.tgz#c54de2984277edda617ccd44732ccb4f3dc1600d"
+  integrity sha512-1lTmJyS0SFsKKsA4jvbYbxBMv+RJhHYU0jEYE9q5c3aePTu18tQayhih0m0RGsUqsVOSRFqDiLqe9PTXkMGYXw==
   dependencies:
     "@snyk/cli-interface" "2.3.2"
     "@snyk/configstore" "^3.2.0-rc1"
@@ -13293,7 +13293,7 @@ snyk@^1.303.0:
     proxy-from-env "^1.0.0"
     semver "^6.0.0"
     snyk-config "^2.2.1"
-    snyk-docker-plugin "2.4.0"
+    snyk-docker-plugin "2.6.1"
     snyk-go-plugin "1.13.0"
     snyk-gradle-plugin "3.2.5"
     snyk-module "1.9.1"
