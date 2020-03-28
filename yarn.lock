@@ -3034,10 +3034,10 @@ aws-sdk@^2.488.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-sdk@^2.647.0:
-  version "2.647.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.647.0.tgz#d1edc65f0018ef8252d142e620eef20fe699e1ef"
-  integrity sha512-yOORXYUpy2x7yantXF4rdobRPMsCUIc75Vmp9d1x397iWkQkEU9F7YEBR+QnoBoWs1DQZUV1DcSR5JJ4z43I2A==
+aws-sdk@^2.648.0:
+  version "2.648.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.648.0.tgz#6cbea887b98c3ee8316870e9eead659194e35094"
+  integrity sha512-b+PdZmCFvZBisqXEH68jO4xB30LrDHQMWrEX6MJoZaOlxPJfpOqRFUH3zsiAXF5Q2jTdjYLtS5bs3vcIwRzi3Q==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -14198,10 +14198,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^9.10.6:
-  version "9.10.6"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.10.6.tgz#4f15e6881bd2d6784d2543c8aa4b24e5015cb167"
-  integrity sha512-++Vhmr3IRG9Ufaow7ad8QckEEINmA4bSNAW5dLTdC3jx1DdjyceVAoSfVzuOQgLQ0kQXQpiQqSwhQjVEroPHRQ==
+sweetalert2@^9.10.7:
+  version "9.10.7"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.10.7.tgz#4ce1a518834cd6880283ae04b337293ffc129551"
+  integrity sha512-tHgtmu68qkapnKsCfC3097qjXb5MXWavv/aOW0JyTh+/3fe3pnCphmaCgm1hI5FNkG4OoXJ86XK9PCq5Ig2ilA==
 
 symbol-observable@^1.0.3:
   version "1.2.0"
