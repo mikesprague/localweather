@@ -94,7 +94,7 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
     "mini-css-extract-plugin": "^0.9.0",
-    "netlify-cli": "^2.41.0",
+    "netlify-cli": "^2.42.0",
     "netlify-lambda": "^1.6.3",
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
