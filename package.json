@@ -59,14 +59,14 @@
     "bulma": "^0.8.1",
     "bulma-switch": "^2.0.0",
     "cssnano": "^4.1.10",
-    "dayjs": "^1.8.23",
+    "dayjs": "^1.8.24",
     "dotenv": "^8.2.0",
     "logrocket": "^1.0.7",
     "register-service-worker": "^1.7.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
     "snyk": "^1.305.1",
-    "sweetalert2": "^9.10.9",
+    "sweetalert2": "^9.10.10",
     "tippy.js": "^6.1.1"
   },
   "devDependencies": {
