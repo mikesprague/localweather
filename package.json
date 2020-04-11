@@ -56,7 +56,7 @@
     "aws-sdk": "^2.656.0",
     "axios": "^0.19.2",
     "azure-maps-control": "^2.0.25",
-    "bulma": "^0.8.1",
+    "bulma": "^0.8.2",
     "bulma-switch": "^2.0.0",
     "cssnano": "^4.1.10",
     "dayjs": "^1.8.24",
