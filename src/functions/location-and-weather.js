@@ -1,8 +1,8 @@
-const bugsnag = require('@bugsnag/js');
+const Bugsnag = require('@bugsnag/js');
 const rp = require('request-promise');
 
 exports.handler = (event, context, callback) => {
-  const bugsnagClient = bugsnag(process.env.BUGSNAG_KEY);
+  Bugsnag.start(process.env.BUGSNAG_KEY);
   const { lat, lng } = event.queryStringParameters;
   const callbackHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -68,7 +68,7 @@ exports.handler = (event, context, callback) => {
     })
     .catch((err) => {
       console.log(err);
-      callback(bugsnagClient.notify(err), {
+      callback(Bugsnag.notify(err), {
         statusCode: 500,
         headers: callbackHeaders,
         body: JSON.stringify(err),
@@ -91,7 +91,7 @@ exports.handler = (event, context, callback) => {
     })
     .catch((err) => {
       console.log(err);
-      callback(bugsnagClient.notify(err), {
+      callback(Bugsnag.notify(err), {
         statusCode: 500,
         headers: callbackHeaders,
         body: JSON.stringify(err),
@@ -108,7 +108,7 @@ exports.handler = (event, context, callback) => {
     });
   }).catch((err) => {
     console.log(err);
-    callback(bugsnagClient.notify(err), {
+    callback(Bugsnag.notify(err), {
       statusCode: 500,
       headers: callbackHeaders,
       body: JSON.stringify(err),

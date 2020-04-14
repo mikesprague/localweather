@@ -1,4 +1,4 @@
-import bugsnag from '@bugsnag/js';
+import Bugsnag from '@bugsnag/js';
 import LogRocket from 'logrocket';
 import { register } from 'register-service-worker';
 import {
@@ -24,12 +24,12 @@ const releaseStage = process.env.NODE_ENV || 'production';
 
 LogRocket.init('skxlwh/localweatherio');
 
-bugsnag.beforeNotify = (data) => {
+Bugsnag.beforeNotify = (data) => {
   data.metaData.sessionURL = LogRocket.sessionURL;
   return data;
 };
 
-window.bugsnagClient = bugsnag({
+window.bugsnagClient = Bugsnag.start({
   apiKey: 'c9beb7c090034128a89c8e58f261e972',
   appVersion: `${defaults.versionString}`,
   releaseStage,
