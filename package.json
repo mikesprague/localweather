@@ -52,7 +52,7 @@
     "@fortawesome/pro-duotone-svg-icons": "^5.13.0",
     "@sweetalert2/theme-dark": "^3.1.4",
     "autoprefixer": "^9.7.6",
-    "aws-sdk": "^2.670.0",
+    "aws-sdk": "^2.671.0",
     "axios": "^0.19.2",
     "azure-maps-control": "^2.0.25",
     "bulma": "^0.8.2",
@@ -64,7 +64,7 @@
     "register-service-worker": "^1.7.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
-    "snyk": "^1.319.0",
+    "snyk": "^1.319.1",
     "sweetalert2": "^9.10.12",
     "tippy.js": "^6.2.3"
   },
