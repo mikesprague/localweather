@@ -150,3 +150,5 @@ patch:
         patched: '2020-05-01T05:32:02.787Z'
     - snyk > snyk-docker-plugin > @snyk/rpm-parser > eslint > table > lodash:
         patched: '2020-05-01T05:32:02.787Z'
+    - snyk > snyk-docker-plugin > snyk-nodejs-lockfile-parser > snyk-config > lodash:
+        patched: '2020-05-12T11:59:05.925Z'
