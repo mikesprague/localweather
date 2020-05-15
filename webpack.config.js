@@ -94,28 +94,54 @@ const webpackPlugins = [
     clientsClaim: true,
     skipWaiting: true,
   }),
-  new CopyWebpackPlugin([{
-    from: './src/manifest.json',
-    to: './',
-    force: true,
-  }]),
-  new CopyWebpackPlugin([{
-    from: './src/_redirects',
-    to: './',
-    force: true,
-  }]),
-  new CopyWebpackPlugin([{
-    from: './src/images/**/*',
-    to: './images',
-    flatten: true,
-    force: true,
-  }]),
-  new CopyWebpackPlugin([{
-    from: './src/fonts/*.woff2',
-    to: './fonts',
-    flatten: true,
-    force: true,
-  }]),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './src/manifest.json',
+        to: './',
+        force: true,
+      },
+    ],
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './src/*.html',
+        to: './',
+        force: true,
+        flatten: true,
+      },
+    ],
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './src/_redirects',
+        to: './',
+        force: true,
+      },
+    ],
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './src/images/**/*',
+        to: './images',
+        flatten: true,
+        force: true,
+      },
+    ],
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './src/fonts/*.woff2',
+        to: './fonts',
+        flatten: true,
+        force: true,
+      },
+    ],
+  }),
 ];
 
 if (mode === 'production') {

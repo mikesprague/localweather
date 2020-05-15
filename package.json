@@ -32,7 +32,7 @@
     "lambda:build": "netlify-lambda build ./src/functions",
     "lambda:serve": "netlify-lambda serve ./src/functions --config ./webpack.functions.js",
     "snyk-protect": "snyk protect",
-    "prepublish": "yarn run snyk-protect && yarn snyk-protect"
+    "prepublish": "yarn snyk-protect"
   },
   "repository": {
     "url": "https://github.com/mikesprague/localweather-io"
