@@ -92,7 +92,6 @@ const webpackPlugins = [
   }),
   new WorkboxPlugin.GenerateSW({
     cleanupOutdatedCaches: true,
-    exclude: [/_redirects/, /\.map$/, /^manifest.*\.js(?:on)?$/],
     clientsClaim: true,
     skipWaiting: true,
   }),
@@ -112,15 +111,6 @@ const webpackPlugins = [
         to: './',
         force: true,
         flatten: true,
-      },
-    ],
-  }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: './src/_redirects',
-        to: './',
-        force: true,
       },
     ],
   }),

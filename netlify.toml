@@ -9,6 +9,7 @@
   from = "https://localweather-io.netlify.com/*"
   to = "https://localweather.io/:splat"
   status = 301
+  force = true
 
 [[headers]]
   for = "/*"
