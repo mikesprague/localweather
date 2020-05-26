@@ -92,7 +92,7 @@ const webpackPlugins = [
   }),
   new WorkboxPlugin.GenerateSW({
     cleanupOutdatedCaches: true,
-    exclude: [/\._redirects$/, /\.map$/, /^manifest.*\.js(?:on)?$/],
+    exclude: [/_redirects/, /\.map$/, /^manifest.*\.js(?:on)?$/],
     clientsClaim: true,
     skipWaiting: true,
   }),
