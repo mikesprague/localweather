@@ -91,6 +91,8 @@ const webpackPlugins = [
     versionString: variables.versionString,
   }),
   new WorkboxPlugin.GenerateSW({
+    cleanupOutdatedCaches: true,
+    exclude: [/\._redirects$/, /\.map$/, /^manifest.*\.js(?:on)?$/],
     clientsClaim: true,
     skipWaiting: true,
   }),
