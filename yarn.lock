@@ -2185,7 +2185,7 @@
     source-map-support "^0.5.19"
     tslib "^1.11.1"
 
-"@snyk/dep-graph@^1.18.2":
+"@snyk/dep-graph@^1.17.0", "@snyk/dep-graph@^1.18.2":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@snyk/dep-graph/-/dep-graph-1.19.0.tgz#dfb2699520225e715083f6dd590bb91b55e99ba1"
   integrity sha512-/0phOICMk4hkX2KtZgi+4KNd5G9oYDIlxQDQk+ui2xl4gonPvK6Q5MFzHP7Xet1YY/XoU33ox41i+IO48qZ+zQ==
@@ -3250,10 +3250,25 @@ autoprefixer@^9.8.0:
     postcss "^7.0.30"
     postcss-value-parser "^4.1.0"
 
-aws-sdk@^2.488.0, aws-sdk@^2.683.0:
+aws-sdk@^2.488.0:
   version "2.683.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.683.0.tgz#c374374a443790a9520b1b00a3f0d42085c42891"
   integrity sha512-mi1175pJMbQhCWhBEQ5ccQ3SDE+SJzbapuAQtcb7tdLLV7dPKf4zQXhpqK1uG0dysm8NhsNtgxwA2diYOKWlTg==
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.13"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
+    xml2js "0.4.19"
+
+aws-sdk@^2.685.0:
+  version "2.685.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.685.0.tgz#ba5add21e98cc785b3c05ceb9f3fcb8ab046aa8a"
+  integrity sha512-mAOj7b4PuXRxIZkNdSkBWZ28lS2wYUY7O9u33nH9a7BawlttMNbxOgE/wDCPMrTLfj+RLQx0jvoIYj8BKCTRFw==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -8264,7 +8279,7 @@ ip@1.1.5, ip@^1.1.0, ip@^1.1.5:
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
   integrity sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=
 
-ipaddr.js@1.9.1, ipaddr.js@^1.9.0:
+ipaddr.js@1.9.1, ipaddr.js@^1.9.0, ipaddr.js@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.9.1.tgz#bff38543eeb8984825079ff3a2a8e6cbd46781b3"
   integrity sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==
@@ -10125,7 +10140,7 @@ nconf@^0.10.0:
     secure-keys "^1.0.0"
     yargs "^3.19.0"
 
-needle@^2.2.4, needle@^2.3.3, needle@^2.4.0:
+needle@^2.3.3, needle@^2.4.0, needle@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/needle/-/needle-2.5.0.tgz#e6fc4b3cc6c25caed7554bd613a5cf0bac8c31c0"
   integrity sha512-o/qITSDR0JCyCKEQ1/1bnUXMmznxabbwi/Y4WwJElf+evwJNFNwIDMCCt5IigFVxgeGBJESLohGtIS9gEzo1fA==
@@ -13395,17 +13410,18 @@ snyk-go-plugin@1.14.0:
     tmp "0.1.0"
     tslib "^1.10.0"
 
-snyk-gradle-plugin@3.2.7:
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.2.7.tgz#3a4f37afeac00407d7051891a0e3ee4d69f6866f"
-  integrity sha512-fBgQpRwfuHGuPvYGEjgNBtuwnkNAV9sv17lG+eWdQO3ntkAKnt1RyzQydAdffK2e8339XM6Mg/1EPYuIGIY3TA==
+snyk-gradle-plugin@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.3.3.tgz#77743d8fcc6a3414641f8fd2d2de68ecdc4c1067"
+  integrity sha512-MS1zdaSUtVlCmHW25qyRMPeSNNTnTxrwG1qWq3t1As28BmiFwdEyUZrwz5urMCWyCQ1LhK38x0fbD1yE68dSuA==
   dependencies:
     "@snyk/cli-interface" "2.3.2"
+    "@snyk/dep-graph" "^1.17.0"
     "@types/debug" "^4.1.4"
-    chalk "^2.4.2"
+    chalk "^3.0.0"
     debug "^4.1.1"
-    tmp "0.0.33"
-    tslib "^1.9.3"
+    tmp "0.2.1"
+    tslib "^2.0.0"
 
 snyk-module@3.1.0:
   version "3.1.0"
@@ -13571,10 +13587,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.329.0:
-  version "1.329.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.329.0.tgz#76304c54cd69abd3a5237ba1ad73521caff97507"
-  integrity sha512-eDHfnLYgxVSuAzIJPBBhPqRN+6c5eWsQA+ff67OR9Qn4JUgI3MSuyxPJ3o6JPoyE/qYZfKhdFnyqBBz1eUu3oQ==
+snyk@^1.330.2:
+  version "1.330.2"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.330.2.tgz#384142bc53ea8760113a39f75fbb08d214b3823b"
+  integrity sha512-2iElwCTVLscX6qXu3dXva8EJD/LNyz7Q8atnvAWp7TC7MJow6MDTNwptmpKaMdod18p3z7yF6JKb/etTikXxog==
   dependencies:
     "@snyk/cli-interface" "2.6.0"
     "@snyk/dep-graph" "1.18.3"
@@ -13592,7 +13608,8 @@ snyk@^1.329.0:
     debug "^3.1.0"
     diff "^4.0.1"
     glob "^7.1.3"
-    needle "^2.2.4"
+    ipaddr.js "^1.9.1"
+    needle "^2.5.0"
     open "^7.0.3"
     os-name "^3.0.0"
     proxy-agent "^3.1.1"
@@ -13601,7 +13618,7 @@ snyk@^1.329.0:
     snyk-config "3.1.0"
     snyk-docker-plugin "3.5.2"
     snyk-go-plugin "1.14.0"
-    snyk-gradle-plugin "3.2.7"
+    snyk-gradle-plugin "^3.3.3"
     snyk-module "3.1.0"
     snyk-mvn-plugin "2.15.2"
     snyk-nodejs-lockfile-parser "1.22.0"
@@ -14609,6 +14626,13 @@ tmp@0.1.0, tmp@^0.1.0:
   integrity sha512-J7Z2K08jbGcdA1kkQpJSqLF6T0tdQqpR2pnSUXsIchbPdTI9v3e85cLW0d6WDhwuAleOV71j2xWs8qMPfK7nKw==
   dependencies:
     rimraf "^2.6.3"
+
+tmp@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.2.1.tgz#8457fc3037dcf4719c251367a1af6500ee1ccf14"
+  integrity sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ==
+  dependencies:
+    rimraf "^3.0.0"
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
