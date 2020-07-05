@@ -57,15 +57,15 @@
     "bulma": "^0.9.0",
     "bulma-switch": "^2.0.0",
     "cssnano": "^4.1.10",
-    "dayjs": "^1.8.28",
+    "dayjs": "^1.8.29",
     "dotenv": "^8.2.0",
-    "logrocket": "^1.0.8",
+    "logrocket": "^1.0.9",
     "register-service-worker": "^1.7.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
-    "snyk": "^1.348.1",
+    "snyk": "^1.360.0",
     "sweetalert2": "^9.15.2",
-    "tippy.js": "^6.2.3"
+    "tippy.js": "^6.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
