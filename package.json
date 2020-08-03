@@ -51,7 +51,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/pro-duotone-svg-icons": "^5.14.0",
     "@sweetalert2/theme-dark": "^3.2.0",
-    "autoprefixer": "^9.8.5",
+    "autoprefixer": "^9.8.6",
     "axios": "^0.19.2",
     "azure-maps-control": "^2.0.27",
     "bulma": "^0.9.0",
@@ -63,7 +63,7 @@
     "register-service-worker": "^1.7.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
-    "snyk": "^1.369.1",
+    "snyk": "^1.369.2",
     "sweetalert2": "^9.17.1",
     "tippy.js": "^6.2.6"
   },
