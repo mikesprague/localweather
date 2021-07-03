@@ -1,16 +1,11 @@
 const canonical = 'https://localweather.io';
 const path = require('path');
 const WorkboxPlugin = require('workbox-webpack-plugin');
-const WebPackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const purgecss = require('@fullhuman/postcss-purgecss');
-const cssnano = require('cssnano');
-const autoprefixer = require('autoprefixer');
 const variables = require('./src/js/modules/defaults');
 
 const mode = process.env.NODE_ENV;
@@ -37,21 +32,6 @@ const webpackRules = [
       },
       {
         loader: 'postcss-loader',
-        options: {
-          sourceMap: true,
-          plugins() {
-            return [
-              autoprefixer(),
-              cssnano({ preset: 'default' }),
-              purgecss({
-                content: ['./src/**/*.html', './src/js/**/*.js'],
-                fontFace: false,
-                whitelistPatterns: [/swal2/, /tippy/, /clear/, /clear-night/, /cloudy/, /cloudy-night/, /loading/, /rainy/, /rainy-night/, /snowy/, /snowy-night/, /switch/, /field/],
-                whitelistPatternsChildren: [/swal2/, /tippy/, /switch/, /field/],
-              }),
-            ];
-          },
-        },
       },
       {
         loader: 'sass-loader',
@@ -71,7 +51,6 @@ const webpackRules = [
 ];
 
 const webpackPlugins = [
-  new WebPackBar(),
   new MiniCssExtractPlugin({
     filename: './css/styles.css',
     chunkFilename: './css/[id].css',
@@ -93,33 +72,32 @@ const webpackPlugins = [
   new WorkboxPlugin.GenerateSW({
     cleanupOutdatedCaches: true,
     clientsClaim: true,
+    exclude: [/\._redirects$/, /\.map$/, /^manifest.*\.js(?:on)?$/],
     skipWaiting: true,
   }),
   new CopyWebpackPlugin({
     patterns: [
       {
         from: './src/manifest.json',
-        to: './',
+        to: './[name][ext]',
         force: true,
       },
     ],
   }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: './src/*.html',
-        to: './',
-        force: true,
-        flatten: true,
-      },
-    ],
-  }),
+  // new CopyWebpackPlugin({
+  //   patterns: [
+  //     {
+  //       from: './src/*.html',
+  //       to: './[name][ext]',
+  //       force: true,
+  //     },
+  //   ],
+  // }),
   new CopyWebpackPlugin({
     patterns: [
       {
         from: './src/images/**/*',
-        to: './images',
-        flatten: true,
+        to: './images/[name][ext]',
         force: true,
       },
     ],
@@ -128,8 +106,7 @@ const webpackPlugins = [
     patterns: [
       {
         from: './src/fonts/*.woff2',
-        to: './fonts',
-        flatten: true,
+        to: './fonts/[name][ext]',
         force: true,
       },
     ],
@@ -137,14 +114,8 @@ const webpackPlugins = [
 ];
 
 if (mode === 'production') {
-  webpackPlugins.push(
-    new CompressionPlugin({
-      filename: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
+   webpackPlugins.push(
+    new CompressionPlugin(),
   );
 }
 
@@ -153,7 +124,11 @@ module.exports = {
     './src/js/app.js',
   ],
   devServer: {
+    contentBase: path.join(__dirname, './'),
+    open: false,
     port: 5500,
+    publicPath: 'http://localhost:5500/',
+    stats: 'minimal',
   },
   devtool: 'source-map',
   output: {
@@ -166,9 +141,6 @@ module.exports = {
     rules: webpackRules,
   },
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
     minimizer: [
       new TerserPlugin({
         parallel: true,
