@@ -1,7 +1,7 @@
 const axios = require('axios');
 const Bugsnag = require('@bugsnag/js');
 
-Bugsnag.start({ apiKey: process.env.BUGSNAG_API_KEY });
+Bugsnag.start({ apiKey: process.env.BUGSNAG_KEY });
 
 exports.handler = async (event, context, callback) => {
   const { lat, lng, time, healthcheck } = event.queryStringParameters || null;
@@ -15,7 +15,7 @@ exports.handler = async (event, context, callback) => {
     return {
       headers: callbackHeaders,
       statusCode: 200,
-      body:  JSON.stringify('API is up and running'),
+      body: JSON.stringify('API is up and running'),
     };
   }
 
@@ -23,26 +23,26 @@ exports.handler = async (event, context, callback) => {
     return {
       headers: callbackHeaders,
       statusCode: 400,
-      body:  JSON.stringify('Missing "lat" parameter'),
+      body: JSON.stringify('Missing "lat" parameter'),
     };
   }
   if (!lng) {
     return {
       headers: callbackHeaders,
       statusCode: 400,
-      body:  JSON.stringify('Missing "lng" parameter'),
+      body: JSON.stringify('Missing "lng" parameter'),
     };
   }
 
   const {
     GOOGLE_MAPS_API_KEY,
-    DARK_SKY_API_KEY,
+    DARK_SKY_KEY,
     // OPEN_WEATHERMAP_API_KEI,
   } = process.env;
 
   const units = event.queryStringParameters.units || 'auto';
   const geocodeApiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${GOOGLE_MAPS_API_KEY}`;
-  const weatherApiUrl = `https://api.darksky.net/forecast/${DARK_SKY_API_KEY}/${lat},${lng}${time ? ',' + time : ''}/?units=${units}`;
+  const weatherApiUrl = `https://api.darksky.net/forecast/${DARK_SKY_KEY}/${lat},${lng}${time ? ',' + time : ''}/?units=${units}`;
   // const openWeatherMapApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&&units=${units}&appid=${OPEN_WEATHERMAP_API_KEI}`;
 
   const geocodePromise = await axios.get(geocodeApiUrl)

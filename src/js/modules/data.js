@@ -10,10 +10,10 @@ import { apiUrl } from './helpers';
 
 const setLocalStorageData = ((data) => {
   setCacheTime();
-  setData(defaults.weatherDataKey, data[1].weather);
-  setData(defaults.locationDataKey, data[0].location);
-  setData(defaults.locationNameDataKey, data[0].location.locationName);
-  setData(defaults.locationAddressDataKey, data[0].location.formattedAddress);
+  setData(defaults.weatherDataKey, data.weather);
+  setData(defaults.locationDataKey, data.location);
+  setData(defaults.locationNameDataKey, data.location.locationName);
+  setData(defaults.locationAddressDataKey, data.location.formattedAddress);
   setData(defaults.skipGeolocationCheckKey, true);
 });
 
@@ -25,8 +25,9 @@ export async function getWeatherData(lat, lng) {
   const url = `${apiUrl()}/location-and-weather/?lat=${lat}&lng=${lng}`;
   const weatherData = await axios.get(url)
     .then((response) => {
+      console.log(response.data);
       setLocalStorageData(response.data);
-      return response.data[1].weather;
+      return response.data.weather;
     });
   return weatherData;
 }

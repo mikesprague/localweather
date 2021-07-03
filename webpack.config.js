@@ -1,6 +1,7 @@
 const canonical = 'https://localweather.io';
 const path = require('path');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -114,7 +115,7 @@ const webpackPlugins = [
 ];
 
 if (mode === 'production') {
-   webpackPlugins.push(
+  webpackPlugins.push(
     new CompressionPlugin(),
   );
 }
@@ -144,9 +145,8 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         parallel: true,
-        sourceMap: true,
       }),
-      new OptimizeCSSAssetsPlugin(),
+      new CssMinimizerPlugin(),
     ],
   },
   plugins: webpackPlugins,

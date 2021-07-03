@@ -6,14 +6,12 @@
   "engines": {
     "node": ">= 12.x",
     "npm": ">= 6.x",
-    "yarn": ">= 1.x"
+    "yarn": ">= 1.22.x"
   },
   "scripts": {
-    "build": "yarn webpack",
+    "build": "yarn webpack && yarn lambda:build",
     "prebuild": "yarn clean",
-    "postbuild": "yarn lambda:build",
-    "check-env": "node -e 'console.log(process.env)' | grep npm",
-    "clean": "rm -rf ./public > /dev/null 2>&1",
+    "clean": "rm -rf ./public && rm -rf ./lambda",
     "serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "start": "yarn serve",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,13 +20,10 @@
     "ver:minor": "yarn ver:bump --minor && yarn ver:tag && yarn ver:publish",
     "ver:major": "yarn ver:bump --major && yarn ver:tag && yarn ver:publish",
     "ver:publish": "git push --all && git push --tags",
-    "ver:tag": "APP_VERSION=$(node -p \"require('./package.json').version\") && git add package.json && git commit -s -m \":bookmark: Bump version v$APP_VERSION\" && git tag $APP_VERSION -s -m \"Bump version v$APP_VERSION\"",
-    "webpack": "webpack --config ./webpack.config.js -p --colors --display minimal",
-    "webpack:dev": "webpack --config ./webpack.config.js -d --colors --display minimal",
-    "webpack:serve": "webpack-dev-server",
-    "dev:build": "yarn dev:clean && yarn webpack:dev && yarn lambda:build",
-    "dev:clean": "rm -rf ./build > /dev/null 2>&1",
-    "dev:serve": "concurrently 'yarn webpack:serve' 'yarn lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
+    "ver:tag": "APP_VERSION=$(node -e 'console.log(process.env.npm_package_version)') && git add package.json && git commit -s -m \":bookmark: Bump version v$APP_VERSION\" && git tag $APP_VERSION -s -m \"Bump version v$APP_VERSION\"",
+    "webpack": "cross-env NODE_ENV=production webpack --color",
+    "webpack:dev": "cross-env NODE_ENV=development webpack --color",
+    "webpack:serve": "cross-env NODE_ENV=development webpack serve",
     "lambda:build": "netlify-lambda build ./src/functions",
     "lambda:serve": "netlify-lambda serve ./src/functions --config ./webpack.functions.js",
     "snyk-protect": "snyk protect",
@@ -55,6 +50,7 @@
     "axios": "^0.21.1",
     "bulma": "^0.9.3",
     "bulma-switch": "^2.0.0",
+    "cross-env": "^7.0.3",
     "cssnano": "^5.0.6",
     "dayjs": "^1.10.5",
     "dotenv": "^10.0.0",
@@ -108,7 +104,6 @@
     "webpack-bugsnag-plugins": "^1.7.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "3.11.2",
-    "webpackbar": "^4.0.0",
     "workbox-webpack-plugin": "^6.1.5"
   },
   "babel": {
