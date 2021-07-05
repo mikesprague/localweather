@@ -1108,20 +1108,20 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^12.25.0":
-  version "12.26.0"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-12.26.0.tgz#6e2ef8aee1396aa4b744f5410d1f2ffb69267f70"
-  integrity sha512-wRBOxaZXJ0OCzg2YVp+SsKIE6fmLzwk68X7I8X6/jEL7np4Rq1H0BornxSGu9ewbCJseCl3zGKgd6aiBR4E8Pg==
+"@netlify/build@^13.0.0":
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-13.1.0.tgz#e002790c996da6ca9cbd6a7cbda6a1ec24bc49c8"
+  integrity sha512-MtfCGOzmb+wp+7vMF329GRc7Dx+qUpEvoPFursL2hfUNSOT4l07a9fK4xLpavEEQxSr+abX2h6yNM8xs9NO2uw==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^1.0.7"
-    "@netlify/config" "^9.0.0"
+    "@netlify/config" "^10.0.0"
     "@netlify/functions-utils" "^1.3.13"
     "@netlify/git-utils" "^1.0.8"
-    "@netlify/plugin-edge-handlers" "^1.11.19"
+    "@netlify/plugin-edge-handlers" "^1.11.20"
     "@netlify/plugins-list" "^2.18.1"
     "@netlify/run-utils" "^1.0.6"
-    "@netlify/zip-it-and-ship-it" "^4.8.0"
+    "@netlify/zip-it-and-ship-it" "^4.9.0"
     "@sindresorhus/slugify" "^1.1.0"
     "@ungap/from-entries" "^0.2.1"
     ansi-escapes "^4.3.2"
@@ -1183,10 +1183,10 @@
     path-exists "^4.0.0"
     readdirp "^3.4.0"
 
-"@netlify/config@^9.0.0", "@netlify/config@^9.5.0":
-  version "9.5.0"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-9.5.0.tgz#874e7359a084969bb6bdf6d8ea5208a13ce7e5fa"
-  integrity sha512-Kt5xukNclUtraXVX1xnrseMwvIA1WnFjR6i4GuwgvM2MreS6zb5LIV5XGJ/vDCEpH9uxI609gj2iu9FNy543rA==
+"@netlify/config@^10.0.0":
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-10.2.0.tgz#d1c5181d411423365464bb87d0d6c10b34208ea7"
+  integrity sha512-60+BYFg7NkJmF6KaxYOWHPb/jOmhvglcfhzePtHw2PUga4wI4K3P7oSakuzk6ZRyMP00fqcm56G7v4NxqNjKmA==
   dependencies:
     "@ungap/from-entries" "^0.2.1"
     array-flat-polyfill "^1.0.1"
@@ -1258,10 +1258,10 @@
   resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-2.5.0.tgz#d0d947ec21a0a8e8dd46f542c60b6cb25609b0f2"
   integrity sha512-KiXfYPO/X24p7EYQjcjBTizoyfY3U8zPv68Rte0EtayW2ZSqIslLLpNNd2gteqdh0Q83mzSiESdhlQHd0Ckjjg==
 
-"@netlify/plugin-edge-handlers@^1.11.19":
-  version "1.11.19"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-edge-handlers/-/plugin-edge-handlers-1.11.19.tgz#cad2547190e453c6fd6f1aa01c52cae7eeba97ef"
-  integrity sha512-SAsVNIxF0asduPXbsr3wbyAB7lPZQxhG90EeOu0/Fo+BLhpO4g+6eH13I60qJpWCI/ucXXqSrUw8y6Oy5wpY0g==
+"@netlify/plugin-edge-handlers@^1.11.20":
+  version "1.11.20"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-edge-handlers/-/plugin-edge-handlers-1.11.20.tgz#e7372940b1a2c1be77ad7b29207b65bc45acdacc"
+  integrity sha512-i9hGh29dAU5uFJ51v3Aah9wJC88P/uE2LVSg8JRcK+ZPTnu82kdMkq9qrVSYXfqLBGm8w54bRT0LFUv5IDXjVg==
   dependencies:
     "@babel/core" "^7.11.4"
     "@babel/preset-env" "^7.11.5"
@@ -1324,10 +1324,78 @@
   dependencies:
     execa "^3.4.0"
 
-"@netlify/zip-it-and-ship-it@4.8.0", "@netlify/zip-it-and-ship-it@^4.8.0":
+"@netlify/zip-it-and-ship-it@4.9.0":
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-4.9.0.tgz#c00c4e26d58b01255e6b3ef3dc9f4838c93f67e4"
+  integrity sha512-tDXapF28heCCa6IThKn69aabP1t0SSCsX0DHqLk7yPEm+H52QM7Qrl5MmZZCkRsGA8pzuMROoZUGFvw8dBqrrQ==
+  dependencies:
+    "@netlify/esbuild" "^0.13.6"
+    acorn "^8.4.0"
+    archiver "^5.3.0"
+    array-flat-polyfill "^1.0.1"
+    common-path-prefix "^3.0.0"
+    cp-file "^9.0.0"
+    del "^6.0.0"
+    elf-cam "^0.1.1"
+    end-of-stream "^1.4.4"
+    filter-obj "^2.0.1"
+    find-up "^5.0.0"
+    glob "^7.1.6"
+    junk "^3.1.0"
+    locate-path "^6.0.0"
+    make-dir "^3.1.0"
+    merge-options "^3.0.4"
+    minimatch "^3.0.4"
+    p-map "^4.0.0"
+    path-exists "^4.0.0"
+    pkg-dir "^5.0.0"
+    precinct "^8.0.0"
+    read-package-json-fast "^2.0.2"
+    require-package-name "^2.0.1"
+    resolve "^2.0.0-next.1"
+    semver "^7.0.0"
+    tmp-promise "^3.0.2"
+    unixify "^1.0.0"
+    yargs "^16.0.0"
+
+"@netlify/zip-it-and-ship-it@^4.8.0":
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-4.8.0.tgz#e468ac5b4f3c5f8491fc55aac6e1a5fa303b6a3a"
   integrity sha512-Dq0hBeX2LW62eny22d+isU4SvEilT/4eusjP1EFA0XYaDCgQ9rFJ50+NySXfxxu20qbfZmt34XKiby+tO7EcRA==
+  dependencies:
+    "@netlify/esbuild" "^0.13.6"
+    acorn "^8.4.0"
+    archiver "^5.3.0"
+    array-flat-polyfill "^1.0.1"
+    common-path-prefix "^3.0.0"
+    cp-file "^9.0.0"
+    del "^6.0.0"
+    elf-cam "^0.1.1"
+    end-of-stream "^1.4.4"
+    filter-obj "^2.0.1"
+    find-up "^5.0.0"
+    glob "^7.1.6"
+    junk "^3.1.0"
+    locate-path "^6.0.0"
+    make-dir "^3.1.0"
+    merge-options "^3.0.4"
+    minimatch "^3.0.4"
+    p-map "^4.0.0"
+    path-exists "^4.0.0"
+    pkg-dir "^5.0.0"
+    precinct "^8.0.0"
+    read-package-json-fast "^2.0.2"
+    require-package-name "^2.0.1"
+    resolve "^2.0.0-next.1"
+    semver "^7.0.0"
+    tmp-promise "^3.0.2"
+    unixify "^1.0.0"
+    yargs "^16.0.0"
+
+"@netlify/zip-it-and-ship-it@^4.9.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-4.11.0.tgz#f600ee04601cee59c68f55f5e0411cd8cac73875"
+  integrity sha512-QTiBzxqP44W0FrSuiRUni+ryi/YzLrkXaIRO5Al6QESEe+Ut8LVxuTClzmU86+hsSUnT0X0kDly19EdC/KwoCQ==
   dependencies:
     "@netlify/esbuild" "^0.13.6"
     acorn "^8.4.0"
@@ -10481,10 +10549,10 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-mini-css-extract-plugin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-2.0.0.tgz#e3492a2dcd218a6103e4dec5e3a88b55157012ea"
-  integrity sha512-LzJaninAMkfVAUDldZ4lUidAeS8GD0w8tSUbZLscYXWmdTOjYuEoiIhwKvwHX6+42D2cRAl35pA9DHtvAv71JQ==
+mini-css-extract-plugin@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-2.1.0.tgz#4aa6558b527ad4c168fee4a20b6092ebe9f98309"
+  integrity sha512-SV1GgjMcfqy6hW07rAniUbQE4qS3inh3v4rZEUySkPRWy3vMbS3jUCjMOvNI4lUnDlQYJEmuUqKktTCNY5koFQ==
   dependencies:
     schema-utils "^3.0.0"
 
@@ -10767,18 +10835,18 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@^4.0.6:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.0.6.tgz#a7c5774396e187126780163b1f63b12b8e1dee76"
-  integrity sha512-8w8ZsZomSgUO0K2Q331OZWD+hrKdbUj5Q4IZCsbwxLV0Olq1E+V+6vtxFHx7jVfLzmQPq7QY8rVaBnlOGHBOvw==
+netlify-cli@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.1.0.tgz#a1e6169a634a9d36a2f817d3b40eb9060077ae9a"
+  integrity sha512-9r7oDZ/HH4zuIUdyK9lArc7qCe81l5KJGqaaWvetD1tGgsWIMRSxYPXDVhNE1V187SnOCwuHjh0KAhDDOjiBIA==
   dependencies:
-    "@netlify/build" "^12.25.0"
-    "@netlify/config" "^9.5.0"
+    "@netlify/build" "^13.0.0"
+    "@netlify/config" "^10.0.0"
     "@netlify/framework-info" "^5.5.0"
-    "@netlify/plugin-edge-handlers" "^1.11.19"
+    "@netlify/plugin-edge-handlers" "^1.11.20"
     "@netlify/plugins-list" "^2.18.1"
     "@netlify/routing-local-proxy" "^0.30.2"
-    "@netlify/zip-it-and-ship-it" "4.8.0"
+    "@netlify/zip-it-and-ship-it" "4.9.0"
     "@oclif/command" "^1.6.1"
     "@oclif/config" "^1.15.1"
     "@oclif/errors" "^1.3.4"
@@ -16321,10 +16389,10 @@ webpack@^4.43.0:
     watchpack "^1.7.4"
     webpack-sources "^1.4.1"
 
-webpack@^5.42.0:
-  version "5.42.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.42.0.tgz#39aadbce84ad2cebf86cc5f88a2c53db65cbddfb"
-  integrity sha512-Ln8HL0F831t1x/yPB/qZEUVmZM4w9BnHZ1EQD/sAUHv8m22hthoPniWTXEzFMh/Sf84mhrahut22TX5KxWGuyQ==
+webpack@^5.42.1:
+  version "5.42.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.42.1.tgz#3347d0d93e79fe70bf62e51981024c80b9c8c3df"
+  integrity sha512-msikozzXrG2Hdx+dElq0fyNvxPFsaM2dKLc/l+xkMmhO/1qwVJ9K9gY+fi/49MYWcpSP7alnK5Q78Evrd1LiqQ==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.48"
