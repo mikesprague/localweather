@@ -10767,10 +10767,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.0.5.tgz#e9fc657917505c50818773b8a9f52a2b1ea3f4b3"
-  integrity sha512-p1wJwMMWHM/Av5/Bsabtr0UTX4lTJVZg7Hz+G9kbA/n2wdKoWAj5P5B+shDRGRBhaFDbCiHf36baKtLJWP4SiQ==
+netlify-cli@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.0.6.tgz#a7c5774396e187126780163b1f63b12b8e1dee76"
+  integrity sha512-8w8ZsZomSgUO0K2Q331OZWD+hrKdbUj5Q4IZCsbwxLV0Olq1E+V+6vtxFHx7jVfLzmQPq7QY8rVaBnlOGHBOvw==
   dependencies:
     "@netlify/build" "^12.25.0"
     "@netlify/config" "^9.5.0"
@@ -10885,10 +10885,10 @@ netlify-cli@^4.0.5:
     wrap-ansi "^7.0.0"
     write-file-atomic "^3.0.0"
 
-netlify-lambda@^2.0.10:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-2.0.10.tgz#11efebe8aebce1a0f44494bc62c9988464b6dd36"
-  integrity sha512-iiEy2zhMft8B6BxQheH3whL7GtjQSuzydbltTtryTpQOTprYFfeeUfS+7WsZ0jwHXjGpmCmlC0fYRBghIuip+Q==
+netlify-lambda@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-2.0.11.tgz#dec1f0f6b3f9968e50a58dcc59e5408e91b265b8"
+  integrity sha512-0w5lgkB/kzpyp5T/Q7Yw/FEhZz0q37hlqzP0cWKgSxHUuhzouS5hyD+iBAMDOdtE+fsNVlWP4DQl2EXxRUtUWQ==
   dependencies:
     "@babel/core" "^7.10.4"
     "@babel/plugin-proposal-class-properties" "^7.10.4"
