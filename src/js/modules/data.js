@@ -25,7 +25,7 @@ export async function getWeatherData(lat, lng) {
   const url = `${apiUrl()}/location-and-weather/?lat=${lat}&lng=${lng}`;
   const weatherData = await axios.get(url)
     .then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       setLocalStorageData(response.data);
       return response.data.weather;
     });
