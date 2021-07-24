@@ -2354,10 +2354,10 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
-"@sweetalert2/theme-dark@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.1.tgz#34fcf821b3d9a55f4e82b45bc3a742fd54cdc26d"
-  integrity sha512-yQqOIqQvmvH+zoQ2iyN3T4Li0poBFimvE+gHro1llndvXdq2t5X8uVs6qPIP/869rWleTW2uxD2dlFzowcy2Tw==
+"@sweetalert2/theme-dark@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.2.tgz#dc1753fe9272a5d9ad276b15f09513e3d332ab87"
+  integrity sha512-OboaclPhXLz8LPofjBlaxCq8Bs/N9IR7l4dleFlj7czVDd3zfw/ghU92cJb//AkLKmsdt849xoycSnShV41LdA==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -15514,10 +15514,10 @@ svgo@^2.3.0:
     csso "^4.2.0"
     stable "^0.1.8"
 
-sweetalert2@^11.0.19:
-  version "11.0.19"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.0.19.tgz#b1c50b87b4f3227dcd62b7396bca36f7bbce5041"
-  integrity sha512-fJkiIhvOjDux8Ns08uWNdWPcLql5tpMpiuc78sYLjY9zTBvkj7rvmPHHckdkAZLKVGUmOfy8ckDZ1ElS0lLpjw==
+sweetalert2@^11.0.20:
+  version "11.0.20"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.0.20.tgz#c0bbd379f6fc929025fc66c08cc8b8f1af76aa9c"
+  integrity sha512-htNVn/7IDNfqSLo8m50s0Y7FkgAjng7NnQbvi5p1e4ydxByjiiNgpWhSThgiCRFYMzIaSEuOam2d4Sq9FbVyfA==
 
 symbol-observable@^1.1.0:
   version "1.2.0"
