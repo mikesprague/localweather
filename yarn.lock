@@ -10451,10 +10451,10 @@ loglevel@^1.4.1, loglevel@^1.6.8:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
   integrity sha512-Hesni4s5UkWkwCGJMQGAh71PaLUmKFM60dHvq0zi/vDhhrzuk+4GgNbTXJ12YYQJn6ZKBDNIjYcuQGKudvqrIw==
 
-logrocket@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-1.3.0.tgz#d21dba32a09bb7bc8309943a4692e22580614ad1"
-  integrity sha512-iP3l9hgBJxTkATZKJs93+uUJBvfg6QkV3+wNk9YB/wkJweXfsH9cNyYRx1PxI4BXvgX/CGR0qwbP7Vvo8STtgg==
+logrocket@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-2.0.0.tgz#331065873429cf70fb7cf84b676900baf9988a4e"
+  integrity sha512-O+YdrtpQn7oOmrxCqOyUcaB1+ONrhyJuB9CX57PQ0JJzNrYstxd0Oyg6UdLisA7UjNmwTr6fixMO3WOysDTFFA==
 
 longest-streak@^2.0.1:
   version "2.0.4"
@@ -14687,10 +14687,10 @@ snyk-try-require@^2.0.0:
     lodash.clonedeep "^4.3.0"
     lru-cache "^5.1.1"
 
-snyk@^1.667.0:
-  version "1.667.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.667.0.tgz#a842d7d3b973cb403d70e535a9a7ae273a351579"
-  integrity sha512-X6I0RqRu+X7d8lH3KylY54sRDfxmVN6vu/pMsEag5gsTOAJOIarLJMkwk57bikVu/yVlnh6sio3dpy782709Sw==
+snyk@^1.669.0:
+  version "1.669.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.669.0.tgz#30a31db5bbd7db08765334608e8b28ae12480144"
+  integrity sha512-VHdw0R5L1ujCeILNr3bAvRE64inwCfUbZizvv1smJ+K0dtlWyJuvAWZW/Py9DhdLx4kbhUcTXQmMmGiUxJnkPg==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
