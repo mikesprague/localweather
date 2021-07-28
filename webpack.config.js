@@ -14,12 +14,11 @@ const mode = process.env.NODE_ENV;
 const webpackRules = [
   {
     test: /\.(ttf|eot|woff|woff2)$/,
-    use: {
-      loader: 'file-loader',
-      options: {
-        name: 'fonts/[name].[ext]',
-      },
-    },
+    type: 'asset',
+  },
+  {
+    test: /\.(png|jpg|gif|svg)$/i,
+    type: 'asset',
   },
   {
     test: /\.(sa|sc|c)ss$/,
@@ -103,15 +102,15 @@ const webpackPlugins = [
       },
     ],
   }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: './src/fonts/*.woff2',
-        to: './fonts/[name][ext]',
-        force: true,
-      },
-    ],
-  }),
+  // new CopyWebpackPlugin({
+  //   patterns: [
+  //     {
+  //       from: './src/fonts/*.woff2',
+  //       to: './fonts/[name][ext]',
+  //       force: true,
+  //     },
+  //   ],
+  // }),
 ];
 
 if (mode === 'production') {

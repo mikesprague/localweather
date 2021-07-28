@@ -14,14 +14,20 @@
   <meta name="application-name" content="<%= htmlWebpackPlugin.options.appName %>">
   <link rel="canonical" href="<%= htmlWebpackPlugin.options.canonical %>"/>
   <link rel="preconnect" href="https://sessions.bugsnag.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="preload" as="script" type="text/javascript" href="./js/vendors~main.bundle.js">
   <link rel="preload" as="script" type="text/javascript" href="./js/bundle.js">
   <link rel="preload" as="style" type="text/css" href="./css/styles.css">
-  <link rel="preload" as="font" type="font/woff2" href="./fonts/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMRw.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="./fonts/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMRw.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="./fonts/z7NHdQDnbTkabZAIOl9il_O6KJj73e7Fd_-7suD8Rb2V.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2"
+    href="https://fonts.gstatic.com/s/opensanscondensed/v15/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMRw.woff2"
+    crossorigin>
+  <link rel="preload" as="font" type="font/woff2"
+    href="https://fonts.gstatic.com/s/opensanscondensed/v15/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMRw.woff2"
+    crossorigin>
+  <link rel="preload" as="font" type="font/woff2"
+    href="https://fonts.gstatic.com/s/opensanscondensed/v15/z7NHdQDnbTkabZAIOl9il_O6KJj73e7Fd_-7suD8Rb2V.woff2"
+    crossorigin>
   <link rel="manifest" href="./manifest.json">
   <link href="./css/styles.css" media="screen" rel="stylesheet">
   <link rel="icon" class="favicon" href="./images/weather-icon-64.png">
@@ -40,7 +46,6 @@
   <link rel="apple-touch-startup-image" sizes="640x1136" href="./images/apple_splash_640.png" />
 </head>
 <body>
-
   <section class="section hero is-fullheight app-shell has-navbar-fixed-top">
     <div class="hero-head">
       <div class="level offline-notification hidden">
@@ -102,8 +107,6 @@
       </div>
     </div>
   </section>
-
-  <script src="./js/vendors~main.bundle.js"></script>
   <script src="./js/bundle.js"></script>
   <script>
     if (navigator.userAgent.indexOf('Speed Insights') === -1 && navigator.userAgent.indexOf('Nexus 5 Build') === -1) {
