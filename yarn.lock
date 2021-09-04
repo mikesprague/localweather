@@ -2218,10 +2218,10 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
-"@sweetalert2/theme-dark@^5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.2.tgz#dc1753fe9272a5d9ad276b15f09513e3d332ab87"
-  integrity sha512-OboaclPhXLz8LPofjBlaxCq8Bs/N9IR7l4dleFlj7czVDd3zfw/ghU92cJb//AkLKmsdt849xoycSnShV41LdA==
+"@sweetalert2/theme-dark@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.3.tgz#f3e1b942a08452b36b07b6adf79aab7ad89cd0c1"
+  integrity sha512-jgnUUPzt13JLErZvE2uXKfaCAA5p4FENZ/dkIPaKIMOgGGg9G4bETfHsJDrizcbmhLDe6oF9wnqPPOvqLISIaA==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -3473,12 +3473,12 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+axios@^0.21.2:
+  version "0.21.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.2.tgz#21297d5084b2aeeb422f5d38e7be4fbb82239017"
+  integrity sha512-87otirqUw3e8CzHTMO+/9kh/FSgXt/eVDvipijwDtEuwbkySWZ9SBm6VEubmJ/kLKEoLQV/POhxXFb66bfekfg==
   dependencies:
-    follow-redirects "^1.10.0"
+    follow-redirects "^1.14.0"
 
 babel-loader@^8.1.0, babel-loader@^8.2.2:
   version "8.2.2"
@@ -7191,10 +7191,15 @@ folder-walker@^3.2.0:
   dependencies:
     from2 "^2.1.0"
 
-follow-redirects@^1.0.0, follow-redirects@^1.10.0:
+follow-redirects@^1.0.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
   integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==
+
+follow-redirects@^1.14.0:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.3.tgz#6ada78118d8d24caee595595accdc0ac6abd022e"
+  integrity sha512-3MkHxknWMUtb23apkgz/83fDoe+y+qr0TdgacGIA7bew+QLBo3vdgEN2xEsuXNivpFy4CyDhBBZnNZOtalmenw==
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
@@ -13526,10 +13531,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-snyk@^1.694.0:
-  version "1.694.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.694.0.tgz#c83bd4fc1d48f9a87a2daf53b5543ad12071bf23"
-  integrity sha512-jt9E7rHg3tGuR5Bh6RySh3fe1GPBU+rCVpgH+sS1FiOO4P6omRcXiEGhyMY76KroC7H6zAl7UKpl3wamVfaBVQ==
+snyk@^1.696.0:
+  version "1.696.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.696.0.tgz#096998efd8be757a6093ac354ccc1628db2c4373"
+  integrity sha512-0ZTIc2RAfh6dD+KCegJe65AIzEpm6RBIvbPcnQXmGe/lf1GsmwxWO8GALvWnAmDPNHIBSdjq+a6ijF5VoxdKAA==
 
 sockjs-client@^1.5.0:
   version "1.5.1"
