@@ -47,7 +47,7 @@
     "@fortawesome/pro-duotone-svg-icons": "^5.15.3",
     "@sweetalert2/theme-dark": "^5.0.1",
     "autoprefixer": "^10.2.6",
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "bulma": "^0.9.3",
     "bulma-switch": "^2.0.0",
     "cross-env": "^7.0.3",
