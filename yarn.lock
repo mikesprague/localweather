@@ -2287,10 +2287,10 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
-"@sweetalert2/theme-dark@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.4.tgz#2be958c9b229139772258251bdc957320f7d3d32"
-  integrity sha512-KTCkKlOPLv1OagLYR69zSl2GJSXpnmvFUfp8VHPmDoshgZZJGf8XLFSfFSpcc7P4W5YVQl1aawMMTzlYMojxNA==
+"@sweetalert2/theme-dark@^5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.5.tgz#669adc0553db67e931e0b2a8db69a19f5920ae10"
+  integrity sha512-GmeC3QXjfCuzc522wtwl1fgi8Nt6UqFg2OCdHFjcQ8EqnZwycNPU6bv268cbAM5/ht9yiT9Fb0oNw8vRtj4lxw==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -13702,10 +13702,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-snyk@^1.717.0:
-  version "1.717.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.717.0.tgz#4ea0b5388e6bff658b3f09a7aaf48c97eb5c25bd"
-  integrity sha512-OWVUEr1F24isElAGG7nxjEQnE6xaxpmgj3vDGLLz3ma2mvtgaUxjWT2fx5EopeEhe9tSk7uF6SUrgudCzrjUgQ==
+snyk@^1.722.0:
+  version "1.722.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.722.0.tgz#dafa9b204514c7bde8620618793873e3a300179c"
+  integrity sha512-EelrKO6Gv4r5Cs7XrOY4ZP6ZF59EaB0ln2gJRzPhxMJ1s5oBhly/Lojl9aZzgXDfFohm6fDa0kpCr+dQRtCT1g==
 
 sockjs-client@^1.5.0:
   version "1.5.1"
@@ -14372,10 +14372,10 @@ svgo@^2.3.0:
     csso "^4.2.0"
     stable "^0.1.8"
 
-sweetalert2@^11.1.6:
-  version "11.1.6"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.1.6.tgz#2dfac87d14b43afdec460e74b698a7f7f9a3d9da"
-  integrity sha512-hPhdzelwZ+TeFdb6Wuq3BX8MMy09YeHFkC9tXPVmZFPInJ7TWt7FSkd9k0A5MdeNigjhH8fwvT0dsy0ZyibR4A==
+sweetalert2@^11.1.7:
+  version "11.1.7"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.1.7.tgz#0ff2851eae77a76a3fe0ab289d3c32493e811b6d"
+  integrity sha512-7MHQVtKCTORfA9e58g9ZOfT3X58DkSBtvoCQJnqSHobXXb5C7aB8Yg/tAccTFnefCUBU41PoStjXMkzG3bNeig==
 
 symbol-observable@^1.1.0:
   version "1.2.0"
