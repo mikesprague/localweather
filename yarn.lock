@@ -2171,15 +2171,10 @@
   dependencies:
     "@octokit/openapi-types" "^9.4.0"
 
-"@popperjs/core@^2.10.2":
+"@popperjs/core@^2.10.2", "@popperjs/core@^2.9.0":
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.10.2.tgz#0798c03351f0dea1a5a4cabddf26a55a7cbee590"
   integrity sha512-IXf3XA7+XyN7CP9gGh/XB0UxVMlvARGEgGXLubFICsUMGz6Q+DU+i4gGlpOxTjKvXjkJDJC8YdqdKkDj9qZHEQ==
-
-"@popperjs/core@^2.8.3":
-  version "2.9.3"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.3.tgz#8b68da1ebd7fc603999cf6ebee34a4899a14b88e"
-  integrity sha512-xDu17cEfh7Kid/d95kB6tZsLOmSWKCZKtprnhVepjsSaCij+lM3mItSJDuuHDMbCWTh8Ejmebwb+KONcCJ0eXQ==
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.0"
@@ -3549,12 +3544,12 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios@^0.21.4:
-  version "0.21.4"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
-  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+axios@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.22.0.tgz#bf702c41fb50fbca4539589d839a077117b79b25"
+  integrity sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==
   dependencies:
-    follow-redirects "^1.14.0"
+    follow-redirects "^1.14.4"
 
 babel-loader@^8.1.0, babel-loader@^8.2.2:
   version "8.2.2"
@@ -7329,10 +7324,10 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
   integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==
 
-follow-redirects@^1.14.0:
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.3.tgz#6ada78118d8d24caee595595accdc0ac6abd022e"
-  integrity sha512-3MkHxknWMUtb23apkgz/83fDoe+y+qr0TdgacGIA7bew+QLBo3vdgEN2xEsuXNivpFy4CyDhBBZnNZOtalmenw==
+follow-redirects@^1.14.4:
+  version "1.14.4"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.4.tgz#838fdf48a8bbdd79e52ee51fb1c94e3ed98b9379"
+  integrity sha512-zwGkiSXC1MUJG/qmeIFH2HBJx9u0V46QGUe3YR1fXG8bXQxq7fLj0RjLZQ5nubr9qNJUZrH+xUcwXEoXNpfS+g==
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
@@ -13722,10 +13717,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-snyk@^1.722.0:
-  version "1.722.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.722.0.tgz#dafa9b204514c7bde8620618793873e3a300179c"
-  integrity sha512-EelrKO6Gv4r5Cs7XrOY4ZP6ZF59EaB0ln2gJRzPhxMJ1s5oBhly/Lojl9aZzgXDfFohm6fDa0kpCr+dQRtCT1g==
+snyk@^1.731.0:
+  version "1.731.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.731.0.tgz#d2fe4cdabf2fc471f57f3b5b5310242f9f85b546"
+  integrity sha512-1bRMFH7ZrjmaUkBnbOtCmLSSpAlj9vPKndBiP4hjCLysN8peVZ9SMdxGWhhJsmvqmRZYCdmPQyL+sKev8dsRkw==
 
 sockjs-client@^1.5.0:
   version "1.5.1"
@@ -14684,12 +14679,12 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tippy.js@^6.3.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.3.1.tgz#3788a007be7015eee0fd589a66b98fb3f8f10181"
-  integrity sha512-JnFncCq+rF1dTURupoJ4yPie5Cof978inW6/4S6kmWV7LL9YOSEVMifED3KdrVPEG+Z/TFH2CDNJcQEfaeuQww==
+tippy.js@^6.3.2:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.3.2.tgz#c03a0b88f170dffeba42f569771801dddc1f6340"
+  integrity sha512-35XVQI7Zl/jHZ51+8eHu/vVRXBjWYGobPm5G9FxOchj4r5dWhghKGS0nm0ARUKZTF96V7pPn7EbXS191NTwldw==
   dependencies:
-    "@popperjs/core" "^2.8.3"
+    "@popperjs/core" "^2.9.0"
 
 tmp-promise@^3.0.2:
   version "3.0.2"

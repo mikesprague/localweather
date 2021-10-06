@@ -46,7 +46,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/pro-duotone-svg-icons": "^5.15.4",
     "@sweetalert2/theme-dark": "^5.0.5",
-    "axios": "^0.21.4",
+    "axios": "^0.22.0",
     "bulma": "^0.9.3",
     "bulma-switch": "^2.0.0",
     "cross-env": "^7.0.3",
@@ -54,9 +54,9 @@
     "dotenv": "^10.0.0",
     "logrocket": "^2.0.0",
     "register-service-worker": "^1.7.2",
-    "snyk": "^1.722.0",
+    "snyk": "^1.731.0",
     "sweetalert2": "^11.1.7",
-    "tippy.js": "^6.3.1"
+    "tippy.js": "^6.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
