@@ -1688,10 +1688,10 @@
   dependencies:
     "@bugsnag/core" "^7.11.0"
 
-"@bugsnag/browser@^7.14.0":
-  version "7.14.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-7.14.0.tgz#972fc8b1c688ba6563070a6c974d9686a637df06"
-  integrity sha512-uYVdSielaF6tvrbTwt/UWYgKapqLxvQ2kt/MLoVZtY8q/gTCm+ka1mBINEWBB1zeDcyrKoW262jgpnS4oHTiJQ==
+"@bugsnag/browser@^7.14.1":
+  version "7.14.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-7.14.1.tgz#ba92aae1fb40aeba0983d2af950f70cc82729882"
+  integrity sha512-xenvisYx6xFNuh7GGR/SCLcRs2H6AXn58Ha/u/Yhk+typ1oE5EFAy15+2vdGMDmZp0GsAEgrOTsEZ30uSKdC1w==
   dependencies:
     "@bugsnag/core" "^7.14.0"
 
@@ -1730,13 +1730,13 @@
     "@bugsnag/browser" "^7.11.0"
     "@bugsnag/node" "^7.11.0"
 
-"@bugsnag/js@^7.14.0":
-  version "7.14.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-7.14.0.tgz#c8c4c3dd3f882c97c2585cc673b0bc4812f6c140"
-  integrity sha512-sL+QfhEll6tLdN33d3SP5Q6ZiMLx5AHFGM+Uk1GwkAC1akXzoz0TGdNiRkBF63cUBoxKHCurmlT9zAH7oj/NPQ==
+"@bugsnag/js@^7.14.1":
+  version "7.14.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-7.14.1.tgz#b9368751da0883e90e2fa486e5947251cf8766b6"
+  integrity sha512-ygykhixXByzolFpOsUGr72ENgiL1t4TkvKvka2rhoSHOr5kul9TierjvmwBKNpkPdUpDNkgqw3y349jYzzjk+w==
   dependencies:
-    "@bugsnag/browser" "^7.14.0"
-    "@bugsnag/node" "^7.14.0"
+    "@bugsnag/browser" "^7.14.1"
+    "@bugsnag/node" "^7.14.1"
 
 "@bugsnag/node@^7.11.0":
   version "7.11.0"
@@ -1750,10 +1750,10 @@
     pump "^3.0.0"
     stack-generator "^2.0.3"
 
-"@bugsnag/node@^7.14.0":
-  version "7.14.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-7.14.0.tgz#85de5ffd0c9e87ee4a4b168e420ad506f342b9f1"
-  integrity sha512-vR2iRYRE5PpLJKKc6hljcz9hxzIN7lQ7rn+8MQtOTUKl11RsOJnM4LjsMzw1YX1GdNaUc0dMLJASkzYOTomcGQ==
+"@bugsnag/node@^7.14.1":
+  version "7.14.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-7.14.1.tgz#609cbb6b6dddce8d3458dcc0a0caa56c727a9fb5"
+  integrity sha512-QhdFez60rTlEueg5rA0W6x8UrTcEnssv4XVPgfooGe2fYh6O89RFjI7zVVdw8QXUyqdf7w4WzyAsCir3XEhCqQ==
   dependencies:
     "@bugsnag/core" "^7.14.0"
     byline "^5.0.0"
@@ -2629,10 +2629,10 @@
     magic-string "^0.25.0"
     string.prototype.matchall "^4.0.6"
 
-"@sweetalert2/theme-dark@^5.0.7":
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.7.tgz#c6f336b77bb3663c350a140dc063bdf1c6a9a27f"
-  integrity sha512-bpCePN9R48VRGWdfbfDqTAH1w3Ip4zytYQtxSI+5FRwhCfbrTMCd9u++2x6NcCyf2tKOVnipX1ZUMlXOujkeyA==
+"@sweetalert2/theme-dark@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-dark/-/theme-dark-5.0.8.tgz#2334942535b96d7323eadc150aab5eb83d0fdfb3"
+  integrity sha512-erhXs3GMwlCXnONZ/sRbh/krlsFkR9hmcUJ1Zr/6dz+9OpMBU0AL2gx+V7A056wBGLX0deziLGsDecoSIkKOWg==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -10602,10 +10602,10 @@ loglevel@^1.4.1, loglevel@^1.6.8:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
   integrity sha512-Hesni4s5UkWkwCGJMQGAh71PaLUmKFM60dHvq0zi/vDhhrzuk+4GgNbTXJ12YYQJn6ZKBDNIjYcuQGKudvqrIw==
 
-logrocket@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-2.1.1.tgz#1ac44eb7811b4ebb5a4edbcd8af35b9782bfa093"
-  integrity sha512-wFxpQKf+ON/ZywTBVqqORmnJmW4293706bhyBAmzLnwJJrdcpI/ZicT81itbSpfw9ELEmdVT6e8D9Kx19u4uLQ==
+logrocket@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-2.1.2.tgz#5f6360c81c01797d67905de4851d54534deb9d0a"
+  integrity sha512-voHZcZYtXIh0oIT6I/9szdDSauKR98uGlVxovD6oIggm7nqdic5d1/dqRUhokXiXXtLkF7pr6QUrtwIwTETjIw==
 
 longest-streak@^2.0.1:
   version "2.0.4"
@@ -14603,10 +14603,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-snyk@^1.764.0:
-  version "1.764.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.764.0.tgz#3389e94435d7ad419e2bb2ccc19dda00314c317a"
-  integrity sha512-rzh5RqdakL3xMYgdA3/git1gnKlWFUH3ClOZNJwjok5VaL9tGbCE9aail378ofFmTV0asm5ZVPwE4MYNYtgVGg==
+snyk@^1.778.0:
+  version "1.778.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.778.0.tgz#c23078ecf4de3ddce2eaf79b80114838dc80f975"
+  integrity sha512-jPC6OYKf4wc5GUyHzL0IyZTAEWE/sUHuOawEKFyoIECEwyPyEx+AYLjGYyloa0L++C2KZdYM5GXOaZzi0upUFA==
 
 sockjs-client@^1.5.0:
   version "1.5.1"
@@ -15321,10 +15321,10 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-sweetalert2@^11.1.10:
-  version "11.1.10"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.1.10.tgz#184968f58ffdbe4f09dcd546dde3aef52d2058b6"
-  integrity sha512-Zy/Pdsvf6gJoaqnBaLXYrjElJ85ipe9D5FfcSKxJ0b1PPnTS3B5eC3rFB2pPbo9m1p+LVLBZVvE35JPL2vG6xA==
+sweetalert2@^11.2.1:
+  version "11.2.1"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.2.1.tgz#40be6dfe91359c1133d55bf12fa2dbc0f8d6a53f"
+  integrity sha512-6O+Ftl3yCg58pUqMiEn58+p7bQd7h7YrAM1diSaTJcRPO23bcfVd2DI2hW3246XVlTgL+EauV76va6VN5LrfIw==
 
 symbol-observable@^1.1.0:
   version "1.2.0"
