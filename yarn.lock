@@ -14757,10 +14757,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-snyk@^1.778.0:
-  version "1.778.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.778.0.tgz#c23078ecf4de3ddce2eaf79b80114838dc80f975"
-  integrity sha512-jPC6OYKf4wc5GUyHzL0IyZTAEWE/sUHuOawEKFyoIECEwyPyEx+AYLjGYyloa0L++C2KZdYM5GXOaZzi0upUFA==
+snyk@^1.789.0:
+  version "1.789.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.789.0.tgz#c73f5e9e15f0fa2a0833c94d71ce137863842430"
+  integrity sha512-DaLrZuFyIHoXdUm6umRovVebTGLWHC6V5ouYCtQUwGSFCia2RhDWZOptEE+MJNrbr1xxJPxTp3ZfwjiXt3//jA==
 
 sockjs-client@^1.5.0:
   version "1.5.1"
@@ -15475,10 +15475,10 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-sweetalert2@^11.2.1:
-  version "11.2.1"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.2.1.tgz#40be6dfe91359c1133d55bf12fa2dbc0f8d6a53f"
-  integrity sha512-6O+Ftl3yCg58pUqMiEn58+p7bQd7h7YrAM1diSaTJcRPO23bcfVd2DI2hW3246XVlTgL+EauV76va6VN5LrfIw==
+sweetalert2@^11.3.0:
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.3.0.tgz#39be4b23a02be479f36441f3a5f16a5d6364aba3"
+  integrity sha512-C0TFp0VLxgx+PmhJ0mL8qzx+iYjnCLdDbvQHKY6KAGI+xwawMvLkStPgw2LmJl6itaDhR/qLQStPFIbr1VK9Ow==
 
 symbol-observable@^1.1.0:
   version "1.2.0"

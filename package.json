@@ -54,8 +54,8 @@
     "dotenv": "^10.0.0",
     "logrocket": "^2.1.2",
     "register-service-worker": "^1.7.2",
-    "snyk": "^1.778.0",
-    "sweetalert2": "^11.2.1",
+    "snyk": "^1.789.0",
+    "sweetalert2": "^11.3.0",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
