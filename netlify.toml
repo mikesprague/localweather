@@ -2,7 +2,7 @@
   functions = "lambda"
 
 [context.production]
-  command = "yarn build"
+  command = "npm run build"
   publish = "public"
 
 [[redirects]]
