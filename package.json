@@ -1,6 +1,6 @@
 {
   "name": "local-weather",
-  "version": "1.4.19",
+  "version": "1.5.0",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
   "engines": {
@@ -14,7 +14,7 @@
     "serve": "concurrently 'npm run webpack:serve' 'npm run lambda:serve' --names '📦 ,🖥 ' --prefix '[{name}] ' --kill-others",
     "start": "npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ver:bump": "npm run version --no-git-tag-version",
+    "ver:bump": "npm version --no-git-tag-version",
     "ver:patch": "npm run ver:bump --patch && npm run ver:tag && npm run ver:publish",
     "ver:minor": "npm run ver:bump --minor && npm run ver:tag && npm run ver:publish",
     "ver:major": "npm run ver:bump --major && npm run ver:tag && npm run ver:publish",
