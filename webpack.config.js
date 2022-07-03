@@ -120,16 +120,7 @@ if (mode === 'production') {
 }
 
 module.exports = {
-  entry: [
-    './src/js/app.js',
-  ],
-  devServer: {
-    contentBase: path.join(__dirname, './'),
-    open: false,
-    port: 5500,
-    publicPath: 'http://localhost:5500/',
-    stats: 'minimal',
-  },
+  entry: ['./src/js/app.js'],
   devtool: 'source-map',
   output: {
     filename: './js/bundle.js',

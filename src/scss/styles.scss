@@ -1,7 +1,7 @@
 @import "~bulma/bulma";
-$switch-background-active: #545454;
 @import "~bulma-switch/dist/css/bulma-switch.min.css";
 @import "~tippy.js/dist/tippy";
+
 /*!
  * LocalWeather.io Styles
  */
@@ -152,6 +152,7 @@ strong {
 
   small {
     color: $color-text-secondary;
+
     // font-size: .5em;
   }
 }
@@ -386,10 +387,14 @@ a {
 hr {
   background-color: transparent;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, .1);
+  border-top: 1px solid rgba(0, 0, 0, 10%);
   margin: .4em auto;
 }
 
+.switch[type=checkbox]:checked+label::before,
+.switch[type=checkbox]:checked+label:before {
+  background-color: #545454;
+}
 /*
 .link-toggle-units {
   &,
