@@ -5,7 +5,7 @@
 /*!
  * LocalWeather.io Styles
  */
-@import "variables";
+@import "scss/variables";
 
 @font-face {
   font-display: swap;
@@ -395,6 +395,7 @@ hr {
 .switch[type=checkbox]:checked+label:before {
   background-color: #545454;
 }
+
 /*
 .link-toggle-units {
   &,
@@ -420,6 +421,7 @@ hr {
 */
 
 @media only screen and (max-width: 500px) {
+
   /*
   body {
     font-size: 1.35rem;
@@ -488,6 +490,7 @@ hr {
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   }
 }
+
 @media screen and (min-width: 1000px) {
   html {
     font-size: 22px;
