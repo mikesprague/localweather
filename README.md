@@ -1,9 +1,5 @@
 # LocalWeather.io
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/91ecd22f-e283-48e1-ab1a-925a57b8dc42/deploy-status)](https://app.netlify.com/sites/localweather-io/deploys)
-[![Known Vulnerabilities](https://snyk.io/test/github/mikesprague/localweather-io/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mikesprague/localweather-io?targetFile=package.json)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_shield)
-
 Minimalist local weather app powered by Dark Sky
 
 ![LocalWeather.io screenshots coming soon](link_to_screenshot_here)
@@ -27,11 +23,7 @@ Minimalist local weather app powered by Dark Sky
     - PLANNED: Fall back to IP address geolocation service
 - [Google Maps Reverse Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) used to translate lat/lon to friendly name
 - Weather data retrieved from [Dark Sky API](https://darksky.net/dev)
-- All external API calls consolidated via barebones Node/Express API
-  - Alleviates CORS issues
-  - Allows for more control with rate limiting
-  - Easier to abstract private API keys
-  - NOTE: API source currently in private repo, planning to make public in the future
+- All external API calls consolidated via one serverless function
 - Background color, favicon, and title are dynamic
   - Background color based on conditions and time of day
     - Clear (Day/Night)
@@ -46,13 +38,11 @@ Minimalist local weather app powered by Dark Sky
     - Tap/touch to display on mobile devices and tablets
 - App automatically checks for updates (if left open)
   - Runs a task every minute, if past the 10 minute cache timeout then data is refreshed
-- Uses [Bugsnag](https://bugsnag.com/) for error reporting and release tracking
 
 ### Made with
 
 - [npm](https://www.npmjs.com/)
-- [Yarn](https://yarnpkg.com/)
-- [Webpack](https://webpack.js.org/)
+- [Vite](https://vitejs.dev/)
 - [Prettier](https://prettier.io/)
 - [Eslint](https://eslint.org/)
 - [Sass](https://sass-lang.com/)
@@ -60,15 +50,13 @@ Minimalist local weather app powered by Dark Sky
 - [Font Aweseome Pro](https://fontawesome.com/pro/)
 - [Tippy.js](https://atomiks.github.io/tippyjs/)
 - [SweetAlert2](https://sweetalert2.github.io/)
-- [Bugsnag](https://www.bugsnag.com/)
-- [Netlify](https://www.netlify.com/)
+- [Cloudflare Pages](https://developers.cloudflare.com/pages/) / [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmikesprague%2Flocalweather-io?ref=badge_large)
 
 MIT License
 
-Copyright (c) 2019 Michael Sprague
+Copyright (c) 2022 Michael Sprague
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

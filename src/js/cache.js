@@ -1,4 +1,4 @@
-import * as defaults from './defaults';
+import { defaults } from './defaults.js';
 
 export function setData(key, data) {
   const dataToSet = JSON.stringify(data);
@@ -20,11 +20,11 @@ export function resetData() {
 
 export function areCachesEmpty() {
   return (
-    (getData(defaults.cacheTimeKey) === null)
-    || (getData(defaults.weatherDataKey) === null)
-    || (getData(defaults.locationDataKey) === null)
-    || (getData(defaults.locationNameDataKey) === null)
-    || (getData(defaults.locationAddressDataKey) === null)
+    getData(defaults.cacheTimeKey) === null ||
+    getData(defaults.weatherDataKey) === null ||
+    getData(defaults.locationDataKey) === null ||
+    getData(defaults.locationNameDataKey) === null ||
+    getData(defaults.locationAddressDataKey) === null
   );
 }
 
