@@ -1,7 +1,7 @@
 import { init } from './js/init.js';
 import { initFontAwesomeIcons, hasApprovedLocationSharing } from './js/ui.js';
 
-import './scss/styles.scss';
+import './main.scss';
 
 if (hasApprovedLocationSharing()) {
   init();
