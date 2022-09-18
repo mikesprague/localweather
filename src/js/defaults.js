@@ -1,6 +1,6 @@
-const versionNumber = require('../../../package.json').version;
+import { version } from '../../package.json';
 
-module.exports = {
+export const defaults = {
   appName: 'LocalWeather.io',
   author: 'Michael Sprague',
   cacheTimeKey: 'cacheTime',
@@ -89,6 +89,6 @@ module.exports = {
       ca: ['km', 'kilometers'],
     },
   },
-  versionString: `v${versionNumber}`,
+  versionString: `v${version}`,
   weatherDataKey: 'weatherData',
 };
