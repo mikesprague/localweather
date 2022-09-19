@@ -13,6 +13,7 @@ export default defineConfig({
   publicDir: '../public',
   base: './',
   outDir: './',
+  appType: 'custom',
   plugins: [
     createHtmlPlugin({
       template: 'index.html',
