@@ -19,7 +19,7 @@ RUN npm install -g npm n
 
 # use n to make sure we're on latest v18 of nodejs
 # and install some global dependencies
-RUN n 18 && npm i -g eslint gitmoji-cli npm-check-updates netlify-cli netlify-lambda
+RUN n 18 && npm i -g eslint gitmoji-cli npm-check-updates wrangler
 
 # install and customize oh-my-zsh
 RUN rm -rf /root/.oh-my-zsh \
