@@ -59,7 +59,7 @@
     "autoprefixer": "^10.4.12",
     "concurrently": "^7.4.0",
     "cssnano": "^5.1.13",
-    "eslint": "^8.23.1",
+    "eslint": "^8.24.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-stylelint": "16.0.0",
     "eslint-plugin-compat": "^4.0.2",
