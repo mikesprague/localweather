@@ -54,7 +54,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
     "@babel/eslint-plugin": "7.19.1",
-    "@babel/preset-env": "7.19.3",
+    "@babel/preset-env": "7.19.4",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.12",
     "concurrently": "^7.4.0",
@@ -83,7 +83,7 @@
     "vite": "3.1.7",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-pwa": "0.13.1",
-    "wrangler": "2.1.10"
+    "wrangler": "2.1.11"
   },
   "babel": {
     "presets": [
