@@ -44,11 +44,11 @@
     "bulma": "^0.9.4",
     "bulma-switch": "^2.0.4",
     "cross-env": "^7.0.3",
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.6",
     "dotenv": "^16.0.3",
     "logrocket": "^3.0.1",
     "register-service-worker": "^1.7.2",
-    "sweetalert2": "^11.6.0",
+    "sweetalert2": "^11.6.1",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
@@ -57,9 +57,9 @@
     "@babel/preset-env": "7.19.4",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.12",
-    "concurrently": "^7.4.0",
+    "concurrently": "^7.5.0",
     "cssnano": "^5.1.13",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-stylelint": "17.0.0",
     "eslint-plugin-compat": "^4.0.2",
@@ -83,7 +83,7 @@
     "vite": "3.1.8",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-pwa": "0.13.1",
-    "wrangler": "2.1.12"
+    "wrangler": "2.1.13"
   },
   "babel": {
     "presets": [
