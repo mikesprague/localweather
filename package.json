@@ -58,7 +58,7 @@
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.12",
     "concurrently": "^7.5.0",
-    "cssnano": "^5.1.13",
+    "cssnano": "^5.1.14",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-stylelint": "17.0.0",
