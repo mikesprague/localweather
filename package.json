@@ -39,7 +39,7 @@
     "@bugsnag/js": "^7.18.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/pro-duotone-svg-icons": "^6.2.0",
-    "@sweetalert2/theme-dark": "^5.0.12",
+    "@sweetalert2/theme-dark": "^5.0.13",
     "axios": "^1.1.3",
     "bulma": "^0.9.4",
     "bulma-switch": "^2.0.4",
@@ -48,7 +48,7 @@
     "dotenv": "^16.0.3",
     "logrocket": "^3.0.1",
     "register-service-worker": "^1.7.2",
-    "sweetalert2": "^11.6.4",
+    "sweetalert2": "^11.6.5",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
