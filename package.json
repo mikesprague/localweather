@@ -73,17 +73,17 @@
     "prettier": "^2.7.1",
     "prettier-eslint": "^15.0.1",
     "prettier-stylelint": "^0.4.2",
-    "sass": "^1.55.0",
-    "stylelint": "14.14.0",
+    "sass": "^1.56.0",
+    "stylelint": "14.14.1",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-prettier-scss": "0.0.1",
     "stylelint-config-standard": "29.0.0",
-    "stylelint-config-standard-scss": "6.0.0",
+    "stylelint-config-standard-scss": "6.1.0",
     "stylelint-prettier": "2.0.0",
     "vite": "3.2.2",
     "vite-plugin-html": "3.2.0",
-    "vite-plugin-pwa": "0.13.1",
-    "wrangler": "2.1.14"
+    "vite-plugin-pwa": "0.13.2",
+    "wrangler": "2.1.15"
   },
   "babel": {
     "presets": [
