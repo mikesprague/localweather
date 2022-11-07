@@ -39,7 +39,7 @@
     "@bugsnag/js": "^7.18.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/pro-duotone-svg-icons": "^6.2.0",
-    "@sweetalert2/theme-dark": "^5.0.13",
+    "@sweetalert2/theme-dark": "^5.0.14",
     "axios": "^1.1.3",
     "bulma": "^0.9.4",
     "bulma-switch": "^2.0.4",
@@ -48,7 +48,7 @@
     "dotenv": "^16.0.3",
     "logrocket": "^3.0.1",
     "register-service-worker": "^1.7.2",
-    "sweetalert2": "^11.6.5",
+    "sweetalert2": "^11.6.6",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
@@ -80,7 +80,7 @@
     "stylelint-config-standard": "29.0.0",
     "stylelint-config-standard-scss": "6.1.0",
     "stylelint-prettier": "2.0.0",
-    "vite": "3.2.2",
+    "vite": "3.2.3",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-pwa": "0.13.2",
     "wrangler": "2.1.15"
