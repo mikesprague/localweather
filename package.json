@@ -57,7 +57,7 @@
     "@babel/preset-env": "7.20.2",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.13",
-    "concurrently": "^7.5.0",
+    "concurrently": "^7.6.0",
     "cssnano": "^5.1.14",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "8.5.0",
