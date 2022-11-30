@@ -21,7 +21,7 @@
     "ver:minor": "npm run ver:bump -- minor && npm run ver:tag && npm run ver:publish",
     "ver:major": "npm run ver:bump -- major && npm run ver:tag && npm run ver:publish",
     "ver:publish": "git push --all && git push --tags",
-    "ver:tag": "APP_VERSION=$(node -e 'console.log(process.env.npm_package_version)') && git add package.json package-lock.json && git commit -m \":bookmark: Bump version v$APP_VERSION\" && git tag $APP_VERSION -m \"Bump version v$APP_VERSION\""
+    "ver:tag": "APP_VERSION=$(node -e 'console.log(process.env.npm_package_version)') && git add package.json package-lock.json && git commit -m \"chore(release): 🔖 bump version v$APP_VERSION\" && git tag $APP_VERSION -m \"chore(release): 🔖 bump version v$APP_VERSION\""
   },
   "repository": {
     "url": "https://github.com/mikesprague/localweather-io"
@@ -59,6 +59,7 @@
     "autoprefixer": "^10.4.13",
     "concurrently": "^7.6.0",
     "cssnano": "^5.1.14",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-stylelint": "17.0.0",
@@ -148,5 +149,10 @@
     "trailingComma": "all",
     "semi": true,
     "tabWidth": 2
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
