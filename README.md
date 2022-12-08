@@ -14,8 +14,7 @@ Minimalist local weather app powered by Dark Sky
   - Responsive design that scales for all device types
   - App and all assets serverd over HTTPS
   - Can add app to homescreen on mobile devices that support PWAs
-  - Latest [Google Lighthouse]([https://developers.google.com/web/tools/lighthouse/) audit ([results](https://lighthouse-dot-webdotdevsite.appspot.com/lh/html?url=https://localweather.io))
-    [![Google Lighthouse Scores](lighthouse-scores.png)](https://lighthouse-dot-webdotdevsite.appspot.com/lh/html?url=https://localweather.io)
+  - Latest [Google Lighthouse]([https://developers.google.com/web/tools/lighthouse/) scores (updates every 6 hours): <https://mikesprague.github.io/localweather-io/lighthouse-report.html>
 - Geolocation from browser used for location (latitude/longitude)
   - Uses the [ask permission responsibly](https://developers.google.com/web/fundamentals/native-hardware/user-location/#ask_permission_responsibly) philosophy
     - Let's users know their location info will be used
