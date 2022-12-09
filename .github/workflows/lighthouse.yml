@@ -1,7 +1,12 @@
 name: Lighthouse Check
 on: 
   push:
-    tags: [ "v*" ]
+    branches-ignore: [ "dependabot/*" ]
+    paths:
+      - "src/**/*.*"
+      - "public/**/*.*"
+      - "package*.json"
+      - "*.config.*js"
     
   schedule:
     - cron: "0 0/6 * * *"
