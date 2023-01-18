@@ -40,7 +40,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/pro-duotone-svg-icons": "^6.2.1",
     "@sweetalert2/theme-dark": "^5.0.15",
-    "axios": "^1.2.2",
+    "axios": "^1.2.3",
     "bulma": "^0.9.4",
     "bulma-switch": "^2.0.4",
     "cross-env": "^7.0.3",
