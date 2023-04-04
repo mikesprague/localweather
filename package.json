@@ -84,7 +84,7 @@
     "vite": "4.2.1",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-pwa": "0.14.7",
-    "wrangler": "2.13.0"
+    "wrangler": "2.14.0"
   },
   "babel": {
     "presets": [
