@@ -9,7 +9,7 @@
   Cross-Origin-Embedder-Policy: require-corp; report-to="default";
   Cross-Origin-Opener-Policy: same-site; report-to="default";
   Cross-Origin-Resource-Policy: same-site
-  Access-Control-Allow-Origin: https://localweather.io
+  Access-Control-Allow-Origin: https://localweather.dev
   Vary: Origin
 
 /api/*

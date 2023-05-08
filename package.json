@@ -1,5 +1,5 @@
 {
-  "name": "local-weather",
+  "name": "localweather",
   "version": "1.8.2",
   "description": "Minimalist local weather app powered by Dark Sky",
   "private": true,
@@ -24,7 +24,7 @@
     "ver:tag": "APP_VERSION=$(node -e 'console.log(process.env.npm_package_version)') && git add package.json package-lock.json && git commit -m \"chore(release): 🔖 bump version v$APP_VERSION\" && git tag $APP_VERSION -m \"chore(release): 🔖 bump version v$APP_VERSION\""
   },
   "repository": {
-    "url": "https://github.com/mikesprague/localweather-io"
+    "url": "https://github.com/mikesprague/localweather"
   },
   "author": {
     "name": "Michael Sprague",
@@ -32,9 +32,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mikesprague/localweather-io/issues"
+    "url": "https://github.com/mikesprague/localweather/issues"
   },
-  "homepage": "https://localweather.io",
+  "homepage": "https://localweather.dev",
   "dependencies": {
     "@bugsnag/js": "^7.20.2",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

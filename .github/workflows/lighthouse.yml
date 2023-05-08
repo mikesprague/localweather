@@ -1,5 +1,5 @@
 name: Lighthouse Check
-on: 
+on:
   push:
     branches-ignore: [ "dependabot/*" ]
     paths:
@@ -7,10 +7,10 @@ on:
       - "public/**/*.*"
       - "package*.json"
       - "*.config.*js"
-    
+
   schedule:
     - cron: "0 0/6 * * *"
-    
+
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  URL_TO_CHECK: "https://localweather.io"
+  URL_TO_CHECK: "https://localweather.dev"
   HTML_FILE_NAME: "lighthouse-report.html"
 
 jobs:
@@ -38,21 +38,21 @@ jobs:
 
       - name: 📂 Make tmp directory
         run: mkdir -p ${{ github.workspace }}/tmp/artifacts
-      
+
       - name: 🏃 Run Lighthouse check
         uses: foo-software/lighthouse-check-action@master
         with:
           gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
           outputDirectory: ${{ github.workspace }}/tmp/artifacts
           urls: ${{ env.URL_TO_CHECK }}
-      
+
       # this is a little hacky but we only expect one file
       - name: 🚚 Rename report file
         run: cd ${{ github.workspace }}/tmp/artifacts && for x in *.html;do mv $x ${{env.HTML_FILE_NAME }};done
-      
+
       - name: 🛠️ Setup Pages
         uses: actions/configure-pages@v2
-      
+
       - name: 🏗️ Create and Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

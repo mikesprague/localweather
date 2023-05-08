@@ -1,7 +1,7 @@
 import { version } from '../../package.json';
 
 export const defaults = {
-  appName: 'LocalWeather.io',
+  appName: 'LocalWeather.dev',
   author: 'Michael Sprague',
   cacheTimeKey: 'cacheTime',
   cacheTimeSpan: 300, // 5 minutes (number of minutes * 60 seconds)
@@ -28,7 +28,7 @@ export const defaults = {
     thunderstorm: 'fad fa-fw fa-thunderstorm',
     tornado: 'fad fa-fw fa-tornado',
   },
-  keywords: 'weather, local, dark sky, localweather.io, local weather',
+  keywords: 'weather, local, dark sky, localweather.dev, local weather',
   loadingSpinnerSelector: '.loading-message',
   loadingText: '... loading weather data for your location ...',
   locationDataKey: 'locationData',
@@ -38,7 +38,7 @@ export const defaults = {
   temperatureUnitsKey: 'tempUnits',
   temperatureDefaultUnitsKey: 'tempDefaultUnits',
   themeColor: '#133150',
-  title: 'LocalWeather.io (powered by Dark Sky)',
+  title: 'LocalWeather.dev (powered by Dark Sky)',
   unitLabels: {
     nearestStormDistance: {
       us: ['mi', 'miles'],

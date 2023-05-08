@@ -50,7 +50,7 @@ export default defineConfig({
         './images/weather-icon-128.png',
       ],
       manifest: {
-        name: 'LocalWeather.io (powered by Dark Sky)',
+        name: 'LocalWeather.dev (powered by Dark Sky)',
         short_name: 'LocalWeather',
         description: 'Minimalist local weather app powered by Dark Sky',
         version,
@@ -111,7 +111,7 @@ export default defineConfig({
             sizes: '512x512',
           },
         ],
-        homepage_url: 'https://localweather.io/',
+        homepage_url: 'https://localweather.dev/',
         lang: 'en-US',
         dir: 'auto',
         orientation: 'portrait',

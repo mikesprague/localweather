@@ -490,7 +490,7 @@ export function populateFooter() {
     <div class="column">
       <div class="content has-text-right">
         <a href="https://github.com/mikesprague/localweather-io/releases" target="_blank" rel="noopener" data-tippy-content="${defaults.versionString} Release Notes">
-          LocalWeather.io ${defaults.versionString}
+          LocalWeather.dev ${defaults.versionString}
         </a>
       </div>
     </div>
@@ -567,6 +567,6 @@ export const errorTemplates = {
     </p>
     <p class='message-alert-text-first'>
       Please enable location services, clear any location tracking blocks for the domain
-      'localweather.io' in your browser, and try again.
+      'localweather.dev' in your browser, and try again.
     </p>`,
 };
