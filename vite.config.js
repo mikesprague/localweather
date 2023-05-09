@@ -50,9 +50,9 @@ export default defineConfig({
         './images/weather-icon-128.png',
       ],
       manifest: {
-        name: 'LocalWeather.dev (powered by Dark Sky)',
+        name: 'LocalWeather.dev (powered by Visual Crossing)',
         short_name: 'LocalWeather',
-        description: 'Minimalist local weather app powered by Dark Sky',
+        description: 'Minimalist local weather app powered by Visual Crossing',
         version,
         icons: [
           {

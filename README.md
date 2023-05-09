@@ -1,8 +1,6 @@
 # LocalWeather.dev
 
-Minimalist local weather app powered by Dark Sky
-
-![LocalWeather.dev screenshots coming soon](link_to_screenshot_here)
+Minimalist local weather app powered by Visual Crossing
 
 ## Features
 
@@ -12,16 +10,16 @@ Minimalist local weather app powered by Dark Sky
   - App is available when offline or with intermittent connections
     - Automatically checks for new data when back online (or connection stabilizes)
   - Responsive design that scales for all device types
-  - App and all assets serverd over HTTPS
+  - App and all assets served over HTTPS
   - Can add app to homescreen on mobile devices that support PWAs
-  - Latest [Google Lighthouse]([https://developers.google.com/web/tools/lighthouse/) scores (updates every 6 hours): <https://mikesprague.github.io/localweather/lighthouse-report.html>
+  - Latest [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) scores (updates every 6 hours): <https://mikesprague.github.io/localweather/lighthouse-report.html>
 - Geolocation from browser used for location (latitude/longitude)
   - Uses the [ask permission responsibly](https://developers.google.com/web/fundamentals/native-hardware/user-location/#ask_permission_responsibly) philosophy
-    - Let's users know their location info will be used
+    - Lets users know their location info will be used
     - Asks user to initiate process to approve access to location
     - PLANNED: Fall back to IP address geolocation service
 - [Google Maps Reverse Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) used to translate lat/lon to friendly name
-- Weather data retrieved from [Dark Sky API](https://darksky.net/dev)
+- Weather data retrieved from [Visual Crossing API](https://visualcrossing.com)
 - All external API calls consolidated via one serverless function
 - Background color, favicon, and title are dynamic
   - Background color based on conditions and time of day

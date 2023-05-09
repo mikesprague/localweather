@@ -3,7 +3,6 @@ export const onRequestGet = async (context) => {
   const { request } = context;
 
   const cache = await caches.open(CACHE_NAME);
-
   const cachedData = await cache.match(request);
 
   if (cachedData) {
@@ -23,7 +22,7 @@ export const onRequestGet = async (context) => {
   const healthcheck = urlParams.get('healthcheck');
   let lat = urlParams.get('lat') || cf.latitude;
   let lng = urlParams.get('lng') || cf.longitude;
-  const units = urlParams.get('units') || 'auto';
+  const units = urlParams.get('units') || 'us';
   const time = urlParams.get('time');
 
   lat = parseFloat(lat).toFixed(5).toString();
@@ -36,12 +35,12 @@ export const onRequestGet = async (context) => {
     });
   }
 
-  const { GOOGLE_MAPS_API_KEY, DARK_SKY_KEY } = context.env;
+  const { GOOGLE_MAPS_API_KEY, VISUAL_CROSSING_API_KEY } = context.env;
 
   const timeString = time ? `,${time}` : '';
   const geocodeApiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${GOOGLE_MAPS_API_KEY}`;
-  const weatherApiUrl = `https://api.darksky.net/forecast/${DARK_SKY_KEY}/${lat},${lng}${timeString}/?units=${units}`;
-
+  const weatherApiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}?key=${VISUAL_CROSSING_API_KEY}&unitGroup=${units}`;
+  console.log(weatherApiUrl);
   const geocodePromise = await fetch(geocodeApiUrl)
     .then(async (response) => {
       const data = await response.json();

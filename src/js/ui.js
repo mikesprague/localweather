@@ -127,7 +127,7 @@ export function initFontAwesomeIcons() {
 
 export function getMoonUi(data) {
   const averageLunarCycle = 29.53058867;
-  const moonAge = Math.round(data.daily.data[0].moonPhase * averageLunarCycle);
+  const moonAge = Math.round(data.days[0].moonphase * averageLunarCycle);
   const iconPrefix = 'wi-moon';
   let iconSuffix = '';
   let phaseText = '';
@@ -169,31 +169,12 @@ export function getMoonUi(data) {
   };
 }
 
-export function getTempTrend(data) {
-  const now = Math.round(new Date().getTime() / 1000);
-  // console.log(now);
-  // console.log(data.daily.data[0].apparentTemperatureHighTime);
-  let iconClass = 'fad fa-fw fa-long-arrow-alt-down';
-  let iconTransform = 'rotate--30';
-  let tempTrendText = 'falling';
-  if (now < data.daily.data[0].apparentTemperatureHighTime) {
-    iconClass = 'fad fa-fw fa-long-arrow-alt-up';
-    iconTransform = 'rotate-45';
-    tempTrendText = 'rising';
-  }
-  return {
-    icon: `<i class='${iconClass}' data-fa-transform='${iconTransform}'></i>`,
-    iconClass,
-    text: tempTrendText,
-  };
-}
-
 export function getBodyBgClass(data) {
   const now = Math.round(new Date().getTime() / 1000);
-  const sunrise = data.daily.data[0].sunriseTime;
-  const sunset = data.daily.data[0].sunsetTime;
-  const cloudCover = Math.round(data.currently.cloudCover * 100);
-  const currentIcon = data.currently.icon;
+  const sunrise = data.days[0].sunriseEpoch;
+  const sunset = data.days[0].sunsetEpoch;
+  const cloudCover = Math.round(data.currentConditions.cloudcover * 100);
+  const currentIcon = data.currentConditions.icon;
   const isCloudy = cloudCover > 50;
   const isRaining = currentIcon === 'rain' || currentIcon === 'thunderstorm';
   const isSnowing = currentIcon === 'snow' || currentIcon === 'sleet';
@@ -221,7 +202,7 @@ export function removeBodyBgClass(className) {
 }
 
 export function setFavicon(data) {
-  const currentIcon = data.currently.icon;
+  const currentIcon = data.currentConditions.icon;
   const iconTags = document.getElementsByClassName('favicon');
   const iconPath = `images/${currentIcon}.png`;
   Array.from(iconTags).forEach((iconTag) => {
@@ -230,8 +211,8 @@ export function setFavicon(data) {
 }
 
 export function setTitle(data) {
-  const newTitle = `${Math.round(data.currently.temperature)}° ${
-    data.currently.summary
+  const newTitle = `${Math.round(data.currentConditions.temp)}° ${
+    data.currentConditions.conditions
   } | ${getData(defaults.locationNameDataKey)} | ${defaults.title}`;
   window.document.title = newTitle;
 }
@@ -482,7 +463,7 @@ export function showWeatherAlert(data) {
 
 export function initWeatherAlerts(data) {
   const { alerts: weatherAlerts } = data;
-  if (weatherAlerts) {
+  if (weatherAlerts.length) {
     populateWeatherAlert(weatherAlerts[0].title);
     showEl('.weather-alert');
     document
@@ -495,8 +476,7 @@ export function initWeatherAlerts(data) {
 }
 
 export function toggleTempUnits(data) {
-  const { flags } = data;
-  const { units } = flags;
+  const units = 'us';
   const defaultUnit = units === 'us' ? 'fahrenheit' : 'celsius';
   const toFahrenheit = document.querySelector('#fc-toggle').checked;
   if (defaultUnit === 'fahrenheit' && toFahrenheit) {
@@ -526,8 +506,8 @@ export function toggleTempUnits(data) {
 }
 
 export function initTempUnitsToggle(data) {
-  const { flags } = data;
-  const { units } = flags;
+  // const { flags } = data;
+  const units = 'us';
   const defaultUnits = units === 'us' ? 'fahrenheit' : 'celsius';
   const tempUnitsToggle = document.querySelector('#fc-toggle');
   setData(defaults.temperatureUnitsKey, defaultUnits);
@@ -554,7 +534,6 @@ export function renderAppWithData(data) {
   populatePrimaryData(data);
   populateWeatherData(data);
   populateForecastData(data);
-  populateHourlyData(data);
   populateLastUpdated(data);
   populateLocation(data);
   populateTempUnitsToggle(data);

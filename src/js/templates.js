@@ -38,8 +38,8 @@ export function populateAppShell() {
 }
 
 export function populateTempUnitsToggle(data) {
-  const { flags } = data;
-  const { units } = flags;
+  // const { flags } = data;
+  const units = 'us';
   const tempUnits = units === 'us' ? 'fahrenheit' : 'celsius';
   const isChecked = tempUnits === 'fahrenheit' ? 'checked' : '';
   const tempUnitsToggleTemplate = `
@@ -90,59 +90,51 @@ export function populateLocation(data) {
 
 export function populatePrimaryData(data) {
   const conditionNextHourText = `<i class='${getWeatherIcon(
-    data.hourly.data[1].icon,
-  )}'></i> ${data.hourly.data[1].summary}`;
+    data.days[0].hours[1].icon,
+  )}'></i> ${data.days[0].hours[1].conditions}`;
   const tempNextHourText = `<i class='fad fa-fw fa-thermometer-half'></i><span class='temperature'>${Math.round(
-    data.hourly.data[1].temperature,
+    data.days[0].hours[1].temp,
   )}</span>&deg; (feels <span class='temperature'>${Math.round(
-    data.hourly.data[1].apparentTemperature,
+    data.days[0].hours[1].feelslike,
   )}</span>&deg;)`;
   const precipitationNextHourText = Math.floor(
-    data.hourly.data[1].precipProbability * 100,
+    data.days[0].hours[1].precipprob,
   )
-    ? `${Math.floor(data.hourly.data[1].precipProbability * 100)}% chance of ${
-        data.hourly.data[1].precipType
+    ? `${Math.floor(data.days[0].hours[1].precipprob)}% chance of ${
+        data.days[0].hours[1].precipType
       }`
     : 'No precipitation';
   const conditionTodayText = `<i class='${getWeatherIcon(
-    data.daily.data[0].icon,
-  )}'></i> ${data.daily.data[1].summary}`;
+    data.days[0].icon,
+  )}'></i> ${data.days[0].description}`;
   const tempTodayText = `
     <i class='fad fa-fw fa-temperature-high'></i> High <span class='temperature'>${Math.round(
-      data.daily.data[0].temperatureMax,
+      data.days[0].tempmax,
     )}</span>&deg;
     (feels <span class='temperature'>${Math.round(
-      data.daily.data[0].apparentTemperatureMax,
+      data.days[0].feelslikemax,
     )}</span>&deg;)
-    around ${dayjs
-      .unix(data.daily.data[0].apparentTemperatureMaxTime)
-      .format('h:mma')}
     <br>
     <i class='fad fa-fw fa-temperature-low'></i> Low <span class='temperature'>${Math.round(
-      data.daily.data[0].temperatureMin,
+      data.days[0].tempmin,
     )}</span>&deg;
     (feels <span class='temperature'>${Math.round(
-      data.daily.data[0].apparentTemperatureMin,
+      data.days[0].feelslikemin,
     )}</span>&deg;)
-    around ${dayjs
-      .unix(data.daily.data[0].apparentTemperatureMinTime)
-      .format('h:mma')}
   `;
   const precipitationTodayText = Math.floor(
-    data.daily.data[0].precipProbability * 100,
+    data.days[0].precipprob,
   )
-    ? `${Math.floor(data.daily.data[0].precipProbability * 100)}% chance of ${
-        data.daily.data[0].precipType
-      } around ${dayjs
-        .unix(data.daily.data[0].precipIntensityMaxTime)
-        .format('h:mma')}`
+    ? `${Math.floor(data.days[0].precipprob)}% chance of ${
+        data.days[0].precipType
+      }`
     : 'No precipitation';
   const sunTodayText = `
     <i class='fad fa-fw fa-sunrise'></i> Sunrise ${dayjs
-      .unix(data.daily.data[0].sunriseTime)
+      .unix(data.days[0].sunriseEpoch)
       .format('h:mma')}
     <i class='fad fa-fw fa-sunset'></i> Sunset ${dayjs
-      .unix(data.daily.data[0].sunsetTime)
+      .unix(data.days[0].sunsetEpoch)
       .format('h:mma')}
   `;
   const currentConditionsTooltip = `
@@ -174,27 +166,27 @@ export function populatePrimaryData(data) {
         <div class='column'>
           <strong>NEXT 7 DAYS</strong>
           <br>
-          ${data.daily.summary}
+          ${data.description}
         </div>
       </div>
     </div>
   `;
   const primaryDataTemplate = `
     <div class="column is-one-quarter has-text-right current-icon has-tooltip" data-tippy-content="<i class='${getWeatherIcon(
-      data.currently.icon,
-    )}'></i> ${data.currently.summary}">
-      <i class="${getWeatherIcon(data.currently.icon)}"></i>
+      data.currentConditions.icon,
+    )}'></i> ${data.currentConditions.conditions}">
+      <i class="${getWeatherIcon(data.currentConditions.icon)}"></i>
     </div>
     <div class="column is-half has-text-centered current-conditions">
       <h2 class="subtitle is-1 has-text-centered has-tooltip" data-tippy-content="${currentConditionsTooltip}">
-        ${data.currently.summary}
+        ${data.currentConditions.conditions}
       </h2>
     </div>
     <div class="column is-one-quarter has-text-left current-temp has-tooltip" data-tippy-content="<i class='fad fa-fw fa-thermometer-half'></i> Feels like <span class='temperature'>${Math.round(
-      data.currently.apparentTemperature,
+      data.currentConditions.feelslike,
     )}</span>&deg;">
       <span class="temperature">${Math.round(
-        data.currently.temperature,
+        data.currentConditions.temp,
       )}</span>&deg;
     </div>
   `;
@@ -225,10 +217,10 @@ export function populateWeatherData(data) {
           <i class="fad fa-fw fa-wind"></i>
           <br>
           <i class="fad fa-fw fa-chevron-circle-up" data-fa-transform="rotate-${
-            data.currently.windBearing
+            data.currentConditions.winddir
           }"></i>
-          ${Math.round(data.currently.windSpeed)}${
-    getUnitLabel('windSpeed', data.flags.units)[0]
+          ${Math.round(data.currentConditions.windspeed)}${
+    getUnitLabel('windSpeed')[0]
   }
         </p>
       </div>
@@ -236,22 +228,22 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-umbrella"></i>
           <br>
-          ${Math.round(data.currently.precipProbability * 100)}%
+          ${Math.round(data.currentConditions.precipprob)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="UV">
         <p>
           <i class="fad fa-fw fa-sun fa-swap-opacity"></i>
           <br>
-          ${Math.round(data.currently.uvIndex)}
+          ${Math.round(data.currentConditions.uvindex)}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Visibility">
         <p>
           <i class="fad fa-fw fa-eye fa-swap-opacity"></i>
           <br>
-          ${data.currently.visibility}${
-    getUnitLabel('visibility', data.flags.units)[0]
+          ${data.currentConditions.visibility}${
+    getUnitLabel('visibility')[0]
   }
         </p>
       </div>
@@ -259,7 +251,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-sunrise fa-swap-opacity"></i>
           <br>
-          ${dayjs.unix(data.daily.data[0].sunriseTime).format('h:mma')}
+          ${dayjs.unix(data.days[0].sunriseEpoch).format('h:mma')}
         </p>
       </div>
     </div>
@@ -268,8 +260,8 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-tachometer fa-swap-opacity"></i>
           <br>
-          ${Math.round(data.currently.pressure)}${
-    getUnitLabel('pressure', data.flags.units)[0]
+          ${Math.round(data.currentConditions.pressure)}${
+    getUnitLabel('pressure')[0]
   }</i>
         </p>
       </div>
@@ -277,7 +269,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-humidity fa-swap-opacity"></i>
           <br>
-          ${Math.round(data.currently.humidity * 100)}%
+          ${Math.round(data.currentConditions.humidity)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Dew Point">
@@ -285,7 +277,7 @@ export function populateWeatherData(data) {
           <i class="fad fa-fw fa-dewpoint"></i>
           <br>
           <span class="temperature">${Math.round(
-            data.currently.dewPoint,
+            data.currentConditions.dew,
           )}</span>&deg;</i>
         </p>
       </div>
@@ -293,13 +285,13 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-cloud"></i>
           <br>
-          ${Math.round(data.currently.cloudCover * 100)}%
+          ${Math.round(data.currentConditions.cloudcover)}%
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunset">
         <p>
           <i class="fad fa-fw fa-sunset fa-swap-opacity"></i>
-          <br>${dayjs.unix(data.daily.data[0].sunsetTime).format('h:mma')}
+          <br>${dayjs.unix(data.days[0].sunsetEpoch).format('h:mma')}
         </p>
       </div>
     </div>
@@ -319,7 +311,7 @@ export function populateWeatherData(data) {
 //   <p>
 //     <i class="fad fa-fw fa-thermometer-half"></i>
 //     <br>
-//     ${Math.round(data.currently.apparentTemperature)}&deg;</i>
+//     ${Math.round(data.currentConditions.feelslike)}&deg;</i>
 //   </p>
 // </div>
 
@@ -338,56 +330,48 @@ export function populateForecastData(data, numDays = 7) {
   for (let i = 0; i < numDays; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(
-      data.daily.data[next].icon,
-    )}'></i> ${data.daily.data[next].summary}`;
+      data.days[next].icon,
+    )}'></i> ${data.days[next].description}`;
     const tempText = `
       <i class='fad fa-fw fa-temperature-high'></i> High <span class='temperature'>${Math.round(
-        data.daily.data[next].temperatureMax,
+        data.days[next].tempmax,
       )}</span>&deg;
       (feels <span class='temperature'>${Math.round(
-        data.daily.data[next].apparentTemperatureMax,
+        data.days[next].feelslikemax,
       )}</span>&deg;)
-      around ${dayjs
-        .unix(data.daily.data[next].apparentTemperatureMaxTime)
-        .format('h:mma')}
       <br>
       <i class='fad fa-fw fa-temperature-low'></i> Low <span class='temperature'>${Math.round(
-        data.daily.data[next].temperatureMin,
+        data.days[next].tempmin,
       )}</span>&deg;
       (feels <span class='temperature'>${Math.round(
-        data.daily.data[next].apparentTemperatureMin,
+        data.days[next].feelslikemin,
       )}</span>&deg;)
-      around ${dayjs
-        .unix(data.daily.data[next].apparentTemperatureMinTime)
-        .format('h:mma')}
     `;
     const precipitationText = Math.floor(
-      data.daily.data[next].precipProbability * 100,
+      data.days[next].precipprob,
     )
       ? `${Math.floor(
-          data.daily.data[next].precipProbability * 100,
-        )}% chance of ${data.daily.data[next].precipType} around ${dayjs
-          .unix(data.daily.data[next].precipIntensityMaxTime)
-          .format('h:mma')}`
+          data.days[next].precipprob,
+        )}% chance of ${data.days[next].precipType}`
       : 'No precipitation';
     const sunText = `
       <i class='fad fa-fw fa-sunrise'></i> Sunrise ${dayjs
-        .unix(data.daily.data[next].sunriseTime)
+        .unix(data.days[next].sunriseEpoch)
         .format('h:mma')}
       <i class='fad fa-fw fa-sunset'></i> Sunset ${dayjs
-        .unix(data.daily.data[next].sunsetTime)
+        .unix(data.days[next].sunsetEpoch)
         .format('h:mma')}
     `;
     const forecastTemplate = `
       <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br>${sunText}<br><i class='fad fa-fw fa-umbrella'></i> ${precipitationText}</div>">
-        <strong>${dayjs.unix(data.daily.data[next].time).format('ddd')}</strong>
+        <strong>${dayjs(data.days[next].datetime).format('ddd')}</strong>
         <br>
-        <i class="${getWeatherIcon(data.daily.data[next].icon)}"></i>
+        <i class="${getWeatherIcon(data.days[next].icon)}"></i>
         <br>
         <span class="temperature">${Math.round(
-          data.daily.data[next].temperatureMax,
+          data.days[next].tempmax,
         )}</span>&deg;/<span class="temperature">${Math.round(
-      data.daily.data[next].temperatureMin,
+      data.days[next].tempmin,
     )}</span>&deg;
       </p>
     `;
@@ -416,28 +400,28 @@ export function populateHourlyData(data, numHours = 12) {
   for (let i = 0; i < numHours; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(
-      data.hourly.data[next].icon,
-    )}'></i> ${data.hourly.data[next].summary}`;
+      data.days[0].hours[next].icon,
+    )}'></i> ${data.days[0].hours[next].description}`;
     const tempText = `<i class='fad fa-fw fa-thermometer-half'></i><span class='temperature'>${Math.round(
-      data.hourly.data[next].temperature,
+      data.days[0].hours[next].temp,
     )}</span>&deg; (feels <span class='temperature'>${Math.round(
-      data.hourly.data[next].apparentTemperature,
+      data.days[0].hours[next].feelslike,
     )}</span>&deg;)`;
     const precipitationText = Math.floor(
-      data.hourly.data[next].precipProbability * 100,
+      data.days[0].hours[next].precipprob,
     )
       ? `${Math.floor(
-          data.hourly.data[next].precipProbability * 100,
-        )}% chance of ${data.hourly.data[next].precipType}`
+          data.days[0].hours[next].precipprob,
+        )}% chance of ${data.days[0].hours[next].precipType}`
       : 'No precipitation';
     const hourlyTemplate = `
       <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br><i class='fad fa-fw fa-umbrella'></i> ${precipitationText}</div>">
-        <strong>${dayjs.unix(data.hourly.data[next].time).format('ha')}</strong>
+        <strong>${dayjs.unix(data.days[0].hours[next].time).format('ha')}</strong>
         <br>
-        <i class="${getWeatherIcon(data.hourly.data[next].icon)}"></i>
+        <i class="${getWeatherIcon(data.days[0].hours[next].icon)}"></i>
         <br>
         <span class="temperature">${Math.round(
-          data.hourly.data[next].temperature,
+          data.days[0].hours[next].temp,
         )}</span>&deg;
       </p>
     `;
@@ -448,9 +432,9 @@ export function populateHourlyData(data, numHours = 12) {
 
 export function populateLastUpdated(data) {
   dayjs.extend(relativeTime);
-  const lastUpdateTime = dayjs.unix(data.currently.time);
+  const lastUpdateTime = dayjs.unix(data.currentConditions.datetimeEpoch);
   const nextUpdateTime = dayjs.unix(
-    data.currently.time + defaults.cacheTimeSpan,
+    data.currentConditions.datetimeEpoch + defaults.cacheTimeSpan,
   );
 
   let lastUpdatedString = `
@@ -496,8 +480,8 @@ export function populateFooter() {
     </div>
     <div class="column">
       <div class="content has-text-centered">
-        <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" data-tippy-content="Powered by Dark Sky">
-          <i class="fad fa-tint"></i> Powered by Dark Sky
+        <a href="https://darksky.net/poweredby/" target="_blank" rel="noopener" data-tippy-content="Powered by Visual Crossing">
+          Powered by Visual Crossing
         </a>
       </div>
     </div>

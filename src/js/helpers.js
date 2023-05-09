@@ -7,7 +7,7 @@ export const apiUrl = () => {
     window.location.hostname.includes('localhost') ||
     window.location.hostname.includes('127.0.0.1')
   ) {
-    urlToReturn = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/api`;
+    urlToReturn = `${window.location.protocol}//${window.location.hostname}:8788/api`;
   }
   // console.log(urlToReturn);
 
@@ -18,8 +18,8 @@ export const canonical = () => {
   return `https://${window.location.hostname}/`;
 };
 
-// ex: getUnityLabel('visibility', 'si'); -> returns: ['km', 'kilometers']
-export const getUnitLabel = (unitType, units) => {
+// ex: getUnityLabel('visibility', 'metric'); -> returns: ['km', 'kilometers']
+export const getUnitLabel = (unitType, units = 'us') => {
   return defaults.unitLabels[unitType][units];
 };
 

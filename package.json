@@ -1,7 +1,7 @@
 {
   "name": "localweather",
   "version": "1.8.2",
-  "description": "Minimalist local weather app powered by Dark Sky",
+  "description": "Minimalist local weather app powered by Visual Crossing",
   "private": true,
   "type": "module",
   "engines": {
@@ -100,11 +100,6 @@
     ]
   },
   "eslintConfig": {
-    "settings": {
-      "jest": {
-        "version": 28
-      }
-    },
     "env": {
       "browser": true,
       "commonjs": true,
