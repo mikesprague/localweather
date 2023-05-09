@@ -534,6 +534,7 @@ export function renderAppWithData(data) {
   populatePrimaryData(data);
   populateWeatherData(data);
   populateForecastData(data);
+  populateHourlyData(data);
   populateLastUpdated(data);
   populateLocation(data);
   populateTempUnitsToggle(data);

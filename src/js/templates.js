@@ -397,7 +397,8 @@ export function populateHourlyData(data, numHours = 12) {
   `;
   const hourlyWrappersEl = document.querySelector('.hourly-data');
   hourlyWrappersEl.innerHTML = hourlyWrappers;
-  for (let i = 0; i < numHours; i += 1) {
+  const startHour = dayjs().hour();
+  for (let i = startHour; i < numHours + startHour; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(
       data.days[0].hours[next].icon,
@@ -416,7 +417,7 @@ export function populateHourlyData(data, numHours = 12) {
       : 'No precipitation';
     const hourlyTemplate = `
       <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br><i class='fad fa-fw fa-umbrella'></i> ${precipitationText}</div>">
-        <strong>${dayjs.unix(data.days[0].hours[next].time).format('ha')}</strong>
+        <strong>${dayjs.unix(data.days[0].hours[next].datetimeEpoch).format('ha')}</strong>
         <br>
         <i class="${getWeatherIcon(data.days[0].hours[next].icon)}"></i>
         <br>
@@ -425,7 +426,7 @@ export function populateHourlyData(data, numHours = 12) {
         )}</span>&deg;
       </p>
     `;
-    const hourlyEl = document.querySelector(`.hourly-${next}`);
+    const hourlyEl = document.querySelector(`.hourly-${next - startHour}`);
     hourlyEl.innerHTML = hourlyTemplate;
   }
 }
