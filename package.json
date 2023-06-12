@@ -74,7 +74,7 @@
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
     "prettier-stylelint": "^0.4.2",
-    "sass": "^1.63.2",
+    "sass": "^1.63.3",
     "stylelint": "15.7.0",
     "stylelint-config-standard": "33.0.0",
     "stylelint-config-standard-scss": "9.0.0",
