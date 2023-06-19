@@ -60,7 +60,7 @@
     "concurrently": "^8.2.0",
     "cssnano": "^6.0.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.42.0",
+    "eslint": "^8.43.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-config-stylelint": "19.0.0",
     "eslint-plugin-compat": "^4.1.4",
