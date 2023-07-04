@@ -54,7 +54,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.22.5",
     "@babel/eslint-plugin": "7.22.5",
-    "@babel/preset-env": "7.22.5",
+    "@babel/preset-env": "7.22.6",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.2.0",
