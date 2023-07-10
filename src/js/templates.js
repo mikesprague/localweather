@@ -432,14 +432,11 @@ export function populateHourlyData(data, numHours = 12) {
 export function populateLastUpdated(data) {
   dayjs.extend(relativeTime);
   const lastUpdateTime = dayjs.unix(data.currentConditions.datetimeEpoch);
-  const nextUpdateTime = dayjs.unix(
-    data.currentConditions.datetimeEpoch + defaults.cacheTimeSpan,
-  );
 
   let lastUpdatedString = `
-    Weather data last checked at ${lastUpdateTime.format('hh:mm:ss A')}
+    Weather data last updated at ${lastUpdateTime.format('hh:mm:ss A')}
     <br>
-    Data is checked every 5 minutes and refreshed when there are updates, next check ${dayjs().to(nextUpdateTime)}
+    Data is checked every 5 minutes and refreshed when there are updates available
   `;
   let lastUpdatedTemplate = `
     <div class="column has-text-centered">
