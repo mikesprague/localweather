@@ -398,35 +398,33 @@ export function populateHourlyData(data, numHours = 12) {
   const hourlyWrappersEl = document.querySelector('.hourly-data');
   hourlyWrappersEl.innerHTML = hourlyWrappers;
   const startHour = dayjs().hour();
-  for (let i = startHour; i < numHours + startHour; i += 1) {
+  let hours = [...data.days[0].hours, ...data.days[1].hours];
+  hours = hours.slice(startHour, startHour + numHours + 1);
+  for (let i = 0; i < numHours; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(
-      data.days[0].hours[next].icon,
-    )}'></i> ${data.days[0].hours[next].description}`;
+      hours[next].icon,
+    )}'></i> ${hours[next].description}`;
     const tempText = `<i class='fad fa-fw fa-thermometer-half'></i><span class='temperature'>${Math.round(
-      data.days[0].hours[next].temp,
+      hours[next].temp,
     )}</span>&deg; (feels <span class='temperature'>${Math.round(
-      data.days[0].hours[next].feelslike,
+      hours[next].feelslike,
     )}</span>&deg;)`;
-    const precipitationText = Math.floor(
-      data.days[0].hours[next].precipprob,
-    )
-      ? `${Math.floor(
-          data.days[0].hours[next].precipprob,
-        )}% chance of ${data.days[0].hours[next].precipType}`
+    const precipitationText = Math.floor(hours[next].precipprob)
+      ? `${Math.floor(hours[next].precipprob)}% chance of ${
+          hours[next].precipType
+        }`
       : 'No precipitation';
     const hourlyTemplate = `
       <p class="has-tooltip" data-tippy-content="<div class='has-text-left'>${conditionText}<br>${tempText}<br><i class='fad fa-fw fa-umbrella'></i> ${precipitationText}</div>">
-        <strong>${dayjs.unix(data.days[0].hours[next].datetimeEpoch).format('ha')}</strong>
+        <strong>${dayjs.unix(hours[next].datetimeEpoch).format('ha')}</strong>
         <br>
-        <i class="${getWeatherIcon(data.days[0].hours[next].icon)}"></i>
+        <i class="${getWeatherIcon(hours[next].icon)}"></i>
         <br>
-        <span class="temperature">${Math.round(
-          data.days[0].hours[next].temp,
-        )}</span>&deg;
+        <span class="temperature">${Math.round(hours[next].temp)}</span>&deg;
       </p>
     `;
-    const hourlyEl = document.querySelector(`.hourly-${next - startHour}`);
+    const hourlyEl = document.querySelector(`.hourly-${next}`);
     hourlyEl.innerHTML = hourlyTemplate;
   }
 }
