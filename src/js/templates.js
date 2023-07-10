@@ -439,9 +439,9 @@ export function populateLastUpdated(data) {
   );
 
   let lastUpdatedString = `
-    Weather data last refreshed at ${lastUpdateTime.format('hh:mm:ss A')}
+    Weather data last checked at ${lastUpdateTime.format('hh:mm:ss A')}
     <br>
-    Data is cached for 5 minutes, next update ${dayjs().to(nextUpdateTime)}
+    Data is checked every 5 minutes and refreshed when there are updates, next check ${dayjs().to(nextUpdateTime)}
   `;
   let lastUpdatedTemplate = `
     <div class="column has-text-centered">
