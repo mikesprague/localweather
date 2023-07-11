@@ -67,7 +67,7 @@
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-markdown": "^3.0.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-security": "^1.7.1",
     "postcss": "^8.4.25",
     "postcss-cli": "10.1.0",
