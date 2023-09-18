@@ -1,6 +1,6 @@
 {
   "name": "localweather",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Minimalist local weather app powered by Visual Crossing",
   "private": true,
   "type": "module",
