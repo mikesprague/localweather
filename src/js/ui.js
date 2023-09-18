@@ -1,54 +1,54 @@
+import { dom, library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faTint,
-  faClock,
-  faCode,
-  faWifiSlash,
-  faMoonStars,
-  faCloudRain,
-  faCloudSnow,
-  faCloudSleet,
-  faFog,
-  faClouds,
-  faCloudsSun,
-  faCloudsMoon,
-  faCloudHail,
-  faHurricane,
-  faThunderstorm,
-  faTornado,
-  faTemperatureHigh,
-  faTemperatureLow,
-  faSpinner,
-  faGlobe,
-  faMapMarkerAlt,
-  faExclamationTriangle,
+  faAngleUp,
   faArrowAltCircleDown,
   faArrowAltCircleUp,
   faBan,
-  faSignal,
+  faChevronCircleUp,
+  faCircle,
+  faClock,
+  faCloud,
+  faCloudHail,
+  faCloudRain,
+  faCloudSleet,
+  faCloudSnow,
+  faClouds,
+  faCloudsMoon,
+  faCloudsSun,
+  faCode,
+  faDewpoint,
+  faExclamationTriangle,
+  faExternalLinkAlt,
+  faEye,
+  faFog,
+  faGlobe,
+  faGlobeAfrica,
+  faHumidity,
+  faHurricane,
+  faInfoCircle,
   faLongArrowAltDown,
   faLongArrowAltUp,
-  faExternalLinkAlt,
-  faCircle,
-  faPlusSquare,
+  faMapMarkerAlt,
   faMinusSquare,
-  faGlobeAfrica,
-  faSyncAlt,
-  faTachometer,
-  faAngleUp,
-  faChevronCircleUp,
-  faDewpoint,
-  faHumidity,
-  faWind,
+  faMoonStars,
+  faPlusSquare,
+  faSignal,
+  faSpinner,
+  faSun,
   faSunrise,
   faSunset,
-  faEye,
-  faUmbrella,
-  faSun,
-  faCloud,
+  faSyncAlt,
+  faTachometer,
+  faTemperatureHigh,
+  faTemperatureLow,
   faThermometerHalf,
-  faInfoCircle,
+  faThunderstorm,
+  faTint,
+  faTornado,
+  faUmbrella,
+  faWifiSlash,
+  faWind,
 } from '@fortawesome/pro-duotone-svg-icons';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import dayjs from 'dayjs';
 import swal from 'sweetalert2';
 import tippy from 'tippy.js';
@@ -58,17 +58,17 @@ import { getWeatherData } from './data.js';
 import { defaults } from './defaults.js';
 import { handleError, reloadWindow } from './helpers.js';
 import {
-  populateMessage,
+  errorTemplates,
+  populateAppShell,
   populateForecastData,
-  populateTempUnitsToggle,
   populateHourlyData,
   populateLastUpdated,
   populateLocation,
+  populateMessage,
   populatePrimaryData,
-  populateWeatherData,
+  populateTempUnitsToggle,
   populateWeatherAlert,
-  populateAppShell,
-  errorTemplates,
+  populateWeatherData,
 } from './templates.js';
 
 export function initFontAwesomeIcons() {
@@ -120,7 +120,7 @@ export function initFontAwesomeIcons() {
     faTornado,
     faUmbrella,
     faWind,
-    faWifiSlash,
+    faWifiSlash
   );
   dom.watch();
 }
@@ -296,7 +296,7 @@ export function initTooltips() {
       const currentUnits = getData(defaults.temperatureUnitsKey);
       const defaultUnits = getData(defaults.temperatureDefaultUnitsKey);
       const tempElsInTooltip = Array.from(
-        document.querySelectorAll('.temperature'),
+        document.querySelectorAll('.temperature')
       );
       if (currentUnits !== defaultUnits) {
         tempElsInTooltip.forEach((tempEl) => {
@@ -352,7 +352,7 @@ export function showUi() {
 
 export function showLoading(loadingMsg = defaults.loadingText) {
   const loadingSpinner = document.querySelector(
-    defaults.loadingSpinnerSelector,
+    defaults.loadingSpinnerSelector
   );
   setBodyBgClass('loading');
   populateMessage(loadingMsg);
@@ -363,7 +363,7 @@ export function showLoading(loadingMsg = defaults.loadingText) {
 
 export function hideLoading() {
   const loadingSpinner = document.querySelector(
-    defaults.loadingSpinnerSelector,
+    defaults.loadingSpinnerSelector
   );
   removeBodyBgClass('loading');
   hideEl(loadingSpinner);
@@ -386,7 +386,7 @@ export function showInstallAlert() {
 
 export function showErrorAlert(
   errorMessage,
-  buttonText = 'Reload to Try Again',
+  buttonText = 'Reload to Try Again'
 ) {
   hideLoading();
   swal.fire({
@@ -406,17 +406,14 @@ export function hasApprovedLocationSharing() {
   return (
     document.cookie.replace(
       /(?:(?:^|.*;\s*)approvedLocationSharing\s*=\s*([^;]*).*$)|^.*$/,
-      '$1',
+      '$1'
     ) === 'true'
   );
 }
 
 export function parseWeatherAlert(weatherAlert) {
   const alertParts = weatherAlert.split('*');
-  const heading = alertParts
-    .shift()
-    .replace(/\.\.\./g, ' ')
-    .trim();
+  const heading = alertParts.shift().replace(/\.\.\./g, ' ').trim();
   const bodyText = alertParts.join(' ').trim();
   // console.log(weatherAlert);
   // console.log(alertParts);
@@ -489,7 +486,7 @@ export function toggleTempUnits(data) {
     const tempEls = Array.from(document.querySelectorAll('.temperature'));
     setData(
       defaults.temperatureUnitsKey,
-      toFahrenheit ? 'fahrenheit' : 'celsius',
+      toFahrenheit ? 'fahrenheit' : 'celsius'
     );
     tempEls.forEach((tempEl) => {
       if (toFahrenheit) {
@@ -596,7 +593,7 @@ export function initGeolocation() {
         navigator.geolocation.getCurrentPosition(
           geoSuccess,
           geoError,
-          defaults.geolocationOptions,
+          defaults.geolocationOptions
         );
       } catch (error) {
         showErrorAlert(errorTemplates.locationError);
@@ -615,7 +612,7 @@ export function initGeolocation() {
       navigator.geolocation.getCurrentPosition(
         geoSuccess,
         geoError,
-        defaults.geolocationOptions,
+        defaults.geolocationOptions
       );
     }
   }

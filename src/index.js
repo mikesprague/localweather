@@ -4,12 +4,11 @@ import { initFontAwesomeIcons, hasApprovedLocationSharing } from './js/ui.js';
 import './index.scss';
 
 if (hasApprovedLocationSharing()) {
- init();
+  init();
 } else {
- initFontAwesomeIcons();
- document.querySelector('.btn-init-app').addEventListener('click', () => {
-   init();
- });
+  initFontAwesomeIcons();
+  document.querySelector('.btn-init-app').addEventListener('click', () => {
+    init();
+  });
 }
 initFontAwesomeIcons();
-

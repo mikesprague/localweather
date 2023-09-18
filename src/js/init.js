@@ -3,15 +3,15 @@ import { getData, resetData, useCache } from './cache.js';
 import { defaults } from './defaults.js';
 import { handleError } from './helpers.js';
 import {
-  initFontAwesomeIcons,
-  initTooltips,
-  initGeolocation,
   hasApprovedLocationSharing,
-  refreshLastUpdatedTime,
-  showInstallAlert,
-  hideLoading,
   hideEl,
+  hideLoading,
+  initFontAwesomeIcons,
+  initGeolocation,
+  initTooltips,
+  refreshLastUpdatedTime,
   showEl,
+  showInstallAlert,
 } from './ui.js';
 
 const releaseStage = process.env.NODE_ENV || 'production';
@@ -76,7 +76,7 @@ export function init() {
     () => {
       initOffline();
     },
-    false,
+    false
   );
 
   window.addEventListener(
@@ -85,7 +85,7 @@ export function init() {
       resetData();
       initOnline();
     },
-    false,
+    false
   );
 
   initOnline();

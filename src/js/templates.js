@@ -59,7 +59,7 @@ const addLocationNameSpacing = () => {
   const locationNameEl = document.querySelector('.location-name');
   const locationNameLetters = locationNameEl.textContent.split('');
   const updatedLetters = locationNameLetters.map(
-    (letter) => `<span class="location-name-letter">${letter}</span>`,
+    (letter) => `<span class="location-name-letter">${letter}</span>`
   );
   const placeHolder = '<span class="location-name-letter"></span>';
   if (locationNameLetters.length <= 24) {
@@ -90,41 +90,33 @@ export function populateLocation(data) {
 
 export function populatePrimaryData(data) {
   const conditionNextHourText = `<i class='${getWeatherIcon(
-    data.days[0].hours[1].icon,
+    data.days[0].hours[1].icon
   )}'></i> ${data.days[0].hours[1].conditions}`;
   const tempNextHourText = `<i class='fad fa-fw fa-thermometer-half'></i><span class='temperature'>${Math.round(
-    data.days[0].hours[1].temp,
+    data.days[0].hours[1].temp
   )}</span>&deg; (feels <span class='temperature'>${Math.round(
-    data.days[0].hours[1].feelslike,
+    data.days[0].hours[1].feelslike
   )}</span>&deg;)`;
-  const precipitationNextHourText = Math.floor(
-    data.days[0].hours[1].precipprob,
-  )
+  const precipitationNextHourText = Math.floor(data.days[0].hours[1].precipprob)
     ? `${Math.floor(data.days[0].hours[1].precipprob)}% chance of ${
         data.days[0].hours[1].precipType
       }`
     : 'No precipitation';
   const conditionTodayText = `<i class='${getWeatherIcon(
-    data.days[0].icon,
+    data.days[0].icon
   )}'></i> ${data.days[0].description}`;
   const tempTodayText = `
     <i class='fad fa-fw fa-temperature-high'></i> High <span class='temperature'>${Math.round(
-      data.days[0].tempmax,
+      data.days[0].tempmax
     )}</span>&deg;
-    (feels <span class='temperature'>${Math.round(
-      data.days[0].feelslikemax,
-    )}</span>&deg;)
+    (feels <span class='temperature'>${Math.round(data.days[0].feelslikemax)}</span>&deg;)
     <br>
     <i class='fad fa-fw fa-temperature-low'></i> Low <span class='temperature'>${Math.round(
-      data.days[0].tempmin,
+      data.days[0].tempmin
     )}</span>&deg;
-    (feels <span class='temperature'>${Math.round(
-      data.days[0].feelslikemin,
-    )}</span>&deg;)
+    (feels <span class='temperature'>${Math.round(data.days[0].feelslikemin)}</span>&deg;)
   `;
-  const precipitationTodayText = Math.floor(
-    data.days[0].precipprob,
-  )
+  const precipitationTodayText = Math.floor(data.days[0].precipprob)
     ? `${Math.floor(data.days[0].precipprob)}% chance of ${
         data.days[0].precipType
       }`
@@ -173,7 +165,7 @@ export function populatePrimaryData(data) {
   `;
   const primaryDataTemplate = `
     <div class="column is-one-quarter has-text-right current-icon has-tooltip" data-tippy-content="<i class='${getWeatherIcon(
-      data.currentConditions.icon,
+      data.currentConditions.icon
     )}'></i> ${data.currentConditions.conditions}">
       <i class="${getWeatherIcon(data.currentConditions.icon)}"></i>
     </div>
@@ -183,11 +175,9 @@ export function populatePrimaryData(data) {
       </h2>
     </div>
     <div class="column is-one-quarter has-text-left current-temp has-tooltip" data-tippy-content="<i class='fad fa-fw fa-thermometer-half'></i> Feels like <span class='temperature'>${Math.round(
-      data.currentConditions.feelslike,
+      data.currentConditions.feelslike
     )}</span>&deg;">
-      <span class="temperature">${Math.round(
-        data.currentConditions.temp,
-      )}</span>&deg;
+      <span class="temperature">${Math.round(data.currentConditions.temp)}</span>&deg;
     </div>
   `;
   const priamryDataEl = document.querySelector('.primary-conditions-data');
@@ -220,8 +210,8 @@ export function populateWeatherData(data) {
             data.currentConditions.winddir
           }"></i>
           ${Math.round(data.currentConditions.windspeed)}${
-    getUnitLabel('windSpeed')[0]
-  }
+            getUnitLabel('windSpeed')[0]
+          }
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Precipitation">
@@ -242,9 +232,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-eye fa-swap-opacity"></i>
           <br>
-          ${data.currentConditions.visibility}${
-    getUnitLabel('visibility')[0]
-  }
+          ${data.currentConditions.visibility}${getUnitLabel('visibility')[0]}
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Sunrise">
@@ -261,8 +249,8 @@ export function populateWeatherData(data) {
           <i class="fad fa-fw fa-tachometer fa-swap-opacity"></i>
           <br>
           ${Math.round(data.currentConditions.pressure)}${
-    getUnitLabel('pressure')[0]
-  }</i>
+            getUnitLabel('pressure')[0]
+          }</i>
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Humidity">
@@ -276,9 +264,7 @@ export function populateWeatherData(data) {
         <p>
           <i class="fad fa-fw fa-dewpoint"></i>
           <br>
-          <span class="temperature">${Math.round(
-            data.currentConditions.dew,
-          )}</span>&deg;</i>
+          <span class="temperature">${Math.round(data.currentConditions.dew)}</span>&deg;</i>
         </p>
       </div>
       <div class="column is-one-fifth-mobile has-text-centered has-tooltip" data-tippy-content="Cloud Cover">
@@ -330,29 +316,27 @@ export function populateForecastData(data, numDays = 7) {
   for (let i = 0; i < numDays; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(
-      data.days[next].icon,
+      data.days[next].icon
     )}'></i> ${data.days[next].description}`;
     const tempText = `
       <i class='fad fa-fw fa-temperature-high'></i> High <span class='temperature'>${Math.round(
-        data.days[next].tempmax,
+        data.days[next].tempmax
       )}</span>&deg;
       (feels <span class='temperature'>${Math.round(
-        data.days[next].feelslikemax,
+        data.days[next].feelslikemax
       )}</span>&deg;)
       <br>
       <i class='fad fa-fw fa-temperature-low'></i> Low <span class='temperature'>${Math.round(
-        data.days[next].tempmin,
+        data.days[next].tempmin
       )}</span>&deg;
       (feels <span class='temperature'>${Math.round(
-        data.days[next].feelslikemin,
+        data.days[next].feelslikemin
       )}</span>&deg;)
     `;
-    const precipitationText = Math.floor(
-      data.days[next].precipprob,
-    )
-      ? `${Math.floor(
-          data.days[next].precipprob,
-        )}% chance of ${data.days[next].precipType}`
+    const precipitationText = Math.floor(data.days[next].precipprob)
+      ? `${Math.floor(data.days[next].precipprob)}% chance of ${
+          data.days[next].precipType
+        }`
       : 'No precipitation';
     const sunText = `
       <i class='fad fa-fw fa-sunrise'></i> Sunrise ${dayjs
@@ -369,9 +353,9 @@ export function populateForecastData(data, numDays = 7) {
         <i class="${getWeatherIcon(data.days[next].icon)}"></i>
         <br>
         <span class="temperature">${Math.round(
-          data.days[next].tempmax,
+          data.days[next].tempmax
         )}</span>&deg;/<span class="temperature">${Math.round(
-      data.days[next].tempmin,
+      data.days[next].tempmin
     )}</span>&deg;
       </p>
     `;
@@ -403,12 +387,12 @@ export function populateHourlyData(data, numHours = 12) {
   for (let i = 0; i < numHours; i += 1) {
     const next = i + 1;
     const conditionText = `<i class='${getWeatherIcon(
-      hours[next].icon,
+      hours[next].icon
     )}'></i> ${hours[next].description}`;
     const tempText = `<i class='fad fa-fw fa-thermometer-half'></i><span class='temperature'>${Math.round(
-      hours[next].temp,
+      hours[next].temp
     )}</span>&deg; (feels <span class='temperature'>${Math.round(
-      hours[next].feelslike,
+      hours[next].feelslike
     )}</span>&deg;)`;
     const precipitationText = Math.floor(hours[next].precipprob)
       ? `${Math.floor(hours[next].precipprob)}% chance of ${
@@ -454,7 +438,7 @@ export function populateLastUpdated(data) {
       <div class="column has-text-centered">
         <p class="last-updated has-tooltip" data-tippy-content="${lastUpdatedString}">
           <i class='fad fa-fw fa-wifi-slash'></i> Weather data last updated ${lastUpdateTime.format(
-            'hh:mm:ss A',
+            'hh:mm:ss A'
           )}
         </p>
       </div>
