@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">= 16.x",
+    "node": ">= 18.x",
     "npm": ">= 8.x"
   },
   "scripts": {
@@ -36,58 +36,38 @@
   },
   "homepage": "https://localweather.dev",
   "dependencies": {
-    "@bugsnag/js": "^7.21.0",
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/pro-duotone-svg-icons": "^6.4.0",
-    "@sweetalert2/theme-dark": "^5.0.15",
-    "axios": "^1.5.0",
-    "bulma": "^0.9.4",
-    "bulma-switch": "^2.0.4",
-    "cross-env": "^7.0.3",
-    "dayjs": "^1.11.9",
-    "dotenv": "^16.3.1",
-    "logrocket": "^5.0.1",
-    "register-service-worker": "^1.7.2",
-    "sweetalert2": "^11.7.28",
-    "tippy.js": "^6.3.7"
+    "@bugsnag/js": "7.21.0",
+    "@fortawesome/fontawesome-svg-core": "6.4.0",
+    "@fortawesome/pro-duotone-svg-icons": "6.4.0",
+    "@sweetalert2/theme-dark": "5.0.15",
+    "axios": "1.5.0",
+    "bulma": "0.9.4",
+    "bulma-switch": "2.0.4",
+    "cross-env": "7.0.3",
+    "dayjs": "1.11.9",
+    "dotenv": "16.3.1",
+    "logrocket": "5.0.1",
+    "register-service-worker": "1.7.2",
+    "sweetalert2": "11.7.28",
+    "tippy.js": "6.3.7"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.15",
-    "@babel/eslint-plugin": "7.22.10",
-    "@babel/preset-env": "7.22.20",
-    "@fullhuman/postcss-purgecss": "^5.0.0",
-    "autoprefixer": "^10.4.15",
-    "concurrently": "^8.2.1",
-    "cssnano": "^6.0.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.49.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-config-stylelint": "20.0.0",
-    "eslint-plugin-compat": "^4.2.0",
-    "eslint-plugin-html": "^7.1.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-markdown": "^3.0.1",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-security": "^1.7.1",
-    "postcss": "^8.4.29",
+    "@biomejs/biome": "1.2.2",
+    "@fullhuman/postcss-purgecss": "5.0.0",
+    "autoprefixer": "10.4.15",
+    "concurrently": "8.2.1",
+    "cssnano": "6.0.1",
+    "cz-git": "1.7.1",
+    "postcss": "8.4.29",
     "postcss-cli": "10.1.0",
-    "prettier": "^3.0.3",
-    "prettier-eslint": "^15.0.1",
-    "prettier-stylelint": "^0.4.2",
-    "sass": "^1.67.0",
+    "sass": "1.67.0",
     "stylelint": "15.10.3",
     "stylelint-config-standard": "34.0.0",
     "stylelint-config-standard-scss": "11.0.0",
-    "stylelint-prettier": "4.0.2",
     "vite": "4.4.9",
     "vite-plugin-html": "3.2.0",
     "vite-plugin-pwa": "0.16.5",
     "wrangler": "3.8.0"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
   },
   "browserslist": {
     "development": [
@@ -99,53 +79,9 @@
       "not ie <= 10"
     ]
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "commonjs": true,
-      "es6": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "prettier",
-      "stylelint"
-    ],
-    "plugins": [
-      "babel",
-      "compat",
-      "html",
-      "import",
-      "prettier"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser",
-      "ecmaVersion": 11,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "impliedStrict": true,
-        "modules": true
-      }
-    },
-    "rules": {
-      "node/no-unpublished-import": "warn",
-      "node/no-missing-import": "warn"
-    },
-    "ignorePatterns": [
-      "dist/",
-      ".history/",
-      "node_modules/"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "semi": true,
-    "tabWidth": 2
-  },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-git"
     }
   }
 }
