@@ -40,8 +40,7 @@ Minimalist local weather app powered by Visual Crossing
 
 - [npm](https://www.npmjs.com/)
 - [Vite](https://vitejs.dev/)
-- [Prettier](https://prettier.io/)
-- [Eslint](https://eslint.org/)
+- [Biome](https://biomejs.dev/)
 - [Sass](https://sass-lang.com/)
 - [Bulma](https://bulma.io/)
 - [Font Aweseome Pro](https://fontawesome.com/pro/)
