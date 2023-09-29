@@ -58,7 +58,7 @@
     "concurrently": "8.2.1",
     "cssnano": "6.0.1",
     "cz-git": "1.7.1",
-    "postcss": "8.4.30",
+    "postcss": "8.4.31",
     "postcss-cli": "10.1.0",
     "sass": "1.68.0",
     "stylelint": "15.10.3",
