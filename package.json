@@ -37,8 +37,8 @@
   "homepage": "https://localweather.dev",
   "dependencies": {
     "@bugsnag/js": "7.21.0",
-    "@fortawesome/fontawesome-svg-core": "6.4.0",
-    "@fortawesome/pro-duotone-svg-icons": "6.4.0",
+    "@fortawesome/fontawesome-svg-core": "6.4.2",
+    "@fortawesome/pro-duotone-svg-icons": "6.4.2",
     "@sweetalert2/theme-dark": "5.0.15",
     "axios": "1.5.1",
     "bulma": "0.9.4",
