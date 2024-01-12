@@ -39,7 +39,7 @@
     "@bugsnag/js": "7.22.3",
     "@fortawesome/fontawesome-svg-core": "6.4.2",
     "@fortawesome/pro-duotone-svg-icons": "6.4.2",
-    "@sweetalert2/theme-dark": "5.0.15",
+    "@sweetalert2/theme-dark": "5.0.16",
     "axios": "1.6.5",
     "bulma": "0.9.4",
     "bulma-switch": "2.0.4",
