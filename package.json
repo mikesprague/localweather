@@ -54,7 +54,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.5.2",
     "@fullhuman/postcss-purgecss": "5.0.0",
-    "autoprefixer": "10.4.16",
+    "autoprefixer": "10.4.17",
     "concurrently": "8.2.2",
     "cssnano": "6.0.3",
     "cz-git": "1.8.0",
