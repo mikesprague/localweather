@@ -67,7 +67,7 @@
     "vite": "5.1.0",
     "vite-plugin-html": "3.2.2",
     "vite-plugin-pwa": "0.17.5",
-    "wrangler": "3.27.0"
+    "wrangler": "3.28.1"
   },
   "browserslist": {
     "development": [
