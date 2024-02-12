@@ -46,7 +46,7 @@
     "cross-env": "7.0.3",
     "dayjs": "1.11.10",
     "dotenv": "16.4.2",
-    "logrocket": "8.0.0",
+    "logrocket": "8.0.1",
     "register-service-worker": "1.7.2",
     "sweetalert2": "11.10.5",
     "tippy.js": "6.3.7"
