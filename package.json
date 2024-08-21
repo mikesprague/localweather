@@ -44,7 +44,7 @@
     "bulma": "1.0.2",
     "bulma-switch": "2.0.4",
     "cross-env": "7.0.3",
-    "dayjs": "1.11.12",
+    "dayjs": "1.11.13",
     "dotenv": "16.4.5",
     "logrocket": "8.1.2",
     "register-service-worker": "1.7.2",
