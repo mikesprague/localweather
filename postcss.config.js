@@ -1,3 +1,8 @@
+import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import tailwindcss from 'tailwindcss';
+
 const cssSafelistClassArray = [
   /swal2/,
   /tippy/,
@@ -14,16 +19,16 @@ const cssSafelistClassArray = [
   /field/,
 ];
 
-// Export all plugins our postcss should use
-module.exports = {
+export default {
   plugins: [
-    require('autoprefixer'),
-    require('cssnano')({
+    autoprefixer,
+    tailwindcss,
+    cssnano({
       preset: 'default',
     }),
-    require('@fullhuman/postcss-purgecss')({
+    purgeCSSPlugin({
       content: ['./src/**/*.html', './src/js/**/*.js'],
-      fontFace: true,
+      fontFace: false,
       safelist: cssSafelistClassArray,
     }),
   ],
