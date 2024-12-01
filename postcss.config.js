@@ -1,7 +1,6 @@
 import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-import tailwindcss from 'tailwindcss';
 
 const cssSafelistClassArray = [
   /swal2/,
@@ -22,7 +21,6 @@ const cssSafelistClassArray = [
 export default {
   plugins: [
     autoprefixer,
-    tailwindcss,
     cssnano({
       preset: 'default',
     }),
