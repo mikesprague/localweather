@@ -205,9 +205,9 @@ export function setFavicon(data) {
   const currentIcon = data.currentConditions.icon;
   const iconTags = document.getElementsByClassName('favicon');
   const iconPath = `images/${currentIcon}.png`;
-  Array.from(iconTags).forEach((iconTag) => {
+  for (const iconTag of Array.from(iconTags)) {
     iconTag.setAttribute('href', iconPath);
-  });
+  }
 }
 
 export function setTitle(data) {
@@ -221,15 +221,15 @@ export function showEl(el) {
   if (el && el !== 'undefined') {
     switch (typeof el) {
       case 'NodeList':
-        Array.from(el).forEach((item) => {
+        for (const item of Array.from(el)) {
           item.classList.remove(defaults.hideClassName);
-        });
+        }
         break;
       case 'object':
         if (el.length) {
-          Array.from(el).forEach((item) => {
+          for (const item of Array.from(el)) {
             item.classList.remove(defaults.hideClassName);
-          });
+          }
         } else if (el.length !== 0) {
           el.classList.remove(defaults.hideClassName);
         }
@@ -247,15 +247,15 @@ export function hideEl(el) {
   if (el && el !== 'undefined') {
     switch (typeof el) {
       case 'NodeList':
-        Array.from(el).forEach((item) => {
+        for (const item of Array.from(el)) {
           item.classList.add(defaults.hideClassName);
-        });
+        }
         break;
       case 'object':
         if (el.length) {
-          Array.from(el).forEach((item) => {
+          for (const item of Array.from(el)) {
             item.classList.add(defaults.hideClassName);
-          });
+          }
         } else if (el.length !== 0) {
           el.classList.add(defaults.hideClassName);
         }
@@ -299,17 +299,17 @@ export function initTooltips() {
         document.querySelectorAll('.temperature')
       );
       if (currentUnits !== defaultUnits) {
-        tempElsInTooltip.forEach((tempEl) => {
+        for (const tempEl of tempElsInTooltip) {
           if (toFahrenheit) {
-            tempEl.innerHTML = cToF(parseInt(tempEl.textContent));
+            tempEl.innerHTML = cToF(Number.parseInt(tempEl.textContent));
             tempEl.classList.remove('temperature');
             tempEl.classList.add('temperature-converted');
           } else {
-            tempEl.innerHTML = fToC(parseInt(tempEl.textContent));
+            tempEl.innerHTML = fToC(Number.parseInt(tempEl.textContent));
             tempEl.classList.remove('temperature');
             tempEl.classList.add('temperature-converted');
           }
-        });
+        }
       }
     },
   });
@@ -413,7 +413,10 @@ export function hasApprovedLocationSharing() {
 
 export function parseWeatherAlert(weatherAlert) {
   const alertParts = weatherAlert.split('*');
-  const heading = alertParts.shift().replace(/\.\.\./g, ' ').trim();
+  const heading = alertParts
+    .shift()
+    .replace(/\.\.\./g, ' ')
+    .trim();
   const bodyText = alertParts.join(' ').trim();
   // console.log(weatherAlert);
   // console.log(alertParts);
@@ -488,17 +491,17 @@ export function toggleTempUnits(data) {
       defaults.temperatureUnitsKey,
       toFahrenheit ? 'fahrenheit' : 'celsius'
     );
-    tempEls.forEach((tempEl) => {
+    for (const tempEl of tempEls) {
       if (toFahrenheit) {
-        tempEl.innerHTML = cToF(parseInt(tempEl.textContent));
+        tempEl.innerHTML = cToF(Number.parseInt(tempEl.textContent));
         tempEl.classList.remove('temperature');
         tempEl.classList.add('temperature-converted');
       } else {
-        tempEl.innerHTML = fToC(parseInt(tempEl.textContent));
+        tempEl.innerHTML = fToC(Number.parseInt(tempEl.textContent));
         tempEl.classList.remove('temperature');
         tempEl.classList.add('temperature-converted');
       }
-    });
+    }
   }
 }
 
