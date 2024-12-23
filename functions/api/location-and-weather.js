@@ -25,8 +25,8 @@ export const onRequestGet = async (context) => {
   const units = urlParams.get('units') || 'us';
   const time = urlParams.get('time');
 
-  lat = parseFloat(lat).toFixed(5).toString();
-  lng = parseFloat(lng).toFixed(5).toString();
+  lat = Number.parseFloat(lat).toFixed(5).toString();
+  lng = Number.parseFloat(lng).toFixed(5).toString();
 
   if (healthcheck) {
     return new Response(JSON.stringify('API is up and running'), {
@@ -48,7 +48,7 @@ export const onRequestGet = async (context) => {
       const fullResults = data.results;
       const formattedAddress = fullResults[0].formatted_address.replace(
         'Seneca Falls',
-        'Seneca Moistens',
+        'Seneca Moistens'
       );
       let locationName = '';
       const isUSA = formattedAddress.toLowerCase().includes('usa');
@@ -61,24 +61,24 @@ export const onRequestGet = async (context) => {
         'country',
       ];
 
-      addressTargets.forEach((target) => {
+      for (const target of addressTargets) {
         if (!locationName.length) {
-          fullResults.forEach((result) => {
+          for (const result of fullResults) {
             if (!locationName.length) {
-              result.address_components.forEach((component) => {
+              for (const component of result.address_components) {
                 if (
                   !locationName.length &&
                   component.types.indexOf(target) > -1
                 ) {
                   locationName = component.long_name;
                 }
-              });
+              }
             }
-          });
+          }
         }
-      });
+      }
 
-      fullResults[0].address_components.forEach((component) => {
+      for (const component of fullResults[0].address_components) {
         if (
           isUSA &&
           component.types.indexOf('administrative_area_level_1') > -1
@@ -89,7 +89,8 @@ export const onRequestGet = async (context) => {
         if (!isUSA && component.types.indexOf('country') > -1) {
           locationName = `${locationName}, ${component.short_name}`;
         }
-      });
+      }
+
       // console.log(locationName);
       const locationData = {
         location: {
