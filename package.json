@@ -41,7 +41,7 @@
     "@fortawesome/pro-duotone-svg-icons": "6.7.2",
     "@sweetalert2/theme-dark": "5.0.20",
     "axios": "1.7.9",
-    "bulma": "1.0.2",
+    "bulma": "1.0.3",
     "bulma-switch": "2.0.4",
     "cross-env": "7.0.3",
     "dayjs": "1.11.13",
