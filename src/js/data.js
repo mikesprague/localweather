@@ -16,7 +16,7 @@ export async function getWeatherData(lat, lng) {
     const cachedWeatherData = getData(defaults.weatherDataKey);
     return cachedWeatherData;
   }
-  const url = `${apiUrl()}/new-location-and-weather/?lat=${lat}&lng=${lng}`;
+  const url = `${apiUrl()}/location-and-weather/?lat=${lat}&lng=${lng}`;
   const weatherData = await fetch(url).then(async (response) => {
     const data = await response.json();
     // console.log(data);
