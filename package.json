@@ -54,7 +54,7 @@
     "@biomejs/biome": "2.0.2",
     "@fullhuman/postcss-purgecss": "7.0.2",
     "autoprefixer": "10.4.21",
-    "concurrently": "9.1.2",
+    "concurrently": "9.2.0",
     "cssnano": "7.0.7",
     "cz-git": "1.11.2",
     "postcss": "8.5.6",
