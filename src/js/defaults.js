@@ -58,11 +58,11 @@ export const defaults = {
     },
     windSpeed: {
       us: ['mph', 'miles per hour'],
-      metric: ['mps', 'meters per second'],
+      metric: ['m/s', 'meters per second'],
     },
     windGust: {
       us: ['mph', 'miles per hour'],
-      metric: ['mps', 'meters per second'],
+      metric: ['m/s', 'meters per second'],
     },
     pressure: {
       us: ['mb', 'millibats'],
