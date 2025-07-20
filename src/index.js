@@ -1,5 +1,5 @@
 import { init } from './js/init.js';
-import { initFontAwesomeIcons, hasApprovedLocationSharing } from './js/ui.js';
+import { hasApprovedLocationSharing, initFontAwesomeIcons } from './js/ui.js';
 
 import './index.scss';
 
