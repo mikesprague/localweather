@@ -1,5 +1,5 @@
 export const onRequestGet = async (context) => {
-  const CACHE_NAME = 'localweather-dev';
+  const CACHE_NAME = 'localweather-dev-new';
   const { request } = context;
 
   const cache = await caches.open(CACHE_NAME);
