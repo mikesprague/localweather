@@ -63,7 +63,7 @@
     "stylelint": "16.23.0",
     "stylelint-config-standard": "39.0.0",
     "stylelint-config-standard-scss": "15.0.1",
-    "vite": "7.0.6",
+    "vite": "7.1.0",
     "vite-plugin-html": "3.2.2",
     "vite-plugin-pwa": "1.0.2",
     "wrangler": "4.28.0"
