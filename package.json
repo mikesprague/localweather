@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.13",
-    "@fullhuman/postcss-purgecss": "7.0.2",
+    "@fullhuman/postcss-purgecss": "8.0.0",
     "autoprefixer": "10.4.24",
     "concurrently": "9.2.1",
     "cssnano": "7.1.2",
