@@ -1,4 +1,4 @@
-import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
+import purgeCSSPlugin from '@fullhuman/postcss-purgecss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
@@ -20,14 +20,14 @@ const cssSafelistClassArray = [
 
 export default {
   plugins: [
+    purgeCSSPlugin({
+      content: ['./**/*.html'],
+      safelist: cssSafelistClassArray,
+      fontFace: false,
+    }),
     autoprefixer,
     cssnano({
       preset: 'default',
-    }),
-    purgeCSSPlugin({
-      content: ['./src/**/*.html', './src/js/**/*.js'],
-      fontFace: false,
-      safelist: cssSafelistClassArray,
     }),
   ],
 };

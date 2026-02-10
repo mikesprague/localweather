@@ -1,5 +1,7 @@
+@use "sass:color";
+
 $color-text-default: #fff;
-$color-text-night: darken($color-text-default, 20%); //#dedede
+$color-text-night: color.adjust($color-text-default, $blackness: 20%); // #dedede
 $color-text-secondary: ​#b4b7ba;
 
 $color-text-danger: #540000;
@@ -16,10 +18,10 @@ $color-clear: #f5b243;
 $color-clear-night: #4b5272;
 
 $color-rainy: #1249a5;
-$color-rainy-night: darken($color-rainy, 15%);
+$color-rainy-night: color.adjust($color-rainy, $blackness: 15%);
 
-$color-snowy: darken($color-text-default, 10%);
-$color-snowy-night: darken($color-text-default, 33%);
+$color-snowy: color.adjust($color-text-default, $blackness: 10%);
+$color-snowy-night: color.adjust($color-text-default, $blackness: 33%);
 
 $color-cloudy: #8a929e;
-$color-cloudy-night: darken($color-cloudy, 30%);
+$color-cloudy-night: color.adjust($color-cloudy, $blackness: 30%);

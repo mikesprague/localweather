@@ -1,12 +1,11 @@
-@import "../node_modules/bulma/css/bulma.css";
-@import "../node_modules/bulma-switch/dist/css/bulma-switch.min.css";
-@import "../node_modules/tippy.js/dist/tippy.css";
+@use "scss/variables";
+@use "../node_modules/bulma/css/bulma.css";
+@use "../node_modules/bulma-switch/dist/css/bulma-switch.min.css";
+@use "../node_modules/tippy.js/dist/tippy.css";
 
 /*!
  * LocalWeather.dev Styles
  */
-@import "scss/variables";
-
 @font-face {
   font-display: swap;
   font-family: "Open Sans Condensed";
@@ -73,13 +72,13 @@ html {
 
 html,
 body {
-  background-color: $color-loading;
+  background-color: variables.$color-loading;
   margin: 0;
 }
 
 body {
-  background-color: $color-loading;
-  color: $color-text-default;
+  background-color: variables.$color-loading;
+  color: variables.$color-text-default;
   font-display: auto;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.25rem;
@@ -88,9 +87,9 @@ body {
 .loading-animation {
   animation: spin-stretch 2s ease infinite;
   border: 6px solid transparent;
-  border-bottom-color: $color-text-default;
+  border-bottom-color: variables.$color-text-default;
   border-radius: 50%;
-  border-top-color: $color-text-default;
+  border-top-color: variables.$color-text-default;
   height: 6em;
   margin: 0 auto;
   width: 5em;
@@ -134,7 +133,7 @@ strong {
   text-align: center;
 
   small {
-    color: $color-text-secondary;
+    color: variables.$color-text-secondary;
     font-weight: bold;
     letter-spacing: .5em;
     text-transform: uppercase;
@@ -151,21 +150,21 @@ strong {
   text-transform: capitalize;
 
   small {
-    color: $color-text-secondary;
+    color: variables.$color-text-secondary;
 
     // font-size: .5em;
   }
 }
 
 .subtitle.is-2 {
-  color: $color-text-danger;
+  color: variables.$color-text-danger;
   font-size: 1.25em;
   font-weight: 600;
   margin-top: -.5em;
   text-align: center;
 
   a {
-    color: $color-text-danger;
+    color: variables.$color-text-danger;
   }
 }
 
@@ -176,11 +175,11 @@ strong {
 }
 
 .link-weather-alert {
-  color: $color-text-night;
+  color: variables.$color-text-night;
   font-weight: 700;
 
   &:hover {
-    color: $color-text-default;
+    color: variables.$color-text-default;
     font-weight: 700;
   }
 }
@@ -190,7 +189,7 @@ strong {
 }
 
 .tag-weather-alert {
-  background-color: $color-text-danger !important;
+  background-color: variables.$color-text-danger !important;
 }
 
 .message-alert-text,
@@ -202,7 +201,7 @@ strong {
 }
 
 .message-alert-text-first {
-  border-top: 1px dashed $color-gray;
+  border-top: 1px dashed variables.$color-gray;
 }
 
 .message-alert-text-heading {
@@ -235,77 +234,77 @@ strong {
 }
 
 .loading {
-  background-color: $color-loading;
-  color: $color-text-default;
+  background-color: variables.$color-loading;
+  color: variables.$color-text-default;
 }
 
 .clear,
 .cloudy,
 .rainy {
-  color: $color-text-default;
+  color: variables.$color-text-default;
 }
 
 .clear-night,
 .cloudy-night,
 .rainy-night {
-  color: $color-text-night;
+  color: variables.$color-text-night;
 }
 
 .clear {
-  background-color: $color-clear;
+  background-color: variables.$color-clear;
 }
 
 .clear-night {
-  background-color: $color-clear-night;
+  background-color: variables.$color-clear-night;
 }
 
 .cloudy {
-  background-color: $color-cloudy;
+  background-color: variables.$color-cloudy;
 }
 
 .cloudy-night {
-  background-color: $color-cloudy-night;
+  background-color: variables.$color-cloudy-night;
 }
 
 .rainy {
-  background-color: $color-rainy;
+  background-color: variables.$color-rainy;
 }
 
 .rainy-night {
-  background-color: $color-rainy-night;
+  background-color: variables.$color-rainy-night;
 }
 
 .snowy {
-  background-color: $color-snowy;
-  color: $color-gray-dark;
+  background-color: variables.$color-snowy;
+  color: variables.$color-gray-dark;
 
   .powered-by-dark-sky {
     a {
-      color: $color-gray-dark;
+      color: variables.$color-gray-dark;
 
       &:hover,
       &:active {
-        border-bottom: 1px dashed $color-gray-dark;
-        border-top: 1px dashed $color-gray-dark;
-        color: $color-gray-dark;
+        border-bottom: 1px dashed variables.$color-gray-dark;
+        border-top: 1px dashed variables.$color-gray-dark;
+        color: variables.$color-gray-dark;
       }
     }
   }
 }
 
 .snowy-night {
-  background-color: $color-snowy-night;
-  color: $color-gray-darkest;
+  background-color: variables.$color-snowy-night;
+  color: variables.$color-gray-darkest;
 
   .powered-by-dark-sky {
     a {
-      color: $color-gray-darkest;
+      color: variables.$color-gray-darkest;
 
       &:hover,
       &:active {
-        border-bottom: 1px dashed $color-gray-darkest;
-        border-top: 1px dashed $color-gray-darkest;
-        color: $color-gray-darkest;
+        border-bottom: 1px dashed variables.$color-gray-darkest;
+        border-top: 1px dashed variables.$color-gray-darkest;
+        color: variables.$color-gray-darkest;
       }
     }
   }
@@ -367,7 +366,7 @@ strong {
 }
 
 a {
-  color: $color-gray-lightest;
+  color: variables.$color-gray-lightest;
   text-decoration: none;
 
   &:visited {
@@ -377,9 +376,9 @@ a {
 
   &:hover,
   &:active {
-    border-bottom: 1px dashed $color-gray-lightest;
-    border-top: 1px dashed $color-gray-lightest;
-    color: $color-gray-lightest;
+    border-bottom: 1px dashed variables.$color-gray-lightest;
+    border-top: 1px dashed variables.$color-gray-lightest;
+    color: variables.$color-gray-lightest;
     text-decoration: none;
   }
 }
