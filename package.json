@@ -5,9 +5,10 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">= 22.x",
-    "npm": ">= 10.x"
+    "node": ">= 24.x",
+    "npm": ">= 11.x"
   },
+  "packageManager": "npm@11.9.0",
   "scripts": {
     "build": "vite build",
     "clean": "rm -rf ./build",
@@ -37,8 +38,8 @@
   "homepage": "https://localweather.dev",
   "dependencies": {
     "@bugsnag/js": "8.8.1",
-    "@fortawesome/fontawesome-svg-core": "6.7.2",
-    "@fortawesome/pro-duotone-svg-icons": "6.7.2",
+    "@fortawesome/fontawesome-svg-core": "7.1.0",
+    "@fortawesome/pro-duotone-svg-icons": "7.1.0",
     "@sweetalert2/theme-dark": "5.0.27",
     "bulma": "1.0.4",
     "bulma-switch": "2.0.4",
@@ -68,6 +69,9 @@
     "vite-plugin-pwa": "1.2.0",
     "wrangler": "4.63.0"
   },
+  "overrides": {
+    "@isaacs/brace-expansion": "^5.0.1"
+  },
   "browserslist": {
     "development": [
       "last 1 version"
@@ -84,7 +88,7 @@
     }
   },
   "volta": {
-    "node": "23.6.0",
-    "npm": "11.0.0"
+    "node": "25.6.0",
+    "npm": "11.9.0"
   }
 }
