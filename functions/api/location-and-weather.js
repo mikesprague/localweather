@@ -40,7 +40,7 @@ export const onRequestGet = async (context) => {
   const timeString = time ? `,${time}` : '';
   const geocodeApiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${GOOGLE_MAPS_API_KEY}`;
   const weatherApiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}?key=${VISUAL_CROSSING_API_KEY}&unitGroup=${units}`;
-  console.log(weatherApiUrl);
+  // console.log(weatherApiUrl);
   const geocodePromise = await fetch(geocodeApiUrl)
     .then(async (response) => {
       const data = await response.json();
