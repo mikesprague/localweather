@@ -48,7 +48,7 @@
     "dotenv": "17.3.1",
     "logrocket": "12.0.0",
     "register-service-worker": "1.7.2",
-    "sweetalert2": "11.26.19",
+    "sweetalert2": "11.26.20",
     "tippy.js": "6.3.7"
   },
   "devDependencies": {
