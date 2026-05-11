@@ -57,7 +57,7 @@
     "autoprefixer": "10.5.0",
     "concurrently": "9.2.1",
     "cssnano": "8.0.0",
-    "cz-git": "1.13.0",
+    "cz-git": "1.13.1",
     "postcss": "^8.5.14",
     "postcss-cli": "11.0.1",
     "sass": "1.99.0",
