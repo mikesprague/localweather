@@ -1,14 +1,21 @@
 {
   "name": "localweather",
   "version": "1.10.7",
-  "description": "Minimalist local weather app powered by Visual Crossing",
   "private": true,
-  "type": "module",
-  "engines": {
-    "node": ">= 24.x",
-    "npm": ">= 11.x"
+  "description": "Minimalist local weather app powered by Visual Crossing",
+  "homepage": "https://localweather.dev",
+  "bugs": {
+    "url": "https://github.com/mikesprague/localweather/issues"
   },
-  "packageManager": "npm@11.12.1",
+  "license": "MIT",
+  "author": {
+    "name": "Michael Sprague",
+    "email": "mikesprague@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/mikesprague/localweather"
+  },
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "clean": "rm -rf ./build",
@@ -24,18 +31,6 @@
     "ver:publish": "git push --all && git push --tags",
     "ver:tag": "APP_VERSION=$(node -e 'console.log(process.env.npm_package_version)') && git add package.json package-lock.json && git commit -m \"chore(release): 🔖 bump version v$APP_VERSION\" && git tag $APP_VERSION -m \"chore(release): 🔖 bump version v$APP_VERSION\""
   },
-  "repository": {
-    "url": "https://github.com/mikesprague/localweather"
-  },
-  "author": {
-    "name": "Michael Sprague",
-    "email": "mikesprague@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mikesprague/localweather/issues"
-  },
-  "homepage": "https://localweather.dev",
   "dependencies": {
     "@bugsnag/js": "8.9.0",
     "@fortawesome/fontawesome-svg-core": "7.2.0",
@@ -71,11 +66,17 @@
   },
   "overrides": {
     "@isaacs/brace-expansion": "^5.0.1",
+    "esbuild": "^0.28.1",
     "flatted": "^3.4.2",
     "glob": "^13.0.6",
     "serialize-javascript": "^7.0.5",
-    "undici": "^8.1.0",
+    "undici": "^8.4.1",
     "vite": "8.0.16"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
   },
   "browserslist": {
     "development": [
@@ -87,13 +88,20 @@
       "not ie <= 10"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-git"
-    }
+  "engines": {
+    "node": ">= 24.x",
+    "npm": ">= 11.x"
   },
   "volta": {
-    "node": "25.9.0",
-    "npm": "11.12.1"
+    "node": "26.3.0",
+    "npm": "11.17.0"
+  },
+  "packageManager": "npm@11.17.0",
+  "allowScripts": {
+    "workerd@1.20260611.1": true,
+    "@parcel/watcher@2.5.6": true,
+    "sharp@0.34.5": true,
+    "esbuild@0.28.1": true,
+    "fsevents@2.3.3": true
   }
 }
