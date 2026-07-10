@@ -32,7 +32,7 @@
     "ver:tag": "APP_VERSION=$(node -e 'console.log(process.env.npm_package_version)') && git add package.json package-lock.json && git commit -m \"chore(release): 🔖 bump version v$APP_VERSION\" && git tag $APP_VERSION -m \"chore(release): 🔖 bump version v$APP_VERSION\""
   },
   "dependencies": {
-    "@bugsnag/js": "8.9.0",
+    "@bugsnag/js": "8.10.0",
     "@fortawesome/fontawesome-svg-core": "7.2.0",
     "@fortawesome/pro-duotone-svg-icons": "7.2.0",
     "@sweetalert2/theme-dark": "5.0.27",
