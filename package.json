@@ -47,7 +47,7 @@
     "tippy.js": "6.3.7"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.3",
+    "@biomejs/biome": "2.5.4",
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "autoprefixer": "10.5.3",
     "concurrently": "10.0.3",
