@@ -55,7 +55,7 @@
     "cz-git": "1.13.1",
     "postcss": "^8.5.22",
     "postcss-cli": "11.0.1",
-    "sass": "1.101.3",
+    "sass": "1.101.6",
     "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0",
     "stylelint-config-standard-scss": "17.0.0",
