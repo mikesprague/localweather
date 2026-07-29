@@ -19,7 +19,7 @@ const releaseStage = process.env.NODE_ENV || 'production';
 let timerHandle = defaults.timerHandle;
 
 window.bugsnagClient = Bugsnag.start({
-  apiKey: 'c9beb7c090034128a89c8e58f261e972',
+  apiKey: import.meta.env.VITE_BUGSNAG_API_KEY,
   appVersion: `${defaults.versionString}`,
   releaseStage,
   notifyReleaseStages: ['production'],
