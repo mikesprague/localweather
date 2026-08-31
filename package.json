@@ -50,7 +50,7 @@
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "autoprefixer": "10.5.4",
     "concurrently": "10.0.5",
-    "cssnano": "8.0.8",
+    "cssnano": "9.0.0",
     "cz-git": "1.14.0",
     "postcss": "^8.5.26",
     "postcss-cli": "11.0.1",
