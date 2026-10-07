@@ -105,7 +105,7 @@ export const onRequestGet = async (context) => {
     .catch((error) => {
       console.error(error);
 
-      return new Response(JSON.stringify(error), {
+      return new Response(JSON.stringify({ message: 'Error fetching location data' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -123,7 +123,7 @@ export const onRequestGet = async (context) => {
     .catch((error) => {
       console.error(error);
 
-      return new Response(JSON.stringify(error), {
+      return new Response(JSON.stringify({ message: 'Error fetching weather data' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
       });
