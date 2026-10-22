@@ -61,7 +61,7 @@
     "vite": "8.3.4",
     "vite-plugin-html": "3.2.2",
     "vite-plugin-pwa": "2.0.0",
-    "wrangler": "4.151.1"
+    "wrangler": "4.151.2"
   },
   "overrides": {
     "brace-expansion": "^5.0.12",
